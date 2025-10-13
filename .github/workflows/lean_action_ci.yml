@@ -17,8 +17,8 @@ jobs:
         with:
           version: 4.24.0-rc1
 
-      - name: Build Key Files
-        run: |
-          lake exe build Measurements.lean
-          lake exe build Relations.lean
-          lake exe build Structures.lean
+      - name: Initialize Lake
+        run: lake env
+
+      - name: Build project
+        run: lake build
