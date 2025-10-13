@@ -1,0 +1,10 @@
+name = "geometry_prover"
+version = "0.1.0"
+defaultTargets = ["geometry_prover"]
+
+[[lean_lib]]
+name = "GeometryProver"
+
+[[lean_exe]]
+name = "geometry_prover"
+root = "Main"
