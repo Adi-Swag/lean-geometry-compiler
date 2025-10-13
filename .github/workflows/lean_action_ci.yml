@@ -1,14 +1,31 @@
-name: Lean Action CI
+name: Lean Build
 
 on:
   push:
+    branches: [ main ]
   pull_request:
-  workflow_dispatch:
+    branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v4
-      - uses: leanprover/lean-action@v1
+      # 1. Check out the repository
+      - uses: actions/checkout@v3
+
+      # 2. Setup Lean with the exact version your project uses
+      - name: Setup Lean
+        uses: elan-impl/actions/setup-lean@v1
+        with:
+          lean-version: '4.24.0-rc1'
+
+      # 3. Ensure Lake is installed
+      - name: Install Lake
+        run: lean --make
+
+      # 4. Build all main files to verify nothing breaks
+      - name: Build Key Files
+        run: |
+          lake exe build Measurements.lean
+          lake exe build Relations.lean
+          lake exe build Structures.lean
