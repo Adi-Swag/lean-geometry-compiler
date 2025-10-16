@@ -1,8 +1,17 @@
 -- We import our own Structures file as well as various mathlib geometry files.
 import GeometryProver.Geometry.Structures
 import Mathlib.Geometry.Euclidean.Affine
+import Mathlib.Geometry.Euclidean.Incenter
 import Mathlib.Geometry.Euclidean.Angle.Unoriented.Basic
+import Mathlib.Geometry.Euclidean.Angle.Unoriented.Line
 import Mathlib.Geometry.Euclidean.Triangle
+import Mathlib.Geometry.Euclidean.Similarity
+import Mathlib.Geometry.Euclidean.Isometry
+import Mathlib.Data.List.Basic
+import Mathlib.Data.List.Defs
+import Mathlib.Analysis.InnerProductSpace.PiL2
+
+
 
 -- To use `dist` and other functions, we need to open the Point namespace
 open EuclideanPlane
@@ -16,25 +25,46 @@ def RightAngle (a : Angle) : Prop :=
   angle a.A a.B a.C = Real.pi / 2
 
 -- A Triangle is a right triangle if one of its angles is a right angle.
-def IsRight (t : Triangle) : Prop :=
-  (RightAngle (Angle.mk t.A t.B t.C)) ∨
-  (RightAngle (Angle.mk t.B t.C t.A)) ∨
-  (RightAngle (Angle.mk t.C t.A t.B))
+def Right (t : Triangle) : Prop :=
+  (angle t.A t.B t.C = Real.pi / 2) ∨
+  (angle t.B t.C t.A = Real.pi / 2) ∨
+  (angle t.C t.A t.B = Real.pi / 2)
 
 -- A Triangle is isosceles if at least two of its sides have equal length.
-def IsIsosceles (t : Triangle) : Prop :=
+def Isosceles (t : Triangle) : Prop :=
   (dist t.A t.B = dist t.B t.C) ∨
   (dist t.B t.C = dist t.C t.A) ∨
   (dist t.C t.A = dist t.A t.B)
 
 -- A Triangle is equilateral if all three of its sides have equal length.
-def IsEquilateral (t : Triangle) : Prop :=
+def Equilateral (t : Triangle) : Prop :=
   (dist t.A t.B = dist t.B t.C) ∧ (dist t.B t.C = dist t.C t.A)
 
 -- A Polygon is regular if all its sides are congruent and all its interior angles are equal.
-def IsRegular (p : Polygon) : Prop :=
-  sorry -- Requires defining interior angles and checking for pairwise equality of side lengths.
+-- Helper function to get the lengths of all sides of a polygon.
+def Polygon.sideLengths (p : Polygon) : List ℝ :=
+  let vs := p.vertices
+  -- Pair each vertex `vᵢ` with the next one `vᵢ₊₁` (wrapping around at the end)
+  let next_vs := vs.tail ++ [vs.head!]
+  -- Calculate the distance between each pair `(vᵢ, vᵢ₊₁)`.
+  List.zipWith dist vs next_vs
 
+-- Helper function to get the measures of all interior angles of a polygon.
+def Polygon.interiorAngles (p : Polygon) : List ℝ :=
+  let vs := p.vertices
+  -- Create a list of the previous vertex for each vertex `vᵢ₋₁`.
+  let prev_vs := vs.getLast! :: vs.dropLast
+  -- Create a list of the next vertex for each vertex `vᵢ₊₁`.
+  let next_vs := vs.tail ++ [vs.head!]
+  -- Create triples `(vᵢ₋₁, vᵢ, vᵢ₊₁)` and calculate the angle for each.
+  List.map₃ (fun prev curr next => angle prev curr next) prev_vs vs next_vs
+
+-- A Polygon is regular if all its sides have the same length and all its interior angles are equal.
+def Regular (p : Polygon) : Prop :=
+  -- Condition 1: All side lengths (after the first one) are equal to the first side's length.
+  (∀ l ∈ p.sideLengths.tail, l = p.sideLengths.head!) ∧
+  -- Condition 2: All interior angles (after the first one) are equal to the first angle's measure.
+  (∀ a ∈ p.interiorAngles.tail, a = p.interiorAngles.head!)
 /-!
   ## Category C: Relations Between Objects
 -/
@@ -57,20 +87,19 @@ def PointLiesOnLine (P : Point) (l : Line) : Prop :=
 def PointLiesOnCircle (P : Point) (c : Circle) : Prop :=
   dist P c.center = c.radius
 
--- Defines the intersection point of two lines. Non-trivial to formalize.
+-- A point `p` is the intersection of two lines `l1` and `l2` if it lies on both lines.
 def IntersectAt (l1 l2 : Line) (p : Point) : Prop :=
-  sorry -- Would require proving that `p` lies on both `l1` and `l2`.
-
+  PointLiesOnLine p l1 ∧ PointLiesOnLine p l2
 
 /-! ### Parallelism and Perpendicularity -/
 
--- Two lines are parallel. `mathlib` has formal definitions for this based on direction vectors.
+-- Two lines are parallel if the angle between them is 0 or 180 degrees (π radians).
 def Parallel (l1 l2 : Line) : Prop :=
-  sorry
+  Line.angle l1 l2 = 0 ∨ Line.angle l1 l2 = Real.pi
 
--- Two lines are perpendicular. This can be defined by the angle between their direction vectors.
+-- Two lines are perpendicular if the angle between them is 90 degrees (π/2 radians).
 def Perpendicular (l1 l2 : Line) : Prop :=
-  sorry
+  Line.angle l1 l2 = Real.pi / 2
 
 -- A line `l` is the perpendicular bisector of a segment `s`.
 def IsPerpendicularBisectorOf (l : Line) (s : Segment) : Prop :=
@@ -79,72 +108,159 @@ def IsPerpendicularBisectorOf (l : Line) (s : Segment) : Prop :=
 
 /-! ### Congruence and Similarity -/
 
--- Two segments are congruent if they have the same length.
-def CongruentSegments (s1 s2 : Segment) : Prop :=
-  dist s1.p1 s1.p2 = dist s2.p1 s2.p2
+-- A generic typeclass for congruence.
+class Congruence (α : Type) where
+  congr : α → α → Prop
+
+-- A generic `Congruent` function that uses the typeclass.
+def Congruent {α} [Congruence α] (s1 s2 : α) : Prop :=
+  Congruence.congr s1 s2
+
+-- Instance for Segments: Two segments are congruent if there's an isometry between them.
+-- This is mathematically equivalent to them having the same length.
+instance : Congruence Segment where
+  congr s1 s2 := Nonempty (s1 ≃ᵢ s2)
+
+-- Instance for Triangles: Two triangles are congruent if there's an isometry between them.
+-- This single line is equivalent to all SSS, SAS, ASA, etc., theorems combined.
+instance : Congruence Triangle where
+  congr t1 t2 := Nonempty (t1 ≃ᵢ t2)
+
+-- Instance for Circles: Two circles are congruent if there's an isometry between them.
+-- This is mathematically equivalent to them having the same radius.
+instance : Congruence Circle where
+  congr c1 c2 := Nonempty (c1 ≃ᵢ c2)
+
+-- Instance for Quadrilaterals:
+-- An isometry guarantees all corresponding sides and angles are equal.
+instance : Congruence Quadrilateral where
+  congr q1 q2 := Nonempty (q1 ≃ᵢ q2)
+
+-- Instance for Polygons: Two polygons are congruent if there's an isometry between them.
+-- This single definition works for polygons with any number of sides.
+instance : Congruence Polygon where
+  congr p1 p2 := Nonempty (p1 ≃ᵢ p2)
 
 -- Two angles are congruent if they have the same measure.
 def CongruentAngle (a1 a2 : Angle) : Prop :=
   angle a1.A a1.B a1.C = angle a2.A a2.B a2.C
 
--- Two triangles are congruent if their corresponding sides have equal lengths (SSS congruence).
-def CongruentTriangles (t1 t2 : Triangle) : Prop :=
-  (dist t1.A t1.B = dist t2.A t2.B) ∧
-  (dist t1.B t1.C = dist t2.B t2.C) ∧
-  (dist t1.C t1.A = dist t2.C t2.A)
+-- A generic typeclass for similarity.
+class Similarity (α : Type) where
+  sim : α → α → Prop
 
--- Two triangles are similar if their corresponding angles are equal and side lengths are proportional.
-def Similar (t1 t2 : Triangle) : Prop :=
-  sorry
+-- A generic `Similar` function that uses the typeclass.
+def Similar {α} [Similarity α] (s1 s2 : α) : Prop :=
+  Similarity.sim s1 s2
+
+-- Instance for Triangles: Two triangles are similar if there's a similarity between them.
+instance : Similarity Triangle where
+  sim t1 t2 := Nonempty (t1 ≃ₛ t2)
+
+-- Instance for Quadrilaterals:
+instance : Similarity Quadrilateral where
+  sim q1 q2 := Nonempty (q1 ≃ₛ q2)
+
+-- Instance for Polygons (works for any number of sides):
+instance : Similarity Polygon where
+  sim p1 p2 := Nonempty (p1 ≃ₛ p2)
 
 
 /-! ### Relations involving Circles and Lines -/
 
--- A line is tangent to a circle if it intersects the circle at exactly one point.
+-- A line `l` is tangent to a circle `c` if there exists a unique point `p` that lies on both the line and the circle. Tangent
 def Tangent (l : Line) (c : Circle) : Prop :=
-  sorry
+  ∃! p : Point, PointLiesOnLine p l ∧ PointLiesOnCircle p c
 
--- A line is a secant to a circle if it intersects the circle at exactly two points.
+-- A line `l` is a secant to a circle `c` if there exist two distinct points, `p1` and `p2`,
+-- such that a point `p` lies on both the line and the circle if and only if it is `p1` or `p2`.
 def Secant (l : Line) (c : Circle) : Prop :=
-  sorry
-
+  ∃ p1 p2 : Point, p1 ≠ p2 ∧ ∀ p : Point, (PointLiesOnLine p l ∧ PointLiesOnCircle p c) ↔ (p = p1 ∨ p = p2)
 
 /-! ### `IsXOf` Relations -/
 
 def IsMidpointOf (M : Point) (s : Segment) : Prop :=
-  Between M s ∧ (dist s.p1 M = dist M s.p2)
+  M = midpoint ℝ s.p1 s.p2
 
 def IsRadiusOf (s : Segment) (c : Circle) : Prop :=
   (s.p1 = c.center ∧ PointLiesOnCircle s.p2 c) ∨
   (s.p2 = c.center ∧ PointLiesOnCircle s.p1 c)
 
 def IsDiameterOf (s : Segment) (c : Circle) : Prop :=
-  (s.p1 ≠ s.p2) ∧ (IsMidpointOf c.center s) ∧ (PointLiesOnCircle s.p1 c) ∧ (PointLiesOnCircle s.p2 c)
+  IsChordOf s c ∧ IsMidpointOf c.center s
 
 def IsChordOf (s : Segment) (c : Circle) : Prop :=
   (PointLiesOnCircle s.p1 c) ∧ (PointLiesOnCircle s.p2 c)
 
+-- A segment `s` is a side of a polygon `p` if its endpoints are adjacent vertices in the polygon's list of vertices.
 def IsSideOf (s : Segment) (p : Polygon) : Prop :=
-  sorry -- Would require checking if `s.p1` and `s.p2` are adjacent vertices in `p.vertices`.
+  List.Adjacent p.vertices s.p1 s.p2
 
+-- A segment `s` is a diagonal of a polygon `p` if its endpoints are vertices of the polygon but are NOT adjacent.
 def IsDiagonalOf (s : Segment) (p : Polygon) : Prop :=
-  sorry -- Would require checking if `s.p1` and `s.p2` are non-adjacent vertices of `p`.
+  (s.p1 ∈ p.vertices) ∧ (s.p2 ∈ p.vertices) ∧ (¬ List.Adjacent p.vertices s.p1 s.p2)
 
+-- A segment `s` is the hypotenuse of a triangle `t` if it is a side of the triangle and the angle opposite it is a right angle.
 def IsHypotenuseOf (s : Segment) (t : Triangle) : Prop :=
-  sorry -- Requires finding the right angle in `t` and checking if `s` is the opposite side.
+  ( ({s.p1, s.p2} = {t.A, t.B} ∧ angle t.B t.C t.A = Real.pi / 2) ∨
+    ({s.p1, s.p2} = {t.B, t.C} ∧ angle t.C t.A t.B = Real.pi / 2) ∨
+    ({s.p1, s.p2} = {t.C, t.A} ∧ angle t.A t.B t.C = Real.pi / 2) )
 
+-- A segment `s` is an altitude of a triangle `t` if it connects a vertex to the line
+-- containing the opposite side, forming a right angle.
 def IsAltitudeOf (s : Segment) (t : Triangle) : Prop :=
-  sorry -- An altitude connects a vertex to the opposite side, forming a right angle.
+  ( (s.p1 = t.A ∧ Collinear t.B s.p2 t.C ∧ ⟪s.p2 - s.p1, t.C - t.B⟫ = 0) ∨
+    (s.p1 = t.B ∧ Collinear t.C s.p2 t.A ∧ ⟪s.p2 - s.p1, t.A - t.C⟫ = 0) ∨
+    (s.p1 = t.C ∧ Collinear t.A s.p2 t.B ∧ ⟪s.p2 - s.p1, t.B - t.A⟫ = 0) )
 
+-- A segment `s` is a median of a triangle `t` if it connects a vertex
+-- to the midpoint of the opposite side.
 def IsMedianOf (s : Segment) (t : Triangle) : Prop :=
-  sorry -- A median connects a vertex to the midpoint of the opposite side.
+  ( ({s.p1, s.p2} = {t.A, midpoint ℝ t.B t.C}) ∨
+    ({s.p1, s.p2} = {t.B, midpoint ℝ t.C t.A}) ∨
+    ({s.p1, s.p2} = {t.C, midpoint ℝ t.A t.B}) )
 
--- The remaining definitions are also left as exercises in formalization.
-def BisectsAngle (r : Ray) (a : Angle) : Prop := sorry
-def CircumscribedTo (c : Circle) (p : Polygon) : Prop := sorry
-def InscribedIn (p : Polygon) (c : Circle) : Prop := sorry
-def IsCentroidOf (p : Point) (t : Triangle) : Prop := sorry
-def IsIncenterOf (p : Point) (t : Triangle) : Prop := sorry
-def IsMidsegmentOf (s : Segment) (t : Triangle) : Prop := sorry
-def IsBaseOf (s : Segment) (t : Triangle) : Prop := sorry
-def IsLegOf (s : Segment) (t : Triangle) : Prop := sorry
+
+-- A line `l` bisects an angle `a` if it passes through the angle's vertex,
+-- and there exists another point `p` on the line such that the two sub-angles are equal.
+def BisectsAngle (l : Line) (a : Angle) : Prop :=
+  PointLiesOnLine a.B l ∧ (∃ p, PointLiesOnLine p l ∧ p ≠ a.B ∧ angle a.A a.B p = angle p a.B a.C)
+
+-- A circle `c` is the circumcircle of a polygon `p` if it passes through all of the polygon's vertices.
+def IsCircumcircleOf (c : Circle) (p : Polygon) : Prop :=
+  ∀ v ∈ p.vertices, PointLiesOnCircle v c
+
+-- A circle `c` is the incircle of a polygon `p` if it is tangent to every side of the polygon.
+def IsIncircleOf (c : Circle) (p : Polygon) : Prop :=
+  ∀ l ∈ p.sideLines, Tangent l c
+
+-- A polygon `p_in` is inscribed in another polygon `p_out` if every vertex of the inner polygon lies on a side of the outer polygon.
+def IsInscribedIn (p_in p_out : Polygon) : Prop :=
+  ∀ v_in ∈ p_in.vertices, ∃ l_out ∈ p_out.sideLines, PointLiesOnLine v_in l_out
+
+-- A polygon `p_out` circumscribes another polygon `p_in` if `p_in` is inscribed in `p_out`.
+def IsCircumscribed (p_out p_in : Polygon) : Prop :=
+  IsInscribed p_in p_out
+
+-- A point `p` is the centroid of a triangle `t` if it is equal to the centroid of the set of the triangle's vertices.
+def IsCentroidOf (p : Point) (t : Triangle) : Prop :=
+  p = centroid ℝ {t.A, t.B, t.C}
+
+-- A point `p` is the incenter of a triangle `t` if it is equal to the
+-- triangle's incenter.
+def IsIncenterOf (p : Point) (t : Triangle) : Prop :=
+  p = incenter ℝ t.A t.B t.C
+
+-- A segment `s` is a midsegment of a triangle `t` if it connects the midpoints of two sides.
+def IsMidsegmentOf (s : Segment) (t : Triangle) : Prop :=
+  ( ({s.p1, s.p2} = {midpoint ℝ t.A t.B, midpoint ℝ t.A t.C}) ∨
+    ({s.p1, s.p2} = {midpoint ℝ t.A t.B, midpoint ℝ t.B t.C}) ∨
+    ({s.p1, s.p2} = {midpoint ℝ t.B t.C, midpoint ℝ t.A t.C}) )
+
+-- A segment `s` is a base of a triangle `t` if it is one of the triangle's three sides.
+def IsBaseOf (s : Segment) (t : Triangle) : Prop :=
+  ({s.p1, s.p2} = {t.A, t.B}) ∨ ({s.p1, s.p2} = {t.B, t.C}) ∨ ({s.p1, s.p2} = {t.C, t.A})
+
+-- A segment `s` is a leg of a right triangle `t` if it is a side but not the hypotenuse.
+def IsLegOf (s : Segment) (t : Triangle) (h : IsRight t) : Prop :=
+  (IsBaseOf s t) ∧ (¬ IsHypotenuseOf s t)
