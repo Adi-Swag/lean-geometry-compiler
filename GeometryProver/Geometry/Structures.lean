@@ -6,24 +6,23 @@
 -/
 
 import Mathlib.Geometry.Euclidean.Basic
-import Mathlib.Analysis.InnerProductSpace.PiL2  -- provides ⟪·, ·⟫
+import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.LinearAlgebra.AffineSpace.Independent
-import Mathlib.LinearAlgebra.Parallelt
 
 open scoped EuclideanGeometry
 
+namespace Geo
 
 -- A Point must be defined as a point in the EuclideanPlane to work with mathlib functions.
-abbrev Point := EuclideanSpace ℝ (Fin 2)
+noncomputable abbrev Point := EuclideanSpace ℝ (Fin 2)
+noncomputable abbrev Vec := EuclideanSpace ℝ (Fin 2)
 
-
-
--- Declare some basic predicates that will be used in the structures.
--- Their actual implementations would depend on the geometry library used.
-
+-- A predicate to check if two vectors are parallel.
+structure VecParallel (v₁ v₂ : Vec) : Prop where
+  exists_scalar : ∃ c : ℝ, v₁ = c • v₂
 
 -- A `Circle` is defined by its center and a strictly positive radius.
-structure Circle where
+structure Circle' where
   center : Point
   radius : ℝ
   h_radius_pos : radius > 0
@@ -62,7 +61,6 @@ structure Triangle where
   h_affine_independent : AffineIndependent ℝ ![A, B, C]
 
 -- A `Quadrilateral` is defined by its four vertices, in order.
--- For advanced use, one might add proofs that no three vertices are collinear.
 structure Quadrilateral where
   A : Point
   B : Point
@@ -71,11 +69,11 @@ structure Quadrilateral where
 
 -- A Parallelogram extends Quadrilateral and adds a proof that the vector from A to B equals the vector from D to C.
 structure Parallelogram extends Quadrilateral where
-  h_para : (B - A) = (C - D)
+  h_para : (B -ᵥ A) = (C -ᵥ D)
 
 -- A Rectangle extends Parallelogram and adds a proof that the adjacent sides AB and BC are perpendicular.
 structure Rectangle extends Parallelogram where
-  h_right_angle : ⟪B - A, C - B⟫ = 0
+  h_right_angle : @inner ℝ Vec _ (B -ᵥ A) (C -ᵥ B) = 0
 
 -- A Rhombus extends Parallelogram and adds a proof that two adjacent sides have equal length.
 structure Rhombus extends Parallelogram where
@@ -86,13 +84,10 @@ structure Square extends Rectangle, Rhombus
 
 -- A Trapezoid extends Quadrilateral with a proof that at least one pair of sides is parallel.
 structure Trapezoid extends Quadrilateral where
-  -- `Vec.Parallel` is the mathlib proposition for "vectors are parallel".
-  -- We state that the vector from A to B is parallel to the vector from D to C.
-  h_parallel_sides : Vec.Parallel (B - A) (C - D)
+  h_parallel_sides : VecParallel (B -ᵥ A) (C -ᵥ D)
 
 -- A Kite extends Quadrilateral with proofs that two pairs of adjacent sides are equal in length.
 structure Kite extends Quadrilateral where
-  -- We use the `dist` function to define equality of side lengths.
   h_adj_sides1 : dist A B = dist A D
   h_adj_sides2 : dist C B = dist C D
 
@@ -117,16 +112,15 @@ structure Octagon extends Polygon where
 
 -- An Arc is defined by a circle and two points, with proofs that those points lie on the circle's circumference.
 structure Arc where
-  circle : Circle
+  circle : Circle'
   p1 : Point
   p2 : Point
-  -- The logic `dist p c.center = c.radius` is now part of the structure.
   h_p1_on : dist p1 circle.center = circle.radius
   h_p2_on : dist p2 circle.center = circle.radius
 
 -- A Sector has the exact same self-contained definition.
 structure Sector where
-  circle : Circle
+  circle : Circle'
   p1 : Point
   p2 : Point
   h_p1_on : dist p1 circle.center = circle.radius
@@ -139,3 +133,5 @@ inductive Shape where
   | quad : Quadrilateral → Shape
   | poly : Polygon → Shape
   | circ : Circle → Shape
+
+end Geo
