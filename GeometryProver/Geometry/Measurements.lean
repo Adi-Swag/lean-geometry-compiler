@@ -1,5 +1,5 @@
-import GeometryProver.Geometry.Structures
 import GeometryProver.Geometry.Relations
+import Mathlib.Geometry.Euclidean.Inversion
 import Mathlib.Geometry.Euclidean.Triangle
 
 open EuclideanPlane
