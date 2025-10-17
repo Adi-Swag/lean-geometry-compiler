@@ -11,6 +11,8 @@ import Mathlib.LinearAlgebra.AffineSpace.Independent
 
 open scoped EuclideanGeometry
 
+namespace Geo
+
 -- A Point must be defined as a point in the EuclideanPlane to work with mathlib functions.
 noncomputable abbrev Point := EuclideanSpace ℝ (Fin 2)
 noncomputable abbrev Vec := EuclideanSpace ℝ (Fin 2)
@@ -18,8 +20,9 @@ noncomputable abbrev Vec := EuclideanSpace ℝ (Fin 2)
 -- A predicate to check if two vectors are parallel.
 structure VecParallel (v₁ v₂ : Vec) : Prop where
   exists_scalar : ∃ c : ℝ, v₁ = c • v₂
+
 -- A `Circle` is defined by its center and a strictly positive radius.
-structure Circle where
+structure Circle' where
   center : Point
   radius : ℝ
   h_radius_pos : radius > 0
@@ -109,7 +112,7 @@ structure Octagon extends Polygon where
 
 -- An Arc is defined by a circle and two points, with proofs that those points lie on the circle's circumference.
 structure Arc where
-  circle : Circle
+  circle : Circle'
   p1 : Point
   p2 : Point
   h_p1_on : dist p1 circle.center = circle.radius
@@ -117,7 +120,7 @@ structure Arc where
 
 -- A Sector has the exact same self-contained definition.
 structure Sector where
-  circle : Circle
+  circle : Circle'
   p1 : Point
   p2 : Point
   h_p1_on : dist p1 circle.center = circle.radius
@@ -130,3 +133,5 @@ inductive Shape where
   | quad : Quadrilateral → Shape
   | poly : Polygon → Shape
   | circ : Circle → Shape
+
+end Geo
