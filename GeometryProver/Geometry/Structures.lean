@@ -6,14 +6,17 @@
 -/
 
 import Mathlib.Geometry.Euclidean.Basic
-import Mathlib.Analysis.InnerProductSpace.PiL2  -- Provides inner product ⟪·, ·⟫
+import Mathlib.Analysis.InnerProductSpace.PiL2  -- provides ⟪·, ·⟫
 import Mathlib.LinearAlgebra.AffineSpace.Independent
-import Mathlib.LinearAlgebra.VectorSpace.Basic -- Provides Vec.Parallel
+import Mathlib.LinearAlgebra.Parallelt
 
-open EuclideanPlane
+open scoped EuclideanGeometry
+
 
 -- A Point must be defined as a point in the EuclideanPlane to work with mathlib functions.
-abbrev Point := EuclideanPlane ℝ
+abbrev Point := EuclideanSpace ℝ (Fin 2)
+
+
 
 -- Declare some basic predicates that will be used in the structures.
 -- Their actual implementations would depend on the geometry library used.
@@ -46,10 +49,10 @@ structure Ray where
 -- An `Angle` requires the vertex to be distinct from the other two points.
 structure Angle where
   A : Point
-  B : Point -- The vertex
+  B : Point -- vertex
   C : Point
-  h_distinct_1 : A ≠ B
-  h_distinct_2 : C ≠ B
+  h_distinct₁ : A ≠ B
+  h_distinct₂ : C ≠ B
 
 -- A Triangle requires its three vertices to be affinely independent.
 structure Triangle where
@@ -85,7 +88,7 @@ structure Square extends Rectangle, Rhombus
 structure Trapezoid extends Quadrilateral where
   -- `Vec.Parallel` is the mathlib proposition for "vectors are parallel".
   -- We state that the vector from A to B is parallel to the vector from D to C.
-  h_parallel_sides : Vec.Parallel ℝ (B - A) (C - D)
+  h_parallel_sides : Vec.Parallel (B - A) (C - D)
 
 -- A Kite extends Quadrilateral with proofs that two pairs of adjacent sides are equal in length.
 structure Kite extends Quadrilateral where
