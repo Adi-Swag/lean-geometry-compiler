@@ -83,7 +83,7 @@ Please ensure your changes pass the CI build before submitting a PR.
 1. Follow the existing naming conventions in .lean files.
 2. Document new theorems or definitions with clear comments.
 3. Keep proofs as modular and reusable as possible.
-4. Try to edit only "MeasuMeasurements.lean", "Relations.lean" and "Structures.lean"
+4. Try to edit only "Measurements.lean", "Relations.lean" and "Structures.lean"
 
 ## Acknowledgments
 
