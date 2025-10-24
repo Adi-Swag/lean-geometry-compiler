@@ -1,0 +1,112 @@
+{
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Circle"
+      },
+      "args": [
+        {
+          "name": "C1"
+        },
+        {
+          "name": "O"
+        },
+        {
+          "name": "R_point"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsRadiusOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "O"
+            },
+            {
+              "name": "R_point"
+            }
+          ]
+        },
+        {
+          "name": "C1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "L"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Tangent"
+      },
+      "args": [
+        {
+          "name": "L"
+        },
+        {
+          "name": "C1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "PointLiesOnLine"
+      },
+      "args": [
+        {
+          "name": "R_point"
+        },
+        {
+          "name": "L"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Perpendicular"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "O"
+                },
+                {
+                  "name": "R_point"
+                }
+              ]
+            },
+            {
+              "name": "L"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

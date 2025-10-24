@@ -1,0 +1,104 @@
+{
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsMidpointOf"
+      },
+      "args": [
+        {
+          "name": "M"
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Equals"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "name": "A"
+                    },
+                    {
+                      "name": "M"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "HalfOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "LengthOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Segment"
+                      },
+                      "args": [
+                        {
+                          "name": "A"
+                        },
+                        {
+                          "name": "B"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

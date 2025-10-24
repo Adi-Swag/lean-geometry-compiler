@@ -1,0 +1,7 @@
+(list
+    (Triangle A B C)
+    (IsRight (Triangle A B C))
+    (Equals (LengthOf (Segment A C)) 10)
+    (Equals (LengthOf (Segment A B)) 6)
+    (Prove (Equals (LengthOf (Segment B C)) 8))
+)

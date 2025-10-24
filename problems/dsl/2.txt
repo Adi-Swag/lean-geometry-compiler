@@ -1,0 +1,5 @@
+(list
+  (Segment A B)
+  (IsMidpointOf M (Segment A B))
+  (Prove (Equals (LengthOf (Segment A M)) (HalfOf (LengthOf (Segment A B)))))
+)

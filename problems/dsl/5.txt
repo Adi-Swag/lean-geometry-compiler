@@ -1,0 +1,7 @@
+(list
+  (Triangle A B C)
+  (Isosceles (Triangle A B C))
+  (Equals (LengthOf (Segment A B)) (LengthOf (Segment A C)))
+  (IsMedianOf (Segment A M) (Triangle ABC))
+  (Prove (IsAltitudeOf (Segment A M) (Triangle ABC)))
+)

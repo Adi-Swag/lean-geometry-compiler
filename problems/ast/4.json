@@ -1,0 +1,190 @@
+{
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "PointLiesOnLine"
+      },
+      "args": [
+        {
+          "name": "D"
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "BisectsAngle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Ray"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "D"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "B"
+            },
+            {
+              "name": "A"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Equals"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "RatioOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "LengthOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Segment"
+                      },
+                      "args": [
+                        {
+                          "name": "A"
+                        },
+                        {
+                          "name": "B"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": {
+                    "name": "LengthOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Segment"
+                      },
+                      "args": [
+                        {
+                          "name": "A"
+                        },
+                        {
+                          "name": "C"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "RatioOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "LengthOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Segment"
+                      },
+                      "args": [
+                        {
+                          "name": "B"
+                        },
+                        {
+                          "name": "D"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": {
+                    "name": "LengthOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Segment"
+                      },
+                      "args": [
+                        {
+                          "name": "D"
+                        },
+                        {
+                          "name": "C"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
