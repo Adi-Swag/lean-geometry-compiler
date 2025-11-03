@@ -3,3 +3,4 @@ build/
 *.olean
 *.log
 
+informal_DSL/.env
