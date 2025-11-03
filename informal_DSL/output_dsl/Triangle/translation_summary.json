@@ -1,0 +1,52 @@
+{
+  "total": 5,
+  "successful": 5,
+  "failed": 0,
+  "results": [
+    {
+      "id": "5",
+      "context": "There are two triangles \u25b3STW and \u25b3RUV.",
+      "problem": "Given \u2220S \u2245 \u2220R. S W / R V = S T / R U. Complete the proof that \u2220 S W T \u2245 \u2220 R V U.",
+      "generated_dsl": "Point(S)\nPoint(T)\nPoint(W)\nPoint(R)\nPoint(U)\nPoint(V)\nTriangle(S,T,W)\nTriangle(R,U,V)\nCongruentAngle(Angle(S), Angle(R))\nEquals(RatioOf(LengthOf(Line(S,W)), LengthOf(Line(R,V))), RatioOf(LengthOf(Line(S,T)), LengthOf(Line(R,U))))\nProve(CongruentAngle(Angle(S,W,T), Angle(R,V,U)))",
+      "success": true,
+      "error": null,
+      "num_statements": 11
+    },
+    {
+      "id": "4",
+      "context": "In the diagram, points F, G, and H form a triangle \u25b3FGH with FI intersecting HG at I.",
+      "problem": "Given F I \u27c2 G H. I is the midpoint of G H. Complete the proof that \u2220H \u2245 \u2220G.",
+      "generated_dsl": "Point(F)\nPoint(G)\nPoint(H)\nPoint(I)\nTriangle(F,G,H)\nLine(F,I)\nLine(G,H)\nIntersectAt(Line(F,I), Line(G,H), Point(I))\nPointLiesOnLine(Point(I), Line(G,H))\nPerpendicular(Line(F,I), Line(G,H))\nIsMidpointOf(Point(I), Line(G,H))\nProve(CongruentAngle(Angle(H), Angle(G)))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    },
+    {
+      "id": "3",
+      "context": "In the diagram, points R, P, and Q form a triangle \u25b3RPQ with PS intersecting RQ at S.",
+      "problem": "Given P S bisects \u2220 Q P R. P S bisects \u2220 Q P R and P Q \u2245 P R. Complete the proof that Q S \u2245 R S.",
+      "generated_dsl": "Point(R)\nPoint(P)\nPoint(Q)\nPoint(S)\nTriangle(R,P,Q)\nLine(P,S)\nLine(R,Q)\nIntersectAt(Line(P,S), Line(R,Q), Point(S))\nBisectsAngle(Line(P,S), Angle(Q,P,R))\nCongruent(Line(P,Q), Line(P,R))\nProve(Congruent(Line(Q,S), Line(R,S)))",
+      "success": true,
+      "error": null,
+      "num_statements": 11
+    },
+    {
+      "id": "2",
+      "context": "In the diagram, points R, S, and T form a triangle \u25b3RST with RU intersecting ST at U.",
+      "problem": "U is the midpoint of S T and R T \u2245 R S. Complete the proof that \u2220S \u2245 \u2220T.",
+      "generated_dsl": "Point(R)\nPoint(S)\nPoint(T)\nPoint(U)\nTriangle(R,S,T)\nLine(R,U)\nLine(S,T)\nIntersectAt(Line(R,U), Line(S,T), Point(U))\nIsMidpointOf(Point(U), Line(S,T))\nCongruent(Line(R,T), Line(R,S))\nProve(CongruentAngle(Angle(S), Angle(T)))",
+      "success": true,
+      "error": null,
+      "num_statements": 11
+    },
+    {
+      "id": "1",
+      "context": "In the diagram, points U, V, and W form a triangle \u25b3UVW with UX intersecting VW at X.",
+      "problem": "\u2220 W U X \u2245 \u2220 V U X and V W \u27c2 U X. Complete the proof that W X \u2245 V X.",
+      "generated_dsl": "Point(U)\nPoint(V)\nPoint(W)\nPoint(X)\nTriangle(U,V,W)\nLine(U,X)\nLine(V,W)\nIntersectAt(Line(U,X), Line(V,W), Point(X))\nPointLiesOnLine(Point(X), Line(V,W))\nCongruentAngle(Angle(W,U,X), Angle(V,U,X))\nPerpendicular(Line(V,W), Line(U,X))\nProve(Congruent(Line(W,X), Line(V,X)))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    }
+  ]
+}

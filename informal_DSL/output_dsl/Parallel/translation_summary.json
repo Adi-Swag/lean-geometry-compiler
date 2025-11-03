@@ -1,0 +1,52 @@
+{
+  "total": 5,
+  "successful": 5,
+  "failed": 0,
+  "results": [
+    {
+      "id": "5",
+      "context": "In the diagram, FH, VX, and SU intersect RY at G, W, and T, respectively. Y, G, W, T, R are collinear and ordered.",
+      "problem": "Given F H \u2225 V X and S U \u2225 F H. Complete the proof that \u2220 R T U + \u2220 X W Y = 180\u00b0.",
+      "generated_dsl": "Point(F)\nPoint(H)\nPoint(V)\nPoint(X)\nPoint(S)\nPoint(U)\nPoint(R)\nPoint(Y)\nPoint(G)\nPoint(W)\nPoint(T)\nLine(F,H)\nLine(V,X)\nLine(S,U)\nLine(R,Y)\nIntersectAt(Line(F,H), Line(R,Y), Point(G))\nIntersectAt(Line(V,X), Line(R,Y), Point(W))\nIntersectAt(Line(S,U), Line(R,Y), Point(T))\nCollinear(R, Y, G)\nCollinear(R, Y, W)\nCollinear(R, Y, T)\nParallel(Line(F,H), Line(V,X))\nParallel(Line(S,U), Line(F,H))\nProve(Equals(SumOf(MeasureOf(Angle(R,T,U)), MeasureOf(Angle(X,W,Y))), 180))",
+      "success": true,
+      "error": null,
+      "num_statements": 24
+    },
+    {
+      "id": "4",
+      "context": "There are two triangles \u25b3TUW and \u25b3SVW with a shared vertex W. TU and SV are on opposing sides of W.",
+      "problem": "Given \u2220S \u2245 \u2220 U T W and S V \u2225 T U. Complete the proof that \u2220 T U W \u2245 \u2220V.",
+      "generated_dsl": "Point(T)\nPoint(U)\nPoint(W)\nPoint(S)\nPoint(V)\nTriangle(T,U,W)\nTriangle(S,V,W)\nAngle(S)\nAngle(T,U,W)\nLine(S,V)\nLine(T,U)\nCongruentAngle(Angle(S), Angle(U,T,W))\nParallel(Line(S,V), Line(T,U))\nProve(CongruentAngle(Angle(T,U,W), Angle(V)))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "3",
+      "context": "Inside \u25b3PRS, an internal line QT intersects PS and PR at T and Q, respectively.",
+      "problem": "Given \u2220 P T Q \u2245 \u2220 P Q T and Q T \u2225 R S. Complete the proof that \u2220S \u2245 \u2220 Q R S.",
+      "generated_dsl": "Point(P)\nPoint(R)\nPoint(S)\nPoint(Q)\nPoint(T)\nTriangle(P,R,S)\nLine(Q,T)\nLine(P,S)\nLine(P,R)\nIntersectAt(Line(Q,T), Line(P,S), Point(T))\nIntersectAt(Line(Q,T), Line(P,R), Point(Q))\nCongruentAngle(Angle(P,T,Q), Angle(P,Q,T))\nParallel(Line(Q,T), Line(R,S))\nProve(CongruentAngle(Angle(S), Angle(Q,R,S)))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "2",
+      "context": "Line VX and RY intersect at W, SU and RY intersect at T. Y, W, T and R are collinear.",
+      "problem": "Given \u2220 S T W and \u2220 T W V are supplementary. Complete the proof that V X \u2225 S U.",
+      "generated_dsl": "Point(V)\nPoint(X)\nPoint(R)\nPoint(Y)\nPoint(S)\nPoint(U)\nPoint(W)\nPoint(T)\nLine(V,X)\nLine(R,Y)\nLine(S,U)\nIntersectAt(Line(V,X), Line(R,Y), Point(W))\nIntersectAt(Line(S,U), Line(R,Y), Point(T))\nCollinear(Y, W, T, R)\nSupplementary(Angle(S,T,W), Angle(T,W,V))\nProve(Parallel(Line(V,X), Line(S,U)))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "1",
+      "context": "Line WY and SZ intersect at X, TV and SZ intersect at U. X and U are closer to Z and S.",
+      "problem": "Given \u2220 U X W and \u2220 T U X are supplementary. Complete the proof that W Y \u2225 T V.",
+      "generated_dsl": "Point(W)\nPoint(Y)\nPoint(S)\nPoint(Z)\nPoint(X)\nPoint(T)\nPoint(V)\nPoint(U)\nLine(W,Y)\nLine(S,Z)\nLine(T,V)\nIntersectAt(Line(W,Y), Line(S,Z), Point(X))\nIntersectAt(Line(T,V), Line(S,Z), Point(U))\nProve(Parallel(Line(W,Y), Line(T,V)))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    }
+  ]
+}

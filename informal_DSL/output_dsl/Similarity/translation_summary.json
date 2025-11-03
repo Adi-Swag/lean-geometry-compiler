@@ -1,0 +1,52 @@
+{
+  "total": 5,
+  "successful": 5,
+  "failed": 0,
+  "results": [
+    {
+      "id": "5",
+      "context": "In the diagram, points U, R, and S form a triangle \u25b3URS. The internal line UT intersects RS at T.",
+      "problem": "Given R U \u27c2 S U and T U \u27c2 R S. Complete the proof that \u25b3 S T U ~ \u25b3 U T R.",
+      "generated_dsl": "Point(U)\nPoint(R)\nPoint(S)\nPoint(T)\nTriangle(U,R,S)\nLine(U,T)\nLine(R,S)\nIntersectAt(Line(U,T), Line(R,S), Point(T))\nPerpendicular(Line(R,U), Line(S,U))\nPerpendicular(Line(T,U), Line(R,S))\nProve(Similar(Triangle(S,T,U), Triangle(U,T,R)))",
+      "success": true,
+      "error": null,
+      "num_statements": 11
+    },
+    {
+      "id": "4",
+      "context": "There are two triangles \u25b3XYV and \u25b3WYU with a shared vertex Y. WU and XV are on opposing sides of Y.",
+      "problem": "Given \u2220U \u2245 \u2220X. Complete the proof that \u25b3 U W Y ~ \u25b3 X V Y.",
+      "generated_dsl": "Point(X)\nPoint(Y)\nPoint(V)\nPoint(W)\nPoint(U)\nTriangle(X,Y,V)\nTriangle(W,Y,U)\nCongruentAngle(Angle(U), Angle(X))\nProve(Similar(Triangle(U,W,Y), Triangle(X,V,Y)))",
+      "success": true,
+      "error": null,
+      "num_statements": 9
+    },
+    {
+      "id": "3",
+      "context": "There are two triangle \u25b3JGF and \u25b3IHF. The internal line IH intersects JF and FG at I and H, respectively.",
+      "problem": "F I / F J = F H / F G. Complete the proof that \u25b3 F H I ~ \u25b3 F G J.",
+      "generated_dsl": "Point(J)\nPoint(G)\nPoint(F)\nPoint(I)\nPoint(H)\nTriangle(J,G,F)\nTriangle(I,H,F)\nLine(I,H)\nLine(J,F)\nLine(F,G)\nIntersectAt(Line(I,H), Line(J,F), Point(I))\nIntersectAt(Line(I,H), Line(F,G), Point(H))\nEquals(RatioOf(LengthOf(Line(F,I)), LengthOf(Line(F,J))), RatioOf(LengthOf(Line(F,H)), LengthOf(Line(F,G))))\nProve(Similar(Triangle(F,H,I), Triangle(F,G,J)))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "2",
+      "context": "There are two triangles \u25b3FGJ and \u25b3HJI with a shared vertex J. FG and HI are on opposing sides of J.",
+      "problem": "Given \u2220G \u2245 \u2220I. Complete the proof that \u25b3 F G J ~ \u25b3 H I J.",
+      "generated_dsl": "Point(F)\nPoint(G)\nPoint(J)\nPoint(H)\nPoint(I)\nTriangle(F,G,J)\nTriangle(H,I,J)\nCongruentAngle(Angle(G), Angle(I))\nProve(Similar(Triangle(F,G,J), Triangle(H,I,J)))",
+      "success": true,
+      "error": null,
+      "num_statements": 9
+    },
+    {
+      "id": "1",
+      "context": "There are two triangles \u25b3HJG and \u25b3IFJ with a shared vertex J. IF and HG are on opposing sides of J.",
+      "problem": "G J / I J = H J / F J. Complete the proof that \u25b3 G H J ~ \u25b3 I F J.",
+      "generated_dsl": "Point(H)\nPoint(J)\nPoint(G)\nPoint(I)\nPoint(F)\nTriangle(H,J,G)\nTriangle(I,F,J)\nEquals(RatioOf(LengthOf(Line(G,J)), LengthOf(Line(I,J))), RatioOf(LengthOf(Line(H,J)), LengthOf(Line(F,J))))\nProve(Similar(Triangle(G,H,J), Triangle(I,F,J)))",
+      "success": true,
+      "error": null,
+      "num_statements": 9
+    }
+  ]
+}

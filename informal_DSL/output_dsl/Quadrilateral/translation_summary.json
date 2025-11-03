@@ -1,0 +1,52 @@
+{
+  "total": 5,
+  "successful": 5,
+  "failed": 0,
+  "results": [
+    {
+      "id": "5",
+      "context": "In the diagram, points W, V,X, and Y form a quadrilateral \u25a1WVXY with diagonal lines VX and WY. Z is extended from XY, and line VZ is formed by joining V and Z.",
+      "problem": "Given X Y \u2225 V W and V Z \u2225 W Y and Y Z \u2225 V W. V X \u2245 W Y. Complete the proof that V Y \u2245 W X.",
+      "generated_dsl": "Point(W)\nPoint(V)\nPoint(X)\nPoint(Y)\nPoint(Z)\nQuadrilateral(W,V,X,Y)\nLine(V,X)\nLine(W,Y)\nLine(X,Y)\nLine(V,Z)\nParallel(Line(X,Y), Line(V,W))\nParallel(Line(V,Z), Line(W,Y))\nParallel(Line(Y,Z), Line(V,W))\nCongruent(Line(V,X), Line(W,Y))\nProve(Congruent(Line(V,Y), Line(W,X)))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "4",
+      "context": "There is a quadrilateral \u25a1STRU with diagonals TR and US intersecting at point V.",
+      "problem": "Given T U \u2225 R S and R U \u2225 S T. R T \u2245 S U. Complete the proof that R S \u27c2 S T.",
+      "generated_dsl": "Point(S)\nPoint(T)\nPoint(R)\nPoint(U)\nPoint(V)\nQuadrilateral(S,T,R,U)\nLine(T,R)\nLine(U,S)\nIntersectAt(Line(T,R), Line(U,S), Point(V))\nParallel(Line(T,U), Line(R,S))\nParallel(Line(R,U), Line(S,T))\nCongruent(Line(R,T), Line(S,U))\nProve(Perpendicular(Line(R,S), Line(S,T)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "3",
+      "context": "In the diagram, points U, V, T, and S form a quadrilateral \u25a1UVTS with diagonals VT and US intersecting at point W.",
+      "problem": "Given S T \u2245 T U and S V \u2245 U V. Complete the proof that U W \u2245 S W.",
+      "generated_dsl": "Point(U)\nPoint(V)\nPoint(T)\nPoint(S)\nPoint(W)\nQuadrilateral(U,V,T,S)\nLine(V,T)\nLine(U,S)\nIntersectAt(Line(V,T), Line(U,S), Point(W))\nCongruent(Line(S,T), Line(T,U))\nCongruent(Line(S,V), Line(U,V))\nProve(Congruent(Line(U,W), Line(S,W)))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    },
+    {
+      "id": "2",
+      "context": "In the diagram, points V, W,Y, and X form a quadrilateral \u25a1VWYX with a diagonal VX",
+      "problem": "W X \u27c2 V W , X Y \u27c2 V Y , and \u2220 X V Y \u2245 \u2220 V X W. Complete the proof that X Y \u2245 V W.",
+      "generated_dsl": "Point(V)\nPoint(W)\nPoint(Y)\nPoint(X)\nQuadrilateral(V,W,Y,X)\nLine(V,X)\nPerpendicular(Line(W,X), Line(V,W))\nPerpendicular(Line(X,Y), Line(V,Y))\nCongruentAngle(Angle(X,V,Y), Angle(V,X,W))\nProve(Congruent(Line(X,Y), Line(V,W)))",
+      "success": true,
+      "error": null,
+      "num_statements": 10
+    },
+    {
+      "id": "1",
+      "context": "There is a quadrilateral \u25a1TUWV with a diagonal line TV.",
+      "problem": "\u2220 U T V \u2245 \u2220 T V W and \u2220 V T W \u2245 \u2220 T V U. Complete the proof that T W \u2245 U V.",
+      "generated_dsl": "Point(T)\nPoint(U)\nPoint(V)\nPoint(W)\nQuadrilateral(T,U,W,V)\nLine(T,V)\nCongruentAngle(Angle(U,T,V), Angle(T,V,W))\nCongruentAngle(Angle(V,T,W), Angle(T,V,U))\nProve(Congruent(Line(T,W), Line(U,V)))",
+      "success": true,
+      "error": null,
+      "num_statements": 9
+    }
+  ]
+}
