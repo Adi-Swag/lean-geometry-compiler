@@ -49,7 +49,7 @@ def process_file(filename: str):
 
     try:
         # --- 1. Read ---
-        with open(input_filepath, 'r') as f:
+        with open(input_filepath, 'r', encoding='utf-8') as f:
             dsl_content = f.read()
 
         # --- 2. Parse ---
@@ -64,7 +64,7 @@ def process_file(filename: str):
         ast_filepath = os.path.join(AST_DIR, ast_filename)
         os.makedirs(AST_DIR, exist_ok=True)
         ast_dict = asdict(ast)
-        with open(ast_filepath, 'w') as f:
+        with open(ast_filepath, 'w', encoding='utf-8') as f:
             json.dump(ast_dict, f, indent=2)
         print(f"2. AST saved to: {os.path.relpath(ast_filepath, PROJECT_ROOT)}")
 
@@ -77,7 +77,7 @@ def process_file(filename: str):
         lean_filename = f"{theorem_name}.lean"
         lean_filepath = os.path.join(LEAN_DIR, lean_filename)
         os.makedirs(LEAN_DIR, exist_ok=True)
-        with open(lean_filepath, 'w') as f:
+        with open(lean_filepath, 'w', encoding='utf-8') as f:
             f.write(lean_code)
         print(f"4. Lean file saved to: {os.path.relpath(lean_filepath, PROJECT_ROOT)}")
         
