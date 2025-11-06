@@ -1,17 +1,15 @@
 import GeometryProver.Geometry.Structures
 import GeometryProver.Geometry.Relations
 import GeometryProver.Geometry.Measurements
-import Mathlib.Data.Real.Pi
-import Mathlib.Analysis.InnerProductSpace.Basic
--- Add other common imports needed by generated code
 
 open scoped EuclideanGeometry
-open Geo -- Assuming your namespace is Geo
+open Geo
+open EuclideanGeometry
 
-theorem 1 (A B C : Point)
-  (h1 : (Triangle.mk A B C (by sorry)))
-  (h2 : (IsRight (Triangle.mk A B C (by sorry))))
-  (h3 : ((length (Segment.mk A C (by sorry))) = 10.0))
-  (h4 : ((length (Segment.mk A B (by sorry))) = 6.0))
-  : ((length (Segment.mk B C (by sorry))) = 8.0) := by
-  sorry -- Proof placeholder
+theorem Th1 (A B C : Point)
+  (h1 : (AffineIndependent ℝ ![A, B, C]))
+  (h2 : ((angle A B C = Real.pi / 2) ∨ (angle B C A = Real.pi / 2) ∨ (angle C A B = Real.pi / 2)))
+  (h3 : ((dist A C) = 10.0))
+  (h4 : ((dist A B) = 6.0))
+  : ((dist B C) = 8.0) := by
+  sorry

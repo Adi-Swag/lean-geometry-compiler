@@ -3,6 +3,6 @@
   (Line D E)
   (Between D (Segment A B))
   (Between E (Segment A C))
-  (Parallel (Line DE) (Segment B C))
+  (Parallel (Line D E) (Line B C))
   (Prove (Similar (Triangle A D E) (Triangle A B C)))
 )

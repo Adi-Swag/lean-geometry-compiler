@@ -1,7 +1,7 @@
 (list
   (Triangle A B C)
-  (PointLiesOnLine D (Segment B C))
-  (BisectsAngle (Ray A D) (Angle B A C))
+  (PointLiesOnLine D (Line B C))
+  (BisectsAngle (Line A D) (Angle B A C))
   (Prove (Equals (RatioOf (LengthOf (Segment A B)) (LengthOf (Segment A C)))
                  (RatioOf (LengthOf (Segment B D)) (LengthOf (Segment D C)))))
 )

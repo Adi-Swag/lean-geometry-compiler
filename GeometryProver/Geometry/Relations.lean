@@ -64,6 +64,8 @@ noncomputable def Polygon.sideLines (p : Polygon) : List Line :=
   (List.zip vs next_vs).filterMap fun (v1, v2) =>
     if h : v1 ≠ v2 then some (Line.mk v1 v2 h) else none
 
+
+
 end Geo
 
 -- A Polygon is regular if all its sides have the same length and all its interior angles are equal.
@@ -118,6 +120,11 @@ def IsPerpendicularBisectorOf (l : Line) (s : Segment) : Prop :=
   (Perpendicular l (Line.mk s.p1 s.p2 s.h_distinct)) ∧
   (∃ m, IsMidpointOf m s ∧ PointLiesOnLine m l)
 
+-- Two angles are supplementary if their measures sum to π.
+def Supplementary (a₁ a₂ : Angle) : Prop :=
+  angle a₁.A a₁.B a₁.C + angle a₂.A a₂.B a₂.C = Real.pi
+
+
 /-! ### Congruence and Similarity -/
 
 -- A generic typeclass for congruence.
@@ -136,9 +143,21 @@ instance : Congruence Segment where
 instance : Congruence MyCircle where
   congr c1 c2 := c1.radius = c2.radius
 
+instance : Congruence Triangle where
+  congr t₁ t₂ :=
+    dist t₁.A t₁.B = dist t₂.A t₂.B ∧
+    dist t₁.B t₁.C = dist t₂.B t₂.C ∧
+    dist t₁.C t₁.A = dist t₂.C t₂.A
+
 -- Two angles are congruent if they have the same measure.
 def CongruentAngle (a1 a2 : Angle) : Prop :=
   angle a1.A a1.B a1.C = angle a2.A a2.B a2.C
+
+/-- SSS triangle congruence stated purely over points (no constructors). -/
+def TrianglesCongruent (A B C D E F : Point) : Prop :=
+  dist A B = dist D E ∧
+  dist B C = dist E F ∧
+  dist C A = dist F D
 
 /-! ### Relations involving Circles and Lines -/
 
@@ -229,3 +248,60 @@ def IsBaseOf (s : Segment) (t : Triangle) : Prop :=
 -- A segment `s` is a leg of a right triangle `t` if it is a side but not the hypotenuse.
 def IsLegOf (s : Segment) (t : Triangle) (_h : IsRight t) : Prop :=
   (IsBaseOf s t) ∧ (¬ IsHypotenuseOf s t)
+
+/-!
+  ## Category D: Objects itself
+-/
+
+/-- === Shape predicates over points (Prop level) === -/
+
+-- A very lightweight “I’m naming this ordered 4-tuple as a quadrilateral”.
+-- If you want stricter semantics (e.g., no consecutive equality, no self-intersection),
+-- replace `True` with the constraints you need.
+def IsQuadrilateral (T U V W : Point) : Prop := True
+
+-- A parallelogram: opposite sides parallel (vector equality).
+def IsParallelogram (T U V W : Point) : Prop :=
+  (U -ᵥ T) = (V -ᵥ W)
+
+-- A rectangle: a parallelogram with a right angle at U (i.e., UT ⟂ UV).
+def IsRectangle (T U V W : Point) : Prop :=
+  IsParallelogram T U V W ∧
+  @inner ℝ Vec _ (T -ᵥ U) (V -ᵥ U) = 0
+
+-- A rhombus: a parallelogram with equal adjacent sides UT and UV.
+def IsRhombus (T U V W : Point) : Prop :=
+  IsParallelogram T U V W ∧
+  dist T U = dist U V
+
+-- A square: both rectangle and rhombus constraints.
+namespace Geo
+
+def IsSquare (T U V W : Point) : Prop :=
+  IsRectangle T U V W ∧ IsRhombus T U V W
+
+end Geo
+
+-- A trapezoid: at least one pair of opposite sides is parallel.
+def IsTrapezoid (T U V W : Point) : Prop :=
+  VecParallel (U -ᵥ T) (V -ᵥ W) ∨
+  VecParallel (V -ᵥ U) (W -ᵥ T)
+
+-- A kite: two pairs of adjacent sides equal.
+def IsKite (T U V W : Point) : Prop :=
+  dist T U = dist U V ∧
+  dist V W = dist W T
+
+/-- Optional n-gon “naming” predicates. Keep them light unless you need more. -/
+def IsPolygon (vs : List Point) : Prop := vs.length ≥ 3
+def IsPentagon  (T U V W X : Point) : Prop := True
+def IsHexagon   (A B C D E F : Point) : Prop := True
+def IsHeptagon  (A B C D E F G : Point) : Prop := True
+def IsOctagon   (A B C D E F G H : Point) : Prop := True
+
+/-- Optional arc/sector props from primitives; use your own constraints if needed. -/
+def IsArc (O : Point) (r : ℝ) (P Q : Point) : Prop :=
+  r > 0 ∧ dist P O = r ∧ dist Q O = r
+
+def IsSector (O : Point) (r : ℝ) (P Q : Point) : Prop :=
+  IsArc O r P Q
