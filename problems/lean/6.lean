@@ -1,18 +1,16 @@
 import GeometryProver.Geometry.Structures
 import GeometryProver.Geometry.Relations
 import GeometryProver.Geometry.Measurements
-import Mathlib.Data.Real.Pi
-import Mathlib.Analysis.InnerProductSpace.Basic
--- Add other common imports needed by generated code
 
 open scoped EuclideanGeometry
-open Geo -- Assuming your namespace is Geo
+open Geo
+open EuclideanGeometry
 
-theorem 6 (A B C D E : Point)
-  (h1 : (Triangle.mk A B C (by sorry)))
-  (h2 : (Line D E))
-  (h3 : (Between D (Segment.mk A B (by sorry))))
-  (h4 : (Between E (Segment.mk A C (by sorry))))
-  (h5 : (Parallel (Line DE) (Segment.mk B C (by sorry))))
-  : (Similar (Triangle.mk A D E (by sorry)) (Triangle.mk A B C (by sorry))) := by
-  sorry -- Proof placeholder
+theorem Th6 (A B C D E : Point)
+  (h1 : (AffineIndependent ℝ ![A, B, C]))
+  (h2 : (D ≠ E))
+  (h3 : ((CollinearPoints A D B) ∧ (dist A D + dist D B = dist A B)))
+  (h4 : ((CollinearPoints A E C) ∧ (dist A E + dist E C = dist A C)))
+  (h5 : (VecParallel (E -ᵥ D) (C -ᵥ B)))
+  : ((angle A D E = angle A B C) ∧ (angle D E A = angle B C A) ∧ (angle E A D = angle C A B)) := by
+  sorry

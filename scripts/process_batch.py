@@ -1,24 +1,16 @@
 """
 process_batch.py
 
-Processes ALL .dsl files found in the 'problems/dsl/' directory.
+Processes ALL DSL files found in the 'problems/dsl/' directory.
 
 Usage:
     python scripts/process_batch.py
-
-This script will:
-1.  Scan 'problems/dsl/' for all files ending in '.dsl'.
-2.  For each file (e.g., 'triangle_basic.dsl'):
-    a.  Parse it into an AST.
-    b.  Save the AST to 'problems/ast/triangle_basic.json'
-    c.  Generate Lean code.
-    d.  Save the Lean code to 'problems/lean/TriangleBasic.lean'
-3.  Report progress and any errors.
 """
 
 import os
 import sys
 import json
+import re
 from dataclasses import asdict
 
 # Import our custom modules from the same 'scripts' directory
@@ -38,9 +30,20 @@ def convert_to_pascal_case(snake_case_str: str) -> str:
     return "".join(word.capitalize() for word in snake_case_str.split('_'))
 
 
+def sanitize_lean_ident(name: str, fallback_prefix: str = "Th") -> str:
+    """Ensure identifier is valid in Lean:
+    - replace illegal chars with underscores
+    - if it doesn't start with a letter or '_', prefix with fallback
+    """
+    s = re.sub(r'[^A-Za-z0-9_]', '_', name)
+    if not s or not (s[0].isalpha() or s[0] == '_'):
+        s = fallback_prefix + s
+    return s
+
+
 def process_file(filename: str):
     """
-    Contains the full processing pipeline for a single file.
+    Full processing pipeline for a single file.
     Returns True on success, False on failure.
     """
     print(f"\n--- Processing: {filename} ---")
@@ -66,20 +69,23 @@ def process_file(filename: str):
         ast_dict = asdict(ast)
         with open(ast_filepath, 'w', encoding='utf-8') as f:
             json.dump(ast_dict, f, indent=2)
-        print(f"2. AST saved to: {os.path.relpath(ast_filepath, PROJECT_ROOT)}")
+        rel_ast = os.path.relpath(ast_filepath, PROJECT_ROOT)
+        print(f"2. AST saved to: {rel_ast}")
 
         # --- 4. Generate Lean ---
-        theorem_name = convert_to_pascal_case(base_name)
+        raw_name = convert_to_pascal_case(base_name)
+        theorem_name = sanitize_lean_ident(raw_name)  # e.g. "2" -> "Th2"
         lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
-        print("3. Lean code generated.")
+        print(f"3. Lean code generated (theorem {theorem_name}).")
 
         # --- 5. Save Lean ---
-        lean_filename = f"{theorem_name}.lean"
+        lean_filename = f"{base_name}.lean"
         lean_filepath = os.path.join(LEAN_DIR, lean_filename)
         os.makedirs(LEAN_DIR, exist_ok=True)
         with open(lean_filepath, 'w', encoding='utf-8') as f:
             f.write(lean_code)
-        print(f"4. Lean file saved to: {os.path.relpath(lean_filepath, PROJECT_ROOT)}")
+        rel_lean = os.path.relpath(lean_filepath, PROJECT_ROOT)
+        print(f"4. Lean file saved to: {rel_lean}")
         
         print(f"--- Success: {filename} ---")
         return True
@@ -90,7 +96,7 @@ def process_file(filename: str):
     except Exception as e:
         print(f"Error processing file {filename}: {e}", file=sys.stderr)
         import traceback
-        traceback.print_exc() # Print full trace for debugging
+        traceback.print_exc()
         return False
 
 
@@ -101,11 +107,11 @@ def main():
         print(f"Error: DSL directory not found at '{DSL_DIR}'", file=sys.stderr)
         sys.exit(1)
 
-    # Find all files in the DSL directory ending with .dsl
-    dsl_files = [f for f in os.listdir(DSL_DIR) if f.endswith(".txt")]
+    # Accept both .dsl and .txt (you've used both)
+    dsl_files = [f for f in os.listdir(DSL_DIR) if f.endswith(".dsl") or f.endswith(".txt")]
 
     if not dsl_files:
-        print("No .dsl files found to process.")
+        print("No DSL files (.dsl/.txt) found to process.")
         sys.exit(0)
 
     print(f"Found {len(dsl_files)} files to process: {dsl_files}")

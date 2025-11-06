@@ -1,23 +1,18 @@
 import GeometryProver.Geometry.Structures
 import GeometryProver.Geometry.Relations
 import GeometryProver.Geometry.Measurements
-import Mathlib.Data.Real.Pi
-import Mathlib.Analysis.InnerProductSpace.Basic
 
 open scoped EuclideanGeometry
 open Geo
+open EuclideanGeometry
 
 theorem Quadrilateral3 (S T U V W : Point)
-  (h1 : (Point U))
-  (h2 : (Point V))
-  (h3 : (Point T))
-  (h4 : (Point S))
-  (h5 : (Point W))
-  (h6 : (Quadrilateral U V T S))
-  (h7 : (Line V T))
-  (h8 : (Line U S))
-  (h9 : (IntersectAt (Line V T) (Line U S) (Point W)))
-  (h10 : (Congruent (Line S T) (Line T U)))
-  (h11 : (Congruent (Line S V) (Line U V)))
-  : (Congruent (Line U W) (Line S W)) := by
+  (h1 : (IsQuadrilateral U V T S))
+  (h2 : (V ≠ T))
+  (h3 : (U ≠ S))
+  (h4 : (CollinearPoints W V T))
+  (h5 : (CollinearPoints W U S))
+  (h6 : (dist S T = dist T U))
+  (h7 : (dist S V = dist U V))
+  : (dist U W = dist S W) := by
   sorry

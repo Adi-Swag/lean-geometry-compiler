@@ -5,17 +5,24 @@
   "args": [
     {
       "name": {
-        "name": "Circle"
+        "name": "PointLiesOnCircle"
       },
       "args": [
         {
-          "name": "C1"
+          "name": "R"
         },
         {
-          "name": "O"
-        },
-        {
-          "name": "R_point"
+          "name": {
+            "name": "Circle"
+          },
+          "args": [
+            {
+              "name": "O"
+            },
+            {
+              "name": "x1"
+            }
+          ]
         }
       ]
     },
@@ -33,12 +40,22 @@
               "name": "O"
             },
             {
-              "name": "R_point"
+              "name": "R"
             }
           ]
         },
         {
-          "name": "C1"
+          "name": {
+            "name": "Circle"
+          },
+          "args": [
+            {
+              "name": "O"
+            },
+            {
+              "name": "x1"
+            }
+          ]
         }
       ]
     },
@@ -48,7 +65,10 @@
       },
       "args": [
         {
-          "name": "L"
+          "name": "A"
+        },
+        {
+          "name": "B"
         }
       ]
     },
@@ -58,10 +78,30 @@
       },
       "args": [
         {
-          "name": "L"
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            }
+          ]
         },
         {
-          "name": "C1"
+          "name": {
+            "name": "Circle"
+          },
+          "args": [
+            {
+              "name": "O"
+            },
+            {
+              "name": "x1"
+            }
+          ]
         }
       ]
     },
@@ -71,10 +111,20 @@
       },
       "args": [
         {
-          "name": "R_point"
+          "name": "R"
         },
         {
-          "name": "L"
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            }
+          ]
         }
       ]
     },
@@ -90,19 +140,29 @@
           "args": [
             {
               "name": {
-                "name": "Segment"
+                "name": "Line"
               },
               "args": [
                 {
                   "name": "O"
                 },
                 {
-                  "name": "R_point"
+                  "name": "R"
                 }
               ]
             },
             {
-              "name": "L"
+              "name": {
+                "name": "Line"
+              },
+              "args": [
+                {
+                  "name": "A"
+                },
+                {
+                  "name": "B"
+                }
+              ]
             }
           ]
         }

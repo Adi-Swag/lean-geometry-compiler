@@ -47,6 +47,17 @@ def convert_to_pascal_case(snake_case_str: str) -> str:
     """Converts 'snake_case_name' to 'SnakeCaseName'."""
     return "".join(word.capitalize() for word in snake_case_str.split('_'))
 
+def sanitize_lean_ident(name: str, fallback_prefix: str = "Th") -> str:
+    """Make sure the identifier is a valid Lean name:
+    - replace illegal chars with underscores
+    - if it doesn't start with a letter or '_', prefix with fallback (default 'Th')
+    """
+    import re
+    s = re.sub(r'[^A-Za-z0-9_]', '_', name)
+    if not s or not (s[0].isalpha() or s[0] == '_'):
+        s = fallback_prefix + s
+    return s
+
 
 def main():
     # --- Setup Argument Parser ---
@@ -109,7 +120,8 @@ def main():
 
     # --- 4. Generate Lean Code ---
     # Convert 'triangle_basic' -> 'TriangleBasic' for the theorem name
-    theorem_name = convert_to_pascal_case(base_name)
+    raw_name = convert_to_pascal_case(base_name)
+    theorem_name = sanitize_lean_ident(raw_name)  # e.g., "2" -> "Th2"
     
     try:
         lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
@@ -121,7 +133,7 @@ def main():
         sys.exit(1)
 
     # --- 5. Save Lean File ---
-    lean_filename = f"{theorem_name}.lean"  # e.g., "TriangleBasic.lean"
+    lean_filename = f"{base_name}.lean"  # e.g., "TriangleBasic.lean"
     lean_filepath = os.path.join(LEAN_DIR, lean_filename)
 
     try:
