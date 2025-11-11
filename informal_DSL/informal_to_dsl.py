@@ -3,7 +3,7 @@
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
-from dsl_vocabulary import DSL_VOCABULARY, EXTENDED_PREDICATES
+from dsl_vocabulary import DSL_VOCABULARY, get_all_predicates
 
 load_dotenv()
 
@@ -69,20 +69,35 @@ class DSLTranslator:
 
 ## COMPLETE DSL VOCABULARY
 
-### GEOMETRIC SHAPES (20 predicates)
 """
         
         # Add vocabulary categories
         for category, predicates in DSL_VOCABULARY.items():
-            prompt += f"\n### {category.upper().replace('_', ' ')}\n"
+            prompt += f"### {category.upper().replace('_', ' ')}\n"
             for pred, template in predicates.items():
                 prompt += f"- {pred}: {template}\n"
-        
-        prompt += "\n### EXTENDED PREDICATES (Additional)\n"
-        for pred, template in EXTENDED_PREDICATES.items():
-            prompt += f"- {pred}: {template}\n"
+            prompt += "\n"
         
         prompt += """
+## CRITICAL ANGLE NOTATION RULES
+
+**ALWAYS use 3-point notation for angles in triangles and geometric figures:**
+
+✅ CORRECT:
+- Angle(A,B,C) - angle at vertex B formed by rays BA and BC
+- CongruentAngle(Angle(W,U,X), Angle(V,U,X))
+- RightAngle(Angle(A,B,C))
+
+❌ INCORRECT:
+- Angle(B) - NEVER use single-point notation
+- Angle(1) - avoid unless no points are given
+- CongruentAngle(Angle(S), Angle(T)) - NEVER do this
+
+**3-Point Angle Convention:**
+- Format: Angle(FirstPoint, VertexPoint, ThirdPoint)
+- The MIDDLE point is always the vertex
+- Example: ∠ABC means angle at vertex B, written as Angle(A,B,C)
+- Example: ∠WUX means angle at vertex U, written as Angle(W,U,X)
 
 ## TRANSLATION GUIDELINES
 
@@ -94,14 +109,14 @@ class DSLTranslator:
 - Triangle ABC → Triangle(A,B,C)
 - Circle with center O → Circle(O)
 - Line through A and B → Line(A,B)
-- Segment from A to B → Line(A,B) or use Segment(A,B)
+- Segment from A to B → Segment(A,B)
 
 ### Step 3: Parse Given Conditions
 
 **Common patterns to recognize:**
 
-- "∠ABC ≅ ∠DEF" → Congruent(Angle(A,B,C), Angle(D,E,F))
-  OR CongruentAngle(Angle(A,B,C), Angle(D,E,F))
+- "∠ABC ≅ ∠DEF" → CongruentAngle(Angle(A,B,C), Angle(D,E,F))
+  ALWAYS use 3 points for each angle!
 
 - "AB ⊥ CD" → Perpendicular(Line(A,B), Line(C,D))
 
@@ -110,6 +125,7 @@ class DSLTranslator:
 - "AB = CD" → Equals(LengthOf(Line(A,B)), LengthOf(Line(C,D)))
 
 - "∠ABC = 90°" or "∠ABC is a right angle" → RightAngle(Angle(A,B,C))
+  MUST use 3 points!
 
 - "Triangle ABC is isosceles" → Isosceles(Triangle(A,B,C))
 
@@ -121,6 +137,12 @@ class DSLTranslator:
 
 - "X is between A and B" → Between(A, X, B)
 
+- "∠S ≅ ∠T" when S and T are angles in triangles:
+  * First identify which triangle vertices form each angle
+  * Example: If S is at vertex B in triangle ABC, and formed by sides AB and BC:
+    Angle(A,B,C)
+  * Then write: CongruentAngle(Angle(A,B,C), Angle(D,E,F))
+
 ### Step 4: Parse Goal
 
 - "Prove that AB = CD" → Prove(Equals(LengthOf(Line(A,B)), LengthOf(Line(C,D))))
@@ -129,7 +151,10 @@ class DSLTranslator:
 
 - "Find the area of triangle ABC" → Find(AreaOf(Triangle(A,B,C)))
 
-- "Complete the proof that WX ≅ VX" → Prove(Congruent(Line(W,X), Line(V,X)))
+- "Prove ∠WUX ≅ ∠VUX" → Prove(CongruentAngle(Angle(W,U,X), Angle(V,U,X)))
+  ALWAYS 3 points per angle!
+
+- "Prove that WX ≅ VX" → Prove(Congruent(Line(W,X), Line(V,X)))
 
 ## OUTPUT FORMAT
 
@@ -143,21 +168,22 @@ Do NOT include explanations or comments. Just the DSL.
 
 ## IMPORTANT NOTES
 
+- **CRITICAL**: NEVER use single-point angle notation like Angle(B) or Angle(S)
+- **ALWAYS**: Use 3-point notation: Angle(A,B,C) where B is the vertex
 - Use consistent naming: if context says "triangle △UVW", use Triangle(U,V,W)
-- For congruence of segments/angles, you can use either:
-  - Congruent(Line(A,B), Line(C,D)) OR
-  - Equals(LengthOf(Line(A,B)), LengthOf(Line(C,D)))
-- For angle congruence: CongruentAngle or Congruent for angles
+- For segment congruence: Congruent(Line(A,B), Line(C,D)) OR Congruent(Segment(A,B), Segment(C,D))
+- For angle congruence: CongruentAngle(Angle(A,B,C), Angle(D,E,F)) - always 3 points each
 - Always extract ALL information from both context and problem
+- If an angle notation is ambiguous (like ∠S), infer the 3 points from context
 """
         return prompt
     
     def _build_user_prompt(self, context, problem):
         """Build user prompt with synthetic example"""
         
-        # Add ONE synthetic example to guide format
+        # Add examples emphasizing 3-point angle notation
         example_prompt = """
-## EXAMPLE
+## EXAMPLE 1
 
 Input Context: "In the diagram, points U, V, and W form a triangle △UVW with UX intersecting VW at X."
 
@@ -176,6 +202,23 @@ PointLiesOnLine(Point(X), Line(V,W))
 CongruentAngle(Angle(W,U,X), Angle(V,U,X))
 Perpendicular(Line(V,W), Line(U,X))
 Prove(Congruent(Line(W,X), Line(V,X)))
+
+## EXAMPLE 2
+
+Input Context: "Triangle ABC with point D on side BC."
+
+Input Problem: "Given ∠BAD ≅ ∠CAD and AD ⟂ BC. Prove that BD ≅ CD."
+
+Expected DSL Output:
+Point(A)
+Point(B)
+Point(C)
+Point(D)
+Triangle(A,B,C)
+PointLiesOnLine(Point(D), Line(B,C))
+CongruentAngle(Angle(B,A,D), Angle(C,A,D))
+Perpendicular(Line(A,D), Line(B,C))
+Prove(Congruent(Line(B,D), Line(C,D)))
 
 ---
 

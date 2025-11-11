@@ -11,8 +11,8 @@ def process_single_example():
     translator = DSLTranslator()
     validator = DSLValidator()
     
-    context = "In the diagram, points P, Q, and R form a triangle △UVW with UX intersecting VW at X."
-    problem = "∠WUX ≅ ∠VUX and VW ∥ UX. Complete the proof that WX ≅ VX."
+    context = "Line WY and SZ intersect at X, TV and SZ intersect at U. X and U are closer to Z and S."
+    problem = "Given ∠ U X W and ∠ T U X are supplementary. Complete the proof that W Y ∥ T V."
     
     print("Translating to DSL...")
     dsl = translator.translate(context, problem)

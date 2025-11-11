@@ -25,28 +25,28 @@
       "id": "3",
       "context": "There are two triangles \u25b3TWU and \u25b3SVW with a shared vertex W. TU and SV are on opposing sides of W.",
       "problem": "Given T U \u2245 S V. T U \u2225 S V. Complete the proof that \u25b3 S V W \u2245 \u25b3 U T W.",
-      "generated_dsl": "Point(T)\nPoint(U)\nPoint(S)\nPoint(V)\nPoint(W)\nTriangle(T,W,U)\nTriangle(S,V,W)\nLine(T,U)\nLine(S,V)\nCongruent(Line(T,U), Line(S,V))\nParallel(Line(T,U), Line(S,V))\nProve(Congruent(Triangle(S,V,W), Triangle(U,T,W)))",
+      "generated_dsl": "Point(T)\nPoint(U)\nPoint(S)\nPoint(V)\nPoint(W)\nTriangle(T,W,U)\nTriangle(S,V,W)\nCongruent(Line(T,U), Line(S,V))\nParallel(Line(T,U), Line(S,V))\nProve(Congruent(Triangle(S,V,W), Triangle(U,T,W)))",
       "success": true,
       "error": null,
-      "num_statements": 12
+      "num_statements": 10
     },
     {
       "id": "2",
       "context": "There are two triangles \u25b3TWR and \u25b3VSR with a shared vertex R. TW intersects VS at U, VS intersects RT at S, and TW intersects VR at W.",
       "problem": "Given \u2220V \u2245 \u2220T. S V \u2245 T W. Complete the proof that \u25b3 R T W \u2245 \u25b3 R V S.",
-      "generated_dsl": "Point(T)\nPoint(W)\nPoint(R)\nPoint(V)\nPoint(S)\nPoint(U)\nTriangle(T,W,R)\nTriangle(V,S,R)\nLine(T,W)\nLine(V,S)\nLine(R,T)\nLine(V,R)\nIntersectAt(Line(T,W), Line(V,S), Point(U))\nIntersectAt(Line(V,S), Line(R,T), Point(S))\nIntersectAt(Line(T,W), Line(V,R), Point(W))\nCongruentAngle(Angle(V), Angle(T))\nCongruent(Line(S,V), Line(T,W))\nProve(Congruent(Triangle(R,T,W), Triangle(R,V,S)))",
+      "generated_dsl": "Point(T)\nPoint(W)\nPoint(R)\nPoint(V)\nPoint(S)\nPoint(U)\nTriangle(T,W,R)\nTriangle(V,S,R)\nIntersectAt(Line(T,W), Line(V,S), Point(U))\nIntersectAt(Line(V,S), Line(R,T), Point(S))\nIntersectAt(Line(T,W), Line(V,R), Point(W))\nCongruentAngle(Angle(V,R,S), Angle(T,R,W))\nCongruent(Line(S,V), Line(T,W))\nProve(Congruent(Triangle(R,T,W), Triangle(R,V,S)))",
       "success": true,
       "error": null,
-      "num_statements": 18
+      "num_statements": 14
     },
     {
       "id": "1",
       "context": "There are two triangles \u25b3UVX and \u25b3VWY with a shared vertex V. U, V, W are collinear, and X and Y are on sameside of UW.",
       "problem": "Given W Y \u2245 V X and V Y \u2245 U X. V is the midpoint of U W. Complete the proof that \u25b3 V W Y \u2245 \u25b3 U V X.",
-      "generated_dsl": "Point(U)\nPoint(V)\nPoint(W)\nPoint(X)\nPoint(Y)\nTriangle(U,V,X)\nTriangle(V,W,Y)\nCollinear(U,V,W)\nCongruent(Line(W,Y), Line(V,X))\nCongruent(Line(V,Y), Line(U,X))\nIsMidpointOf(Point(V), Line(U,W))\nProve(Congruent(Triangle(V,W,Y), Triangle(U,V,X)))",
+      "generated_dsl": "Point(U)\nPoint(V)\nPoint(W)\nPoint(X)\nPoint(Y)\nTriangle(U,V,X)\nTriangle(V,W,Y)\nCollinear(Point(U), Point(V), Point(W))\nPointLiesOnLine(Point(X), Line(U,W))\nPointLiesOnLine(Point(Y), Line(U,W))\nCongruent(Line(W,Y), Line(V,X))\nCongruent(Line(V,Y), Line(U,X))\nIsMidpointOf(Point(V), Line(U,W))\nProve(Congruent(Triangle(V,W,Y), Triangle(U,V,X)))",
       "success": true,
       "error": null,
-      "num_statements": 12
+      "num_statements": 14
     }
   ]
 }

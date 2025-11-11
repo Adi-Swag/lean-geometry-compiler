@@ -4,6 +4,8 @@ DSL_VOCABULARY = {
     "geometric_shapes": {
         "Point": "Point(A), Point($)",
         "Line": "Line(A,B), Line(m), Line($)",
+        "Segment": "Segment(A,B), Segment($)",
+        "Ray": "Ray(A,B), Ray($)",
         "Angle": "Angle(A,B,C), Angle(A), Angle(1), Angle($)",
         "Triangle": "Triangle(A,B,C), Triangle($)",
         "Quadrilateral": "Quadrilateral(A,B,C,D), Quadrilateral($)",
@@ -21,15 +23,37 @@ DSL_VOCABULARY = {
         "Circle": "Circle(A), Circle(1), Circle($)",
         "Arc": "Arc(A,B), Arc(A,B,C), Arc($)",
         "Sector": "Sector(O,A,B), Sector($)",
+        "Chord": "Chord(A,B), Chord($)",
+        "Semicircle": "Semicircle(A,B), Semicircle($)",
+        "CircularSegment": "CircularSegment(A,B), CircularSegment($)",
+        "Ellipse": "Ellipse(A), Ellipse($)",
+        "Parabola": "Parabola($)",
+        "Hyperbola": "Hyperbola($)",
         "Shape": "Shape($)"
     },
     
     "unary_attributes": {
+        # Angle classifications
         "RightAngle": "RightAngle(Angle($))",
+        "AcuteAngle": "AcuteAngle(Angle($))",
+        "ObtuseAngle": "ObtuseAngle(Angle($))",
+        "StraightAngle": "StraightAngle(Angle($))",
+        "ReflexAngle": "ReflexAngle(Angle($))",
+        
+        # Triangle classifications
         "Right": "Right(Triangle($))",
-        "Isosceles": "Isosceles(Polygon($))",
-        "Equilateral": "Equilateral(Polygon($))",
+        "Isosceles": "Isosceles(Triangle($))",
+        "Equilateral": "Equilateral(Triangle($))",
+        "Scalene": "Scalene(Triangle($))",
+        "Acute": "Acute(Triangle($))",
+        "Obtuse": "Obtuse(Triangle($))",
+        
+        # Polygon attributes
         "Regular": "Regular(Polygon($))",
+        "Convex": "Convex(Polygon($))",
+        "Concave": "Concave(Polygon($))",
+        
+        # Colors
         "Red": "Red(Shape($))",
         "Blue": "Blue(Shape($))",
         "Green": "Green(Shape($))",
@@ -53,28 +77,57 @@ DSL_VOCABULARY = {
         "IntersectionOf": "IntersectionOf(A,B)",
         "MeasureOf": "MeasureOf(A)",
         "LengthOf": "LengthOf(A)",
-        "ScaleFactorOf": "ScaleFactorOf(A,B)"
+        "ScaleFactorOf": "ScaleFactorOf(A,B)",
+        "DistanceBetween": "DistanceBetween(Point($),Point($))",
+        "AngleBetween": "AngleBetween(Line($),Line($))"
     },
     
     "binary_relations": {
+        # Line-Point relations
         "PointLiesOnLine": "PointLiesOnLine(Point($),Line($1,$2))",
         "PointLiesOnCircle": "PointLiesOnCircle(Point($),Circle($))",
+        "Between": "Between(Point($),Point($),Point($))",
+        "Collinear": "Collinear(Point($),Point($),Point($))",
+        
+        # Line-Line relations
         "Parallel": "Parallel(Line($),Line($))",
         "Perpendicular": "Perpendicular(Line($),Line($))",
         "IntersectAt": "IntersectAt(Line($),Line($),Point($))",
+        "Concurrent": "Concurrent(Line($),Line($),Line($),Point($))",
+        
+        # Angle relations
         "BisectsAngle": "BisectsAngle(Line($),Angle($))",
+        "CongruentAngle": "CongruentAngle(Angle($),Angle($))",
+        "Complementary": "Complementary(Angle($),Angle($))",
+        "Supplementary": "Supplementary(Angle($),Angle($))",
+        "VerticalAngles": "VerticalAngles(Angle($),Angle($))",
+        "AlternateInteriorAngles": "AlternateInteriorAngles(Angle($),Angle($))",
+        "AlternateExteriorAngles": "AlternateExteriorAngles(Angle($),Angle($))",
+        "CorrespondingAngles": "CorrespondingAngles(Angle($),Angle($))",
+        "ConsecutiveInteriorAngles": "ConsecutiveInteriorAngles(Angle($),Angle($))",
+        
+        # Shape relations
         "Congruent": "Congruent(Polygon($),Polygon($))",
         "Similar": "Similar(Polygon($),Polygon($))",
-        "Tangent": "Tangent(Line($),Circle($))",
-        "Secant": "Secant(Line($),Circle($))",
         "CircumscribedTo": "CircumscribedTo(Shape($),Shape($))",
-        "InscribedIn": "InscribedIn(Shape($),Shape($))"
+        "InscribedIn": "InscribedIn(Shape($),Shape($))",
+        "Inside": "Inside(Point($),Shape($))",
+        "Outside": "Outside(Point($),Shape($))",
+        "OnBoundary": "OnBoundary(Point($),Shape($))",
+        "Touches": "Touches(Shape($),Shape($))",
+        "Overlaps": "Overlaps(Shape($),Shape($))",
+        
+        # Circle-Line relations
+        "Tangent": "Tangent(Line($),Circle($))",
+        "Secant": "Secant(Line($),Circle($))"
     },
     
     "is_relations": {
         "IsMidpointOf": "IsMidpointOf(Point($),Line($))",
         "IsCentroidOf": "IsCentroidOf(Point($),Shape($))",
         "IsIncenterOf": "IsIncenterOf(Point($),Shape($))",
+        "IsCircumcenterOf": "IsCircumcenterOf(Point($),Triangle($))",
+        "IsOrthocenterOf": "IsOrthocenterOf(Point($),Triangle($))",
         "IsRadiusOf": "IsRadiusOf(Line($),Circle($))",
         "IsDiameterOf": "IsDiameterOf(Line($),Circle($))",
         "IsMidsegmentOf": "IsMidsegmentOf(Line($),Triangle($))",
@@ -94,6 +147,8 @@ DSL_VOCABULARY = {
         "CosOf": "CosOf(Var)",
         "TanOf": "TanOf(Var)",
         "CotOf": "CotOf(Var)",
+        "SecOf": "SecOf(Var)",
+        "CscOf": "CscOf(Var)",
         "HalfOf": "HalfOf(Var)",
         "SquareOf": "SquareOf(Var)",
         "SqrtOf": "SqrtOf(Var)",
@@ -105,21 +160,56 @@ DSL_VOCABULARY = {
         "Sub": "Sub(Var1,Var2,...)",
         "Div": "Div(Var1,Var2,...)",
         "Pow": "Pow(Var1,Var2)",
-        "Equals": "Equals(Var1,Var2)"
+        "Equals": "Equals(Var1,Var2)",
+        "LessThan": "LessThan(Var1,Var2)",
+        "GreaterThan": "GreaterThan(Var1,Var2)"
+    },
+    
+    "construction_operations": {
+        "Midpoint": "Midpoint(Point($),Point($))",
+        "Intersection": "Intersection(Shape($),Shape($))",
+        "Bisector": "Bisector(Angle($))",
+        "PerpendicularBisector": "PerpendicularBisector(Segment($))",
+        "ParallelThrough": "ParallelThrough(Line($),Point($))",
+        "PerpendicularThrough": "PerpendicularThrough(Line($),Point($))"
+    },
+    
+    "constants": {
+        "Pi": "Pi",
+        "E": "E",
+        "GoldenRatio": "GoldenRatio"
     },
     
     "goals": {
         "Find": "Find(Var)",
         "Prove": "Prove(Proposition)",
-        "UseTheorem": "UseTheorem(TheoremName)"
+        "UseTheorem": "UseTheorem(TheoremName)",
+        "Calculate": "Calculate(Expression)",
+        "Construct": "Construct(Object)"
     }
 }
 
-# Additional predicates I'm adding for better coverage
-EXTENDED_PREDICATES = {
-    "Segment": "Segment(A,B)",  # Line segment
-    "Ray": "Ray(A,B)",  # Ray from A through B
-    "Between": "Between(A,B,C)",  # Point B is between A and C
-    "Collinear": "Collinear(A,B,C)",  # Three points on same line
-    "CongruentAngle": "CongruentAngle(Angle($),Angle($))",  # Angle congruence
-}
+# Helper function to get all predicates by category
+def get_predicates_by_category(category):
+    """Returns all predicates in a given category."""
+    return DSL_VOCABULARY.get(category, {})
+
+# Helper function to get all predicates
+def get_all_predicates():
+    """Returns a flat dictionary of all predicates."""
+    all_predicates = {}
+    for category in DSL_VOCABULARY.values():
+        all_predicates.update(category)
+    return all_predicates
+
+# Helper function to search for a predicate
+def find_predicate(name):
+    """Searches for a predicate by name across all categories."""
+    for category, predicates in DSL_VOCABULARY.items():
+        if name in predicates:
+            return {
+                "name": name,
+                "syntax": predicates[name],
+                "category": category
+            }
+    return None

@@ -7,7 +7,7 @@
       "id": "5",
       "context": "There are two triangles \u25b3STW and \u25b3RUV.",
       "problem": "Given \u2220S \u2245 \u2220R. S W / R V = S T / R U. Complete the proof that \u2220 S W T \u2245 \u2220 R V U.",
-      "generated_dsl": "Point(S)\nPoint(T)\nPoint(W)\nPoint(R)\nPoint(U)\nPoint(V)\nTriangle(S,T,W)\nTriangle(R,U,V)\nCongruentAngle(Angle(S), Angle(R))\nEquals(RatioOf(LengthOf(Line(S,W)), LengthOf(Line(R,V))), RatioOf(LengthOf(Line(S,T)), LengthOf(Line(R,U))))\nProve(CongruentAngle(Angle(S,W,T), Angle(R,V,U)))",
+      "generated_dsl": "Point(S)\nPoint(T)\nPoint(W)\nPoint(R)\nPoint(U)\nPoint(V)\nTriangle(S,T,W)\nTriangle(R,U,V)\nCongruentAngle(Angle(T,S,W), Angle(U,R,V))\nEquals(RatioOf(LengthOf(Line(S,W)), LengthOf(Line(R,V))), RatioOf(LengthOf(Line(S,T)), LengthOf(Line(R,U))))\nProve(CongruentAngle(Angle(S,W,T), Angle(R,V,U)))",
       "success": true,
       "error": null,
       "num_statements": 11
@@ -16,10 +16,10 @@
       "id": "4",
       "context": "In the diagram, points F, G, and H form a triangle \u25b3FGH with FI intersecting HG at I.",
       "problem": "Given F I \u27c2 G H. I is the midpoint of G H. Complete the proof that \u2220H \u2245 \u2220G.",
-      "generated_dsl": "Point(F)\nPoint(G)\nPoint(H)\nPoint(I)\nTriangle(F,G,H)\nLine(F,I)\nLine(G,H)\nIntersectAt(Line(F,I), Line(G,H), Point(I))\nPointLiesOnLine(Point(I), Line(G,H))\nPerpendicular(Line(F,I), Line(G,H))\nIsMidpointOf(Point(I), Line(G,H))\nProve(CongruentAngle(Angle(H), Angle(G)))",
+      "generated_dsl": "Point(F)\nPoint(G)\nPoint(H)\nPoint(I)\nTriangle(F,G,H)\nLine(F,I)\nLine(G,H)\nIntersectAt(Line(F,I), Line(G,H), Point(I))\nPerpendicular(Line(F,I), Line(G,H))\nIsMidpointOf(Point(I), Line(G,H))\nProve(CongruentAngle(Angle(F,H,I), Angle(F,G,I)))",
       "success": true,
       "error": null,
-      "num_statements": 12
+      "num_statements": 11
     },
     {
       "id": "3",
@@ -34,7 +34,7 @@
       "id": "2",
       "context": "In the diagram, points R, S, and T form a triangle \u25b3RST with RU intersecting ST at U.",
       "problem": "U is the midpoint of S T and R T \u2245 R S. Complete the proof that \u2220S \u2245 \u2220T.",
-      "generated_dsl": "Point(R)\nPoint(S)\nPoint(T)\nPoint(U)\nTriangle(R,S,T)\nLine(R,U)\nLine(S,T)\nIntersectAt(Line(R,U), Line(S,T), Point(U))\nIsMidpointOf(Point(U), Line(S,T))\nCongruent(Line(R,T), Line(R,S))\nProve(CongruentAngle(Angle(S), Angle(T)))",
+      "generated_dsl": "Point(R)\nPoint(S)\nPoint(T)\nPoint(U)\nTriangle(R,S,T)\nLine(R,U)\nLine(S,T)\nIntersectAt(Line(R,U), Line(S,T), Point(U))\nIsMidpointOf(Point(U), Line(S,T))\nCongruent(Line(R,T), Line(R,S))\nProve(CongruentAngle(Angle(R,S,T), Angle(R,T,S)))",
       "success": true,
       "error": null,
       "num_statements": 11

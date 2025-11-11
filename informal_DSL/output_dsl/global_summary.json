@@ -3,25 +3,25 @@
     "id": "5",
     "context": "In the diagram, FH, VX, and SU intersect RY at G, W, and T, respectively. Y, G, W, T, R are collinear and ordered.",
     "problem": "Given F H \u2225 V X and S U \u2225 F H. Complete the proof that \u2220 R T U + \u2220 X W Y = 180\u00b0.",
-    "generated_dsl": "Point(F)\nPoint(H)\nPoint(V)\nPoint(X)\nPoint(S)\nPoint(U)\nPoint(R)\nPoint(Y)\nPoint(G)\nPoint(W)\nPoint(T)\nLine(F,H)\nLine(V,X)\nLine(S,U)\nLine(R,Y)\nIntersectAt(Line(F,H), Line(R,Y), Point(G))\nIntersectAt(Line(V,X), Line(R,Y), Point(W))\nIntersectAt(Line(S,U), Line(R,Y), Point(T))\nCollinear(R, Y, G)\nCollinear(R, Y, W)\nCollinear(R, Y, T)\nParallel(Line(F,H), Line(V,X))\nParallel(Line(S,U), Line(F,H))\nProve(Equals(SumOf(MeasureOf(Angle(R,T,U)), MeasureOf(Angle(X,W,Y))), 180))",
+    "generated_dsl": "Point(F)\nPoint(H)\nPoint(V)\nPoint(X)\nPoint(S)\nPoint(U)\nPoint(R)\nPoint(Y)\nPoint(G)\nPoint(W)\nPoint(T)\nLine(F,H)\nLine(V,X)\nLine(S,U)\nLine(R,Y)\nIntersectAt(Line(F,H), Line(R,Y), Point(G))\nIntersectAt(Line(V,X), Line(R,Y), Point(W))\nIntersectAt(Line(S,U), Line(R,Y), Point(T))\nCollinear(Point(Y), Point(G), Point(W), Point(T), Point(R))\nOrdered(Point(Y), Point(G), Point(W), Point(T), Point(R))\nParallel(Line(F,H), Line(V,X))\nParallel(Line(S,U), Line(F,H))\nProve(Supplementary(Angle(R,T,U), Angle(X,W,Y)))",
     "success": true,
     "error": null,
-    "num_statements": 24
+    "num_statements": 23
   },
   {
     "id": "4",
     "context": "There are two triangles \u25b3TUW and \u25b3SVW with a shared vertex W. TU and SV are on opposing sides of W.",
     "problem": "Given \u2220S \u2245 \u2220 U T W and S V \u2225 T U. Complete the proof that \u2220 T U W \u2245 \u2220V.",
-    "generated_dsl": "Point(T)\nPoint(U)\nPoint(W)\nPoint(S)\nPoint(V)\nTriangle(T,U,W)\nTriangle(S,V,W)\nAngle(S)\nAngle(T,U,W)\nLine(S,V)\nLine(T,U)\nCongruentAngle(Angle(S), Angle(U,T,W))\nParallel(Line(S,V), Line(T,U))\nProve(CongruentAngle(Angle(T,U,W), Angle(V)))",
+    "generated_dsl": "Point(T)\nPoint(U)\nPoint(W)\nPoint(S)\nPoint(V)\nTriangle(T,U,W)\nTriangle(S,V,W)\nCongruentAngle(Angle(S,V,W), Angle(U,T,W))\nParallel(Line(S,V), Line(T,U))\nProve(CongruentAngle(Angle(T,U,W), Angle(V,S,W)))",
     "success": true,
     "error": null,
-    "num_statements": 14
+    "num_statements": 10
   },
   {
     "id": "3",
     "context": "Inside \u25b3PRS, an internal line QT intersects PS and PR at T and Q, respectively.",
     "problem": "Given \u2220 P T Q \u2245 \u2220 P Q T and Q T \u2225 R S. Complete the proof that \u2220S \u2245 \u2220 Q R S.",
-    "generated_dsl": "Point(P)\nPoint(R)\nPoint(S)\nPoint(Q)\nPoint(T)\nTriangle(P,R,S)\nLine(Q,T)\nLine(P,S)\nLine(P,R)\nIntersectAt(Line(Q,T), Line(P,S), Point(T))\nIntersectAt(Line(Q,T), Line(P,R), Point(Q))\nCongruentAngle(Angle(P,T,Q), Angle(P,Q,T))\nParallel(Line(Q,T), Line(R,S))\nProve(CongruentAngle(Angle(S), Angle(Q,R,S)))",
+    "generated_dsl": "Point(P)\nPoint(R)\nPoint(S)\nPoint(Q)\nPoint(T)\nTriangle(P,R,S)\nLine(Q,T)\nLine(P,S)\nLine(P,R)\nIntersectAt(Line(Q,T), Line(P,S), Point(T))\nIntersectAt(Line(Q,T), Line(P,R), Point(Q))\nCongruentAngle(Angle(P,T,Q), Angle(P,Q,T))\nParallel(Line(Q,T), Line(R,S))\nProve(CongruentAngle(Angle(S,R,Q), Angle(Q,R,S)))",
     "success": true,
     "error": null,
     "num_statements": 14
@@ -30,7 +30,7 @@
     "id": "2",
     "context": "Line VX and RY intersect at W, SU and RY intersect at T. Y, W, T and R are collinear.",
     "problem": "Given \u2220 S T W and \u2220 T W V are supplementary. Complete the proof that V X \u2225 S U.",
-    "generated_dsl": "Point(V)\nPoint(X)\nPoint(R)\nPoint(Y)\nPoint(S)\nPoint(U)\nPoint(W)\nPoint(T)\nLine(V,X)\nLine(R,Y)\nLine(S,U)\nIntersectAt(Line(V,X), Line(R,Y), Point(W))\nIntersectAt(Line(S,U), Line(R,Y), Point(T))\nCollinear(Y, W, T, R)\nSupplementary(Angle(S,T,W), Angle(T,W,V))\nProve(Parallel(Line(V,X), Line(S,U)))",
+    "generated_dsl": "Point(V)\nPoint(X)\nPoint(R)\nPoint(Y)\nPoint(W)\nPoint(S)\nPoint(U)\nPoint(T)\nLine(V,X)\nLine(R,Y)\nLine(S,U)\nIntersectAt(Line(V,X), Line(R,Y), Point(W))\nIntersectAt(Line(S,U), Line(R,Y), Point(T))\nCollinear(Point(Y), Point(W), Point(T), Point(R))\nSupplementary(Angle(S,T,W), Angle(T,W,V))\nProve(Parallel(Line(V,X), Line(S,U)))",
     "success": true,
     "error": null,
     "num_statements": 16
@@ -39,10 +39,10 @@
     "id": "1",
     "context": "Line WY and SZ intersect at X, TV and SZ intersect at U. X and U are closer to Z and S.",
     "problem": "Given \u2220 U X W and \u2220 T U X are supplementary. Complete the proof that W Y \u2225 T V.",
-    "generated_dsl": "Point(W)\nPoint(Y)\nPoint(S)\nPoint(Z)\nPoint(X)\nPoint(T)\nPoint(V)\nPoint(U)\nLine(W,Y)\nLine(S,Z)\nLine(T,V)\nIntersectAt(Line(W,Y), Line(S,Z), Point(X))\nIntersectAt(Line(T,V), Line(S,Z), Point(U))\nProve(Parallel(Line(W,Y), Line(T,V)))",
+    "generated_dsl": "Point(W)\nPoint(Y)\nPoint(S)\nPoint(Z)\nPoint(X)\nPoint(T)\nPoint(V)\nPoint(U)\nLine(W,Y)\nLine(S,Z)\nLine(T,V)\nIntersectAt(Line(W,Y), Line(S,Z), Point(X))\nIntersectAt(Line(T,V), Line(S,Z), Point(U))\nSupplementary(Angle(U,X,W), Angle(T,U,X))\nProve(Parallel(Line(W,Y), Line(T,V)))",
     "success": true,
     "error": null,
-    "num_statements": 14
+    "num_statements": 15
   },
   {
     "id": "5",
@@ -57,7 +57,7 @@
     "id": "4",
     "context": "There are two triangles \u25b3XYV and \u25b3WYU with a shared vertex Y. WU and XV are on opposing sides of Y.",
     "problem": "Given \u2220U \u2245 \u2220X. Complete the proof that \u25b3 U W Y ~ \u25b3 X V Y.",
-    "generated_dsl": "Point(X)\nPoint(Y)\nPoint(V)\nPoint(W)\nPoint(U)\nTriangle(X,Y,V)\nTriangle(W,Y,U)\nCongruentAngle(Angle(U), Angle(X))\nProve(Similar(Triangle(U,W,Y), Triangle(X,V,Y)))",
+    "generated_dsl": "Point(X)\nPoint(Y)\nPoint(V)\nPoint(W)\nPoint(U)\nTriangle(X,Y,V)\nTriangle(W,Y,U)\nCongruentAngle(Angle(W,U,Y), Angle(X,V,Y))\nProve(Similar(Triangle(U,W,Y), Triangle(X,V,Y)))",
     "success": true,
     "error": null,
     "num_statements": 9
@@ -66,16 +66,16 @@
     "id": "3",
     "context": "There are two triangle \u25b3JGF and \u25b3IHF. The internal line IH intersects JF and FG at I and H, respectively.",
     "problem": "F I / F J = F H / F G. Complete the proof that \u25b3 F H I ~ \u25b3 F G J.",
-    "generated_dsl": "Point(J)\nPoint(G)\nPoint(F)\nPoint(I)\nPoint(H)\nTriangle(J,G,F)\nTriangle(I,H,F)\nLine(I,H)\nLine(J,F)\nLine(F,G)\nIntersectAt(Line(I,H), Line(J,F), Point(I))\nIntersectAt(Line(I,H), Line(F,G), Point(H))\nEquals(RatioOf(LengthOf(Line(F,I)), LengthOf(Line(F,J))), RatioOf(LengthOf(Line(F,H)), LengthOf(Line(F,G))))\nProve(Similar(Triangle(F,H,I), Triangle(F,G,J)))",
+    "generated_dsl": "Point(J)\nPoint(G)\nPoint(F)\nPoint(I)\nPoint(H)\nTriangle(J,G,F)\nTriangle(I,H,F)\nLine(I,H)\nIntersectAt(Line(I,H), Line(J,F), Point(I))\nIntersectAt(Line(I,H), Line(F,G), Point(H))\nEquals(RatioOf(LengthOf(Line(F,I)), LengthOf(Line(F,J))), RatioOf(LengthOf(Line(F,H)), LengthOf(Line(F,G))))\nProve(Similar(Triangle(F,H,I), Triangle(F,G,J)))",
     "success": true,
     "error": null,
-    "num_statements": 14
+    "num_statements": 12
   },
   {
     "id": "2",
     "context": "There are two triangles \u25b3FGJ and \u25b3HJI with a shared vertex J. FG and HI are on opposing sides of J.",
     "problem": "Given \u2220G \u2245 \u2220I. Complete the proof that \u25b3 F G J ~ \u25b3 H I J.",
-    "generated_dsl": "Point(F)\nPoint(G)\nPoint(J)\nPoint(H)\nPoint(I)\nTriangle(F,G,J)\nTriangle(H,I,J)\nCongruentAngle(Angle(G), Angle(I))\nProve(Similar(Triangle(F,G,J), Triangle(H,I,J)))",
+    "generated_dsl": "Point(F)\nPoint(G)\nPoint(J)\nPoint(H)\nPoint(I)\nTriangle(F,G,J)\nTriangle(H,I,J)\nCongruentAngle(Angle(F,G,J), Angle(H,I,J))\nProve(Similar(Triangle(F,G,J), Triangle(H,I,J)))",
     "success": true,
     "error": null,
     "num_statements": 9
@@ -93,7 +93,7 @@
     "id": "5",
     "context": "There are two triangles \u25b3STW and \u25b3RUV.",
     "problem": "Given \u2220S \u2245 \u2220R. S W / R V = S T / R U. Complete the proof that \u2220 S W T \u2245 \u2220 R V U.",
-    "generated_dsl": "Point(S)\nPoint(T)\nPoint(W)\nPoint(R)\nPoint(U)\nPoint(V)\nTriangle(S,T,W)\nTriangle(R,U,V)\nCongruentAngle(Angle(S), Angle(R))\nEquals(RatioOf(LengthOf(Line(S,W)), LengthOf(Line(R,V))), RatioOf(LengthOf(Line(S,T)), LengthOf(Line(R,U))))\nProve(CongruentAngle(Angle(S,W,T), Angle(R,V,U)))",
+    "generated_dsl": "Point(S)\nPoint(T)\nPoint(W)\nPoint(R)\nPoint(U)\nPoint(V)\nTriangle(S,T,W)\nTriangle(R,U,V)\nCongruentAngle(Angle(T,S,W), Angle(U,R,V))\nEquals(RatioOf(LengthOf(Line(S,W)), LengthOf(Line(R,V))), RatioOf(LengthOf(Line(S,T)), LengthOf(Line(R,U))))\nProve(CongruentAngle(Angle(S,W,T), Angle(R,V,U)))",
     "success": true,
     "error": null,
     "num_statements": 11
@@ -102,10 +102,10 @@
     "id": "4",
     "context": "In the diagram, points F, G, and H form a triangle \u25b3FGH with FI intersecting HG at I.",
     "problem": "Given F I \u27c2 G H. I is the midpoint of G H. Complete the proof that \u2220H \u2245 \u2220G.",
-    "generated_dsl": "Point(F)\nPoint(G)\nPoint(H)\nPoint(I)\nTriangle(F,G,H)\nLine(F,I)\nLine(G,H)\nIntersectAt(Line(F,I), Line(G,H), Point(I))\nPointLiesOnLine(Point(I), Line(G,H))\nPerpendicular(Line(F,I), Line(G,H))\nIsMidpointOf(Point(I), Line(G,H))\nProve(CongruentAngle(Angle(H), Angle(G)))",
+    "generated_dsl": "Point(F)\nPoint(G)\nPoint(H)\nPoint(I)\nTriangle(F,G,H)\nLine(F,I)\nLine(G,H)\nIntersectAt(Line(F,I), Line(G,H), Point(I))\nPerpendicular(Line(F,I), Line(G,H))\nIsMidpointOf(Point(I), Line(G,H))\nProve(CongruentAngle(Angle(F,H,I), Angle(F,G,I)))",
     "success": true,
     "error": null,
-    "num_statements": 12
+    "num_statements": 11
   },
   {
     "id": "3",
@@ -120,7 +120,7 @@
     "id": "2",
     "context": "In the diagram, points R, S, and T form a triangle \u25b3RST with RU intersecting ST at U.",
     "problem": "U is the midpoint of S T and R T \u2245 R S. Complete the proof that \u2220S \u2245 \u2220T.",
-    "generated_dsl": "Point(R)\nPoint(S)\nPoint(T)\nPoint(U)\nTriangle(R,S,T)\nLine(R,U)\nLine(S,T)\nIntersectAt(Line(R,U), Line(S,T), Point(U))\nIsMidpointOf(Point(U), Line(S,T))\nCongruent(Line(R,T), Line(R,S))\nProve(CongruentAngle(Angle(S), Angle(T)))",
+    "generated_dsl": "Point(R)\nPoint(S)\nPoint(T)\nPoint(U)\nTriangle(R,S,T)\nLine(R,U)\nLine(S,T)\nIntersectAt(Line(R,U), Line(S,T), Point(U))\nIsMidpointOf(Point(U), Line(S,T))\nCongruent(Line(R,T), Line(R,S))\nProve(CongruentAngle(Angle(R,S,T), Angle(R,T,S)))",
     "success": true,
     "error": null,
     "num_statements": 11
@@ -156,28 +156,28 @@
     "id": "3",
     "context": "There are two triangles \u25b3TWU and \u25b3SVW with a shared vertex W. TU and SV are on opposing sides of W.",
     "problem": "Given T U \u2245 S V. T U \u2225 S V. Complete the proof that \u25b3 S V W \u2245 \u25b3 U T W.",
-    "generated_dsl": "Point(T)\nPoint(U)\nPoint(S)\nPoint(V)\nPoint(W)\nTriangle(T,W,U)\nTriangle(S,V,W)\nLine(T,U)\nLine(S,V)\nCongruent(Line(T,U), Line(S,V))\nParallel(Line(T,U), Line(S,V))\nProve(Congruent(Triangle(S,V,W), Triangle(U,T,W)))",
+    "generated_dsl": "Point(T)\nPoint(U)\nPoint(S)\nPoint(V)\nPoint(W)\nTriangle(T,W,U)\nTriangle(S,V,W)\nCongruent(Line(T,U), Line(S,V))\nParallel(Line(T,U), Line(S,V))\nProve(Congruent(Triangle(S,V,W), Triangle(U,T,W)))",
     "success": true,
     "error": null,
-    "num_statements": 12
+    "num_statements": 10
   },
   {
     "id": "2",
     "context": "There are two triangles \u25b3TWR and \u25b3VSR with a shared vertex R. TW intersects VS at U, VS intersects RT at S, and TW intersects VR at W.",
     "problem": "Given \u2220V \u2245 \u2220T. S V \u2245 T W. Complete the proof that \u25b3 R T W \u2245 \u25b3 R V S.",
-    "generated_dsl": "Point(T)\nPoint(W)\nPoint(R)\nPoint(V)\nPoint(S)\nPoint(U)\nTriangle(T,W,R)\nTriangle(V,S,R)\nLine(T,W)\nLine(V,S)\nLine(R,T)\nLine(V,R)\nIntersectAt(Line(T,W), Line(V,S), Point(U))\nIntersectAt(Line(V,S), Line(R,T), Point(S))\nIntersectAt(Line(T,W), Line(V,R), Point(W))\nCongruentAngle(Angle(V), Angle(T))\nCongruent(Line(S,V), Line(T,W))\nProve(Congruent(Triangle(R,T,W), Triangle(R,V,S)))",
+    "generated_dsl": "Point(T)\nPoint(W)\nPoint(R)\nPoint(V)\nPoint(S)\nPoint(U)\nTriangle(T,W,R)\nTriangle(V,S,R)\nIntersectAt(Line(T,W), Line(V,S), Point(U))\nIntersectAt(Line(V,S), Line(R,T), Point(S))\nIntersectAt(Line(T,W), Line(V,R), Point(W))\nCongruentAngle(Angle(V,R,S), Angle(T,R,W))\nCongruent(Line(S,V), Line(T,W))\nProve(Congruent(Triangle(R,T,W), Triangle(R,V,S)))",
     "success": true,
     "error": null,
-    "num_statements": 18
+    "num_statements": 14
   },
   {
     "id": "1",
     "context": "There are two triangles \u25b3UVX and \u25b3VWY with a shared vertex V. U, V, W are collinear, and X and Y are on sameside of UW.",
     "problem": "Given W Y \u2245 V X and V Y \u2245 U X. V is the midpoint of U W. Complete the proof that \u25b3 V W Y \u2245 \u25b3 U V X.",
-    "generated_dsl": "Point(U)\nPoint(V)\nPoint(W)\nPoint(X)\nPoint(Y)\nTriangle(U,V,X)\nTriangle(V,W,Y)\nCollinear(U,V,W)\nCongruent(Line(W,Y), Line(V,X))\nCongruent(Line(V,Y), Line(U,X))\nIsMidpointOf(Point(V), Line(U,W))\nProve(Congruent(Triangle(V,W,Y), Triangle(U,V,X)))",
+    "generated_dsl": "Point(U)\nPoint(V)\nPoint(W)\nPoint(X)\nPoint(Y)\nTriangle(U,V,X)\nTriangle(V,W,Y)\nCollinear(Point(U), Point(V), Point(W))\nPointLiesOnLine(Point(X), Line(U,W))\nPointLiesOnLine(Point(Y), Line(U,W))\nCongruent(Line(W,Y), Line(V,X))\nCongruent(Line(V,Y), Line(U,X))\nIsMidpointOf(Point(V), Line(U,W))\nProve(Congruent(Triangle(V,W,Y), Triangle(U,V,X)))",
     "success": true,
     "error": null,
-    "num_statements": 12
+    "num_statements": 14
   },
   {
     "id": "5",

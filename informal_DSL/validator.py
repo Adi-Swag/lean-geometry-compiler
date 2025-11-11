@@ -1,6 +1,6 @@
 # validator.py - Validate generated DSL
 
-from dsl_vocabulary import DSL_VOCABULARY, EXTENDED_PREDICATES
+from dsl_vocabulary import DSL_VOCABULARY
 import re
 
 class DSLValidator:
@@ -9,7 +9,7 @@ class DSLValidator:
         self.valid_predicates = set()
         for category in DSL_VOCABULARY.values():
             self.valid_predicates.update(category.keys())
-        self.valid_predicates.update(EXTENDED_PREDICATES.keys())
+        #self.valid_predicates.update(EXTENDED_PREDICATES.keys())
     
     def validate(self, dsl_text):
         """
