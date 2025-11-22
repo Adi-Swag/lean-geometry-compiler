@@ -1,0 +1,1 @@
+∀ (R S T U V W X Y : Point) (RY VX SU : Line), distinctPointsOnLine Y R RY ∧ distinctPointsOnLine V X VX ∧ distinctPointsOnLine S U SU ∧ twoLinesIntersectAtPoint VX RY W ∧ between V W X ∧ between S T U ∧ twoLinesIntersectAtPoint SU RY T ∧ between Y W T ∧ between W T R ∧ V.sameSide S RY ∧ X.sameSide U RY ∧ ∠ S:T:W + ∠ T:W:V = ∟ + ∟ → ¬ VX.intersectsLine SU

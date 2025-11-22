@@ -1,0 +1,1 @@
+∀ (R S T U : Point) (RS ST TR RU : Line), formTriangle R S T RS ST TR ∧ distinctPointsOnLine R U RU ∧ ST.intersectsLine RU ∧ U.onLine ST ∧ between S U T ∧ |(S─U)| = |(T─U)| ∧|(R─T)| = |(R─S)|→ ∠ R:S:U = ∠ R:T:U

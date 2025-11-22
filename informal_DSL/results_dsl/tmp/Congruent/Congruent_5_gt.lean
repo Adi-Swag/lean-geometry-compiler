@@ -1,0 +1,1 @@
+∀ (S T U V : Point) (ST TU UV SV SU : Line), formTriangle S U V SU UV SV ∧ formTriangle S T U ST TU SU ∧ T.opposingSides V SU ∧ |(S─T)| = |(U─V)| ∧ ¬ UV.intersectsLine ST → |(S─V)| = |(T─U)|

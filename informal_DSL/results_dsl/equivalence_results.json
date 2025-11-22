@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "total_correct": 0,
+    "total": 5,
+    "accuracy": 0.0
+  },
+  "category_results": {
+    "Congruent": {
+      "total": 5,
+      "correct": 0,
+      "details": {
+        "1": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (U V W X Y : Point) (UW VX UX WY VY : Line), formTriangle U V X UW VX UX ∧ formTriangle V W Y UW WY VY ∧ between U V W ∧ X.sameSide Y UW ∧ ∠ V:Y:W = ∠ U:X:V ∧ |(W─Y)| = |(V─X)| ∧ |(V─Y)| = |(U─X)| ∧ |(U─V)| = |(V─W)| → (△ V:W:Y).congruent (△ U:V:X)",
+          "prediction": "∀ (U V W X Y : Point) (h1 : (AffineIndependent ℝ ![U, V, X])) (h2 : (AffineIndependent ℝ ![V, W, Y])) (h3 : (CollinearPoints U V W)) (h4 : (CollinearPoints X U W)) (h5 : (CollinearPoints Y U W)) (h6 : (dist W Y = dist V X)) (h7 : (dist V Y = dist U X)) (h8 : (V = midpoint ℝ U W)), (TrianglesCongruent V W Y U V X)"
+        },
+        "2": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (R S T U V W : Point) (RV SV TW RT : Line), formTriangle W R T RV RT TW ∧ formTriangle V S R SV RT RV ∧ twoLinesIntersectAtPoint TW SV U ∧ between R S T ∧ between R W V ∧ ∠ R:T:W = ∠ R:V:S ∧ |(S─V)| = |(T─W)| → (△ R:T:W).congruent (△ R:V:S)",
+          "prediction": "∀ (R S T U V W : Point) (h1 : (AffineIndependent ℝ ![T, W, R])) (h2 : (AffineIndependent ℝ ![V, S, R])) (h3 : (CollinearPoints U T W)) (h4 : (CollinearPoints U V S)) (h5 : (CollinearPoints S V S)) (h6 : (CollinearPoints S R T)) (h7 : (CollinearPoints W T W)) (h8 : (CollinearPoints W V R)) (h9 : (angle V R S = angle T R W)) (h10 : (dist S V = dist T W)), (TrianglesCongruent R T W R V S)"
+        },
+        "3": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (S T U V W : Point) (TU SV TV SU : Line), formTriangle S V W SV TV SU ∧ formTriangle U T W TU TV SU ∧ between U W S ∧ between T W V ∧ ¬ TU.intersectsLine SV ∧ |(T─U)| = |(S─V)| → (△ S:V:W).congruent (△ U:T:W)",
+          "prediction": "∀ (S T U V W : Point) (h1 : (AffineIndependent ℝ ![T, W, U])) (h2 : (AffineIndependent ℝ ![S, V, W])) (h3 : (dist T U = dist S V)) (h4 : (VecParallel (U -ᵥ T) (V -ᵥ S))), (TrianglesCongruent S V W U T W)"
+        },
+        "4": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (P Q R S : Point) (PQ QR RS PS PR: Line), formTriangle R P S PR PS RS ∧ formTriangle P Q R PQ QR PR ∧ S.opposingSides Q PR ∧ ∠ S:P:R = ∠ Q:P:R ∧ ∠ P:R:S = ∠ P:R:Q → (△ P:R:S).congruent (△ P:R:Q)",
+          "prediction": "∀ (P Q R S : Point) (h1 : (AffineIndependent ℝ ![S, R, P])) (h2 : (AffineIndependent ℝ ![Q, R, P])) (h3 : (P ≠ R)) (h4 : (CollinearPoints R P R ∧ ∃ (p : Point), CollinearPoints p P R ∧ p ≠ R ∧ angle Q R p = angle p R S)) (h5 : (CollinearPoints P P R ∧ ∃ (p : Point), CollinearPoints p P R ∧ p ≠ P ∧ angle Q P p = angle p P S)), (TrianglesCongruent P R S P R Q)"
+        },
+        "5": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (S T U V : Point) (ST TU UV SV SU : Line), formTriangle S U V SU UV SV ∧ formTriangle S T U ST TU SU ∧ T.opposingSides V SU ∧ |(S─T)| = |(U─V)| ∧ ¬ UV.intersectsLine ST → |(S─V)| = |(T─U)|",
+          "prediction": "∀ (S T U V : Point) (h1 : (AffineIndependent ℝ ![T, S, U])) (h2 : (AffineIndependent ℝ ![V, U, S])) (h3 : (U ≠ S)) (h4 : (S ≠ T)) (h5 : (U ≠ V)) (h6 : (dist S T = dist U V)) (h7 : (VecParallel (V -ᵥ U) (T -ᵥ S))), (dist S V = dist T U)"
+        }
+      }
+    }
+  }
+}

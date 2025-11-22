@@ -1,0 +1,1 @@
+∀ (S T U V W X Y Z : Point) (h1 : (W ≠ Y)) (h2 : (S ≠ Z)) (h3 : (T ≠ V)) (h4 : (CollinearPoints X W Y)) (h5 : (CollinearPoints X S Z)) (h6 : (CollinearPoints U T V)) (h7 : (CollinearPoints U S Z)) (h8 : (angle U X W + angle T U X = Real.pi)), (VecParallel (Y -ᵥ W) (V -ᵥ T))

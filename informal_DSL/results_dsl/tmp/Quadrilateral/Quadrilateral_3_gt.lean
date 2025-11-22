@@ -1,0 +1,1 @@
+∀ (U V W S T : Point) (UV TV SV TU ST SU : Line), formQuadrilateral U V T S UV ST TU SV ∧ distinctPointsOnLine V T TV ∧ distinctPointsOnLine S U SU ∧ twoLinesIntersectAtPoint TV SU W ∧ |(S─T)| = |(T─U)| ∧ |(S─V)| = |(U─V)|→ |(U─W)| = |(S─W)|

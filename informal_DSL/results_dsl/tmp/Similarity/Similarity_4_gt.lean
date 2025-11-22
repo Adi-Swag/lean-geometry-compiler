@@ -1,0 +1,1 @@
+∀ (U V W X Y : Point) (UX VW VX UW : Line), formTriangle X Y V UX VW VX ∧ formTriangle W Y U VW UX UW ∧ between X Y U ∧ between W Y V ∧ ∠ Y:X:V = ∠ W:U:Y → (△ U:W:Y).similar (△ X:V:Y)

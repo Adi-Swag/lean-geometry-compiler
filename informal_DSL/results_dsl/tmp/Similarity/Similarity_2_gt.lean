@@ -1,0 +1,1 @@
+∀ (F G H I J: Point) (FI GH FG HI : Line), formTriangle F G J FG GH FI ∧ formTriangle H J I GH FI HI ∧ between H J G ∧ between I J F ∧ ∠ F:G:J = ∠ H:I:J → (△ F:G:J).similar (△ H:I:J)

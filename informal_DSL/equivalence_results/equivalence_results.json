@@ -1,0 +1,164 @@
+{
+  "summary": {
+    "total_correct": 0,
+    "total": 25,
+    "accuracy": 0.0
+  },
+  "category_results": {
+    "Triangle": {
+      "total": 5,
+      "correct": 0,
+      "details": {
+        "1": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (U X V W : Point) (UV UX UW VW : Line), formTriangle U V W UV VW UW ∧ distinctPointsOnLine U X UX ∧ UX.intersectsLine VW ∧ X.onLine VW ∧ between V X W ∧ ∠ W:U:X = ∠ V:U:X ∧ ∠ U:X:V = ∟ ∧ ∠ U:X:W = ∟ → |(W─X)| = |(V─X)|",
+          "prediction": "∀ (U V W X : Point) (h1 : (AffineIndependent ℝ ![U, V, W])) (h2 : (U ≠ X)) (h3 : (V ≠ W)) (h4 : (CollinearPoints X U X)) (h5 : (CollinearPoints X V W)) (h6 : (CollinearPoints X V W)) (h7 : (angle W U X = angle V U X)) (h8 : (@inner ℝ Vec _ (W -ᵥ V) (X -ᵥ U) = 0)), (dist W X = dist V X)"
+        },
+        "2": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (R S T U : Point) (RS ST TR RU : Line), formTriangle R S T RS ST TR ∧ distinctPointsOnLine R U RU ∧ ST.intersectsLine RU ∧ U.onLine ST ∧ between S U T ∧ |(S─U)| = |(T─U)| ∧|(R─T)| = |(R─S)|→ ∠ R:S:U = ∠ R:T:U",
+          "prediction": "∀ (R S T U : Point) (h1 : (AffineIndependent ℝ ![R, S, T])) (h2 : (R ≠ U)) (h3 : (S ≠ T)) (h4 : (CollinearPoints U R U)) (h5 : (CollinearPoints U S T)) (h6 : (U = midpoint ℝ S T)) (h7 : (dist R T = dist R S)), (angle R S T = angle R T S)"
+        },
+        "3": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (R S P Q : Point) (QR PR PQ PS : Line), formTriangle R Q P QR PQ PR ∧ distinctPointsOnLine P S PS ∧ PS.intersectsLine QR ∧ S.onLine QR ∧ between R S Q ∧ |(P─Q)| = |(P─R)| ∧ ∠ R:P:S = ∠ S:P:Q → |(Q─S)| = |(R─S)|",
+          "prediction": "∀ (P Q R S : Point) (h1 : (AffineIndependent ℝ ![R, P, Q])) (h2 : (P ≠ S)) (h3 : (R ≠ Q)) (h4 : (CollinearPoints S P S)) (h5 : (CollinearPoints S R Q)) (h6 : (CollinearPoints P P S ∧ ∃ (p : Point), CollinearPoints p P S ∧ p ≠ P ∧ angle Q P p = angle p P R)) (h7 : (dist P Q = dist P R)), (dist Q S = dist R S)"
+        },
+        "4": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (F H I G : Point) (HF GH FG FI : Line), formTriangle F H G HF GH FG ∧ distinctPointsOnLine F I FI ∧ FI.intersectsLine GH ∧ I.onLine GH ∧ between H I G ∧ ∠ F:I:G = ∟ ∧ ∠F:I:H=∟ ∧ |(G─I)| = |(I─H)| → ∠ F:H:I = ∠ F:G:I",
+          "prediction": "∀ (F G H I : Point) (h1 : (AffineIndependent ℝ ![F, G, H])) (h2 : (F ≠ I)) (h3 : (G ≠ H)) (h4 : (CollinearPoints I F I)) (h5 : (CollinearPoints I G H)) (h6 : (@inner ℝ Vec _ (I -ᵥ F) (H -ᵥ G) = 0)) (h7 : (I = midpoint ℝ G H)), (angle F H I = angle F G I)"
+        },
+        "5": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (T S W R V U : Point) (ST SW TW RV RU UV : Line), formTriangle S T W ST TW SW ∧ formTriangle R U V RU UV RV ∧ ∠ T:S:W = ∠ V:R:U ∧ |(S─W)| / |(R─V)| = |(S─T)| / |(R─U)| → ∠ S:W:T = ∠ R:V:U",
+          "prediction": "∀ (R S T U V W : Point) (h1 : (AffineIndependent ℝ ![S, T, W])) (h2 : (AffineIndependent ℝ ![R, U, V])) (h3 : (angle T S W = angle U R V)) (h4 : (((dist S W) / (dist R V)) = ((dist S T) / (dist R U)))), (angle S W T = angle R V U)"
+        }
+      }
+    },
+    "Parallel": {
+      "total": 5,
+      "correct": 0,
+      "details": {
+        "1": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (S T U V W X Y Z : Point) (TV WY SZ : Line), distinctPointsOnLine T V TV ∧ distinctPointsOnLine W Y WY ∧ distinctPointsOnLine S Z SZ ∧ twoLinesIntersectAtPoint TV SZ U ∧ between T U V ∧ between S U X ∧ twoLinesIntersectAtPoint WY SZ X ∧ between W X Y ∧ between U X Z ∧ T.sameSide W SZ ∧ V.sameSide Y SZ ∧ ∠ U:X:W + ∠ T:U:X = ∟ + ∟ → ¬ WY.intersectsLine TV",
+          "prediction": "∀ (S T U V W X Y Z : Point) (h1 : (W ≠ Y)) (h2 : (S ≠ Z)) (h3 : (T ≠ V)) (h4 : (CollinearPoints X W Y)) (h5 : (CollinearPoints X S Z)) (h6 : (CollinearPoints U T V)) (h7 : (CollinearPoints U S Z)) (h8 : (angle U X W + angle T U X = Real.pi)), (VecParallel (Y -ᵥ W) (V -ᵥ T))"
+        },
+        "2": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (R S T U V W X Y : Point) (RY VX SU : Line), distinctPointsOnLine Y R RY ∧ distinctPointsOnLine V X VX ∧ distinctPointsOnLine S U SU ∧ twoLinesIntersectAtPoint VX RY W ∧ between V W X ∧ between S T U ∧ twoLinesIntersectAtPoint SU RY T ∧ between Y W T ∧ between W T R ∧ V.sameSide S RY ∧ X.sameSide U RY ∧ ∠ S:T:W + ∠ T:W:V = ∟ + ∟ → ¬ VX.intersectsLine SU",
+          "prediction": "∀ (R S T U V W X Y : Point) (h1 : (V ≠ X)) (h2 : (R ≠ Y)) (h3 : (S ≠ U)) (h4 : (CollinearPoints W V X)) (h5 : (CollinearPoints W R Y)) (h6 : (CollinearPoints T S U)) (h7 : (CollinearPoints T R Y)) (h8 : (CollinearPoints Y W T)) (h9 : (CollinearPoints Y T R)) (h10 : (angle S T W + angle T W V = Real.pi)), (VecParallel (X -ᵥ V) (U -ᵥ S))"
+        },
+        "3": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (P Q R S T : Point) (PR PS QT RS: Line), distinctPointsOnLine R S RS ∧ distinctPointsOnLine Q T QT ∧ distinctPointsOnLine P R PR ∧ distinctPointsOnLine P S PS ∧ QT.intersectsLine PR ∧ Q.onLine PR ∧ between P Q R ∧ RS.intersectsLine PR ∧ T.onLine PS ∧ between P T S ∧ QT.intersectsLine PS ∧ RS.intersectsLine PS ∧ ∠ P:T:Q = ∠ P:Q:T ∧ ¬ QT.intersectsLine RS → ∠ P:S:R = ∠ Q:R:S",
+          "prediction": "∀ (P Q R S T : Point) (h1 : (AffineIndependent ℝ ![P, R, S])) (h2 : (Q ≠ T)) (h3 : (P ≠ S)) (h4 : (P ≠ R)) (h5 : (CollinearPoints T Q T)) (h6 : (CollinearPoints T P S)) (h7 : (CollinearPoints Q Q T)) (h8 : (CollinearPoints Q P R)) (h9 : (angle P T Q = angle P Q T)) (h10 : (VecParallel (T -ᵥ Q) (S -ᵥ R))), (angle S R Q = angle Q R S)"
+        },
+        "4": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (S T U V W : Point) (SV TU SU TV : Line), distinctPointsOnLine S V SV ∧ distinctPointsOnLine T U TU ∧ distinctPointsOnLine S U SU ∧ distinctPointsOnLine T V TV ∧ twoLinesIntersectAtPoint SU TV W ∧ between S W U ∧ between T W V ∧ ∠ U:T:W = ∠ W:S:V ∧ ¬ SV.intersectsLine TU → ∠ T:U:W = ∠ W:V:S",
+          "prediction": "∀ (S T U V W : Point) (h1 : (AffineIndependent ℝ ![T, U, W])) (h2 : (AffineIndependent ℝ ![S, V, W])) (h3 : (angle S V W = angle U T W)) (h4 : (VecParallel (V -ᵥ S) (U -ᵥ T))), (angle T U W = angle V S W)"
+        },
+        "5": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (F G H V W X S T U Y R : Point) (RY SU VX FH : Line), distinctPointsOnLine Y R RY ∧ distinctPointsOnLine S U SU ∧ distinctPointsOnLine V X VX ∧ distinctPointsOnLine F H FH ∧ twoLinesIntersectAtPoint FH RY G ∧ between F G H ∧ between R T W ∧ twoLinesIntersectAtPoint VX RY W ∧ between V W X ∧ between T W G ∧ twoLinesIntersectAtPoint SU RY T ∧ between S T U ∧ between W G Y ∧ F.sameSide V RY ∧ V.sameSide S RY ∧ H.sameSide X RY ∧ X.sameSide U RY ∧ ¬ FH.intersectsLine VX ∧ ¬ SU.intersectsLine FH →∠ R:T:U+∠ X:W:Y = ∟ +∟",
+          "prediction": "∀ (F G H R S T U V W X Y : Point) (h1 : (F ≠ H)) (h2 : (V ≠ X)) (h3 : (S ≠ U)) (h4 : (R ≠ Y)) (h5 : (CollinearPoints G F H)) (h6 : (CollinearPoints G R Y)) (h7 : (CollinearPoints W V X)) (h8 : (CollinearPoints W R Y)) (h9 : (CollinearPoints T S U)) (h10 : (CollinearPoints T R Y)) (h11 : (CollinearPoints Y G W)) (h12 : (CollinearPoints Y W T)) (h13 : (CollinearPoints Y T R)) (h14 : (Ordered Y G W T R)) (h15 : (VecParallel (H -ᵥ F) (X -ᵥ V))) (h16 : (VecParallel (U -ᵥ S) (H -ᵥ F))), (angle R T U + angle X W Y = Real.pi)"
+        }
+      }
+    },
+    "Quadrilateral": {
+      "total": 5,
+      "correct": 0,
+      "details": {
+        "1": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (T U V W : Point) (TU UV VW TW TV : Line), formQuadrilateral T U W V TU VW TW UV ∧ distinctPointsOnLine T V TV ∧ ∠ U:T:V = ∠ T:V:W ∧∠ V:T:W = ∠ T:V:U → |(T─W)| = |(U─V)|",
+          "prediction": "∀ (T U V W : Point) (h1 : (IsQuadrilateral T U W V)) (h2 : (T ≠ V)) (h3 : (angle U T V = angle T V W)) (h4 : (angle V T W = angle T V U)), (dist T W = dist U V)"
+        },
+        "2": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (V W X Y : Point) (VW WX XY VY VX : Line), formQuadrilateral V W Y X VX XY VY WX ∧ distinctPointsOnLine V X VX ∧ ∠ V:W:X=∟ ∧ ∠ V:Y:X = ∟ ∧ ∠ X:V:Y = ∠ V:X:W → |(X─Y)| = |(V─W)|",
+          "prediction": "∀ (V W X Y : Point) (h1 : (IsQuadrilateral V W Y X)) (h2 : (V ≠ X)) (h3 : (@inner ℝ Vec _ (X -ᵥ W) (W -ᵥ V) = 0)) (h4 : (@inner ℝ Vec _ (Y -ᵥ X) (Y -ᵥ V) = 0)) (h5 : (angle X V Y = angle V X W)), (dist X Y = dist V W)"
+        },
+        "3": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (U V W S T : Point) (UV TV SV TU ST SU : Line), formQuadrilateral U V T S UV ST TU SV ∧ distinctPointsOnLine V T TV ∧ distinctPointsOnLine S U SU ∧ twoLinesIntersectAtPoint TV SU W ∧ |(S─T)| = |(T─U)| ∧ |(S─V)| = |(U─V)|→ |(U─W)| = |(S─W)|",
+          "prediction": "∀ (S T U V W : Point) (h1 : (IsQuadrilateral U V T S)) (h2 : (V ≠ T)) (h3 : (U ≠ S)) (h4 : (CollinearPoints W V T)) (h5 : (CollinearPoints W U S)) (h6 : (dist S T = dist T U)) (h7 : (dist S V = dist U V)), (dist U W = dist S W)"
+        },
+        "4": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (S T U V R : Point) (ST TU RU RS RT SU : Line), formQuadrilateral S T R U ST RU RS TU ∧ distinctPointsOnLine T R RT ∧ distinctPointsOnLine S U SU ∧ twoLinesIntersectAtPoint RT SU V ∧ ¬ RU.intersectsLine ST ∧ |(R─T)|=|(S─U)| ∧ ¬ TU.intersectsLine RS → ∠ R:S:T =∟",
+          "prediction": "∀ (R S T U V : Point) (h1 : (IsQuadrilateral S T R U)) (h2 : (T ≠ R)) (h3 : (U ≠ S)) (h4 : (CollinearPoints V T R)) (h5 : (CollinearPoints V U S)) (h6 : (VecParallel (U -ᵥ T) (S -ᵥ R))) (h7 : (VecParallel (U -ᵥ R) (T -ᵥ S))) (h8 : (dist R T = dist S U)), (@inner ℝ Vec _ (S -ᵥ R) (T -ᵥ S) = 0)"
+        },
+        "5": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (V W X Y Z: Point) (VW XZ WX WY VX VY VZ: Line), formQuadrilateral W V X Y VW XY WX VY ∧ distinctPointsOnLine W Y WY ∧ distinctPointsOnLine V X VX ∧ distinctPointsOnLine V Z VZ ∧ distinctPointsOnLine Y Z XZ ∧ X.opposingSides Z VY ∧ ¬ XY.intersectsLine VW ∧ ¬ VZ.intersectsLine WY ∧ ¬ XZ.intersectsLine VW ∧ |(V─X)| = |(Y─W)| → |(V─Y)|=|(X─W)|",
+          "prediction": "∀ (V W X Y Z : Point) (h1 : (IsQuadrilateral W V X Y)) (h2 : (V ≠ X)) (h3 : (W ≠ Y)) (h4 : (X ≠ Y)) (h5 : (V ≠ Z)) (h6 : (VecParallel (Y -ᵥ X) (W -ᵥ V))) (h7 : (VecParallel (Z -ᵥ V) (Y -ᵥ W))) (h8 : (VecParallel (Z -ᵥ Y) (W -ᵥ V))) (h9 : (dist V X = dist W Y)), (dist V Y = dist W X)"
+        }
+      }
+    },
+    "Congruent": {
+      "total": 5,
+      "correct": 0,
+      "details": {
+        "1": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (U V W X Y : Point) (UW VX UX WY VY : Line), formTriangle U V X UW VX UX ∧ formTriangle V W Y UW WY VY ∧ between U V W ∧ X.sameSide Y UW ∧ ∠ V:Y:W = ∠ U:X:V ∧ |(W─Y)| = |(V─X)| ∧ |(V─Y)| = |(U─X)| ∧ |(U─V)| = |(V─W)| → (△ V:W:Y).congruent (△ U:V:X)",
+          "prediction": "∀ (U V W X Y : Point) (h1 : (AffineIndependent ℝ ![U, V, X])) (h2 : (AffineIndependent ℝ ![V, W, Y])) (h3 : (CollinearPoints U V W)) (h4 : (CollinearPoints X U W)) (h5 : (CollinearPoints Y U W)) (h6 : (dist W Y = dist V X)) (h7 : (dist V Y = dist U X)) (h8 : (V = midpoint ℝ U W)), (TrianglesCongruent V W Y U V X)"
+        },
+        "2": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (R S T U V W : Point) (RV SV TW RT : Line), formTriangle W R T RV RT TW ∧ formTriangle V S R SV RT RV ∧ twoLinesIntersectAtPoint TW SV U ∧ between R S T ∧ between R W V ∧ ∠ R:T:W = ∠ R:V:S ∧ |(S─V)| = |(T─W)| → (△ R:T:W).congruent (△ R:V:S)",
+          "prediction": "∀ (R S T U V W : Point) (h1 : (AffineIndependent ℝ ![T, W, R])) (h2 : (AffineIndependent ℝ ![V, S, R])) (h3 : (CollinearPoints U T W)) (h4 : (CollinearPoints U V S)) (h5 : (CollinearPoints S V S)) (h6 : (CollinearPoints S R T)) (h7 : (CollinearPoints W T W)) (h8 : (CollinearPoints W V R)) (h9 : (angle V R S = angle T R W)) (h10 : (dist S V = dist T W)), (TrianglesCongruent R T W R V S)"
+        },
+        "3": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (S T U V W : Point) (TU SV TV SU : Line), formTriangle S V W SV TV SU ∧ formTriangle U T W TU TV SU ∧ between U W S ∧ between T W V ∧ ¬ TU.intersectsLine SV ∧ |(T─U)| = |(S─V)| → (△ S:V:W).congruent (△ U:T:W)",
+          "prediction": "∀ (S T U V W : Point) (h1 : (AffineIndependent ℝ ![T, W, U])) (h2 : (AffineIndependent ℝ ![S, V, W])) (h3 : (dist T U = dist S V)) (h4 : (VecParallel (U -ᵥ T) (V -ᵥ S))), (TrianglesCongruent S V W U T W)"
+        },
+        "4": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (P Q R S : Point) (PQ QR RS PS PR: Line), formTriangle R P S PR PS RS ∧ formTriangle P Q R PQ QR PR ∧ S.opposingSides Q PR ∧ ∠ S:P:R = ∠ Q:P:R ∧ ∠ P:R:S = ∠ P:R:Q → (△ P:R:S).congruent (△ P:R:Q)",
+          "prediction": "∀ (P Q R S : Point) (h1 : (AffineIndependent ℝ ![S, R, P])) (h2 : (AffineIndependent ℝ ![Q, R, P])) (h3 : (P ≠ R)) (h4 : (CollinearPoints R P R ∧ ∃ (p : Point), CollinearPoints p P R ∧ p ≠ R ∧ angle Q R p = angle p R S)) (h5 : (CollinearPoints P P R ∧ ∃ (p : Point), CollinearPoints p P R ∧ p ≠ P ∧ angle Q P p = angle p P S)), (TrianglesCongruent P R S P R Q)"
+        },
+        "5": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (S T U V : Point) (ST TU UV SV SU : Line), formTriangle S U V SU UV SV ∧ formTriangle S T U ST TU SU ∧ T.opposingSides V SU ∧ |(S─T)| = |(U─V)| ∧ ¬ UV.intersectsLine ST → |(S─V)| = |(T─U)|",
+          "prediction": "∀ (S T U V : Point) (h1 : (AffineIndependent ℝ ![T, S, U])) (h2 : (AffineIndependent ℝ ![V, U, S])) (h3 : (U ≠ S)) (h4 : (S ≠ T)) (h5 : (U ≠ V)) (h6 : (dist S T = dist U V)) (h7 : (VecParallel (V -ᵥ U) (T -ᵥ S))), (dist S V = dist T U)"
+        }
+      }
+    },
+    "Similarity": {
+      "total": 5,
+      "correct": 0,
+      "details": {
+        "1": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (I F J H G : Point) (FI FH GI GH : Line), formTriangle F I J FI FH FH ∧ formTriangle G H J GH FH GI ∧ between I J G ∧ between H J F ∧ |(G─J)|/|(I─J)|= |(H─J)|/|(F─J)|→ (△ G:H:J).similar (△ I:F:J)",
+          "prediction": "∀ (F G H I J : Point) (h1 : (AffineIndependent ℝ ![H, J, G])) (h2 : (AffineIndependent ℝ ![I, F, J])) (h3 : (((dist G J) / (dist I J)) = ((dist H J) / (dist F J)))), ((angle G H J = angle I F J) ∧ (angle H J G = angle F J I) ∧ (angle J G H = angle J I F))"
+        },
+        "2": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (F G H I J: Point) (FI GH FG HI : Line), formTriangle F G J FG GH FI ∧ formTriangle H J I GH FI HI ∧ between H J G ∧ between I J F ∧ ∠ F:G:J = ∠ H:I:J → (△ F:G:J).similar (△ H:I:J)",
+          "prediction": "∀ (F G H I J : Point) (h1 : (AffineIndependent ℝ ![F, G, J])) (h2 : (AffineIndependent ℝ ![H, I, J])) (h3 : (angle F G J = angle H I J)), ((angle F G J = angle H I J) ∧ (angle G J F = angle I J H) ∧ (angle J F G = angle J H I))"
+        },
+        "3": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (I J G H F : Point) (GJ HI FG FJ : Line), formTriangle I H F HI GF FJ ∧ formTriangle J G F GJ FG FJ ∧ between J I F ∧ between G H F ∧ |(F─I)|/|(F─J)|= |(H─F)|/|(F─G)| → (△ F:H:I).similar (△ F:G:J)",
+          "prediction": "∀ (F G H I J : Point) (h1 : (AffineIndependent ℝ ![J, G, F])) (h2 : (AffineIndependent ℝ ![I, H, F])) (h3 : (I ≠ H)) (h4 : (CollinearPoints I I H)) (h5 : (CollinearPoints I J F)) (h6 : (CollinearPoints H I H)) (h7 : (CollinearPoints H F G)) (h8 : (((dist F I) / (dist F J)) = ((dist F H) / (dist F G)))), ((angle F H I = angle F G J) ∧ (angle H I F = angle G J F) ∧ (angle I F H = angle J F G))"
+        },
+        "4": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (U V W X Y : Point) (UX VW VX UW : Line), formTriangle X Y V UX VW VX ∧ formTriangle W Y U VW UX UW ∧ between X Y U ∧ between W Y V ∧ ∠ Y:X:V = ∠ W:U:Y → (△ U:W:Y).similar (△ X:V:Y)",
+          "prediction": "∀ (U V W X Y : Point) (h1 : (AffineIndependent ℝ ![X, Y, V])) (h2 : (AffineIndependent ℝ ![W, Y, U])) (h3 : (angle W U Y = angle X V Y)), ((angle U W Y = angle X V Y) ∧ (angle W Y U = angle V Y X) ∧ (angle Y U W = angle Y X V))"
+        },
+        "5": {
+          "status": "not_equiv",
+          "ground_truth": "∀ (U T R S : Point) (TU SU RU RS : Line), formTriangle U T S TU RS SU ∧ formTriangle U R S RU RS SU ∧ between R T S ∧ ∠ R:U:S = ∟ ∧ ∠ U:T:S = ∟ ∧ ∠ U:T:R = ∟ → (△ S:T:U).similar (△ U:T:R)",
+          "prediction": "∀ (R S T U : Point) (h1 : (AffineIndependent ℝ ![U, R, S])) (h2 : (U ≠ T)) (h3 : (R ≠ S)) (h4 : (CollinearPoints T U T)) (h5 : (CollinearPoints T R S)) (h6 : (@inner ℝ Vec _ (U -ᵥ R) (U -ᵥ S) = 0)) (h7 : (@inner ℝ Vec _ (U -ᵥ T) (S -ᵥ R) = 0)), ((angle S T U = angle U T R) ∧ (angle T U S = angle T R U) ∧ (angle U S T = angle R U T))"
+        }
+      }
+    }
+  }
+}

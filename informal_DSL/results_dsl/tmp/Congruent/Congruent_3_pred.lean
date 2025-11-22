@@ -1,0 +1,1 @@
+∀ (S T U V W : Point) (h1 : (AffineIndependent ℝ ![T, W, U])) (h2 : (AffineIndependent ℝ ![S, V, W])) (h3 : (dist T U = dist S V)) (h4 : (VecParallel (U -ᵥ T) (V -ᵥ S))), (TrianglesCongruent S V W U T W)

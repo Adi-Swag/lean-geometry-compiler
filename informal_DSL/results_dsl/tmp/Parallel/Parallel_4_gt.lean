@@ -1,0 +1,1 @@
+∀ (S T U V W : Point) (SV TU SU TV : Line), distinctPointsOnLine S V SV ∧ distinctPointsOnLine T U TU ∧ distinctPointsOnLine S U SU ∧ distinctPointsOnLine T V TV ∧ twoLinesIntersectAtPoint SU TV W ∧ between S W U ∧ between T W V ∧ ∠ U:T:W = ∠ W:S:V ∧ ¬ SV.intersectsLine TU → ∠ T:U:W = ∠ W:V:S
