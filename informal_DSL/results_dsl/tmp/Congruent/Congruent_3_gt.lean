@@ -1,0 +1,1 @@
+∀ (S T U V W : Point) (TU SV TV SU : Line), formTriangle S V W SV TV SU ∧ formTriangle U T W TU TV SU ∧ between U W S ∧ between T W V ∧ ¬ TU.intersectsLine SV ∧ |(T─U)| = |(S─V)| → (△ S:V:W).congruent (△ U:T:W)

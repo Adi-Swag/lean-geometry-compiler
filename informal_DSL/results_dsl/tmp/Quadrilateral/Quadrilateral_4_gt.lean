@@ -1,0 +1,1 @@
+∀ (S T U V R : Point) (ST TU RU RS RT SU : Line), formQuadrilateral S T R U ST RU RS TU ∧ distinctPointsOnLine T R RT ∧ distinctPointsOnLine S U SU ∧ twoLinesIntersectAtPoint RT SU V ∧ ¬ RU.intersectsLine ST ∧ |(R─T)|=|(S─U)| ∧ ¬ TU.intersectsLine RS → ∠ R:S:T =∟

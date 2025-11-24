@@ -1,0 +1,1 @@
+∀ (P Q R S : Point) (PQ QR RS PS PR: Line), formTriangle R P S PR PS RS ∧ formTriangle P Q R PQ QR PR ∧ S.opposingSides Q PR ∧ ∠ S:P:R = ∠ Q:P:R ∧ ∠ P:R:S = ∠ P:R:Q → (△ P:R:S).congruent (△ P:R:Q)

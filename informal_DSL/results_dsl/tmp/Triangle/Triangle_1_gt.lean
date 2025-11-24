@@ -1,0 +1,1 @@
+∀ (U X V W : Point) (UV UX UW VW : Line), formTriangle U V W UV VW UW ∧ distinctPointsOnLine U X UX ∧ UX.intersectsLine VW ∧ X.onLine VW ∧ between V X W ∧ ∠ W:U:X = ∠ V:U:X ∧ ∠ U:X:V = ∟ ∧ ∠ U:X:W = ∟ → |(W─X)| = |(V─X)|

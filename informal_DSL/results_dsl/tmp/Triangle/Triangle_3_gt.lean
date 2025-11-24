@@ -1,0 +1,1 @@
+∀ (R S P Q : Point) (QR PR PQ PS : Line), formTriangle R Q P QR PQ PR ∧ distinctPointsOnLine P S PS ∧ PS.intersectsLine QR ∧ S.onLine QR ∧ between R S Q ∧ |(P─Q)| = |(P─R)| ∧ ∠ R:P:S = ∠ S:P:Q → |(Q─S)| = |(R─S)|

@@ -1,0 +1,1 @@
+∀ (V W X Y : Point) (VW WX XY VY VX : Line), formQuadrilateral V W Y X VX XY VY WX ∧ distinctPointsOnLine V X VX ∧ ∠ V:W:X=∟ ∧ ∠ V:Y:X = ∟ ∧ ∠ X:V:Y = ∠ V:X:W → |(X─Y)| = |(V─W)|

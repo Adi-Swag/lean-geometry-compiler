@@ -1,0 +1,1 @@
+∀ (T S W R V U : Point) (ST SW TW RV RU UV : Line), formTriangle S T W ST TW SW ∧ formTriangle R U V RU UV RV ∧ ∠ T:S:W = ∠ V:R:U ∧ |(S─W)| / |(R─V)| = |(S─T)| / |(R─U)| → ∠ S:W:T = ∠ R:V:U

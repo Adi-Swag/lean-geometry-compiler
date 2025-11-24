@@ -1,0 +1,1 @@
+∀ (F H I G : Point) (HF GH FG FI : Line), formTriangle F H G HF GH FG ∧ distinctPointsOnLine F I FI ∧ FI.intersectsLine GH ∧ I.onLine GH ∧ between H I G ∧ ∠ F:I:G = ∟ ∧ ∠F:I:H=∟ ∧ |(G─I)| = |(I─H)| → ∠ F:H:I = ∠ F:G:I

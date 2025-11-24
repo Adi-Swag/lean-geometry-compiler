@@ -1,0 +1,1 @@
+∀ (T U V W : Point) (TU UV VW TW TV : Line), formQuadrilateral T U W V TU VW TW UV ∧ distinctPointsOnLine T V TV ∧ ∠ U:T:V = ∠ T:V:W ∧∠ V:T:W = ∠ T:V:U → |(T─W)| = |(U─V)|

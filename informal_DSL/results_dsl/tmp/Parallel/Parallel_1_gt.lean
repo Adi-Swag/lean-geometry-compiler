@@ -1,0 +1,1 @@
+∀ (S T U V W X Y Z : Point) (TV WY SZ : Line), distinctPointsOnLine T V TV ∧ distinctPointsOnLine W Y WY ∧ distinctPointsOnLine S Z SZ ∧ twoLinesIntersectAtPoint TV SZ U ∧ between T U V ∧ between S U X ∧ twoLinesIntersectAtPoint WY SZ X ∧ between W X Y ∧ between U X Z ∧ T.sameSide W SZ ∧ V.sameSide Y SZ ∧ ∠ U:X:W + ∠ T:U:X = ∟ + ∟ → ¬ WY.intersectsLine TV

@@ -1,0 +1,1 @@
+∀ (U T R S : Point) (TU SU RU RS : Line), formTriangle U T S TU RS SU ∧ formTriangle U R S RU RS SU ∧ between R T S ∧ ∠ R:U:S = ∟ ∧ ∠ U:T:S = ∟ ∧ ∠ U:T:R = ∟ → (△ S:T:U).similar (△ U:T:R)

@@ -1,0 +1,1 @@
+∀ (I F J H G : Point) (FI FH GI GH : Line), formTriangle F I J FI FH FH ∧ formTriangle G H J GH FH GI ∧ between I J G ∧ between H J F ∧ |(G─J)|/|(I─J)|= |(H─J)|/|(F─J)|→ (△ G:H:J).similar (△ I:F:J)
