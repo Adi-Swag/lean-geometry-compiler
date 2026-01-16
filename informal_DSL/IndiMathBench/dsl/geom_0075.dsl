@@ -1,0 +1,7 @@
+Point(A)
+Point(B)
+Point(C)
+Triangle(A,B,C)
+Point(P)
+Inside(Point(P), Triangle(A,B,C))
+Find(NumberOfGoodPoints(Triangle(A,B,C)))

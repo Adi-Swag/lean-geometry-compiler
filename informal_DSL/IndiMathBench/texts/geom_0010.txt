@@ -1,0 +1,1 @@
+Let \( ABCD \) be a quadrilateral in which \( AB \) is parallel to \( CD \) and perpendicular to \( AD \); \( AB = 3CD \); and the area of the quadrilateral is 4. If a circle can be drawn touching all the sides of the quadrilateral, find its radius.

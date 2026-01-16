@@ -1,0 +1,1 @@
+The internal bisector of angle A in triangle ABC with AC > AB, meets the circumcircle Γ of the triangle in D. Join D to the centre O of the circle Γ and suppose DO meets AC in E, possibly when extended. Given that BE is perpendicular to AD, show that AO is parallel to BD.

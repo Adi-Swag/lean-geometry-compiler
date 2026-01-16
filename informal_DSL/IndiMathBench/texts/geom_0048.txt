@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle with centroid \( G \). Let the circumcircles of \( \triangle AGB \) and \( \triangle AGC \) intersect the line \( BC \) in \( X \) and \( Y \) respectively, which are distinct from \( B, C \). Prove that \( G \) is the centroid of \(\triangle AXY\).

@@ -1,0 +1,1 @@
+Let ABC be a triangle. Let X be on the segment BC such that AB = AX. Let AX meet the circumcircle Γ of triangle ABX again at D. Show that the circumcentre of ΔBDX lies on Γ.

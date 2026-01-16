@@ -1,0 +1,1 @@
+Let ABC be a triangle, I its in-centre; A1, B1, C1 be the reflections of I in BC, CA, AB respectively. Suppose the circum-circle of triangle A1B1C1 passes through A. Prove that B1, C1, I, I1 are concyclic, where I1 is the in-centre of triangle A1B1C1.

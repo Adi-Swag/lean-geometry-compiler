@@ -1,0 +1,1 @@
+In a triangle \( ABC \), points \( D \) and \( E \) are on segments \( BC \) and \( AC \) such that \( BD = 3DC \) and \( AE = 4EC \). Point \( P \) is on line \( ED \) such that \( D \) is the midpoint of segment \( EP \). Lines \( AP \) and \( BC \) intersect at point \( S \). Find the ratio \( BS/SD \).

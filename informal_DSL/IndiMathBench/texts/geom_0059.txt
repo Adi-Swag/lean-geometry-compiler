@@ -1,0 +1,1 @@
+Consider a convex quadrilateral ABCD, in which K, L, M, N are the midpoints of the sides AB, BC, CD, DA respectively. Suppose (a) BD bisects KM at Q; (b) QA = QB = QC = QD; and (c) LK/LM = CD/CB. Prove that ABCD is a square.

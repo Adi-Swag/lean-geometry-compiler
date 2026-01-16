@@ -1,0 +1,1 @@
+Let \( ABC \) be a right-angled triangle with \( \angle B = 90^\circ \). Let \( BD \) be the altitude from \( B \) on to \( AC \). Let \( P, Q \) and \( I \) be the incentres of triangles \( ABD, CBD \) and \( ABC \) respectively. Show that the circumcentre of the triangle \( PIQ \) lies on the hypotenuse \( AC \).

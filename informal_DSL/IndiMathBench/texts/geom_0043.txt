@@ -1,0 +1,1 @@
+Let ABC be a triangle with circumcircle Γ and incentre I. Let the internal angle bisectors of ∠A, ∠B and ∠C meet Γ in A', B' and C' respectively. Let B'C' intersect AA' in P and AC in Q, and let BB' intersect AC in R. Suppose the quadrilateral PIRQ is a kite; that is, IP = IR and QP = QR. Prove that ABC is an equilateral triangle.

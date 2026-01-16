@@ -1,0 +1,6 @@
+Point(A1)
+Point(A2)
+Point(An)
+DistanceBetween(Point(Ai), Point(Aj))
+Calculate(Floor(Log2(DistanceBetween(Point(Ai), Point(Aj)))))
+Prove(LessThan(Count(DistinctValues), Mul(2, n)))

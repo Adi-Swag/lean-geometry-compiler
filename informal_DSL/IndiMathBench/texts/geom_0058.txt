@@ -1,0 +1,5 @@
+Let ABC be a triangle with sides a, b, c. Consider a triangle A1B1C1 with sides equal to \( a + \frac{b}{2}, b + \frac{c}{2}, c + \frac{a}{2} \). Show that
+
+\[ [A_1B_1C_1] \geq \frac{9}{4}[ABC], \]
+
+where [XY Z] denotes the area of the triangle XY Z.

@@ -1,0 +1,1 @@
+In an acute triangle ABC, O is the circumcenter, H is the orthocenter and G is the centroid. Let OD be perpendicular to BC and HE be perpendicular to CA, with D on BC and E on CA. Let F be the midpoint of AB. Suppose the areas of triangles ODC, HEA and GFB are equal. Find all the possible values of Ĉ.

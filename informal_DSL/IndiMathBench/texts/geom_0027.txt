@@ -1,0 +1,1 @@
+Let Γ be a circle with centre O. Let Λ be another circle passing through O and intersecting Γ at points A and B. A diameter CD of Γ intersects Λ at a point P different from O. Prove that ∠APC = ∠BPD.

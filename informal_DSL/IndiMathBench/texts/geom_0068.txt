@@ -1,0 +1,1 @@
+All the points in the plane are coloured using three colours. Prove that there exists a triangle with vertices having the same colour such that either it is isosceles or its angles are in geometric progression.

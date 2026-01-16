@@ -1,0 +1,5 @@
+Point(O)
+Circle(O)
+Regular(Polygon(P))
+Blue(Shape(P))
+Prove(Inside(Point(O), Shape(P)))

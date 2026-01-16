@@ -1,0 +1,1 @@
+In a convex quadrilateral ABCD, ∠ABD = 30°, ∠BCA = 75°, ∠ACD = 25° and CD = CB. Extend CB to meet the circumcircle of triangle DAC at E. Prove that CE = BD.

@@ -1,0 +1,5 @@
+Let ABCD be a quadrilateral; x and y be the midpoints of AC and BD respectively and the lines through X and Y respectively parallel to BD, AC meet in O. Let P, Q, R, S be the midpoints of AB, BC, CD, DA respectively. Prove that
+
+(a) quadrilaterals APOS and APXS have the same area;
+
+(b) the areas of the quadrilateral APOS, BQOP, CROQ, DSOR are all equal.

@@ -1,0 +1,1 @@
+All the points with integer coordinates in the xy-plane are coloured using three colours, red, blue and green, each colour being used at least once. It is known that the point (0, 0) is coloured red and the point (0, 1) is coloured blue. Prove that there exist three points with integer coordinates of distinct colours which form the vertices of a right-angled triangle.

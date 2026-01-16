@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle and \( D \) be the mid-point of side \( BC \). Suppose \( \angle DAB = \angle BCA \) and \( \angle DAC = 15^\circ \). Show that \( \angle LADC \) is obtuse. Further, if \( O \) is the circumcentre of \( ADC \), prove that triangle \( AOD \) is equilateral.

@@ -1,0 +1,8 @@
+Point(A)
+Point(B)
+Point(C)
+Triangle(A,B,C)
+RightAngle(Angle(A,B,C))
+IsIncenterOf(Point(I), Triangle(A,B,C))
+RadiusOf(Circle(I,1))
+Find(Minimum(AreaOf(Triangle(A,B,C))))

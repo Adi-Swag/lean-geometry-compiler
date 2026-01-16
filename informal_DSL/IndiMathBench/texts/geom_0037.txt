@@ -1,0 +1,1 @@
+Let \( ABC \) be an acute-angled triangle and let \( I \) be its incentre. Let the incircle of triangle \( ABC \) touch \( BC \) in \( D \). The incircle of the triangle \( ABD \) touches \( AB \) in \( E \); the incircle of the triangle \( ACD \) touches \( BC \) in \( F \). Prove that \( B, E, I, F \) are concyclic.

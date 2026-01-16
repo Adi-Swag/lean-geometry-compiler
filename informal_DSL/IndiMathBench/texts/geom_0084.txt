@@ -1,0 +1,1 @@
+Suppose 2016 points of the circumference of a circle are coloured red and the remaining points are coloured blue. Given any natural number n ≥ 3, prove that there is a regular n-sided polygon all of whose vertices are blue.

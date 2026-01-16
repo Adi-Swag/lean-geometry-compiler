@@ -1,0 +1,1 @@
+In the given figure, ABCD is a square paper. It is folded along EF such that A goes to a point A' ≠ C, B on the side BC and D goes to D'. The line A'D' cuts CD in G. Show that the inradius of the triangle GCA' is the sum of the inradii of the triangles GD'F and A'BE.

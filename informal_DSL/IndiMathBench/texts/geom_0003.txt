@@ -1,0 +1,1 @@
+In a triangle ABC, D is a point on BC such that AD is the internal bisector of ∠A. Suppose ∠B = 2∠C and CD = AB. Prove that ∠A = 72°.

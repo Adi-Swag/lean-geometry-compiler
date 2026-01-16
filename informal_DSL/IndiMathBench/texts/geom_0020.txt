@@ -1,0 +1,1 @@
+Let ABC be a triangle with ∠A = 90° and AB = AC. Let D and E be points on the segment BC such that BD : DE : EC = 3 : 5 : 4. Prove that ∠DAE = 45°.

@@ -1,0 +1,1 @@
+Let ABC be a triangle; ΓA, ΓB, ΓC be three equal, disjoint circles inside ABC such that ΓA touches AB and AC; ΓB touches AB; and BC, and ΓC touches BC and CA. Let Γ be a circle touching circles ΓA, ΓB, ΓC externally. Prove that the line joining the circum-centre O and the in-centre I of triangle ABC passes through the centre of Γ.

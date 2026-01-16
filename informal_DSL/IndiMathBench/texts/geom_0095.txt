@@ -1,0 +1,1 @@
+Euler marks n different points in the Euclidean plane. For each pair of marked points, Gauss writes down the number ⌊log2 d⌋ where d is the distance between the two points. Prove that Gauss writes down less than 2n distinct values.

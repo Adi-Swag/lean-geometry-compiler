@@ -1,0 +1,1 @@
+In a triangle ABC, let H denote its orthocentre. Let P be the reflection of A with respect to BC. The circumcircle of triangle ABP intersects the line BH again at Q, and the circumcircle of triangle ACP intersects the line CH again at R. Prove that H is the incenter of triangle PQR.

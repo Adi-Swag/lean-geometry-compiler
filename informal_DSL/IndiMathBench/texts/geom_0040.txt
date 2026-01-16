@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle. Let \( B' \) and \( C' \) denote respectively the reflection of \( B \) and \( C \) in the internal angle bisector of \( \angle A \). Show that the triangles \( ABC \) and \( AB'C' \) have the same incentre.

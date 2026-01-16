@@ -1,0 +1,1 @@
+Let \( ABCD \) be a quadrilateral inscribed in a circle. Suppose \( AB = \sqrt{2} + \sqrt{2} \) and \( AB \) subtends \( 135^\circ \) at the centre of the circle. Find the maximum possible area of \( ABCD \).

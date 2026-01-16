@@ -1,0 +1,6 @@
+For a convex hexagon ABCDEF in which each pair of opposite sides is unequal, consider the following six statements:
+(a1) AB is parallel to DE; (a2) AE = BD;
+(b1) BC is parallel to EF; (b2) BF = CE;
+(c1) CD is parallel to FA; (c2) CA = DF.
+(a) Show that if all the six statements are true, then the hexagon is cyclic (i.e., it can be inscribed in a circle).
+(b) Prove that, in fact, any five of these six statements also imply that the hexagon is cyclic.

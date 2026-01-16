@@ -1,0 +1,8 @@
+Point(A)
+Point(B)
+Point(C)
+Triangle(A,B,C)
+Isosceles(Triangle(A,B,C))
+IsOrthocenterOf(Point(H), Triangle(A,B,C))
+InscribedIn(Circle(I), Triangle(A,B,C))
+Find(RatioOf(LengthOf(Line(A,B)), LengthOf(Line(B,C))))

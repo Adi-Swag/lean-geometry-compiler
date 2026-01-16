@@ -29,6 +29,7 @@ from parser import AstNode, PredicateNode, SymbolNode, NumberNode
 # -----------------------------------------------------------------------------
 # Small utilities
 # -----------------------------------------------------------------------------
+AUTO_RADII = []
 
 def _num(x: NumberNode) -> str:
     v = x.value
@@ -1069,9 +1070,15 @@ def _rewrite_toplevel_object_stmt(h: PredicateNode) -> Optional[str]:
         return f"(AffineIndependent ℝ ![{A}, {B}, {C}])"
 
     if pname == "Circle":
-        _expect_arity("Circle", args, 2)
-        _O, r = generate_lean_expr(args[0]), generate_lean_expr(args[1])
-        return f"({r} > 0)"
+        if len(args) == 2:
+            _O, r = generate_lean_expr(args[0]), generate_lean_expr(args[1])
+            return f"({r} > 0)"
+
+        if len(args) == 1:
+            r = f"_r{len(AUTO_RADII)}"
+            AUTO_RADII.append(r)
+            return f"({r} > 0)"
+        raise ValueError(f"Circle needs 1 or 2 args, got {len(args)}")
 
     if pname == "Ray":
         _expect_arity("Ray", args, 2)
@@ -1095,7 +1102,7 @@ def _rewrite_toplevel_object_stmt(h: PredicateNode) -> Optional[str]:
 
 def generate_lean_code(ast: AstNode, theorem_name: str = "autoformalized") -> str:
     theorem_name = _sanitize_lean_ident(theorem_name)
-
+    AUTO_RADII.clear()
     # normalize root
     if not isinstance(ast, PredicateNode) or ast.name.name != "list":
         if isinstance(ast, PredicateNode):
@@ -1209,6 +1216,8 @@ def generate_lean_code(ast: AstNode, theorem_name: str = "autoformalized") -> st
     head_params: List[str] = []
     if pts:
         head_params.append(f"({ ' '.join(sorted(pts)) } : Point)")
+    if AUTO_RADII:
+        head_params.append(f"({' '.join(AUTO_RADII)} : ℝ)")
 
     # then any symbol-mode shapes we detected
     order = ["Line","Segment","Ray","Angle","Triangle","Polygon","Circle",

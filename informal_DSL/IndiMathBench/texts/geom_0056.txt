@@ -1,0 +1,1 @@
+Do there exist 100 lines in the plane, no three of them concurrent, such that they intersect exactly in 2002 points?

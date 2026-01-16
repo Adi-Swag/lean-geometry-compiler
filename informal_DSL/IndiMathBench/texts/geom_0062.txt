@@ -1,0 +1,3 @@
+In a cyclic quadrilateral \(ABCD\), \(AB = a, BC = b, CD = c\), \(\angle ABC = 120^\circ\), and \(\angle ABD = 30^\circ\). Prove that
+(i) \(c \geq a + b\);
+(ii) \(|\sqrt{c + a} - \sqrt{c + b}| = \sqrt{c - a - b}\).

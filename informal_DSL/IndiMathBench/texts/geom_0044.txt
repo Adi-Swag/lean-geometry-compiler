@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle. Let \( B' \) denote the reflection of \( B \) in the internal angle bisector \(\ell\) of \(\angle A\). Show that the circumcentre of the triangle \( CB'I \) lies on the line \(\ell\), where \( I \) is the incentre of \( ABC \).

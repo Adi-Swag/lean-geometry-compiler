@@ -1,0 +1,1 @@
+Let ABCDE be a convex pentagon in which ∠A = ∠B = ∠C = ∠D = ∠E = 120° and whose side lengths are 5 consecutive integers in some order. Find all possible values of AB + BC + CD.
