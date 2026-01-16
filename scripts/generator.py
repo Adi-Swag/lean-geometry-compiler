@@ -1107,7 +1107,7 @@ def generate_lean_code(ast: AstNode, theorem_name: str = "autoformalized") -> st
     pts: Set[str] = set()
     shapes: Dict[str, Set[str]] = {}
     raw_hyps: List[PredicateNode] = []
-    goal: Optional[str] = None
+    goals: List[dict] = []
 
     # pass 1: collect + split
     for st in statements:
@@ -1118,18 +1118,22 @@ def generate_lean_code(ast: AstNode, theorem_name: str = "autoformalized") -> st
 
         pname = st.name.name
         if pname == "Find":
-            if goal is not None: raise ValueError("Multiple Goals (Find/Prove) found.")
             _expect_arity("Find", st.args, 1)
             gexpr = generate_lean_expr(st.args[0])
-            goal = f"∃ (val : ℝ), {gexpr} = val"
+            goals.append({
+                "kind": "Find",
+                "expr": f"∃ (val : ℝ), {gexpr} = val"
+            })
         elif pname == "Prove":
-            if goal is not None: raise ValueError("Multiple Goals (Find/Prove) found.")
             _expect_arity("Prove", st.args, 1)
-            goal = generate_lean_expr(st.args[0])
+            goals.append({
+                "kind": "Prove",
+                "expr": generate_lean_expr(st.args[0])
+            })
         elif pname != "UseTheorem":
             raw_hyps.append(st)
 
-    if goal is None:
+    if not goals:
         raise ValueError("No Goal (Find/Prove) found in DSL input.")
 
     # --- Pass 2: render hypotheses ---
@@ -1234,7 +1238,7 @@ open EuclideanGeometry
 
 theorem {theorem_name} {' '.join(head_params)}
 {chr(10).join(hyp_lines)}
-  : {goal} := by
+  : {goals} := by
   sorry
 """.strip("\n")
 
