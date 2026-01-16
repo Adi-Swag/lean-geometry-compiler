@@ -1,0 +1,1 @@
+Let \(ABC\) be a triangle with \(AB > AC\). Let \(P\) be a point on the line \(AB\) beyond \(A\) such that \(AP + PC = AB\). Let \(M\) be the mid-point of \(BC\) and let \(Q\) be the point on the side \(AB\) such that \(CQ \perp AM\). Prove that \(BQ = 2AP\).

@@ -1,0 +1,1 @@
+In an acute triangle ABC, points D, E, F are located on the sides BC, CA, AB respectively such that CD/CE = CA/CB, AE/AF = AB/AC, BF/BD = BC/BA. Prove that AD, BE, CF are the altitudes of ABC.

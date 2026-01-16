@@ -1,0 +1,1 @@
+Let ABC be a triangle. Let D, E be a points on the segment BC such that BD = DE = EC. Let F be the mid-point of AC. Let BF intersect AD in P and AE in Q respectively. Determine BP/PQ.

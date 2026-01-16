@@ -1,0 +1,1 @@
+Two circles \(\Gamma\) and \(\Sigma\) intersect at two distinct points \( A \) and \( B \). A line through \( B \) intersects \(\Gamma\) and \(\Sigma\) again at \( C \) and \( D \), respectively. Suppose that \( CA = CD \). Show that the centre of \(\Sigma\) lies on \(\Gamma\).

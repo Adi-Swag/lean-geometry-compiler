@@ -1,0 +1,1 @@
+Positive integers are written on all the faces of a cube, one on each. At each corner (vertex) of the cube, the product of the numbers on the faces that meet at the corner is written. The sum of the numbers written at all the corners is 2004. If T denotes the sum of the numbers on all the faces, find all the possible values of T.

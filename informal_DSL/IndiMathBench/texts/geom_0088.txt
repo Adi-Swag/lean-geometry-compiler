@@ -1,0 +1,1 @@
+Let ABC be a non-equilateral triangle with integer sides. Let D and E be respectively the mid-points BC and CA; let G be the centroid of triangle ABC. Suppose D, C, E, G are concyclic. Find the least possible perimeter of triangle ABC.

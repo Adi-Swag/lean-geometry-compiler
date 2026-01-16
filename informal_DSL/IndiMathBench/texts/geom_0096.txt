@@ -1,0 +1,1 @@
+In triangle \(ABC\) with \(CA = CB\), point \(E\) lies on the circumcircle of \(ABC\) such that \(\angle ECB = 90^\circ\). The line through \(E\) parallel to \(CB\) intersects \(CA\) in \(F\) and \(AB\) in \(G\). Prove that the centre of the circumcircle of triangle \(EGB\) lies on the circumcircle of triangle \(ECF\).

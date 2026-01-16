@@ -1,0 +1,1 @@
+Let M be the midpoint of side BC of a triangle ABC. Let the median AM intersect the incircle of ABC at K and L, K being nearer to A than L. If AK=KL=LM, prove that the sides of triangle ABC are in the ratio 5 : 10 : 13 in some order.

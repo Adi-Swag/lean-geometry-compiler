@@ -1,0 +1,1 @@
+Find the number of all integer-sided isosceles obtuse-angled triangles with perimeter 2008.

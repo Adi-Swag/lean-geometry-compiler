@@ -1,0 +1,1 @@
+In a convex quadrilateral PQRS, PQ = RS, (√3 + 1)QR = SP and ∠RSP - ∠SPQ = 30°. Prove that ∠PQR - ∠QRS = 90°.

@@ -1,0 +1,4 @@
+Let \( ABCD \) be a convex quadrilateral. Let the diagonals \( AC \) and \( BD \) intersect in \( P \). Let \( PE, PF, PG \) and \( PH \) be the altitudes from \( P \) on to the sides \( AB, BC, CD \) and \( DA \) respectively. Show that \( ABCD \) has an incircle if and only if 
+\[
+\frac{1}{PE} + \frac{1}{PG} = \frac{1}{PF} + \frac{1}{PH}.
+\]

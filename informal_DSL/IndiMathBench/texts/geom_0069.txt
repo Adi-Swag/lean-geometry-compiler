@@ -1,0 +1,1 @@
+Let \( ABC \) be an acute-angled triangle and let \( H \) be its ortho-centre. Let \( h_{\text{max}} \) denote the largest altitude of the triangle \( ABC \). Prove that \[ AH + BH + CH \le 2h_{\text{max}}. \]

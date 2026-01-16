@@ -1,0 +1,1 @@
+Let D, E, F be the points of contact of the incircle of an acute-angled triangle ABC with BC, CA, AB respectively. Let I₁, I₂, I₃ be the incentres of the triangles AFE, BDF, CED, respectively. Prove that the lines I₁D, I₂E, I₃F are concurrent.

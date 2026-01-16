@@ -1,0 +1,1 @@
+Let Γ_1 and Γ_2 be two circles with respective centres O_1 and O_2 intersecting in two distinct points A and B such that ∠O_1AO_2 is an obtuse angle. Let the circumcircle of triangle O_1AO_2 intersect Γ_1 and Γ_2 respectively in points C and D. Let the line CB intersect Γ_2 in E; let the line DB intersect Γ_1 in F. Prove that the points C, D, E, F are concyclic.

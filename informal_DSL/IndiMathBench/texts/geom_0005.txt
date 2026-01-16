@@ -1,0 +1,1 @@
+Let ABC be a triangle in which AB = AC and ∠CAB = 90°. Suppose M and N are points on the hypotenuse BC such that BM² + CN² = MN². Prove that ∠MAN = 45°.

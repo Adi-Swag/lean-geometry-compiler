@@ -1,0 +1,1 @@
+Suppose that the vertices of a regular polygon of 20 sides are coloured with three colours – red, blue and green – such that there are exactly three red vertices. Prove that there are three vertices A, B, C of the polygon having the same colour such that triangle ABC is isosceles.

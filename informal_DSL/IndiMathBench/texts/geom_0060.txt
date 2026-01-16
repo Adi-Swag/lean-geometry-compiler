@@ -1,0 +1,1 @@
+Let R denote the circumradius of a triangle ABC; a, b, c its sides BC, CA, AB; and ra, rb, rc its exradii opposite A, B, C. If 2R ≤ ra, prove that (i) a > b and a > c; (ii) 2R > rb and 2R > rc.

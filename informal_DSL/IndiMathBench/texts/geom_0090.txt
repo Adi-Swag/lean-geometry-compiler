@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle with \( \angle BAC > 90^\circ \). Let \( D \) be a point on the segment \( BC \) and \( E \) be a point on the line \( AD \) such that \( AB \) is tangent to the circumcircle of triangle \( ACD \) at \( A \) and \( BE \) is perpendicular to \( AD \). Given that \( CA = CD \) and \( AE = CE \), determine \( \angle BCA \) in degrees.

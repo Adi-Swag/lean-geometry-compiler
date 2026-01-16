@@ -1,0 +1,1 @@
+Let ABC be a right-angled triangle with ∠B = 90° and let BD be the altitude from B on to AC. Draw DE ⊥ AB and DF ⊥ BC. Let P, Q, R and S be respectively the incentres of triangle DFC, DBF, DEB and DAE. Suppose S, R, Q are collinear. Prove that P, Q, R, D lie on a circle.

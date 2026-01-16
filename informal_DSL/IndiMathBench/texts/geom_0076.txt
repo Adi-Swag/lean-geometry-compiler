@@ -1,0 +1,1 @@
+Let \( ABC \) be an acute-angled triangle, and let \( D, E, F \) be points on \( BC, CA, AB \) respectively such that \( AD \) is the median, \( BE \) is the internal angle bisector and \( CF \) is the altitude. Suppose \(\angle FDE = \angle LC, \angle DEF = \angle LA \) and \(\angle EFD = \angle LB\). Prove that \( ABC \) is equilateral.

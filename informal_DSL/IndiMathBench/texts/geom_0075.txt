@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle. An interior point \( P \) of \( ABC \) is said to be good if we can find exactly 27 rays emanating from \( P \) intersecting the sides of the triangle \( ABC \) such that the triangle is divided by these rays into 27 smaller triangles of equal area. Determine the number of good points for a given triangle \( ABC \).

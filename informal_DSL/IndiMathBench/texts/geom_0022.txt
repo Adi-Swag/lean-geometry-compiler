@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle with \( \angle A = 90^\circ \) and \( AB = AC \). Let \( D \) and \( E \) be points on the segment \( BC \) such that \( BD : DE : EC = 1 : 2 : \sqrt{3} \). Prove that \( \angle DAE = 45^\circ \).

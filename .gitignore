@@ -2,4 +2,6 @@
 build/
 *.olean
 *.log
-
+__pycache__/
+*.pyc
+informal_DSL/SGR/__pycache__/

@@ -1,0 +1,1 @@
+Let ABCD be a convex quadrilateral; P, Q, R, S be the midpoints of AB, BC, CD, DA respectively such that triangles AQR and CSP are equilateral. Prove that ABCD is a rhombus. Determine its angles.

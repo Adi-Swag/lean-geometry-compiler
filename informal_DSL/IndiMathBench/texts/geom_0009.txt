@@ -1,0 +1,1 @@
+In triangle ABC, let D be the midpoint of BC. If ∠ADB = 45° and ∠ACD = 30°, determine ∠BAD.

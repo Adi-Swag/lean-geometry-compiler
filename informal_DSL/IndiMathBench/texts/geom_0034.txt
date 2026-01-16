@@ -1,0 +1,1 @@
+Let ABC be an acute-angled triangle and suppose ∠ABC is the largest angle of the triangle. Let R be its circumcentre. Suppose the circumcircle of triangle ARB cuts AC again in X. Prove that RX is perpendicular to BC.

@@ -1,0 +1,1 @@
+In an acute-angled triangle ABC, a point D lies on the segment BC. Let O1, O2 denote the circumcentres of triangles ABD and ACD, respectively. Prove that the line joining the circumcentre of triangle ABC and the orthocentre of triangle O1O2D is parallel to BC.

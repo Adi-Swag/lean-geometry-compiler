@@ -1,0 +1,1 @@
+Let \( ABC \) be an isosceles triangle with \( AB = AC \) and let \( \Gamma \) denote its circumcircle. A point \( D \) is on the arc \( AB \) of \( \Gamma \) not containing \( C \) and a point \( E \) is on the arc \( AC \) of \( \Gamma \) not containing \( B \) such that \( AD = CE \). Prove that \( BE \) is parallel to \( AD \).
