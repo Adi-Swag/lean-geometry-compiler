@@ -1,0 +1,1 @@
+In a triangle ABC, let D be a point on the segment BC such that AB + BD = AC + CD. Suppose that the points B, C and the centroids of triangles ABD and ACD lie on a circle. Prove that AB = AC.

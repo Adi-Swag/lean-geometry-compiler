@@ -6,7 +6,7 @@ from informal_to_dsl import DSLTranslator
 from tqdm import tqdm  # pip install tqdm for progress bar
 
 class BatchProcessor:
-    def __init__(self, dataset_path, output_path="output_dsl/"):
+    def __init__(self, dataset_path, output_path="IndiMathBench/dsl/"):
         self.dataset_path = Path(dataset_path)
         self.output_path = Path(output_path)
         self.output_path.mkdir(exist_ok=True)
@@ -130,5 +130,5 @@ class BatchProcessor:
 
 # Usage
 if __name__ == "__main__":
-    processor = BatchProcessor("./LeanEuclid")
+    processor = BatchProcessor("./IndiMathBench/")
     results = processor.process_all()

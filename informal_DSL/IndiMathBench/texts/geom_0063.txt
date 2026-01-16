@@ -1,0 +1,9 @@
+Let \( ABC \) be a triangle in which \( AB = AC \). Let \( D \) be the mid-point of \( BC \) and \( P \) be a point on \( AD \). Suppose \( E \) is the foot of perpendicular from \( P \) on \( AC \). If 
+\[
+\frac{AP}{PD} = \frac{BP}{PE} = \frac{BD}{AD} = m
+\]
+and \( z = m^2(1+\lambda) \), prove that 
+\[
+z^2 - (\lambda^3 - \lambda^2 - 2)z + 1 = 0.
+\]
+Hence show that \(\lambda \geq 2\) and \(\lambda = 2\) if and only if \( ABC \) is equilateral.

@@ -1,0 +1,5 @@
+Let \( n \geq 3 \) be a natural number and let \( P \) be a polygon with \( n \) sides. Let \( a_1, a_2, \ldots, a_n \) be the lengths of the sides of \( P \) and let \( p \) be its perimeter. Prove that
+
+\[
+\frac{a_1}{p - a_1} + \frac{a_2}{p - a_2} + \cdots + \frac{a_n}{p - a_n} < 2.
+\]

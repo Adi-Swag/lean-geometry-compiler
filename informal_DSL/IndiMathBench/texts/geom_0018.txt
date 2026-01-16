@@ -1,0 +1,1 @@
+Let ABC be a triangle. Let E be a point on the segment BC such that BE = 2EC. Let F be the mid-point of AC. Let BF intersect AE in Q. Determine BQ/QF.

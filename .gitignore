@@ -2,6 +2,6 @@
 build/
 *.olean
 *.log
-informal_DSL/IndiMathBench/
-
+__pycache__/
+*.pyc
 

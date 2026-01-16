@@ -1,0 +1,1 @@
+Let AC be a line segment in the plane and B a point between A and C. Construct isosceles triangles PAB and QBC on one side of the segment AC such that ∠APB = ∠BQC = 120° and an isosceles triangle RAC on the otherside of AC such that ∠ARC = 120°. Show that PQR is an equilateral triangle.

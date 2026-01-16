@@ -1,0 +1,1 @@
+Let ABC be a triangle with ∠A = 90° and AB < AC. Let AD be the altitude from A on to BC. Let P, Q and I denote respectively the incentres of triangles ABD, ACD and ABC. Prove that AI is perpendicular to PQ and AI = PQ.

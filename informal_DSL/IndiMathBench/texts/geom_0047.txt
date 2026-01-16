@@ -1,0 +1,1 @@
+Let \( ABC \) be a right-angled triangle with \( \angle B = 90^\circ \). Let \( I \) be the incentre of \( ABC \). Draw a line perpendicular to \( AI \) at \( I \). Let it intersect the line \( CB \) at \( D \). Prove that \( CI \) is perpendicular to \( AD \) and prove that \( ID = \sqrt{b(b-a)} \) where \( BC = a \) and \( CA = b \).

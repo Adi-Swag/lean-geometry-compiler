@@ -1,0 +1,1 @@
+Let ABC be an acute-angled triangle in which ∠ABC is the largest angle. Let O be its circumcentre. The perpendicular bisectors of BC and AB meet AC at X and Y respectively. The internal bisectors of ∠AXB and ∠BYC meet AB and BC at D and E respectively. Prove that BO is perpendicular to AC if DE is parallel to AC.

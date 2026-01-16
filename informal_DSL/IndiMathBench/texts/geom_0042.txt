@@ -1,0 +1,1 @@
+Two circles Γ and Σ, with centres O and O', respectively, are such that O' lies on Γ. Let A be a point on Σ and M the midpoint of the segment AO'. If B is a point on Σ different from A such that AB is parallel to OM, show that the midpoint of AB lies on Γ.

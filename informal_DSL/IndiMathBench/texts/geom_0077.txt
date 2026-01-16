@@ -1,0 +1,1 @@
+Let Γ₁ and Γ₂ be two circles touching each other externally at R. Let l₁ be a line which is tangent to Γ₂ at P and passing through the center O₁ of Γ₁. Similarly, let l₂ be a line which is tangent to Γ₂ at Q and passing through the center O₂ of Γ₂. Suppose l₁ and l₂ are not parallel and intersect at K. If KP = KQ, prove that the triangle PQR is equilateral.

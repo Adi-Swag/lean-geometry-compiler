@@ -1,0 +1,1 @@
+Let \( ABC \) be a right-angled triangle with \( \angle B = 90^\circ \). Let \( I \) be the incentre of \( ABC \). Let \( AI \) extended intersect \( BC \) in \( F \). Draw a line perpendicular to \( AI \) at \( I \). Let it intersect \( AC \) in \( E \). Prove that \( IE = IF \).

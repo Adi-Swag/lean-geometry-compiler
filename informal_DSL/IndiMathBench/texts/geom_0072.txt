@@ -1,0 +1,1 @@
+Suppose five of the nine vertices of a regular nine-sided polygon are arbitrarily chosen. Show that one can select four among these five such that they are the vertices of a trapezium.

@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle and \( D \) be a point on the segment \( BC \) such that \( DC = 2BD \). Let \( E \) be the mid-point of \( AC \). Let \( AD \) and \( BE \) intersect in \( P \). Determine the ratios \( BP/PE \) and \( AP/PD \).

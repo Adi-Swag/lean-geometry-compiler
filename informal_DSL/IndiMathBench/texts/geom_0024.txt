@@ -1,0 +1,1 @@
+In an acute-angled triangle ABC with AB < AC, the circle Γ touches AB at B and passes through C intersecting AC again at D. Prove that the orthocentre of triangle ABD lies on Γ if and only if it lies on the perpendicular bisector of BC.

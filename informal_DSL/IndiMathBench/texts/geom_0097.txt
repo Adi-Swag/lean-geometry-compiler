@@ -1,0 +1,3 @@
+Let points \(A_1, A_2,\) and \(A_3\) lie on the circle \(\Gamma\) in counter-clockwise order, and let \(P\) be a point in the same plane. For \(i \in \{1, 2, 3\}\), let \(\tau_i\) denote the counter-clockwise rotation of the plane centered at \(A_i\), where the angle of the rotation is equal to the angle at vertex \(A_i\) in \(\triangle A_1A_2A_3\). Further, define \(P_i\) to be the point \tau_{i+2}(\tau_i(\tau_{i+1}(P))\), where indices are taken modulo \(3\) (i.e., \(\tau_4 = \tau_1\) and \(\tau_5 = \tau_2\)).
+
+Prove that the radius of the circumcircle of \(\triangle P_1P_2P_3\) is at most the radius of \(\Gamma\).

@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle and let \( P \) be an interior point such that \(\angle BPC = 90^\circ\), \(\angle BAP = \angle BCP\). Let \( M, N \) be the mid-points of \( AC, BC \) respectively. Suppose \( BP = 2PM\). Prove that \( A, P, N \) are collinear.

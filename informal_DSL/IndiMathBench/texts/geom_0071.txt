@@ -1,0 +1,1 @@
+Let D, E, F be points on the sides BC, CA, AB respectively of a triangle ABC such that BD = CE = AF and ∠BDF = ∠CED = ∠AFE. Prove that ABC is equilateral.

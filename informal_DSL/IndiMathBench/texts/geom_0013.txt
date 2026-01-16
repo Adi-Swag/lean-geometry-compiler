@@ -1,0 +1,1 @@
+Let \( ABC \) be a triangle in which \( AB = AC \) and let \( I \) be its in-centre. Suppose \( BC = AB + AI \). Find \(\angle BAC\).

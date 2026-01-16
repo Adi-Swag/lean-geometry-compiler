@@ -1,0 +1,1 @@
+Let ABCD be a quadrilateral inscribed in a circle Γ. Let E, F, G, H be the midpoints of the arcs AB, BC, CD, DA of the circle Γ. Suppose AC ⋅ BD = EG ⋅ FH. Prove that AC, BD, EG, FH are concurrent.

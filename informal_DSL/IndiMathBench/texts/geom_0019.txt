@@ -1,0 +1,1 @@
+Let ABC be an acute angled triangle. The circle Γ with BC as diameter intersects AB and AC again at P and Q, respectively. Determine ∠BAC given that the orthocenter of triangle APQ lies on Γ.

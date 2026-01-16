@@ -1,0 +1,1 @@
+Let ABC be a triangle in which ∠A = 60°. Let BE and CF be the bisectors of the angles ∠B and ∠C with E on AC and F on AB. Let M be the reflection of A in the line EF. Prove that M lies on BC.

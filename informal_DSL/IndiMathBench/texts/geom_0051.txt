@@ -1,0 +1,1 @@
+The in-circle of triangle ABC touches the sides BC, CA and AB in K, L and M respectively. The line through A and parallel to LK meets MK in P and the line through A and parallel to MK meets LK in Q. Show that the line PQ bisects the sides AB and AC of triangle ABC.

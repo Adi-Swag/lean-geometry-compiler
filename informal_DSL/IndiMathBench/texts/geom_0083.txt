@@ -1,0 +1,1 @@
+Let ABC be triangle in which AB = AC. Suppose the orthocentre of the triangle lies on the in-circle. Find the ratio AB/BC.

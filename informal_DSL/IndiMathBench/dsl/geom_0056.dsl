@@ -1,0 +1,1 @@
+Find(ExistenceOf(100, Lines, Plane, NoThreeConcurrent, IntersectingIn(2002, Points)))

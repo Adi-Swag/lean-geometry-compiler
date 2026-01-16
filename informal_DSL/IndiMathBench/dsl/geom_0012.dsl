@@ -1,0 +1,1 @@
+Find(Count(Isosceles(Triangle(A,B,C)), ObtuseAngle(Angle(A,B,C)), Equals(SumOf(LengthOf(Line(A,B)), LengthOf(Line(B,C)), LengthOf(Line(C,A))), 2008)))

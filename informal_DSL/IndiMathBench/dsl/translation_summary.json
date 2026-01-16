@@ -1,0 +1,889 @@
+{
+  "total": 98,
+  "successful": 98,
+  "failed": 0,
+  "results": [
+    {
+      "id": "geom_0033",
+      "context": "",
+      "problem": "Let \\(ABC\\) be a triangle with \\(AB > AC\\). Let \\(P\\) be a point on the line \\(AB\\) beyond \\(A\\) such that \\(AP + PC = AB\\). Let \\(M\\) be the mid-point of \\(BC\\) and let \\(Q\\) be the point on the side \\(AB\\) such that \\(CQ \\perp AM\\). Prove that \\(BQ = 2AP\\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(P)\nPoint(M)\nPoint(Q)\nTriangle(A,B,C)\nLine(A,B)\nLine(B,C)\nLine(A,M)\nPointLiesOnLine(Point(P), Line(A,B))\nPointLiesOnLine(Point(Q), Line(A,B))\nIsMidpointOf(Point(M), Line(B,C))\nEquals(Add(LengthOf(Line(A,P)), LengthOf(Line(P,C))), LengthOf(Line(A,B)))\nPerpendicular(Line(C,Q), Line(A,M))\nProve(Equals(LengthOf(Line(B,Q)), Mul(2, LengthOf(Line(A,P)))))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "geom_0089",
+      "context": "",
+      "problem": "Let \u0393_1 and \u0393_2 be two circles with respective centres O_1 and O_2 intersecting in two distinct points A and B such that \u2220O_1AO_2 is an obtuse angle. Let the circumcircle of triangle O_1AO_2 intersect \u0393_1 and \u0393_2 respectively in points C and D. Let the line CB intersect \u0393_2 in E; let the line DB intersect \u0393_1 in F. Prove that the points C, D, E, F are concyclic.",
+      "generated_dsl": "Point(O1)\nPoint(O2)\nPoint(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nCircle(O1)\nCircle(O2)\nCircle(O1,A,O2)\nTriangle(O1,A,O2)\nPointLiesOnCircle(Point(A), Circle(O1))\nPointLiesOnCircle(Point(A), Circle(O2))\nPointLiesOnCircle(Point(B), Circle(O1))\nPointLiesOnCircle(Point(B), Circle(O2))\nIntersectAt(Circle(O1), Circle(O2), Point(A))\nIntersectAt(Circle(O1), Circle(O2), Point(B))\nObtuseAngle(Angle(O1,A,O2))\nPointLiesOnCircle(Point(C), Circle(O1,A,O2))\nPointLiesOnCircle(Point(D), Circle(O1,A,O2))\nIntersectAt(Line(C,B), Circle(O2), Point(E))\nIntersectAt(Line(D,B), Circle(O1), Point(F))\nProve(Cyclic(Quadrilateral(C,D,E,F)))",
+      "success": true,
+      "error": null,
+      "num_statements": 24
+    },
+    {
+      "id": "geom_0028",
+      "context": "",
+      "problem": "In a triangle ABC, let H denote its orthocentre. Let P be the reflection of A with respect to BC. The circumcircle of triangle ABP intersects the line BH again at Q, and the circumcircle of triangle ACP intersects the line CH again at R. Prove that H is the incenter of triangle PQR.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(H)\nPoint(P)\nPoint(Q)\nPoint(R)\nTriangle(A,B,C)\nIsOrthocenterOf(Point(H), Triangle(A,B,C))\nLine(B,C)\nReflection(Point(P), Point(A), Line(B,C))\nCircle(O1)\nCircle(O2)\nCircumcircle(Triangle(A,B,P))\nCircumcircle(Triangle(A,C,P))\nIntersectAt(Circle(O1), Line(B,H), Point(Q))\nIntersectAt(Circle(O2), Line(C,H), Point(R))\nProve(IsIncenterOf(Point(H), Triangle(P,Q,R)))",
+      "success": true,
+      "error": null,
+      "num_statements": 18
+    },
+    {
+      "id": "geom_0084",
+      "context": "",
+      "problem": "Suppose 2016 points of the circumference of a circle are coloured red and the remaining points are coloured blue. Given any natural number n \u2265 3, prove that there is a regular n-sided polygon all of whose vertices are blue.",
+      "generated_dsl": "Point(O)\nCircle(O)\nRegular(Polygon(P))\nBlue(Shape(P))\nProve(Inside(Point(O), Shape(P)))",
+      "success": true,
+      "error": null,
+      "num_statements": 5
+    },
+    {
+      "id": "geom_0011",
+      "context": "",
+      "problem": "A trapezium ABCD, in which AB is parallel to CD, is inscribed in a circle with centre O. Suppose the diagonals AC and BD of the trapezium intersect at M, and OM = 2.\n(a) If \u2220AMB is 60\u00b0, determine, with proof, the difference between the lengths of the parallel sides.\n(b) If \u2220AMD is 60\u00b0, find the difference between the lengths of the parallel sides.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(O)\nPoint(M)\nTrapezoid(A,B,C,D)\nCircle(O)\nLine(A,B)\nLine(C,D)\nLine(A,C)\nLine(B,D)\nIntersectAt(Line(A,C), Line(B,D), Point(M))\nParallel(Line(A,B), Line(C,D))\nInscribedIn(Trapezoid(A,B,C,D), Circle(O))\nEquals(DistanceBetween(Point(O), Point(M)), 2)\nAngle(A,M,B)\nAngle(A,M,D)\nProve(Difference(LengthOf(Line(A,B)), LengthOf(Line(C,D))))",
+      "success": true,
+      "error": null,
+      "num_statements": 19
+    },
+    {
+      "id": "geom_0019",
+      "context": "",
+      "problem": "Let ABC be an acute angled triangle. The circle \u0393 with BC as diameter intersects AB and AC again at P and Q, respectively. Determine \u2220BAC given that the orthocenter of triangle APQ lies on \u0393.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(P)\nPoint(Q)\nTriangle(A,B,C)\nCircle(\u0393)\nDiameter(Line(B,C), Circle(\u0393))\nIntersectAt(Circle(\u0393), Line(A,B), Point(P))\nIntersectAt(Circle(\u0393), Line(A,C), Point(Q))\nOrthocenter(Point(H), Triangle(A,P,Q))\nPointLiesOnCircle(Point(H), Circle(\u0393))\nFind(MeasureOf(Angle(B,A,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0030",
+      "context": "",
+      "problem": "Let \\( ABC \\) be an isosceles triangle with \\( AB = AC \\) and let \\( \\Gamma \\) denote its circumcircle. A point \\( D \\) is on the arc \\( AB \\) of \\( \\Gamma \\) not containing \\( C \\) and a point \\( E \\) is on the arc \\( AC \\) of \\( \\Gamma \\) not containing \\( B \\) such that \\( AD = CE \\). Prove that \\( BE \\) is parallel to \\( AD \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nTriangle(A,B,C)\nIsosceles(Triangle(A,B,C))\nCircle(\u0393)\nPointLiesOnCircle(Point(D), Circle(\u0393))\nPointLiesOnCircle(Point(E), Circle(\u0393))\nArc(A,B)\nArc(A,C)\nEquals(LengthOf(Line(A,B)), LengthOf(Line(A,C)))\nEquals(LengthOf(Line(A,D)), LengthOf(Line(C,E)))\nProve(Parallel(Line(B,E), Line(A,D)))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "geom_0087",
+      "context": "",
+      "problem": "Let ABC be a triangle with \u2220A = 90\u00b0 and AB < AC. Let AD be the altitude from A on to BC. Let P, Q and I denote respectively the incentres of triangles ABD, ACD and ABC. Prove that AI is perpendicular to PQ and AI = PQ.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(P)\nPoint(Q)\nPoint(I)\nTriangle(A,B,C)\nRightAngle(Angle(B,A,C))\nLessThan(LengthOf(Line(A,B)), LengthOf(Line(A,C)))\nIsAltitudeOf(Line(A,D), Triangle(A,B,C))\nIsIncenterOf(Point(P), Triangle(A,B,D))\nIsIncenterOf(Point(Q), Triangle(A,C,D))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nPerpendicular(Line(A,I), Line(P,Q))\nProve(Equals(LengthOf(Line(A,I)), LengthOf(Line(P,Q)))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "geom_0042",
+      "context": "",
+      "problem": "Two circles \u0393 and \u03a3, with centres O and O', respectively, are such that O' lies on \u0393. Let A be a point on \u03a3 and M the midpoint of the segment AO'. If B is a point on \u03a3 different from A such that AB is parallel to OM, show that the midpoint of AB lies on \u0393.",
+      "generated_dsl": "Point(O)\nPoint(O')\nPoint(A)\nPoint(M)\nPoint(B)\nCircle(O)\nCircle(O')\nPointLiesOnCircle(Point(O'), Circle(O))\nPointLiesOnCircle(Point(A), Circle(O'))\nPointLiesOnCircle(Point(B), Circle(O'))\nIsMidpointOf(Point(M), Line(A,O'))\nParallel(Line(A,B), Line(O,M))\nProve(PointLiesOnCircle(Midpoint(Point(A), Point(B)), Circle(O)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0048",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle with centroid \\( G \\). Let the circumcircles of \\( \\triangle AGB \\) and \\( \\triangle AGC \\) intersect the line \\( BC \\) in \\( X \\) and \\( Y \\) respectively, which are distinct from \\( B, C \\). Prove that \\( G \\) is the centroid of \\(\\triangle AXY\\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(G)\nPoint(X)\nPoint(Y)\nTriangle(A,B,C)\nIsCentroidOf(Point(G), Triangle(A,B,C))\nCircle(O1)\nCircle(O2)\nTriangle(A,G,B)\nTriangle(A,G,C)\nCircumscribedTo(Circle(O1), Triangle(A,G,B))\nCircumscribedTo(Circle(O2), Triangle(A,G,C))\nIntersectAt(Circle(O1), Line(B,C), Point(X))\nIntersectAt(Circle(O2), Line(B,C), Point(Y))\nProve(IsCentroidOf(Point(G), Triangle(A,X,Y)))",
+      "success": true,
+      "error": null,
+      "num_statements": 17
+    },
+    {
+      "id": "geom_0035",
+      "context": "",
+      "problem": "Let ABC be a triangle. Let X be on the segment BC such that AB = AX. Let AX meet the circumcircle \u0393 of triangle ABX again at D. Show that the circumcentre of \u0394BDX lies on \u0393.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(X)\nPoint(D)\nTriangle(A,B,C)\nSegment(B,C)\nPointLiesOnLine(Point(X), Segment(B,C))\nEquals(LengthOf(Line(A,B)), LengthOf(Line(A,X)))\nCircle(\u0393)\nPointLiesOnCircle(Point(A), Circle(\u0393))\nPointLiesOnCircle(Point(B), Circle(\u0393))\nPointLiesOnCircle(Point(X), Circle(\u0393))\nIntersectAt(Line(A,X), Circle(\u0393), Point(D))\nProve(PointLiesOnCircle(Point(O), Circle(\u0393)))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "geom_0012",
+      "context": "",
+      "problem": "Find the number of all integer-sided isosceles obtuse-angled triangles with perimeter 2008.",
+      "generated_dsl": "Find(Count(Isosceles(Triangle(A,B,C)), ObtuseAngle(Angle(A,B,C)), Equals(SumOf(LengthOf(Line(A,B)), LengthOf(Line(B,C)), LengthOf(Line(C,A))), 2008)))",
+      "success": true,
+      "error": null,
+      "num_statements": 1
+    },
+    {
+      "id": "geom_0079",
+      "context": "",
+      "problem": "In a triangle ABC, let D be a point on the segment BC such that AB + BD = AC + CD. Suppose that the points B, C and the centroids of triangles ABD and ACD lie on a circle. Prove that AB = AC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nTriangle(A,B,C)\nPointLiesOnLine(Point(D), Line(B,C))\nEquals(Add(LengthOf(Line(A,B)), LengthOf(Line(B,D))), Add(LengthOf(Line(A,C)), LengthOf(Line(C,D))))\nIsCentroidOf(Point(G1), Triangle(A,B,D))\nIsCentroidOf(Point(G2), Triangle(A,C,D))\nPointLiesOnCircle(Point(B), Circle(O))\nPointLiesOnCircle(Point(C), Circle(O))\nPointLiesOnCircle(Point(G1), Circle(O))\nPointLiesOnCircle(Point(G2), Circle(O))\nProve(Equals(LengthOf(Line(A,B)), LengthOf(Line(A,C))))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "geom_0029",
+      "context": "",
+      "problem": "Suppose that the vertices of a regular polygon of 20 sides are coloured with three colours \u2013 red, blue and green \u2013 such that there are exactly three red vertices. Prove that there are three vertices A, B, C of the polygon having the same colour such that triangle ABC is isosceles.",
+      "generated_dsl": "Polygon(P)\nRegular(Polygon(P))\nRed(Point(A))\nRed(Point(B))\nRed(Point(C))\nProve(Exists(Triangle(A,B,C), Isosceles(Triangle(A,B,C))))",
+      "success": true,
+      "error": null,
+      "num_statements": 6
+    },
+    {
+      "id": "geom_0076",
+      "context": "",
+      "problem": "Let \\( ABC \\) be an acute-angled triangle, and let \\( D, E, F \\) be points on \\( BC, CA, AB \\) respectively such that \\( AD \\) is the median, \\( BE \\) is the internal angle bisector and \\( CF \\) is the altitude. Suppose \\(\\angle FDE = \\angle LC, \\angle DEF = \\angle LA \\) and \\(\\angle EFD = \\angle LB\\). Prove that \\( ABC \\) is equilateral.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nTriangle(A,B,C)\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(C,A))\nPointLiesOnLine(Point(F), Line(A,B))\nIsMedianOf(Line(A,D), Triangle(A,B,C))\nBisectsAngle(Line(B,E), Angle(C,B,A))\nIsAltitudeOf(Line(C,F), Triangle(A,B,C))\nCongruentAngle(Angle(F,D,E), Angle(L,C))\nCongruentAngle(Angle(D,E,F), Angle(L,A))\nCongruentAngle(Angle(E,F,D), Angle(L,B))\nProve(Equilateral(Triangle(A,B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 17
+    },
+    {
+      "id": "geom_0071",
+      "context": "",
+      "problem": "Let D, E, F be points on the sides BC, CA, AB respectively of a triangle ABC such that BD = CE = AF and \u2220BDF = \u2220CED = \u2220AFE. Prove that ABC is equilateral.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nTriangle(A,B,C)\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(C,A))\nPointLiesOnLine(Point(F), Line(A,B))\nEquals(LengthOf(Line(B,D)), LengthOf(Line(C,E)))\nEquals(LengthOf(Line(C,E)), LengthOf(Line(A,F)))\nCongruentAngle(Angle(B,D,F), Angle(C,E,D))\nCongruentAngle(Angle(C,E,D), Angle(A,F,E))\nProve(Equilateral(Triangle(A,B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "geom_0060",
+      "context": "",
+      "problem": "Let R denote the circumradius of a triangle ABC; a, b, c its sides BC, CA, AB; and ra, rb, rc its exradii opposite A, B, C. If 2R \u2264 ra, prove that (i) a > b and a > c; (ii) 2R > rb and 2R > rc.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nTriangle(A,B,C)\nCircumradius(R, Triangle(A,B,C))\nSideOf(Line(B,C), Triangle(A,B,C))\nSideOf(Line(C,A), Triangle(A,B,C))\nSideOf(Line(A,B), Triangle(A,B,C))\nExradius(ra, Triangle(A,B,C), Point(A))\nExradius(rb, Triangle(A,B,C), Point(B))\nExradius(rc, Triangle(A,B,C), Point(C))\nLessThanOrEqual(Mul(2, R), ra)\nProve(GreaterThan(SideOf(Line(B,C), Triangle(A,B,C)), SideOf(Line(C,A), Triangle(A,B,C))))\nProve(GreaterThan(SideOf(Line(B,C), Triangle(A,B,C)), SideOf(Line(A,B), Triangle(A,B,C))))\nProve(GreaterThan(Mul(2, R), rb))\nProve(GreaterThan(Mul(2, R), rc))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "geom_0059",
+      "context": "",
+      "problem": "Consider a convex quadrilateral ABCD, in which K, L, M, N are the midpoints of the sides AB, BC, CD, DA respectively. Suppose (a) BD bisects KM at Q; (b) QA = QB = QC = QD; and (c) LK/LM = CD/CB. Prove that ABCD is a square.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(K)\nPoint(L)\nPoint(M)\nPoint(N)\nPoint(Q)\nQuadrilateral(A,B,C,D)\nIsMidpointOf(Point(K), Line(A,B))\nIsMidpointOf(Point(L), Line(B,C))\nIsMidpointOf(Point(M), Line(C,D))\nIsMidpointOf(Point(N), Line(D,A))\nBisectsAngle(Line(B,D), Line(K,M))\nEquals(DistanceBetween(Point(Q), Point(A)), DistanceBetween(Point(Q), Point(B)))\nEquals(DistanceBetween(Point(Q), Point(B)), DistanceBetween(Point(Q), Point(C)))\nEquals(DistanceBetween(Point(Q), Point(C)), DistanceBetween(Point(Q), Point(D)))\nEquals(RatioOf(LengthOf(Line(L,K)), LengthOf(Line(L,M))), RatioOf(LengthOf(Line(C,D)), LengthOf(Line(C,B))))\nProve(Square(A,B,C,D))",
+      "success": true,
+      "error": null,
+      "num_statements": 20
+    },
+    {
+      "id": "geom_0083",
+      "context": "",
+      "problem": "Let ABC be triangle in which AB = AC. Suppose the orthocentre of the triangle lies on the in-circle. Find the ratio AB/BC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nTriangle(A,B,C)\nIsosceles(Triangle(A,B,C))\nIsOrthocenterOf(Point(H), Triangle(A,B,C))\nInscribedIn(Circle(I), Triangle(A,B,C))\nFind(RatioOf(LengthOf(Line(A,B)), LengthOf(Line(B,C))))",
+      "success": true,
+      "error": null,
+      "num_statements": 8
+    },
+    {
+      "id": "geom_0005",
+      "context": "",
+      "problem": "Let ABC be a triangle in which AB = AC and \u2220CAB = 90\u00b0. Suppose M and N are points on the hypotenuse BC such that BM\u00b2 + CN\u00b2 = MN\u00b2. Prove that \u2220MAN = 45\u00b0.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(M)\nPoint(N)\nTriangle(A,B,C)\nIsosceles(Triangle(A,B,C))\nRightAngle(Angle(C,A,B))\nPointLiesOnLine(Point(M), Line(B,C))\nPointLiesOnLine(Point(N), Line(B,C))\nEquals(LengthOf(Line(A,B)), LengthOf(Line(A,C)))\nEquals(Add(Pow(LengthOf(Line(B,M)), 2), Pow(LengthOf(Line(C,N)), 2)), Pow(LengthOf(Line(M,N)), 2))\nProve(Equals(MeasureOf(Angle(M,A,N)), 45))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0069",
+      "context": "",
+      "problem": "Let \\( ABC \\) be an acute-angled triangle and let \\( H \\) be its ortho-centre. Let \\( h_{\\text{max}} \\) denote the largest altitude of the triangle \\( ABC \\). Prove that \\[ AH + BH + CH \\le 2h_{\\text{max}}. \\]",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(H)\nTriangle(A,B,C)\nIsOrthocenterOf(Point(H), Triangle(A,B,C))\nIsAltitudeOf(Line(A,H), Triangle(A,B,C))\nIsAltitudeOf(Line(B,H), Triangle(A,B,C))\nIsAltitudeOf(Line(C,H), Triangle(A,B,C))\nProve(LessThanOrEqual(SumOf(LengthOf(Line(A,H)), LengthOf(Line(B,H)), LengthOf(Line(C,H))), Mul(2, h_max)))",
+      "success": true,
+      "error": null,
+      "num_statements": 10
+    },
+    {
+      "id": "geom_0096",
+      "context": "",
+      "problem": "In triangle \\(ABC\\) with \\(CA = CB\\), point \\(E\\) lies on the circumcircle of \\(ABC\\) such that \\(\\angle ECB = 90^\\circ\\). The line through \\(E\\) parallel to \\(CB\\) intersects \\(CA\\) in \\(F\\) and \\(AB\\) in \\(G\\). Prove that the centre of the circumcircle of triangle \\(EGB\\) lies on the circumcircle of triangle \\(ECF\\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(E)\nPoint(F)\nPoint(G)\nCircle(O)\nTriangle(A,B,C)\nTriangle(E,G,B)\nTriangle(E,C,F)\nPointLiesOnCircle(Point(E), Circle(O))\nEquals(LengthOf(Line(C,A)), LengthOf(Line(C,B)))\nRightAngle(Angle(E,C,B))\nParallelThrough(Line(E,G), Line(C,B))\nIntersectAt(Line(E,G), Line(C,A), Point(F))\nIntersectAt(Line(E,G), Line(A,B), Point(G))\nProve(PointLiesOnCircle(Point(O), Circle(E,C,F)))",
+      "success": true,
+      "error": null,
+      "num_statements": 17
+    },
+    {
+      "id": "geom_0008",
+      "context": "",
+      "problem": "Let ABCD be a convex quadrilateral; P, Q, R, S be the midpoints of AB, BC, CD, DA respectively such that triangles AQR and CSP are equilateral. Prove that ABCD is a rhombus. Determine its angles.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(P)\nPoint(Q)\nPoint(R)\nPoint(S)\nQuadrilateral(A,B,C,D)\nIsMidpointOf(Point(P), Line(A,B))\nIsMidpointOf(Point(Q), Line(B,C))\nIsMidpointOf(Point(R), Line(C,D))\nIsMidpointOf(Point(S), Line(D,A))\nEquilateral(Triangle(A,Q,R))\nEquilateral(Triangle(C,S,P))\nProve(Rhombus(A,B,C,D))\nFind(Angle(A,B,C))\nFind(Angle(B,C,D))\nFind(Angle(C,D,A))\nFind(Angle(D,A,B))",
+      "success": true,
+      "error": null,
+      "num_statements": 20
+    },
+    {
+      "id": "geom_0075",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle. An interior point \\( P \\) of \\( ABC \\) is said to be good if we can find exactly 27 rays emanating from \\( P \\) intersecting the sides of the triangle \\( ABC \\) such that the triangle is divided by these rays into 27 smaller triangles of equal area. Determine the number of good points for a given triangle \\( ABC \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nTriangle(A,B,C)\nPoint(P)\nInside(Point(P), Triangle(A,B,C))\nFind(NumberOfGoodPoints(Triangle(A,B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 7
+    },
+    {
+      "id": "geom_0093",
+      "context": "",
+      "problem": "Let \u0393\u2081 and \u0393\u2082 be two circles of unequal radii, with centres O\u2081 and O\u2082 respectively, in the plane intersecting in two distinct points A and B. Assume that the centre of each of the circles \u0393\u2081 and \u0393\u2082 is outside the other. The tangent to \u0393\u2081 at B intersects \u0393\u2082 again in C, different from B; the tangent to \u0393\u2082 at B intersects \u0393\u2081 again in D, different from B. The bisectors of \u2220DAB and \u2220CAB meet \u0393\u2081 and \u0393\u2082 again in X and Y, respectively, different from A. Let P and Q be the circumcentres of triangles ACD and XAY, respectively. Prove that PQ is the perpendicular bisector of the line segment O\u2081O\u2082.",
+      "generated_dsl": "Point(O1)\nPoint(O2)\nPoint(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(X)\nPoint(Y)\nPoint(P)\nPoint(Q)\nCircle(O1)\nCircle(O2)\nTangent(Line(B,C), Circle(O1))\nTangent(Line(B,D), Circle(O2))\nIntersectAt(Line(B,C), Circle(O2), Point(C))\nIntersectAt(Line(B,D), Circle(O1), Point(D))\nBisector(Angle(D,A,B))\nBisector(Angle(C,A,B))\nPointLiesOnCircle(Point(X), Circle(O1))\nPointLiesOnCircle(Point(Y), Circle(O2))\nIsCircumcenterOf(Point(P), Triangle(A,C,D))\nIsCircumcenterOf(Point(Q), Triangle(X,A,Y))\nProve(IsPerpendicularBisectorOf(Line(P,Q), Line(O1,O2)))",
+      "success": true,
+      "error": null,
+      "num_statements": 23
+    },
+    {
+      "id": "geom_0091",
+      "context": "",
+      "problem": "Let \\( A_1B_1C_1D_1E_1 \\) be a regular pentagon. For \\( 2 \\leq n \\leq 11 \\), let \\( A_nB_nC_nD_nE_n \\) be the pentagon whose vertices are the midpoints of the sides of the pentagon \\( A_{n-1}B_{n-1}C_{n-1}D_{n-1}E_{n-1} \\). All the 5 vertices of each of the 11 pentagons are arbitrarily colored red or blue. Prove that four points among these 55 points have the same colour and form the vertices of a cyclic quadrilateral.",
+      "generated_dsl": "Point(A1)\nPoint(B1)\nPoint(C1)\nPoint(D1)\nPoint(E1)\nPentagon(A1,B1,C1,D1,E1)\nRegular(Polygon(A1,B1,C1,D1,E1))\nPoint(An)\nPoint(Bn)\nPoint(Cn)\nPoint(Dn)\nPoint(En)\nPentagon(An,Bn,Cn,Dn,En)\nMidpoint(Point(An), Line(A(n-1),B(n-1)))\nMidpoint(Point(Bn), Line(B(n-1),C(n-1)))\nMidpoint(Point(Cn), Line(C(n-1),D(n-1)))\nMidpoint(Point(Dn), Line(D(n-1),E(n-1)))\nMidpoint(Point(En), Line(E(n-1),A(n-1)))\nProve(Exists(Points(P1,P2,P3,P4),\nSameColor(Point(P1), Point(P2), Point(P3), Point(P4)),\nCyclicQuadrilateral(Point(P1), Point(P2), Point(P3), Point(P4))",
+      "success": true,
+      "error": null,
+      "num_statements": 21
+    },
+    {
+      "id": "geom_0020",
+      "context": "",
+      "problem": "Let ABC be a triangle with \u2220A = 90\u00b0 and AB = AC. Let D and E be points on the segment BC such that BD : DE : EC = 3 : 5 : 4. Prove that \u2220DAE = 45\u00b0.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nTriangle(A,B,C)\nRightAngle(Angle(B,A,C))\nEquals(LengthOf(Line(A,B)), LengthOf(Line(A,C)))\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(B,C))\nRatioOf(DistanceBetween(Point(B), Point(D)), DistanceBetween(Point(D), Point(E)), DistanceBetween(Point(E), Point(C))) = (3, 5, 4)\nProve(Equals(MeasureOf(Angle(D,A,E)), 45))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    },
+    {
+      "id": "geom_0039",
+      "context": "",
+      "problem": "Let D, E, F be the points of contact of the incircle of an acute-angled triangle ABC with BC, CA, AB respectively. Let I\u2081, I\u2082, I\u2083 be the incentres of the triangles AFE, BDF, CED, respectively. Prove that the lines I\u2081D, I\u2082E, I\u2083F are concurrent.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(I1)\nPoint(I2)\nPoint(I3)\nTriangle(A,B,C)\nTriangle(A,F,E)\nTriangle(B,D,F)\nTriangle(C,E,D)\nIncircle(Triangle(A,B,C))\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(C,A))\nPointLiesOnLine(Point(F), Line(A,B))\nIsIncenterOf(Point(I1), Triangle(A,F,E))\nIsIncenterOf(Point(I2), Triangle(B,D,F))\nIsIncenterOf(Point(I3), Triangle(C,E,D))\nConcurrent(Line(I1,D), Line(I2,E), Line(I3,F), $)",
+      "success": true,
+      "error": null,
+      "num_statements": 21
+    },
+    {
+      "id": "geom_0064",
+      "context": "",
+      "problem": "Let ABC be a triangle, I its in-centre; A1, B1, C1 be the reflections of I in BC, CA, AB respectively. Suppose the circum-circle of triangle A1B1C1 passes through A. Prove that B1, C1, I, I1 are concyclic, where I1 is the in-centre of triangle A1B1C1.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(I)\nPoint(A1)\nPoint(B1)\nPoint(C1)\nPoint(I1)\nTriangle(A,B,C)\nTriangle(A1,B1,C1)\nIsIncenterOf(Point(I), Triangle(A,B,C))\nReflect(Point(I), Line(B,C), Point(A1))\nReflect(Point(I), Line(C,A), Point(B1))\nReflect(Point(I), Line(A,B), Point(C1))\nPointLiesOnCircle(Point(A), Circle(Circumcircle(Triangle(A1,B1,C1))))\nIsIncenterOf(Point(I1), Triangle(A1,B1,C1))\nProve(Concyclic(Point(B1), Point(C1), Point(I), Point(I1)))",
+      "success": true,
+      "error": null,
+      "num_statements": 17
+    },
+    {
+      "id": "geom_0001",
+      "context": "",
+      "problem": "The internal bisector of angle A in triangle ABC with AC > AB, meets the circumcircle \u0393 of the triangle in D. Join D to the centre O of the circle \u0393 and suppose DO meets AC in E, possibly when extended. Given that BE is perpendicular to AD, show that AO is parallel to BD.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(O)\nPoint(E)\nTriangle(A,B,C)\nCircle(O)\nPointLiesOnCircle(Point(D), Circle(O))\nBisectsAngle(Line(A,D), Angle(B,A,C))\nIntersectAt(Line(D,O), Line(A,C), Point(E))\nPerpendicular(Line(B,E), Line(A,D))\nProve(Parallel(Line(A,O), Line(B,D)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0014",
+      "context": "",
+      "problem": "Let ABC be a triangle in which \u2220A = 60\u00b0. Let BE and CF be the bisectors of the angles \u2220B and \u2220C with E on AC and F on AB. Let M be the reflection of A in the line EF. Prove that M lies on BC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(E)\nPoint(F)\nPoint(M)\nTriangle(A,B,C)\nAngle(A,B,C)\nBisector(Angle(B,A,C))\nBisector(Angle(C,A,B))\nPointLiesOnLine(Point(E), Line(A,C))\nPointLiesOnLine(Point(F), Line(A,B))\nReflect(Point(M), Line(E,F))\nEquals(MeasureOf(Angle(A,B,C)), 60)\nProve(PointLiesOnLine(Point(M), Line(B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "geom_0025",
+      "context": "",
+      "problem": "Let ABC be a triangle which it not right-angled. Define a sequence of triangles AiBiCi, with i \u2265 0, as follows: A0B0C0 is the triangle ABC; and, for i \u2265 0, Ai+1, Bi+1, Ci+1 are the reflections of the orthocentre of triangle AiBiCi in the sides BiCi, CiAi, AiBi, respectively. Assume that \u2220Am = \u2220An for some distinct natural numbers m, n. Prove that \u2220A = 60\u00b0.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nTriangle(A,B,C)\nNot(IsRight(Triangle(A,B,C)))\nSequence(Triangle(Ai,Bi,Ci), i, GreaterThanOrEqual(i, 0))\nEquals(Triangle(A0,B0,C0), Triangle(A,B,C))\nForAll(i, GreaterThanOrEqual(i, 0), Reflection(Orthocenter(Triangle(Ai,Bi,Ci)), Line(Bi,Ci), Point(Ai+1)))\nForAll(i, GreaterThanOrEqual(i, 0), Reflection(Orthocenter(Triangle(Ai,Bi,Ci)), Line(Ci,Ai), Point(Bi+1)))\nForAll(i, GreaterThanOrEqual(i, 0), Reflection(Orthocenter(Triangle(Ai,Bi,Ci)), Line(Ai,Bi), Point(Ci+1)))\nEquals(Angle(Am), Angle(An))\nProve(Equals(Angle(A,B,C), 60))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    },
+    {
+      "id": "geom_0046",
+      "context": "",
+      "problem": "Let ABC be a right-angled triangle with \u2220B = 90\u00b0 and let BD be the altitude from B on to AC. Draw DE \u22a5 AB and DF \u22a5 BC. Let P, Q, R and S be respectively the incentres of triangle DFC, DBF, DEB and DAE. Suppose S, R, Q are collinear. Prove that P, Q, R, D lie on a circle.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(P)\nPoint(Q)\nPoint(R)\nPoint(S)\nTriangle(A,B,C)\nRightAngle(Angle(A,B,C))\nIsAltitudeOf(Line(B,D), Triangle(A,B,C))\nPerpendicular(Line(D,E), Line(A,B))\nPerpendicular(Line(D,F), Line(B,C))\nIsIncenterOf(Point(P), Triangle(D,F,C))\nIsIncenterOf(Point(Q), Triangle(D,B,F))\nIsIncenterOf(Point(R), Triangle(D,E,B))\nIsIncenterOf(Point(S), Triangle(D,A,E))\nCollinear(Point(S), Point(R), Point(Q))\nProve(CircumscribedTo(Circle(D), Shape(P,Q,R,D)))",
+      "success": true,
+      "error": null,
+      "num_statements": 21
+    },
+    {
+      "id": "geom_0024",
+      "context": "",
+      "problem": "In an acute-angled triangle ABC with AB < AC, the circle \u0393 touches AB at B and passes through C intersecting AC again at D. Prove that the orthocentre of triangle ABD lies on \u0393 if and only if it lies on the perpendicular bisector of BC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nCircle(\u0393)\nTriangle(A,B,C)\nTriangle(A,B,D)\nLine(A,B)\nLine(A,C)\nLine(B,C)\nLine(B,D)\nPointLiesOnLine(Point(D), Line(A,C))\nPointLiesOnCircle(Point(B), Circle(\u0393))\nPointLiesOnCircle(Point(C), Circle(\u0393))\nPointLiesOnCircle(Point(D), Circle(\u0393))\nTangent(Line(A,B), Circle(\u0393))\nIsOrthocenterOf(Point(H), Triangle(A,B,D))\nProve(IntersectAt(Line(H), PerpendicularBisector(Line(B,C)), Point(H)))",
+      "success": true,
+      "error": null,
+      "num_statements": 18
+    },
+    {
+      "id": "geom_0002",
+      "context": "",
+      "problem": "Let BE and CF be the altitudes of an acute triangle ABC, with E on AC and F on AB. Let O be the point of intersection of BE and CF. Take any line KL through O with K on AB and L on AC. Suppose M and N are located on BE and CF respectively, such that KM is perpendicular to BE and LN is perpendicular to CF. Prove that FM is parallel to EN.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(E)\nPoint(F)\nPoint(O)\nPoint(K)\nPoint(L)\nPoint(M)\nPoint(N)\nTriangle(A,B,C)\nLine(B,E)\nLine(C,F)\nLine(K,L)\nLine(F,M)\nLine(E,N)\nIntersectAt(Line(B,E), Line(C,F), Point(O))\nPointLiesOnLine(Point(E), Line(A,C))\nPointLiesOnLine(Point(F), Line(A,B))\nPointLiesOnLine(Point(K), Line(A,B))\nPointLiesOnLine(Point(L), Line(A,C))\nPointLiesOnLine(Point(M), Line(B,E))\nPointLiesOnLine(Point(N), Line(C,F))\nPerpendicular(Line(K,M), Line(B,E))\nPerpendicular(Line(L,N), Line(C,F))\nProve(Parallel(Line(F,M), Line(E,N)))",
+      "success": true,
+      "error": null,
+      "num_statements": 26
+    },
+    {
+      "id": "geom_0052",
+      "context": "",
+      "problem": "In a convex quadrilateral PQRS, PQ = RS, (\u221a3 + 1)QR = SP and \u2220RSP - \u2220SPQ = 30\u00b0. Prove that \u2220PQR - \u2220QRS = 90\u00b0.",
+      "generated_dsl": "Point(P)\nPoint(Q)\nPoint(R)\nPoint(S)\nQuadrilateral(P,Q,R,S)\nEquals(LengthOf(Line(P,Q)), LengthOf(Line(R,S)))\nEquals(Mul(Add(SqrtOf(3), 1), LengthOf(Line(Q,R))), LengthOf(Line(S,P)))\nEquals(Sub(MeasureOf(Angle(R,S,P)), MeasureOf(Angle(S,P,Q))), 30)\nProve(Equals(Sub(MeasureOf(Angle(P,Q,R)), MeasureOf(Angle(Q,R,S))), 90))",
+      "success": true,
+      "error": null,
+      "num_statements": 9
+    },
+    {
+      "id": "geom_0065",
+      "context": "",
+      "problem": "All the points with integer coordinates in the xy-plane are coloured using three colours, red, blue and green, each colour being used at least once. It is known that the point (0, 0) is coloured red and the point (0, 1) is coloured blue. Prove that there exist three points with integer coordinates of distinct colours which form the vertices of a right-angled triangle.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(O)\nPoint(P)\nPoint(Q)\nRed(Point(O))\nBlue(Point(P))\nGreen(Point(Q))\nRightAngle(Angle(A,B,C))\nProve(Exists(Triangle(A,B,C), IsRight(Triangle(A,B,C)), Red(Point(A)), Blue(Point(B)), Green(Point(C))))",
+      "success": true,
+      "error": null,
+      "num_statements": 11
+    },
+    {
+      "id": "geom_0092",
+      "context": "",
+      "problem": "Let \\( AB \\) be a diameter of a circle \\( \\Gamma \\) and let \\( C \\) be a point on \\( \\Gamma \\) different from \\( A \\) and \\( B \\). Let \\( D \\) be the foot of perpendicular from \\( C \\) on to \\( AB \\). Let \\( K \\) be a point of the segment \\( CD \\) such that \\( AC \\) is equal to the semiperimeter of the triangle \\( ADK \\). Show that the excircle of triangle \\( ADK \\) opposite \\( A \\) is tangent to \\( \\Gamma \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(K)\nCircle(Gamma)\nLine(A,B)\nLine(C,D)\nTriangle(A,D,K)\nIsDiameterOf(Line(A,B), Circle(Gamma))\nPointLiesOnCircle(Point(C), Circle(Gamma))\nPerpendicular(Line(C,D), Line(A,B))\nBetween(Point(C), Point(K), Point(D))\nEquals(LengthOf(Line(A,C)), HalfOf(SumOf(LengthOf(Line(A,D)), LengthOf(Line(D,K)), LengthOf(Line(K,A)))))\nProve(Tangent(Excircle(Triangle(A,D,K), Point(A)), Circle(Gamma)))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "geom_0080",
+      "context": "",
+      "problem": "In an acute-angled triangle ABC, a point D lies on the segment BC. Let O1, O2 denote the circumcentres of triangles ABD and ACD, respectively. Prove that the line joining the circumcentre of triangle ABC and the orthocentre of triangle O1O2D is parallel to BC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(O1)\nPoint(O2)\nTriangle(A,B,C)\nTriangle(A,B,D)\nTriangle(A,C,D)\nSegment(B,C)\nPointLiesOnLine(Point(D), Segment(B,C))\nIsCircumcenterOf(Point(O1), Triangle(A,B,D))\nIsCircumcenterOf(Point(O2), Triangle(A,C,D))\nIsCircumcenterOf(Point(O), Triangle(A,B,C))\nIsOrthocenterOf(Point(H), Triangle(O1,O2,D))\nLine(O,H)\nLine(B,C)\nProve(Parallel(Line(O,H), Line(B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 18
+    },
+    {
+      "id": "geom_0097",
+      "context": "",
+      "problem": "Let points \\(A_1, A_2,\\) and \\(A_3\\) lie on the circle \\(\\Gamma\\) in counter-clockwise order, and let \\(P\\) be a point in the same plane. For \\(i \\in \\{1, 2, 3\\}\\), let \\(\\tau_i\\) denote the counter-clockwise rotation of the plane centered at \\(A_i\\), where the angle of the rotation is equal to the angle at vertex \\(A_i\\) in \\(\\triangle A_1A_2A_3\\). Further, define \\(P_i\\) to be the point \\tau_{i+2}(\\tau_i(\\tau_{i+1}(P))\\), where indices are taken modulo \\(3\\) (i.e., \\(\\tau_4 = \\tau_1\\) and \\(\\tau_5 = \\tau_2\\)).\n\nProve that the radius of the circumcircle of \\(\\triangle P_1P_2P_3\\) is at most the radius of \\(\\Gamma\\).",
+      "generated_dsl": "Point(A1)\nPoint(A2)\nPoint(A3)\nPoint(P)\nCircle(Gamma)\nPointLiesOnCircle(Point(A1), Circle(Gamma))\nPointLiesOnCircle(Point(A2), Circle(Gamma))\nPointLiesOnCircle(Point(A3), Circle(Gamma))\nTriangle(A1,A2,A3)\nPoint(P1)\nPoint(P2)\nPoint(P3)\nProve(LessThanOrEqual(RadiusOf(Circle(P1,P2,P3)), RadiusOf(Circle(Gamma))))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0088",
+      "context": "",
+      "problem": "Let ABC be a non-equilateral triangle with integer sides. Let D and E be respectively the mid-points BC and CA; let G be the centroid of triangle ABC. Suppose D, C, E, G are concyclic. Find the least possible perimeter of triangle ABC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(G)\nTriangle(A,B,C)\nIsMidpointOf(Point(D), Line(B,C))\nIsMidpointOf(Point(E), Line(C,A))\nIsCentroidOf(Point(G), Triangle(A,B,C))\nConcyclic(Point(D), Point(C), Point(E), Point(G))\nFind(PerimeterOf(Triangle(A,B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    },
+    {
+      "id": "geom_0056",
+      "context": "",
+      "problem": "Do there exist 100 lines in the plane, no three of them concurrent, such that they intersect exactly in 2002 points?",
+      "generated_dsl": "Find(ExistenceOf(100, Lines, Plane, NoThreeConcurrent, IntersectingIn(2002, Points)))",
+      "success": true,
+      "error": null,
+      "num_statements": 1
+    },
+    {
+      "id": "geom_0058",
+      "context": "",
+      "problem": "Let ABC be a triangle with sides a, b, c. Consider a triangle A1B1C1 with sides equal to \\( a + \\frac{b}{2}, b + \\frac{c}{2}, c + \\frac{a}{2} \\). Show that\n\n\\[ [A_1B_1C_1] \\geq \\frac{9}{4}[ABC], \\]\n\nwhere [XY Z] denotes the area of the triangle XY Z.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nTriangle(A,B,C)\nPoint(A1)\nPoint(B1)\nPoint(C1)\nTriangle(A1,B1,C1)\nEquals(SideOf(Triangle(A1,B1,C1)), Add(SideOf(Triangle(A,B,C)), HalfOf(SideOf(Triangle(B,C,A)))))\nEquals(SideOf(Triangle(B1,C1,A1)), Add(SideOf(Triangle(B,C,A)), HalfOf(SideOf(Triangle(C,A,B)))))\nEquals(SideOf(Triangle(C1,A1,B1)), Add(SideOf(Triangle(C,A,B)), HalfOf(SideOf(Triangle(A,B,C)))))\nProve(GreaterThanOrEqual(AreaOf(Triangle(A1,B1,C1)), Mul(Div(9,4), AreaOf(Triangle(A,B,C)))))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    },
+    {
+      "id": "geom_0057",
+      "context": "",
+      "problem": "Consider an acute triangle \\( ABC \\) and let \\( P \\) be an interior point of \\( ABC \\). Suppose the lines \\( BP \\) and \\( CP \\), when produced, meet \\( AC \\) and \\( AB \\) in \\( E \\) and \\( F \\) respectively. Let \\( D \\) be the point where \\( AP \\) intersects the line segment \\( EF \\) and \\( K \\) be the foot of perpendicular from \\( D \\) on to \\( BC \\). Show that \\( DK \\) bisects \\( \\angle EKF \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(K)\nPoint(P)\nTriangle(A,B,C)\nPointLiesOnLine(Point(E), Line(A,C))\nPointLiesOnLine(Point(F), Line(A,B))\nIntersectAt(Line(A,P), Line(E,F), Point(D))\nPerpendicular(Line(D,K), Line(B,C))\nBisectsAngle(Line(D,K), Angle(E,K,F))\nProve(BisectsAngle(Line(D,K), Angle(E,K,F)))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "geom_0082",
+      "context": "",
+      "problem": "Let \\( ABCD \\) be a convex quadrilateral. Let the diagonals \\( AC \\) and \\( BD \\) intersect in \\( P \\). Let \\( PE, PF, PG \\) and \\( PH \\) be the altitudes from \\( P \\) on to the sides \\( AB, BC, CD \\) and \\( DA \\) respectively. Show that \\( ABCD \\) has an incircle if and only if \n\\[\n\\frac{1}{PE} + \\frac{1}{PG} = \\frac{1}{PF} + \\frac{1}{PH}.\n\\]",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(P)\nPoint(E)\nPoint(F)\nPoint(G)\nPoint(H)\nQuadrilateral(A,B,C,D)\nLine(A,C)\nLine(B,D)\nIntersectAt(Line(A,C), Line(B,D), Point(P))\nIsAltitudeOf(Line(P,E), Triangle(A,B,P))\nIsAltitudeOf(Line(P,F), Triangle(B,C,P))\nIsAltitudeOf(Line(P,G), Triangle(C,D,P))\nIsAltitudeOf(Line(P,H), Triangle(D,A,P))\nProve(Equals(Add(Div(1, LengthOf(Line(P,E))), Div(1, LengthOf(Line(P,G)))), Add(Div(1, LengthOf(Line(P,F))), Div(1, LengthOf(Line(P,H))))))\nProve(InscribedIn(Circle($), Quadrilateral(A,B,C,D)))",
+      "success": true,
+      "error": null,
+      "num_statements": 19
+    },
+    {
+      "id": "geom_0027",
+      "context": "",
+      "problem": "Let \u0393 be a circle with centre O. Let \u039b be another circle passing through O and intersecting \u0393 at points A and B. A diameter CD of \u0393 intersects \u039b at a point P different from O. Prove that \u2220APC = \u2220BPD.",
+      "generated_dsl": "Point(O)\nPoint(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(P)\nCircle(O)\nCircle(O,$)\nDiameter(C,D)\nIntersectAt(Line(C,D), Circle(O,$), Point(P))\nIntersectAt(Circle(O), Circle(O,$), Point(A))\nIntersectAt(Circle(O), Circle(O,$), Point(B))\nProve(CongruentAngle(Angle(A,P,C), Angle(B,P,D)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0006",
+      "context": "",
+      "problem": "Positive integers are written on all the faces of a cube, one on each. At each corner (vertex) of the cube, the product of the numbers on the faces that meet at the corner is written. The sum of the numbers written at all the corners is 2004. If T denotes the sum of the numbers on all the faces, find all the possible values of T.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(G)\nPoint(H)\nCube(A,B,C,D,E,F,G,H)\nSumOfProductsAtVerticesEquals(2004)\nFind(SumOfNumbersOnFaces)",
+      "success": true,
+      "error": null,
+      "num_statements": 11
+    },
+    {
+      "id": "geom_0074",
+      "context": "",
+      "problem": "Let \\( ABCD \\) be a quadrilateral inscribed in a circle. Suppose \\( AB = \\sqrt{2} + \\sqrt{2} \\) and \\( AB \\) subtends \\( 135^\\circ \\) at the centre of the circle. Find the maximum possible area of \\( ABCD \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nCircle(O)\nQuadrilateral(A,B,C,D)\nPointLiesOnCircle(Point(A), Circle(O))\nPointLiesOnCircle(Point(B), Circle(O))\nPointLiesOnCircle(Point(C), Circle(O))\nPointLiesOnCircle(Point(D), Circle(O))\nEquals(LengthOf(Line(A,B)), Add(SqrtOf(2), SqrtOf(2)))\nAngle(A,O,B)\nEquals(MeasureOf(Angle(A,O,B)), 135)\nFind(Maximum(AreaOf(Quadrilateral(A,B,C,D))))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "geom_0045",
+      "context": "",
+      "problem": "Two circles \\(\\Gamma\\) and \\(\\Sigma\\) intersect at two distinct points \\( A \\) and \\( B \\). A line through \\( B \\) intersects \\(\\Gamma\\) and \\(\\Sigma\\) again at \\( C \\) and \\( D \\), respectively. Suppose that \\( CA = CD \\). Show that the centre of \\(\\Sigma\\) lies on \\(\\Gamma\\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nCircle(Gamma)\nCircle(Sigma)\nPointLiesOnCircle(Point(A), Circle(Gamma))\nPointLiesOnCircle(Point(A), Circle(Sigma))\nPointLiesOnCircle(Point(B), Circle(Gamma))\nPointLiesOnCircle(Point(B), Circle(Sigma))\nLine(B,C)\nLine(B,D)\nIntersectAt(Line(B,C), Circle(Gamma), Point(C))\nIntersectAt(Line(B,D), Circle(Sigma), Point(D))\nEquals(DistanceBetween(Point(C), Point(A)), DistanceBetween(Point(C), Point(D)))\nProve(PointLiesOnCircle(Point(CenterOf(Circle(Sigma))), Circle(Gamma)))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "geom_0018",
+      "context": "",
+      "problem": "Let ABC be a triangle. Let E be a point on the segment BC such that BE = 2EC. Let F be the mid-point of AC. Let BF intersect AE in Q. Determine BQ/QF.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(E)\nPoint(F)\nPoint(Q)\nTriangle(A,B,C)\nSegment(B,C)\nSegment(A,C)\nIsMidpointOf(Point(F), Line(A,C))\nIntersectAt(Line(B,F), Line(A,E), Point(Q))\nEquals(RatioOf(DistanceBetween(Point(B), Point(E)), DistanceBetween(Point(E), Point(C))), 2)\nFind(RatioOf(DistanceBetween(Point(B), Point(Q)), DistanceBetween(Point(Q), Point(F))))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0070",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle with circum-circle \\(\\Gamma\\). Let \\( M \\) be a point in the interior of triangle \\( ABC \\) which is also on the bisector of \\(\\angle A\\). Let \\( AM, BM, CM \\) meet \\(\\Gamma\\) in \\( A_1, B_1, C_1 \\) respectively. Suppose \\( P \\) is the point of intersection of \\( A_1C_1 \\) with \\( AB \\); and \\( Q \\) is the point of intersection of \\( A_1B_1 \\) with \\( AC \\). Prove that \\( PQ \\) is parallel to \\( BC \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(M)\nPoint(A1)\nPoint(B1)\nPoint(C1)\nPoint(P)\nPoint(Q)\nTriangle(A,B,C)\nCircle(Gamma)\nPointLiesOnCircle(Point(A), Circle(Gamma))\nPointLiesOnCircle(Point(B), Circle(Gamma))\nPointLiesOnCircle(Point(C), Circle(Gamma))\nInside(Point(M), Triangle(A,B,C))\nBisectsAngle(Line(A,M), Angle(B,A,C))\nIntersectAt(Line(A,M), Circle(Gamma), Point(A1))\nIntersectAt(Line(B,M), Circle(Gamma), Point(B1))\nIntersectAt(Line(C,M), Circle(Gamma), Point(C1))\nIntersectAt(Line(A1,C1), Line(A,B), Point(P))\nIntersectAt(Line(A1,B1), Line(A,C), Point(Q))\nProve(Parallel(Line(P,Q), Line(B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 22
+    },
+    {
+      "id": "geom_0055",
+      "context": "",
+      "problem": "For a convex hexagon ABCDEF in which each pair of opposite sides is unequal, consider the following six statements:\n(a1) AB is parallel to DE; (a2) AE = BD;\n(b1) BC is parallel to EF; (b2) BF = CE;\n(c1) CD is parallel to FA; (c2) CA = DF.\n(a) Show that if all the six statements are true, then the hexagon is cyclic (i.e., it can be inscribed in a circle).\n(b) Prove that, in fact, any five of these six statements also imply that the hexagon is cyclic.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nHexagon(A,B,C,D,E,F)\nParallel(Line(A,B), Line(D,E))\nEquals(LengthOf(Line(A,E)), LengthOf(Line(B,D)))\nParallel(Line(B,C), Line(E,F))\nEquals(LengthOf(Line(B,F)), LengthOf(Line(C,E)))\nParallel(Line(C,D), Line(F,A))\nEquals(LengthOf(Line(C,A)), LengthOf(Line(D,F)))\nProve(CircumscribedTo(Hexagon(A,B,C,D,E,F), Circle($)))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "geom_0032",
+      "context": "",
+      "problem": "In an acute-angled triangle \\(ABC\\), \\(\\angle ABC\\) is the largest angle. The perpendicular bisectors of \\(BC\\) and \\(BA\\) intersect \\(AC\\) at \\(X\\) and \\(Y\\) respectively. Prove that the circumcentre of triangle \\(ABC\\) is incentre of triangle \\(BXY\\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(X)\nPoint(Y)\nTriangle(A,B,C)\nAcuteAngle(Angle(A,B,C))\nPerpendicularBisector(Line(B,C))\nPerpendicularBisector(Line(B,A))\nIntersectAt(PerpendicularBisector(Line(B,C)), Line(A,C), Point(X))\nIntersectAt(PerpendicularBisector(Line(B,A)), Line(A,C), Point(Y))\nIsCircumcenterOf(Point(O), Triangle(A,B,C))\nIsIncenterOf(Point(O), Triangle(B,X,Y))\nProve(IsCircumcenterOf(Point(O), Triangle(A,B,C)), IsIncenterOf(Point(O), Triangle(B,X,Y)))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "geom_0040",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle. Let \\( B' \\) and \\( C' \\) denote respectively the reflection of \\( B \\) and \\( C \\) in the internal angle bisector of \\( \\angle A \\). Show that the triangles \\( ABC \\) and \\( AB'C' \\) have the same incentre.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(B')\nPoint(C')\nTriangle(A,B,C)\nTriangle(A,B',C')\nBisector(Angle(B,A,C))\nReflect(Point(B), Bisector(Angle(B,A,C)), Point(B'))\nReflect(Point(C), Bisector(Angle(B,A,C)), Point(C'))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nIsIncenterOf(Point(I), Triangle(A,B',C'))\nProve(Equals(Point(I), Point(I)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0068",
+      "context": "",
+      "problem": "All the points in the plane are coloured using three colours. Prove that there exists a triangle with vertices having the same colour such that either it is isosceles or its angles are in geometric progression.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nTriangle(A,B,C)\nRed(Point(A))\nRed(Point(B))\nRed(Point(C))\nIsosceles(Triangle(A,B,C))\nProve(Exists(Triangle(A,B,C), Or(Isosceles(Triangle(A,B,C)), GeometricProgression(Angle(A,B,C), Angle(B,C,A), Angle(C,A,B)))))",
+      "success": true,
+      "error": null,
+      "num_statements": 9
+    },
+    {
+      "id": "geom_0022",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle with \\( \\angle A = 90^\\circ \\) and \\( AB = AC \\). Let \\( D \\) and \\( E \\) be points on the segment \\( BC \\) such that \\( BD : DE : EC = 1 : 2 : \\sqrt{3} \\). Prove that \\( \\angle DAE = 45^\\circ \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nTriangle(A,B,C)\nRightAngle(Angle(B,A,C))\nEquals(LengthOf(Line(A,B)), LengthOf(Line(A,C)))\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(B,C))\nRatioOf(DistanceBetween(Point(B), Point(D)), DistanceBetween(Point(D), Point(E)), DistanceBetween(Point(E), Point(C))) = (1, 2, SqrtOf(3))\nProve(Equals(MeasureOf(Angle(D,A,E)), 45))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    },
+    {
+      "id": "geom_0086",
+      "context": "",
+      "problem": "Let ABCDE be a convex pentagon in which \u2220A = \u2220B = \u2220C = \u2220D = \u2220E = 120\u00b0 and whose side lengths are 5 consecutive integers in some order. Find all possible values of AB + BC + CD.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPentagon(A,B,C,D,E)\nConvex(Polygon(A,B,C,D,E))\nEquals(MeasureOf(Angle(A,B,C)), 120)\nEquals(MeasureOf(Angle(B,C,D)), 120)\nEquals(MeasureOf(Angle(C,D,E)), 120)\nEquals(MeasureOf(Angle(D,E,A)), 120)\nEquals(MeasureOf(Angle(E,A,B)), 120)\nFind(SumOf(LengthOf(Line(A,B)), LengthOf(Line(B,C)), LengthOf(Line(C,D))))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0073",
+      "context": "",
+      "problem": "Let ABCD be a quadrilateral inscribed in a circle \u0393. Let E, F, G, H be the midpoints of the arcs AB, BC, CD, DA of the circle \u0393. Suppose AC \u22c5 BD = EG \u22c5 FH. Prove that AC, BD, EG, FH are concurrent.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(G)\nPoint(H)\nCircle(\u0393)\nQuadrilateral(A,B,C,D)\nArc(A,B)\nArc(B,C)\nArc(C,D)\nArc(D,A)\nIsMidpointOf(Point(E), Arc(A,B))\nIsMidpointOf(Point(F), Arc(B,C))\nIsMidpointOf(Point(G), Arc(C,D))\nIsMidpointOf(Point(H), Arc(D,A))\nEquals(Mul(LengthOf(Line(A,C)), LengthOf(Line(B,D))), Mul(LengthOf(Line(E,G)), LengthOf(Line(F,H))))\nProve(Concurrent(Line(A,C), Line(B,D), Line(E,G), Line(F,H)))",
+      "success": true,
+      "error": null,
+      "num_statements": 20
+    },
+    {
+      "id": "geom_0047",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a right-angled triangle with \\( \\angle B = 90^\\circ \\). Let \\( I \\) be the incentre of \\( ABC \\). Draw a line perpendicular to \\( AI \\) at \\( I \\). Let it intersect the line \\( CB \\) at \\( D \\). Prove that \\( CI \\) is perpendicular to \\( AD \\) and prove that \\( ID = \\sqrt{b(b-a)} \\) where \\( BC = a \\) and \\( CA = b \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(I)\nPoint(D)\nTriangle(A,B,C)\nRightAngle(Angle(A,B,C))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nLine(A,I)\nLine(C,B)\nPerpendicularThrough(Line(A,I), Point(I))\nIntersectAt(Line(C,B), Line(D,I), Point(D))\nPerpendicular(Line(C,I), Line(A,D))\nProve(Equals(LengthOf(Line(I,D)), SqrtOf(Mul(b, Sub(b, a)))))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "geom_0026",
+      "context": "",
+      "problem": "Let n \u2265 4 be a natural number. Let A1A2 \u00b7\u00b7\u00b7 An be a regular polygon and X = {1, 2, ..., n}. A subset {i1, i2, ..., ik} of X, with k \u2265 3 and i1 < i2 < \u00b7\u00b7\u00b7 < ik, is called a good subset if the angles of the polygon Ai1Ai2 \u00b7\u00b7\u00b7 Aik, when arranged in the increasing order, are in an arithmetic progression. If n is a prime, show that a proper good subset of X contains exactly four elements.",
+      "generated_dsl": "Polygon(A1,A2,...,An)\nRegular(Polygon(A1,A2,...,An))\nSubset(X, {1, 2, ..., n})\nGoodSubset({i1, i2, ..., ik}, X)\nArithmeticProgression(Angle(Ai1,Ai2,...,Aik))\nPrime(n)\nProve(Equals(Cardinality(GoodSubset({i1, i2, ..., ik}, X)), 4))",
+      "success": true,
+      "error": null,
+      "num_statements": 7
+    },
+    {
+      "id": "geom_0066",
+      "context": "",
+      "problem": "Let ABC be a triangle; \u0393A, \u0393B, \u0393C be three equal, disjoint circles inside ABC such that \u0393A touches AB and AC; \u0393B touches AB; and BC, and \u0393C touches BC and CA. Let \u0393 be a circle touching circles \u0393A, \u0393B, \u0393C externally. Prove that the line joining the circum-centre O and the in-centre I of triangle ABC passes through the centre of \u0393.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(O)\nPoint(I)\nCircle(\u0393A)\nCircle(\u0393B)\nCircle(\u0393C)\nCircle(\u0393)\nTriangle(A,B,C)\nInside(Circle(\u0393A), Triangle(A,B,C))\nInside(Circle(\u0393B), Triangle(A,B,C))\nInside(Circle(\u0393C), Triangle(A,B,C))\nTouches(Circle(\u0393A), Line(A,B))\nTouches(Circle(\u0393A), Line(A,C))\nTouches(Circle(\u0393B), Line(A,B))\nTouches(Circle(\u0393B), Line(B,C))\nTouches(Circle(\u0393C), Line(B,C))\nTouches(Circle(\u0393C), Line(C,A))\nTouches(Circle(\u0393), Circle(\u0393A))\nTouches(Circle(\u0393), Circle(\u0393B))\nTouches(Circle(\u0393), Circle(\u0393C))\nIsCircumcenterOf(Point(O), Triangle(A,B,C))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nProve(PointLiesOnLine(Point(CenterOf(Circle(\u0393))), Line(O,I)))",
+      "success": true,
+      "error": null,
+      "num_statements": 25
+    },
+    {
+      "id": "geom_0085",
+      "context": "",
+      "problem": "In the given figure, ABCD is a square paper. It is folded along EF such that A goes to a point A' \u2260 C, B on the side BC and D goes to D'. The line A'D' cuts CD in G. Show that the inradius of the triangle GCA' is the sum of the inradii of the triangles GD'F and A'BE.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(A')\nPoint(D')\nPoint(G)\nSquare(A,B,C,D)\nLine(E,F)\nLine(A',D')\nIntersectAt(Line(A',D'), Line(C,D), Point(G))\nPointLiesOnLine(Point(B), Line(B,C))\nTriangle(G,C,A')\nTriangle(G,D',F)\nTriangle(A',B,E)\nProve(Equals(SumOf(InradiusOf(Triangle(G,D',F)), InradiusOf(Triangle(A',B,E))), InradiusOf(Triangle(G,C,A'))))",
+      "success": true,
+      "error": null,
+      "num_statements": 18
+    },
+    {
+      "id": "geom_0034",
+      "context": "",
+      "problem": "Let ABC be an acute-angled triangle and suppose \u2220ABC is the largest angle of the triangle. Let R be its circumcentre. Suppose the circumcircle of triangle ARB cuts AC again in X. Prove that RX is perpendicular to BC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(R)\nPoint(X)\nTriangle(A,B,C)\nAcuteAngle(Angle(A,B,C))\nIsCircumcenterOf(Point(R), Triangle(A,B,C))\nCircle(R)\nPointLiesOnCircle(Point(X), Circle(R))\nIntersectAt(Circle(R), Line(A,C), Point(X))\nProve(Perpendicular(Line(R,X), Line(B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 12
+    },
+    {
+      "id": "geom_0031",
+      "context": "",
+      "problem": "In a triangle \\( ABC \\), points \\( D \\) and \\( E \\) are on segments \\( BC \\) and \\( AC \\) such that \\( BD = 3DC \\) and \\( AE = 4EC \\). Point \\( P \\) is on line \\( ED \\) such that \\( D \\) is the midpoint of segment \\( EP \\). Lines \\( AP \\) and \\( BC \\) intersect at point \\( S \\). Find the ratio \\( BS/SD \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(P)\nPoint(S)\nTriangle(A,B,C)\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(A,C))\nEquals(RatioOf(LengthOf(Line(B,D)), LengthOf(Line(D,C))), 3)\nEquals(RatioOf(LengthOf(Line(A,E)), LengthOf(Line(E,C))), 4)\nPointLiesOnLine(Point(P), Line(E,D))\nIsMidpointOf(Point(D), Line(E,P))\nIntersectAt(Line(A,P), Line(B,C), Point(S))\nFind(RatioOf(LengthOf(Line(B,S)), LengthOf(Line(S,D))))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "geom_0041",
+      "context": "",
+      "problem": "Two circles \\(\\Gamma\\) and \\(\\Sigma\\) in the plane intersect at two distinct points \\( A \\) and \\( B \\), and the centre of \\(\\Sigma\\) lies on \\(\\Gamma\\). Let points \\( C \\) and \\( D \\) be on \\(\\Gamma\\) and \\(\\Sigma\\), respectively, such that \\( C, B, \\) and \\( D \\) are collinear. Let point \\( E \\) on \\(\\Sigma\\) be such that \\( DE \\) is parallel to \\( AC \\). Show that \\( AE = AB \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nCircle(Gamma)\nCircle(Sigma)\nPointLiesOnCircle(Point(A), Circle(Gamma))\nPointLiesOnCircle(Point(A), Circle(Sigma))\nPointLiesOnCircle(Point(B), Circle(Gamma))\nPointLiesOnCircle(Point(B), Circle(Sigma))\nPointLiesOnCircle(Point(C), Circle(Gamma))\nPointLiesOnCircle(Point(D), Circle(Sigma))\nPointLiesOnCircle(Point(E), Circle(Sigma))\nCollinear(Point(C), Point(B), Point(D))\nParallel(Line(D,E), Line(A,C))\nProve(Equals(LengthOf(Line(A,E)), LengthOf(Line(A,B))))",
+      "success": true,
+      "error": null,
+      "num_statements": 17
+    },
+    {
+      "id": "geom_0003",
+      "context": "",
+      "problem": "In a triangle ABC, D is a point on BC such that AD is the internal bisector of \u2220A. Suppose \u2220B = 2\u2220C and CD = AB. Prove that \u2220A = 72\u00b0.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nTriangle(A,B,C)\nPointLiesOnLine(Point(D), Line(B,C))\nBisectsAngle(Line(A,D), Angle(B,A,C))\nEquals(Angle(B), Mul(2, Angle(C)))\nEquals(LengthOf(Line(C,D)), LengthOf(Line(A,B)))\nProve(Equals(Angle(A,B,C), 72))",
+      "success": true,
+      "error": null,
+      "num_statements": 10
+    },
+    {
+      "id": "geom_0061",
+      "context": "",
+      "problem": "Let M be the midpoint of side BC of a triangle ABC. Let the median AM intersect the incircle of ABC at K and L, K being nearer to A than L. If AK=KL=LM, prove that the sides of triangle ABC are in the ratio 5 : 10 : 13 in some order.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(M)\nPoint(K)\nPoint(L)\nTriangle(A,B,C)\nIsMidpointOf(Point(M), Line(B,C))\nMedianOf(Line(A,M), Triangle(A,B,C))\nIncircle(Circle(I), Triangle(A,B,C))\nIntersectAt(Line(A,M), Circle(I), Point(K))\nIntersectAt(Line(A,M), Circle(I), Point(L))\nBetween(Point(K), Point(L), Point(M))\nEquals(LengthOf(Line(A,K)), LengthOf(Line(K,L)))\nEquals(LengthOf(Line(K,L)), LengthOf(Line(L,M)))\nProve(RatioOf(SideOf(Triangle(A,B,C)), SideOf(Triangle(A,B,C)), SideOf(Triangle(A,B,C))) = (5, 10, 13))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "geom_0038",
+      "context": "",
+      "problem": "Let ABC be an acute-angled triangle in which \u2220ABC is the largest angle. Let O be its circumcentre. The perpendicular bisectors of BC and AB meet AC at X and Y respectively. The internal bisectors of \u2220AXB and \u2220BYC meet AB and BC at D and E respectively. Prove that BO is perpendicular to AC if DE is parallel to AC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(O)\nPoint(X)\nPoint(Y)\nPoint(D)\nPoint(E)\nTriangle(A,B,C)\nIsCircumcenterOf(Point(O), Triangle(A,B,C))\nPerpendicularBisector(Line(B,C))\nPerpendicularBisector(Line(A,B))\nIntersectAt(PerpendicularBisector(Line(B,C)), Line(A,C), Point(X))\nIntersectAt(PerpendicularBisector(Line(A,B)), Line(A,C), Point(Y))\nBisectsAngle(Line(A,X), Angle(A,X,B))\nBisectsAngle(Line(B,Y), Angle(B,Y,C))\nPointLiesOnLine(Point(D), Line(A,B))\nPointLiesOnLine(Point(E), Line(B,C))\nParallel(Line(D,E), Line(A,C))\nProve(Perpendicular(Line(B,O), Line(A,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 20
+    },
+    {
+      "id": "geom_0036",
+      "context": "",
+      "problem": "What is the minimal area of a right-angled triangle whose inradius is 1 unit?",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nTriangle(A,B,C)\nRightAngle(Angle(A,B,C))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nRadiusOf(Circle(I,1))\nFind(Minimum(AreaOf(Triangle(A,B,C))))",
+      "success": true,
+      "error": null,
+      "num_statements": 8
+    },
+    {
+      "id": "geom_0063",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle in which \\( AB = AC \\). Let \\( D \\) be the mid-point of \\( BC \\) and \\( P \\) be a point on \\( AD \\). Suppose \\( E \\) is the foot of perpendicular from \\( P \\) on \\( AC \\). If \n\\[\n\\frac{AP}{PD} = \\frac{BP}{PE} = \\frac{BD}{AD} = m\n\\]\nand \\( z = m^2(1+\\lambda) \\), prove that \n\\[\nz^2 - (\\lambda^3 - \\lambda^2 - 2)z + 1 = 0.\n\\]\nHence show that \\(\\lambda \\geq 2\\) and \\(\\lambda = 2\\) if and only if \\( ABC \\) is equilateral.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(P)\nPoint(E)\nTriangle(A,B,C)\nIsosceles(Triangle(A,B,C))\nEquals(LengthOf(Line(A,B)), LengthOf(Line(A,C)))\nIsMidpointOf(Point(D), Line(B,C))\nPointLiesOnLine(Point(P), Line(A,D))\nPerpendicular(Line(P,E), Line(A,C))\nEquals(Div(LengthOf(Line(A,P)), LengthOf(Line(P,D))), m)\nEquals(Div(LengthOf(Line(B,P)), LengthOf(Line(P,E))), m)\nEquals(Div(LengthOf(Line(B,D)), LengthOf(Line(A,D))), m)\nEquals(z, Mul(Pow(m,2), Add(1, lambda)))\nProve(Equals(Pow(z,2), Add(Sub(Pow(lambda,3), Pow(lambda,2)), Sub(-2, z), 1)))\nProve(GreaterThanOrEqual(lambda, 2))\nProve(Equals(lambda, 2) <=> Equilateral(Triangle(A,B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 19
+    },
+    {
+      "id": "geom_0077",
+      "context": "",
+      "problem": "Let \u0393\u2081 and \u0393\u2082 be two circles touching each other externally at R. Let l\u2081 be a line which is tangent to \u0393\u2082 at P and passing through the center O\u2081 of \u0393\u2081. Similarly, let l\u2082 be a line which is tangent to \u0393\u2082 at Q and passing through the center O\u2082 of \u0393\u2082. Suppose l\u2081 and l\u2082 are not parallel and intersect at K. If KP = KQ, prove that the triangle PQR is equilateral.",
+      "generated_dsl": "Point(O1)\nPoint(O2)\nPoint(R)\nPoint(P)\nPoint(Q)\nPoint(K)\nCircle(O1)\nCircle(O2)\nLine(l1)\nLine(l2)\nTangent(Line(l1), Circle(O2))\nTangent(Line(l2), Circle(O2))\nPointLiesOnCircle(Point(R), Circle(O1))\nPointLiesOnCircle(Point(R), Circle(O2))\nTouches(Circle(O1), Circle(O2))\nPointLiesOnLine(Point(P), Line(l1))\nPointLiesOnLine(Point(Q), Line(l2))\nIntersectAt(Line(l1), Line(l2), Point(K))\nEquals(DistanceBetween(Point(K), Point(P)), DistanceBetween(Point(K), Point(Q)))\nProve(Equilateral(Triangle(P,Q,R)))",
+      "success": true,
+      "error": null,
+      "num_statements": 20
+    },
+    {
+      "id": "geom_0062",
+      "context": "",
+      "problem": "In a cyclic quadrilateral \\(ABCD\\), \\(AB = a, BC = b, CD = c\\), \\(\\angle ABC = 120^\\circ\\), and \\(\\angle ABD = 30^\\circ\\). Prove that\n(i) \\(c \\geq a + b\\);\n(ii) \\(|\\sqrt{c + a} - \\sqrt{c + b}| = \\sqrt{c - a - b}\\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nQuadrilateral(A,B,C,D)\nCircle(O)\nPointLiesOnCircle(Point(A), Circle(O))\nPointLiesOnCircle(Point(B), Circle(O))\nPointLiesOnCircle(Point(C), Circle(O))\nPointLiesOnCircle(Point(D), Circle(O))\nEquals(LengthOf(Line(A,B)), a)\nEquals(LengthOf(Line(B,C)), b)\nEquals(LengthOf(Line(C,D)), c)\nAngleBetween(Line(A,B), Line(B,C), 120)\nAngleBetween(Line(A,B), Line(B,D), 30)\nProve(GreaterThanOrEqual(c, Add(a, b)))\nProve(Equals(Abs(Sub(SqrtOf(Add(c, a)), SqrtOf(Add(c, b)))), SqrtOf(Sub(c, Add(a, b)))))",
+      "success": true,
+      "error": null,
+      "num_statements": 17
+    },
+    {
+      "id": "geom_0009",
+      "context": "",
+      "problem": "In triangle ABC, let D be the midpoint of BC. If \u2220ADB = 45\u00b0 and \u2220ACD = 30\u00b0, determine \u2220BAD.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nTriangle(A,B,C)\nIsMidpointOf(Point(D), Line(B,C))\nAngle(A,D,B)\nAngle(A,C,D)\nEquals(MeasureOf(Angle(A,D,B)), 45)\nEquals(MeasureOf(Angle(A,C,D)), 30)\nFind(MeasureOf(Angle(B,A,D)))",
+      "success": true,
+      "error": null,
+      "num_statements": 11
+    },
+    {
+      "id": "geom_0004",
+      "context": "",
+      "problem": "In an acute triangle ABC, points D, E, F are located on the sides BC, CA, AB respectively such that CD/CE = CA/CB, AE/AF = AB/AC, BF/BD = BC/BA. Prove that AD, BE, CF are the altitudes of ABC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nTriangle(A,B,C)\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(C,A))\nPointLiesOnLine(Point(F), Line(A,B))\nEquals(Div(LengthOf(Line(C,D)), LengthOf(Line(C,E))), Div(LengthOf(Line(C,A)), LengthOf(Line(C,B))))\nEquals(Div(LengthOf(Line(A,E)), LengthOf(Line(A,F))), Div(LengthOf(Line(A,B)), LengthOf(Line(A,C))))\nEquals(Div(LengthOf(Line(B,F)), LengthOf(Line(B,D))), Div(LengthOf(Line(B,C)), LengthOf(Line(B,A))))\nProve(IsAltitudeOf(Line(A,D), Triangle(A,B,C)))\nProve(IsAltitudeOf(Line(B,E), Triangle(A,B,C)))\nProve(IsAltitudeOf(Line(C,F), Triangle(A,B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "geom_0050",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a right-angled triangle with \\( \\angle B = 90^\\circ \\). Let \\( AD \\) be the bisector of \\( \\angle A \\) with \\( D \\) on \\( BC \\). Let the circumcircle of triangle \\( ACD \\) intersect \\( AB \\) again in \\( E \\); and let the circumcircle of triangle \\( ABD \\) intersect \\( AC \\) again in \\( F \\). Let \\( K \\) be the reflection of \\( E \\) in the line \\( BC \\). Prove that \\( FK = BC \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(K)\nTriangle(A,B,C)\nRightAngle(Angle(A,B,C))\nBisector(Angle(B,A,C))\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnCircle(Point(E), Circle(A,C,D))\nPointLiesOnLine(Point(E), Line(A,B))\nPointLiesOnCircle(Point(F), Circle(A,B,D))\nPointLiesOnLine(Point(F), Line(A,C))\nReflection(Point(K), Point(E), Line(B,C))\nProve(Equals(LengthOf(Line(F,K)), LengthOf(Line(B,C))))",
+      "success": true,
+      "error": null,
+      "num_statements": 17
+    },
+    {
+      "id": "geom_0021",
+      "context": "",
+      "problem": "In a triangle \\( ABC \\), \\( AD \\) is the altitude from \\( A \\), and \\( H \\) is the orthocentre. Let \\( K \\) be the centre of the circle passing through \\( D \\) and tangent to \\( BH \\) at \\( H \\). Prove that the line \\( DK \\) bisects \\( AC \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(H)\nPoint(K)\nTriangle(A,B,C)\nIsAltitudeOf(Line(A,D), Triangle(A,B,C))\nIsOrthocenterOf(Point(H), Triangle(A,B,C))\nCircle(K)\nPointLiesOnCircle(Point(D), Circle(K))\nTangent(Line(B,H), Circle(K))\nProve(BisectsAngle(Line(D,K), Angle(A,C,K)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0081",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a right-angled triangle with \\( \\angle B = 90^\\circ \\). Let \\( BD \\) be the altitude from \\( B \\) on to \\( AC \\). Let \\( P, Q \\) and \\( I \\) be the incentres of triangles \\( ABD, CBD \\) and \\( ABC \\) respectively. Show that the circumcentre of the triangle \\( PIQ \\) lies on the hypotenuse \\( AC \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(P)\nPoint(Q)\nPoint(I)\nTriangle(A,B,C)\nTriangle(A,B,D)\nTriangle(C,B,D)\nRightAngle(Angle(A,B,C))\nIsAltitudeOf(Line(B,D), Triangle(A,B,C))\nIsIncenterOf(Point(P), Triangle(A,B,D))\nIsIncenterOf(Point(Q), Triangle(C,B,D))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nProve(OnBoundary(Point(Circumcenter(Triangle(P,I,Q))), Line(A,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 16
+    },
+    {
+      "id": "geom_0013",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle in which \\( AB = AC \\) and let \\( I \\) be its in-centre. Suppose \\( BC = AB + AI \\). Find \\(\\angle BAC\\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(I)\nTriangle(A,B,C)\nIsosceles(Triangle(A,B,C))\nEquals(LengthOf(Line(A,B)), LengthOf(Line(A,C)))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nEquals(LengthOf(Line(B,C)), Add(LengthOf(Line(A,B)), LengthOf(Line(A,I))))\nFind(MeasureOf(Angle(B,A,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 10
+    },
+    {
+      "id": "geom_0007",
+      "context": "",
+      "problem": "Let ABCD be a quadrilateral; x and y be the midpoints of AC and BD respectively and the lines through X and Y respectively parallel to BD, AC meet in O. Let P, Q, R, S be the midpoints of AB, BC, CD, DA respectively. Prove that\n\n(a) quadrilaterals APOS and APXS have the same area;\n\n(b) the areas of the quadrilateral APOS, BQOP, CROQ, DSOR are all equal.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(X)\nPoint(Y)\nPoint(O)\nPoint(P)\nPoint(Q)\nPoint(R)\nPoint(S)\nQuadrilateral(A,B,C,D)\nIsMidpointOf(Point(X), Line(A,C))\nIsMidpointOf(Point(Y), Line(B,D))\nParallelThrough(Line(B,D), Point(X))\nParallelThrough(Line(A,C), Point(Y))\nIntersectAt(Line(X,Y), Line(O,O), Point(O))\nIsMidpointOf(Point(P), Line(A,B))\nIsMidpointOf(Point(Q), Line(B,C))\nIsMidpointOf(Point(R), Line(C,D))\nIsMidpointOf(Point(S), Line(D,A))\nProve(Equals(AreaOf(Quadrilateral(A,P,O,S)), AreaOf(Quadrilateral(A,P,X,S))))\nProve(Equals(AreaOf(Quadrilateral(A,P,O,S)), AreaOf(Quadrilateral(B,Q,O,P))))\nProve(Equals(AreaOf(Quadrilateral(A,P,O,S)), AreaOf(Quadrilateral(C,R,O,Q))))\nProve(Equals(AreaOf(Quadrilateral(A,P,O,S)), AreaOf(Quadrilateral(D,S,O,R))))",
+      "success": true,
+      "error": null,
+      "num_statements": 25
+    },
+    {
+      "id": "geom_0016",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle. Let \\( BE \\) and \\( CF \\) be internal angle bisectors of \\( \\angle B \\) and \\( \\angle C \\) respectively with \\( E \\) on \\( AC \\) and \\( F \\) on \\( AB \\). Suppose \\( X \\) is a point on the segment \\( CF \\) such that \\( AX \\perpendicular CF \\); and \\( Y \\) is a point on the segment \\( BE \\) such that \\( AY \\perpendicular BE \\). Prove that \\( XY = (b + c - a)/2 \\) where \\( BC = a, CA = b \\) and \\( AB = c \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(E)\nPoint(F)\nPoint(X)\nPoint(Y)\nTriangle(A,B,C)\nLine(B,E)\nLine(C,F)\nSegment(C,F)\nSegment(B,E)\nPointLiesOnLine(Point(E), Line(A,C))\nPointLiesOnLine(Point(F), Line(A,B))\nBisectsAngle(Line(B,E), Angle(C,B,A))\nBisectsAngle(Line(C,F), Angle(B,C,A))\nPointLiesOnLine(Point(X), Segment(C,F))\nPointLiesOnLine(Point(Y), Segment(B,E))\nPerpendicular(Line(A,X), Line(C,F))\nPerpendicular(Line(A,Y), Line(B,E))\nProve(Equals(LengthOf(Line(X,Y)), Div(Add(Add(b,c), Sub(a)), 2)))",
+      "success": true,
+      "error": null,
+      "num_statements": 21
+    },
+    {
+      "id": "geom_0015",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle and \\( D \\) be a point on the segment \\( BC \\) such that \\( DC = 2BD \\). Let \\( E \\) be the mid-point of \\( AC \\). Let \\( AD \\) and \\( BE \\) intersect in \\( P \\). Determine the ratios \\( BP/PE \\) and \\( AP/PD \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(P)\nTriangle(A,B,C)\nPointLiesOnLine(Point(D), Line(B,C))\nEquals(LengthOf(Line(D,C)), Mul(2, LengthOf(Line(B,D))))\nIsMidpointOf(Point(E), Line(A,C))\nIntersectAt(Line(A,D), Line(B,E), Point(P))\nFind(RatioOf(LengthOf(Line(B,P)), LengthOf(Line(P,E))))\nFind(RatioOf(LengthOf(Line(A,P)), LengthOf(Line(P,D))))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0037",
+      "context": "",
+      "problem": "Let \\( ABC \\) be an acute-angled triangle and let \\( I \\) be its incentre. Let the incircle of triangle \\( ABC \\) touch \\( BC \\) in \\( D \\). The incircle of the triangle \\( ABD \\) touches \\( AB \\) in \\( E \\); the incircle of the triangle \\( ACD \\) touches \\( BC \\) in \\( F \\). Prove that \\( B, E, I, F \\) are concyclic.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(I)\nTriangle(A,B,C)\nTriangle(A,B,D)\nTriangle(A,C,D)\nIsIncenterOf(Point(I), Triangle(A,B,C))\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(A,B))\nPointLiesOnLine(Point(F), Line(B,C))\nProve(Cyclic(Polygon(B,E,I,F)))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "geom_0095",
+      "context": "",
+      "problem": "Euler marks n different points in the Euclidean plane. For each pair of marked points, Gauss writes down the number \u230alog2 d\u230b where d is the distance between the two points. Prove that Gauss writes down less than 2n distinct values.",
+      "generated_dsl": "Point(A1)\nPoint(A2)\nPoint(An)\nDistanceBetween(Point(Ai), Point(Aj))\nCalculate(Floor(Log2(DistanceBetween(Point(Ai), Point(Aj)))))\nProve(LessThan(Count(DistinctValues), Mul(2, n)))",
+      "success": true,
+      "error": null,
+      "num_statements": 6
+    },
+    {
+      "id": "geom_0043",
+      "context": "",
+      "problem": "Let ABC be a triangle with circumcircle \u0393 and incentre I. Let the internal angle bisectors of \u2220A, \u2220B and \u2220C meet \u0393 in A', B' and C' respectively. Let B'C' intersect AA' in P and AC in Q, and let BB' intersect AC in R. Suppose the quadrilateral PIRQ is a kite; that is, IP = IR and QP = QR. Prove that ABC is an equilateral triangle.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(I)\nPoint(A')\nPoint(B')\nPoint(C')\nPoint(P)\nPoint(Q)\nPoint(R)\nTriangle(A,B,C)\nCircle(\u0393)\nIsIncenterOf(Point(I), Triangle(A,B,C))\nAngle(A,B,C)\nAngle(B,C,A)\nAngle(C,A,B)\nBisectsAngle(Line(A,A'), Angle(B,A,C))\nBisectsAngle(Line(B,B'), Angle(A,B,C))\nBisectsAngle(Line(C,C'), Angle(A,C,B))\nPointLiesOnCircle(Point(A'), Circle(\u0393))\nPointLiesOnCircle(Point(B'), Circle(\u0393))\nPointLiesOnCircle(Point(C'), Circle(\u0393))\nIntersectAt(Line(B',C'), Line(A,A'), Point(P))\nIntersectAt(Line(B',C'), Line(A,C), Point(Q))\nIntersectAt(Line(B,B'), Line(A,C), Point(R))\nKite(Quadrilateral(P,I,R,Q))\nEquals(DistanceBetween(Point(I), Point(P)), DistanceBetween(Point(I), Point(R)))\nEquals(DistanceBetween(Point(Q), Point(P)), DistanceBetween(Point(Q), Point(R)))\nProve(Equilateral(Triangle(A,B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 29
+    },
+    {
+      "id": "geom_0054",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle and \\( D \\) be the mid-point of side \\( BC \\). Suppose \\( \\angle DAB = \\angle BCA \\) and \\( \\angle DAC = 15^\\circ \\). Show that \\( \\angle LADC \\) is obtuse. Further, if \\( O \\) is the circumcentre of \\( ADC \\), prove that triangle \\( AOD \\) is equilateral.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(O)\nTriangle(A,B,C)\nTriangle(A,D,C)\nIsMidpointOf(Point(D), Line(B,C))\nCongruentAngle(Angle(D,A,B), Angle(B,C,A))\nEquals(MeasureOf(Angle(D,A,C)), 15)\nIsCircumcenterOf(Point(O), Triangle(A,D,C))\nProve(ObtuseAngle(Angle(L,A,D)))\nProve(Equilateral(Triangle(A,O,D)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0023",
+      "context": "",
+      "problem": "Let \\( n \\geq 3 \\) be a natural number and let \\( P \\) be a polygon with \\( n \\) sides. Let \\( a_1, a_2, \\ldots, a_n \\) be the lengths of the sides of \\( P \\) and let \\( p \\) be its perimeter. Prove that\n\n\\[\n\\frac{a_1}{p - a_1} + \\frac{a_2}{p - a_2} + \\cdots + \\frac{a_n}{p - a_n} < 2.\n\\]",
+      "generated_dsl": "Polygon(P)\nPerimeterOf(Polygon(P))\nProve(LessThan(SumOf(Div(a_1, Sub(p, a_1)), Div(a_2, Sub(p, a_2)), ..., Div(a_n, Sub(p, a_n))), 2))",
+      "success": true,
+      "error": null,
+      "num_statements": 3
+    },
+    {
+      "id": "geom_0072",
+      "context": "",
+      "problem": "Suppose five of the nine vertices of a regular nine-sided polygon are arbitrarily chosen. Show that one can select four among these five such that they are the vertices of a trapezium.",
+      "generated_dsl": "Polygon(P)\nRegular(Polygon(P))\nProve(Exists(Trapezoid(A,B,C,D), IsSideOf(Line(A,B), Polygon(P)), IsSideOf(Line(B,C), Polygon(P)), IsSideOf(Line(C,D), Polygon(P)), IsSideOf(Line(D,A), Polygon(P))))",
+      "success": true,
+      "error": null,
+      "num_statements": 3
+    },
+    {
+      "id": "geom_0053",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle in which no angle is \\( 90^\\circ \\). For any point \\( P \\) in the plane of the triangle, let \\( A_1, B_1, C_1 \\) denote the reflections of \\( P \\) in the sides \\( BC, CA, AB \\) respectively. Prove the following statements:\n(a) If \\( P \\) is the incentre or an excentre of \\( ABC \\), then \\( P \\) is the circumcentre of \\( A_1B_1C_1 \\);\n(b) If \\( P \\) is the circumcentre of \\( ABC \\), then \\( P \\) is the orthocentre of \\( A_1B_1C_1 \\);\n(c) If \\( P \\) is the orthocentre of \\( ABC \\), then \\( P \\) is either the incentre or an excentre of \\( A_1B_1C_1 \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(P)\nPoint(A1)\nPoint(B1)\nPoint(C1)\nTriangle(A,B,C)\nTriangle(A1,B1,C1)\nReflect(Point(P), Line(B,C), Point(A1))\nReflect(Point(P), Line(C,A), Point(B1))\nReflect(Point(P), Line(A,B), Point(C1))\nProve(Implies(Or(IsIncenterOf(Point(P), Triangle(A,B,C)), IsExcenterOf(Point(P), Triangle(A,B,C))), IsCircumcenterOf(Point(P), Triangle(A1,B1,C1))))\nProve(Implies(IsCircumcenterOf(Point(P), Triangle(A,B,C)), IsOrthocenterOf(Point(P), Triangle(A1,B1,C1))))\nProve(Implies(IsOrthocenterOf(Point(P), Triangle(A,B,C)), Or(IsIncenterOf(Point(P), Triangle(A1,B1,C1)), IsExcenterOf(Point(P), Triangle(A1,B1,C1)))))",
+      "success": true,
+      "error": null,
+      "num_statements": 15
+    },
+    {
+      "id": "geom_0090",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle with \\( \\angle BAC > 90^\\circ \\). Let \\( D \\) be a point on the segment \\( BC \\) and \\( E \\) be a point on the line \\( AD \\) such that \\( AB \\) is tangent to the circumcircle of triangle \\( ACD \\) at \\( A \\) and \\( BE \\) is perpendicular to \\( AD \\). Given that \\( CA = CD \\) and \\( AE = CE \\), determine \\( \\angle BCA \\) in degrees.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nTriangle(A,B,C)\nSegment(B,C)\nPointLiesOnLine(Point(D), Line(B,C))\nLine(A,D)\nPointLiesOnLine(Point(E), Line(A,D))\nCircle(O)\nTangent(Line(A,B), Circle(O))\nCircumscribedTo(Circle(O), Triangle(A,C,D))\nPerpendicular(Line(B,E), Line(A,D))\nEquals(LengthOf(Line(C,A)), LengthOf(Line(C,D)))\nEquals(LengthOf(Line(A,E)), LengthOf(Line(C,E)))\nGreaterThan(MeasureOf(Angle(B,A,C)), 90)\nFind(MeasureOf(Angle(B,C,A)))",
+      "success": true,
+      "error": null,
+      "num_statements": 18
+    },
+    {
+      "id": "geom_0078",
+      "context": "",
+      "problem": "In an acute triangle ABC, O is the circumcenter, H is the orthocenter and G is the centroid. Let OD be perpendicular to BC and HE be perpendicular to CA, with D on BC and E on CA. Let F be the midpoint of AB. Suppose the areas of triangles ODC, HEA and GFB are equal. Find all the possible values of C\u0302.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(O)\nPoint(H)\nPoint(G)\nPoint(D)\nPoint(E)\nPoint(F)\nTriangle(A,B,C)\nIsCircumcenterOf(Point(O), Triangle(A,B,C))\nIsOrthocenterOf(Point(H), Triangle(A,B,C))\nIsCentroidOf(Point(G), Triangle(A,B,C))\nIsMidpointOf(Point(F), Line(A,B))\nPointLiesOnLine(Point(D), Line(B,C))\nPointLiesOnLine(Point(E), Line(C,A))\nPerpendicular(Line(O,D), Line(B,C))\nPerpendicular(Line(H,E), Line(C,A))\nEquals(AreaOf(Triangle(O,D,C)), AreaOf(Triangle(H,E,A)))\nEquals(AreaOf(Triangle(O,D,C)), AreaOf(Triangle(G,F,B)))\nFind(MeasureOf(Angle(A,B,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 21
+    },
+    {
+      "id": "geom_0067",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle and let \\( P \\) be an interior point such that \\(\\angle BPC = 90^\\circ\\), \\(\\angle BAP = \\angle BCP\\). Let \\( M, N \\) be the mid-points of \\( AC, BC \\) respectively. Suppose \\( BP = 2PM\\). Prove that \\( A, P, N \\) are collinear.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(P)\nPoint(M)\nPoint(N)\nTriangle(A,B,C)\nIsMidpointOf(Point(M), Line(A,C))\nIsMidpointOf(Point(N), Line(B,C))\nRightAngle(Angle(B,P,C))\nCongruentAngle(Angle(B,A,P), Angle(B,C,P))\nEquals(LengthOf(Line(B,P)), Mul(2, LengthOf(Line(P,M))))\nProve(Collinear(Point(A), Point(P), Point(N)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    },
+    {
+      "id": "geom_0094",
+      "context": "",
+      "problem": "In a convex quadrilateral ABCD, \u2220ABD = 30\u00b0, \u2220BCA = 75\u00b0, \u2220ACD = 25\u00b0 and CD = CB. Extend CB to meet the circumcircle of triangle DAC at E. Prove that CE = BD.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nQuadrilateral(A,B,C,D)\nTriangle(D,A,C)\nCircle(O)\nPointLiesOnCircle(Point(E), Circle(O))\nAngle(A,B,D)\nAngle(B,C,A)\nAngle(A,C,D)\nEquals(MeasureOf(Angle(A,B,D)), 30)\nEquals(MeasureOf(Angle(B,C,A)), 75)\nEquals(MeasureOf(Angle(A,C,D)), 25)\nCongruent(Line(C,D), Line(C,B))\nProve(Congruent(Line(C,E), Line(B,D)))",
+      "success": true,
+      "error": null,
+      "num_statements": 17
+    },
+    {
+      "id": "geom_0017",
+      "context": "",
+      "problem": "Let ABC be a triangle. Let D, E be a points on the segment BC such that BD = DE = EC. Let F be the mid-point of AC. Let BF intersect AD in P and AE in Q respectively. Determine BP/PQ.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nPoint(E)\nPoint(F)\nPoint(P)\nPoint(Q)\nTriangle(A,B,C)\nSegment(B,C)\nPointLiesOnLine(Point(D), Segment(B,C))\nPointLiesOnLine(Point(E), Segment(B,C))\nEquals(LengthOf(Line(B,D)), LengthOf(Line(D,E)))\nEquals(LengthOf(Line(D,E)), LengthOf(Line(E,C)))\nIsMidpointOf(Point(F), Line(A,C))\nIntersectAt(Line(B,F), Line(A,D), Point(P))\nIntersectAt(Line(B,F), Line(A,E), Point(Q))\nCalculate(Div(LengthOf(Line(B,P)), LengthOf(Line(P,Q))))",
+      "success": true,
+      "error": null,
+      "num_statements": 18
+    },
+    {
+      "id": "geom_0000",
+      "context": "",
+      "problem": "Let AC be a line segment in the plane and B a point between A and C. Construct isosceles triangles PAB and QBC on one side of the segment AC such that \u2220APB = \u2220BQC = 120\u00b0 and an isosceles triangle RAC on the otherside of AC such that \u2220ARC = 120\u00b0. Show that PQR is an equilateral triangle.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(P)\nPoint(Q)\nPoint(R)\nLine(A,C)\nBetween(Point(A), Point(B), Point(C))\nTriangle(P,A,B)\nTriangle(Q,B,C)\nTriangle(R,A,C)\nIsosceles(Triangle(P,A,B))\nIsosceles(Triangle(Q,B,C))\nIsosceles(Triangle(R,A,C))\nAngle(A,P,B)\nAngle(B,Q,C)\nAngle(A,R,C)\nEquals(MeasureOf(Angle(A,P,B)), 120)\nEquals(MeasureOf(Angle(B,Q,C)), 120)\nEquals(MeasureOf(Angle(A,R,C)), 120)\nProve(Equilateral(Triangle(P,Q,R)))",
+      "success": true,
+      "error": null,
+      "num_statements": 21
+    },
+    {
+      "id": "geom_0010",
+      "context": "",
+      "problem": "Let \\( ABCD \\) be a quadrilateral in which \\( AB \\) is parallel to \\( CD \\) and perpendicular to \\( AD \\); \\( AB = 3CD \\); and the area of the quadrilateral is 4. If a circle can be drawn touching all the sides of the quadrilateral, find its radius.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(D)\nQuadrilateral(A,B,C,D)\nParallel(Line(A,B), Line(C,D))\nPerpendicular(Line(A,B), Line(A,D))\nEquals(Mul(3, LengthOf(Line(C,D))), LengthOf(Line(A,B)))\nCircumscribedTo(Circle(O,r), Quadrilateral(A,B,C,D))\nEquals(AreaOf(Quadrilateral(A,B,C,D)), 4)\nFind(RadiusOf(Circle(O,r)))",
+      "success": true,
+      "error": null,
+      "num_statements": 11
+    },
+    {
+      "id": "geom_0049",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a right-angled triangle with \\( \\angle B = 90^\\circ \\). Let \\( I \\) be the incentre of \\( ABC \\). Let \\( AI \\) extended intersect \\( BC \\) in \\( F \\). Draw a line perpendicular to \\( AI \\) at \\( I \\). Let it intersect \\( AC \\) in \\( E \\). Prove that \\( IE = IF \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(I)\nPoint(F)\nPoint(E)\nTriangle(A,B,C)\nRightAngle(Angle(A,B,C))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nLine(A,I)\nIntersectAt(Line(A,I), Line(B,C), Point(F))\nPerpendicularThrough(Line(A,I), Point(I))\nIntersectAt(Line(I,E), Line(A,C), Point(E))\nProve(Congruent(Line(I,E), Line(I,F)))",
+      "success": true,
+      "error": null,
+      "num_statements": 14
+    },
+    {
+      "id": "geom_0051",
+      "context": "",
+      "problem": "The in-circle of triangle ABC touches the sides BC, CA and AB in K, L and M respectively. The line through A and parallel to LK meets MK in P and the line through A and parallel to MK meets LK in Q. Show that the line PQ bisects the sides AB and AC of triangle ABC.",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(K)\nPoint(L)\nPoint(M)\nPoint(P)\nPoint(Q)\nTriangle(A,B,C)\nCircle(O)\nPointLiesOnCircle(Point(K), Circle(O))\nPointLiesOnCircle(Point(L), Circle(O))\nPointLiesOnCircle(Point(M), Circle(O))\nPointLiesOnLine(Point(K), Line(B,C))\nPointLiesOnLine(Point(L), Line(C,A))\nPointLiesOnLine(Point(M), Line(A,B))\nLine(L,K)\nLine(M,K)\nParallelThrough(Line(L,K), Point(A))\nParallelThrough(Line(M,K), Point(A))\nIntersectAt(Line(A,LK), Line(M,K), Point(P))\nIntersectAt(Line(A,MK), Line(L,K), Point(Q))\nProve(IsMidpointOf(Point(P), Line(A,B)))\nProve(IsMidpointOf(Point(Q), Line(A,C)))",
+      "success": true,
+      "error": null,
+      "num_statements": 24
+    },
+    {
+      "id": "geom_0044",
+      "context": "",
+      "problem": "Let \\( ABC \\) be a triangle. Let \\( B' \\) denote the reflection of \\( B \\) in the internal angle bisector \\(\\ell\\) of \\(\\angle A\\). Show that the circumcentre of the triangle \\( CB'I \\) lies on the line \\(\\ell\\), where \\( I \\) is the incentre of \\( ABC \\).",
+      "generated_dsl": "Point(A)\nPoint(B)\nPoint(C)\nPoint(B')\nPoint(I)\nLine(l)\nTriangle(A,B,C)\nTriangle(C,B',I)\nBisector(Angle(C,A,B))\nReflect(Point(B), Line(l), Point(B'))\nIsIncenterOf(Point(I), Triangle(A,B,C))\nCircumcenterOf(Triangle(C,B',I))\nProve(PointLiesOnLine(Point(CircumcenterOf(Triangle(C,B',I))), Line(l)))",
+      "success": true,
+      "error": null,
+      "num_statements": 13
+    }
+  ]
+}

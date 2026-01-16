@@ -1,0 +1,6 @@
+Polygon(P)
+Regular(Polygon(P))
+Red(Point(A))
+Red(Point(B))
+Red(Point(C))
+Prove(Exists(Triangle(A,B,C), Isosceles(Triangle(A,B,C))))

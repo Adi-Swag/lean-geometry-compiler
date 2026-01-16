@@ -1,0 +1,1 @@
+Let ABC be a triangle which it not right-angled. Define a sequence of triangles AiBiCi, with i ≥ 0, as follows: A0B0C0 is the triangle ABC; and, for i ≥ 0, Ai+1, Bi+1, Ci+1 are the reflections of the orthocentre of triangle AiBiCi in the sides BiCi, CiAi, AiBi, respectively. Assume that ∠Am = ∠An for some distinct natural numbers m, n. Prove that ∠A = 60°.

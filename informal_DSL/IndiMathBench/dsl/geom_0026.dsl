@@ -1,0 +1,7 @@
+Polygon(A1,A2,...,An)
+Regular(Polygon(A1,A2,...,An))
+Subset(X, {1, 2, ..., n})
+GoodSubset({i1, i2, ..., ik}, X)
+ArithmeticProgression(Angle(Ai1,Ai2,...,Aik))
+Prime(n)
+Prove(Equals(Cardinality(GoodSubset({i1, i2, ..., ik}, X)), 4))

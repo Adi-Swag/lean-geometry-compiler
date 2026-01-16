@@ -1,0 +1,1 @@
+Let BE and CF be the altitudes of an acute triangle ABC, with E on AC and F on AB. Let O be the point of intersection of BE and CF. Take any line KL through O with K on AB and L on AC. Suppose M and N are located on BE and CF respectively, such that KM is perpendicular to BE and LN is perpendicular to CF. Prove that FM is parallel to EN.
