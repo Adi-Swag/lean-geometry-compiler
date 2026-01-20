@@ -1,0 +1,138 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "Q"
+  ],
+  "lines": [
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "BF",
+      "points": [
+        "B",
+        "F"
+      ]
+    },
+    {
+      "name": "AE",
+      "points": [
+        "A",
+        "E"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "F"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "F",
+      "segment": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "Q",
+      "objects": [
+        "BF",
+        "AE"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "B",
+        "E"
+      ],
+      "segment2": [
+        "E",
+        "C"
+      ],
+      "ratio": "2"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "DistanceRatio",
+        "args": [
+          "B",
+          "Q",
+          "Q",
+          "F"
+        ]
+      }
+    }
+  ]
+}

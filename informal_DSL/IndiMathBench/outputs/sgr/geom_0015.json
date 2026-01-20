@@ -1,0 +1,105 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "P"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "E"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "E",
+      "segment": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "P",
+      "objects": [
+        "A",
+        "D",
+        "B",
+        "E"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "D",
+        "C"
+      ],
+      "segment2": [
+        "B",
+        "D"
+      ],
+      "ratio": "2"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "DistanceRatio",
+        "args": [
+          "B",
+          "P",
+          "P",
+          "E"
+        ]
+      }
+    },
+    {
+      "kind": "Find",
+      "content": {
+        "type": "DistanceRatio",
+        "args": [
+          "A",
+          "P",
+          "P",
+          "D"
+        ]
+      }
+    }
+  ]
+}

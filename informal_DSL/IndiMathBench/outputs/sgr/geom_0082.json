@@ -1,0 +1,183 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "P",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "G"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "H"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "P",
+      "objects": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "E",
+      "vertex": "P",
+      "opposite_side": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "F",
+      "vertex": "P",
+      "opposite_side": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "G",
+      "vertex": "P",
+      "opposite_side": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "H",
+      "vertex": "P",
+      "opposite_side": [
+        "D",
+        "A"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Add",
+            "args": [
+              {
+                "type": "Div",
+                "args": [
+                  1,
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Div",
+                "args": [
+                  1,
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Add",
+            "args": [
+              {
+                "type": "Div",
+                "args": [
+                  1,
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Div",
+                "args": [
+                  1,
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

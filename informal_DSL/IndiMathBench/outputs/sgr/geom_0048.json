@@ -1,0 +1,107 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "G",
+    "X",
+    "Y"
+  ],
+  "lines": [
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circumcircle_AGB",
+      "center": "O1",
+      "through": [
+        "A",
+        "G",
+        "B"
+      ]
+    },
+    {
+      "name": "circumcircle_AGC",
+      "center": "O2",
+      "through": [
+        "A",
+        "G",
+        "C"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "G",
+      "C": "B"
+    },
+    {
+      "A": "A",
+      "B": "G",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "X",
+      "C": "Y"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "X",
+      "objects": [
+        "circumcircle_AGB",
+        "BC"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "Y",
+      "objects": [
+        "circumcircle_AGC",
+        "BC"
+      ]
+    },
+    {
+      "type": "Centroid",
+      "point": "G",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Centroid",
+        "args": [
+          "G",
+          "A",
+          "X",
+          "Y"
+        ]
+      }
+    }
+  ]
+}

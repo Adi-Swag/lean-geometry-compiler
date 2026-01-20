@@ -1,0 +1,96 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "RightTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Isosceles",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "B",
+        "D"
+      ],
+      "segment2": [
+        "D",
+        "E"
+      ],
+      "ratio": "1"
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "D",
+        "E"
+      ],
+      "segment2": [
+        "E",
+        "C"
+      ],
+      "ratio": "2"
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "B",
+        "D"
+      ],
+      "segment2": [
+        "E",
+        "C"
+      ],
+      "ratio": "SqrtOf(3)"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "AngleMeasure",
+        "args": [
+          "D",
+          "A",
+          "E",
+          45
+        ]
+      }
+    }
+  ]
+}

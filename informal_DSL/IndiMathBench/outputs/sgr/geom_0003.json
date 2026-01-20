@@ -5,23 +5,33 @@
     "C",
     "D"
   ],
-  "lines": [
+  "lines": [],
+  "segments": [
     {
-      "name": "BC",
       "points": [
         "B",
         "C"
       ]
     },
     {
-      "name": "AD",
       "points": [
         "A",
         "D"
       ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
     }
   ],
-  "segments": [],
   "circles": [],
   "triangles": [
     {
@@ -34,25 +44,30 @@
   "polygons": [],
   "relations": [
     {
-      "type": "BisectsAngle",
-      "line": [
+      "type": "AngleBisector",
+      "point": "D",
+      "vertex": "A",
+      "side1": [
         "A",
-        "D"
+        "B"
       ],
-      "angle": [
-        "B",
+      "side2": [
         "A",
         "C"
       ]
     },
     {
-      "type": "AngleMeasure",
-      "angle": [
+      "type": "EqualAngles",
+      "angle1": [
         "B",
         "A",
         "C"
       ],
-      "measure": "2C"
+      "angle2": [
+        "C",
+        "A",
+        "B"
+      ]
     },
     {
       "type": "EqualDistances",

@@ -1,0 +1,214 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "O"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circumcircle",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Excircle",
+      "point": "ra",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ],
+      "opposite_vertex": "A"
+    },
+    {
+      "type": "Excircle",
+      "point": "rb",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ],
+      "opposite_vertex": "B"
+    },
+    {
+      "type": "Excircle",
+      "point": "rc",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ],
+      "opposite_vertex": "C"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "MeasureOf",
+            "args": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "MeasureOf",
+            "args": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "MeasureOf",
+            "args": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "MeasureOf",
+            "args": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "MeasureOf",
+            "args": [
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "MeasureOf",
+            "args": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Mul",
+            "args": [
+              2,
+              {
+                "type": "RadiusOf",
+                "args": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "type": "RadiusOf",
+            "args": [
+              "rb"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Mul",
+            "args": [
+              2,
+              {
+                "type": "RadiusOf",
+                "args": [
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "type": "RadiusOf",
+            "args": [
+              "rc"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

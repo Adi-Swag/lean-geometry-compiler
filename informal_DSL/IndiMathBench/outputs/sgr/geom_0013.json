@@ -1,0 +1,104 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "I"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "I"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Isosceles",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "B",
+          "C"
+        ]
+      },
+      "right": {
+        "type": "Add",
+        "left": {
+          "type": "LengthOf",
+          "segment": [
+            "A",
+            "B"
+          ]
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "A",
+            "I"
+          ]
+        }
+      }
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "MeasureOf",
+        "args": [
+          "B",
+          "A",
+          "C"
+        ]
+      }
+    }
+  ]
+}

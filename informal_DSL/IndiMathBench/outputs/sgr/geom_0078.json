@@ -1,0 +1,194 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "O",
+    "H",
+    "G",
+    "D",
+    "E",
+    "F"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "O",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "H",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "G",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "O",
+      "B": "D",
+      "C": "C"
+    },
+    {
+      "A": "H",
+      "B": "E",
+      "C": "A"
+    },
+    {
+      "A": "G",
+      "B": "F",
+      "C": "B"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Orthocenter",
+      "point": "H",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Centroid",
+      "point": "G",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "O",
+        "D"
+      ],
+      "line2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "H",
+        "E"
+      ],
+      "line2": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "F",
+      "segment": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "AreaOf",
+        "shape": {
+          "type": "Triangle",
+          "vertices": [
+            "O",
+            "D",
+            "C"
+          ]
+        }
+      },
+      "right": {
+        "type": "AreaOf",
+        "shape": {
+          "type": "Triangle",
+          "vertices": [
+            "H",
+            "E",
+            "A"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "AreaOf",
+        "shape": {
+          "type": "Triangle",
+          "vertices": [
+            "H",
+            "E",
+            "A"
+          ]
+        }
+      },
+      "right": {
+        "type": "AreaOf",
+        "shape": {
+          "type": "Triangle",
+          "vertices": [
+            "G",
+            "F",
+            "B"
+          ]
+        }
+      }
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "MeasureOf",
+        "args": [
+          "B",
+          "C",
+          "A"
+        ]
+      }
+    }
+  ]
+}

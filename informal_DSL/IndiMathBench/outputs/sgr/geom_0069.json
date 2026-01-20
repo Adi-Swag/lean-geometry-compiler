@@ -1,0 +1,101 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "H"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "H"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "H"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "H"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Orthocenter",
+      "point": "H",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "AcuteTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "LessThanOrEqual",
+        "args": [
+          {
+            "type": "Add",
+            "args": [
+              {
+                "type": "LengthOf",
+                "args": [
+                  "A",
+                  "H"
+                ]
+              },
+              {
+                "type": "LengthOf",
+                "args": [
+                  "B",
+                  "H"
+                ]
+              },
+              {
+                "type": "LengthOf",
+                "args": [
+                  "C",
+                  "H"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Mul",
+            "args": [
+              2,
+              "h_max"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "points": [
+    "A1",
+    "A2",
+    "A3",
+    "A4",
+    "A5",
+    "A6",
+    "A7",
+    "A8",
+    "A9"
+  ],
+  "lines": [],
+  "segments": [],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [
+    {
+      "vertices": [
+        "A1",
+        "A2",
+        "A3",
+        "A4",
+        "A5",
+        "A6",
+        "A7",
+        "A8",
+        "A9"
+      ]
+    }
+  ],
+  "relations": [],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Exists",
+        "args": [
+          {
+            "type": "ConvexQuadrilateral",
+            "vertices": [
+              "B1",
+              "B2",
+              "B3",
+              "B4"
+            ]
+          },
+          {
+            "type": "Parallel",
+            "args": [
+              "B1",
+              "B2",
+              "B3",
+              "B4"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

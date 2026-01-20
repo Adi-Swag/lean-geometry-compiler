@@ -1,0 +1,168 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "G"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "H"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "OnCircle",
+      "point": "A",
+      "circle_center": "\u0393"
+    },
+    {
+      "type": "OnCircle",
+      "point": "B",
+      "circle_center": "\u0393"
+    },
+    {
+      "type": "OnCircle",
+      "point": "C",
+      "circle_center": "\u0393"
+    },
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "\u0393"
+    },
+    {
+      "type": "Midpoint",
+      "point": "E",
+      "segment": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "F",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "G",
+      "segment": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "H",
+      "segment": [
+        "D",
+        "A"
+      ]
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "Mul",
+        "left": {
+          "type": "LengthOf",
+          "segment": [
+            "A",
+            "C"
+          ]
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "B",
+            "D"
+          ]
+        }
+      },
+      "right": {
+        "type": "Mul",
+        "left": {
+          "type": "LengthOf",
+          "segment": [
+            "E",
+            "G"
+          ]
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "F",
+            "H"
+          ]
+        }
+      }
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Intersection",
+        "args": [
+          "P",
+          "A",
+          "C",
+          "B",
+          "D",
+          "E",
+          "G",
+          "F",
+          "H"
+        ]
+      }
+    }
+  ]
+}

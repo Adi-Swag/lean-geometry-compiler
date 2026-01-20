@@ -1,0 +1,105 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "O1",
+    "O2",
+    "O"
+  ],
+  "lines": [
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "B",
+      "C": "D"
+    },
+    {
+      "A": "A",
+      "B": "C",
+      "C": "D"
+    },
+    {
+      "A": "O1",
+      "B": "O2",
+      "C": "D"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Circumcenter",
+      "point": "O1",
+      "triangle": [
+        "A",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O2",
+      "triangle": [
+        "A",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Orthocenter",
+      "point": "H",
+      "triangle": [
+        "O1",
+        "O2",
+        "D"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Parallel",
+        "args": [
+          "O",
+          "H",
+          "B",
+          "C"
+        ]
+      }
+    }
+  ]
+}

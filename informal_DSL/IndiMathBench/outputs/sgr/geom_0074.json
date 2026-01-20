@@ -1,0 +1,96 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "O"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circle1",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "OnCircle",
+      "point": "A",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "B",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "C",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "O"
+    },
+    {
+      "type": "CyclicQuadrilateral",
+      "quadrilateral": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "O",
+        "B"
+      ],
+      "measure": 135
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "AreaOf",
+        "args": [
+          {
+            "type": "Quadrilateral",
+            "vertices": [
+              "A",
+              "B",
+              "C",
+              "D"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

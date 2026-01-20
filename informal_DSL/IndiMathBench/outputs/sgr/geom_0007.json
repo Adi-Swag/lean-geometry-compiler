@@ -14,14 +14,14 @@
   ],
   "lines": [
     {
-      "name": "line1",
+      "name": "Line1",
       "points": [
         "X",
         "O"
       ]
     },
     {
-      "name": "line2",
+      "name": "Line2",
       "points": [
         "Y",
         "O"
@@ -82,6 +82,12 @@
       "D": "S"
     },
     {
+      "A": "A",
+      "B": "P",
+      "C": "X",
+      "D": "S"
+    },
+    {
       "A": "B",
       "B": "Q",
       "C": "O",
@@ -119,28 +125,6 @@
       ]
     },
     {
-      "type": "Parallel",
-      "line1": [
-        "X",
-        "O"
-      ],
-      "line2": [
-        "B",
-        "D"
-      ]
-    },
-    {
-      "type": "Parallel",
-      "line1": [
-        "Y",
-        "O"
-      ],
-      "line2": [
-        "A",
-        "C"
-      ]
-    },
-    {
       "type": "Midpoint",
       "point": "P",
       "segment": [
@@ -170,6 +154,28 @@
       "segment": [
         "D",
         "A"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "X",
+        "O"
+      ],
+      "line2": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "Y",
+        "O"
+      ],
+      "line2": [
+        "A",
+        "C"
       ]
     }
   ],

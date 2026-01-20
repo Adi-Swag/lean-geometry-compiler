@@ -1,0 +1,159 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "I",
+    "D"
+  ],
+  "lines": [
+    {
+      "name": "AI",
+      "points": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "name": "CB",
+      "points": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "C",
+        "I"
+      ]
+    },
+    {
+      "points": [
+        "I",
+        "D"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "RightTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "A",
+        "I"
+      ],
+      "line2": [
+        "I",
+        "D"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "D",
+      "objects": [
+        "AI",
+        "CB"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Perpendicular",
+        "args": [
+          "C",
+          "I",
+          "A",
+          "D"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "SqrtOf",
+            "args": [
+              {
+                "type": "Mul",
+                "args": [
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "Sub",
+                    "args": [
+                      {
+                        "type": "LengthOf",
+                        "args": [
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "LengthOf",
+                        "args": [
+                          0,
+                          0
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

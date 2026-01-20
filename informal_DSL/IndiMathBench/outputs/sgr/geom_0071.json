@@ -1,0 +1,128 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "F"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "B",
+        "D"
+      ],
+      "segment2": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "B",
+        "D"
+      ],
+      "segment2": [
+        "A",
+        "F"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "C",
+        "E"
+      ],
+      "segment2": [
+        "A",
+        "F"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "B",
+        "D",
+        "F"
+      ],
+      "angle2": [
+        "C",
+        "E",
+        "D"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "B",
+        "D",
+        "F"
+      ],
+      "angle2": [
+        "A",
+        "F",
+        "E"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "C",
+        "E",
+        "D"
+      ],
+      "angle2": [
+        "A",
+        "F",
+        "E"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equilateral",
+        "args": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  ]
+}

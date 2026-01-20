@@ -1,0 +1,116 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "O1",
+    "O2"
+  ],
+  "lines": [
+    {
+      "name": "line1",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "line2",
+      "points": [
+        "B",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "Gamma",
+      "center": "O1",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "Sigma",
+      "center": "O2",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "A",
+      "objects": [
+        "Gamma",
+        "Sigma"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "B",
+      "objects": [
+        "Gamma",
+        "Sigma"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "C",
+      "objects": [
+        "line1",
+        "Gamma"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "D",
+      "objects": [
+        "line2",
+        "Sigma"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "C",
+        "A"
+      ],
+      "segment2": [
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "OnCircle",
+        "args": [
+          "O2",
+          "Gamma"
+        ]
+      }
+    }
+  ]
+}

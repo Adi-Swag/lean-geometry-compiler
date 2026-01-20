@@ -1,0 +1,43 @@
+{
+  "points": [
+    "A1",
+    "A2",
+    "A3",
+    "...",
+    "An"
+  ],
+  "lines": [],
+  "segments": [],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [
+    {
+      "vertices": [
+        "A1",
+        "A2",
+        "A3",
+        "...",
+        "An"
+      ]
+    }
+  ],
+  "relations": [],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              "good_subset"
+            ]
+          },
+          4
+        ]
+      }
+    }
+  ]
+}

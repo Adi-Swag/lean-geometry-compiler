@@ -1,0 +1,120 @@
+{
+  "points": [
+    "A1",
+    "A2",
+    "A3",
+    "P",
+    "P1",
+    "P2",
+    "P3",
+    "O"
+  ],
+  "lines": [],
+  "segments": [],
+  "circles": [
+    {
+      "name": "Gamma",
+      "center": "O",
+      "through": [
+        "A1"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A1",
+      "B": "A2",
+      "C": "A3"
+    },
+    {
+      "A": "P1",
+      "B": "P2",
+      "C": "P3"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "OnCircle",
+      "point": "A1",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "A2",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "A3",
+      "circle_center": "O"
+    },
+    {
+      "type": "Rotation",
+      "point": "P1",
+      "original": "P",
+      "center": "A1",
+      "angle": {
+        "type": "MeasureOf",
+        "args": [
+          "A2",
+          "A1",
+          "A3"
+        ]
+      }
+    },
+    {
+      "type": "Rotation",
+      "point": "P2",
+      "original": "P",
+      "center": "A2",
+      "angle": {
+        "type": "MeasureOf",
+        "args": [
+          "A3",
+          "A2",
+          "A1"
+        ]
+      }
+    },
+    {
+      "type": "Rotation",
+      "point": "P3",
+      "original": "P",
+      "center": "A3",
+      "angle": {
+        "type": "MeasureOf",
+        "args": [
+          "A1",
+          "A3",
+          "A2"
+        ]
+      }
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "RadiusOf",
+            "args": [
+              0
+            ]
+          },
+          {
+            "type": "RadiusOf",
+            "args": [
+              "P1",
+              "P2",
+              "P3"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

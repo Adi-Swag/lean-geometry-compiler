@@ -1,0 +1,145 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "I",
+    "F",
+    "E"
+  ],
+  "lines": [
+    {
+      "name": "AI",
+      "points": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "I",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "I",
+        "F"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "RightTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "F",
+      "objects": [
+        "AI",
+        "BC"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "A",
+        "I"
+      ],
+      "line2": [
+        "I",
+        "E"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "E",
+      "objects": [
+        "AC",
+        "IE"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,154 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "M",
+    "K",
+    "L"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "M"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "K"
+      ]
+    },
+    {
+      "points": [
+        "K",
+        "L"
+      ]
+    },
+    {
+      "points": [
+        "L",
+        "M"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "M",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Median",
+      "vertex": "A",
+      "midpoint": "M",
+      "opposite_side": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "K",
+      "circle_center": "I"
+    },
+    {
+      "type": "OnCircle",
+      "point": "L",
+      "circle_center": "I"
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "A",
+        "K"
+      ],
+      "segment2": [
+        "K",
+        "L"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "K",
+        "L"
+      ],
+      "segment2": [
+        "L",
+        "M"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "DistanceRatio",
+        "args": [
+          "B",
+          "C",
+          "A",
+          "B",
+          "5/10"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "DistanceRatio",
+        "args": [
+          "A",
+          "B",
+          "A",
+          "C",
+          "10/13"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "DistanceRatio",
+        "args": [
+          "A",
+          "C",
+          "B",
+          "C",
+          "13/5"
+        ]
+      }
+    }
+  ]
+}

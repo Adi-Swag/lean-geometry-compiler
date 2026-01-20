@@ -1,0 +1,120 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "lines": [
+    {
+      "name": "CB",
+      "points": [
+        "C",
+        "B"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "E"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "D",
+      "B": "A",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "B",
+        "D"
+      ],
+      "measure": 30
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "B",
+        "C",
+        "A"
+      ],
+      "measure": 75
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "C",
+        "D"
+      ],
+      "measure": 25
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "C",
+        "D"
+      ],
+      "segment2": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "E",
+      "circle_center": "D"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualDistances",
+        "args": [
+          "C",
+          "E",
+          "B",
+          "D"
+        ]
+      }
+    }
+  ]
+}

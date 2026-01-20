@@ -1,0 +1,118 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "CD",
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Parallel",
+      "line1": [
+        "A",
+        "B"
+      ],
+      "line2": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "A",
+        "B"
+      ],
+      "line2": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "A",
+        "B"
+      ],
+      "segment2": [
+        "C",
+        "D"
+      ],
+      "ratio": "3"
+    },
+    {
+      "type": "CyclicQuadrilateral",
+      "quadrilateral": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "RadiusOf",
+        "args": [
+          "incircle"
+        ]
+      }
+    }
+  ]
+}

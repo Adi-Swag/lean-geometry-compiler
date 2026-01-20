@@ -1,0 +1,155 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "O"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393",
+      "center": "O",
+      "through": [
+        "C"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "B",
+      "C": "D"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "OnCircle",
+      "point": "B",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "C",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "O"
+    },
+    {
+      "type": "Intersection",
+      "point": "D",
+      "objects": [
+        "AC",
+        "\u0393"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "A",
+        "C"
+      ],
+      "line2": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Orthocenter",
+            "args": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "OnCircle",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Orthocenter",
+            "args": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "Midpoint",
+            "args": [
+              0,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

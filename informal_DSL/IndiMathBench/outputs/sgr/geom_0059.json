@@ -1,0 +1,168 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "K",
+    "L",
+    "M",
+    "N",
+    "Q"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "K",
+        "M"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "K",
+      "segment": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "L",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "M",
+      "segment": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "N",
+      "segment": [
+        "D",
+        "A"
+      ]
+    },
+    {
+      "type": "BisectsAngle",
+      "line": [
+        "B",
+        "D"
+      ],
+      "angle": [
+        "K",
+        "Q",
+        "M"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "Q",
+        "A"
+      ],
+      "segment2": [
+        "Q",
+        "B"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "Q",
+        "B"
+      ],
+      "segment2": [
+        "Q",
+        "C"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "Q",
+        "C"
+      ],
+      "segment2": [
+        "Q",
+        "D"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "L",
+        "K"
+      ],
+      "segment2": [
+        "L",
+        "M"
+      ],
+      "ratio": "C"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "ConvexQuadrilateral",
+        "args": [
+          "A",
+          "B",
+          "C",
+          "D"
+        ]
+      }
+    }
+  ]
+}

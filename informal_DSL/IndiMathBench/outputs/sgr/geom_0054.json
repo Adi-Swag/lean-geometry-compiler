@@ -1,0 +1,108 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "L",
+    "O"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circumcircle_ADC",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "O",
+      "C": "D"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "D",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "D",
+        "A",
+        "B"
+      ],
+      "angle2": [
+        "B",
+        "C",
+        "A"
+      ]
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "D",
+        "A",
+        "C"
+      ],
+      "measure": 15
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "A",
+        "D",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "ObtuseTriangle",
+        "args": [
+          "L",
+          "A",
+          "D",
+          "C"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equilateral",
+        "args": [
+          "A",
+          "O",
+          "D"
+        ]
+      }
+    }
+  ]
+}

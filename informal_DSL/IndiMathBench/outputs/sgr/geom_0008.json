@@ -9,37 +9,33 @@
     "R",
     "S"
   ],
-  "lines": [
+  "lines": [],
+  "segments": [
     {
-      "name": "AB",
       "points": [
         "A",
         "B"
       ]
     },
     {
-      "name": "BC",
       "points": [
         "B",
         "C"
       ]
     },
     {
-      "name": "CD",
       "points": [
         "C",
         "D"
       ]
     },
     {
-      "name": "DA",
       "points": [
         "D",
         "A"
       ]
     }
   ],
-  "segments": [],
   "circles": [],
   "triangles": [
     {
@@ -53,7 +49,14 @@
       "C": "P"
     }
   ],
-  "quadrilaterals": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
   "polygons": [],
   "relations": [
     {
@@ -157,48 +160,44 @@
     {
       "kind": "Find",
       "content": {
-        "type": "AngleMeasure",
+        "type": "MeasureOf",
         "args": [
           "A",
           "B",
-          "C",
-          "angleValue"
+          "C"
         ]
       }
     },
     {
       "kind": "Find",
       "content": {
-        "type": "AngleMeasure",
+        "type": "MeasureOf",
         "args": [
           "B",
           "C",
-          "D",
-          "angleValue"
+          "D"
         ]
       }
     },
     {
       "kind": "Find",
       "content": {
-        "type": "AngleMeasure",
+        "type": "MeasureOf",
         "args": [
           "C",
           "D",
-          "A",
-          "angleValue"
+          "A"
         ]
       }
     },
     {
       "kind": "Find",
       "content": {
-        "type": "AngleMeasure",
+        "type": "MeasureOf",
         "args": [
           "D",
           "A",
-          "B",
-          "angleValue"
+          "B"
         ]
       }
     }

@@ -1,0 +1,92 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "B'",
+    "C'",
+    "I"
+  ],
+  "lines": [],
+  "segments": [],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "B'",
+      "C": "C'"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleBisector",
+      "point": "I",
+      "vertex": "A",
+      "side1": [
+        "A",
+        "B"
+      ],
+      "side2": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "B'",
+      "original": "B",
+      "line": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "C'",
+      "original": "C",
+      "line": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B'",
+        "C'"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Incenter",
+        "args": [
+          "I",
+          "A",
+          "B'",
+          "C'"
+        ]
+      }
+    }
+  ]
+}

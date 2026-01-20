@@ -1,0 +1,58 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "R",
+    "X"
+  ],
+  "lines": [],
+  "segments": [],
+  "circles": [
+    {
+      "name": "circumcircle_ABC",
+      "center": "R",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "OnCircle",
+      "point": "X",
+      "circle_center": "R"
+    },
+    {
+      "type": "Intersection",
+      "point": "X",
+      "objects": [
+        "circumcircle_ABC",
+        "AC"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Perpendicular",
+        "args": [
+          "R",
+          "X",
+          "B",
+          "C"
+        ]
+      }
+    }
+  ]
+}

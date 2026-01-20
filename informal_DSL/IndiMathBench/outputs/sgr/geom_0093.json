@@ -1,0 +1,188 @@
+{
+  "points": [
+    "O1",
+    "O2",
+    "A",
+    "B",
+    "C",
+    "D",
+    "X",
+    "Y",
+    "P",
+    "Q"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "O1",
+        "O2"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "Q"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u03931",
+      "center": "O1",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "\u03932",
+      "center": "O2",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "C",
+      "C": "D"
+    },
+    {
+      "A": "X",
+      "B": "A",
+      "C": "Y"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "OnCircle",
+      "point": "A",
+      "circle_center": "O1"
+    },
+    {
+      "type": "OnCircle",
+      "point": "B",
+      "circle_center": "O1"
+    },
+    {
+      "type": "OnCircle",
+      "point": "A",
+      "circle_center": "O2"
+    },
+    {
+      "type": "OnCircle",
+      "point": "B",
+      "circle_center": "O2"
+    },
+    {
+      "type": "OnCircle",
+      "point": "C",
+      "circle_center": "O2"
+    },
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "O1"
+    },
+    {
+      "type": "OnCircle",
+      "point": "X",
+      "circle_center": "O1"
+    },
+    {
+      "type": "OnCircle",
+      "point": "Y",
+      "circle_center": "O2"
+    },
+    {
+      "type": "TangentToCircle",
+      "line": [
+        "B",
+        "C"
+      ],
+      "circle_center": "O1",
+      "point_of_tangency": "B"
+    },
+    {
+      "type": "TangentToCircle",
+      "line": [
+        "B",
+        "D"
+      ],
+      "circle_center": "O2",
+      "point_of_tangency": "B"
+    },
+    {
+      "type": "AngleBisector",
+      "point": "X",
+      "vertex": "A",
+      "side1": [
+        "D",
+        "A"
+      ],
+      "side2": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "AngleBisector",
+      "point": "Y",
+      "vertex": "A",
+      "side1": [
+        "C",
+        "A"
+      ],
+      "side2": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "P",
+      "triangle": [
+        "A",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "Q",
+      "triangle": [
+        "X",
+        "A",
+        "Y"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Perpendicular",
+        "args": [
+          "P",
+          "Q",
+          "O1",
+          "O2"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Midpoint",
+        "args": [
+          "P",
+          "O1",
+          "O2"
+        ]
+      }
+    }
+  ]
+}

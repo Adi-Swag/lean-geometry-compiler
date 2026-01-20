@@ -1,0 +1,186 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "O",
+    "M"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "CD",
+      "points": [
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "O",
+        "M"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circleO",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Parallel",
+      "line1": [
+        "A",
+        "B"
+      ],
+      "line2": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "A",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "B",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "C",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "O"
+    },
+    {
+      "type": "Intersection",
+      "point": "M",
+      "objects": [
+        "A",
+        "C",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "O",
+          "M"
+        ]
+      },
+      "right": {
+        "value": 2
+      }
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Sub",
+            "args": [
+              {
+                "type": "LengthOf",
+                "args": [
+                  0,
+                  0
+                ]
+              },
+              {
+                "type": "LengthOf",
+                "args": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Expression",
+            "args": [
+              {
+                "type": "MeasureOf",
+                "args": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              60
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Find",
+      "content": {
+        "type": "Sub",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

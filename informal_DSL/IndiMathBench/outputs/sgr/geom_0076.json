@@ -1,0 +1,145 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "L"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "F"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Median",
+      "vertex": "A",
+      "midpoint": "D",
+      "opposite_side": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "AngleBisector",
+      "point": "E",
+      "vertex": "B",
+      "side1": [
+        "C",
+        "A"
+      ],
+      "side2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "F",
+      "vertex": "C",
+      "opposite_side": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "F",
+        "D",
+        "E"
+      ],
+      "angle2": [
+        "L",
+        "C",
+        "B"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "D",
+        "E",
+        "F"
+      ],
+      "angle2": [
+        "L",
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "E",
+        "F",
+        "D"
+      ],
+      "angle2": [
+        "L",
+        "B",
+        "A"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equilateral",
+        "args": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  ]
+}

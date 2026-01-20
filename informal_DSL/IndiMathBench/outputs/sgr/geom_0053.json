@@ -1,0 +1,202 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "P",
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "lines": [
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "CA",
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A1",
+      "B": "B1",
+      "C": "C1"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Reflection",
+      "point": "A1",
+      "original": "P",
+      "line": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "B1",
+      "original": "P",
+      "line": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "C1",
+      "original": "P",
+      "line": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Or",
+        "args": [
+          {
+            "type": "Incenter",
+            "args": [
+              "P",
+              "A",
+              "B",
+              "C"
+            ]
+          },
+          {
+            "type": "Excircle",
+            "args": [
+              "P",
+              "A",
+              "B",
+              "C",
+              "A"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Circumcenter",
+        "args": [
+          "P",
+          "A1",
+          "B1",
+          "C1"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Circumcenter",
+        "args": [
+          "P",
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Orthocenter",
+        "args": [
+          "P",
+          "A1",
+          "B1",
+          "C1"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Orthocenter",
+        "args": [
+          "P",
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Or",
+        "args": [
+          {
+            "type": "Incenter",
+            "args": [
+              "P",
+              "A1",
+              "B1",
+              "C1"
+            ]
+          },
+          {
+            "type": "Excircle",
+            "args": [
+              "P",
+              "A1",
+              "B1",
+              "C1",
+              "A1"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

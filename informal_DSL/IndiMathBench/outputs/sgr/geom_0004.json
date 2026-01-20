@@ -76,14 +76,6 @@
   "polygons": [],
   "relations": [
     {
-      "type": "AcuteTriangle",
-      "triangle": [
-        "A",
-        "B",
-        "C"
-      ]
-    },
-    {
       "type": "DistanceRatio",
       "segment1": [
         "C",
@@ -93,7 +85,7 @@
         "C",
         "E"
       ],
-      "ratio": "CA/CB"
+      "ratio": "C"
     },
     {
       "type": "DistanceRatio",
@@ -105,7 +97,7 @@
         "A",
         "F"
       ],
-      "ratio": "AB/AC"
+      "ratio": "A"
     },
     {
       "type": "DistanceRatio",
@@ -117,7 +109,7 @@
         "B",
         "D"
       ],
-      "ratio": "BC/BA"
+      "ratio": "B"
     }
   ],
   "goals": [
@@ -140,8 +132,8 @@
         "args": [
           "E",
           "B",
-          "A",
-          "C"
+          "C",
+          "A"
         ]
       }
     },

@@ -5,37 +5,15 @@
     "C",
     "D"
   ],
-  "lines": [
+  "lines": [],
+  "segments": [
     {
-      "name": "AB",
-      "points": [
-        "A",
-        "B"
-      ]
-    },
-    {
-      "name": "AC",
-      "points": [
-        "A",
-        "C"
-      ]
-    },
-    {
-      "name": "BC",
       "points": [
         "B",
         "C"
       ]
-    },
-    {
-      "name": "AD",
-      "points": [
-        "A",
-        "D"
-      ]
     }
   ],
-  "segments": [],
   "circles": [],
   "triangles": [
     {
@@ -78,7 +56,7 @@
     {
       "kind": "Find",
       "content": {
-        "type": "AngleMeasure",
+        "type": "MeasureOf",
         "args": [
           "B",
           "A",

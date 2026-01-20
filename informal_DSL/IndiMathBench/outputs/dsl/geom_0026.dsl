@@ -1,0 +1,6 @@
+Point(...)
+Point(A1)
+Point(A2)
+Point(A3)
+Point(An)
+Polygon(A1,A2,A3,...,An)

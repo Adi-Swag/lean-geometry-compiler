@@ -1,0 +1,148 @@
+{
+  "points": [
+    "P",
+    "Q",
+    "R",
+    "S"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "P",
+        "Q"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "P"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "P",
+      "B": "Q",
+      "C": "R",
+      "D": "S"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "P",
+        "Q"
+      ],
+      "segment2": [
+        "R",
+        "S"
+      ]
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "Mul",
+        "left": {
+          "type": "Add",
+          "left": {
+            "type": "SqrtOf",
+            "value": {
+              "value": 3
+            }
+          },
+          "right": {
+            "value": 1
+          }
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "Q",
+            "R"
+          ]
+        }
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "S",
+          "P"
+        ]
+      }
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "Sub",
+        "left": {
+          "type": "MeasureOf",
+          "angle": [
+            "R",
+            "S",
+            "P"
+          ]
+        },
+        "right": {
+          "type": "MeasureOf",
+          "angle": [
+            "S",
+            "P",
+            "Q"
+          ]
+        }
+      },
+      "right": {
+        "value": 30
+      }
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Sub",
+            "args": [
+              {
+                "type": "MeasureOf",
+                "args": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "type": "MeasureOf",
+                "args": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          90
+        ]
+      }
+    }
+  ]
+}

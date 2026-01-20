@@ -1,0 +1,118 @@
+{
+  "points": [
+    "O",
+    "A",
+    "B",
+    "C",
+    "D",
+    "P"
+  ],
+  "lines": [
+    {
+      "name": "CD",
+      "points": [
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "D"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "\u039b",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "A",
+      "objects": [
+        "\u0393",
+        "\u039b"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "B",
+      "objects": [
+        "\u0393",
+        "\u039b"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "P",
+      "objects": [
+        "CD",
+        "\u039b"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualAngles",
+        "args": [
+          "A",
+          "P",
+          "C",
+          "B",
+          "P",
+          "D"
+        ]
+      }
+    }
+  ]
+}

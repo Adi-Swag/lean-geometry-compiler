@@ -1,0 +1,101 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "P",
+    "Q",
+    "H"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "Q"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393",
+      "center": "O",
+      "through": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "P",
+      "C": "Q"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "OnCircle",
+      "point": "P",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "Q",
+      "circle_center": "O"
+    },
+    {
+      "type": "Orthocenter",
+      "point": "H",
+      "triangle": [
+        "A",
+        "P",
+        "Q"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "H",
+      "circle_center": "O"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "MeasureOf",
+        "args": [
+          "B",
+          "A",
+          "C"
+        ]
+      }
+    }
+  ]
+}

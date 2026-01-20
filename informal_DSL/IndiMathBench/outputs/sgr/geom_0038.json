@@ -1,0 +1,106 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "O",
+    "X",
+    "Y",
+    "D",
+    "E"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circumcircle",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "X",
+        "A"
+      ],
+      "line2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "Y",
+        "A"
+      ],
+      "line2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "D",
+        "E"
+      ],
+      "line2": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Perpendicular",
+        "args": [
+          "B",
+          "O",
+          "A",
+          "C"
+        ]
+      }
+    }
+  ]
+}

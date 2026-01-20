@@ -1,0 +1,117 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "H",
+    "P",
+    "Q",
+    "R"
+  ],
+  "lines": [
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "BH",
+      "points": [
+        "B",
+        "H"
+      ]
+    },
+    {
+      "name": "CH",
+      "points": [
+        "C",
+        "H"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "B",
+      "C": "P"
+    },
+    {
+      "A": "A",
+      "B": "C",
+      "C": "P"
+    },
+    {
+      "A": "P",
+      "B": "Q",
+      "C": "R"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Orthocenter",
+      "point": "H",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "P",
+      "original": "A",
+      "line": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "Q",
+      "objects": [
+        "Circumcircle_ABP",
+        "BH"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "R",
+      "objects": [
+        "Circumcircle_ACP",
+        "CH"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Incenter",
+        "args": [
+          "H",
+          "P",
+          "Q",
+          "R"
+        ]
+      }
+    }
+  ]
+}

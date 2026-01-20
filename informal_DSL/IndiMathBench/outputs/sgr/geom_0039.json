@@ -1,0 +1,178 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "I1",
+    "I2",
+    "I3"
+  ],
+  "lines": [
+    {
+      "name": "I1D",
+      "points": [
+        "I1",
+        "D"
+      ]
+    },
+    {
+      "name": "I2E",
+      "points": [
+        "I2",
+        "E"
+      ]
+    },
+    {
+      "name": "I3F",
+      "points": [
+        "I3",
+        "F"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "C"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "F",
+      "C": "E"
+    },
+    {
+      "A": "B",
+      "B": "D",
+      "C": "F"
+    },
+    {
+      "A": "C",
+      "B": "E",
+      "C": "D"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Incenter",
+      "point": "I1",
+      "triangle": [
+        "A",
+        "F",
+        "E"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I2",
+      "triangle": [
+        "B",
+        "D",
+        "F"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I3",
+      "triangle": [
+        "C",
+        "E",
+        "D"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Intersection",
+        "args": [
+          "P",
+          "I1D",
+          "I2E",
+          "I3F"
+        ]
+      }
+    }
+  ]
+}

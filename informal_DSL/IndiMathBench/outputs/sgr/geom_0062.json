@@ -1,0 +1,207 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "CyclicQuadrilateral",
+      "quadrilateral": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "B",
+        "C"
+      ],
+      "measure": 120
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "B",
+        "D"
+      ],
+      "measure": 30
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "GreaterThanOrEqual",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              "C",
+              "D"
+            ]
+          },
+          {
+            "type": "Add",
+            "args": [
+              {
+                "type": "LengthOf",
+                "args": [
+                  "A",
+                  "B"
+                ]
+              },
+              {
+                "type": "LengthOf",
+                "args": [
+                  "B",
+                  "C"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Abs",
+            "args": [
+              {
+                "type": "Sub",
+                "args": [
+                  {
+                    "type": "SqrtOf",
+                    "args": [
+                      {
+                        "type": "Add",
+                        "args": [
+                          {
+                            "type": "LengthOf",
+                            "args": [
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "type": "LengthOf",
+                            "args": [
+                              0,
+                              0
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "SqrtOf",
+                    "args": [
+                      {
+                        "type": "Add",
+                        "args": [
+                          {
+                            "type": "LengthOf",
+                            "args": [
+                              0,
+                              0
+                            ]
+                          },
+                          {
+                            "type": "LengthOf",
+                            "args": [
+                              0,
+                              0
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "SqrtOf",
+            "args": [
+              {
+                "type": "Sub",
+                "args": [
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "Add",
+                    "args": [
+                      {
+                        "type": "LengthOf",
+                        "args": [
+                          0,
+                          0
+                        ]
+                      },
+                      {
+                        "type": "LengthOf",
+                        "args": [
+                          0,
+                          0
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

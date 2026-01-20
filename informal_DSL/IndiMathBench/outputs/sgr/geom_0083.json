@@ -1,0 +1,96 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "H",
+    "I"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "incircle",
+      "center": "I",
+      "through": [
+        "B"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Isosceles",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Orthocenter",
+      "point": "H",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "H",
+      "circle_center": "I"
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "DistanceRatio",
+        "args": [
+          "A",
+          "B",
+          "B",
+          "C",
+          "ratio"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "P",
+    "Q",
+    "I",
+    "O"
+  ],
+  "lines": [
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "BD",
+      "points": [
+        "B",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "B",
+      "C": "D"
+    },
+    {
+      "A": "B",
+      "B": "C",
+      "C": "D"
+    },
+    {
+      "A": "P",
+      "B": "I",
+      "C": "Q"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "RightTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "D",
+      "vertex": "B",
+      "opposite_side": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "P",
+      "triangle": [
+        "A",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "Q",
+      "triangle": [
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "P",
+        "I",
+        "Q"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "OnCircle",
+        "args": [
+          "O",
+          "AC"
+        ]
+      }
+    }
+  ]
+}

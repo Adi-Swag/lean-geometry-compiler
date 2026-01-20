@@ -1,0 +1,139 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "P",
+    "Q"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "F",
+      "segment": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "P",
+      "objects": [
+        "B",
+        "F",
+        "A",
+        "D"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "Q",
+      "objects": [
+        "B",
+        "F",
+        "A",
+        "E"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "B",
+        "D"
+      ],
+      "segment2": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "D",
+        "E"
+      ],
+      "segment2": [
+        "E",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "DistanceRatio",
+        "args": [
+          "B",
+          "P",
+          "P",
+          "Q"
+        ]
+      }
+    }
+  ]
+}

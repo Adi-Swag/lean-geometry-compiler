@@ -1,0 +1,123 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "O1",
+    "O2"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "Gamma",
+      "center": "O1",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "Sigma",
+      "center": "O2",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "A",
+      "objects": [
+        "Gamma",
+        "Sigma"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "B",
+      "objects": [
+        "Gamma",
+        "Sigma"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "O2",
+      "circle_center": "Gamma"
+    },
+    {
+      "type": "Collinear",
+      "points": [
+        "C",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "D",
+        "E"
+      ],
+      "line2": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

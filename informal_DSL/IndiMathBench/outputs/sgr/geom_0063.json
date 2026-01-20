@@ -1,0 +1,227 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "P",
+    "E"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "E"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Isosceles",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "D",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "P",
+        "E"
+      ],
+      "line2": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "A",
+        "P"
+      ],
+      "segment2": [
+        "P",
+        "D"
+      ],
+      "ratio": "m"
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "B",
+        "P"
+      ],
+      "segment2": [
+        "P",
+        "E"
+      ],
+      "ratio": "m"
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "B",
+        "D"
+      ],
+      "segment2": [
+        "A",
+        "D"
+      ],
+      "ratio": "m"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Pow",
+            "args": [
+              {
+                "type": "Add",
+                "args": [
+                  {
+                    "type": "Mul",
+                    "args": [
+                      {
+                        "type": "Pow",
+                        "args": [
+                          0,
+                          2
+                        ]
+                      },
+                      {
+                        "type": "Add",
+                        "args": [
+                          1,
+                          "lambda"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "Mul",
+                    "args": [
+                      -1,
+                      {
+                        "type": "Add",
+                        "args": [
+                          {
+                            "type": "Sub",
+                            "args": [
+                              {
+                                "type": "Pow",
+                                "args": [
+                                  "lambda",
+                                  3
+                                ]
+                              },
+                              {
+                                "type": "Pow",
+                                "args": [
+                                  "lambda",
+                                  2
+                                ]
+                              }
+                            ]
+                          },
+                          2
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              2
+            ]
+          },
+          1
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "GreaterThanOrEqual",
+        "args": [
+          "lambda",
+          2
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          "lambda",
+          2
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equilateral",
+        "args": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  ]
+}

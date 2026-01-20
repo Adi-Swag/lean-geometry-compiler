@@ -1,0 +1,103 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "H",
+    "K"
+  ],
+  "lines": [
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "name": "BH",
+      "points": [
+        "B",
+        "H"
+      ]
+    },
+    {
+      "name": "DK",
+      "points": [
+        "D",
+        "K"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circle1",
+      "center": "K",
+      "through": [
+        "D"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Altitude",
+      "foot": "D",
+      "vertex": "A",
+      "opposite_side": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Orthocenter",
+      "point": "H",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "TangentToCircle",
+      "line": [
+        "B",
+        "H"
+      ],
+      "circle_center": "K",
+      "point_of_tangency": "H"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "BisectsAngle",
+        "args": [
+          "D",
+          "K",
+          "A",
+          "C",
+          "C"
+        ]
+      }
+    }
+  ]
+}

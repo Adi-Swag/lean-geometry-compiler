@@ -1,0 +1,124 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "I",
+    "A1",
+    "B1",
+    "C1",
+    "I1"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circumcircle_A1B1C1",
+      "center": "unknown",
+      "through": [
+        "A1",
+        "B1",
+        "C1"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A1",
+      "B": "B1",
+      "C": "C1"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "A1",
+      "original": "I",
+      "line": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "B1",
+      "original": "I",
+      "line": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "C1",
+      "original": "I",
+      "line": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "A",
+      "circle_center": "circumcircle_A1B1C1"
+    },
+    {
+      "type": "Incenter",
+      "point": "I1",
+      "triangle": [
+        "A1",
+        "B1",
+        "C1"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Concyclic",
+        "args": [
+          "B1",
+          "C1",
+          "I",
+          "I1"
+        ]
+      }
+    }
+  ]
+}

@@ -23,17 +23,17 @@
       ]
     },
     {
-      "name": "BD",
-      "points": [
-        "B",
-        "D"
-      ]
-    },
-    {
       "name": "AO",
       "points": [
         "A",
         "O"
+      ]
+    },
+    {
+      "name": "BD",
+      "points": [
+        "B",
+        "D"
       ]
     }
   ],
@@ -54,6 +54,12 @@
       "points": [
         "D",
         "O"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "E"
       ]
     }
   ],
@@ -77,21 +83,22 @@
   "polygons": [],
   "relations": [
     {
-      "type": "OnCircle",
+      "type": "AngleBisector",
       "point": "D",
-      "circle_center": "O"
-    },
-    {
-      "type": "BisectsAngle",
-      "line": [
+      "vertex": "A",
+      "side1": [
         "A",
-        "D"
+        "B"
       ],
-      "angle": [
-        "B",
+      "side2": [
         "A",
         "C"
       ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "O"
     },
     {
       "type": "Intersection",

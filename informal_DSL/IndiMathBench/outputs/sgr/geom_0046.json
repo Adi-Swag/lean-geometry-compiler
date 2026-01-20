@@ -1,0 +1,200 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "P",
+    "Q",
+    "R",
+    "S"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "DE",
+      "points": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "name": "DF",
+      "points": [
+        "D",
+        "F"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "F"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "D",
+      "B": "F",
+      "C": "C"
+    },
+    {
+      "A": "D",
+      "B": "B",
+      "C": "F"
+    },
+    {
+      "A": "D",
+      "B": "E",
+      "C": "B"
+    },
+    {
+      "A": "D",
+      "B": "A",
+      "C": "E"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "RightTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "D",
+      "vertex": "B",
+      "opposite_side": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "D",
+        "E"
+      ],
+      "line2": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "D",
+        "F"
+      ],
+      "line2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "P",
+      "triangle": [
+        "D",
+        "F",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "Q",
+      "triangle": [
+        "D",
+        "B",
+        "F"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "R",
+      "triangle": [
+        "D",
+        "E",
+        "B"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "S",
+      "triangle": [
+        "D",
+        "A",
+        "E"
+      ]
+    },
+    {
+      "type": "Collinear",
+      "points": [
+        "S",
+        "R",
+        "Q"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Concyclic",
+        "args": [
+          "P",
+          "Q",
+          "R",
+          "D"
+        ]
+      }
+    }
+  ]
+}

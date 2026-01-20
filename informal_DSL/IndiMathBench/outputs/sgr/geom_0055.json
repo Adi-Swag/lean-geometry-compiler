@@ -1,0 +1,184 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "F"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [
+    {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "Parallel",
+      "line1": [
+        "A",
+        "B"
+      ],
+      "line2": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "B",
+        "C"
+      ],
+      "line2": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "C",
+        "D"
+      ],
+      "line2": [
+        "F",
+        "A"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "A",
+        "E"
+      ],
+      "segment2": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "B",
+        "F"
+      ],
+      "segment2": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "C",
+        "A"
+      ],
+      "segment2": [
+        "D",
+        "F"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Concyclic",
+        "args": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      }
+    }
+  ]
+}

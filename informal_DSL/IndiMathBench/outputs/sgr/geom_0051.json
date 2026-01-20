@@ -1,0 +1,115 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "K",
+    "L",
+    "M",
+    "P",
+    "Q"
+  ],
+  "lines": [
+    {
+      "name": "LK",
+      "points": [
+        "L",
+        "K"
+      ]
+    },
+    {
+      "name": "MK",
+      "points": [
+        "M",
+        "K"
+      ]
+    },
+    {
+      "name": "PQ",
+      "points": [
+        "P",
+        "Q"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Parallel",
+      "line1": [
+        "A",
+        "P"
+      ],
+      "line2": [
+        "L",
+        "K"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "A",
+        "Q"
+      ],
+      "line2": [
+        "M",
+        "K"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "P",
+      "objects": [
+        "A",
+        "MK"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "Q",
+      "objects": [
+        "A",
+        "LK"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "BisectsAngle",
+        "args": [
+          "P",
+          "Q",
+          "A",
+          "B",
+          "A",
+          "C"
+        ]
+      }
+    }
+  ]
+}

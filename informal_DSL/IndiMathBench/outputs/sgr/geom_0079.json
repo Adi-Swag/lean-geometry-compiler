@@ -1,0 +1,148 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "G1",
+    "G2"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "D"
+    },
+    {
+      "A": "A",
+      "B": "C",
+      "C": "D"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Equals",
+      "left": {
+        "type": "Add",
+        "left": {
+          "type": "LengthOf",
+          "segment": [
+            "A",
+            "B"
+          ]
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "B",
+            "D"
+          ]
+        }
+      },
+      "right": {
+        "type": "Add",
+        "left": {
+          "type": "LengthOf",
+          "segment": [
+            "A",
+            "C"
+          ]
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "C",
+            "D"
+          ]
+        }
+      }
+    },
+    {
+      "type": "Centroid",
+      "point": "G1",
+      "triangle": [
+        "A",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Centroid",
+      "point": "G2",
+      "triangle": [
+        "A",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Concyclic",
+      "points": [
+        "B",
+        "C",
+        "G1",
+        "G2"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

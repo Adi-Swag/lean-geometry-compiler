@@ -1,0 +1,219 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "I",
+    "A'",
+    "B'",
+    "C'",
+    "P",
+    "Q",
+    "R"
+  ],
+  "lines": [
+    {
+      "name": "AA'",
+      "points": [
+        "A",
+        "A'"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "B'C'",
+      "points": [
+        "B'",
+        "C'"
+      ]
+    },
+    {
+      "name": "BB'",
+      "points": [
+        "B",
+        "B'"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "I",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "I",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "R"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [
+    {
+      "A": "P",
+      "B": "I",
+      "C": "R",
+      "D": "Q"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "A'",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "B'",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "C'",
+      "circle_center": "O"
+    },
+    {
+      "type": "AngleBisector",
+      "point": "A'",
+      "vertex": "A",
+      "side1": [
+        "A",
+        "B"
+      ],
+      "side2": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "AngleBisector",
+      "point": "B'",
+      "vertex": "B",
+      "side1": [
+        "B",
+        "A"
+      ],
+      "side2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "AngleBisector",
+      "point": "C'",
+      "vertex": "C",
+      "side1": [
+        "C",
+        "A"
+      ],
+      "side2": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "P",
+      "objects": [
+        "B'C'",
+        "AA'"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "Q",
+      "objects": [
+        "B'C'",
+        "AC"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "R",
+      "objects": [
+        "BB'",
+        "AC"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "I",
+        "P"
+      ],
+      "segment2": [
+        "I",
+        "R"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "Q",
+        "P"
+      ],
+      "segment2": [
+        "Q",
+        "R"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equilateral",
+        "args": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  ]
+}

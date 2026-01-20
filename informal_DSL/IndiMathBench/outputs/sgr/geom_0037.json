@@ -1,0 +1,86 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "I",
+    "D",
+    "E",
+    "F"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "B",
+      "C": "D"
+    },
+    {
+      "A": "A",
+      "B": "C",
+      "C": "D"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "I"
+    },
+    {
+      "type": "OnCircle",
+      "point": "E",
+      "circle_center": "I"
+    },
+    {
+      "type": "OnCircle",
+      "point": "F",
+      "circle_center": "I"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Concyclic",
+        "args": [
+          "B",
+          "E",
+          "I",
+          "F"
+        ]
+      }
+    }
+  ]
+}

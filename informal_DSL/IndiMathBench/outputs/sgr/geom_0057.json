@@ -1,0 +1,176 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "P",
+    "E",
+    "F",
+    "D",
+    "K"
+  ],
+  "lines": [
+    {
+      "name": "BP",
+      "points": [
+        "B",
+        "P"
+      ]
+    },
+    {
+      "name": "CP",
+      "points": [
+        "C",
+        "P"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "AP",
+      "points": [
+        "A",
+        "P"
+      ]
+    },
+    {
+      "name": "EF",
+      "points": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "DK",
+      "points": [
+        "D",
+        "K"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "K"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "E",
+      "objects": [
+        "BP",
+        "AC"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "F",
+      "objects": [
+        "CP",
+        "AB"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "D",
+      "objects": [
+        "AP",
+        "EF"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "D",
+        "K"
+      ],
+      "line2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "BisectsAngle",
+      "line": [
+        "D",
+        "K"
+      ],
+      "angle": [
+        "E",
+        "K",
+        "F"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "BisectsAngle",
+        "args": [
+          "D",
+          "K",
+          "E",
+          "K",
+          "F"
+        ]
+      }
+    }
+  ]
+}

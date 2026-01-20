@@ -1,0 +1,138 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "lines": [
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "E"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circumcircle_ACD",
+      "center": "O",
+      "through": [
+        "A",
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "C",
+      "C": "D"
+    },
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "TangentToCircle",
+      "line": [
+        "A",
+        "B"
+      ],
+      "circle_center": "O",
+      "point_of_tangency": "A"
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "B",
+        "E"
+      ],
+      "line2": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "C",
+        "A"
+      ],
+      "segment2": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "A",
+        "E"
+      ],
+      "segment2": [
+        "C",
+        "E"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "MeasureOf",
+        "args": [
+          "B",
+          "C",
+          "A"
+        ]
+      }
+    }
+  ]
+}

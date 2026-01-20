@@ -1,0 +1,86 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "X",
+    "D",
+    "O"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "X"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "X"
+    },
+    {
+      "A": "B",
+      "B": "D",
+      "C": "X"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "A",
+        "B"
+      ],
+      "segment2": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "O"
+    },
+    {
+      "type": "Intersection",
+      "point": "D",
+      "objects": [
+        "A",
+        "\u0393"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "OnCircle",
+        "args": [
+          "O",
+          "\u0393"
+        ]
+      }
+    }
+  ]
+}

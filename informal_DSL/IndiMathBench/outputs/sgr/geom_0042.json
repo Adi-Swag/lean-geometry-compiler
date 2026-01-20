@@ -1,0 +1,91 @@
+{
+  "points": [
+    "O",
+    "O'",
+    "A",
+    "M",
+    "B"
+  ],
+  "lines": [
+    {
+      "name": "OM",
+      "points": [
+        "O",
+        "M"
+      ]
+    },
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "O'"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393",
+      "center": "O",
+      "through": [
+        "O'"
+      ]
+    },
+    {
+      "name": "\u03a3",
+      "center": "O'",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "M",
+      "segment": [
+        "A",
+        "O'"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "A",
+        "B"
+      ],
+      "line2": [
+        "O",
+        "M"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "OnCircle",
+        "args": [
+          "Midpoint(AB)",
+          "O"
+        ]
+      }
+    }
+  ]
+}

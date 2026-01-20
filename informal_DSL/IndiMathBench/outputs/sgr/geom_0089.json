@@ -1,0 +1,144 @@
+{
+  "points": [
+    "O1",
+    "O2",
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "lines": [
+    {
+      "name": "CB",
+      "points": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "name": "DB",
+      "points": [
+        "D",
+        "B"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "O1",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "O2"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "B"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u03931",
+      "center": "O1",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "\u03932",
+      "center": "O2",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "circumcircle_O1AO2",
+      "center": "unknown",
+      "through": [
+        "O1",
+        "A",
+        "O2"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "O1",
+      "B": "A",
+      "C": "O2"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "ObtuseTriangle",
+      "triangle": [
+        "O1",
+        "A",
+        "O2"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "C",
+      "objects": [
+        "circumcircle_O1AO2",
+        "\u03931"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "D",
+      "objects": [
+        "circumcircle_O1AO2",
+        "\u03932"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "E",
+      "objects": [
+        "CB",
+        "\u03932"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "F",
+      "objects": [
+        "DB",
+        "\u03931"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Concyclic",
+        "args": [
+          "C",
+          "D",
+          "E",
+          "F"
+        ]
+      }
+    }
+  ]
+}

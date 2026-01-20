@@ -1,0 +1,5 @@
+Point(A)
+Point(B)
+Point(C)
+Point(P)
+Triangle(A,B,C)

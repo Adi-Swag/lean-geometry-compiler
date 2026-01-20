@@ -1,0 +1,61 @@
+{
+  "points": [
+    "P1",
+    "P2",
+    "P3"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "P1",
+        "P2"
+      ]
+    },
+    {
+      "points": [
+        "P2",
+        "P3"
+      ]
+    },
+    {
+      "points": [
+        "P3",
+        "P1"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "P1",
+      "B": "P2",
+      "C": "P3"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "RightTriangle",
+      "triangle": [
+        "P1",
+        "P2",
+        "P3"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "RightTriangle",
+        "args": [
+          "P1",
+          "P2",
+          "P3"
+        ]
+      }
+    }
+  ]
+}

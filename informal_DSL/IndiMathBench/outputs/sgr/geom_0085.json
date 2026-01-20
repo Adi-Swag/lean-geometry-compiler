@@ -1,0 +1,112 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "A'",
+    "D'",
+    "G"
+  ],
+  "lines": [
+    {
+      "name": "EF",
+      "points": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "name": "A'D'",
+      "points": [
+        "A'",
+        "D'"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "G",
+      "B": "C",
+      "C": "A'"
+    },
+    {
+      "A": "G",
+      "B": "D'",
+      "C": "F"
+    },
+    {
+      "A": "A'",
+      "B": "B",
+      "C": "E"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "G",
+      "objects": [
+        "A'D'",
+        "CD"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "RadiusOf",
+            "args": [
+              0,
+              0,
+              "A'"
+            ]
+          },
+          {
+            "type": "Add",
+            "args": [
+              {
+                "type": "RadiusOf",
+                "args": [
+                  0,
+                  "D'",
+                  0
+                ]
+              },
+              {
+                "type": "RadiusOf",
+                "args": [
+                  "A'",
+                  0,
+                  0
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

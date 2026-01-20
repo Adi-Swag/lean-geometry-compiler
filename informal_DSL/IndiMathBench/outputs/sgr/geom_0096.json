@@ -1,0 +1,159 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "G"
+  ],
+  "lines": [
+    {
+      "name": "line1",
+      "points": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "name": "line2",
+      "points": [
+        "E",
+        "G"
+      ]
+    },
+    {
+      "name": "line3",
+      "points": [
+        "C",
+        "B"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "G"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circumcircle_ABC",
+      "center": "O1",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "circumcircle_ECF",
+      "center": "O2",
+      "through": [
+        "E"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "E",
+      "B": "G",
+      "C": "B"
+    },
+    {
+      "A": "E",
+      "B": "C",
+      "C": "F"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Isosceles",
+      "triangle": [
+        "A",
+        "C",
+        "B"
+      ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "E",
+      "circle_center": "O1"
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "E",
+        "C",
+        "B"
+      ],
+      "measure": 90
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "E",
+        "G"
+      ],
+      "line2": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "F",
+      "objects": [
+        "line1",
+        "C",
+        "A"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "G",
+      "objects": [
+        "line2",
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "OnCircle",
+        "args": [
+          "O3",
+          "O2"
+        ]
+      }
+    }
+  ]
+}

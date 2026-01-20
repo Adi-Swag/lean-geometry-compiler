@@ -1,0 +1,111 @@
+{
+  "points": [
+    "R",
+    "P",
+    "Q",
+    "O1",
+    "O2",
+    "K"
+  ],
+  "lines": [
+    {
+      "name": "l1",
+      "points": [
+        "O1",
+        "P"
+      ]
+    },
+    {
+      "name": "l2",
+      "points": [
+        "O2",
+        "Q"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "K",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "K",
+        "Q"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u03931",
+      "center": "O1",
+      "through": [
+        "R"
+      ]
+    },
+    {
+      "name": "\u03932",
+      "center": "O2",
+      "through": [
+        "R"
+      ]
+    }
+  ],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "TangentToCircle",
+      "line": [
+        "O1",
+        "P"
+      ],
+      "circle_center": "O2",
+      "point_of_tangency": "P"
+    },
+    {
+      "type": "TangentToCircle",
+      "line": [
+        "O2",
+        "Q"
+      ],
+      "circle_center": "O2",
+      "point_of_tangency": "Q"
+    },
+    {
+      "type": "Intersection",
+      "point": "K",
+      "objects": [
+        "l1",
+        "l2"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "K",
+        "P"
+      ],
+      "segment2": [
+        "K",
+        "Q"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equilateral",
+        "args": [
+          "P",
+          "Q",
+          "R"
+        ]
+      }
+    }
+  ]
+}

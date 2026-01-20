@@ -1,0 +1,112 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "P",
+    "M",
+    "N"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "M"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "B",
+        "P",
+        "C"
+      ],
+      "measure": 90
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "B",
+        "A",
+        "P"
+      ],
+      "angle2": [
+        "B",
+        "C",
+        "P"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "M",
+      "segment": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "N",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "B",
+        "P"
+      ],
+      "segment2": [
+        "P",
+        "M"
+      ],
+      "ratio": "2"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Collinear",
+        "args": [
+          "A",
+          "P",
+          "N"
+        ]
+      }
+    }
+  ]
+}

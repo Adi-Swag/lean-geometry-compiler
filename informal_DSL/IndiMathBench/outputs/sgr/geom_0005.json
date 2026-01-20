@@ -6,51 +6,45 @@
     "M",
     "N"
   ],
-  "lines": [
+  "lines": [],
+  "segments": [
     {
-      "name": "AB",
       "points": [
         "A",
         "B"
       ]
     },
     {
-      "name": "AC",
       "points": [
         "A",
         "C"
       ]
     },
     {
-      "name": "BC",
       "points": [
         "B",
         "C"
       ]
     },
     {
-      "name": "BM",
       "points": [
         "B",
         "M"
       ]
     },
     {
-      "name": "CN",
       "points": [
         "C",
         "N"
       ]
     },
     {
-      "name": "MN",
       "points": [
         "M",
         "N"
       ]
     }
   ],
-  "segments": [],
   "circles": [],
   "triangles": [
     {
@@ -71,48 +65,58 @@
       ]
     },
     {
-      "type": "RightTriangle",
-      "triangle": [
-        "A",
-        "B",
-        "C"
-      ]
-    },
-    {
-      "type": "EqualAngles",
-      "angle1": [
+      "type": "AngleMeasure",
+      "angle": [
         "C",
         "A",
         "B"
       ],
-      "angle2": [
-        "A",
-        "B",
-        "C"
-      ]
+      "measure": 90
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "B",
-        "M"
-      ],
-      "segment2": [
-        "C",
-        "N"
-      ]
-    },
-    {
-      "type": "DistanceRatio",
-      "segment1": [
-        "B",
-        "M"
-      ],
-      "segment2": [
-        "C",
-        "N"
-      ],
-      "ratio": "1"
+      "type": "Equals",
+      "left": {
+        "type": "Add",
+        "left": {
+          "type": "Pow",
+          "base": {
+            "type": "LengthOf",
+            "segment": [
+              "B",
+              "M"
+            ]
+          },
+          "exponent": {
+            "value": 2
+          }
+        },
+        "right": {
+          "type": "Pow",
+          "base": {
+            "type": "LengthOf",
+            "segment": [
+              "C",
+              "N"
+            ]
+          },
+          "exponent": {
+            "value": 2
+          }
+        }
+      },
+      "right": {
+        "type": "Pow",
+        "base": {
+          "type": "LengthOf",
+          "segment": [
+            "M",
+            "N"
+          ]
+        },
+        "exponent": {
+          "value": 2
+        }
+      }
     }
   ],
   "goals": [

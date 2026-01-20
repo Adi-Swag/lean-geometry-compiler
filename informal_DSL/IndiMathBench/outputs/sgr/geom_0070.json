@@ -1,0 +1,142 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "M",
+    "A1",
+    "B1",
+    "C1",
+    "P",
+    "Q"
+  ],
+  "lines": [
+    {
+      "name": "AM",
+      "points": [
+        "A",
+        "M"
+      ]
+    },
+    {
+      "name": "BM",
+      "points": [
+        "B",
+        "M"
+      ]
+    },
+    {
+      "name": "CM",
+      "points": [
+        "C",
+        "M"
+      ]
+    },
+    {
+      "name": "A1C1",
+      "points": [
+        "A1",
+        "C1"
+      ]
+    },
+    {
+      "name": "A1B1",
+      "points": [
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "PQ",
+      "points": [
+        "P",
+        "Q"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "segments": [],
+  "circles": [
+    {
+      "name": "Gamma",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleBisector",
+      "point": "M",
+      "vertex": "A",
+      "side1": [
+        "A",
+        "B"
+      ],
+      "side2": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "P",
+      "objects": [
+        "A1C1",
+        "AB"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "Q",
+      "objects": [
+        "A1B1",
+        "AC"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Parallel",
+        "args": [
+          "P",
+          "Q",
+          "B",
+          "C"
+        ]
+      }
+    }
+  ]
+}

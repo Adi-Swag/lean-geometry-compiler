@@ -1,0 +1,140 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "P",
+    "Q",
+    "I"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "Q"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "D"
+    },
+    {
+      "A": "A",
+      "B": "C",
+      "C": "D"
+    },
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "RightTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "P",
+      "triangle": [
+        "A",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "Q",
+      "triangle": [
+        "A",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "D",
+      "vertex": "A",
+      "opposite_side": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Perpendicular",
+        "args": [
+          "A",
+          "I",
+          "P",
+          "Q"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

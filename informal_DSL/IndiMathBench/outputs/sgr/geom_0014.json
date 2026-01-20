@@ -1,0 +1,100 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "M"
+  ],
+  "lines": [
+    {
+      "name": "EF",
+      "points": [
+        "E",
+        "F"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "F"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleBisector",
+      "point": "E",
+      "vertex": "B",
+      "side1": [
+        "B",
+        "A"
+      ],
+      "side2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "AngleBisector",
+      "point": "F",
+      "vertex": "C",
+      "side1": [
+        "C",
+        "A"
+      ],
+      "side2": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "M",
+      "original": "A",
+      "line": [
+        "E",
+        "F"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Intersection",
+        "args": [
+          "M",
+          "BC",
+          "EF"
+        ]
+      }
+    }
+  ]
+}

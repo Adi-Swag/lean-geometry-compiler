@@ -1,0 +1,149 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "K",
+    "O"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "CD",
+      "points": [
+        "C",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "K"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "Gamma",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "D",
+      "C": "K"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Diameter",
+      "segment": [
+        "A",
+        "B"
+      ],
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "C",
+      "circle_center": "O"
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "C",
+        "D"
+      ],
+      "line2": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "C"
+        ]
+      },
+      "right": {
+        "type": "Div",
+        "left": {
+          "type": "Add",
+          "left": {
+            "type": "LengthOf",
+            "segment": [
+              "A",
+              "D"
+            ]
+          },
+          "right": {
+            "type": "LengthOf",
+            "segment": [
+              "D",
+              "K"
+            ]
+          }
+        },
+        "right": {
+          "value": 2
+        }
+      }
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "TangentToCircle",
+        "args": [
+          "A",
+          "B",
+          "O",
+          "Excircle"
+        ]
+      }
+    }
+  ]
+}

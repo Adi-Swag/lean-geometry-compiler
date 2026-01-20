@@ -1,0 +1,145 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "P",
+    "M",
+    "Q"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "Q"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "M",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "C",
+        "Q"
+      ],
+      "line2": [
+        "A",
+        "M"
+      ]
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "Add",
+        "left": {
+          "type": "LengthOf",
+          "segment": [
+            "A",
+            "P"
+          ]
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "P",
+            "C"
+          ]
+        }
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "B"
+        ]
+      }
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "Mul",
+            "args": [
+              2,
+              {
+                "type": "LengthOf",
+                "args": [
+                  0,
+                  0
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

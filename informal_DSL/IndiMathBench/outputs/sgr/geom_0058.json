@@ -1,0 +1,113 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "A1",
+    "B1",
+    "C1"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "points": [
+        "B1",
+        "C1"
+      ]
+    },
+    {
+      "points": [
+        "C1",
+        "A1"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A1",
+      "B": "B1",
+      "C": "C1"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Triangle",
+                "vertices": [
+                  "A1",
+                  "B1",
+                  "C1"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Mul",
+            "args": [
+              {
+                "type": "Div",
+                "args": [
+                  9,
+                  4
+                ]
+              },
+              {
+                "type": "AreaOf",
+                "args": [
+                  {
+                    "type": "Triangle",
+                    "vertices": [
+                      "A",
+                      "B",
+                      "C"
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,165 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "K"
+  ],
+  "lines": [
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "circumcircle_ACD",
+      "center": "O1",
+      "through": [
+        "A",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "name": "circumcircle_ABD",
+      "center": "O2",
+      "through": [
+        "A",
+        "B",
+        "D"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "C",
+      "C": "D"
+    },
+    {
+      "A": "A",
+      "B": "B",
+      "C": "D"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "C",
+        "B",
+        "A"
+      ],
+      "measure": 90
+    },
+    {
+      "type": "AngleBisector",
+      "point": "D",
+      "vertex": "A",
+      "side1": [
+        "A",
+        "B"
+      ],
+      "side2": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "E",
+      "objects": [
+        "circumcircle_ACD",
+        "AB"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "F",
+      "objects": [
+        "circumcircle_ABD",
+        "AC"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "K",
+      "original": "E",
+      "line": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

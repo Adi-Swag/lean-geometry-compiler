@@ -1,0 +1,34 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "P"
+  ],
+  "lines": [],
+  "segments": [],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "NumberOfGoodPoints",
+        "args": [
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    }
+  ]
+}

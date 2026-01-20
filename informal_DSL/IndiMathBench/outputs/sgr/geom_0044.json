@@ -1,0 +1,110 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "B'",
+    "I"
+  ],
+  "lines": [
+    {
+      "name": "l",
+      "points": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "C",
+      "B": "B'",
+      "C": "I"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleBisector",
+      "point": "D",
+      "vertex": "A",
+      "side1": [
+        "A",
+        "B"
+      ],
+      "side2": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Reflection",
+      "point": "B'",
+      "original": "B",
+      "line": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Circumcenter",
+        "args": [
+          "O",
+          "C",
+          "B'",
+          "I"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "OnCircle",
+        "args": [
+          "O",
+          "A"
+        ]
+      }
+    }
+  ]
+}

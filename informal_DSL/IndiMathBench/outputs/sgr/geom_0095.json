@@ -1,0 +1,56 @@
+{
+  "points": [
+    "P1",
+    "P2",
+    "P3",
+    "...",
+    "Pn"
+  ],
+  "lines": [],
+  "segments": [],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "LessThan",
+        "args": [
+          {
+            "type": "DistinctValues",
+            "args": [
+              {
+                "type": "Floor",
+                "args": [
+                  {
+                    "type": "Log",
+                    "args": [
+                      2,
+                      {
+                        "type": "LengthOf",
+                        "args": [
+                          "Pi",
+                          "Pj"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Mul",
+            "args": [
+              2,
+              "n"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

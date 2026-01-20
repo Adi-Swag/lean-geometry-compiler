@@ -1,0 +1,134 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "A"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [
+    {
+      "vertices": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "B",
+        "A",
+        "E"
+      ],
+      "measure": 120
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "B",
+        "C"
+      ],
+      "measure": 120
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "B",
+        "C",
+        "D"
+      ],
+      "measure": 120
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "C",
+        "D",
+        "E"
+      ],
+      "measure": 120
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "D",
+        "E",
+        "A"
+      ],
+      "measure": 120
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "Add",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

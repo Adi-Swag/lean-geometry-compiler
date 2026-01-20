@@ -1,0 +1,128 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "O",
+    "I",
+    "OA",
+    "OB",
+    "OC",
+    "OG"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393A",
+      "center": "OA",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "\u0393B",
+      "center": "OB",
+      "through": [
+        "B"
+      ]
+    },
+    {
+      "name": "\u0393C",
+      "center": "OC",
+      "through": [
+        "C"
+      ]
+    },
+    {
+      "name": "\u0393",
+      "center": "OG",
+      "through": [
+        "OA"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Incenter",
+      "point": "I",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Collinear",
+        "args": [
+          "O",
+          "I",
+          "OG"
+        ]
+      }
+    }
+  ]
+}

@@ -1,5 +1,11 @@
-# informal_DSL/batch_processor_sgr.py
-
+# Update batch_processor_sgr.py with range control
+# skip: 6,12,23,25,26,36,56,68,72,75,84
+# complex language: 11,38
+# greaterThanEqualTo and such types: 62,63,69,95
+# Orthocenter: 24
+# thereExists: 72
+# Failed: 6,12,23,36,56,68,75,84,91 --total 9
+# GoalFail in: 11,24,26,38,53,62,63,69,72,95 -- total 10
 from pathlib import Path
 import json
 from tqdm import tqdm
@@ -15,7 +21,6 @@ class BatchProcessorSGR:
         dataset_path: str = "IndiMathBench",
         output_root: str = "IndiMathBench/outputs"
     ):
-        # batch_processor is INSIDE informal_DSL
         self.base_dir = Path(__file__).parent
         self.dataset_path = self.base_dir / dataset_path
 
@@ -58,20 +63,54 @@ class BatchProcessorSGR:
     # Processing
     # ---------------------------
 
-    def process_all(self, example_ids=None):
+    def process_all(self, start_index=0, num_examples=None, example_ids=None):
+        """
+        Process examples with range control.
+        
+        Args:
+            start_index (int): Starting index (0-based). Default: 0
+            num_examples (int): Number of examples to process. Default: None (all)
+            example_ids (list): Specific example IDs to process. Default: None
+        
+        Examples:
+            # Process first 10 examples
+            processor.process_all(start_index=0, num_examples=10)
+            
+            # Process 5 examples starting from index 20
+            processor.process_all(start_index=20, num_examples=5)
+            
+            # Process examples 10 to 20
+            processor.process_all(start_index=10, num_examples=10)
+            
+            # Process all examples from index 50 onwards
+            processor.process_all(start_index=50)
+        """
         if example_ids is None:
             example_ids = self.find_all_examples()
-        example_ids = example_ids[:10] # Limit for testing
-        #example_ids = ["geom_0007"]# Limit to single for debugging
+        
+        # Apply range filtering
+        total_available = len(example_ids)
+        
+        # Apply start index
+        if start_index > 0:
+            if start_index >= total_available:
+                print(f"ERROR: start_index ({start_index}) >= total examples ({total_available})")
+                return []
+            example_ids = example_ids[start_index:]
+            print(f"Starting from index {start_index} (example: {example_ids[0]})")
+        
+        # Apply num_examples limit
+        if num_examples is not None:
+            example_ids = example_ids[:num_examples]
+            print(f"Limiting to {num_examples} examples")
+        
         results = []
 
-        print(f"\nProcessing {len(example_ids)} problems...\n")
+        print(f"\nProcessing {len(example_ids)} problems...")
+        print(f"Range: index {start_index} to {start_index + len(example_ids) - 1}")
+        print(f"Examples: {example_ids[0]} to {example_ids[-1]}\n")
 
         for ex_id in tqdm(example_ids):
-            if ex_id == "geom_0006":
-                # Skip known problematic example for now
-                continue
-
             sgr_verified = False
             dsl_generated = False
             dsl_lines = []
@@ -84,12 +123,10 @@ class BatchProcessorSGR:
 
                 # 1. Informal → SGR
                 sgr = self.translator.translate(context, problem)
-                #print(f"\n[Example {ex_id}] SGR generated.")
 
                 # 2. Validate SGR
                 validate_sgr(sgr)
                 sgr_verified = True
-                #print(f"[Example {ex_id}] SGR validated.")
 
                 # 3. SGR → DSL
                 dsl_lines = sgr_to_dsl(sgr)
@@ -115,15 +152,20 @@ class BatchProcessorSGR:
                 "error": error
             })
 
-        self._save_summary(results)
+        self._save_summary(results, start_index, num_examples)
         return results
 
     # ---------------------------
     # Summary
     # ---------------------------
 
-    def _save_summary(self, results):
+    def _save_summary(self, results, start_index=0, num_examples=None):
         summary = {
+            "range": {
+                "start_index": start_index,
+                "num_examples": num_examples if num_examples else len(results),
+                "actual_processed": len(results)
+            },
             "total": len(results),
             "sgr_verified": sum(r["sgr_verified"] for r in results),
             "dsl_generated": sum(r["dsl_generated"] for r in results),
@@ -144,13 +186,14 @@ class BatchProcessorSGR:
         print("\n" + "=" * 60)
         print("BATCH SUMMARY")
         print("=" * 60)
-        print(f"Total     : {summary['total']}")
-        print(f"SGR Verified    : {summary['sgr_verified']}")
-        print(f"DSL Generated   : {summary['dsl_generated']}")
-        print(f"Success   : {summary['success']}")
-        print(f"Failed    : {summary['failed']}")
+        print(f"Range       : index {start_index} to {start_index + len(results) - 1}")
+        print(f"Total       : {summary['total']}")
+        print(f"SGR Verified: {summary['sgr_verified']}")
+        print(f"DSL Generated: {summary['dsl_generated']}")
+        print(f"Success     : {summary['success']}")
+        print(f"Failed      : {summary['failed']}")
         if summary["total"] > 0:
-            print(f"Success % : {100 * summary['success'] / summary['total']:.2f}%")
+            print(f"Success %   : {100 * summary['success'] / summary['total']:.2f}%")
         print(f"Outputs → {self.output_root}")
         print("=" * 60)
 
@@ -160,5 +203,33 @@ class BatchProcessorSGR:
 # ---------------------------
 
 if __name__ == "__main__":
+    import argparse
+    
+    parser = argparse.ArgumentParser(description="Process geometry problems to DSL")
+    parser.add_argument(
+        "--start", 
+        type=int, 
+        default=0,
+        help="Starting index (0-based). Default: 0"
+    )
+    parser.add_argument(
+        "--num", 
+        type=int, 
+        default=None,
+        help="Number of examples to process. Default: all"
+    )
+    parser.add_argument(
+        "--all",
+        action="store_true",
+        help="Process all examples (overrides --start and --num)"
+    )
+    
+    args = parser.parse_args()
+    
     processor = BatchProcessorSGR()
-    processor.process_all()
+    
+    if args.all:
+        print("Processing ALL examples...")
+        processor.process_all()
+    else:
+        processor.process_all(start_index=args.start, num_examples=args.num)

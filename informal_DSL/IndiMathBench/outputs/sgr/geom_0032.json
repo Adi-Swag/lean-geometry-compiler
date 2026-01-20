@@ -1,0 +1,109 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "X",
+    "Y",
+    "O"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "B",
+      "B": "X",
+      "C": "Y"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "X",
+        "O"
+      ],
+      "line2": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "Y",
+        "O"
+      ],
+      "line2": [
+        "B",
+        "A"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "X",
+      "objects": [
+        "AC",
+        "PerpendicularBisectorBC"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "Y",
+      "objects": [
+        "AC",
+        "PerpendicularBisectorBA"
+      ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Incenter",
+        "args": [
+          "O",
+          "B",
+          "X",
+          "Y"
+        ]
+      }
+    }
+  ]
+}

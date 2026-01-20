@@ -1,0 +1,89 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "G"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "D",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "E",
+      "segment": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "type": "Centroid",
+      "point": "G",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Concyclic",
+      "points": [
+        "D",
+        "C",
+        "E",
+        "G"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "PerimeterOf",
+        "args": [
+          {
+            "type": "Triangle",
+            "vertices": [
+              "A",
+              "B",
+              "C"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
