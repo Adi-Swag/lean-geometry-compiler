@@ -1,37 +1,72 @@
 {
-  "total": 5,
-  "success": 0,
-  "failed": 5,
+  "total": 9,
+  "sgr_verified": 9,
+  "dsl_generated": 5,
+  "success": 5,
+  "failed": 4,
   "results": [
     {
       "id": "geom_0000",
-      "success": false,
-      "num_dsl_lines": 0,
-      "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 19,
+      "error": null
     },
     {
       "id": "geom_0001",
-      "success": false,
-      "num_dsl_lines": 0,
-      "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 20,
+      "error": null
     },
     {
       "id": "geom_0002",
-      "success": false,
-      "num_dsl_lines": 0,
-      "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 26,
+      "error": null
     },
     {
       "id": "geom_0003",
-      "success": false,
+      "sgr_verified": true,
+      "dsl_generated": false,
       "num_dsl_lines": 0,
-      "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      "error": "not enough values to unpack (expected 2, got 1)"
     },
     {
       "id": "geom_0004",
-      "success": false,
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 23,
+      "error": null
+    },
+    {
+      "id": "geom_0005",
+      "sgr_verified": true,
+      "dsl_generated": false,
       "num_dsl_lines": 0,
-      "error": "Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}"
+      "error": "not enough values to unpack (expected 2, got 1)"
+    },
+    {
+      "id": "geom_0007",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 36,
+      "error": null
+    },
+    {
+      "id": "geom_0008",
+      "sgr_verified": true,
+      "dsl_generated": false,
+      "num_dsl_lines": 0,
+      "error": "Unknown relation type: MeasureOf"
+    },
+    {
+      "id": "geom_0009",
+      "sgr_verified": true,
+      "dsl_generated": false,
+      "num_dsl_lines": 0,
+      "error": "Unknown relation type: MeasureOf"
     }
   ]
 }

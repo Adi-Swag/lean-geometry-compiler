@@ -1,0 +1,16 @@
+{
+  "points": [],
+  "lines": [],
+  "segments": [],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": "T"
+    }
+  ]
+}

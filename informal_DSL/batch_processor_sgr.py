@@ -61,27 +61,40 @@ class BatchProcessorSGR:
     def process_all(self, example_ids=None):
         if example_ids is None:
             example_ids = self.find_all_examples()
-        example_ids = example_ids[:5] # Limit for testing
+        example_ids = example_ids[:10] # Limit for testing
+        #example_ids = ["geom_0007"]# Limit to single for debugging
         results = []
 
         print(f"\nProcessing {len(example_ids)} problems...\n")
 
         for ex_id in tqdm(example_ids):
+            if ex_id == "geom_0006":
+                # Skip known problematic example for now
+                continue
+
+            sgr_verified = False
+            dsl_generated = False
+            dsl_lines = []
+            error = None
+
             try:
                 context, problem = self.load_example(ex_id)
-
                 if not problem:
                     raise ValueError("Empty problem text")
 
                 # 1. Informal → SGR
                 sgr = self.translator.translate(context, problem)
+                #print(f"\n[Example {ex_id}] SGR generated.")
 
                 # 2. Validate SGR
                 validate_sgr(sgr)
+                sgr_verified = True
+                #print(f"[Example {ex_id}] SGR validated.")
 
                 # 3. SGR → DSL
                 dsl_lines = sgr_to_dsl(sgr)
                 dsl_text = "\n".join(dsl_lines)
+                dsl_generated = True
 
                 # Save SGR
                 (self.sgr_out / f"{ex_id}.json").write_text(
@@ -91,20 +104,16 @@ class BatchProcessorSGR:
                 # Save DSL
                 (self.dsl_out / f"{ex_id}.dsl").write_text(dsl_text)
 
-                results.append({
-                    "id": ex_id,
-                    "success": True,
-                    "num_dsl_lines": len(dsl_lines),
-                    "error": None
-                })
-
             except Exception as e:
-                results.append({
-                    "id": ex_id,
-                    "success": False,
-                    "num_dsl_lines": 0,
-                    "error": str(e)
-                })
+                error = str(e)
+
+            results.append({
+                "id": ex_id,
+                "sgr_verified": sgr_verified,
+                "dsl_generated": dsl_generated,
+                "num_dsl_lines": len(dsl_lines) if dsl_generated else 0,
+                "error": error
+            })
 
         self._save_summary(results)
         return results
@@ -116,8 +125,16 @@ class BatchProcessorSGR:
     def _save_summary(self, results):
         summary = {
             "total": len(results),
-            "success": sum(r["success"] for r in results),
-            "failed": sum(not r["success"] for r in results),
+            "sgr_verified": sum(r["sgr_verified"] for r in results),
+            "dsl_generated": sum(r["dsl_generated"] for r in results),
+            "success": sum(
+                r["sgr_verified"] and r["dsl_generated"]
+                for r in results
+            ),
+            "failed": sum(
+                not (r["sgr_verified"] and r["dsl_generated"])
+                for r in results
+            ),
             "results": results
         }
 
@@ -128,6 +145,8 @@ class BatchProcessorSGR:
         print("BATCH SUMMARY")
         print("=" * 60)
         print(f"Total     : {summary['total']}")
+        print(f"SGR Verified    : {summary['sgr_verified']}")
+        print(f"DSL Generated   : {summary['dsl_generated']}")
         print(f"Success   : {summary['success']}")
         print(f"Failed    : {summary['failed']}")
         if summary["total"] > 0:

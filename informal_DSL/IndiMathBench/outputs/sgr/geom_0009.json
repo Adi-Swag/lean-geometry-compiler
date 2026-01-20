@@ -1,0 +1,90 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "segments": [],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "D",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "D",
+        "B"
+      ],
+      "measure": 45
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "C",
+        "D"
+      ],
+      "measure": 30
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Find",
+      "content": {
+        "type": "AngleMeasure",
+        "args": [
+          "B",
+          "A",
+          "D"
+        ]
+      }
+    }
+  ]
+}

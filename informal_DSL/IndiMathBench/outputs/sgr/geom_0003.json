@@ -1,0 +1,83 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D"
+  ],
+  "lines": [
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "segments": [],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "BisectsAngle",
+      "line": [
+        "A",
+        "D"
+      ],
+      "angle": [
+        "B",
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "B",
+        "A",
+        "C"
+      ],
+      "measure": "2C"
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "C",
+        "D"
+      ],
+      "segment2": [
+        "A",
+        "B"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "AngleMeasure",
+        "args": [
+          "B",
+          "A",
+          "C",
+          72
+        ]
+      }
+    }
+  ]
+}

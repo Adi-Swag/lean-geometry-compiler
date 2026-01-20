@@ -1,0 +1,149 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "E",
+    "F",
+    "O",
+    "K",
+    "L",
+    "M",
+    "N"
+  ],
+  "lines": [
+    {
+      "name": "BE",
+      "points": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "name": "CF",
+      "points": [
+        "C",
+        "F"
+      ]
+    },
+    {
+      "name": "KL",
+      "points": [
+        "K",
+        "L"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "K",
+        "M"
+      ]
+    },
+    {
+      "points": [
+        "L",
+        "N"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "M"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "N"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Altitude",
+      "foot": "E",
+      "vertex": "B",
+      "opposite_side": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Altitude",
+      "foot": "F",
+      "vertex": "C",
+      "opposite_side": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "O",
+      "objects": [
+        "BE",
+        "CF"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "K",
+        "M"
+      ],
+      "line2": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "L",
+        "N"
+      ],
+      "line2": [
+        "C",
+        "F"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Parallel",
+        "args": [
+          "F",
+          "M",
+          "E",
+          "N"
+        ]
+      }
+    }
+  ]
+}

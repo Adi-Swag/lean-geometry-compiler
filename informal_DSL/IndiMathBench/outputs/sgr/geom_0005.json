@@ -1,0 +1,132 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "M",
+    "N"
+  ],
+  "lines": [
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "BM",
+      "points": [
+        "B",
+        "M"
+      ]
+    },
+    {
+      "name": "CN",
+      "points": [
+        "C",
+        "N"
+      ]
+    },
+    {
+      "name": "MN",
+      "points": [
+        "M",
+        "N"
+      ]
+    }
+  ],
+  "segments": [],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Isosceles",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "RightTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "C",
+        "A",
+        "B"
+      ],
+      "angle2": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "B",
+        "M"
+      ],
+      "segment2": [
+        "C",
+        "N"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "B",
+        "M"
+      ],
+      "segment2": [
+        "C",
+        "N"
+      ],
+      "ratio": "1"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "AngleMeasure",
+        "args": [
+          "M",
+          "A",
+          "N",
+          45
+        ]
+      }
+    }
+  ]
+}

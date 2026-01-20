@@ -1,0 +1,130 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "O",
+    "E"
+  ],
+  "lines": [
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "name": "BE",
+      "points": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "name": "BD",
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "name": "AO",
+      "points": [
+        "A",
+        "O"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "O"
+      ]
+    }
+  ],
+  "circles": [
+    {
+      "name": "\u0393",
+      "center": "O",
+      "through": [
+        "A"
+      ]
+    }
+  ],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "OnCircle",
+      "point": "D",
+      "circle_center": "O"
+    },
+    {
+      "type": "BisectsAngle",
+      "line": [
+        "A",
+        "D"
+      ],
+      "angle": [
+        "B",
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "E",
+      "objects": [
+        "AC",
+        "DO"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "B",
+        "E"
+      ],
+      "line2": [
+        "A",
+        "D"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Parallel",
+        "args": [
+          "A",
+          "O",
+          "B",
+          "D"
+        ]
+      }
+    }
+  ]
+}

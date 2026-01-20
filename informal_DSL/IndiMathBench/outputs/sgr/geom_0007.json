@@ -1,0 +1,322 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "X",
+    "Y",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S"
+  ],
+  "lines": [
+    {
+      "name": "line1",
+      "points": [
+        "X",
+        "O"
+      ]
+    },
+    {
+      "name": "line2",
+      "points": [
+        "Y",
+        "O"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "A"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "P",
+      "C": "O",
+      "D": "S"
+    },
+    {
+      "A": "A",
+      "B": "P",
+      "C": "X",
+      "D": "S"
+    },
+    {
+      "A": "B",
+      "B": "Q",
+      "C": "O",
+      "D": "P"
+    },
+    {
+      "A": "C",
+      "B": "R",
+      "C": "O",
+      "D": "Q"
+    },
+    {
+      "A": "D",
+      "B": "S",
+      "C": "O",
+      "D": "R"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "X",
+      "segment": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "Y",
+      "segment": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "X",
+        "O"
+      ],
+      "line2": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "Y",
+        "O"
+      ],
+      "line2": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "P",
+      "segment": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "Q",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "R",
+      "segment": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "S",
+      "segment": [
+        "D",
+        "A"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Quadrilateral",
+                "vertices": [
+                  "A",
+                  "P",
+                  "O",
+                  "S"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Quadrilateral",
+                "vertices": [
+                  "A",
+                  "P",
+                  "X",
+                  "S"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Quadrilateral",
+                "vertices": [
+                  "A",
+                  "P",
+                  "O",
+                  "S"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Quadrilateral",
+                "vertices": [
+                  "B",
+                  "Q",
+                  "O",
+                  "P"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Quadrilateral",
+                "vertices": [
+                  "A",
+                  "P",
+                  "O",
+                  "S"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Quadrilateral",
+                "vertices": [
+                  "C",
+                  "R",
+                  "O",
+                  "Q"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Quadrilateral",
+                "vertices": [
+                  "A",
+                  "P",
+                  "O",
+                  "S"
+                ]
+              }
+            ]
+          },
+          {
+            "type": "AreaOf",
+            "args": [
+              {
+                "type": "Quadrilateral",
+                "vertices": [
+                  "D",
+                  "S",
+                  "O",
+                  "R"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

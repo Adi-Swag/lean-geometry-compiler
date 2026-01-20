@@ -1,0 +1,161 @@
+{
+  "points": [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AcuteTriangle",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "C",
+        "D"
+      ],
+      "segment2": [
+        "C",
+        "E"
+      ],
+      "ratio": "CA/CB"
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "A",
+        "E"
+      ],
+      "segment2": [
+        "A",
+        "F"
+      ],
+      "ratio": "AB/AC"
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "B",
+        "F"
+      ],
+      "segment2": [
+        "B",
+        "D"
+      ],
+      "ratio": "BC/BA"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Altitude",
+        "args": [
+          "D",
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Altitude",
+        "args": [
+          "E",
+          "B",
+          "A",
+          "C"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Altitude",
+        "args": [
+          "F",
+          "C",
+          "A",
+          "B"
+        ]
+      }
+    }
+  ]
+}
