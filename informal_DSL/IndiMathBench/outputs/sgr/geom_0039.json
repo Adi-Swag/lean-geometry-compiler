@@ -12,6 +12,27 @@
   ],
   "lines": [
     {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "CA",
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "name": "AB",
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
       "name": "I1D",
       "points": [
         "I1",
@@ -54,56 +75,20 @@
     },
     {
       "points": [
-        "A",
-        "F"
-      ]
-    },
-    {
-      "points": [
-        "F",
-        "E"
-      ]
-    },
-    {
-      "points": [
-        "E",
-        "A"
-      ]
-    },
-    {
-      "points": [
-        "B",
+        "I1",
         "D"
       ]
     },
     {
       "points": [
-        "D",
-        "F"
-      ]
-    },
-    {
-      "points": [
-        "F",
-        "B"
-      ]
-    },
-    {
-      "points": [
-        "C",
+        "I2",
         "E"
       ]
     },
     {
       "points": [
-        "E",
-        "D"
-      ]
-    },
-    {
-      "points": [
-        "D",
-        "C"
+        "I3",
+        "F"
       ]
     }
   ],

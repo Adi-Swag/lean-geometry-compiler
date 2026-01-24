@@ -53,6 +53,12 @@
         "D",
         "K"
       ]
+    },
+    {
+      "points": [
+        "A",
+        "K"
+      ]
     }
   ],
   "circles": [
@@ -138,10 +144,12 @@
       "content": {
         "type": "TangentToCircle",
         "args": [
+          "Excircle",
           "A",
-          "B",
-          "O",
-          "Excircle"
+          "D",
+          "K",
+          "A",
+          "O"
         ]
       }
     }

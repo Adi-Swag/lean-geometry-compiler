@@ -31,6 +31,13 @@
         "B",
         "C"
       ]
+    },
+    {
+      "name": "OI",
+      "points": [
+        "O",
+        "I"
+      ]
     }
   ],
   "segments": [
@@ -110,17 +117,25 @@
         "B",
         "C"
       ]
+    },
+    {
+      "type": "Intersection",
+      "point": "OG",
+      "objects": [
+        "OI",
+        "OG"
+      ]
     }
   ],
   "goals": [
     {
       "kind": "Prove",
       "content": {
-        "type": "Collinear",
+        "type": "Intersection",
         "args": [
+          "OG",
           "O",
-          "I",
-          "OG"
+          "I"
         ]
       }
     }

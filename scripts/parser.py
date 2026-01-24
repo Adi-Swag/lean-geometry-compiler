@@ -41,47 +41,93 @@ class PredicateNode(AstNode):
     name: SymbolNode
     args: List[AstNode]
 
+def preprocess_dsl(content: str) -> str:
+    """
+    Preprocess DSL content to fix common errors before parsing.
+    This runs automatically before S-expression parsing.
+    """
+    # Fix 1: Replace square brackets with parentheses
+    content = content.replace('[', '(').replace(']', ')')
+    
+    # Fix 2: Remove quotes (cause sexpdata.Quoted errors)
+    content = content.replace("'", "")
+    
+    # Fix 3: Balance parentheses
+    open_count = content.count('(')
+    close_count = content.count(')')
+    
+    if open_count > close_count:
+        # Add missing closing parens at the end
+        content = content + ')' * (open_count - close_count)
+    elif close_count > open_count:
+        # Add missing opening parens at the start (rare but possible)
+        content = '(' * (close_count - open_count) + content
+    
+    # Fix 4: Remove extra whitespace and normalize
+    lines = content.split('\n')
+    cleaned_lines = []
+    for line in lines:
+        line = line.strip()
+        # Keep non-empty lines and comments
+        if line and not line.startswith('#'):
+            cleaned_lines.append(line)
+    
+    return '\n'.join(cleaned_lines)
 
 # --- Main Parser Function ---
 def parse_dsl(dsl_string: str):
     """
-    Parses a DSL string in S-expression format into a nested Python list.
+    Parse DSL string into S-expression tree.
+    Automatically preprocesses to fix common errors.
     """
+    
+    # STEP 1: Preprocess to fix common issues
+    cleaned = preprocess_dsl(dsl_string)
+    
+    # STEP 2: Parse with sexpdata
     try:
-        # Use sexpdata to handle the heavy lifting of parsing S-expressions
-        parsed_data = sexpdata.loads(dsl_string)
-        return parsed_data
+        parse_tree = sexpdata.loads(cleaned)
+        return parse_tree
     except Exception as e:
-        print(f"Error: Failed to parse DSL string. Details: {e}", file=sys.stderr)
-        return None
+        # If parsing still fails, provide helpful error message
+        raise ValueError(
+            f"Failed to parse DSL even after preprocessing.\n"
+            f"Original error: {e}\n"
+            f"Preprocessed content:\n{cleaned[:200]}..."
+        )
 
 
 # --- Transformer Function (Parse Tree to AST) ---
-def build_ast(tree: Any) -> AstNode:
+def build_ast(tree):
     """
-    Recursively transforms a raw parse tree (nested list) into a structured AST.
+    Recursively build AST from parsed S-expression.
+    Enhanced to handle sexpdata.Quoted types.
     """
-    if isinstance(tree, Symbol):
-        # A symbol becomes a SymbolNode
-        return SymbolNode(name=tree.value())
+    # Handle symbols
+    if isinstance(tree, sexpdata.Symbol):
+        return SymbolNode(name=str(tree))
     
-    elif isinstance(tree, (int, float)):
-        # A number becomes a NumberNode
+    # Handle numbers
+    if isinstance(tree, (int, float)):
         return NumberNode(value=tree)
     
-    elif isinstance(tree, list):
+    # NEW: Handle quoted symbols (from 'symbol syntax)
+    if isinstance(tree, sexpdata.Quoted):
+        # Extract the quoted value and process it
+        return build_ast(tree.val)
+    
+    # Handle lists (predicates)
+    if isinstance(tree, list):
         if not tree:
-            return None # Handle empty lists if they can occur
+            raise ValueError("Empty list in AST construction")
         
-        # The first element of a list is the predicate's name
-        predicate_name = build_ast(tree[0])
+        # First element is predicate name
+        predicate = build_ast(tree[0])
         
-        # Recursively build the AST for all subsequent elements (the arguments)
+        # Rest are arguments
         args = [build_ast(arg) for arg in tree[1:]]
         
-        # This structure (Predicate arg1 arg2) becomes a PredicateNode
-        return PredicateNode(name=predicate_name, args=args)
+        return PredicateNode(name=predicate, args=args)
     
-    else:
-        # Raise an error if we encounter an unexpected data type
-        raise TypeError(f"Unexpected type during AST construction: {type(tree)}")
+    # Unknown type
+    raise TypeError(f"Unexpected type during AST construction: {type(tree)}")

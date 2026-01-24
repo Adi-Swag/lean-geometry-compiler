@@ -235,64 +235,168 @@ def h_measure_of(args, gen):
 def h_area_of(args, gen):
     _expect_arity("AreaOf", args, 1)
     arg = args[0]
+    
+    # Triangle with inline points
     if _is_pred(arg, "Triangle"):
         _expect_arity("Triangle", arg.args, 3)
         A, B, C = gen(arg.args[0]), gen(arg.args[1]), gen(arg.args[2])
-        a = f"(dist {B} {C})"; b = f"(dist {C} {A})"; c = f"(dist {A} {B})"
+        # Heron's formula
+        a = f"(dist {B} {C})"
+        b = f"(dist {C} {A})"
+        c = f"(dist {A} {B})"
         s = f"(({a} + {b} + {c}) / 2)"
         return f"(Real.sqrt ({s} * ({s} - {a}) * ({s} - {b}) * ({s} - {c})))"
+    
+    # Quadrilateral with inline points
+    if _is_pred(arg, "Quadrilateral"):
+        _expect_arity("Quadrilateral", arg.args, 4)
+        A, B, C, D = (gen(arg.args[i]) for i in range(4))
+        # Shoelace formula for quadrilateral
+        return f"((1/2) * |({A} 0 * {B} 1 - {A} 1 * {B} 0) + ({B} 0 * {C} 1 - {B} 1 * {C} 0) + ({C} 0 * {D} 1 - {C} 1 * {D} 0) + ({D} 0 * {A} 1 - {D} 1 * {A} 0)|)"
+    
+    # Polygon with inline points
+    if _is_pred(arg, "Polygon"):
+        # For general polygon, use shoelace formula
+        # This is complex - for now, require symbol mode
+        raise ValueError("AreaOf(Polygon(...)) with inline vertices not yet supported. Use a polygon symbol or specific shape type.")
+    
+    # Circle with inline definition
+    if _is_pred(arg, "Circle"):
+        if len(arg.args) == 1:
+            # Circle(O) - use r_O parameter
+            O = gen(arg.args[0])
+            return f"(Real.pi * r_{O} ^ 2)"
+        elif len(arg.args) == 2:
+            # Circle(O, r) - explicit radius
+            r = gen(arg.args[1])
+            return f"(Real.pi * {r} ^ 2)"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(arg.args)}")
+    
+    # Symbol mode - any shape type
     if _is_symbol(arg):
         return f"(area {_sym(arg)})"
-    raise ValueError("AreaOf expects Triangle symbol or Triangle(A,B,C)")
+    
+    raise ValueError(
+        "AreaOf expects one of:\n"
+        "  - Triangle(A,B,C)\n"
+        "  - Quadrilateral(A,B,C,D)\n"
+        "  - Circle(O) or Circle(O,r)\n"
+        "  - A shape symbol (t : Triangle, q : Quadrilateral, etc.)"
+    )
 
 @handler("PerimeterOf")
 def h_perimeter_of(args, gen):
     _expect_arity("PerimeterOf", args, 1)
     arg = args[0]
+    
+    # Triangle
     if _is_pred(arg, "Triangle"):
         _expect_arity("Triangle", arg.args, 3)
         A, B, C = gen(arg.args[0]), gen(arg.args[1]), gen(arg.args[2])
         return f"(dist {A} {B} + dist {B} {C} + dist {C} {A})"
+    
+    # Quadrilateral
+    if _is_pred(arg, "Quadrilateral"):
+        _expect_arity("Quadrilateral", arg.args, 4)
+        A, B, C, D = (gen(arg.args[i]) for i in range(4))
+        return f"(dist {A} {B} + dist {B} {C} + dist {C} {D} + dist {D} {A})"
+    
+    # Polygon (general)
+    if _is_pred(arg, "Polygon"):
+        vertices = [gen(v) for v in arg.args]
+        terms = []
+        for i in range(len(vertices)):
+            v1 = vertices[i]
+            v2 = vertices[(i + 1) % len(vertices)]
+            terms.append(f"dist {v1} {v2}")
+        return f"({' + '.join(terms)})"
+    
+    # Circle - circumference
+    if _is_pred(arg, "Circle"):
+        if len(arg.args) == 1:
+            O = gen(arg.args[0])
+            return f"(2 * Real.pi * r_{O})"
+        elif len(arg.args) == 2:
+            r = gen(arg.args[1])
+            return f"(2 * Real.pi * {r})"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(arg.args)}")
+    
+    # Symbol mode
     if _is_symbol(arg):
         return f"(perimeter {_sym(arg)})"
-    raise ValueError("PerimeterOf expects Triangle symbol or Triangle(A,B,C)")
+    
+    raise ValueError(
+        "PerimeterOf expects Triangle, Quadrilateral, Polygon, Circle, or a shape symbol"
+    )
 
 @handler("RadiusOf")
 def h_radius_of(args, gen):
     _expect_arity("RadiusOf", args, 1)
     arg = args[0]
+    
     if _is_pred(arg, "Circle"):
-        _expect_arity("Circle", arg.args, 2)
-        r = gen(arg.args[1])
-        return f"{r}"
+        if len(arg.args) == 1:
+            # Circle(O) - return the radius parameter for center O
+            O = gen(arg.args[0])
+            return f"r_{O}"
+        elif len(arg.args) == 2:
+            # Circle(O,r) - return the explicit radius
+            r = gen(arg.args[1])
+            return f"{r}"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(arg.args)}")
+    
     if _is_symbol(arg):
         return f"(radius {_sym(arg)})"
-    raise ValueError("RadiusOf expects Circle symbol or Circle(O,r)")
+    
+    raise ValueError("RadiusOf expects Circle symbol or Circle(O[,r])")
 
 @handler("DiameterOf")
 def h_diameter_of(args, gen):
     _expect_arity("DiameterOf", args, 1)
     arg = args[0]
+    
     if _is_pred(arg, "Circle"):
-        _expect_arity("Circle", arg.args, 2)
-        r = gen(arg.args[1])
-        return f"(2 * {r})"
+        if len(arg.args) == 1:
+            # Circle(O) - diameter = 2 * r_O
+            O = gen(arg.args[0])
+            return f"(2 * r_{O})"
+        elif len(arg.args) == 2:
+            # Circle(O,r) - diameter = 2 * r
+            r = gen(arg.args[1])
+            return f"(2 * {r})"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(arg.args)}")
+    
     if _is_symbol(arg):
         return f"(diameter {_sym(arg)})"
-    raise ValueError("DiameterOf expects Circle symbol or Circle(O,r)")
+    
+    raise ValueError("DiameterOf expects Circle symbol or Circle(O[,r])")
+
 
 @handler("CircumferenceOf")
 def h_circumference_of(args, gen):
     _expect_arity("CircumferenceOf", args, 1)
     arg = args[0]
+    
     if _is_pred(arg, "Circle"):
-        _expect_arity("Circle", arg.args, 2)
-        r = gen(arg.args[1])
-        return f"(2 * Real.pi * {r})"
+        if len(arg.args) == 1:
+            # Circle(O) - circumference = 2π * r_O
+            O = gen(arg.args[0])
+            return f"(2 * Real.pi * r_{O})"
+        elif len(arg.args) == 2:
+            # Circle(O,r) - circumference = 2π * r
+            r = gen(arg.args[1])
+            return f"(2 * Real.pi * {r})"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(arg.args)}")
+    
     if _is_symbol(arg):
         return f"(circumference {_sym(arg)})"
-    raise ValueError("CircumferenceOf expects Circle symbol or Circle(O,r)")
-
+    
+    raise ValueError("CircumferenceOf expects Circle symbol or Circle(O[,r])")
 # -----------------------------------------------------------------------------
 # Properties
 # -----------------------------------------------------------------------------
@@ -432,13 +536,24 @@ def h_point_on_circle(args, gen):
     _expect_arity("PointLiesOnCircle", args, 2)
     P = gen(args[0])
     c = args[1]
+    
     if _is_pred(c, "Circle"):
-        _expect_arity("Circle", c.args, 2)
-        O, r = gen(c.args[0]), gen(c.args[1])
-        return f"(dist {P} {O} = {r})"
+        if len(c.args) == 1:
+            # Circle(O) - center only, radius should be in scope as r_O
+            O = gen(c.args[0])
+            # The radius parameter for center O is named r_O (or just r if single circle)
+            return f"(dist {P} {O} = r_{O})"
+        elif len(c.args) == 2:
+            # Circle(O,r) - explicit center and radius
+            O, r = gen(c.args[0]), gen(c.args[1])
+            return f"(dist {P} {O} = {r})"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(c.args)}")
+    
     if _is_symbol(c):
         return f"(PointLiesOnCircle {P} {_sym(c)})"
-    raise ValueError("PointLiesOnCircle expects Circle symbol or Circle(O,r)")
+    
+    raise ValueError("PointLiesOnCircle expects Circle symbol or Circle(O[,r])")
 
 @handler("Parallel")
 def h_parallel(args, gen):
@@ -549,41 +664,73 @@ def h_is_radius_of(args, gen):
     _expect_arity("IsRadiusOf", args, 2)
     seg, circ = args[0], args[1]
     ep = _seg_like_endpoints(seg, gen)
+    
     if ep is not None and _is_pred(circ, "Circle"):
-        _expect_arity("Circle", circ.args, 2)
-        A,B = ep
-        O,r = gen(circ.args[0]), gen(circ.args[1])
-        return f"(({A} = {O} ∧ dist {B} {O} = {r}) ∨ ({B} = {O} ∧ dist {A} {O} = {r}))"
+        A, B = ep
+        if len(circ.args) == 1:
+            # Circle(O) - use r_O parameter
+            O = gen(circ.args[0])
+            return f"(({A} = {O} ∧ dist {B} {O} = r_{O}) ∨ ({B} = {O} ∧ dist {A} {O} = r_{O}))"
+        elif len(circ.args) == 2:
+            # Circle(O,r) - explicit radius
+            O, r = gen(circ.args[0]), gen(circ.args[1])
+            return f"(({A} = {O} ∧ dist {B} {O} = {r}) ∨ ({B} = {O} ∧ dist {A} {O} = {r}))"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(circ.args)}")
+    
     if _is_symbol(seg) and _is_symbol(circ):
         return f"(IsRadiusOf {_sym(seg)} {_sym(circ)})"
+    
     raise ValueError("IsRadiusOf expects (Segment/Line, Circle) inline or symbols")
+
 
 @handler("IsChordOf")
 def h_is_chord_of(args, gen):
     _expect_arity("IsChordOf", args, 2)
     seg, circ = args[0], args[1]
     ep = _seg_like_endpoints(seg, gen)
+    
     if ep is not None and _is_pred(circ, "Circle"):
-        _expect_arity("Circle", circ.args, 2)
-        A,B = ep
-        O,r = gen(circ.args[0]), gen(circ.args[1])
-        return f"((dist {A} {O} = {r}) ∧ (dist {B} {O} = {r}))"
+        A, B = ep
+        if len(circ.args) == 1:
+            # Circle(O) - use r_O parameter
+            O = gen(circ.args[0])
+            return f"((dist {A} {O} = r_{O}) ∧ (dist {B} {O} = r_{O}))"
+        elif len(circ.args) == 2:
+            # Circle(O,r) - explicit radius
+            O, r = gen(circ.args[0]), gen(circ.args[1])
+            return f"((dist {A} {O} = {r}) ∧ (dist {B} {O} = {r}))"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(circ.args)}")
+    
     if _is_symbol(seg) and _is_symbol(circ):
         return f"(IsChordOf {_sym(seg)} {_sym(circ)})"
+    
     raise ValueError("IsChordOf expects (Segment/Line, Circle) inline or symbols")
+
 
 @handler("IsDiameterOf")
 def h_is_diameter_of(args, gen):
     _expect_arity("IsDiameterOf", args, 2)
     seg, circ = args[0], args[1]
     ep = _seg_like_endpoints(seg, gen)
+    
     if ep is not None and _is_pred(circ, "Circle"):
-        _expect_arity("Circle", circ.args, 2)
-        A,B = ep
-        O,r = gen(circ.args[0]), gen(circ.args[1])
-        return f"(((dist {A} {O} = {r}) ∧ (dist {B} {O} = {r})) ∧ ({O} = midpoint ℝ {A} {B}))"
+        A, B = ep
+        if len(circ.args) == 1:
+            # Circle(O) - use r_O parameter
+            O = gen(circ.args[0])
+            return f"(((dist {A} {O} = r_{O}) ∧ (dist {B} {O} = r_{O})) ∧ ({O} = midpoint ℝ {A} {B}))"
+        elif len(circ.args) == 2:
+            # Circle(O,r) - explicit radius
+            O, r = gen(circ.args[0]), gen(circ.args[1])
+            return f"(((dist {A} {O} = {r}) ∧ (dist {B} {O} = {r})) ∧ ({O} = midpoint ℝ {A} {B}))"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(circ.args)}")
+    
     if _is_symbol(seg) and _is_symbol(circ):
         return f"(IsDiameterOf {_sym(seg)} {_sym(circ)})"
+    
     raise ValueError("IsDiameterOf expects (Segment/Line, Circle) inline or symbols")
 
 @handler("IsMedianOf")
@@ -762,23 +909,38 @@ def h_tangent(args, gen):
     l, c = args[0], args[1]
 
     if _is_pred(l, "Line") and _is_pred(c, "Circle"):
-        _expect_arity("Line", l.args, 2); _expect_arity("Circle", c.args, 2)
-        A,B = gen(l.args[0]), gen(l.args[1])
-        O,r = gen(c.args[0]), gen(c.args[1])
-        return f"∃! (p : Point), CollinearPoints p {A} {B} ∧ dist p {O} = {r}"
+        _expect_arity("Line", l.args, 2)
+        A, B = gen(l.args[0]), gen(l.args[1])
+        
+        if len(c.args) == 1:
+            # Circle(O) - use r_O parameter
+            O = gen(c.args[0])
+            return f"∃! (p : Point), CollinearPoints p {A} {B} ∧ dist p {O} = r_{O}"
+        elif len(c.args) == 2:
+            # Circle(O,r) - explicit radius
+            O, r = gen(c.args[0]), gen(c.args[1])
+            return f"∃! (p : Point), CollinearPoints p {A} {B} ∧ dist p {O} = {r}"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(c.args)}")
 
     if _is_symbol(l) and _is_symbol(c):
         return f"(Tangent {_sym(l)} {_sym(c)})"
+    
     if _is_symbol(l) and _is_pred(c, "Circle"):
-        _expect_arity("Circle", c.args, 2)
-        O,r = gen(c.args[0]), gen(c.args[1])
-        return f"∃! (p : Point), PointLiesOnLine p {_sym(l)} ∧ dist p {O} = {r}"
+        if len(c.args) == 1:
+            O = gen(c.args[0])
+            return f"∃! (p : Point), PointLiesOnLine p {_sym(l)} ∧ dist p {O} = r_{O}"
+        elif len(c.args) == 2:
+            O, r = gen(c.args[0]), gen(c.args[1])
+            return f"∃! (p : Point), PointLiesOnLine p {_sym(l)} ∧ dist p {O} = {r}"
+    
     if _is_pred(l, "Line") and _is_symbol(c):
         _expect_arity("Line", l.args, 2)
-        A,B = gen(l.args[0]), gen(l.args[1])
+        A, B = gen(l.args[0]), gen(l.args[1])
         return f"∃! (p : Point), CollinearPoints p {A} {B} ∧ PointLiesOnCircle p {_sym(c)}"
 
-    raise ValueError("Tangent expects (Line(A,B), Circle(O,r)) for rewrite, or (ℓ : Line, c : Circle).")
+    raise ValueError("Tangent expects (Line(A,B), Circle(O[,r])) for rewrite, or symbols.")
+
 
 @handler("Secant")
 def h_secant(args, gen):
@@ -786,18 +948,30 @@ def h_secant(args, gen):
     l, c = args[0], args[1]
 
     if _is_pred(l, "Line") and _is_pred(c, "Circle"):
-        _expect_arity("Line", l.args, 2); _expect_arity("Circle", c.args, 2)
-        A,B = gen(l.args[0]), gen(l.args[1])
-        O,r = gen(c.args[0]), gen(c.args[1])
-        return (
-          f"∃ (p1 p2 : Point), p1 ≠ p2 ∧ "
-          f"∀ (p : Point), (CollinearPoints p {A} {B} ∧ dist p {O} = {r}) ↔ (p = p1 ∨ p = p2)"
-        )
+        _expect_arity("Line", l.args, 2)
+        A, B = gen(l.args[0]), gen(l.args[1])
+        
+        if len(c.args) == 1:
+            # Circle(O) - use r_O parameter
+            O = gen(c.args[0])
+            return (
+                f"∃ (p1 p2 : Point), p1 ≠ p2 ∧ "
+                f"∀ (p : Point), (CollinearPoints p {A} {B} ∧ dist p {O} = r_{O}) ↔ (p = p1 ∨ p = p2)"
+            )
+        elif len(c.args) == 2:
+            # Circle(O,r) - explicit radius
+            O, r = gen(c.args[0]), gen(c.args[1])
+            return (
+                f"∃ (p1 p2 : Point), p1 ≠ p2 ∧ "
+                f"∀ (p : Point), (CollinearPoints p {A} {B} ∧ dist p {O} = {r}) ↔ (p = p1 ∨ p = p2)"
+            )
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(c.args)}")
 
     if _is_symbol(l) and _is_symbol(c):
         return f"(Secant {_sym(l)} {_sym(c)})"
 
-    raise ValueError("Secant expects (Line(A,B), Circle(O,r)) for rewrite, or symbols.")
+    raise ValueError("Secant expects (Line(A,B), Circle(O[,r])) for rewrite, or symbols.")
 
 @handler("IsCircumcircleOf")
 def h_is_circumcircle_of(args, gen):
@@ -972,7 +1146,13 @@ def generate_lean_expr(node: AstNode) -> str:
     if not isinstance(node, PredicateNode):
         raise TypeError(f"Unexpected AST node type: {type(node)}")
 
-    pname = node.name.name
+    # FIX: Safely extract predicate name as string
+    if isinstance(node.name, SymbolNode):
+        pname = node.name.name  # Extract string from SymbolNode
+    elif isinstance(node.name, str):
+        pname = node.name  # Already a string
+    else:
+        pname = str(node.name)  # Fallback
 
     # Infix glue
     if pname in INFIX:
@@ -992,9 +1172,8 @@ def generate_lean_expr(node: AstNode) -> str:
     # Default: symbol-mode application for library preds
     args = " ".join(generate_lean_expr(a) for a in node.args)
     return f"({pname} {args})"
-
 # -----------------------------------------------------------------------------
-# Collect free symbols (points + shape symbols only when used in symbol mode)
+# Collect free symbols (points + shape symbols only when used in symbol mode + radii)
 # -----------------------------------------------------------------------------
 
 def collect_points(node: AstNode, pts: Set[str]):
@@ -1015,8 +1194,15 @@ def collect_points(node: AstNode, pts: Set[str]):
 def collect_shape_symbols(node: AstNode, shapes: Dict[str, Set[str]]):
     """Collect non-Point symbol-mode shapes that must appear as theorem parameters."""
     if isinstance(node, PredicateNode):
-        pname = node.name.name
-
+        # FIX: Safely extract predicate name as string
+        if isinstance(node.name, SymbolNode):
+            pname = node.name.name  # Extract string from SymbolNode
+        elif isinstance(node.name, str):
+            pname = node.name  # Already a string
+        else:
+            # Fallback: convert to string
+            pname = str(node.name)
+        
         # Table-driven capture of symbols by (type, arg_index)
         if pname in SHAPE_ARG_KINDS:
             for ty, idx in SHAPE_ARG_KINDS[pname]:
@@ -1024,10 +1210,33 @@ def collect_shape_symbols(node: AstNode, shapes: Dict[str, Set[str]]):
                     a = node.args[idx]
                     if isinstance(a, SymbolNode):
                         shapes.setdefault(ty, set()).add(a.name)
-
+        
         # Recurse
         for a in node.args:
             collect_shape_symbols(a, shapes)
+
+def collect_circle_radius_params(node: AstNode, radii: Set[str]):
+    """
+    Collect radius parameters needed for Circle(O) declarations.
+    """
+    if isinstance(node, PredicateNode):
+        # FIX: Safely extract predicate name
+        if isinstance(node.name, SymbolNode):
+            pname = node.name.name
+        elif isinstance(node.name, str):
+            pname = node.name
+        else:
+            pname = str(node.name)
+        
+        # Top-level Circle(O) declaration
+        if pname == "Circle" and len(node.args) == 1:
+            center = node.args[0]
+            if isinstance(center, SymbolNode):
+                radii.add(f"r_{center.name}")
+        
+        # Recurse
+        for arg in node.args:
+            collect_circle_radius_params(arg, radii)
 
 # -----------------------------------------------------------------------------
 # Top-level object assertions → constraints (ONLY during hypothesis rendering)
@@ -1069,9 +1278,16 @@ def _rewrite_toplevel_object_stmt(h: PredicateNode) -> Optional[str]:
         return f"(AffineIndependent ℝ ![{A}, {B}, {C}])"
 
     if pname == "Circle":
-        _expect_arity("Circle", args, 2)
-        _O, r = generate_lean_expr(args[0]), generate_lean_expr(args[1])
-        return f"({r} > 0)"
+        if len(args) == 1:
+            # Circle(O) - center only, radius parameter r_O will be added
+            # No constraint needed here (will be added as parameter)
+            return None
+        elif len(args) == 2:
+            # Circle(O,r) - center and explicit radius
+            _O, r = generate_lean_expr(args[0]), generate_lean_expr(args[1])
+            return f"({r} > 0)"
+        else:
+            raise ValueError(f"Circle needs 1 or 2 args, got {len(args)}")
 
     if pname == "Ray":
         _expect_arity("Ray", args, 2)
@@ -1106,6 +1322,7 @@ def generate_lean_code(ast: AstNode, theorem_name: str = "autoformalized") -> st
     statements = ast.args
     pts: Set[str] = set()
     shapes: Dict[str, Set[str]] = {}
+    radii: Set[str] = set()
     raw_hyps: List[PredicateNode] = []
     goals: List[dict] = []
 
@@ -1115,6 +1332,7 @@ def generate_lean_code(ast: AstNode, theorem_name: str = "autoformalized") -> st
             continue
         collect_points(st, pts)
         collect_shape_symbols(st, shapes)
+        collect_circle_radius_params(st, radii)
 
         pname = st.name.name
         if pname == "Find":
@@ -1213,6 +1431,13 @@ def generate_lean_code(ast: AstNode, theorem_name: str = "autoformalized") -> st
     head_params: List[str] = []
     if pts:
         head_params.append(f"({ ' '.join(sorted(pts)) } : Point)")
+    # then circle radius params for Circle(O) declarations
+ 
+    
+    if radii:
+        head_params.append(f"({ ' '.join(sorted(radii)) } : ℝ)")
+        for r in sorted(radii):
+            hyp_lines.insert(0, f"  (h_{r}_pos : {r} > 0)")
 
     # then any symbol-mode shapes we detected
     order = ["Line","Segment","Ray","Angle","Triangle","Polygon","Circle",
@@ -1249,3 +1474,4 @@ def write_lean_file(ast: AstNode, out_path: str, theorem_name: str = "autoformal
     code = generate_lean_code(ast, theorem_name=theorem_name)
     with open(out_path, "w", encoding="utf-8") as f:
         f.write(code)
+

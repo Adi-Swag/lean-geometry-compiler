@@ -5,7 +5,8 @@
     "C",
     "M",
     "K",
-    "L"
+    "L",
+    "I"
   ],
   "lines": [],
   "segments": [
@@ -40,7 +41,15 @@
       ]
     }
   ],
-  "circles": [],
+  "circles": [
+    {
+      "name": "Incircle",
+      "center": "I",
+      "through": [
+        "K"
+      ]
+    }
+  ],
   "triangles": [
     {
       "A": "A",
@@ -60,15 +69,6 @@
       ]
     },
     {
-      "type": "Median",
-      "vertex": "A",
-      "midpoint": "M",
-      "opposite_side": [
-        "B",
-        "C"
-      ]
-    },
-    {
       "type": "Incenter",
       "point": "I",
       "triangle": [
@@ -78,75 +78,151 @@
       ]
     },
     {
-      "type": "OnCircle",
+      "type": "Intersection",
       "point": "K",
-      "circle_center": "I"
-    },
-    {
-      "type": "OnCircle",
-      "point": "L",
-      "circle_center": "I"
-    },
-    {
-      "type": "EqualDistances",
-      "segment1": [
+      "objects": [
         "A",
-        "K"
-      ],
-      "segment2": [
-        "K",
-        "L"
+        "M",
+        "Incircle"
       ]
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "K",
-        "L"
-      ],
-      "segment2": [
-        "L",
-        "M"
+      "type": "Intersection",
+      "point": "L",
+      "objects": [
+        "A",
+        "M",
+        "Incircle"
       ]
+    },
+    {
+      "type": "LessThan",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "K"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "L"
+        ]
+      }
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "K"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "K",
+          "L"
+        ]
+      }
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "K",
+          "L"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "L",
+          "M"
+        ]
+      }
     }
   ],
   "goals": [
     {
       "kind": "Prove",
       "content": {
-        "type": "DistanceRatio",
+        "type": "Equals",
         "args": [
-          "B",
-          "C",
-          "A",
-          "B",
-          "5/10"
-        ]
-      }
-    },
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "DistanceRatio",
-        "args": [
-          "A",
-          "B",
-          "A",
-          "C",
-          "10/13"
-        ]
-      }
-    },
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "DistanceRatio",
-        "args": [
-          "A",
-          "C",
-          "B",
-          "C",
-          "13/5"
+          {
+            "type": "Set",
+            "args": [
+              {
+                "type": "Div",
+                "args": [
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Div",
+                "args": [
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "Div",
+                "args": [
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "LengthOf",
+                    "args": [
+                      0,
+                      0
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "Set",
+            "args": [
+              5,
+              10,
+              13
+            ]
+          }
         ]
       }
     }

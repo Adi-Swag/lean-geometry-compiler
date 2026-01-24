@@ -25,20 +25,6 @@
       ]
     },
     {
-      "name": "AC",
-      "points": [
-        "A",
-        "C"
-      ]
-    },
-    {
-      "name": "AB",
-      "points": [
-        "A",
-        "B"
-      ]
-    },
-    {
       "name": "AP",
       "points": [
         "A",
@@ -58,22 +44,9 @@
         "B",
         "C"
       ]
-    },
-    {
-      "name": "DK",
-      "points": [
-        "D",
-        "K"
-      ]
     }
   ],
   "segments": [
-    {
-      "points": [
-        "A",
-        "C"
-      ]
-    },
     {
       "points": [
         "A",
@@ -82,14 +55,20 @@
     },
     {
       "points": [
-        "E",
-        "F"
+        "A",
+        "C"
       ]
     },
     {
       "points": [
         "B",
         "C"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "F"
       ]
     },
     {
@@ -144,29 +123,18 @@
         "B",
         "C"
       ]
-    },
-    {
-      "type": "BisectsAngle",
-      "line": [
-        "D",
-        "K"
-      ],
-      "angle": [
-        "E",
-        "K",
-        "F"
-      ]
     }
   ],
   "goals": [
     {
       "kind": "Prove",
       "content": {
-        "type": "BisectsAngle",
+        "type": "AngleBisector",
         "args": [
           "D",
           "K",
           "E",
+          "K",
           "K",
           "F"
         ]

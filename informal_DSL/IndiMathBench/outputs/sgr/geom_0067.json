@@ -84,16 +84,27 @@
       ]
     },
     {
-      "type": "DistanceRatio",
-      "segment1": [
-        "B",
-        "P"
-      ],
-      "segment2": [
-        "P",
-        "M"
-      ],
-      "ratio": "2"
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "B",
+          "P"
+        ]
+      },
+      "right": {
+        "type": "Mul",
+        "left": {
+          "value": 2
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "P",
+            "M"
+          ]
+        }
+      }
     }
   ],
   "goals": [

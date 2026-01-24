@@ -8,7 +8,44 @@
     "I"
   ],
   "lines": [],
-  "segments": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B'"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C'"
+      ]
+    },
+    {
+      "points": [
+        "B'",
+        "C'"
+      ]
+    }
+  ],
   "circles": [],
   "triangles": [
     {
@@ -79,12 +116,26 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "Incenter",
+        "type": "Equals",
         "args": [
-          "I",
-          "A",
-          "B'",
-          "C'"
+          {
+            "type": "Incenter",
+            "args": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "Incenter",
+            "args": [
+              0,
+              0,
+              "B'",
+              "C'"
+            ]
+          }
         ]
       }
     }

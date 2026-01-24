@@ -12,6 +12,24 @@
     {
       "points": [
         "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
         "D"
       ]
     },
@@ -53,8 +71,8 @@
     {
       "type": "EqualDistances",
       "segment1": [
-        "B",
-        "D"
+        "C",
+        "E"
       ],
       "segment2": [
         "A",
@@ -64,12 +82,12 @@
     {
       "type": "EqualDistances",
       "segment1": [
-        "C",
-        "E"
+        "A",
+        "F"
       ],
       "segment2": [
-        "A",
-        "F"
+        "B",
+        "D"
       ]
     },
     {
@@ -88,9 +106,9 @@
     {
       "type": "EqualAngles",
       "angle1": [
-        "B",
-        "D",
-        "F"
+        "C",
+        "E",
+        "D"
       ],
       "angle2": [
         "A",
@@ -101,14 +119,14 @@
     {
       "type": "EqualAngles",
       "angle1": [
-        "C",
-        "E",
-        "D"
-      ],
-      "angle2": [
         "A",
         "F",
         "E"
+      ],
+      "angle2": [
+        "B",
+        "D",
+        "F"
       ]
     }
   ],

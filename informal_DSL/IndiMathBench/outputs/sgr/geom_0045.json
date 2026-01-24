@@ -90,15 +90,21 @@
       ]
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "C",
-        "A"
-      ],
-      "segment2": [
-        "C",
-        "D"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "C",
+          "A"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "C",
+          "D"
+        ]
+      }
     }
   ],
   "goals": [
@@ -108,7 +114,7 @@
         "type": "OnCircle",
         "args": [
           "O2",
-          "Gamma"
+          "O1"
         ]
       }
     }

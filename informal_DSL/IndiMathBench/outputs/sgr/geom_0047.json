@@ -32,6 +32,24 @@
   "segments": [
     {
       "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "points": [
         "C",
         "I"
       ]
@@ -88,6 +106,17 @@
       "objects": [
         "AI",
         "CB"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "C",
+        "I"
+      ],
+      "line2": [
+        "A",
+        "D"
       ]
     }
   ],

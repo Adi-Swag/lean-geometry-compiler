@@ -55,11 +55,73 @@
   ],
   "relations": [
     {
+      "type": "ConvexQuadrilateral",
+      "quadrilateral": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "E",
+        "A",
+        "B"
+      ],
+      "angle2": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "A",
+        "B",
+        "C"
+      ],
+      "angle2": [
+        "B",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "B",
+        "C",
+        "D"
+      ],
+      "angle2": [
+        "C",
+        "D",
+        "E"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "C",
+        "D",
+        "E"
+      ],
+      "angle2": [
+        "D",
+        "E",
+        "A"
+      ]
+    },
+    {
       "type": "AngleMeasure",
       "angle": [
-        "B",
+        "E",
         "A",
-        "E"
+        "B"
       ],
       "measure": 120
     },

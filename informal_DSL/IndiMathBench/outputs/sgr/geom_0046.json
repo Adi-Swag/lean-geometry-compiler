@@ -13,42 +13,53 @@
   ],
   "lines": [
     {
-      "name": "AB",
-      "points": [
-        "A",
-        "B"
-      ]
-    },
-    {
-      "name": "BC",
-      "points": [
-        "B",
-        "C"
-      ]
-    },
-    {
-      "name": "AC",
-      "points": [
-        "A",
-        "C"
-      ]
-    },
-    {
-      "name": "DE",
+      "name": "line1",
       "points": [
         "D",
         "E"
       ]
     },
     {
-      "name": "DF",
+      "name": "line2",
       "points": [
         "D",
         "F"
       ]
+    },
+    {
+      "name": "line3",
+      "points": [
+        "S",
+        "R"
+      ]
+    },
+    {
+      "name": "line4",
+      "points": [
+        "R",
+        "Q"
+      ]
     }
   ],
   "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
     {
       "points": [
         "B",
@@ -108,10 +119,12 @@
       ]
     },
     {
-      "type": "Altitude",
-      "foot": "D",
-      "vertex": "B",
-      "opposite_side": [
+      "type": "Perpendicular",
+      "line1": [
+        "B",
+        "D"
+      ],
+      "line2": [
         "A",
         "C"
       ]

@@ -2,10 +2,10 @@
 # skip: 6,12,23,25,26,36,56,68,72,75,84
 # complex language: 11,38
 # greaterThanEqualTo and such types: 62,63,69,95 ; 62 done
-# Orthocenter: 24
+# Orthocenter: 24,32,40
 # thereExists: 72
-# Failed: 6,12,23,36,56,68,75,84,91 --total 9
-# GoalFail in: 11,24,26,38,53,63,69,95,72 -- total 9
+# Failed: 6,10,12,23,26,36,56,68,84,95 --total 10
+# GoalFail in: 24,32,40,61,69,75,95 -- total 7
 from pathlib import Path
 import json
 from tqdm import tqdm

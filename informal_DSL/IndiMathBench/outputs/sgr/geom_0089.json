@@ -11,14 +11,14 @@
   ],
   "lines": [
     {
-      "name": "CB",
+      "name": "line_CB",
       "points": [
         "C",
         "B"
       ]
     },
     {
-      "name": "DB",
+      "name": "line_DB",
       "points": [
         "D",
         "B"
@@ -68,11 +68,9 @@
     },
     {
       "name": "circumcircle_O1AO2",
-      "center": "unknown",
+      "center": "O1",
       "through": [
-        "O1",
-        "A",
-        "O2"
+        "A"
       ]
     }
   ],
@@ -87,11 +85,19 @@
   "polygons": [],
   "relations": [
     {
-      "type": "ObtuseTriangle",
-      "triangle": [
-        "O1",
-        "A",
-        "O2"
+      "type": "Intersection",
+      "point": "A",
+      "objects": [
+        "\u03931",
+        "\u03932"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "B",
+      "objects": [
+        "\u03931",
+        "\u03932"
       ]
     },
     {
@@ -114,7 +120,7 @@
       "type": "Intersection",
       "point": "E",
       "objects": [
-        "CB",
+        "line_CB",
         "\u03932"
       ]
     },
@@ -122,8 +128,16 @@
       "type": "Intersection",
       "point": "F",
       "objects": [
-        "DB",
+        "line_DB",
         "\u03931"
+      ]
+    },
+    {
+      "type": "ObtuseTriangle",
+      "triangle": [
+        "O1",
+        "A",
+        "O2"
       ]
     }
   ],

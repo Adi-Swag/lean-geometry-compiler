@@ -22,10 +22,10 @@
       ]
     },
     {
-      "name": "BD",
+      "name": "BC",
       "points": [
         "B",
-        "D"
+        "C"
       ]
     }
   ],
@@ -101,15 +101,6 @@
       "circle_center": "O"
     },
     {
-      "type": "TangentToCircle",
-      "line": [
-        "A",
-        "B"
-      ],
-      "circle_center": "O",
-      "point_of_tangency": "B"
-    },
-    {
       "type": "Intersection",
       "point": "D",
       "objects": [
@@ -118,9 +109,12 @@
       ]
     },
     {
-      "type": "AcuteTriangle",
-      "triangle": [
+      "type": "Perpendicular",
+      "line1": [
         "A",
+        "D"
+      ],
+      "line2": [
         "B",
         "C"
       ]

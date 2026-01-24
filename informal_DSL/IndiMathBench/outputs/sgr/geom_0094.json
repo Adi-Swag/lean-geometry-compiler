@@ -8,7 +8,7 @@
   ],
   "lines": [
     {
-      "name": "CB",
+      "name": "line_CB",
       "points": [
         "C",
         "B"
@@ -41,7 +41,17 @@
       ]
     }
   ],
-  "circles": [],
+  "circles": [
+    {
+      "name": "circumcircle_DAC",
+      "center": "O",
+      "through": [
+        "D",
+        "A",
+        "C"
+      ]
+    }
+  ],
   "triangles": [
     {
       "A": "D",
@@ -98,21 +108,34 @@
       ]
     },
     {
-      "type": "OnCircle",
+      "type": "Intersection",
       "point": "E",
-      "circle_center": "D"
+      "objects": [
+        "line_CB",
+        "circumcircle_DAC"
+      ]
     }
   ],
   "goals": [
     {
       "kind": "Prove",
       "content": {
-        "type": "EqualDistances",
+        "type": "Equals",
         "args": [
-          "C",
-          "E",
-          "B",
-          "D"
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
         ]
       }
     }

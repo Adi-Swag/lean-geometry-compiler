@@ -43,12 +43,12 @@
     {
       "points": [
         "A",
-        "E"
+        "D"
       ]
     },
     {
       "points": [
-        "C",
+        "B",
         "E"
       ]
     }
@@ -69,16 +69,30 @@
       "A": "A",
       "B": "C",
       "C": "D"
-    },
-    {
-      "A": "A",
-      "B": "B",
-      "C": "C"
     }
   ],
   "quadrilaterals": [],
   "polygons": [],
   "relations": [
+    {
+      "type": "GreaterThan",
+      "left": {
+        "type": "MeasureOf",
+        "angle": [
+          "B",
+          "A",
+          "C"
+        ]
+      },
+      "right": {
+        "value": 90
+      }
+    },
+    {
+      "type": "OnCircle",
+      "point": "A",
+      "circle_center": "O"
+    },
     {
       "type": "TangentToCircle",
       "line": [

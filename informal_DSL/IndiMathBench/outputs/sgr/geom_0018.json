@@ -118,19 +118,29 @@
         "E",
         "C"
       ],
-      "ratio": "2"
+      "ratio": 2
     }
   ],
   "goals": [
     {
       "kind": "Find",
       "content": {
-        "type": "DistanceRatio",
+        "type": "Div",
         "args": [
-          "B",
-          "Q",
-          "Q",
-          "F"
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
         ]
       }
     }

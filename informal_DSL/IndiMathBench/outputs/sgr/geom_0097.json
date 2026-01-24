@@ -6,8 +6,7 @@
     "P",
     "P1",
     "P2",
-    "P3",
-    "O"
+    "P3"
   ],
   "lines": [],
   "segments": [],
@@ -58,8 +57,8 @@
       "angle": {
         "type": "MeasureOf",
         "args": [
-          "A2",
           "A1",
+          "A2",
           "A3"
         ]
       }
@@ -72,8 +71,8 @@
       "angle": {
         "type": "MeasureOf",
         "args": [
-          "A3",
           "A2",
+          "A3",
           "A1"
         ]
       }
@@ -86,8 +85,8 @@
       "angle": {
         "type": "MeasureOf",
         "args": [
-          "A1",
           "A3",
+          "A1",
           "A2"
         ]
       }
@@ -97,20 +96,20 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "Equals",
+        "type": "LessThanEqualTo",
         "args": [
-          {
-            "type": "RadiusOf",
-            "args": [
-              0
-            ]
-          },
           {
             "type": "RadiusOf",
             "args": [
               "P1",
               "P2",
               "P3"
+            ]
+          },
+          {
+            "type": "RadiusOf",
+            "args": [
+              0
             ]
           }
         ]

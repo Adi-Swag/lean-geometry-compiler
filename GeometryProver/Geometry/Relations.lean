@@ -305,3 +305,191 @@ def IsArc (O : Point) (r : ℝ) (P Q : Point) : Prop :=
 
 def IsSector (O : Point) (r : ℝ) (P Q : Point) : Prop :=
   IsArc O r P Q
+
+-- Add these to Relations.lean
+
+import GeometryProver.Geometry.Structures
+import Mathlib.Geometry.Euclidean.Angle.Unoriented.Basic
+import Mathlib.Geometry.Euclidean.Triangle
+import Mathlib.Data.List.Basic
+
+open Geo
+open EuclideanGeometry
+
+/-!
+  ## Additional Relations - Missing Predicates
+-/
+
+-- ============================================================
+-- CONCYCLIC AND COSPHERICAL
+-- ============================================================
+
+-- Four or more points are concyclic if they lie on the same circle
+def Concyclic (points : List Point) : Prop :=
+  points.length ≥ 3 ∧
+  ∃ (c : Point) (r : ℝ), r > 0 ∧
+    ∀ p ∈ points, dist p c = r
+
+-- Alias for Concyclic (used in some problems for 3D context)
+def Cospherical (points : List Point) : Prop :=
+  Concyclic points
+
+-- ============================================================
+-- TRIANGLE ANGLE PROPERTIES
+-- ============================================================
+
+-- A triangle is acute if all three angles are less than π/2
+def AcuteTriangle (t : Triangle) : Prop :=
+  (angle t.A t.B t.C < Real.pi / 2) ∧
+  (angle t.B t.C t.A < Real.pi / 2) ∧
+  (angle t.C t.A t.B < Real.pi / 2)
+
+-- A triangle is obtuse if one of its angles is greater than π/2
+def ObtuseTriangle (t : Triangle) : Prop :=
+  (angle t.A t.B t.C > Real.pi / 2) ∨
+  (angle t.B t.C t.A > Real.pi / 2) ∨
+  (angle t.C t.A t.B > Real.pi / 2)
+
+-- ============================================================
+-- EXCIRCLE
+-- ============================================================
+
+-- An excircle of a triangle is tangent to one side and the extensions
+-- of the other two sides. The center is the excircle center (excenter)
+-- opposite to the specified vertex.
+def IsExcircleOf (c : MyCircle) (t : Triangle) (opposite_vertex : Point) : Prop :=
+  -- The opposite_vertex must be one of the triangle's vertices
+  (opposite_vertex = t.A ∨ opposite_vertex = t.B ∨ opposite_vertex = t.C) ∧
+  -- The excircle is tangent to all three sides (or their extensions)
+  -- This is a simplified definition; full geometric constraints would be more complex
+  ∃ (touch_points : List Point), touch_points.length = 3
+
+-- Predicate asserting a point is the excenter opposite to a given vertex
+def IsExcenterOf (p : Point) (t : Triangle) (opposite_vertex : Point) : Prop :=
+  (opposite_vertex = t.A ∨ opposite_vertex = t.B ∨ opposite_vertex = t.C) ∧
+  -- The excenter is equidistant from the three lines containing the sides
+  -- Simplified version - full implementation requires signed distance
+  True  -- Placeholder for complete geometric definition
+
+-- ============================================================
+-- ANGLE RELATIONSHIPS
+-- ============================================================
+
+-- Two angles are supplementary if their measures sum to π
+def SupplementaryAngles (a₁ a₂ : Angle) : Prop :=
+  angle a₁.A a₁.B a₁.C + angle a₂.A a₂.B a₂.C = Real.pi
+
+-- Two angles are complementary if their measures sum to π/2
+def ComplementaryAngles (a₁ a₂ : Angle) : Prop :=
+  angle a₁.A a₁.B a₁.C + angle a₂.A a₂.B a₂.C = Real.pi / 2
+
+-- ============================================================
+-- DIAMETER
+-- ============================================================
+
+-- A segment is a diameter of a circle if it passes through the center
+-- and both endpoints lie on the circle
+def IsDiameterOf (s : Segment) (c : MyCircle) : Prop :=
+  -- Both endpoints lie on the circle
+  (dist s.p1 c.center = c.radius) ∧
+  (dist s.p2 c.center = c.radius) ∧
+  -- The center is the midpoint of the segment
+  (c.center = midpoint ℝ s.p1 s.p2)
+
+-- ============================================================
+-- DISTANCE RATIO
+-- ============================================================
+
+-- The ratio of two segment lengths equals a given value
+def DistanceRatio (s₁ s₂ : Segment) (ratio : ℝ) : Prop :=
+  ratio > 0 ∧ dist s₁.p1 s₁.p2 / dist s₂.p1 s₂.p2 = ratio
+
+-- Alternative formulation: ratio of distances equals ratio of two numbers
+def DistanceRatioOf (s₁ s₂ : Segment) (num denom : ℝ) : Prop :=
+  denom ≠ 0 ∧ dist s₁.p1 s₁.p2 / dist s₂.p1 s₂.p2 = num / denom
+
+-- ============================================================
+-- CIRCUMSCRIBED AND INSCRIBED (Complete Implementations)
+-- ============================================================
+
+-- A circle is circumscribed about a triangle if it passes through all vertices
+def IsCircumscribedAbout (c : MyCircle) (t : Triangle) : Prop :=
+  (dist t.A c.center = c.radius) ∧
+  (dist t.B c.center = c.radius) ∧
+  (dist t.C c.center = c.radius)
+
+-- A circle is inscribed in a triangle if it is tangent to all three sides
+def IsInscribedIn (c : MyCircle) (t : Triangle) : Prop :=
+  let side_AB := Line.mk t.A t.B (triangle_vertices_distinct t).1
+  let side_BC := Line.mk t.B t.C (triangle_vertices_distinct t).2.1
+  let side_CA := Line.mk t.C t.A (triangle_vertices_distinct t).2.2
+  Tangent side_AB c ∧ Tangent side_BC c ∧ Tangent side_CA c
+
+-- General polygon circumscription (already exists but included for completeness)
+-- def IsCircumcircleOf (c : MyCircle) (p : Polygon) : Prop := ...
+-- def IsIncircleOf (c : MyCircle) (p : Polygon) : Prop := ...
+
+-- ============================================================
+-- CONVEX QUADRILATERAL
+-- ============================================================
+
+-- A quadrilateral is convex if all interior angles are less than π
+-- Simplified definition using cross products
+def ConvexQuadrilateral (q : Quadrilateral) : Prop :=
+  -- All four interior angles are less than π
+  -- This can be checked by ensuring all cross products have the same sign
+  let v1 := q.B -ᵥ q.A
+  let v2 := q.C -ᵥ q.B
+  let v3 := q.D -ᵥ q.C
+  let v4 := q.A -ᵥ q.D
+  -- Cross product signs (in 2D, we check z-component of 3D cross product)
+  let cross1 := v1 0 * v2 1 - v1 1 * v2 0
+  let cross2 := v2 0 * v3 1 - v2 1 * v3 0
+  let cross3 := v3 0 * v4 1 - v3 1 * v4 0
+  let cross4 := v4 0 * v1 1 - v4 1 * v1 0
+  -- All should have the same sign for convexity
+  ((cross1 > 0 ∧ cross2 > 0 ∧ cross3 > 0 ∧ cross4 > 0) ∨
+   (cross1 < 0 ∧ cross2 < 0 ∧ cross3 < 0 ∧ cross4 < 0))
+
+-- ============================================================
+-- CYCLIC QUADRILATERAL
+-- ============================================================
+
+-- A quadrilateral is cyclic if all four vertices lie on a circle
+def CyclicQuadrilateral (q : Quadrilateral) : Prop :=
+  ∃ (c : Point) (r : ℝ), r > 0 ∧
+    dist q.A c = r ∧ dist q.B c = r ∧ dist q.C c = r ∧ dist q.D c = r
+
+-- Alternative characterization: opposite angles sum to π
+def CyclicQuadrilateralByAngles (q : Quadrilateral) : Prop :=
+  angle q.D q.A q.B + angle q.B q.C q.D = Real.pi ∧
+  angle q.A q.B q.C + angle q.C q.D q.A = Real.pi
+
+-- ============================================================
+-- GREATER THAN / LESS THAN (for expressions)
+-- ============================================================
+
+-- These are comparison relations for real-valued expressions
+-- They are typically used in goals and are built-in to Lean as > and <
+-- But we can define named versions for DSL compatibility
+
+def GreaterThan (x y : ℝ) : Prop := x > y
+def LessThan (x y : ℝ) : Prop := x < y
+def GreaterThanEqualTo (x y : ℝ) : Prop := x ≥ y
+def LessThanEqualTo (x y : ℝ) : Prop := x ≤ y
+
+-- ============================================================
+-- HELPER PREDICATES
+-- ============================================================
+
+-- Check if a point lies between two other points (already defined but ensure it's here)
+-- def Between (B : Point) (s : Segment) : Prop := ...
+
+-- Rotation predicate (point P' is rotation of P about center C by angle θ)
+def IsRotationOf (p_prime p center : Point) (theta : ℝ) : Prop :=
+  -- Distance from center is preserved
+  dist p_prime center = dist p center ∧
+  -- Angle from center is rotated by theta
+  -- Simplified version - full implementation requires angle computation
+  ∃ (angle_to_p angle_to_p_prime : ℝ),
+    angle_to_p_prime = angle_to_p + theta

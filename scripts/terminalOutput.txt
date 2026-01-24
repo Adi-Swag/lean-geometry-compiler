@@ -1,0 +1,693 @@
+============================================================
+Starting Informal DSL to Lean Batch Processing
+============================================================
+
+Found 92 .dsl file(s) to process
+------------------------------------------------------------
+
+--- Processing: geom_0069.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0069.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0089.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0089.lean
+--- Success: geom_0089.dsl ---
+
+--- Processing: geom_0048.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0048.lean
+--- Success: geom_0048.dsl ---
+
+--- Processing: geom_0087.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0087.lean
+--- Success: geom_0087.dsl ---
+
+--- Processing: geom_0005.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0005.lean
+--- Success: geom_0005.dsl ---
+
+--- Processing: geom_0040.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0040.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0022.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0022.lean
+--- Success: geom_0022.dsl ---
+
+--- Processing: geom_0061.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0061.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0014.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0014.lean
+--- Success: geom_0014.dsl ---
+
+--- Processing: geom_0018.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0018.lean
+--- Success: geom_0018.dsl ---
+
+--- Processing: geom_0072.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0072.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0088.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0088.lean
+--- Success: geom_0088.dsl ---
+
+--- Processing: geom_0055.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0055.lean
+--- Success: geom_0055.dsl ---
+
+--- Processing: geom_0078.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0078.lean
+--- Success: geom_0078.dsl ---
+
+--- Processing: geom_0013.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0013.lean
+--- Success: geom_0013.dsl ---
+
+--- Processing: geom_0067.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0067.lean
+--- Success: geom_0067.dsl ---
+
+--- Processing: geom_0042.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0042.lean
+--- Success: geom_0042.dsl ---
+
+--- Processing: geom_0025.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0025.lean
+--- Success: geom_0025.dsl ---
+
+--- Processing: geom_0001.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0001.lean
+--- Success: geom_0001.dsl ---
+
+--- Processing: geom_0002.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0002.lean
+--- Success: geom_0002.dsl ---
+
+--- Processing: geom_0010.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0010.lean
+--- Success: geom_0010.dsl ---
+
+--- Processing: geom_0050.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0050.lean
+--- Success: geom_0050.dsl ---
+
+--- Processing: geom_0063.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0063.lean
+--- Success: geom_0063.dsl ---
+
+--- Processing: geom_0015.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0015.lean
+--- Success: geom_0015.dsl ---
+
+--- Processing: geom_0060.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0060.lean
+--- Success: geom_0060.dsl ---
+
+--- Processing: geom_0080.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0080.lean
+--- Success: geom_0080.dsl ---
+
+--- Processing: geom_0085.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0085.lean
+--- Success: geom_0085.dsl ---
+
+--- Processing: geom_0008.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0008.lean
+--- Success: geom_0008.dsl ---
+
+--- Processing: geom_0046.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0046.lean
+--- Success: geom_0046.dsl ---
+
+--- Processing: geom_0086.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0086.lean
+--- Success: geom_0086.dsl ---
+
+--- Processing: geom_0019.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0019.lean
+--- Success: geom_0019.dsl ---
+
+--- Processing: geom_0034.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0034.lean
+--- Success: geom_0034.dsl ---
+
+--- Processing: geom_0044.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0044.lean
+--- Success: geom_0044.dsl ---
+
+--- Processing: geom_0031.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0031.lean
+--- Success: geom_0031.dsl ---
+
+--- Processing: geom_0077.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0077.lean
+--- Success: geom_0077.dsl ---
+
+--- Processing: geom_0049.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0049.lean
+--- Success: geom_0049.dsl ---
+
+--- Processing: geom_0091.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0091.lean
+--- Success: geom_0091.dsl ---
+
+--- Processing: geom_0043.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0043.lean
+--- Success: geom_0043.dsl ---
+
+--- Processing: geom_0076.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0076.lean
+--- Success: geom_0076.dsl ---
+
+--- Processing: geom_0030.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0030.lean
+--- Success: geom_0030.dsl ---
+
+--- Processing: geom_0083.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0083.lean
+--- Success: geom_0083.dsl ---
+
+--- Processing: geom_0066.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0066.lean
+--- Success: geom_0066.dsl ---
+
+--- Processing: geom_0024.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0024.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0052.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0052.lean
+--- Success: geom_0052.dsl ---
+
+--- Processing: geom_0028.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0028.lean
+--- Success: geom_0028.dsl ---
+
+--- Processing: geom_0074.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0074.lean
+--- Success: geom_0074.dsl ---
+
+--- Processing: geom_0039.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0039.lean
+--- Success: geom_0039.dsl ---
+
+--- Processing: geom_0097.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0097.lean
+--- Success: geom_0097.dsl ---
+
+--- Processing: geom_0004.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0004.lean
+--- Success: geom_0004.dsl ---
+
+--- Processing: geom_0082.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0082.lean
+--- Success: geom_0082.dsl ---
+
+--- Processing: geom_0026.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0026.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0033.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0033.lean
+--- Success: geom_0033.dsl ---
+
+--- Processing: geom_0073.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0073.lean
+--- Success: geom_0073.dsl ---
+
+--- Processing: geom_0032.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0032.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0081.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0081.lean
+--- Success: geom_0081.dsl ---
+
+--- Processing: geom_0094.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0094.lean
+--- Success: geom_0094.dsl ---
+
+--- Processing: geom_0062.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0062.lean
+--- Success: geom_0062.dsl ---
+
+--- Processing: geom_0051.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0051.lean
+--- Success: geom_0051.dsl ---
+
+--- Processing: geom_0070.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0070.lean
+--- Success: geom_0070.dsl ---
+
+--- Processing: geom_0011.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0011.lean
+--- Success: geom_0011.dsl ---
+
+--- Processing: geom_0092.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0092.lean
+--- Success: geom_0092.dsl ---
+
+--- Processing: geom_0000.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0000.lean
+--- Success: geom_0000.dsl ---
+
+--- Processing: geom_0038.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0038.lean
+--- Success: geom_0038.dsl ---
+
+--- Processing: geom_0093.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0093.lean
+--- Success: geom_0093.dsl ---
+
+--- Processing: geom_0096.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0096.lean
+--- Success: geom_0096.dsl ---
+
+--- Processing: geom_0041.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0041.lean
+--- Success: geom_0041.dsl ---
+
+--- Processing: geom_0017.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0017.lean
+--- Success: geom_0017.dsl ---
+
+--- Processing: geom_0079.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0079.lean
+--- Success: geom_0079.dsl ---
+
+--- Processing: geom_0054.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0054.lean
+--- Success: geom_0054.dsl ---
+
+--- Processing: geom_0021.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0021.lean
+--- Success: geom_0021.dsl ---
+
+--- Processing: geom_0075.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0075.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0058.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0058.lean
+--- Success: geom_0058.dsl ---
+
+--- Processing: geom_0006.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0006.lean
+--- Success: geom_0006.dsl ---
+
+--- Processing: geom_0090.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0090.lean
+--- Success: geom_0090.dsl ---
+
+--- Processing: geom_0065.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0065.lean
+--- Success: geom_0065.dsl ---
+
+--- Processing: geom_0009.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0009.lean
+--- Success: geom_0009.dsl ---
+
+--- Processing: geom_0047.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0047.lean
+--- Success: geom_0047.dsl ---
+
+--- Processing: geom_0027.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0027.lean
+--- Success: geom_0027.dsl ---
+
+--- Processing: geom_0053.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0053.lean
+--- Success: geom_0053.dsl ---
+
+--- Processing: geom_0020.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0020.lean
+--- Success: geom_0020.dsl ---
+
+--- Processing: geom_0064.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0064.lean
+--- Success: geom_0064.dsl ---
+
+--- Processing: geom_0095.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+Error processing file geom_0095.dsl: No Goal (Find/Prove) found in DSL input.
+Traceback (most recent call last):
+  File "/home/adi/Study/geometry_prover/scripts/process_batch_with_sexp.py", line 179, in process_file
+    lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
+  File "/home/adi/Study/geometry_prover/scripts/generator.py", line 1355, in generate_lean_code
+    raise ValueError("No Goal (Find/Prove) found in DSL input.")
+ValueError: No Goal (Find/Prove) found in DSL input.
+
+--- Processing: geom_0057.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0057.lean
+--- Success: geom_0057.dsl ---
+
+--- Processing: geom_0037.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0037.lean
+--- Success: geom_0037.dsl ---
+
+--- Processing: geom_0035.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0035.lean
+--- Success: geom_0035.dsl ---
+
+--- Processing: geom_0029.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0029.lean
+--- Success: geom_0029.dsl ---
+
+--- Processing: geom_0016.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0016.lean
+--- Success: geom_0016.dsl ---
+
+--- Processing: geom_0003.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0003.lean
+--- Success: geom_0003.dsl ---
+
+--- Processing: geom_0059.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0059.lean
+--- Success: geom_0059.dsl ---
+
+--- Processing: geom_0045.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0045.lean
+--- Success: geom_0045.dsl ---
+
+--- Processing: geom_0007.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0007.lean
+--- Success: geom_0007.dsl ---
+
+--- Processing: geom_0071.dsl ---
+1. Converted to S-expression format.
+2. AST generated.
+3. Lean code generated.
+4. Lean file saved to: informal_DSL/IndiMathBench/outputs/lean/geom_0071.lean
+--- Success: geom_0071.dsl ---
+
+============================================================
+Batch Processing Complete
+============================================================
+Successfully processed: 83
+Failed to process:     9
+Output directory:      informal_DSL/IndiMathBench/outputs/lean

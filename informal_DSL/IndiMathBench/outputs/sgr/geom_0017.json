@@ -9,7 +9,43 @@
     "P",
     "Q"
   ],
-  "lines": [],
+  "lines": [
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "BF",
+      "points": [
+        "B",
+        "F"
+      ]
+    },
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "name": "AE",
+      "points": [
+        "A",
+        "E"
+      ]
+    }
+  ],
   "segments": [
     {
       "points": [
@@ -40,24 +76,6 @@
         "A",
         "C"
       ]
-    },
-    {
-      "points": [
-        "B",
-        "F"
-      ]
-    },
-    {
-      "points": [
-        "A",
-        "D"
-      ]
-    },
-    {
-      "points": [
-        "A",
-        "E"
-      ]
     }
   ],
   "circles": [],
@@ -83,20 +101,16 @@
       "type": "Intersection",
       "point": "P",
       "objects": [
-        "B",
-        "F",
-        "A",
-        "D"
+        "BF",
+        "AD"
       ]
     },
     {
       "type": "Intersection",
       "point": "Q",
       "objects": [
-        "B",
-        "F",
-        "A",
-        "E"
+        "BF",
+        "AE"
       ]
     },
     {
@@ -126,12 +140,22 @@
     {
       "kind": "Find",
       "content": {
-        "type": "DistanceRatio",
+        "type": "Div",
         "args": [
-          "B",
-          "P",
-          "P",
-          "Q"
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
         ]
       }
     }

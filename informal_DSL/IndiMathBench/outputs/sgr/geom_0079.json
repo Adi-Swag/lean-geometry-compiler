@@ -57,6 +57,33 @@
   "polygons": [],
   "relations": [
     {
+      "type": "Centroid",
+      "point": "G1",
+      "triangle": [
+        "A",
+        "B",
+        "D"
+      ]
+    },
+    {
+      "type": "Centroid",
+      "point": "G2",
+      "triangle": [
+        "A",
+        "C",
+        "D"
+      ]
+    },
+    {
+      "type": "Concyclic",
+      "points": [
+        "B",
+        "C",
+        "G1",
+        "G2"
+      ]
+    },
+    {
       "type": "Equals",
       "left": {
         "type": "Add",
@@ -92,33 +119,6 @@
           ]
         }
       }
-    },
-    {
-      "type": "Centroid",
-      "point": "G1",
-      "triangle": [
-        "A",
-        "B",
-        "D"
-      ]
-    },
-    {
-      "type": "Centroid",
-      "point": "G2",
-      "triangle": [
-        "A",
-        "C",
-        "D"
-      ]
-    },
-    {
-      "type": "Concyclic",
-      "points": [
-        "B",
-        "C",
-        "G1",
-        "G2"
-      ]
     }
   ],
   "goals": [

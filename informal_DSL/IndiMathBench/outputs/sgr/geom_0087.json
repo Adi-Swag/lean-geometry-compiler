@@ -8,12 +8,47 @@
     "Q",
     "I"
   ],
-  "lines": [],
+  "lines": [
+    {
+      "name": "AD",
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "AI",
+      "points": [
+        "A",
+        "I"
+      ]
+    },
+    {
+      "name": "PQ",
+      "points": [
+        "P",
+        "Q"
+      ]
+    }
+  ],
   "segments": [
     {
       "points": [
         "A",
-        "D"
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
       ]
     },
     {
@@ -25,7 +60,7 @@
     {
       "points": [
         "A",
-        "I"
+        "D"
       ]
     },
     {
@@ -33,10 +68,21 @@
         "P",
         "Q"
       ]
+    },
+    {
+      "points": [
+        "A",
+        "I"
+      ]
     }
   ],
   "circles": [],
   "triangles": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C"
+    },
     {
       "A": "A",
       "B": "B",
@@ -46,20 +92,25 @@
       "A": "A",
       "B": "C",
       "C": "D"
-    },
-    {
-      "A": "A",
-      "B": "B",
-      "C": "C"
     }
   ],
   "quadrilaterals": [],
   "polygons": [],
   "relations": [
     {
-      "type": "RightTriangle",
-      "triangle": [
+      "type": "AngleMeasure",
+      "angle": [
+        "B",
         "A",
+        "C"
+      ],
+      "measure": 90
+    },
+    {
+      "type": "Altitude",
+      "foot": "D",
+      "vertex": "A",
+      "opposite_side": [
         "B",
         "C"
       ]
@@ -87,15 +138,6 @@
       "point": "I",
       "triangle": [
         "A",
-        "B",
-        "C"
-      ]
-    },
-    {
-      "type": "Altitude",
-      "foot": "D",
-      "vertex": "A",
-      "opposite_side": [
         "B",
         "C"
       ]

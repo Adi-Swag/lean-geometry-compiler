@@ -184,9 +184,9 @@
       "content": {
         "type": "MeasureOf",
         "args": [
-          "B",
+          "A",
           "C",
-          "A"
+          "B"
         ]
       }
     }

@@ -54,19 +54,34 @@
       ]
     },
     {
-      "type": "OnCircle",
+      "type": "Excircle",
       "point": "D",
-      "circle_center": "I"
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ],
+      "opposite_vertex": "A"
     },
     {
-      "type": "OnCircle",
+      "type": "Excircle",
       "point": "E",
-      "circle_center": "I"
+      "triangle": [
+        "A",
+        "B",
+        "D"
+      ],
+      "opposite_vertex": "A"
     },
     {
-      "type": "OnCircle",
+      "type": "Excircle",
       "point": "F",
-      "circle_center": "I"
+      "triangle": [
+        "A",
+        "C",
+        "D"
+      ],
+      "opposite_vertex": "A"
     }
   ],
   "goals": [

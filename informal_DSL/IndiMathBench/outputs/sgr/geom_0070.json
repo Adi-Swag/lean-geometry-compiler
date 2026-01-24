@@ -75,7 +75,44 @@
       ]
     }
   ],
-  "segments": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "A1",
+        "C1"
+      ]
+    },
+    {
+      "points": [
+        "A1",
+        "B1"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "Q"
+      ]
+    }
+  ],
   "circles": [
     {
       "name": "Gamma",
@@ -106,6 +143,30 @@
       "side2": [
         "A",
         "C"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "A1",
+      "objects": [
+        "AM",
+        "Gamma"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "B1",
+      "objects": [
+        "BM",
+        "Gamma"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "C1",
+      "objects": [
+        "CM",
+        "Gamma"
       ]
     },
     {

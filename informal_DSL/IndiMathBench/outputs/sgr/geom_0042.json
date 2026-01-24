@@ -6,22 +6,7 @@
     "M",
     "B"
   ],
-  "lines": [
-    {
-      "name": "OM",
-      "points": [
-        "O",
-        "M"
-      ]
-    },
-    {
-      "name": "AB",
-      "points": [
-        "A",
-        "B"
-      ]
-    }
-  ],
+  "lines": [],
   "segments": [
     {
       "points": [
@@ -33,6 +18,12 @@
       "points": [
         "A",
         "B"
+      ]
+    },
+    {
+      "points": [
+        "O",
+        "M"
       ]
     }
   ],
@@ -82,8 +73,8 @@
       "content": {
         "type": "OnCircle",
         "args": [
-          "Midpoint(AB)",
-          "O"
+          "Midpoint",
+          "\u0393"
         ]
       }
     }

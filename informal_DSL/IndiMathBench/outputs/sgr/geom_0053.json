@@ -99,27 +99,25 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "Or",
+        "type": "Incenter",
         "args": [
-          {
-            "type": "Incenter",
-            "args": [
-              "P",
-              "A",
-              "B",
-              "C"
-            ]
-          },
-          {
-            "type": "Excircle",
-            "args": [
-              "P",
-              "A",
-              "B",
-              "C",
-              "A"
-            ]
-          }
+          "P",
+          "A",
+          "B",
+          "C"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Excircle",
+        "args": [
+          "P",
+          "A",
+          "B",
+          "C",
+          "A1"
         ]
       }
     },
@@ -174,27 +172,25 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "Or",
+        "type": "Incenter",
         "args": [
-          {
-            "type": "Incenter",
-            "args": [
-              "P",
-              "A1",
-              "B1",
-              "C1"
-            ]
-          },
-          {
-            "type": "Excircle",
-            "args": [
-              "P",
-              "A1",
-              "B1",
-              "C1",
-              "A1"
-            ]
-          }
+          "P",
+          "A1",
+          "B1",
+          "C1"
+        ]
+      }
+    },
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Excircle",
+        "args": [
+          "P",
+          "A1",
+          "B1",
+          "C1",
+          "A1"
         ]
       }
     }

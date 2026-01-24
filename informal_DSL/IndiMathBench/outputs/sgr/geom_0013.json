@@ -53,12 +53,21 @@
       ]
     },
     {
-      "type": "Isosceles",
-      "triangle": [
-        "A",
-        "B",
-        "C"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "B"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "C"
+        ]
+      }
     },
     {
       "type": "Equals",

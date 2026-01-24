@@ -9,7 +9,7 @@
   ],
   "lines": [
     {
-      "name": "AB",
+      "name": "line1",
       "points": [
         "A",
         "B"
@@ -66,23 +66,21 @@
   "polygons": [],
   "relations": [
     {
-      "type": "Midpoint",
-      "point": "M",
-      "segment": [
-        "B",
-        "C"
-      ]
-    },
-    {
-      "type": "Perpendicular",
-      "line1": [
-        "C",
-        "Q"
-      ],
-      "line2": [
-        "A",
-        "M"
-      ]
+      "type": "GreaterThan",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "B"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "C"
+        ]
+      }
     },
     {
       "type": "Equals",
@@ -110,6 +108,25 @@
           "B"
         ]
       }
+    },
+    {
+      "type": "Midpoint",
+      "point": "M",
+      "segment": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "C",
+        "Q"
+      ],
+      "line2": [
+        "A",
+        "M"
+      ]
     }
   ],
   "goals": [

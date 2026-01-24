@@ -35,6 +35,18 @@
   "segments": [
     {
       "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
         "A",
         "B"
       ]
@@ -42,7 +54,13 @@
     {
       "points": [
         "A",
-        "C"
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "Q"
       ]
     }
   ],
@@ -84,7 +102,7 @@
       "point": "P",
       "objects": [
         "A",
-        "MK"
+        "LK"
       ]
     },
     {
@@ -92,7 +110,7 @@
       "point": "Q",
       "objects": [
         "A",
-        "LK"
+        "MK"
       ]
     }
   ],

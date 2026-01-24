@@ -1,6 +1,8 @@
 Point(A)
 Point(Ai)
 Point(Ai+1)
+Point(Am)
+Point(An)
 Point(B)
 Point(Bi)
 Point(Bi+1)

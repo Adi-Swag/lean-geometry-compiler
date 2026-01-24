@@ -34,6 +34,42 @@
         "D",
         "A"
       ]
+    },
+    {
+      "points": [
+        "A",
+        "Q"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "C"
+      ]
     }
   ],
   "circles": [],
@@ -112,67 +148,9 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "EqualDistances",
+        "type": "Isosceles",
         "args": [
           "A",
-          "B",
-          "B",
-          "C"
-        ]
-      }
-    },
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "EqualDistances",
-        "args": [
-          "B",
-          "C",
-          "C",
-          "D"
-        ]
-      }
-    },
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "EqualDistances",
-        "args": [
-          "C",
-          "D",
-          "D",
-          "A"
-        ]
-      }
-    },
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "EqualDistances",
-        "args": [
-          "D",
-          "A",
-          "A",
-          "B"
-        ]
-      }
-    },
-    {
-      "kind": "Find",
-      "content": {
-        "type": "MeasureOf",
-        "args": [
-          "A",
-          "B",
-          "C"
-        ]
-      }
-    },
-    {
-      "kind": "Find",
-      "content": {
-        "type": "MeasureOf",
-        "args": [
           "B",
           "C",
           "D"
@@ -184,20 +162,9 @@
       "content": {
         "type": "MeasureOf",
         "args": [
-          "C",
-          "D",
-          "A"
-        ]
-      }
-    },
-    {
-      "kind": "Find",
-      "content": {
-        "type": "MeasureOf",
-        "args": [
-          "D",
           "A",
-          "B"
+          "B",
+          "C"
         ]
       }
     }

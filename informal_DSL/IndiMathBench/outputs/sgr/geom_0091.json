@@ -498,7 +498,7 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "CyclicQuadrilateral",
+        "type": "Concyclic",
         "args": [
           "P1",
           "P2",

@@ -64,11 +64,6 @@
       ]
     },
     {
-      "type": "OnCircle",
-      "point": "H",
-      "circle_center": "I"
-    },
-    {
       "type": "Incenter",
       "point": "I",
       "triangle": [
@@ -76,19 +71,33 @@
         "B",
         "C"
       ]
+    },
+    {
+      "type": "OnCircle",
+      "point": "H",
+      "circle_center": "I"
     }
   ],
   "goals": [
     {
       "kind": "Find",
       "content": {
-        "type": "DistanceRatio",
+        "type": "Div",
         "args": [
-          "A",
-          "B",
-          "B",
-          "C",
-          "ratio"
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
         ]
       }
     }

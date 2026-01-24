@@ -29,14 +29,38 @@
   "segments": [
     {
       "points": [
-        "C",
-        "D"
+        "A",
+        "B"
       ]
     },
     {
       "points": [
         "B",
         "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A'",
+        "D'"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "G"
       ]
     }
   ],
@@ -58,7 +82,14 @@
       "C": "E"
     }
   ],
-  "quadrilaterals": [],
+  "quadrilaterals": [
+    {
+      "A": "A",
+      "B": "B",
+      "C": "C",
+      "D": "D"
+    }
+  ],
   "polygons": [],
   "relations": [
     {
@@ -79,9 +110,7 @@
           {
             "type": "RadiusOf",
             "args": [
-              0,
-              0,
-              "A'"
+              "GCA'"
             ]
           },
           {
@@ -90,17 +119,13 @@
               {
                 "type": "RadiusOf",
                 "args": [
-                  0,
-                  "D'",
-                  0
+                  "GD'F"
                 ]
               },
               {
                 "type": "RadiusOf",
                 "args": [
-                  "A'",
-                  0,
-                  0
+                  "A'BE"
                 ]
               }
             ]

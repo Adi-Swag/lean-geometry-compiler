@@ -29,8 +29,8 @@ import generator
 # --- Define Project Paths ---
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPTS_DIR)
-INPUT_DSL_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "output_dsl")
-OUTPUT_LEAN_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "output_lean")
+INPUT_DSL_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "IndiMathBench", "outputs", "dsl")
+OUTPUT_LEAN_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "IndiMathBench", "outputs", "lean")
 
 
 def convert_line_dsl_to_sexp(line_dsl_content: str) -> str:

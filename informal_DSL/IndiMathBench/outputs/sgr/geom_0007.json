@@ -14,14 +14,14 @@
   ],
   "lines": [
     {
-      "name": "Line1",
+      "name": "line1",
       "points": [
         "X",
         "O"
       ]
     },
     {
-      "name": "Line2",
+      "name": "line2",
       "points": [
         "Y",
         "O"
@@ -84,8 +84,8 @@
     {
       "A": "A",
       "B": "P",
-      "C": "X",
-      "D": "S"
+      "C": "O",
+      "D": "B"
     },
     {
       "A": "B",

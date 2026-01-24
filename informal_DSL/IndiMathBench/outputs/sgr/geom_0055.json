@@ -132,37 +132,55 @@
       ]
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "A",
-        "E"
-      ],
-      "segment2": [
-        "B",
-        "D"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "E"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "B",
+          "D"
+        ]
+      }
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "B",
-        "F"
-      ],
-      "segment2": [
-        "C",
-        "E"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "B",
+          "F"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "C",
+          "E"
+        ]
+      }
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "C",
-        "A"
-      ],
-      "segment2": [
-        "D",
-        "F"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "C",
+          "A"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "D",
+          "F"
+        ]
+      }
     }
   ],
   "goals": [

@@ -28,7 +28,7 @@
   ],
   "circles": [
     {
-      "name": "circumcircle",
+      "name": "Circumcircle",
       "center": "O",
       "through": [
         "A"
@@ -46,21 +46,12 @@
   "polygons": [],
   "relations": [
     {
-      "type": "Circumcenter",
-      "point": "O",
-      "triangle": [
-        "A",
-        "B",
-        "C"
-      ]
-    },
-    {
       "type": "Excircle",
       "point": "ra",
       "triangle": [
-        "A",
         "B",
-        "C"
+        "C",
+        "A"
       ],
       "opposite_vertex": "A"
     },
@@ -68,9 +59,9 @@
       "type": "Excircle",
       "point": "rb",
       "triangle": [
+        "C",
         "A",
-        "B",
-        "C"
+        "B"
       ],
       "opposite_vertex": "B"
     },
@@ -83,26 +74,50 @@
         "C"
       ],
       "opposite_vertex": "C"
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
+      "type": "LessThanEqualTo",
+      "left": {
+        "type": "Mul",
+        "left": {
+          "value": 2
+        },
+        "right": {
+          "type": "RadiusOf",
+          "circle_center": "O"
+        }
+      },
+      "right": {
+        "type": "RadiusOf",
+        "circle_center": "ra"
+      }
     }
   ],
   "goals": [
     {
       "kind": "Prove",
       "content": {
-        "type": "Equals",
+        "type": "GreaterThan",
         "args": [
           {
-            "type": "MeasureOf",
+            "type": "LengthOf",
             "args": [
-              0,
               0,
               0
             ]
           },
           {
-            "type": "MeasureOf",
+            "type": "LengthOf",
             "args": [
-              0,
               0,
               0
             ]
@@ -113,20 +128,18 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "Equals",
+        "type": "GreaterThan",
         "args": [
           {
-            "type": "MeasureOf",
+            "type": "LengthOf",
             "args": [
-              0,
               0,
               0
             ]
           },
           {
-            "type": "MeasureOf",
+            "type": "LengthOf",
             "args": [
-              0,
               0,
               0
             ]
@@ -137,31 +150,7 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "Equals",
-        "args": [
-          {
-            "type": "MeasureOf",
-            "args": [
-              0,
-              0,
-              0
-            ]
-          },
-          {
-            "type": "MeasureOf",
-            "args": [
-              0,
-              0,
-              0
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "Equals",
+        "type": "GreaterThan",
         "args": [
           {
             "type": "Mul",
@@ -187,7 +176,7 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "Equals",
+        "type": "GreaterThan",
         "args": [
           {
             "type": "Mul",

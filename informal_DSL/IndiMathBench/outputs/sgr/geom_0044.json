@@ -24,14 +24,14 @@
     },
     {
       "points": [
-        "B",
+        "A",
         "C"
       ]
     },
     {
       "points": [
-        "C",
-        "A"
+        "B",
+        "C"
       ]
     }
   ],
@@ -81,21 +81,18 @@
         "B",
         "C"
       ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "C",
+        "B'",
+        "I"
+      ]
     }
   ],
   "goals": [
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "Circumcenter",
-        "args": [
-          "O",
-          "C",
-          "B'",
-          "I"
-        ]
-      }
-    },
     {
       "kind": "Prove",
       "content": {

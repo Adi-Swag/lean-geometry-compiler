@@ -5,7 +5,9 @@
     "C",
     "E",
     "F",
-    "G"
+    "G",
+    "O1",
+    "O2"
   ],
   "lines": [
     {
@@ -20,13 +22,6 @@
       "points": [
         "E",
         "G"
-      ]
-    },
-    {
-      "name": "line3",
-      "points": [
-        "C",
-        "B"
       ]
     }
   ],
@@ -54,6 +49,30 @@
         "E",
         "G"
       ]
+    },
+    {
+      "points": [
+        "C",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "E",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "G",
+        "B"
+      ]
     }
   ],
   "circles": [
@@ -61,14 +80,18 @@
       "name": "circumcircle_ABC",
       "center": "O1",
       "through": [
-        "A"
+        "A",
+        "B",
+        "C"
       ]
     },
     {
-      "name": "circumcircle_ECF",
+      "name": "circumcircle_EGB",
       "center": "O2",
       "through": [
-        "E"
+        "E",
+        "G",
+        "B"
       ]
     }
   ],
@@ -129,7 +152,8 @@
       "type": "Intersection",
       "point": "F",
       "objects": [
-        "line1",
+        "E",
+        "G",
         "C",
         "A"
       ]
@@ -138,7 +162,8 @@
       "type": "Intersection",
       "point": "G",
       "objects": [
-        "line2",
+        "E",
+        "F",
         "A",
         "B"
       ]
@@ -150,8 +175,10 @@
       "content": {
         "type": "OnCircle",
         "args": [
-          "O3",
-          "O2"
+          "O2",
+          "E",
+          "C",
+          "F"
         ]
       }
     }

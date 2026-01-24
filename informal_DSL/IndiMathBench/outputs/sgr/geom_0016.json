@@ -33,6 +33,12 @@
         "A",
         "Y"
       ]
+    },
+    {
+      "points": [
+        "X",
+        "Y"
+      ]
     }
   ],
   "circles": [],
@@ -112,7 +118,7 @@
             "type": "Div",
             "args": [
               {
-                "type": "Add",
+                "type": "Sub",
                 "args": [
                   {
                     "type": "Add",
@@ -134,15 +140,9 @@
                     ]
                   },
                   {
-                    "type": "Sub",
+                    "type": "LengthOf",
                     "args": [
-                      {
-                        "type": "LengthOf",
-                        "args": [
-                          0,
-                          0
-                        ]
-                      },
+                      0,
                       0
                     ]
                   }

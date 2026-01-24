@@ -7,10 +7,66 @@
     "X"
   ],
   "lines": [],
-  "segments": [],
+  "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "A"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "X",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "X"
+      ]
+    }
+  ],
   "circles": [
     {
       "name": "circumcircle_ABC",
+      "center": "R",
+      "through": [
+        "A"
+      ]
+    },
+    {
+      "name": "circumcircle_ARB",
       "center": "R",
       "through": [
         "A"
@@ -22,6 +78,11 @@
       "A": "A",
       "B": "B",
       "C": "C"
+    },
+    {
+      "A": "A",
+      "B": "R",
+      "C": "B"
     }
   ],
   "quadrilaterals": [],
@@ -33,12 +94,14 @@
       "circle_center": "R"
     },
     {
-      "type": "Intersection",
-      "point": "X",
-      "objects": [
-        "circumcircle_ABC",
-        "AC"
-      ]
+      "type": "OnCircle",
+      "point": "A",
+      "circle_center": "R"
+    },
+    {
+      "type": "OnCircle",
+      "point": "B",
+      "circle_center": "R"
     }
   ],
   "goals": [

@@ -30,17 +30,7 @@
       ]
     }
   ],
-  "circles": [
-    {
-      "name": "circumcircle_A1B1C1",
-      "center": "unknown",
-      "through": [
-        "A1",
-        "B1",
-        "C1"
-      ]
-    }
-  ],
+  "circles": [],
   "triangles": [
     {
       "A": "A",
@@ -56,15 +46,6 @@
   "quadrilaterals": [],
   "polygons": [],
   "relations": [
-    {
-      "type": "Incenter",
-      "point": "I",
-      "triangle": [
-        "A",
-        "B",
-        "C"
-      ]
-    },
     {
       "type": "Reflection",
       "point": "A1",
@@ -95,7 +76,7 @@
     {
       "type": "OnCircle",
       "point": "A",
-      "circle_center": "circumcircle_A1B1C1"
+      "circle_center": "A1"
     },
     {
       "type": "Incenter",

@@ -20,6 +20,18 @@
         "A",
         "X"
       ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "X"
+      ]
     }
   ],
   "circles": [
@@ -47,27 +59,43 @@
   "polygons": [],
   "relations": [
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "A",
-        "B"
-      ],
-      "segment2": [
-        "A",
-        "X"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "B"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "X"
+        ]
+      }
     },
     {
       "type": "OnCircle",
       "point": "D",
-      "circle_center": "O"
+      "circle_center": "\u0393"
     },
     {
       "type": "Intersection",
       "point": "D",
       "objects": [
+        "\u0393",
         "A",
-        "\u0393"
+        "X"
+      ]
+    },
+    {
+      "type": "Circumcenter",
+      "point": "O",
+      "triangle": [
+        "B",
+        "D",
+        "X"
       ]
     }
   ],

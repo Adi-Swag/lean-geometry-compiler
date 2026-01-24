@@ -53,7 +53,13 @@
       ]
     }
   ],
-  "triangles": [],
+  "triangles": [
+    {
+      "A": "P",
+      "B": "Q",
+      "C": "R"
+    }
+  ],
   "quadrilaterals": [],
   "polygons": [],
   "relations": [
@@ -84,15 +90,21 @@
       ]
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "K",
-        "P"
-      ],
-      "segment2": [
-        "K",
-        "Q"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "K",
+          "P"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "K",
+          "Q"
+        ]
+      }
     }
   ],
   "goals": [

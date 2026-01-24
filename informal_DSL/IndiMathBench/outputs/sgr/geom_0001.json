@@ -4,8 +4,8 @@
     "B",
     "C",
     "D",
-    "O",
-    "E"
+    "E",
+    "O"
   ],
   "lines": [
     {
@@ -52,14 +52,26 @@
     },
     {
       "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
         "D",
         "O"
       ]
     },
     {
       "points": [
-        "D",
-        "E"
+        "A",
+        "O"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
       ]
     }
   ],
@@ -104,8 +116,9 @@
       "type": "Intersection",
       "point": "E",
       "objects": [
-        "AC",
-        "DO"
+        "D",
+        "A",
+        "C"
       ]
     },
     {

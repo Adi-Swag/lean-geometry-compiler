@@ -36,26 +36,6 @@
   "polygons": [],
   "relations": [
     {
-      "type": "OnCircle",
-      "point": "A",
-      "circle_center": "O"
-    },
-    {
-      "type": "OnCircle",
-      "point": "B",
-      "circle_center": "O"
-    },
-    {
-      "type": "OnCircle",
-      "point": "C",
-      "circle_center": "O"
-    },
-    {
-      "type": "OnCircle",
-      "point": "D",
-      "circle_center": "O"
-    },
-    {
       "type": "CyclicQuadrilateral",
       "quadrilateral": [
         "A",
@@ -72,6 +52,31 @@
         "B"
       ],
       "measure": 135
+    },
+    {
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "B"
+        ]
+      },
+      "right": {
+        "type": "Add",
+        "left": {
+          "type": "SqrtOf",
+          "value": {
+            "value": 2
+          }
+        },
+        "right": {
+          "type": "SqrtOf",
+          "value": {
+            "value": 2
+          }
+        }
+      }
     }
   ],
   "goals": [

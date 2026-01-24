@@ -133,16 +133,7 @@
                       {
                         "type": "Pow",
                         "args": [
-                          {
-                            "type": "DistanceRatio",
-                            "args": [
-                              0,
-                              0,
-                              0,
-                              0,
-                              0
-                            ]
-                          },
+                          0,
                           2
                         ]
                       },
@@ -166,36 +157,41 @@
                     "type": "Sub",
                     "args": [
                       {
-                        "type": "Pow",
+                        "type": "Sub",
                         "args": [
                           {
-                            "type": "MeasureOf",
+                            "type": "Pow",
                             "args": [
-                              0,
-                              0,
-                              0
+                              {
+                                "type": "MeasureOf",
+                                "args": [
+                                  0,
+                                  0,
+                                  0
+                                ]
+                              },
+                              3
                             ]
                           },
-                          3
+                          {
+                            "type": "Pow",
+                            "args": [
+                              {
+                                "type": "MeasureOf",
+                                "args": [
+                                  0,
+                                  0,
+                                  0
+                                ]
+                              },
+                              2
+                            ]
+                          }
                         ]
                       },
-                      {
-                        "type": "Pow",
-                        "args": [
-                          {
-                            "type": "MeasureOf",
-                            "args": [
-                              0,
-                              0,
-                              0
-                            ]
-                          },
-                          2
-                        ]
-                      }
+                      2
                     ]
-                  },
-                  -2
+                  }
                 ]
               },
               2

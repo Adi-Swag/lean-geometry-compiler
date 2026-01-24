@@ -48,38 +48,31 @@
       "type": "Perpendicular",
       "line1": [
         "X",
-        "O"
+        "Y"
       ],
       "line2": [
-        "B",
+        "A",
         "C"
-      ]
-    },
-    {
-      "type": "Perpendicular",
-      "line1": [
-        "Y",
-        "O"
-      ],
-      "line2": [
-        "B",
-        "A"
       ]
     },
     {
       "type": "Intersection",
       "point": "X",
       "objects": [
-        "AC",
-        "PerpendicularBisectorBC"
+        "B",
+        "C",
+        "A",
+        "C"
       ]
     },
     {
       "type": "Intersection",
       "point": "Y",
       "objects": [
-        "AC",
-        "PerpendicularBisectorBA"
+        "B",
+        "A",
+        "A",
+        "C"
       ]
     },
     {
@@ -90,18 +83,41 @@
         "B",
         "C"
       ]
+    },
+    {
+      "type": "Incenter",
+      "point": "O",
+      "triangle": [
+        "B",
+        "X",
+        "Y"
+      ]
     }
   ],
   "goals": [
     {
       "kind": "Prove",
       "content": {
-        "type": "Incenter",
+        "type": "Equals",
         "args": [
-          "O",
-          "B",
-          "X",
-          "Y"
+          {
+            "type": "Circumcenter",
+            "args": [
+              0,
+              0,
+              0,
+              0
+            ]
+          },
+          {
+            "type": "Incenter",
+            "args": [
+              0,
+              0,
+              0,
+              0
+            ]
+          }
         ]
       }
     }

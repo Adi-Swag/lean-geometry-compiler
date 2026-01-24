@@ -8,7 +8,36 @@
     "O1",
     "O2"
   ],
-  "lines": [],
+  "lines": [
+    {
+      "name": "line1",
+      "points": [
+        "C",
+        "B"
+      ]
+    },
+    {
+      "name": "line2",
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "name": "line3",
+      "points": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "name": "line4",
+      "points": [
+        "A",
+        "C"
+      ]
+    }
+  ],
   "segments": [
     {
       "points": [

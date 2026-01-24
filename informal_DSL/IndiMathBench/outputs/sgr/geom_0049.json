@@ -52,13 +52,13 @@
     {
       "points": [
         "I",
-        "E"
+        "F"
       ]
     },
     {
       "points": [
         "I",
-        "F"
+        "E"
       ]
     }
   ],
@@ -99,6 +99,14 @@
       ]
     },
     {
+      "type": "Intersection",
+      "point": "E",
+      "objects": [
+        "AC",
+        "line_perpendicular_to_AI_at_I"
+      ]
+    },
+    {
       "type": "Perpendicular",
       "line1": [
         "A",
@@ -107,14 +115,6 @@
       "line2": [
         "I",
         "E"
-      ]
-    },
-    {
-      "type": "Intersection",
-      "point": "E",
-      "objects": [
-        "AC",
-        "IE"
       ]
     }
   ],

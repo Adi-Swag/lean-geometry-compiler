@@ -91,35 +91,7 @@
             "type": "Mul",
             "args": [
               2,
-              {
-                "type": "Max",
-                "args": [
-                  {
-                    "type": "Altitude",
-                    "args": [
-                      0,
-                      0,
-                      0
-                    ]
-                  },
-                  {
-                    "type": "Altitude",
-                    "args": [
-                      0,
-                      0,
-                      0
-                    ]
-                  },
-                  {
-                    "type": "Altitude",
-                    "args": [
-                      0,
-                      0,
-                      0
-                    ]
-                  }
-                ]
-              }
+              "h_max"
             ]
           }
         ]

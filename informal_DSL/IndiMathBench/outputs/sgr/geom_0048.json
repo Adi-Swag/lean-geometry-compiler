@@ -19,8 +19,38 @@
   "segments": [
     {
       "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
         "B",
         "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "X",
+        "Y"
       ]
     }
   ],
@@ -47,6 +77,11 @@
   "triangles": [
     {
       "A": "A",
+      "B": "B",
+      "C": "C"
+    },
+    {
+      "A": "A",
       "B": "G",
       "C": "B"
     },
@@ -65,6 +100,15 @@
   "polygons": [],
   "relations": [
     {
+      "type": "Centroid",
+      "point": "G",
+      "triangle": [
+        "A",
+        "B",
+        "C"
+      ]
+    },
+    {
       "type": "Intersection",
       "point": "X",
       "objects": [
@@ -78,15 +122,6 @@
       "objects": [
         "circumcircle_AGC",
         "BC"
-      ]
-    },
-    {
-      "type": "Centroid",
-      "point": "G",
-      "triangle": [
-        "A",
-        "B",
-        "C"
       ]
     }
   ],

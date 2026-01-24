@@ -11,7 +11,22 @@
     "P",
     "Q"
   ],
-  "lines": [],
+  "lines": [
+    {
+      "name": "tangent1",
+      "points": [
+        "B",
+        "C"
+      ]
+    },
+    {
+      "name": "tangent2",
+      "points": [
+        "B",
+        "D"
+      ]
+    }
+  ],
   "segments": [
     {
       "points": [
@@ -58,44 +73,20 @@
   "polygons": [],
   "relations": [
     {
-      "type": "OnCircle",
+      "type": "Intersection",
       "point": "A",
-      "circle_center": "O1"
+      "objects": [
+        "\u03931",
+        "\u03932"
+      ]
     },
     {
-      "type": "OnCircle",
+      "type": "Intersection",
       "point": "B",
-      "circle_center": "O1"
-    },
-    {
-      "type": "OnCircle",
-      "point": "A",
-      "circle_center": "O2"
-    },
-    {
-      "type": "OnCircle",
-      "point": "B",
-      "circle_center": "O2"
-    },
-    {
-      "type": "OnCircle",
-      "point": "C",
-      "circle_center": "O2"
-    },
-    {
-      "type": "OnCircle",
-      "point": "D",
-      "circle_center": "O1"
-    },
-    {
-      "type": "OnCircle",
-      "point": "X",
-      "circle_center": "O1"
-    },
-    {
-      "type": "OnCircle",
-      "point": "Y",
-      "circle_center": "O2"
+      "objects": [
+        "\u03931",
+        "\u03932"
+      ]
     },
     {
       "type": "TangentToCircle",
@@ -168,17 +159,6 @@
         "args": [
           "P",
           "Q",
-          "O1",
-          "O2"
-        ]
-      }
-    },
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "Midpoint",
-        "args": [
-          "P",
           "O1",
           "O2"
         ]

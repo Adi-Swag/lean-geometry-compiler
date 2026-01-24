@@ -110,6 +110,16 @@
       ]
     },
     {
+      "type": "OnCircle",
+      "point": "K",
+      "circle_center": "O"
+    },
+    {
+      "type": "OnCircle",
+      "point": "L",
+      "circle_center": "O"
+    },
+    {
       "type": "Perpendicular",
       "line1": [
         "K",

@@ -139,23 +139,48 @@
       ]
     },
     {
-      "type": "DistanceRatio",
-      "segment1": [
-        "L",
-        "K"
-      ],
-      "segment2": [
-        "L",
-        "M"
-      ],
-      "ratio": "C"
+      "type": "Equals",
+      "left": {
+        "type": "Div",
+        "left": {
+          "type": "LengthOf",
+          "segment": [
+            "L",
+            "K"
+          ]
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "L",
+            "M"
+          ]
+        }
+      },
+      "right": {
+        "type": "Div",
+        "left": {
+          "type": "LengthOf",
+          "segment": [
+            "C",
+            "D"
+          ]
+        },
+        "right": {
+          "type": "LengthOf",
+          "segment": [
+            "C",
+            "B"
+          ]
+        }
+      }
     }
   ],
   "goals": [
     {
       "kind": "Prove",
       "content": {
-        "type": "ConvexQuadrilateral",
+        "type": "Equilateral",
         "args": [
           "A",
           "B",

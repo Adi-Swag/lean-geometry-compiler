@@ -5,25 +5,36 @@
     "C",
     "P",
     "Q",
-    "H"
+    "H",
+    "O"
   ],
-  "lines": [],
-  "segments": [
+  "lines": [
     {
-      "points": [
-        "B",
-        "C"
-      ]
-    },
-    {
+      "name": "AB",
       "points": [
         "A",
         "B"
       ]
     },
     {
+      "name": "AC",
       "points": [
         "A",
+        "C"
+      ]
+    },
+    {
+      "name": "BC",
+      "points": [
+        "B",
+        "C"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "B",
         "C"
       ]
     },
@@ -61,14 +72,20 @@
   "polygons": [],
   "relations": [
     {
-      "type": "OnCircle",
+      "type": "Intersection",
       "point": "P",
-      "circle_center": "O"
+      "objects": [
+        "AB",
+        "\u0393"
+      ]
     },
     {
-      "type": "OnCircle",
+      "type": "Intersection",
       "point": "Q",
-      "circle_center": "O"
+      "objects": [
+        "AC",
+        "\u0393"
+      ]
     },
     {
       "type": "Orthocenter",

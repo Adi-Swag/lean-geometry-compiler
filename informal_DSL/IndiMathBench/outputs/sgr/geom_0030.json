@@ -78,15 +78,21 @@
       "circle_center": "O"
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "A",
-        "D"
-      ],
-      "segment2": [
-        "C",
-        "E"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "D"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "C",
+          "E"
+        ]
+      }
     }
   ],
   "goals": [

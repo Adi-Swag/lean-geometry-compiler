@@ -57,39 +57,62 @@
       ]
     },
     {
-      "type": "EqualAngles",
-      "angle1": [
-        "B",
-        "A",
-        "C"
-      ],
-      "angle2": [
-        "C",
-        "A",
-        "B"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "MeasureOf",
+        "angle": [
+          "B",
+          "A",
+          "C"
+        ]
+      },
+      "right": {
+        "type": "Mul",
+        "left": {
+          "value": 2
+        },
+        "right": {
+          "type": "MeasureOf",
+          "angle": [
+            "A",
+            "C",
+            "B"
+          ]
+        }
+      }
     },
     {
-      "type": "EqualDistances",
-      "segment1": [
-        "C",
-        "D"
-      ],
-      "segment2": [
-        "A",
-        "B"
-      ]
+      "type": "Equals",
+      "left": {
+        "type": "LengthOf",
+        "segment": [
+          "C",
+          "D"
+        ]
+      },
+      "right": {
+        "type": "LengthOf",
+        "segment": [
+          "A",
+          "B"
+        ]
+      }
     }
   ],
   "goals": [
     {
       "kind": "Prove",
       "content": {
-        "type": "AngleMeasure",
+        "type": "Equals",
         "args": [
-          "B",
-          "A",
-          "C",
+          {
+            "type": "MeasureOf",
+            "args": [
+              0,
+              0,
+              0
+            ]
+          },
           72
         ]
       }

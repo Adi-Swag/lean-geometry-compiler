@@ -10,7 +10,37 @@
   "segments": [
     {
       "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "points": [
         "B",
+        "C"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "D",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "E",
         "C"
       ]
     }
@@ -27,18 +57,22 @@
   "polygons": [],
   "relations": [
     {
-      "type": "RightTriangle",
-      "triangle": [
-        "A",
+      "type": "AngleMeasure",
+      "angle": [
         "B",
+        "A",
         "C"
-      ]
+      ],
+      "measure": 90
     },
     {
-      "type": "Isosceles",
-      "triangle": [
+      "type": "EqualDistances",
+      "segment1": [
         "A",
-        "B",
+        "B"
+      ],
+      "segment2": [
+        "A",
         "C"
       ]
     },
@@ -52,7 +86,7 @@
         "D",
         "E"
       ],
-      "ratio": "1"
+      "ratio": 1
     },
     {
       "type": "DistanceRatio",
@@ -64,7 +98,7 @@
         "E",
         "C"
       ],
-      "ratio": "2"
+      "ratio": 2
     },
     {
       "type": "DistanceRatio",
@@ -76,7 +110,7 @@
         "E",
         "C"
       ],
-      "ratio": "SqrtOf(3)"
+      "ratio": "SqrtOf"
     }
   ],
   "goals": [

@@ -10,21 +10,21 @@
   ],
   "lines": [
     {
-      "name": "BC",
+      "name": "line_BC",
       "points": [
         "B",
         "C"
       ]
     },
     {
-      "name": "BH",
+      "name": "line_BH",
       "points": [
         "B",
         "H"
       ]
     },
     {
-      "name": "CH",
+      "name": "line_CH",
       "points": [
         "C",
         "H"
@@ -37,9 +37,40 @@
         "B",
         "C"
       ]
+    },
+    {
+      "points": [
+        "B",
+        "H"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "H"
+      ]
     }
   ],
-  "circles": [],
+  "circles": [
+    {
+      "name": "circumcircle_ABP",
+      "center": "O1",
+      "through": [
+        "A",
+        "B",
+        "P"
+      ]
+    },
+    {
+      "name": "circumcircle_ACP",
+      "center": "O2",
+      "through": [
+        "A",
+        "C",
+        "P"
+      ]
+    }
+  ],
   "triangles": [
     {
       "A": "A",
@@ -87,16 +118,16 @@
       "type": "Intersection",
       "point": "Q",
       "objects": [
-        "Circumcircle_ABP",
-        "BH"
+        "circumcircle_ABP",
+        "line_BH"
       ]
     },
     {
       "type": "Intersection",
       "point": "R",
       "objects": [
-        "Circumcircle_ACP",
-        "CH"
+        "circumcircle_ACP",
+        "line_CH"
       ]
     }
   ],

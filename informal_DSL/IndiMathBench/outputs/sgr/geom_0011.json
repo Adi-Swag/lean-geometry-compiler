@@ -21,9 +21,35 @@
         "C",
         "D"
       ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    },
+    {
+      "name": "BD",
+      "points": [
+        "B",
+        "D"
+      ]
     }
   ],
   "segments": [
+    {
+      "points": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "D"
+      ]
+    },
     {
       "points": [
         "A",
@@ -52,7 +78,18 @@
       ]
     }
   ],
-  "triangles": [],
+  "triangles": [
+    {
+      "A": "A",
+      "B": "M",
+      "C": "B"
+    },
+    {
+      "A": "A",
+      "B": "M",
+      "C": "D"
+    }
+  ],
   "quadrilaterals": [
     {
       "A": "A",
@@ -116,50 +153,27 @@
       "right": {
         "value": 2
       }
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "M",
+        "B"
+      ],
+      "measure": 60
+    },
+    {
+      "type": "AngleMeasure",
+      "angle": [
+        "A",
+        "M",
+        "D"
+      ],
+      "measure": 60
     }
   ],
   "goals": [
-    {
-      "kind": "Prove",
-      "content": {
-        "type": "Equals",
-        "args": [
-          {
-            "type": "Sub",
-            "args": [
-              {
-                "type": "LengthOf",
-                "args": [
-                  0,
-                  0
-                ]
-              },
-              {
-                "type": "LengthOf",
-                "args": [
-                  0,
-                  0
-                ]
-              }
-            ]
-          },
-          {
-            "type": "Expression",
-            "args": [
-              {
-                "type": "MeasureOf",
-                "args": [
-                  0,
-                  0,
-                  0
-                ]
-              },
-              60
-            ]
-          }
-        ]
-      }
-    },
     {
       "kind": "Find",
       "content": {

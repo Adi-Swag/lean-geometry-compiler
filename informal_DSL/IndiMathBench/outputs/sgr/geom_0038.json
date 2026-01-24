@@ -9,7 +9,22 @@
     "D",
     "E"
   ],
-  "lines": [],
+  "lines": [
+    {
+      "name": "BO",
+      "points": [
+        "B",
+        "O"
+      ]
+    },
+    {
+      "name": "AC",
+      "points": [
+        "A",
+        "C"
+      ]
+    }
+  ],
   "segments": [
     {
       "points": [
@@ -31,7 +46,49 @@
     },
     {
       "points": [
-        "D",
+        "A",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "C",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "E"
+      ]
+    },
+    {
+      "points": [
+        "C",
         "E"
       ]
     }
@@ -41,7 +98,9 @@
       "name": "circumcircle",
       "center": "O",
       "through": [
-        "A"
+        "A",
+        "B",
+        "C"
       ]
     }
   ],
@@ -58,23 +117,12 @@
     {
       "type": "Perpendicular",
       "line1": [
-        "X",
-        "A"
+        "A",
+        "C"
       ],
       "line2": [
         "B",
-        "C"
-      ]
-    },
-    {
-      "type": "Perpendicular",
-      "line1": [
-        "Y",
-        "A"
-      ],
-      "line2": [
-        "B",
-        "C"
+        "O"
       ]
     },
     {
@@ -85,6 +133,32 @@
       ],
       "line2": [
         "A",
+        "C"
+      ]
+    },
+    {
+      "type": "AngleBisector",
+      "point": "D",
+      "vertex": "A",
+      "side1": [
+        "A",
+        "X"
+      ],
+      "side2": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "type": "AngleBisector",
+      "point": "E",
+      "vertex": "B",
+      "side1": [
+        "B",
+        "Y"
+      ],
+      "side2": [
+        "B",
         "C"
       ]
     }

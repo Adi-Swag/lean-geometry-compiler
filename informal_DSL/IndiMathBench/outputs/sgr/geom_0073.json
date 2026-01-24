@@ -59,22 +59,22 @@
     {
       "type": "OnCircle",
       "point": "A",
-      "circle_center": "\u0393"
+      "circle_center": "O"
     },
     {
       "type": "OnCircle",
       "point": "B",
-      "circle_center": "\u0393"
+      "circle_center": "O"
     },
     {
       "type": "OnCircle",
       "point": "C",
-      "circle_center": "\u0393"
+      "circle_center": "O"
     },
     {
       "type": "OnCircle",
       "point": "D",
-      "circle_center": "\u0393"
+      "circle_center": "O"
     },
     {
       "type": "Midpoint",
