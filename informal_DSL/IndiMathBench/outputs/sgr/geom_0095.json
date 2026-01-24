@@ -26,9 +26,8 @@
                 "type": "Floor",
                 "args": [
                   {
-                    "type": "Log",
+                    "type": "Log2",
                     "args": [
-                      2,
                       {
                         "type": "LengthOf",
                         "args": [
@@ -46,7 +45,7 @@
             "type": "Mul",
             "args": [
               2,
-              "n"
+              0
             ]
           }
         ]

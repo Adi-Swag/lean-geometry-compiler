@@ -20,6 +20,13 @@
         "A",
         "C"
       ]
+    },
+    {
+      "name": "BD",
+      "points": [
+        "B",
+        "D"
+      ]
     }
   ],
   "segments": [
@@ -39,6 +46,18 @@
       "points": [
         "B",
         "C"
+      ]
+    },
+    {
+      "points": [
+        "A",
+        "D"
+      ]
+    },
+    {
+      "points": [
+        "B",
+        "D"
       ]
     }
   ],
@@ -82,6 +101,15 @@
       "circle_center": "O"
     },
     {
+      "type": "TangentToCircle",
+      "line": [
+        "A",
+        "B"
+      ],
+      "circle_center": "O",
+      "point_of_tangency": "B"
+    },
+    {
       "type": "Intersection",
       "point": "D",
       "objects": [
@@ -90,12 +118,9 @@
       ]
     },
     {
-      "type": "Perpendicular",
-      "line1": [
+      "type": "AcuteTriangle",
+      "triangle": [
         "A",
-        "C"
-      ],
-      "line2": [
         "B",
         "C"
       ]
@@ -141,7 +166,7 @@
             ]
           },
           {
-            "type": "Midpoint",
+            "type": "Perpendicular",
             "args": [
               0,
               0,

@@ -59,7 +59,7 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "LessThanOrEqual",
+        "type": "LessThanEqualTo",
         "args": [
           {
             "type": "Add",
@@ -67,22 +67,22 @@
               {
                 "type": "LengthOf",
                 "args": [
-                  "A",
-                  "H"
+                  0,
+                  0
                 ]
               },
               {
                 "type": "LengthOf",
                 "args": [
-                  "B",
-                  "H"
+                  0,
+                  0
                 ]
               },
               {
                 "type": "LengthOf",
                 "args": [
-                  "C",
-                  "H"
+                  0,
+                  0
                 ]
               }
             ]
@@ -91,7 +91,35 @@
             "type": "Mul",
             "args": [
               2,
-              "h_max"
+              {
+                "type": "Max",
+                "args": [
+                  {
+                    "type": "Altitude",
+                    "args": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "Altitude",
+                    "args": [
+                      0,
+                      0,
+                      0
+                    ]
+                  },
+                  {
+                    "type": "Altitude",
+                    "args": [
+                      0,
+                      0,
+                      0
+                    ]
+                  }
+                ]
+              }
             ]
           }
         ]

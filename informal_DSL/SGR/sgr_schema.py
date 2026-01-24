@@ -129,6 +129,34 @@ class EqualsSGR:
     left: ExprSGR
     right: ExprSGR
 
+@dataclass
+class GreaterThanSGR:
+    type: Literal["GreaterThan"]
+    left: ExprSGR
+    right: ExprSGR
+
+
+@dataclass
+class LessThanSGR:
+    type: Literal["LessThan"]
+    left: ExprSGR
+    right: ExprSGR
+
+
+@dataclass
+class GreaterThanEqualToSGR:
+    type: Literal["GreaterThanEqualTo"]
+    left: ExprSGR
+    right: ExprSGR
+
+
+@dataclass
+class LessThanEqualToSGR:
+    type: Literal["LessThanEqualTo"]
+    left: ExprSGR
+    right: ExprSGR
+
+
 
 
 # ============================================================
@@ -481,8 +509,10 @@ RelationSGR = Union[
     CongruentSegmentsSGR, CongruentAnglesSGR, SimilarTrianglesSGR,
     EqualAnglesSGR, AngleMeasureSGR, EqualDistancesSGR, DistanceRatioSGR,
     SupplementaryAnglesSGR, ComplementaryAnglesSGR,
-    ConcyclicSGR, CosphericalSGR, TangentToCircleSGR, ArcSGR, DiameterSGR, EqualsSGR
+    ConcyclicSGR, CosphericalSGR, TangentToCircleSGR, ArcSGR, DiameterSGR, EqualsSGR, GreaterThanSGR, LessThanSGR,
+    GreaterThanEqualToSGR, LessThanEqualToSGR
 ]
+
 
 
 # ============================================================

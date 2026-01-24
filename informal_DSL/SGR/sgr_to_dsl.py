@@ -373,6 +373,18 @@ def relations_to_dsl(sgr: SGR) -> List[str]:
             elif isinstance(r, EqualsSGR):
                 out.append(f"Equals({expr_to_dsl(r.left)},{expr_to_dsl(r.right)})")
 
+            elif isinstance(r, GreaterThanSGR):
+                out.append(f"GreaterThan({expr_to_dsl(r.left)},{expr_to_dsl(r.right)})")
+
+            elif isinstance(r, LessThanSGR):
+                out.append(f"LessThan({expr_to_dsl(r.left)},{expr_to_dsl(r.right)})")
+
+            elif isinstance(r, GreaterThanEqualToSGR):
+                out.append(f"GreaterThanEqualTo({expr_to_dsl(r.left)},{expr_to_dsl(r.right)})")
+
+            elif isinstance(r, LessThanEqualToSGR):
+                out.append(f"LessThanEqualTo({expr_to_dsl(r.left)},{expr_to_dsl(r.right)})")
+
             # ---------- Additional Relations ----------
             elif isinstance(r, DiameterSGR):
                 a, b = safe_unpack_segment(r.segment, f"Diameter relation #{idx}")
@@ -613,11 +625,43 @@ def goals_to_dsl(sgr: SGR) -> List[str]:
                         out.append(f"Find({dsl_output})")
                     
                     continue
-                    
+
                 except Exception as e:
                     print(f"[WARNING] Goal #{idx}: Failed to parse Equals after repair - {e}")
                     continue
-            
+
+            if goal_type in ("GreaterThan", "LessThan", "GreaterThanEqualTo", "LessThanEqualTo"):
+                try:
+                    content_dict = {
+                        "type": g.content.get("type"),
+                        "args": g.content.get("args", [])
+                    }
+                    repaired_content = repair_malformed_expression(content_dict)
+                    args = repaired_content.get("args", [])
+        
+                    if len(args) < 2:
+                        print(f"[WARNING] Goal #{idx}: {goal_type} needs 2 args, got {len(args)}, skipping")
+                        continue
+        
+                    left_expr = parse_expr(args[0])
+                    right_expr = parse_expr(args[1])
+        
+                    left_dsl = expr_to_dsl(left_expr)
+                    right_dsl = expr_to_dsl(right_expr)
+        
+                    dsl_output = f"{goal_type}({left_dsl},{right_dsl})"
+        
+                    if g.kind == "Prove":
+                        out.append(f"Prove({dsl_output})")
+                    elif g.kind == "Find":
+                        out.append(f"Find({dsl_output})")
+        
+                    continue
+                    
+                except Exception as e:
+                    print(f"[WARNING] Goal #{idx}: Failed to parse {goal_type} - {e}")
+                    continue
+
             # ============================================================
             # GENERAL CASE: Try to convert goal to relation
             # ============================================================

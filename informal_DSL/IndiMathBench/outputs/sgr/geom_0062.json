@@ -70,13 +70,13 @@
     {
       "kind": "Prove",
       "content": {
-        "type": "GreaterThanOrEqual",
+        "type": "GreaterThanEqualTo",
         "args": [
           {
             "type": "LengthOf",
             "args": [
-              "C",
-              "D"
+              0,
+              0
             ]
           },
           {
@@ -85,15 +85,15 @@
               {
                 "type": "LengthOf",
                 "args": [
-                  "A",
-                  "B"
+                  0,
+                  0
                 ]
               },
               {
                 "type": "LengthOf",
                 "args": [
-                  "B",
-                  "C"
+                  0,
+                  0
                 ]
               }
             ]

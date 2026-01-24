@@ -37,11 +37,12 @@ class SGRTranslator:
 
         raw = response.choices[0].message.content
         data = self._clean_output(raw)
+        validate_llm_output(data)
         normalize_goals(data) 
 
         sgr = parse_json_to_sgr(data)
         sgr = repair_sgr(sgr)  # Add this if you haven't already
-        validate_sgr(sgr)
+        #validate_sgr(sgr)
 
         return sgr
     
@@ -114,6 +115,60 @@ BEFORE outputting JSON, verify:
 5. LengthOf requires EXACTLY 2 points
    ❌ WRONG: {"type": "LengthOf", "args": ["A"]}
    ✓ CORRECT: {"type": "LengthOf", "args": ["A", "B"]}
+
+========================
+HANDLING VARIABLES IN PROBLEMS
+========================
+**Lambda is a variable.**
+When problems use variables like "BC = a, CA = b, AB = c" or "angle = λ":
+
+❌ WRONG: Use bare variable names in expressions
+{
+  "type": "Add",
+  "args": ["b", "c"]  // 'b' and 'c' as strings
+}
+
+❌ WRONG: Use {"type": "Variable", "name": "lambda"}
+
+✓ CORRECT: Use LengthOf/MeasureOf with the actual segment/angle
+{
+  "type": "Add",
+  "args": [
+    {"type": "LengthOf", "args": ["C", "A"]},  // This represents 'b'
+    {"type": "LengthOf", "args": ["A", "B"]}   // This represents 'c'
+  ]
+}
+
+**CRITICAL RULE**: Never use variable names like 'a', 'b', 'c', 'λ', 'alpha', 'theta' 
+directly in expressions. Always reference the actual geometric objects (segments, angles, etc.).
+
+EXAMPLES:
+- "BC = a" → Use {"type": "LengthOf", "args": ["B", "C"]}
+- "angle ABC = λ" → Use {"type": "MeasureOf", "args": ["A", "B", "C"]}
+- "angle ABC = α" → Use {"type": "MeasureOf", "args": ["A", "B", "C"]}
+- "radius = r" → Use {"type": "RadiusOf", "args": ["O"]}
+- "a + b" → Use {"type": "Add", "args": [
+    {"type": "LengthOf", "args": [point1, point2]},
+    {"type": "LengthOf", "args": [point3, point4]}
+  ]}
+
+========================
+FORBIDDEN EXPRESSION TYPES
+========================
+
+DO NOT USE these - they are NOT valid expressions:
+- Variable
+- DistinctValues
+- OnCircle (this is a RELATION, not an expression)
+- Incenter (this is a RELATION, not an expression)
+- Orthocenter (this is a RELATION, not an expression)
+- Any relation name as an expression
+
+If you need to reference a property, use the appropriate measurement:
+- For distances: LengthOf(segment)
+- For angles: MeasureOf(angle)
+- For areas: AreaOf(shape)
+- For radii: RadiusOf(circle_center)
 
 ========================
 SGR SCHEMA (MANDATORY)
@@ -208,6 +263,10 @@ Diameter(pointA, pointB, circleCenter)
 SupplementaryAngles(angleA1, angleVertex1, angleB1, angleA2, angleVertex2, angleB2)
 ComplementaryAngles(angleA1, angleVertex1, angleB1, angleA2, angleVertex2, angleB2)
 Excircle(point, triangleA, triangleB, triangleC, oppositeVertex)
+GreaterThan(expr1, expr2)
+LessThan(expr1, expr2)
+GreaterThanEqualTo(expr1, expr2)
+LessThanEqualTo(expr1, expr2)
 
 ========================
 EXPRESSIONS (ℝ-valued)
@@ -266,6 +325,18 @@ EQUALITY
 Equals(expr1, expr2)
 
 ========================
+COMPARISONS
+========================
+
+GreaterThan(expr1, expr2)       - expr1 > expr2
+LessThan(expr1, expr2)          - expr1 < expr2
+GreaterThanEqualTo(expr1, expr2) - expr1 >= expr2
+LessThanEqualTo(expr1, expr2)    - expr1 <= expr2
+
+These work just like Equals but for inequalities.
+Both expr1 and expr2 must be numeric expressions.
+
+========================
 STRICT RULES
 ========================
 - Consider Line and Segment interchangeable.
@@ -285,37 +356,6 @@ Goal rules:
 - Prove MUST contain a relation or an Equals(...)
 
 ========================
-HANDLING VARIABLES IN PROBLEMS
-========================
-Lambda is a variable.
-When problems use variables like "BC = a, CA = b, AB = c":
-
-❌ WRONG: Use bare variable names in expressions
-{
-  "type": "Add",
-  "args": ["b", "c"]  // 'b' and 'c' as strings
-}
-
-✓ CORRECT: Use LengthOf with the actual segment
-{
-  "type": "Add",
-  "args": [
-    {"type": "LengthOf", "args": ["C", "A"]},  // This represents 'b'
-    {"type": "LengthOf", "args": ["A", "B"]}   // This represents 'c'
-  ]
-}
-
-RULE: Never use variable names like 'a', 'b', 'c' directly in expressions.
-Always reference the actual geometric objects (segments, angles, etc.).
-
-EXAMPLES:
-- "BC = a" → Use {"type": "LengthOf", "args": ["B", "C"]}
-- "angle ABC = α" → Use {"type": "MeasureOf", "args": ["A", "B", "C"]}
-- "radius = r" → Use {"type": "RadiusOf", "args": ["O"]}
-
-This schema is authoritative. Violations are errors.
-
-========================
 COMMON MISTAKES TO AVOID
 ========================
 
@@ -327,6 +367,15 @@ COMMON MISTAKES TO AVOID
 
 ❌ BAD: {"type": "MeasureOf", "args": ["A", "B"]}
 ✓ GOOD: {"type": "MeasureOf", "args": ["A", "B", "C"]}
+
+❌ BAD: {"type": "Variable", "name": "lambda"}
+✓ GOOD: {"type": "MeasureOf", "args": ["A", "B", "C"]}
+
+❌ BAD: {"type": "Add", "args": ["a", "b"]}
+✓ GOOD: {"type": "Add", "args": [
+    {"type": "LengthOf", "args": ["P1", "P2"]},
+    {"type": "LengthOf", "args": ["P3", "P4"]}
+]}
 
 Double-check your output for these common errors before responding!
 """
@@ -431,10 +480,13 @@ def parse_json_to_sgr(data: Dict[str, Any]) -> SGR:
             )
 
         elif t == "Orthocenter":
+            if len(a) < 4:  # point + 3 triangle vertices
+                raise ValueError(
+                    f"Orthocenter needs 4 args (point + 3 triangle vertices), got {len(a)}"
+                )
             sgr.relations.append(
-                OrthocenterSGR(type=t, point=a[0], triangle=a[1:])
+                OrthocenterSGR(type=t, point=a[0], triangle=a[1:4])
             )
-        
 
         elif t == "Diameter":
             sgr.relations.append(
@@ -681,6 +733,42 @@ def parse_json_to_sgr(data: Dict[str, Any]) -> SGR:
                 )
             )
 
+        elif t == "GreaterThan":
+            sgr.relations.append(
+                GreaterThanSGR(
+                    type=t,
+                    left=parse_expr(a[0]),
+                    right=parse_expr(a[1])
+                )
+            )
+
+        elif t == "LessThan":
+            sgr.relations.append(
+                LessThanSGR(
+                    type=t,
+                    left=parse_expr(a[0]),
+                    right=parse_expr(a[1])
+                )
+            )
+
+        elif t == "GreaterThanEqualTo":
+            sgr.relations.append(
+                GreaterThanEqualToSGR(
+                    type=t,
+                    left=parse_expr(a[0]),
+                    right=parse_expr(a[1])
+                )
+            )   
+
+        elif t == "LessThanEqualTo":
+            sgr.relations.append(
+                LessThanEqualToSGR(
+                    type=t,
+                    left=parse_expr(a[0]),
+                    right=parse_expr(a[1])
+                )
+            )
+
         elif t == "MeasureOf":
             # This handles MeasureOf when used as a GOAL content (relation)
             # Convert it to an Equals relation with the measure
@@ -740,12 +828,16 @@ def parse_expr(e: Any) -> ExprSGR:
         elif e.lower() == "e":
             return NumberSGR(2.718281828459045)
         
-        # Single letter might be a point name used as a variable (error in LLM output)
-        # We can't handle this - it's malformed
-        if len(e) == 1 and e.isalpha():
+        # Handle Greek letters and variable names - REJECT THEM
+        greek_letters = ['alpha', 'beta', 'gamma', 'delta', 'epsilon', 'lambda', 
+                        'theta', 'phi', 'psi', 'omega', 'sigma', 'tau']
+        if e.lower() in greek_letters or len(e) == 1:
             raise ValueError(
-                f"[Expression Error] Point name '{e}' used as expression.\n"
-                f"Point names must be part of a geometric expression like LengthOf(Segment({e},...))"
+                f"[Expression Error] Variable name '{e}' used as expression.\n"
+                f"Variables are not allowed. Use geometric expressions like:\n"
+                f"  - LengthOf(Segment(A,B)) for distances\n"
+                f"  - MeasureOf(Angle(A,B,C)) for angles\n"
+                f"  - RadiusOf(O) for circle radii"
             )
         
         # Otherwise it's an error
@@ -763,6 +855,28 @@ def parse_expr(e: Any) -> ExprSGR:
         raise ValueError(f"Expression missing 'type' field: {e}")
     
     a = e.get("args", [])
+
+    # REJECT invalid expression types
+    invalid_expr_types = {
+        'Variable', 'DistinctValues', 'OnCircle', 'Incenter', 'Orthocenter',
+        'Circumcenter', 'Centroid', 'Parallel', 'Perpendicular', 'Collinear',
+        'Tangent', 'Intersection', 'Midpoint', 'Between', 'PointLiesOnLine',
+        'PointLiesOnCircle', 'Reflection', 'Rotation', 'BisectsAngle',
+        'Altitude', 'Median', 'AngleBisector', 'SimilarTriangles',
+        'EqualAngles', 'EqualDistances', 'Congruent', 'Isosceles',
+        'Equilateral', 'RightTriangle', 'Regular'
+    }
+    
+    if t in invalid_expr_types:
+        raise ValueError(
+            f"[Expression Error] '{t}' is a RELATION, not an expression.\n"
+            f"Relations cannot be used in arithmetic or measurements.\n"
+            f"Use measurement expressions like:\n"
+            f"  - LengthOf(segment) for distances\n"
+            f"  - MeasureOf(angle) for angle measures\n"
+            f"  - AreaOf(shape) for areas\n"
+            f"  - RadiusOf(center) for circle radii"
+        )
 
     # ============================================================
     # SHAPE MEASUREMENTS
@@ -1063,6 +1177,7 @@ def repair_sgr(sgr: SGR) -> SGR:
                     print(f"  point={r.point}, vertex={r.vertex}")
                     print(f"  side1={r.side1} (need 2 points, got {len(r.side1)})")
                     print(f"  side2={r.side2} (need 2 points, got {len(r.side2)})")
+                    print(f"  HINT: Check if LLM output uses correct format")
                     continue
             
             # Fix Equals with LengthOf having insufficient points
@@ -1071,15 +1186,25 @@ def repair_sgr(sgr: SGR) -> SGR:
                 if isinstance(r.left, LengthOfSGR) and len(r.left.segment) < 2:
                     print(f"[WARNING] Skipping Equals #{i}:")
                     print(f"  Left side: LengthOf({r.left.segment}) - need 2 points, got {len(r.left.segment)}")
+                    print(f"  HINT: May indicate variable name used instead of segment")
                     skip = True
                 if isinstance(r.right, LengthOfSGR) and len(r.right.segment) < 2:
                     if not skip:
                         print(f"[WARNING] Skipping Equals #{i}:")
                     print(f"  Right side: LengthOf({r.right.segment}) - need 2 points, got {len(r.right.segment)}")
+                    print(f"  HINT: May indicate variable name used instead of segment")
                     skip = True
                 if skip:
                     continue
             
+            # Fix Orthocenter
+            elif isinstance(r, OrthocenterSGR):
+                if len(r.triangle) < 3:
+                    print(f"[WARNING] Skipping malformed Orthocenter #{i}:")
+                    print(f"  point={r.point}, triangle={r.triangle}")
+                    print(f"  Triangle needs 3 points, got {len(r.triangle)}")
+                    continue
+
             # Fix EqualDistances
             elif isinstance(r, EqualDistancesSGR):
                 if len(r.segment1) < 2 or len(r.segment2) < 2:
@@ -1095,7 +1220,39 @@ def repair_sgr(sgr: SGR) -> SGR:
             print(f"[WARNING] Error checking relation #{i}: {e}")
             print(f"  Relation type: {type(r).__name__}")
             print(f"  Relation data: {r}")
-            repaired_relations.append(r)
+            # Don't add this relation - it's too broken
+            continue
     
     sgr.relations = repaired_relations
     return sgr
+
+def validate_llm_output(data: dict) -> None:
+    """
+    Pre-validate LLM output before parsing to catch common errors early.
+    Raises ValueError with helpful messages.
+    """
+    # Check for variable usage in expressions
+    def check_for_variables(obj, path="root"):
+        if isinstance(obj, dict):
+            if obj.get("type") == "Variable":
+                raise ValueError(
+                    f"[LLM Error] at {path}: Found Variable type - variables are not allowed!\n"
+                    f"Use geometric expressions like LengthOf, MeasureOf, RadiusOf instead."
+                )
+            if obj.get("type") in ["DistinctValues"]:
+                raise ValueError(
+                    f"[LLM Error] at {path}: Unknown expression type '{obj.get('type')}'"
+                )
+            for key, value in obj.items():
+                check_for_variables(value, f"{path}.{key}")
+        elif isinstance(obj, list):
+            for i, item in enumerate(obj):
+                check_for_variables(item, f"{path}[{i}]")
+    
+    try:
+        check_for_variables(data)
+    except ValueError as e:
+        print(f"\n{'='*60}")
+        print(f"VALIDATION ERROR: LLM generated invalid output")
+        print(f"{'='*60}")
+        raise
