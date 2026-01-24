@@ -16,5 +16,5 @@ theorem Problemgeom_0037 (A B C D E F I : Point)
   (h7 : (Excircle D (Triangle A B C) A))
   (h8 : (Excircle E (Triangle A B D) A))
   (h9 : (Excircle F (Triangle A C D) A))
-  : [{'kind': 'Prove', 'expr': "(Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='B')]) E I F))"}] := by
+  : (Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='B')]) E I F)) := by
   sorry

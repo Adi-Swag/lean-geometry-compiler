@@ -21,5 +21,5 @@ theorem Problemgeom_0049 (A B C E F I : Point) (AC AI BC line_perpendicular_to_A
   (h12 : (IntersectAt AI BC F))
   (h13 : (IntersectAt AC line_perpendicular_to_AI_at_I E))
   (h14 : (@inner ℝ Vec _ (I -ᵥ A) (E -ᵥ I) = 0))
-  : [{'kind': 'Prove', 'expr': '((dist 0.0 0.0) = (dist 0.0 0.0))'}] := by
+  : ((dist 0.0 0.0) = (dist 0.0 0.0)) := by
   sorry

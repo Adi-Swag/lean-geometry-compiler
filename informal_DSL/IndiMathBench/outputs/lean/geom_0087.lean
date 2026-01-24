@@ -25,5 +25,5 @@ theorem Problemgeom_0087 (A B C D I P Q : Point)
   (h16 : (IsIncenterOf P (Triangle A B D)))
   (h17 : (IsIncenterOf Q (Triangle A C D)))
   (h18 : (IsIncenterOf I (Triangle A B C)))
-  : [{'kind': 'Prove', 'expr': '(@inner ℝ Vec _ (I -ᵥ A) (Q -ᵥ P) = 0)'}, {'kind': 'Prove', 'expr': '((dist 0.0 0.0) = (dist 0.0 0.0))'}] := by
+  : (@inner ℝ Vec _ (I -ᵥ A) (Q -ᵥ P) = 0) ∧ ((dist 0.0 0.0) = (dist 0.0 0.0)) := by
   sorry

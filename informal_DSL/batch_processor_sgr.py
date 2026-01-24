@@ -4,8 +4,8 @@
 # greaterThanEqualTo and such types: 62,63,69,95 ; 62 done
 # Orthocenter: 24,32,40
 # thereExists: 72
-# Failed: 6,10,12,23,26,36,56,68,84,95 --total 10
-# GoalFail in: 24,32,40,61,69,75,95 -- total 7
+# Failed: 12,23,36,56,68,84 --total 6
+# GoalFail in: 24,26,32,40,61,69,72,75,95 -- total 9
 from pathlib import Path
 import json
 from tqdm import tqdm

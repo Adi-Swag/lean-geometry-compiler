@@ -19,5 +19,5 @@ theorem Problemgeom_0000 (A B C P Q R : Point)
   (h10 : (AngleMeasure (Angle A P B) 120.0))
   (h11 : (AngleMeasure (Angle B Q C) 120.0))
   (h12 : (AngleMeasure (Angle A R C) 120.0))
-  : [{'kind': 'Prove', 'expr': '((dist P Q = dist Q R) ∧ (dist Q R = dist R P))'}] := by
+  : ((dist P Q = dist Q R) ∧ (dist Q R = dist R P)) := by
   sorry

@@ -24,5 +24,5 @@ theorem Problemgeom_0089 (A B C D E F O1 O2 : Point) (circumcircle_O1AO2 line_CB
   (h15 : (IntersectAt line_CB Γ2 E))
   (h16 : (IntersectAt line_DB Γ1 F))
   (h17 : (IsObtuse (Triangle O1 A O2)))
-  : [{'kind': 'Prove', 'expr': "(Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='C')]) D E F))"}] := by
+  : (Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='C')]) D E F)) := by
   sorry

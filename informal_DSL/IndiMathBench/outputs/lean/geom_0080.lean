@@ -19,5 +19,5 @@ theorem Problemgeom_0080 (A B C D H O O1 O2 : Point)
   (h10 : (IsCircumcenterOf O2 (Triangle A C D)))
   (h11 : (IsCircumcenterOf O (Triangle A B C)))
   (h12 : (IsOrthocenterOf H (Triangle O1 O2 D)))
-  : [{'kind': 'Prove', 'expr': '(VecParallel (H -ᵥ O) (C -ᵥ B))'}] := by
+  : (VecParallel (H -ᵥ O) (C -ᵥ B)) := by
   sorry

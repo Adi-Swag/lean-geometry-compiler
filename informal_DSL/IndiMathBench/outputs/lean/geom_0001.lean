@@ -24,5 +24,5 @@ theorem Problemgeom_0001 (A B C D E O : Point) (r_O : ℝ) (A D : Line)
   (h14 : (dist D O = r_O))
   (h15 : (IntersectAt D A E))
   (h16 : (@inner ℝ Vec _ (E -ᵥ B) (D -ᵥ A) = 0))
-  : [{'kind': 'Prove', 'expr': '(VecParallel (O -ᵥ A) (D -ᵥ B))'}] := by
+  : (VecParallel (O -ᵥ A) (D -ᵥ B)) := by
   sorry

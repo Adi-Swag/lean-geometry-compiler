@@ -26,5 +26,5 @@ theorem Problemgeom_0055 (A B C D E F : Point)
   (h17 : ((dist A E) = (dist B D)))
   (h18 : ((dist B F) = (dist C E)))
   (h19 : ((dist C A) = (dist D F)))
-  : [{'kind': 'Prove', 'expr': "(Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='A')]) B C D E F))"}] := by
+  : (Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='A')]) B C D E F)) := by
   sorry

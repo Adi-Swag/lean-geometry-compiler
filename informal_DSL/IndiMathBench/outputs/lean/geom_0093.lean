@@ -25,5 +25,5 @@ theorem Problemgeom_0093 (A B C D O1 O2 P Q X Y : Point) (r_O1 r_O2 : ℝ) (Γ1 
   (h14 : (AngleBisector Y A (Segment C A) (Segment A B)))
   (h15 : (IsCircumcenterOf P (Triangle A C D)))
   (h16 : (IsCircumcenterOf Q (Triangle X A Y)))
-  : [{'kind': 'Prove', 'expr': '(@inner ℝ Vec _ (Q -ᵥ P) (O2 -ᵥ O1) = 0)'}] := by
+  : (@inner ℝ Vec _ (Q -ᵥ P) (O2 -ᵥ O1) = 0) := by
   sorry

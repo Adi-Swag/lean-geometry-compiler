@@ -23,5 +23,5 @@ theorem Problemgeom_0092 (A B C D K O : Point) (r_D r_O : ℝ)
   (h12 : (dist C O = r_O))
   (h13 : (@inner ℝ Vec _ (D -ᵥ C) (B -ᵥ A) = 0))
   (h14 : ((dist A C) = (((dist A D) + (dist D K)) / 2.0)))
-  : [{'kind': 'Prove', 'expr': '(TangentToCircle (Line Excircle A) (Circle D) K)'}] := by
+  : (TangentToCircle (Line Excircle A) (Circle D) K) := by
   sorry

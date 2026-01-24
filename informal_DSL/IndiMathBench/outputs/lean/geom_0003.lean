@@ -15,5 +15,5 @@ theorem Problemgeom_0003 (A B C D : Point)
   (h6 : (AngleBisector D A (Segment A B) (Segment A C)))
   (h7 : ((angle B A C) = (2.0 * (angle A C B))))
   (h8 : ((dist C D) = (dist A B)))
-  : [{'kind': 'Prove', 'expr': '((angle 0.0 0.0 0.0) = 72.0)'}] := by
+  : ((angle 0.0 0.0 0.0) = 72.0) := by
   sorry

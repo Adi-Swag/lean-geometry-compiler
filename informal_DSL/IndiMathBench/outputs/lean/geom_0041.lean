@@ -23,5 +23,5 @@ theorem Problemgeom_0041 (A B C D E O1 O2 : Point) (r_Gamma : ℝ) (Gamma Sigma 
   (h13 : (dist O2 Gamma = r_Gamma))
   (h14 : (CollinearPoints C B D))
   (h15 : (VecParallel (E -ᵥ D) (C -ᵥ A)))
-  : [{'kind': 'Prove', 'expr': '((dist 0.0 0.0) = (dist 0.0 0.0))'}] := by
+  : ((dist 0.0 0.0) = (dist 0.0 0.0)) := by
   sorry

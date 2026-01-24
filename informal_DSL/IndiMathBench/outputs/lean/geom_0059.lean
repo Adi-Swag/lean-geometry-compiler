@@ -23,5 +23,5 @@ theorem Problemgeom_0059 (A B C D K L M N Q : Point)
   (h14 : (EqualDistances (Segment Q B) (Segment Q C)))
   (h15 : (EqualDistances (Segment Q C) (Segment Q D)))
   (h16 : (((dist L K) / (dist L M)) = ((dist C D) / (dist C B))))
-  : [{'kind': 'Prove', 'expr': '((dist A B = dist B C) ∧ (dist B C = dist C A))'}] := by
+  : ((dist A B = dist B C) ∧ (dist B C = dist C A)) := by
   sorry

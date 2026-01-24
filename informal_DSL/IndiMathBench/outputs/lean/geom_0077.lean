@@ -19,5 +19,5 @@ theorem Problemgeom_0077 (K O1 O2 P Q R : Point) (r_O2 : ℝ) (l1 l2 : Line)
   (h9 : (TangentToCircle (Line O2 Q) (Circle O2) Q))
   (h10 : (IntersectAt l1 l2 K))
   (h11 : ((dist K P) = (dist K Q)))
-  : [{'kind': 'Prove', 'expr': '((dist P Q = dist Q R) ∧ (dist Q R = dist R P))'}] := by
+  : ((dist P Q = dist Q R) ∧ (dist Q R = dist R P)) := by
   sorry

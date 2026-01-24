@@ -20,5 +20,5 @@ theorem Problemgeom_0004 (A B C D E F : Point)
   (h11 : (DistanceRatio (Segment C D) (Segment C E) C))
   (h12 : (DistanceRatio (Segment A E) (Segment A F) A))
   (h13 : (DistanceRatio (Segment B F) (Segment B D) B))
-  : [{'kind': 'Prove', 'expr': '(IsAltitude D A (Segment B C))'}, {'kind': 'Prove', 'expr': '(IsAltitude E B (Segment A C))'}, {'kind': 'Prove', 'expr': '(IsAltitude F C (Segment A B))'}] := by
+  : (IsAltitude D A (Segment B C)) ∧ (IsAltitude E B (Segment A C)) ∧ (IsAltitude F C (Segment A B)) := by
   sorry

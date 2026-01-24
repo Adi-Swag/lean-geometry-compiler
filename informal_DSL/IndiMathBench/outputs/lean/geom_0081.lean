@@ -25,5 +25,5 @@ theorem Problemgeom_0081 (A B C D I O P Q : Point) (r_A r_C : ℝ)
   (h14 : (IsIncenterOf Q (Triangle B C D)))
   (h15 : (IsIncenterOf I (Triangle A B C)))
   (h16 : (IsCircumcenterOf O (Triangle P I Q)))
-  : [{'kind': 'Prove', 'expr': '(dist O A = r_A)'}, {'kind': 'Prove', 'expr': '(dist O C = r_C)'}] := by
+  : (dist O A = r_A) ∧ (dist O C = r_C) := by
   sorry

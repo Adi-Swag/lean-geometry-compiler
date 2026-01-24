@@ -23,5 +23,5 @@ theorem Problemgeom_0085 (A B C D E F G : Point) (r_ABE r_GCA r_GDF : ℝ) (AD C
   (h11 : (AffineIndependent ℝ ![A, B, E]))
   (h12 : (IsQuadrilateral A B C D))
   (h13 : (IntersectAt AD CD G))
-  : [{'kind': 'Prove', 'expr': '(r_GCA = (r_GDF + r_ABE))'}] := by
+  : (r_GCA = (r_GDF + r_ABE)) := by
   sorry

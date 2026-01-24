@@ -30,5 +30,5 @@ theorem Problemgeom_0070 (A A1 B B1 C C1 M O P Q : Point) (A1B1 A1C1 AB AC AM BM
   (h21 : (IntersectAt CM Gamma C1))
   (h22 : (IntersectAt A1C1 AB P))
   (h23 : (IntersectAt A1B1 AC Q))
-  : [{'kind': 'Prove', 'expr': '(VecParallel (Q -ᵥ P) (C -ᵥ B))'}] := by
+  : (VecParallel (Q -ᵥ P) (C -ᵥ B)) := by
   sorry

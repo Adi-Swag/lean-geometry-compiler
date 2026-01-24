@@ -19,5 +19,5 @@ theorem Problemgeom_0027 (A B C D O P : Point) (CD Γ Λ : Line)
   (h10 : (IntersectAt Γ Λ A))
   (h11 : (IntersectAt Γ Λ B))
   (h12 : (IntersectAt CD Λ P))
-  : [{'kind': 'Prove', 'expr': '(EqualAngles (Angle A P C) (Angle B P D))'}] := by
+  : (EqualAngles (Angle A P C) (Angle B P D)) := by
   sorry

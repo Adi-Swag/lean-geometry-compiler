@@ -25,5 +25,5 @@ theorem Problemgeom_0002 (A B C E F K L M N O : Point) (r_O : ℝ) (BE CF : Line
   (h15 : (dist L O = r_O))
   (h16 : (@inner ℝ Vec _ (M -ᵥ K) (E -ᵥ B) = 0))
   (h17 : (@inner ℝ Vec _ (N -ᵥ L) (F -ᵥ C) = 0))
-  : [{'kind': 'Prove', 'expr': '(VecParallel (M -ᵥ F) (N -ᵥ E))'}] := by
+  : (VecParallel (M -ᵥ F) (N -ᵥ E)) := by
   sorry

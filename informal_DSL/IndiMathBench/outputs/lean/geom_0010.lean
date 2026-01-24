@@ -19,5 +19,5 @@ theorem Problemgeom_0010 (A B C D : Point) (r_incircle : ℝ)
   (h9 : (@inner ℝ Vec _ (B -ᵥ A) (D -ᵥ A) = 0))
   (h10 : (DistanceRatio (Segment A B) (Segment C D) 3.0))
   (h11 : (CyclicQuadrilateral (Quadrilateral A B C D)))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), r_incircle = val'}] := by
+  : ∃ (val : ℝ), r_incircle = val := by
   sorry

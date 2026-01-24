@@ -21,5 +21,5 @@ theorem Problemgeom_0060 (A B C O ra rb rc : Point) (r_O r_ra r_rb r_rc : ℝ)
   (h8 : (Excircle rc (Triangle A B C) C))
   (h9 : (IsCircumcenterOf O (Triangle A B C)))
   (h10 : (LessThanEqualTo (2.0 * r_O) r_ra))
-  : [{'kind': 'Prove', 'expr': '(GreaterThan (dist 0.0 0.0) (dist 0.0 0.0))'}, {'kind': 'Prove', 'expr': '(GreaterThan (dist 0.0 0.0) (dist 0.0 0.0))'}, {'kind': 'Prove', 'expr': '(GreaterThan (2.0 * r_0.0) r_rb)'}, {'kind': 'Prove', 'expr': '(GreaterThan (2.0 * r_0.0) r_rc)'}] := by
+  : (GreaterThan (dist 0.0 0.0) (dist 0.0 0.0)) ∧ (GreaterThan (dist 0.0 0.0) (dist 0.0 0.0)) ∧ (GreaterThan (2.0 * r_0.0) r_rb) ∧ (GreaterThan (2.0 * r_0.0) r_rc) := by
   sorry

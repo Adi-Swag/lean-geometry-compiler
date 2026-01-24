@@ -23,5 +23,5 @@ theorem Problemgeom_0090 (A B C D E O : Point) (r_O : ℝ)
   (h13 : (@inner ℝ Vec _ (E -ᵥ B) (D -ᵥ A) = 0))
   (h14 : (EqualDistances (Segment C A) (Segment C D)))
   (h15 : (EqualDistances (Segment A E) (Segment C E)))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), (angle B C A) = val'}] := by
+  : ∃ (val : ℝ), (angle B C A) = val := by
   sorry

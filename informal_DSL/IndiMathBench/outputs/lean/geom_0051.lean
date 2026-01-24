@@ -20,5 +20,5 @@ theorem Problemgeom_0051 (A B C K L M P Q : Point) (A LK MK : Line)
   (h11 : (VecParallel (Q -ᵥ A) (K -ᵥ M)))
   (h12 : (IntersectAt A LK P))
   (h13 : (IntersectAt A MK Q))
-  : [{'kind': 'Prove', 'expr': '(CollinearPoints B P Q ∧ ∃ (p : Point), CollinearPoints p P Q ∧ p ≠ B ∧ angle A B p = angle p B A)'}] := by
+  : (CollinearPoints B P Q ∧ ∃ (p : Point), CollinearPoints p P Q ∧ p ≠ B ∧ angle A B p = angle p B A) := by
   sorry

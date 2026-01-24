@@ -23,5 +23,5 @@ theorem Problemgeom_0086 (A B C D E : Point)
   (h14 : (AngleMeasure (Angle B C D) 120.0))
   (h15 : (AngleMeasure (Angle C D E) 120.0))
   (h16 : (AngleMeasure (Angle D E A) 120.0))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), ((dist 0.0 0.0) + (dist 0.0 0.0)) = val'}] := by
+  : ∃ (val : ℝ), ((dist 0.0 0.0) + (dist 0.0 0.0)) = val := by
   sorry

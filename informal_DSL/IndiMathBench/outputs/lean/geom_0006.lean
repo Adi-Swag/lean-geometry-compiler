@@ -8,5 +8,5 @@ open EuclideanGeometry
 
 theorem Problemgeom_0006 (T : Point)
 
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), T = val'}] := by
+  : ∃ (val : ℝ), T = val := by
   sorry

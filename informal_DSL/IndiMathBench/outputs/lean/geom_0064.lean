@@ -18,5 +18,5 @@ theorem Problemgeom_0064 (A A1 B B1 C C1 I I1 : Point) (r_A1 : ℝ)
   (h8 : (Reflection C1 I (Line A B)))
   (h9 : (dist A A1 = r_A1))
   (h10 : (IsIncenterOf I1 (Triangle A1 B1 C1)))
-  : [{'kind': 'Prove', 'expr': "(Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='B1')]) C1 I I1))"}] := by
+  : (Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='B1')]) C1 I I1)) := by
   sorry

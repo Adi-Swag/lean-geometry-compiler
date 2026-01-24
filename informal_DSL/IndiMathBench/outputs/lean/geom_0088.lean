@@ -15,5 +15,5 @@ theorem Problemgeom_0088 (A B C D E G : Point)
   (h6 : (E = midpoint ℝ C A))
   (h7 : (IsCentroidOf G (Triangle A B C)))
   (h8 : (Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='D')]) C E G)))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), (dist A B + dist B C + dist C A) = val'}] := by
+  : ∃ (val : ℝ), (dist A B + dist B C + dist C A) = val := by
   sorry

@@ -21,5 +21,5 @@ theorem Problemgeom_0025 (A Ai Ai+1 Am An B Bi Bi+1 C Ci Ci+1 H : Point)
   (h12 : (Reflection Bi+1 H (Line Ci Ai)))
   (h13 : (Reflection Ci+1 H (Line Ai Bi)))
   (h14 : (EqualAngles (Angle Am B C) (Angle An B C)))
-  : [{'kind': 'Prove', 'expr': '(AngleMeasure (Angle A B C) 60.0)'}] := by
+  : (AngleMeasure (Angle A B C) 60.0) := by
   sorry

@@ -15,5 +15,5 @@ theorem Problemgeom_0015 (A B C D E P : Point) (A D : Line)
   (h6 : (E = midpoint ℝ A C))
   (h7 : (IntersectAt A D P))
   (h8 : (DistanceRatio (Segment D C) (Segment B D) 2.0))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), ((dist B P) / (dist P E)) = val'}, {'kind': 'Find', 'expr': '∃ (val : ℝ), ((dist A P) / (dist P D)) = val'}] := by
+  : ∃ (val : ℝ), ((dist B P) / (dist P E)) = val ∧ ∃ (val : ℝ), ((dist A P) / (dist P D)) = val := by
   sorry

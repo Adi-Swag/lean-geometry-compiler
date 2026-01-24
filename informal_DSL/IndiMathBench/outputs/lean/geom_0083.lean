@@ -17,5 +17,5 @@ theorem Problemgeom_0083 (A B C H I : Point) (r_I : ℝ)
   (h7 : (IsOrthocenterOf H (Triangle A B C)))
   (h8 : (IsIncenterOf I (Triangle A B C)))
   (h9 : (dist H I = r_I))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), ((dist 0.0 0.0) / (dist 0.0 0.0)) = val'}] := by
+  : ∃ (val : ℝ), ((dist 0.0 0.0) / (dist 0.0 0.0)) = val := by
   sorry

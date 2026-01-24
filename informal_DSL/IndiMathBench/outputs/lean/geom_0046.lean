@@ -31,5 +31,5 @@ theorem Problemgeom_0046 (A B C D E F P Q R S : Point)
   (h22 : (IsIncenterOf R (Triangle D E B)))
   (h23 : (IsIncenterOf S (Triangle D A E)))
   (h24 : (CollinearPoints S R Q))
-  : [{'kind': 'Prove', 'expr': "(Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='P')]) Q R D))"}] := by
+  : (Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='P')]) Q R D)) := by
   sorry

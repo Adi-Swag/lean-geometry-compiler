@@ -20,5 +20,5 @@ theorem Problemgeom_0019 (A B C H O P Q : Point) (r_O : ℝ) (AB AC Γ : Line)
   (h10 : (IntersectAt AC Γ Q))
   (h11 : (IsOrthocenterOf H (Triangle A P Q)))
   (h12 : (dist H O = r_O))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), (angle B A C) = val'}] := by
+  : ∃ (val : ℝ), (angle B A C) = val := by
   sorry

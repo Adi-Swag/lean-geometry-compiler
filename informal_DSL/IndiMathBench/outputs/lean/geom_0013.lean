@@ -15,5 +15,5 @@ theorem Problemgeom_0013 (A B C I : Point)
   (h6 : (IsIncenterOf I (Triangle A B C)))
   (h7 : ((dist A B) = (dist A C)))
   (h8 : ((dist B C) = ((dist A B) + (dist A I))))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), (angle B A C) = val'}] := by
+  : ∃ (val : ℝ), (angle B A C) = val := by
   sorry

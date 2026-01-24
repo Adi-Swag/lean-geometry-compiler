@@ -19,5 +19,5 @@ theorem Problemgeom_0082 (A B C D E F G H P : Point) (A C : Line)
   (h10 : (IsAltitude F P (Segment B C)))
   (h11 : (IsAltitude G P (Segment C D)))
   (h12 : (IsAltitude H P (Segment D A)))
-  : [{'kind': 'Prove', 'expr': '(((1.0 / (dist 0.0 0.0)) + (1.0 / (dist 0.0 0.0))) = ((1.0 / (dist 0.0 0.0)) + (1.0 / (dist 0.0 0.0))))'}] := by
+  : (((1.0 / (dist 0.0 0.0)) + (1.0 / (dist 0.0 0.0))) = ((1.0 / (dist 0.0 0.0)) + (1.0 / (dist 0.0 0.0)))) := by
   sorry

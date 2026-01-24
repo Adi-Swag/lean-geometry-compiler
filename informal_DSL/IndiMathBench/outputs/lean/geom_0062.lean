@@ -14,5 +14,5 @@ theorem Problemgeom_0062 (A B C D : Point)
   (h5 : (CyclicQuadrilateral (Quadrilateral A B C D)))
   (h6 : (AngleMeasure (Angle A B C) 120.0))
   (h7 : (AngleMeasure (Angle A B D) 30.0))
-  : [{'kind': 'Prove', 'expr': '(GreaterThanEqualTo (dist 0.0 0.0) ((dist 0.0 0.0) + (dist 0.0 0.0)))'}, {'kind': 'Prove', 'expr': '(((Real.sqrt ((dist 0.0 0.0) + (dist 0.0 0.0))) - (Real.sqrt ((dist 0.0 0.0) + (dist 0.0 0.0)))) = (Real.sqrt ((dist 0.0 0.0) - ((dist 0.0 0.0) + (dist 0.0 0.0)))))'}] := by
+  : (GreaterThanEqualTo (dist 0.0 0.0) ((dist 0.0 0.0) + (dist 0.0 0.0))) ∧ (((Real.sqrt ((dist 0.0 0.0) + (dist 0.0 0.0))) - (Real.sqrt ((dist 0.0 0.0) + (dist 0.0 0.0)))) = (Real.sqrt ((dist 0.0 0.0) - ((dist 0.0 0.0) + (dist 0.0 0.0))))) := by
   sorry

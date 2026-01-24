@@ -20,5 +20,5 @@ theorem Problemgeom_0094 (A B C D E O : Point) (circumcircle_DAC line_CB : Line)
   (h11 : (AngleMeasure (Angle A C D) 25.0))
   (h12 : (EqualDistances (Segment C D) (Segment C B)))
   (h13 : (IntersectAt line_CB circumcircle_DAC E))
-  : [{'kind': 'Prove', 'expr': '((dist 0.0 0.0) = (dist 0.0 0.0))'}] := by
+  : ((dist 0.0 0.0) = (dist 0.0 0.0)) := by
   sorry

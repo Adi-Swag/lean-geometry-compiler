@@ -73,5 +73,5 @@ theorem Problemgeom_0091 (A1 A10 A11 A2 A3 A4 A5 A6 A7 A8 A9 B1 B10 B11 B2 B3 B4
   (h64 : (IsPolygon A9 B9 C9 D9 E9))
   (h65 : (IsPolygon A10 B10 C10 D10 E10))
   (h66 : (IsPolygon A11 B11 C11 D11 E11))
-  : [{'kind': 'Prove', 'expr': "(Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='P1')]) P2 P3 P4))"}] := by
+  : (Concyclic (PredicateNode(name=SymbolNode(name='Point'), args=[SymbolNode(name='P1')]) P2 P3 P4)) := by
   sorry

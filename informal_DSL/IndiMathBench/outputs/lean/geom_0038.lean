@@ -26,5 +26,5 @@ theorem Problemgeom_0038 (A B C D E O X Y : Point)
   (h17 : (VecParallel (E -ᵥ D) (C -ᵥ A)))
   (h18 : (AngleBisector D A (Segment A X) (Segment A B)))
   (h19 : (AngleBisector E B (Segment B Y) (Segment B C)))
-  : [{'kind': 'Prove', 'expr': '(@inner ℝ Vec _ (O -ᵥ B) (C -ᵥ A) = 0)'}] := by
+  : (@inner ℝ Vec _ (O -ᵥ B) (C -ᵥ A) = 0) := by
   sorry

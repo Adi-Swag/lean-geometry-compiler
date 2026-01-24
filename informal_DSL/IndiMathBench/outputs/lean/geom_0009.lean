@@ -12,5 +12,5 @@ theorem Problemgeom_0009 (A B C D : Point)
   (h3 : (D = midpoint ℝ B C))
   (h4 : (AngleMeasure (Angle A D B) 45.0))
   (h5 : (AngleMeasure (Angle A C D) 30.0))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), (angle B A D) = val'}] := by
+  : ∃ (val : ℝ), (angle B A D) = val := by
   sorry

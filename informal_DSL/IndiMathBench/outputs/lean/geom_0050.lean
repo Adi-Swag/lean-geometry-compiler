@@ -26,5 +26,5 @@ theorem Problemgeom_0050 (A B C D E F K : Point) (AB AC circumcircle_ABD circumc
   (h17 : (IntersectAt circumcircle_ACD AB E))
   (h18 : (IntersectAt circumcircle_ABD AC F))
   (h19 : (Reflection K E (Line B C)))
-  : [{'kind': 'Prove', 'expr': '((dist 0.0 0.0) = (dist 0.0 0.0))'}] := by
+  : ((dist 0.0 0.0) = (dist 0.0 0.0)) := by
   sorry

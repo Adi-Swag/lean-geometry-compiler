@@ -22,5 +22,5 @@ theorem Problemgeom_0066 (A B C I O OA OB OC OG : Point) (I O OG OI : Line)
   (h13 : (IsCircumcenterOf O (Triangle A B C)))
   (h14 : (IsIncenterOf I (Triangle A B C)))
   (h15 : (IntersectAt OI OG OG))
-  : [{'kind': 'Prove', 'expr': '(IntersectAt O I OG)'}] := by
+  : (IntersectAt O I OG) := by
   sorry

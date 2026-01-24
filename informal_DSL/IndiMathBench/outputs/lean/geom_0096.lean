@@ -30,5 +30,5 @@ theorem Problemgeom_0096 (A B C E F G O1 O2 : Point) (r_E r_O1 : ℝ) (E F G : L
   (h19 : (VecParallel (G -ᵥ E) (B -ᵥ C)))
   (h20 : (IntersectAt E G F))
   (h21 : (IntersectAt E F G))
-  : [{'kind': 'Prove', 'expr': '(dist O2 E = r_E)'}] := by
+  : (dist O2 E = r_E) := by
   sorry

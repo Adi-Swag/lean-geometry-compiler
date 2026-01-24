@@ -19,5 +19,5 @@ theorem Problemgeom_0030 (A B C D E O : Point) (r_O : ℝ)
   (h9 : (dist D O = r_O))
   (h10 : (dist E O = r_O))
   (h11 : ((dist A D) = (dist C E)))
-  : [{'kind': 'Prove', 'expr': '(VecParallel (E -ᵥ B) (D -ᵥ A))'}] := by
+  : (VecParallel (E -ᵥ B) (D -ᵥ A)) := by
   sorry

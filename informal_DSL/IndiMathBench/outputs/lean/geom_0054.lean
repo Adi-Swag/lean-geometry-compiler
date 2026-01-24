@@ -20,5 +20,5 @@ theorem Problemgeom_0054 (A B C D L O : Point)
   (h11 : (EqualAngles (Angle D A B) (Angle B C A)))
   (h12 : (AngleMeasure (Angle D A C) 15.0))
   (h13 : (IsCircumcenterOf O (Triangle A D C)))
-  : [{'kind': 'Prove', 'expr': '(IsObtuse (Triangle L A D))'}, {'kind': 'Prove', 'expr': '((dist A O = dist O D) ∧ (dist O D = dist D A))'}] := by
+  : (IsObtuse (Triangle L A D)) ∧ ((dist A O = dist O D) ∧ (dist O D = dist D A)) := by
   sorry

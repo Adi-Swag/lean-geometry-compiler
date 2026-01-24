@@ -17,5 +17,5 @@ theorem Problemgeom_0016 (A B C E F X Y : Point)
   (h8 : (AngleBisector F C (Segment C A) (Segment C B)))
   (h9 : (@inner ℝ Vec _ (X -ᵥ A) (F -ᵥ C) = 0))
   (h10 : (@inner ℝ Vec _ (Y -ᵥ A) (E -ᵥ B) = 0))
-  : [{'kind': 'Prove', 'expr': '((dist 0.0 0.0) = ((((dist 0.0 0.0) + (dist 0.0 0.0)) - (dist 0.0 0.0)) / 2.0))'}] := by
+  : ((dist 0.0 0.0) = ((((dist 0.0 0.0) + (dist 0.0 0.0)) - (dist 0.0 0.0)) / 2.0)) := by
   sorry

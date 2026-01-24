@@ -23,5 +23,5 @@ theorem Problemgeom_0048 (A B C G X Y : Point) (BC circumcircle_AGB circumcircle
   (h14 : (IsCentroidOf G (Triangle A B C)))
   (h15 : (IntersectAt circumcircle_AGB BC X))
   (h16 : (IntersectAt circumcircle_AGC BC Y))
-  : [{'kind': 'Prove', 'expr': '(IsCentroidOf G (Triangle A X Y))'}] := by
+  : (IsCentroidOf G (Triangle A X Y)) := by
   sorry

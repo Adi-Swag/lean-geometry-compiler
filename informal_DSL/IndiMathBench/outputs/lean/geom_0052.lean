@@ -15,5 +15,5 @@ theorem Problemgeom_0052 (P Q R S : Point)
   (h6 : (EqualDistances (Segment P Q) (Segment R S)))
   (h7 : ((((Real.sqrt 3.0) + 1.0) * (dist Q R)) = (dist S P)))
   (h8 : (((angle R S P) - (angle S P Q)) = 30.0))
-  : [{'kind': 'Prove', 'expr': '(((angle 0.0 0.0 0.0) - (angle 0.0 0.0 0.0)) = 90.0)'}] := by
+  : (((angle 0.0 0.0 0.0) - (angle 0.0 0.0 0.0)) = 90.0) := by
   sorry

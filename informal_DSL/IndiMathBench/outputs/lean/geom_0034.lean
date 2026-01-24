@@ -23,5 +23,5 @@ theorem Problemgeom_0034 (A B C R X : Point) (r_R : ℝ)
   (h13 : (dist X R = r_R))
   (h14 : (dist A R = r_R))
   (h15 : (dist B R = r_R))
-  : [{'kind': 'Prove', 'expr': '(@inner ℝ Vec _ (X -ᵥ R) (C -ᵥ B) = 0)'}] := by
+  : (@inner ℝ Vec _ (X -ᵥ R) (C -ᵥ B) = 0) := by
   sorry

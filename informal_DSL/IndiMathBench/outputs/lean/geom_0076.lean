@@ -20,5 +20,5 @@ theorem Problemgeom_0076 (A B C D E F L : Point)
   (h11 : (EqualAngles (Angle F D E) (Angle L C B)))
   (h12 : (EqualAngles (Angle D E F) (Angle L A C)))
   (h13 : (EqualAngles (Angle E F D) (Angle L B A)))
-  : [{'kind': 'Prove', 'expr': '((dist A B = dist B C) ∧ (dist B C = dist C A))'}] := by
+  : ((dist A B = dist B C) ∧ (dist B C = dist C A)) := by
   sorry

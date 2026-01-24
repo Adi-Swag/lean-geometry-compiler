@@ -19,5 +19,5 @@ theorem Problemgeom_0045 (A B C D O1 O2 : Point) (r_O1 : ℝ) (Gamma Sigma line1
   (h9 : (IntersectAt line1 Gamma C))
   (h10 : (IntersectAt line2 Sigma D))
   (h11 : ((dist C A) = (dist C D)))
-  : [{'kind': 'Prove', 'expr': '(dist O2 O1 = r_O1)'}] := by
+  : (dist O2 O1 = r_O1) := by
   sorry

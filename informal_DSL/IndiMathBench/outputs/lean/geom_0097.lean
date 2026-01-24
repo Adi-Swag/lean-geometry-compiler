@@ -18,5 +18,5 @@ theorem Problemgeom_0097 (A1 A2 A3 O P P1 P2 P3 : Point) (r_O r_P1 : ℝ)
   (h7 : (Rotation P1 P A1 {type: MeasureOf args: (A1 A2 A3) }))
   (h8 : (Rotation P2 P A2 {type: MeasureOf args: (A2 A3 A1) }))
   (h9 : (Rotation P3 P A3 {type: MeasureOf args: (A3 A1 A2) }))
-  : [{'kind': 'Prove', 'expr': '(LessThanEqualTo r_P1 r_0.0)'}] := by
+  : (LessThanEqualTo r_P1 r_0.0) := by
   sorry

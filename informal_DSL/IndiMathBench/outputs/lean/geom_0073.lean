@@ -23,5 +23,5 @@ theorem Problemgeom_0073 (A B C D E F G H O P : Point) (r_O : ℝ) (A C : Line)
   (h13 : (G = midpoint ℝ C D))
   (h14 : (H = midpoint ℝ D A))
   (h15 : (((dist A C) * (dist B D)) = ((dist E G) * (dist F H))))
-  : [{'kind': 'Prove', 'expr': '(IntersectAt A C P)'}] := by
+  : (IntersectAt A C P) := by
   sorry

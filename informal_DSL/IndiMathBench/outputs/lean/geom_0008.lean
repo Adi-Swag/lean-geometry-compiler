@@ -26,5 +26,5 @@ theorem Problemgeom_0008 (A B C D P Q R S : Point)
   (h17 : (S = midpoint ℝ D A))
   (h18 : ((dist A Q = dist Q R) ∧ (dist Q R = dist R A)))
   (h19 : ((dist C S = dist S P) ∧ (dist S P = dist P C)))
-  : [{'kind': 'Prove', 'expr': '((dist A B = dist B C) ∨ (dist B C = dist C A) ∨ (dist C A = dist A B))'}, {'kind': 'Find', 'expr': '∃ (val : ℝ), (angle A B C) = val'}] := by
+  : ((dist A B = dist B C) ∨ (dist B C = dist C A) ∨ (dist C A = dist A B)) ∧ ∃ (val : ℝ), (angle A B C) = val := by
   sorry

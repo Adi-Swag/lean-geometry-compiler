@@ -1447,6 +1447,14 @@ def generate_lean_code(ast: AstNode, theorem_name: str = "autoformalized") -> st
         names = sorted(shapes.get(ty, set()))
         if names:
             head_params.append(f"({ ' '.join(names) } : {ty})")
+    # goals
+    if len(goals) == 1:
+        # Single goal
+        goal_expr = goals[0]["expr"]
+    else:
+        # Multiple goals - combine with ∧
+        goal_exprs = [g["expr"] for g in goals]
+        goal_expr = " ∧ ".join(goal_exprs)
 
     imports = """
 import GeometryProver.Geometry.Structures
@@ -1463,7 +1471,7 @@ open EuclideanGeometry
 
 theorem {theorem_name} {' '.join(head_params)}
 {chr(10).join(hyp_lines)}
-  : {goals} := by
+  : {goal_expr} := by
   sorry
 """.strip("\n")
 

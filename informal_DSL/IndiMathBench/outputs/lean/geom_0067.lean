@@ -17,5 +17,5 @@ theorem Problemgeom_0067 (A B C M N P : Point)
   (h8 : (M = midpoint ℝ A C))
   (h9 : (N = midpoint ℝ B C))
   (h10 : ((dist B P) = (2.0 * (dist P M))))
-  : [{'kind': 'Prove', 'expr': '(CollinearPoints A P N)'}] := by
+  : (CollinearPoints A P N) := by
   sorry

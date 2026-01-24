@@ -19,5 +19,5 @@ theorem Problemgeom_0031 (A B C D E P S : Point) (AP BC : Line)
   (h10 : (DistanceRatio (Segment A E) (Segment E C) 4.0))
   (h11 : (D = midpoint ℝ E P))
   (h12 : (IntersectAt AP BC S))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), ((dist 0.0 0.0) / (dist 0.0 0.0)) = val'}] := by
+  : ∃ (val : ℝ), ((dist 0.0 0.0) / (dist 0.0 0.0)) = val := by
   sorry

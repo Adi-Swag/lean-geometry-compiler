@@ -17,5 +17,5 @@ theorem Problemgeom_0014 (A B C E F M : Point) (BC EF : Line)
   (h8 : (AngleBisector E B (Segment B A) (Segment B C)))
   (h9 : (AngleBisector F C (Segment C A) (Segment C B)))
   (h10 : (Reflection M A (Line E F)))
-  : [{'kind': 'Prove', 'expr': '(IntersectAt BC EF M)'}] := by
+  : (IntersectAt BC EF M) := by
   sorry

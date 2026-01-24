@@ -17,5 +17,5 @@ theorem Problemgeom_0021 (A B C D H K : Point) (r_K : ℝ)
   (h7 : (IsAltitude D A (Segment B C)))
   (h8 : (IsOrthocenterOf H (Triangle A B C)))
   (h9 : (TangentToCircle (Line B H) (Circle K) H))
-  : [{'kind': 'Prove', 'expr': '(CollinearPoints C D K ∧ ∃ (p : Point), CollinearPoints p D K ∧ p ≠ C ∧ angle A C p = angle p C C)'}] := by
+  : (CollinearPoints C D K ∧ ∃ (p : Point), CollinearPoints p D K ∧ p ≠ C ∧ angle A C p = angle p C C) := by
   sorry

@@ -19,5 +19,5 @@ theorem Problemgeom_0033 (A B C M P Q : Point)
   (h10 : (((dist A P) + (dist P C)) = (dist A B)))
   (h11 : (M = midpoint ℝ B C))
   (h12 : (@inner ℝ Vec _ (Q -ᵥ C) (M -ᵥ A) = 0))
-  : [{'kind': 'Prove', 'expr': '((dist 0.0 0.0) = (2.0 * (dist 0.0 0.0)))'}] := by
+  : ((dist 0.0 0.0) = (2.0 * (dist 0.0 0.0))) := by
   sorry

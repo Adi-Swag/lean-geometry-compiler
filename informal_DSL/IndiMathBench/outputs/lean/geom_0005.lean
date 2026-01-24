@@ -17,5 +17,5 @@ theorem Problemgeom_0005 (A B C M N : Point)
   (h8 : ((dist A B = dist B C) ∨ (dist B C = dist C A) ∨ (dist C A = dist A B)))
   (h9 : (AngleMeasure (Angle C A B) 90.0))
   (h10 : ((((dist B M) ^ 2.0) + ((dist C N) ^ 2.0)) = ((dist M N) ^ 2.0)))
-  : [{'kind': 'Prove', 'expr': '(AngleMeasure (Angle M A N) 45.0)'}] := by
+  : (AngleMeasure (Angle M A N) 45.0) := by
   sorry

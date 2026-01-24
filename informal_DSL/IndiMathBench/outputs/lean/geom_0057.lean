@@ -22,5 +22,5 @@ theorem Problemgeom_0057 (A B C D E F K P : Point) (AB AC AP BP CP EF : Line)
   (h13 : (IntersectAt CP AB F))
   (h14 : (IntersectAt AP EF D))
   (h15 : (@inner ℝ Vec _ (K -ᵥ D) (C -ᵥ B) = 0))
-  : [{'kind': 'Prove', 'expr': '(AngleBisector D K (Segment E K) (Segment K F))'}] := by
+  : (AngleBisector D K (Segment E K) (Segment K F)) := by
   sorry

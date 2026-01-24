@@ -24,5 +24,5 @@ theorem Problemgeom_0078 (A B C D E F G H O : Point)
   (h15 : (F = midpoint ℝ A B))
   (h16 : ((Real.sqrt ((((dist D C) + (dist C O) + (dist O D)) / 2) * ((((dist D C) + (dist C O) + (dist O D)) / 2) - (dist D C)) * ((((dist D C) + (dist C O) + (dist O D)) / 2) - (dist C O)) * ((((dist D C) + (dist C O) + (dist O D)) / 2) - (dist O D)))) = (Real.sqrt ((((dist E A) + (dist A H) + (dist H E)) / 2) * ((((dist E A) + (dist A H) + (dist H E)) / 2) - (dist E A)) * ((((dist E A) + (dist A H) + (dist H E)) / 2) - (dist A H)) * ((((dist E A) + (dist A H) + (dist H E)) / 2) - (dist H E))))))
   (h17 : ((Real.sqrt ((((dist E A) + (dist A H) + (dist H E)) / 2) * ((((dist E A) + (dist A H) + (dist H E)) / 2) - (dist E A)) * ((((dist E A) + (dist A H) + (dist H E)) / 2) - (dist A H)) * ((((dist E A) + (dist A H) + (dist H E)) / 2) - (dist H E)))) = (Real.sqrt ((((dist F B) + (dist B G) + (dist G F)) / 2) * ((((dist F B) + (dist B G) + (dist G F)) / 2) - (dist F B)) * ((((dist F B) + (dist B G) + (dist G F)) / 2) - (dist B G)) * ((((dist F B) + (dist B G) + (dist G F)) / 2) - (dist G F))))))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), (angle A C B) = val'}] := by
+  : ∃ (val : ℝ), (angle A C B) = val := by
   sorry

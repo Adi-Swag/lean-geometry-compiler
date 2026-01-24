@@ -31,5 +31,5 @@ theorem Problemgeom_0043 (A B C I O P Q R : Point) (r_O : ℝ) (AA AC BB BC : Li
   (h21 : (IntersectAt BB AC R))
   (h22 : (EqualDistances (Segment I P) (Segment I R)))
   (h23 : (EqualDistances (Segment Q P) (Segment Q R)))
-  : [{'kind': 'Prove', 'expr': '((dist A B = dist B C) ∧ (dist B C = dist C A))'}] := by
+  : ((dist A B = dist B C) ∧ (dist B C = dist C A)) := by
   sorry

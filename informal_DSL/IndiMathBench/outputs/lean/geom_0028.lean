@@ -23,5 +23,5 @@ theorem Problemgeom_0028 (A B C H P Q R : Point) (circumcircle_ABP circumcircle_
   (h14 : (Reflection P A (Line B C)))
   (h15 : (IntersectAt circumcircle_ABP line_BH Q))
   (h16 : (IntersectAt circumcircle_ACP line_CH R))
-  : [{'kind': 'Prove', 'expr': '(IsIncenterOf H (Triangle P Q R))'}] := by
+  : (IsIncenterOf H (Triangle P Q R)) := by
   sorry

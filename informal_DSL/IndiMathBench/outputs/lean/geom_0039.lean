@@ -26,5 +26,5 @@ theorem Problemgeom_0039 (A B C D E F I1 I2 I3 P : Point) (I1D I2E : Line)
   (h17 : (IsIncenterOf I1 (Triangle A F E)))
   (h18 : (IsIncenterOf I2 (Triangle B D F)))
   (h19 : (IsIncenterOf I3 (Triangle C E D)))
-  : [{'kind': 'Prove', 'expr': '(IntersectAt I1D I2E P)'}] := by
+  : (IntersectAt I1D I2E P) := by
   sorry

@@ -21,5 +21,5 @@ theorem Problemgeom_0047 (A B C D I : Point) (AI CB : Line)
   (h12 : (@inner ℝ Vec _ (I -ᵥ A) (D -ᵥ I) = 0))
   (h13 : (IntersectAt AI CB D))
   (h14 : (@inner ℝ Vec _ (I -ᵥ C) (D -ᵥ A) = 0))
-  : [{'kind': 'Prove', 'expr': '(@inner ℝ Vec _ (I -ᵥ C) (D -ᵥ A) = 0)'}, {'kind': 'Prove', 'expr': '((dist 0.0 0.0) = (Real.sqrt ((dist 0.0 0.0) * ((dist 0.0 0.0) - (dist 0.0 0.0)))))'}] := by
+  : (@inner ℝ Vec _ (I -ᵥ C) (D -ᵥ A) = 0) ∧ ((dist 0.0 0.0) = (Real.sqrt ((dist 0.0 0.0) * ((dist 0.0 0.0) - (dist 0.0 0.0))))) := by
   sorry

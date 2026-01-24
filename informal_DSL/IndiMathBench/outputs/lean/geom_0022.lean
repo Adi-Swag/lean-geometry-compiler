@@ -19,5 +19,5 @@ theorem Problemgeom_0022 (A B C D E : Point)
   (h10 : (DistanceRatio (Segment B D) (Segment D E) 1.0))
   (h11 : (DistanceRatio (Segment D E) (Segment E C) 2.0))
   (h12 : (DistanceRatio (Segment B D) (Segment E C) SqrtOf))
-  : [{'kind': 'Prove', 'expr': '(AngleMeasure (Angle D A E) 45.0)'}] := by
+  : (AngleMeasure (Angle D A E) 45.0) := by
   sorry

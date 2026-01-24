@@ -12,5 +12,5 @@ theorem Problemgeom_0065 (P1 P2 P3 : Point)
   (h3 : (P3 ≠ P1))
   (h4 : (AffineIndependent ℝ ![P1, P2, P3]))
   (h5 : ((angle P1 P2 P3 = Real.pi / 2) ∨ (angle P2 P3 P1 = Real.pi / 2) ∨ (angle P3 P1 P2 = Real.pi / 2)))
-  : [{'kind': 'Prove', 'expr': '((angle P1 P2 P3 = Real.pi / 2) ∨ (angle P2 P3 P1 = Real.pi / 2) ∨ (angle P3 P1 P2 = Real.pi / 2))'}] := by
+  : ((angle P1 P2 P3 = Real.pi / 2) ∨ (angle P2 P3 P1 = Real.pi / 2) ∨ (angle P3 P1 P2 = Real.pi / 2)) := by
   sorry

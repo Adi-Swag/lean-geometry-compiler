@@ -18,5 +18,5 @@ theorem Problemgeom_0044 (A B C D I O : Point) (r_A : ℝ)
   (h8 : (Reflection B B (Line A D)))
   (h9 : (IsIncenterOf I (Triangle A B C)))
   (h10 : (IsCircumcenterOf O (Triangle C B I)))
-  : [{'kind': 'Prove', 'expr': '(dist O A = r_A)'}] := by
+  : (dist O A = r_A) := by
   sorry

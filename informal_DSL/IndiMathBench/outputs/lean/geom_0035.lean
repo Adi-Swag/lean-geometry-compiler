@@ -19,5 +19,5 @@ theorem Problemgeom_0035 (A B C D O X : Point) (r_Γ : ℝ) (A Γ : Line)
   (h9 : (dist D Γ = r_Γ))
   (h10 : (IntersectAt Γ A D))
   (h11 : (IsCircumcenterOf O (Triangle B D X)))
-  : [{'kind': 'Prove', 'expr': '(dist O Γ = r_Γ)'}] := by
+  : (dist O Γ = r_Γ) := by
   sorry

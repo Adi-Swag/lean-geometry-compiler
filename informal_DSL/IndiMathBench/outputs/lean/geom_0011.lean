@@ -30,5 +30,5 @@ theorem Problemgeom_0011 (A B C D M O : Point) (r_O : ℝ) (A C : Line)
   (h20 : ((dist O M) = 2.0))
   (h21 : (AngleMeasure (Angle A M B) 60.0))
   (h22 : (AngleMeasure (Angle A M D) 60.0))
-  : [{'kind': 'Find', 'expr': '∃ (val : ℝ), ((dist 0.0 0.0) - (dist 0.0 0.0)) = val'}] := by
+  : ∃ (val : ℝ), ((dist 0.0 0.0) - (dist 0.0 0.0)) = val := by
   sorry
