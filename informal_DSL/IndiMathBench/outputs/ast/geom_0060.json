@@ -1,0 +1,553 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "O"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C"
+        },
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Circle"
+      },
+      "args": [
+        {
+          "name": "O"
+        },
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Excircle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "ra"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Triangle"
+          },
+          "args": [
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            },
+            {
+              "name": "A"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Excircle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "rb"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Triangle"
+          },
+          "args": [
+            {
+              "name": "C"
+            },
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Excircle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "rc"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Triangle"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsCircumcenterOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "O"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Triangle"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "LessThanEqualTo"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Mul"
+          },
+          "args": [
+            {
+              "value": 2
+            },
+            {
+              "name": {
+                "name": "RadiusOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Circle"
+                  },
+                  "args": [
+                    {
+                      "name": "O"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "RadiusOf"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Circle"
+              },
+              "args": [
+                {
+                  "name": "ra"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "GreaterThan"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "GreaterThan"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "GreaterThan"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Mul"
+              },
+              "args": [
+                {
+                  "value": 2
+                },
+                {
+                  "name": {
+                    "name": "RadiusOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Circle"
+                      },
+                      "args": [
+                        {
+                          "value": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "RadiusOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Circle"
+                  },
+                  "args": [
+                    {
+                      "name": "rb"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "GreaterThan"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Mul"
+              },
+              "args": [
+                {
+                  "value": 2
+                },
+                {
+                  "name": {
+                    "name": "RadiusOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Circle"
+                      },
+                      "args": [
+                        {
+                          "value": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "RadiusOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Circle"
+                  },
+                  "args": [
+                    {
+                      "name": "rc"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

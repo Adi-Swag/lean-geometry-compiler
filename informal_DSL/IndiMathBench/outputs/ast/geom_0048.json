@@ -1,0 +1,368 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "X"
+        },
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "G"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "G"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "X"
+        },
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Circle"
+      },
+      "args": [
+        {
+          "name": "O1"
+        },
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Circle"
+      },
+      "args": [
+        {
+          "name": "O2"
+        },
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsCentroidOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "G"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Triangle"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IntersectAt"
+      },
+      "args": [
+        {
+          "name": "circumcircle_AGB"
+        },
+        {
+          "name": "BC"
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "X"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IntersectAt"
+      },
+      "args": [
+        {
+          "name": "circumcircle_AGC"
+        },
+        {
+          "name": "BC"
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "Y"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "IsCentroidOf"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Point"
+              },
+              "args": [
+                {
+                  "name": "G"
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Triangle"
+              },
+              "args": [
+                {
+                  "name": "A"
+                },
+                {
+                  "name": "X"
+                },
+                {
+                  "name": "Y"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

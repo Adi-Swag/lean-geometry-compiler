@@ -1,0 +1,342 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "K"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "O1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "O2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "O1"
+        },
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "O2"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "K"
+        },
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "K"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "Q"
+        },
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Circle"
+      },
+      "args": [
+        {
+          "name": "O1"
+        },
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Circle"
+      },
+      "args": [
+        {
+          "name": "O2"
+        },
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "TangentToCircle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "O1"
+            },
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Circle"
+          },
+          "args": [
+            {
+              "name": "O2"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "TangentToCircle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "O2"
+            },
+            {
+              "name": "Q"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Circle"
+          },
+          "args": [
+            {
+              "name": "O2"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "Q"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IntersectAt"
+      },
+      "args": [
+        {
+          "name": "l1"
+        },
+        {
+          "name": "l2"
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "K"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Equals"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "LengthOf"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "K"
+                },
+                {
+                  "name": "P"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "LengthOf"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "K"
+                },
+                {
+                  "name": "Q"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Equilateral"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Triangle"
+              },
+              "args": [
+                {
+                  "name": "P"
+                },
+                {
+                  "name": "Q"
+                },
+                {
+                  "name": "R"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

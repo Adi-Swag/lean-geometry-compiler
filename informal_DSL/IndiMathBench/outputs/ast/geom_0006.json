@@ -1,0 +1,18 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Find"
+      },
+      "args": [
+        {
+          "name": "T"
+        }
+      ]
+    }
+  ]
+}

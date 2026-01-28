@@ -1,0 +1,108 @@
+{
+  "points": [
+    "S",
+    "R",
+    "P",
+    "Q"
+  ],
+  "lines": [
+    {
+      "name": "PR",
+      "points": [
+        "P",
+        "R"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "S",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "P"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "S",
+      "B": "R",
+      "C": "P"
+    },
+    {
+      "A": "Q",
+      "B": "R",
+      "C": "P"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleBisector",
+      "point": "P",
+      "vertex": "R",
+      "side1": [
+        "Q",
+        "R"
+      ],
+      "side2": [
+        "R",
+        "S"
+      ]
+    },
+    {
+      "type": "AngleBisector",
+      "point": "P",
+      "vertex": "P",
+      "side1": [
+        "Q",
+        "P"
+      ],
+      "side2": [
+        "P",
+        "S"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "SimilarTriangles",
+        "args": [
+          "P",
+          "R",
+          "S",
+          "P",
+          "R",
+          "Q"
+        ]
+      }
+    }
+  ]
+}

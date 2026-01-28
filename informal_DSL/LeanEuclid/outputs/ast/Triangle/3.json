@@ -1,0 +1,294 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "Q"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "P"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "AngleBisector"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "S"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "Q"
+            },
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "R"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "EqualDistances"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "Q"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "R"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "EqualDistances"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "Q"
+                },
+                {
+                  "name": "S"
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "R"
+                },
+                {
+                  "name": "S"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

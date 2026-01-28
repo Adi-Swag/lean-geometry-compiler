@@ -1,0 +1,1573 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A1"
+        },
+        {
+          "name": "B1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B1"
+        },
+        {
+          "name": "C1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C1"
+        },
+        {
+          "name": "D1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D1"
+        },
+        {
+          "name": "E1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E1"
+        },
+        {
+          "name": "A1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A2"
+        },
+        {
+          "name": "B2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B2"
+        },
+        {
+          "name": "C2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C2"
+        },
+        {
+          "name": "D2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D2"
+        },
+        {
+          "name": "E2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E2"
+        },
+        {
+          "name": "A2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A3"
+        },
+        {
+          "name": "B3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B3"
+        },
+        {
+          "name": "C3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C3"
+        },
+        {
+          "name": "D3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D3"
+        },
+        {
+          "name": "E3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E3"
+        },
+        {
+          "name": "A3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A4"
+        },
+        {
+          "name": "B4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B4"
+        },
+        {
+          "name": "C4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C4"
+        },
+        {
+          "name": "D4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D4"
+        },
+        {
+          "name": "E4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E4"
+        },
+        {
+          "name": "A4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A5"
+        },
+        {
+          "name": "B5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B5"
+        },
+        {
+          "name": "C5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C5"
+        },
+        {
+          "name": "D5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D5"
+        },
+        {
+          "name": "E5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E5"
+        },
+        {
+          "name": "A5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A6"
+        },
+        {
+          "name": "B6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B6"
+        },
+        {
+          "name": "C6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C6"
+        },
+        {
+          "name": "D6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D6"
+        },
+        {
+          "name": "E6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E6"
+        },
+        {
+          "name": "A6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A7"
+        },
+        {
+          "name": "B7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B7"
+        },
+        {
+          "name": "C7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C7"
+        },
+        {
+          "name": "D7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D7"
+        },
+        {
+          "name": "E7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E7"
+        },
+        {
+          "name": "A7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A8"
+        },
+        {
+          "name": "B8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B8"
+        },
+        {
+          "name": "C8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C8"
+        },
+        {
+          "name": "D8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D8"
+        },
+        {
+          "name": "E8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E8"
+        },
+        {
+          "name": "A8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A9"
+        },
+        {
+          "name": "B9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B9"
+        },
+        {
+          "name": "C9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C9"
+        },
+        {
+          "name": "D9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D9"
+        },
+        {
+          "name": "E9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E9"
+        },
+        {
+          "name": "A9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A10"
+        },
+        {
+          "name": "B10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B10"
+        },
+        {
+          "name": "C10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C10"
+        },
+        {
+          "name": "D10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D10"
+        },
+        {
+          "name": "E10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E10"
+        },
+        {
+          "name": "A10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A11"
+        },
+        {
+          "name": "B11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B11"
+        },
+        {
+          "name": "C11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C11"
+        },
+        {
+          "name": "D11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D11"
+        },
+        {
+          "name": "E11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "E11"
+        },
+        {
+          "name": "A11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A1"
+        },
+        {
+          "name": "B1"
+        },
+        {
+          "name": "C1"
+        },
+        {
+          "name": "D1"
+        },
+        {
+          "name": "E1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A2"
+        },
+        {
+          "name": "B2"
+        },
+        {
+          "name": "C2"
+        },
+        {
+          "name": "D2"
+        },
+        {
+          "name": "E2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A3"
+        },
+        {
+          "name": "B3"
+        },
+        {
+          "name": "C3"
+        },
+        {
+          "name": "D3"
+        },
+        {
+          "name": "E3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A4"
+        },
+        {
+          "name": "B4"
+        },
+        {
+          "name": "C4"
+        },
+        {
+          "name": "D4"
+        },
+        {
+          "name": "E4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A5"
+        },
+        {
+          "name": "B5"
+        },
+        {
+          "name": "C5"
+        },
+        {
+          "name": "D5"
+        },
+        {
+          "name": "E5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A6"
+        },
+        {
+          "name": "B6"
+        },
+        {
+          "name": "C6"
+        },
+        {
+          "name": "D6"
+        },
+        {
+          "name": "E6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A7"
+        },
+        {
+          "name": "B7"
+        },
+        {
+          "name": "C7"
+        },
+        {
+          "name": "D7"
+        },
+        {
+          "name": "E7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A8"
+        },
+        {
+          "name": "B8"
+        },
+        {
+          "name": "C8"
+        },
+        {
+          "name": "D8"
+        },
+        {
+          "name": "E8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A9"
+        },
+        {
+          "name": "B9"
+        },
+        {
+          "name": "C9"
+        },
+        {
+          "name": "D9"
+        },
+        {
+          "name": "E9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A10"
+        },
+        {
+          "name": "B10"
+        },
+        {
+          "name": "C10"
+        },
+        {
+          "name": "D10"
+        },
+        {
+          "name": "E10"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A11"
+        },
+        {
+          "name": "B11"
+        },
+        {
+          "name": "C11"
+        },
+        {
+          "name": "D11"
+        },
+        {
+          "name": "E11"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Concyclic"
+          },
+          "args": [
+            {
+              "name": {
+                "name": {
+                  "name": "Point"
+                },
+                "args": [
+                  {
+                    "name": "P1"
+                  }
+                ]
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Point"
+                  },
+                  "args": [
+                    {
+                      "name": "P2"
+                    }
+                  ]
+                },
+                {
+                  "name": {
+                    "name": "Point"
+                  },
+                  "args": [
+                    {
+                      "name": "P3"
+                    }
+                  ]
+                },
+                {
+                  "name": {
+                    "name": "Point"
+                  },
+                  "args": [
+                    {
+                      "name": "P4"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

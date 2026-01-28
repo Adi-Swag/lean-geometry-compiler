@@ -1,0 +1,623 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "E"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "D"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "E"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Isosceles"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Triangle"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsMidpointOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "D"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Perpendicular"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "E"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "DistanceRatio"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "D"
+            }
+          ]
+        },
+        {
+          "name": "m"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "DistanceRatio"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "B"
+            },
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "E"
+            }
+          ]
+        },
+        {
+          "name": "m"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "DistanceRatio"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "B"
+            },
+            {
+              "name": "D"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "D"
+            }
+          ]
+        },
+        {
+          "name": "m"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Equals"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Pow"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Add"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Mul"
+                      },
+                      "args": [
+                        {
+                          "name": {
+                            "name": "Pow"
+                          },
+                          "args": [
+                            {
+                              "value": 0
+                            },
+                            {
+                              "value": 2
+                            }
+                          ]
+                        },
+                        {
+                          "name": {
+                            "name": "Add"
+                          },
+                          "args": [
+                            {
+                              "value": 1
+                            },
+                            {
+                              "name": {
+                                "name": "MeasureOf"
+                              },
+                              "args": [
+                                {
+                                  "name": {
+                                    "name": "Angle"
+                                  },
+                                  "args": [
+                                    {
+                                      "value": 0
+                                    },
+                                    {
+                                      "value": 0
+                                    },
+                                    {
+                                      "value": 0
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": {
+                        "name": "Sub"
+                      },
+                      "args": [
+                        {
+                          "name": {
+                            "name": "Sub"
+                          },
+                          "args": [
+                            {
+                              "name": {
+                                "name": "Pow"
+                              },
+                              "args": [
+                                {
+                                  "name": {
+                                    "name": "MeasureOf"
+                                  },
+                                  "args": [
+                                    {
+                                      "name": {
+                                        "name": "Angle"
+                                      },
+                                      "args": [
+                                        {
+                                          "value": 0
+                                        },
+                                        {
+                                          "value": 0
+                                        },
+                                        {
+                                          "value": 0
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "value": 3
+                                }
+                              ]
+                            },
+                            {
+                              "name": {
+                                "name": "Pow"
+                              },
+                              "args": [
+                                {
+                                  "name": {
+                                    "name": "MeasureOf"
+                                  },
+                                  "args": [
+                                    {
+                                      "name": {
+                                        "name": "Angle"
+                                      },
+                                      "args": [
+                                        {
+                                          "value": 0
+                                        },
+                                        {
+                                          "value": 0
+                                        },
+                                        {
+                                          "value": 0
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "value": 2
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "value": 2
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "value": 2
+                }
+              ]
+            },
+            {
+              "value": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "GreaterThanEqualTo"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "MeasureOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Angle"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Equals"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "MeasureOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Angle"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": 2
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Equilateral"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Triangle"
+              },
+              "args": [
+                {
+                  "name": "A"
+                },
+                {
+                  "name": "B"
+                },
+                {
+                  "name": "C"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

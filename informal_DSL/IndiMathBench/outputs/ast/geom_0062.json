@@ -1,0 +1,475 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C"
+        },
+        {
+          "name": "D"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Quadrilateral"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        },
+        {
+          "name": "D"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "CyclicQuadrilateral"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Quadrilateral"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            },
+            {
+              "name": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "AngleMeasure"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        },
+        {
+          "value": 120
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "AngleMeasure"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            },
+            {
+              "name": "D"
+            }
+          ]
+        },
+        {
+          "value": 30
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "GreaterThanEqualTo"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Add"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "LengthOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Segment"
+                      },
+                      "args": [
+                        {
+                          "value": 0
+                        },
+                        {
+                          "value": 0
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": {
+                    "name": "LengthOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Segment"
+                      },
+                      "args": [
+                        {
+                          "value": 0
+                        },
+                        {
+                          "value": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Equals"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Sub"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "SqrtOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Add"
+                      },
+                      "args": [
+                        {
+                          "name": {
+                            "name": "LengthOf"
+                          },
+                          "args": [
+                            {
+                              "name": {
+                                "name": "Segment"
+                              },
+                              "args": [
+                                {
+                                  "value": 0
+                                },
+                                {
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": {
+                            "name": "LengthOf"
+                          },
+                          "args": [
+                            {
+                              "name": {
+                                "name": "Segment"
+                              },
+                              "args": [
+                                {
+                                  "value": 0
+                                },
+                                {
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "name": {
+                    "name": "SqrtOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Add"
+                      },
+                      "args": [
+                        {
+                          "name": {
+                            "name": "LengthOf"
+                          },
+                          "args": [
+                            {
+                              "name": {
+                                "name": "Segment"
+                              },
+                              "args": [
+                                {
+                                  "value": 0
+                                },
+                                {
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": {
+                            "name": "LengthOf"
+                          },
+                          "args": [
+                            {
+                              "name": {
+                                "name": "Segment"
+                              },
+                              "args": [
+                                {
+                                  "value": 0
+                                },
+                                {
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "SqrtOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Sub"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "LengthOf"
+                      },
+                      "args": [
+                        {
+                          "name": {
+                            "name": "Segment"
+                          },
+                          "args": [
+                            {
+                              "value": 0
+                            },
+                            {
+                              "value": 0
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "name": {
+                        "name": "Add"
+                      },
+                      "args": [
+                        {
+                          "name": {
+                            "name": "LengthOf"
+                          },
+                          "args": [
+                            {
+                              "name": {
+                                "name": "Segment"
+                              },
+                              "args": [
+                                {
+                                  "value": 0
+                                },
+                                {
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "name": {
+                            "name": "LengthOf"
+                          },
+                          "args": [
+                            {
+                              "name": {
+                                "name": "Segment"
+                              },
+                              "args": [
+                                {
+                                  "value": 0
+                                },
+                                {
+                                  "value": 0
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "points": [
+    "V",
+    "X",
+    "R",
+    "Y",
+    "W",
+    "S",
+    "U",
+    "T"
+  ],
+  "lines": [
+    {
+      "name": "VX",
+      "points": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "name": "RY",
+      "points": [
+        "R",
+        "Y"
+      ]
+    },
+    {
+      "name": "SU",
+      "points": [
+        "S",
+        "U"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "U"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "W",
+      "objects": [
+        "VX",
+        "RY"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "T",
+      "objects": [
+        "SU",
+        "RY"
+      ]
+    },
+    {
+      "type": "Collinear",
+      "points": [
+        "Y",
+        "W",
+        "T",
+        "R"
+      ]
+    },
+    {
+      "type": "SupplementaryAngles",
+      "angle1": [
+        "S",
+        "T",
+        "W"
+      ],
+      "angle2": [
+        "T",
+        "W",
+        "V"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Parallel",
+        "args": [
+          "V",
+          "X",
+          "S",
+          "U"
+        ]
+      }
+    }
+  ]
+}

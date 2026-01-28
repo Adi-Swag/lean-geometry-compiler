@@ -1,0 +1,423 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "M"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "GreaterThan"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "LengthOf"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "A"
+                },
+                {
+                  "name": "B"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "LengthOf"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "A"
+                },
+                {
+                  "name": "C"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Equals"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Add"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "name": "A"
+                    },
+                    {
+                      "name": "P"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "name": "P"
+                    },
+                    {
+                      "name": "C"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "LengthOf"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "A"
+                },
+                {
+                  "name": "B"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsMidpointOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "M"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Perpendicular"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "C"
+            },
+            {
+              "name": "Q"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "M"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Equals"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "LengthOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Segment"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    },
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Mul"
+              },
+              "args": [
+                {
+                  "value": 2
+                },
+                {
+                  "name": {
+                    "name": "LengthOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Segment"
+                      },
+                      "args": [
+                        {
+                          "value": 0
+                        },
+                        {
+                          "value": 0
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

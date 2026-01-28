@@ -1,0 +1,495 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "D"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C"
+        },
+        {
+          "name": "D"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "D"
+        },
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "Q"
+        },
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "S"
+        },
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "Q"
+        },
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "C"
+        },
+        {
+          "name": "S"
+        },
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Quadrilateral"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        },
+        {
+          "name": "D"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsMidpointOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "B"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsMidpointOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "Q"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "B"
+            },
+            {
+              "name": "C"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsMidpointOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "R"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "C"
+            },
+            {
+              "name": "D"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsMidpointOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "S"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "D"
+            },
+            {
+              "name": "A"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Equilateral"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Triangle"
+          },
+          "args": [
+            {
+              "name": "A"
+            },
+            {
+              "name": "Q"
+            },
+            {
+              "name": "R"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Equilateral"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Triangle"
+          },
+          "args": [
+            {
+              "name": "C"
+            },
+            {
+              "name": "S"
+            },
+            {
+              "name": "P"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Isosceles"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Triangle"
+              },
+              "args": [
+                {
+                  "name": "A"
+                },
+                {
+                  "name": "B"
+                },
+                {
+                  "name": "C"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Find"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "MeasureOf"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Angle"
+              },
+              "args": [
+                {
+                  "name": "A"
+                },
+                {
+                  "name": "B"
+                },
+                {
+                  "name": "C"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

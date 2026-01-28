@@ -1,0 +1,96 @@
+{
+  "points": [
+    "T",
+    "U",
+    "W",
+    "S",
+    "V"
+  ],
+  "lines": [
+    {
+      "name": "TU",
+      "points": [
+        "T",
+        "U"
+      ]
+    },
+    {
+      "name": "SV",
+      "points": [
+        "S",
+        "V"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "T",
+        "U"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "V"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "T",
+      "B": "U",
+      "C": "W"
+    },
+    {
+      "A": "S",
+      "B": "V",
+      "C": "W"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "S",
+        "V",
+        "W"
+      ],
+      "angle2": [
+        "U",
+        "T",
+        "W"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "S",
+        "V"
+      ],
+      "line2": [
+        "T",
+        "U"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualAngles",
+        "args": [
+          "T",
+          "U",
+          "W",
+          "V",
+          "S",
+          "W"
+        ]
+      }
+    }
+  ]
+}

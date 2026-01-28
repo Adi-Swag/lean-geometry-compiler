@@ -1,0 +1,79 @@
+{
+  "points": [
+    "T",
+    "U",
+    "S",
+    "V",
+    "W"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "T",
+        "U"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "V"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "T",
+      "B": "W",
+      "C": "U"
+    },
+    {
+      "A": "S",
+      "B": "V",
+      "C": "W"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "T",
+        "U"
+      ],
+      "segment2": [
+        "S",
+        "V"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "T",
+        "U"
+      ],
+      "line2": [
+        "S",
+        "V"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "SimilarTriangles",
+        "args": [
+          "S",
+          "V",
+          "W",
+          "U",
+          "T",
+          "W"
+        ]
+      }
+    }
+  ]
+}

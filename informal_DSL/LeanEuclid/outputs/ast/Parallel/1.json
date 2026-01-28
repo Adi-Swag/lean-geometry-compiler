@@ -1,0 +1,291 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Z"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "W"
+        },
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "S"
+        },
+        {
+          "name": "Z"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "T"
+        },
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "W"
+        },
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "S"
+        },
+        {
+          "name": "Z"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "T"
+        },
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IntersectAt"
+      },
+      "args": [
+        {
+          "name": "WY"
+        },
+        {
+          "name": "SZ"
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "X"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IntersectAt"
+      },
+      "args": [
+        {
+          "name": "TV"
+        },
+        {
+          "name": "SZ"
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "U"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "SupplementaryAngles"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "U"
+            },
+            {
+              "name": "X"
+            },
+            {
+              "name": "W"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "T"
+            },
+            {
+              "name": "U"
+            },
+            {
+              "name": "X"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Parallel"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Line"
+              },
+              "args": [
+                {
+                  "name": "W"
+                },
+                {
+                  "name": "Y"
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Line"
+              },
+              "args": [
+                {
+                  "name": "T"
+                },
+                {
+                  "name": "V"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

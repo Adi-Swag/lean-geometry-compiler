@@ -1,0 +1,107 @@
+{
+  "points": [
+    "V",
+    "W",
+    "X",
+    "Y"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "V",
+        "W"
+      ]
+    },
+    {
+      "points": [
+        "W",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "X",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "X"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "V",
+      "B": "W",
+      "C": "Y",
+      "D": "X"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "W",
+        "X"
+      ],
+      "line2": [
+        "V",
+        "W"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "X",
+        "Y"
+      ],
+      "line2": [
+        "V",
+        "Y"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "X",
+        "V",
+        "Y"
+      ],
+      "angle2": [
+        "V",
+        "X",
+        "W"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

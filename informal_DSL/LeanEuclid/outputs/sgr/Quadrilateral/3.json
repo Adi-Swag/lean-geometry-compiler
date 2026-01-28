@@ -1,0 +1,119 @@
+{
+  "points": [
+    "U",
+    "V",
+    "T",
+    "S",
+    "W"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "U",
+        "V"
+      ]
+    },
+    {
+      "points": [
+        "T",
+        "U"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "T"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "V"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "T"
+      ]
+    },
+    {
+      "points": [
+        "U",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "U",
+        "W"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "W"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "U",
+      "B": "V",
+      "C": "T",
+      "D": "S"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "W",
+      "objects": [
+        "V",
+        "T",
+        "U",
+        "S"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "S",
+        "T"
+      ],
+      "segment2": [
+        "T",
+        "U"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "S",
+        "V"
+      ],
+      "segment2": [
+        "U",
+        "V"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualDistances",
+        "args": [
+          "U",
+          "W",
+          "S",
+          "W"
+        ]
+      }
+    }
+  ]
+}

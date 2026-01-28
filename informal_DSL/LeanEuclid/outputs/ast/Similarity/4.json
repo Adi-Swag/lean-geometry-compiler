@@ -1,0 +1,253 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "X"
+        },
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "Y"
+        },
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "X"
+        },
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "W"
+        },
+        {
+          "name": "Y"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "Y"
+        },
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "W"
+        },
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "X"
+        },
+        {
+          "name": "Y"
+        },
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "W"
+        },
+        {
+          "name": "Y"
+        },
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "EqualAngles"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "U"
+            },
+            {
+              "name": "Y"
+            },
+            {
+              "name": "W"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "X"
+            },
+            {
+              "name": "Y"
+            },
+            {
+              "name": "V"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "SimilarTriangles"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Triangle"
+              },
+              "args": [
+                {
+                  "name": "U"
+                },
+                {
+                  "name": "W"
+                },
+                {
+                  "name": "Y"
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Triangle"
+              },
+              "args": [
+                {
+                  "name": "X"
+                },
+                {
+                  "name": "V"
+                },
+                {
+                  "name": "Y"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

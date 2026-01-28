@@ -1,0 +1,270 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "Q"
+        },
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "Q"
+        },
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "R"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "EqualAngles"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "T"
+            },
+            {
+              "name": "Q"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "Q"
+            },
+            {
+              "name": "T"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Parallel"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "Q"
+            },
+            {
+              "name": "T"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "R"
+            },
+            {
+              "name": "S"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "EqualAngles"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Angle"
+              },
+              "args": [
+                {
+                  "name": "S"
+                },
+                {
+                  "name": "R"
+                },
+                {
+                  "name": "P"
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Angle"
+              },
+              "args": [
+                {
+                  "name": "Q"
+                },
+                {
+                  "name": "R"
+                },
+                {
+                  "name": "S"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

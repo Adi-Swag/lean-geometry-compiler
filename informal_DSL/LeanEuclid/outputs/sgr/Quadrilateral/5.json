@@ -1,0 +1,136 @@
+{
+  "points": [
+    "W",
+    "V",
+    "X",
+    "Y",
+    "Z"
+  ],
+  "lines": [
+    {
+      "name": "VX",
+      "points": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "name": "WY",
+      "points": [
+        "W",
+        "Y"
+      ]
+    },
+    {
+      "name": "VZ",
+      "points": [
+        "V",
+        "Z"
+      ]
+    },
+    {
+      "name": "XY",
+      "points": [
+        "X",
+        "Y"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "W",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "W",
+        "X"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "W",
+      "B": "V",
+      "C": "X",
+      "D": "Y"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Parallel",
+      "line1": [
+        "X",
+        "Y"
+      ],
+      "line2": [
+        "V",
+        "W"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "V",
+        "Z"
+      ],
+      "line2": [
+        "W",
+        "Y"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "Y",
+        "Z"
+      ],
+      "line2": [
+        "V",
+        "W"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "V",
+        "X"
+      ],
+      "segment2": [
+        "W",
+        "Y"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualDistances",
+        "args": [
+          "V",
+          "Y",
+          "W",
+          "X"
+        ]
+      }
+    }
+  ]
+}

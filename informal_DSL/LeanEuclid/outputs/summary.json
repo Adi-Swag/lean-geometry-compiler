@@ -1,0 +1,251 @@
+{
+  "range": {
+    "start_index": 0,
+    "num_examples": 25,
+    "actual_processed": 25
+  },
+  "total": 25,
+  "sgr_verified": 25,
+  "dsl_generated": 25,
+  "success": 25,
+  "failed": 0,
+  "categories": {
+    "Congruent": {
+      "total": 5,
+      "sgr_verified": 5,
+      "dsl_generated": 5,
+      "success": 5,
+      "failed": 0
+    },
+    "Parallel": {
+      "total": 5,
+      "sgr_verified": 5,
+      "dsl_generated": 5,
+      "success": 5,
+      "failed": 0
+    },
+    "Quadrilateral": {
+      "total": 5,
+      "sgr_verified": 5,
+      "dsl_generated": 5,
+      "success": 5,
+      "failed": 0
+    },
+    "Similarity": {
+      "total": 5,
+      "sgr_verified": 5,
+      "dsl_generated": 5,
+      "success": 5,
+      "failed": 0
+    },
+    "Triangle": {
+      "total": 5,
+      "sgr_verified": 5,
+      "dsl_generated": 5,
+      "success": 5,
+      "failed": 0
+    }
+  },
+  "results": [
+    {
+      "category": "Congruent",
+      "id": "1",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 18,
+      "error": null
+    },
+    {
+      "category": "Congruent",
+      "id": "2",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 21,
+      "error": null
+    },
+    {
+      "category": "Congruent",
+      "id": "3",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 12,
+      "error": null
+    },
+    {
+      "category": "Congruent",
+      "id": "4",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 15,
+      "error": null
+    },
+    {
+      "category": "Congruent",
+      "id": "5",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 16,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "1",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 18,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "2",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 19,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "3",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 15,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "4",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 14,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "5",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 26,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "1",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 11,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "2",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 13,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "3",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 18,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "4",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 16,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "5",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 19,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "1",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 13,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "2",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 15,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "3",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 18,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "4",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 15,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "5",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 20,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "1",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 14,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "2",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 12,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "3",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 16,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "4",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 10,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "5",
+      "sgr_verified": true,
+      "dsl_generated": true,
+      "num_dsl_lines": 15,
+      "error": null
+    }
+  ]
+}

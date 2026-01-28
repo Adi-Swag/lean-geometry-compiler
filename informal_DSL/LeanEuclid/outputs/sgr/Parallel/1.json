@@ -1,0 +1,104 @@
+{
+  "points": [
+    "W",
+    "Y",
+    "S",
+    "Z",
+    "X",
+    "T",
+    "V",
+    "U"
+  ],
+  "lines": [
+    {
+      "name": "WY",
+      "points": [
+        "W",
+        "Y"
+      ]
+    },
+    {
+      "name": "SZ",
+      "points": [
+        "S",
+        "Z"
+      ]
+    },
+    {
+      "name": "TV",
+      "points": [
+        "T",
+        "V"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "W",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "Z"
+      ]
+    },
+    {
+      "points": [
+        "T",
+        "V"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "X",
+      "objects": [
+        "WY",
+        "SZ"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "U",
+      "objects": [
+        "TV",
+        "SZ"
+      ]
+    },
+    {
+      "type": "SupplementaryAngles",
+      "angle1": [
+        "U",
+        "X",
+        "W"
+      ],
+      "angle2": [
+        "T",
+        "U",
+        "X"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Parallel",
+        "args": [
+          "W",
+          "Y",
+          "T",
+          "V"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "points": [
+    "U",
+    "V",
+    "W",
+    "X"
+  ],
+  "lines": [
+    {
+      "name": "VW",
+      "points": [
+        "V",
+        "W"
+      ]
+    },
+    {
+      "name": "UX",
+      "points": [
+        "U",
+        "X"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "V",
+        "W"
+      ]
+    },
+    {
+      "points": [
+        "U",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "W",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "X"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "U",
+      "B": "V",
+      "C": "W"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "W",
+        "U",
+        "X"
+      ],
+      "angle2": [
+        "V",
+        "U",
+        "X"
+      ]
+    },
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "V",
+        "W"
+      ],
+      "line2": [
+        "U",
+        "X"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualDistances",
+        "args": [
+          "W",
+          "X",
+          "V",
+          "X"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "points": [
+    "S",
+    "T",
+    "R",
+    "U",
+    "V"
+  ],
+  "lines": [
+    {
+      "name": "TR",
+      "points": [
+        "T",
+        "R"
+      ]
+    },
+    {
+      "name": "US",
+      "points": [
+        "U",
+        "S"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "T",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "U",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "T"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "S",
+      "B": "T",
+      "C": "R",
+      "D": "U"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Parallel",
+      "line1": [
+        "T",
+        "U"
+      ],
+      "line2": [
+        "R",
+        "S"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "R",
+        "U"
+      ],
+      "line2": [
+        "S",
+        "T"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "R",
+        "T"
+      ],
+      "segment2": [
+        "S",
+        "U"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Perpendicular",
+        "args": [
+          "R",
+          "S",
+          "S",
+          "T"
+        ]
+      }
+    }
+  ]
+}

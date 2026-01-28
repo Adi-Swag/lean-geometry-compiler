@@ -1,0 +1,228 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "T"
+        },
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "S"
+        },
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "T"
+        },
+        {
+          "name": "W"
+        },
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "S"
+        },
+        {
+          "name": "V"
+        },
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "EqualDistances"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "T"
+            },
+            {
+              "name": "U"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "V"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Parallel"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "T"
+            },
+            {
+              "name": "U"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "S"
+            },
+            {
+              "name": "V"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "SimilarTriangles"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Triangle"
+              },
+              "args": [
+                {
+                  "name": "S"
+                },
+                {
+                  "name": "V"
+                },
+                {
+                  "name": "W"
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Triangle"
+              },
+              "args": [
+                {
+                  "name": "U"
+                },
+                {
+                  "name": "T"
+                },
+                {
+                  "name": "W"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

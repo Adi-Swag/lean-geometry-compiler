@@ -1,0 +1,254 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "V"
+        },
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Line"
+      },
+      "args": [
+        {
+          "name": "U"
+        },
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "V"
+        },
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "U"
+        },
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "W"
+        },
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "V"
+        },
+        {
+          "name": "X"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "U"
+        },
+        {
+          "name": "V"
+        },
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "EqualAngles"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "W"
+            },
+            {
+              "name": "U"
+            },
+            {
+              "name": "X"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Angle"
+          },
+          "args": [
+            {
+              "name": "V"
+            },
+            {
+              "name": "U"
+            },
+            {
+              "name": "X"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Perpendicular"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "V"
+            },
+            {
+              "name": "W"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Line"
+          },
+          "args": [
+            {
+              "name": "U"
+            },
+            {
+              "name": "X"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "EqualDistances"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "W"
+                },
+                {
+                  "name": "X"
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Segment"
+              },
+              "args": [
+                {
+                  "name": "V"
+                },
+                {
+                  "name": "X"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,438 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "P3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A1"
+        },
+        {
+          "name": "A2"
+        },
+        {
+          "name": "A3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "P1"
+        },
+        {
+          "name": "P2"
+        },
+        {
+          "name": "P3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Circle"
+      },
+      "args": [
+        {
+          "name": "O"
+        },
+        {
+          "name": "A1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "PointLiesOnCircle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "A1"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Circle"
+          },
+          "args": [
+            {
+              "name": "O"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "PointLiesOnCircle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "A2"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Circle"
+          },
+          "args": [
+            {
+              "name": "O"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "PointLiesOnCircle"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "A3"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Circle"
+          },
+          "args": [
+            {
+              "name": "O"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Rotation"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P1"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "A1"
+            }
+          ]
+        },
+        {
+          "name": "{type:"
+        },
+        {
+          "name": "MeasureOf"
+        },
+        {
+          "name": "args:"
+        },
+        {
+          "name": {
+            "name": "A1"
+          },
+          "args": [
+            {
+              "name": "A2"
+            },
+            {
+              "name": "A3"
+            }
+          ]
+        },
+        {
+          "name": "}"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Rotation"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P2"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "A2"
+            }
+          ]
+        },
+        {
+          "name": "{type:"
+        },
+        {
+          "name": "MeasureOf"
+        },
+        {
+          "name": "args:"
+        },
+        {
+          "name": {
+            "name": "A2"
+          },
+          "args": [
+            {
+              "name": "A3"
+            },
+            {
+              "name": "A1"
+            }
+          ]
+        },
+        {
+          "name": "}"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Rotation"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P3"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "A3"
+            }
+          ]
+        },
+        {
+          "name": "{type:"
+        },
+        {
+          "name": "MeasureOf"
+        },
+        {
+          "name": "args:"
+        },
+        {
+          "name": {
+            "name": "A3"
+          },
+          "args": [
+            {
+              "name": "A1"
+            },
+            {
+              "name": "A2"
+            }
+          ]
+        },
+        {
+          "name": "}"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "LessThanEqualTo"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "RadiusOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Circle"
+                  },
+                  "args": [
+                    {
+                      "name": "P1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "RadiusOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Circle"
+                  },
+                  "args": [
+                    {
+                      "value": 0
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

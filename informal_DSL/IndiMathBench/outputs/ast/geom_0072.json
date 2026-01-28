@@ -1,0 +1,132 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A4"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A5"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A6"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A7"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A8"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A9"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A1"
+        },
+        {
+          "name": "A2"
+        },
+        {
+          "name": "A3"
+        },
+        {
+          "name": "A4"
+        },
+        {
+          "name": "A5"
+        },
+        {
+          "name": "A6"
+        },
+        {
+          "name": "A7"
+        },
+        {
+          "name": "A8"
+        },
+        {
+          "name": "A9"
+        }
+      ]
+    }
+  ]
+}

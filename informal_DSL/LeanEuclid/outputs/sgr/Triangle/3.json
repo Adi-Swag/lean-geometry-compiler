@@ -1,0 +1,112 @@
+{
+  "points": [
+    "R",
+    "P",
+    "Q",
+    "S"
+  ],
+  "lines": [
+    {
+      "name": "RQ",
+      "points": [
+        "R",
+        "Q"
+      ]
+    },
+    {
+      "name": "PS",
+      "points": [
+        "P",
+        "S"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "R",
+        "P"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "Q"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "Q"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "S"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "R",
+      "B": "P",
+      "C": "Q"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "AngleBisector",
+      "point": "S",
+      "vertex": "P",
+      "side1": [
+        "Q",
+        "P"
+      ],
+      "side2": [
+        "P",
+        "R"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "P",
+        "Q"
+      ],
+      "segment2": [
+        "P",
+        "R"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualDistances",
+        "args": [
+          "Q",
+          "S",
+          "R",
+          "S"
+        ]
+      }
+    }
+  ]
+}

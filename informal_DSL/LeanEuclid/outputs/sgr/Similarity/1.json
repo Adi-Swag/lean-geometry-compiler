@@ -1,0 +1,81 @@
+{
+  "points": [
+    "H",
+    "J",
+    "G",
+    "I",
+    "F"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "G",
+        "J"
+      ]
+    },
+    {
+      "points": [
+        "I",
+        "J"
+      ]
+    },
+    {
+      "points": [
+        "H",
+        "J"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "J"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "H",
+      "B": "J",
+      "C": "G"
+    },
+    {
+      "A": "I",
+      "B": "F",
+      "C": "J"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "G",
+        "J"
+      ],
+      "segment2": [
+        "I",
+        "J"
+      ],
+      "ratio": "H"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "SimilarTriangles",
+        "args": [
+          "G",
+          "H",
+          "J",
+          "I",
+          "F",
+          "J"
+        ]
+      }
+    }
+  ]
+}

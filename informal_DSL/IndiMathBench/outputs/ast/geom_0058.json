@@ -1,0 +1,258 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "B1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "C1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C"
+        },
+        {
+          "name": "A"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "A1"
+        },
+        {
+          "name": "B1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "B1"
+        },
+        {
+          "name": "C1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "C1"
+        },
+        {
+          "name": "A1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "C"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "A1"
+        },
+        {
+          "name": "B1"
+        },
+        {
+          "name": "C1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Prove"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "GreaterThanEqualTo"
+          },
+          "args": [
+            {
+              "name": {
+                "name": "AreaOf"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Triangle"
+                  },
+                  "args": [
+                    {
+                      "name": "A1"
+                    },
+                    {
+                      "name": "B1"
+                    },
+                    {
+                      "name": "C1"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "name": {
+                "name": "Mul"
+              },
+              "args": [
+                {
+                  "name": {
+                    "name": "Div"
+                  },
+                  "args": [
+                    {
+                      "value": 9
+                    },
+                    {
+                      "value": 4
+                    }
+                  ]
+                },
+                {
+                  "name": {
+                    "name": "AreaOf"
+                  },
+                  "args": [
+                    {
+                      "name": {
+                        "name": "Triangle"
+                      },
+                      "args": [
+                        {
+                          "name": "A"
+                        },
+                        {
+                          "name": "B"
+                        },
+                        {
+                          "name": "C"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

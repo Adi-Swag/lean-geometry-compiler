@@ -1,0 +1,70 @@
+{
+  "points": [
+    "F",
+    "G",
+    "H",
+    "I"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "F",
+        "I"
+      ]
+    },
+    {
+      "points": [
+        "G",
+        "H"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "F",
+      "B": "G",
+      "C": "H"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Perpendicular",
+      "line1": [
+        "F",
+        "I"
+      ],
+      "line2": [
+        "G",
+        "H"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "I",
+      "segment": [
+        "G",
+        "H"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualAngles",
+        "args": [
+          "F",
+          "H",
+          "G",
+          "F",
+          "G",
+          "H"
+        ]
+      }
+    }
+  ]
+}

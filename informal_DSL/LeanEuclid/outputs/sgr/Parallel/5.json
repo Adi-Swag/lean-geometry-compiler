@@ -1,0 +1,165 @@
+{
+  "points": [
+    "F",
+    "H",
+    "V",
+    "X",
+    "S",
+    "U",
+    "R",
+    "Y",
+    "G",
+    "W",
+    "T"
+  ],
+  "lines": [
+    {
+      "name": "FH",
+      "points": [
+        "F",
+        "H"
+      ]
+    },
+    {
+      "name": "VX",
+      "points": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "name": "SU",
+      "points": [
+        "S",
+        "U"
+      ]
+    },
+    {
+      "name": "RY",
+      "points": [
+        "R",
+        "Y"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "R",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "H"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "U"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "G",
+      "objects": [
+        "FH",
+        "RY"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "W",
+      "objects": [
+        "VX",
+        "RY"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "T",
+      "objects": [
+        "SU",
+        "RY"
+      ]
+    },
+    {
+      "type": "Collinear",
+      "points": [
+        "Y",
+        "G",
+        "W",
+        "T",
+        "R"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "F",
+        "H"
+      ],
+      "line2": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "S",
+        "U"
+      ],
+      "line2": [
+        "F",
+        "H"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "Add",
+            "args": [
+              {
+                "type": "MeasureOf",
+                "args": [
+                  0,
+                  0,
+                  0
+                ]
+              },
+              {
+                "type": "MeasureOf",
+                "args": [
+                  0,
+                  0,
+                  0
+                ]
+              }
+            ]
+          },
+          180
+        ]
+      }
+    }
+  ]
+}

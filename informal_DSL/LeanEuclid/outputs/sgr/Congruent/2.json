@@ -1,0 +1,135 @@
+{
+  "points": [
+    "T",
+    "W",
+    "R",
+    "V",
+    "S",
+    "U"
+  ],
+  "lines": [
+    {
+      "name": "TW",
+      "points": [
+        "T",
+        "W"
+      ]
+    },
+    {
+      "name": "VS",
+      "points": [
+        "V",
+        "S"
+      ]
+    },
+    {
+      "name": "RT",
+      "points": [
+        "R",
+        "T"
+      ]
+    },
+    {
+      "name": "VR",
+      "points": [
+        "V",
+        "R"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "T",
+        "W"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "T"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "V"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "V"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "T",
+      "B": "W",
+      "C": "R"
+    },
+    {
+      "A": "V",
+      "B": "S",
+      "C": "R"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "V",
+        "R",
+        "S"
+      ],
+      "angle2": [
+        "T",
+        "R",
+        "W"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "S",
+        "V"
+      ],
+      "segment2": [
+        "T",
+        "W"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "SimilarTriangles",
+        "args": [
+          "R",
+          "T",
+          "W",
+          "R",
+          "V",
+          "S"
+        ]
+      }
+    }
+  ]
+}

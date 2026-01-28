@@ -1,0 +1,94 @@
+{
+  "points": [
+    "T",
+    "U",
+    "V",
+    "W"
+  ],
+  "lines": [
+    {
+      "name": "TV",
+      "points": [
+        "T",
+        "V"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "T",
+        "W"
+      ]
+    },
+    {
+      "points": [
+        "U",
+        "V"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [],
+  "quadrilaterals": [
+    {
+      "A": "T",
+      "B": "U",
+      "C": "V",
+      "D": "W"
+    }
+  ],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "U",
+        "T",
+        "V"
+      ],
+      "angle2": [
+        "T",
+        "V",
+        "W"
+      ]
+    },
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "V",
+        "T",
+        "W"
+      ],
+      "angle2": [
+        "T",
+        "V",
+        "U"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "Equals",
+        "args": [
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          },
+          {
+            "type": "LengthOf",
+            "args": [
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

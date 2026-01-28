@@ -20,7 +20,7 @@ This script will:
 import os
 import sys
 import json
-from dataclasses import asdict
+from dataclasses import asdict, is_dataclass
 
 # Import our custom modules from the same 'scripts' directory
 import parser
@@ -29,9 +29,48 @@ import generator
 # --- Define Project Paths ---
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.dirname(SCRIPTS_DIR)
-INPUT_DSL_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "IndiMathBench", "outputs", "dsl")
-OUTPUT_LEAN_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "IndiMathBench", "outputs", "lean")
+INPUT_DSL_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "LeanEuclid", "outputs", "dsl")
+OUTPUT_LEAN_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "LeanEuclid", "outputs", "lean")
+OUTPUT_AST_DIR = os.path.join(PROJECT_ROOT, "informal_DSL", "LeanEuclid", "outputs", "ast")
 
+def ast_to_dict(obj):
+    """
+    Convert AST nodes (dataclasses) to dictionaries for JSON serialization.
+    Handles PredicateNode, SymbolNode, NumberNode, etc.
+    """
+    if is_dataclass(obj):
+        result = {
+            "_type": obj.__class__.__name__,
+        }
+        for field_name, field_value in asdict(obj).items():
+            result[field_name] = ast_to_dict(field_value)
+        return result
+    elif isinstance(obj, list):
+        return [ast_to_dict(item) for item in obj]
+    elif isinstance(obj, dict):
+        return {key: ast_to_dict(value) for key, value in obj.items()}
+    else:
+        # Primitive types (str, int, float, bool, None)
+        return obj
+
+def save_ast_as_json(ast, output_path):
+    """
+    Save AST to a JSON file.
+    
+    Args:
+        ast: The AST object (PredicateNode/SymbolNode/NumberNode)
+        output_path: Path where JSON file should be saved
+    """
+    try:
+        ast_dict = ast_to_dict(ast)
+        
+        with open(output_path, 'w', encoding='utf-8') as f:
+            json.dump(ast_dict, f, indent=2, ensure_ascii=False)
+        
+        return True
+    except Exception as e:
+        print(f"Warning: Failed to save AST: {e}")
+        return False
 
 def convert_line_dsl_to_sexp(line_dsl_content: str) -> str:
     """
@@ -150,14 +189,29 @@ def process_file(input_filepath: str, relative_path: str) -> bool:
 
         # --- 2. Convert to S-expression format ---
         sexp_content = convert_line_dsl_to_sexp(line_dsl_content)
-        print("1. Converted to S-expression format.")
+        #print("1. Converted to S-expression format.")
 
         # --- 3. Parse S-expression to AST ---
         parse_tree = parser.parse_dsl(sexp_content)
         if parse_tree is None:
             raise Exception("Parsing returned None.")
         ast = parser.build_ast(parse_tree)
-        print("2. AST generated.")
+        #print("2. AST generated.")
+
+        # Compute output path for AST (same structure as input)
+        relative_dir = os.path.dirname(relative_path)
+        ast_output_dir = os.path.join(OUTPUT_AST_DIR, relative_dir)
+        os.makedirs(ast_output_dir, exist_ok=True)
+
+        base_filename = os.path.splitext(os.path.basename(relative_path))[0]
+        ast_filename = f"{base_filename}.json"
+        ast_filepath = os.path.join(ast_output_dir, ast_filename)
+
+        if save_ast_as_json(ast, ast_filepath):
+            relative_ast_path = get_relative_path(ast_filepath, PROJECT_ROOT)
+            #print(f"3. AST saved to: {relative_ast_path}")
+        else:
+            print(f"3. AST save failed for the file {relative_path} (continuing anyway)")
 
         # --- 4. Generate theorem name ---
         # Extract category and number from path
@@ -177,7 +231,7 @@ def process_file(input_filepath: str, relative_path: str) -> bool:
 
         # --- 5. Generate Lean code ---
         lean_code = generator.generate_lean_code(ast, theorem_name=theorem_name)
-        print("3. Lean code generated.")
+        #print("3. Lean code generated.")
 
         # --- 6. Save Lean file (preserve directory structure) ---
         # Compute output path maintaining directory structure

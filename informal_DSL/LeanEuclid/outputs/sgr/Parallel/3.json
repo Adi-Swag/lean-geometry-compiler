@@ -1,0 +1,104 @@
+{
+  "points": [
+    "P",
+    "R",
+    "S",
+    "Q",
+    "T"
+  ],
+  "lines": [
+    {
+      "name": "PS",
+      "points": [
+        "P",
+        "S"
+      ]
+    },
+    {
+      "name": "PR",
+      "points": [
+        "P",
+        "R"
+      ]
+    },
+    {
+      "name": "QT",
+      "points": [
+        "Q",
+        "T"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "P",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "P",
+        "R"
+      ]
+    },
+    {
+      "points": [
+        "Q",
+        "T"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "P",
+      "B": "R",
+      "C": "S"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "EqualAngles",
+      "angle1": [
+        "P",
+        "T",
+        "Q"
+      ],
+      "angle2": [
+        "P",
+        "Q",
+        "T"
+      ]
+    },
+    {
+      "type": "Parallel",
+      "line1": [
+        "Q",
+        "T"
+      ],
+      "line2": [
+        "R",
+        "S"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualAngles",
+        "args": [
+          "S",
+          "R",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ]
+      }
+    }
+  ]
+}

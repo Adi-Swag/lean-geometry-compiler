@@ -1,0 +1,80 @@
+{
+  "_type": "PredicateNode",
+  "name": {
+    "name": "list"
+  },
+  "args": [
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "..."
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A1"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A2"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "A3"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "An"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Polygon"
+      },
+      "args": [
+        {
+          "name": "A1"
+        },
+        {
+          "name": "A2"
+        },
+        {
+          "name": "A3"
+        },
+        {
+          "name": "..."
+        },
+        {
+          "name": "An"
+        }
+      ]
+    }
+  ]
+}

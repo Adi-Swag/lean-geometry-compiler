@@ -1,0 +1,121 @@
+{
+  "points": [
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y"
+  ],
+  "lines": [
+    {
+      "name": "LineUVW",
+      "points": [
+        "U",
+        "W"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "W",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "V",
+        "Y"
+      ]
+    },
+    {
+      "points": [
+        "U",
+        "X"
+      ]
+    },
+    {
+      "points": [
+        "U",
+        "W"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "U",
+      "B": "V",
+      "C": "X"
+    },
+    {
+      "A": "V",
+      "B": "W",
+      "C": "Y"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Collinear",
+      "points": [
+        "U",
+        "V",
+        "W"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "W",
+        "Y"
+      ],
+      "segment2": [
+        "V",
+        "X"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "V",
+        "Y"
+      ],
+      "segment2": [
+        "U",
+        "X"
+      ]
+    },
+    {
+      "type": "Midpoint",
+      "point": "V",
+      "segment": [
+        "U",
+        "W"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "SimilarTriangles",
+        "args": [
+          "V",
+          "W",
+          "Y",
+          "U",
+          "V",
+          "X"
+        ]
+      }
+    }
+  ]
+}

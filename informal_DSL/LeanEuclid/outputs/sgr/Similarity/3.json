@@ -1,0 +1,119 @@
+{
+  "points": [
+    "J",
+    "G",
+    "F",
+    "I",
+    "H"
+  ],
+  "lines": [
+    {
+      "name": "JF",
+      "points": [
+        "J",
+        "F"
+      ]
+    },
+    {
+      "name": "FG",
+      "points": [
+        "F",
+        "G"
+      ]
+    },
+    {
+      "name": "IH",
+      "points": [
+        "I",
+        "H"
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "points": [
+        "J",
+        "F"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "G"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "I"
+      ]
+    },
+    {
+      "points": [
+        "F",
+        "H"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "J",
+      "B": "G",
+      "C": "F"
+    },
+    {
+      "A": "I",
+      "B": "H",
+      "C": "F"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Intersection",
+      "point": "I",
+      "objects": [
+        "JF",
+        "IH"
+      ]
+    },
+    {
+      "type": "Intersection",
+      "point": "H",
+      "objects": [
+        "FG",
+        "IH"
+      ]
+    },
+    {
+      "type": "DistanceRatio",
+      "segment1": [
+        "F",
+        "I"
+      ],
+      "segment2": [
+        "F",
+        "J"
+      ],
+      "ratio": "F"
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "SimilarTriangles",
+        "args": [
+          "F",
+          "H",
+          "I",
+          "F",
+          "G",
+          "J"
+        ]
+      }
+    }
+  ]
+}

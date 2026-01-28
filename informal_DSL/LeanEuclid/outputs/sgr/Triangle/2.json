@@ -1,0 +1,82 @@
+{
+  "points": [
+    "R",
+    "S",
+    "T",
+    "U"
+  ],
+  "lines": [],
+  "segments": [
+    {
+      "points": [
+        "R",
+        "S"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "T"
+      ]
+    },
+    {
+      "points": [
+        "S",
+        "T"
+      ]
+    },
+    {
+      "points": [
+        "R",
+        "U"
+      ]
+    }
+  ],
+  "circles": [],
+  "triangles": [
+    {
+      "A": "R",
+      "B": "S",
+      "C": "T"
+    }
+  ],
+  "quadrilaterals": [],
+  "polygons": [],
+  "relations": [
+    {
+      "type": "Midpoint",
+      "point": "U",
+      "segment": [
+        "S",
+        "T"
+      ]
+    },
+    {
+      "type": "EqualDistances",
+      "segment1": [
+        "R",
+        "T"
+      ],
+      "segment2": [
+        "R",
+        "S"
+      ]
+    }
+  ],
+  "goals": [
+    {
+      "kind": "Prove",
+      "content": {
+        "type": "EqualAngles",
+        "args": [
+          "R",
+          "S",
+          "T",
+          "R",
+          "T",
+          "S"
+        ]
+      }
+    }
+  ]
+}
