@@ -1,0 +1,603 @@
+{
+  "method": "direct_prompting",
+  "range": {
+    "start_index": 0,
+    "num_examples": 98,
+    "actual_processed": 98
+  },
+  "total": 98,
+  "successful": 98,
+  "failed": 0,
+  "total_tokens": 212803,
+  "avg_tokens": 2171.4591836734694,
+  "results": [
+    {
+      "id": "geom_0000",
+      "success": true,
+      "tokens_used": 2134,
+      "error": null
+    },
+    {
+      "id": "geom_0001",
+      "success": true,
+      "tokens_used": 2096,
+      "error": null
+    },
+    {
+      "id": "geom_0002",
+      "success": true,
+      "tokens_used": 2232,
+      "error": null
+    },
+    {
+      "id": "geom_0003",
+      "success": true,
+      "tokens_used": 2036,
+      "error": null
+    },
+    {
+      "id": "geom_0004",
+      "success": true,
+      "tokens_used": 2188,
+      "error": null
+    },
+    {
+      "id": "geom_0005",
+      "success": true,
+      "tokens_used": 2068,
+      "error": null
+    },
+    {
+      "id": "geom_0006",
+      "success": true,
+      "tokens_used": 2064,
+      "error": null
+    },
+    {
+      "id": "geom_0007",
+      "success": true,
+      "tokens_used": 2248,
+      "error": null
+    },
+    {
+      "id": "geom_0008",
+      "success": true,
+      "tokens_used": 2114,
+      "error": null
+    },
+    {
+      "id": "geom_0009",
+      "success": true,
+      "tokens_used": 2006,
+      "error": null
+    },
+    {
+      "id": "geom_0010",
+      "success": true,
+      "tokens_used": 2124,
+      "error": null
+    },
+    {
+      "id": "geom_0011",
+      "success": true,
+      "tokens_used": 2378,
+      "error": null
+    },
+    {
+      "id": "geom_0012",
+      "success": true,
+      "tokens_used": 2065,
+      "error": null
+    },
+    {
+      "id": "geom_0013",
+      "success": true,
+      "tokens_used": 2016,
+      "error": null
+    },
+    {
+      "id": "geom_0014",
+      "success": true,
+      "tokens_used": 2074,
+      "error": null
+    },
+    {
+      "id": "geom_0015",
+      "success": true,
+      "tokens_used": 2106,
+      "error": null
+    },
+    {
+      "id": "geom_0016",
+      "success": true,
+      "tokens_used": 2263,
+      "error": null
+    },
+    {
+      "id": "geom_0017",
+      "success": true,
+      "tokens_used": 2098,
+      "error": null
+    },
+    {
+      "id": "geom_0018",
+      "success": true,
+      "tokens_used": 2050,
+      "error": null
+    },
+    {
+      "id": "geom_0019",
+      "success": true,
+      "tokens_used": 2145,
+      "error": null
+    },
+    {
+      "id": "geom_0020",
+      "success": true,
+      "tokens_used": 2079,
+      "error": null
+    },
+    {
+      "id": "geom_0021",
+      "success": true,
+      "tokens_used": 2105,
+      "error": null
+    },
+    {
+      "id": "geom_0022",
+      "success": true,
+      "tokens_used": 2101,
+      "error": null
+    },
+    {
+      "id": "geom_0023",
+      "success": true,
+      "tokens_used": 2089,
+      "error": null
+    },
+    {
+      "id": "geom_0024",
+      "success": true,
+      "tokens_used": 2162,
+      "error": null
+    },
+    {
+      "id": "geom_0025",
+      "success": true,
+      "tokens_used": 2170,
+      "error": null
+    },
+    {
+      "id": "geom_0026",
+      "success": true,
+      "tokens_used": 2142,
+      "error": null
+    },
+    {
+      "id": "geom_0027",
+      "success": true,
+      "tokens_used": 2132,
+      "error": null
+    },
+    {
+      "id": "geom_0028",
+      "success": true,
+      "tokens_used": 2243,
+      "error": null
+    },
+    {
+      "id": "geom_0029",
+      "success": true,
+      "tokens_used": 2042,
+      "error": null
+    },
+    {
+      "id": "geom_0030",
+      "success": true,
+      "tokens_used": 2182,
+      "error": null
+    },
+    {
+      "id": "geom_0031",
+      "success": true,
+      "tokens_used": 2146,
+      "error": null
+    },
+    {
+      "id": "geom_0032",
+      "success": true,
+      "tokens_used": 2300,
+      "error": null
+    },
+    {
+      "id": "geom_0033",
+      "success": true,
+      "tokens_used": 2128,
+      "error": null
+    },
+    {
+      "id": "geom_0034",
+      "success": true,
+      "tokens_used": 2114,
+      "error": null
+    },
+    {
+      "id": "geom_0035",
+      "success": true,
+      "tokens_used": 2092,
+      "error": null
+    },
+    {
+      "id": "geom_0036",
+      "success": true,
+      "tokens_used": 1992,
+      "error": null
+    },
+    {
+      "id": "geom_0037",
+      "success": true,
+      "tokens_used": 2292,
+      "error": null
+    },
+    {
+      "id": "geom_0038",
+      "success": true,
+      "tokens_used": 2269,
+      "error": null
+    },
+    {
+      "id": "geom_0039",
+      "success": true,
+      "tokens_used": 2192,
+      "error": null
+    },
+    {
+      "id": "geom_0040",
+      "success": true,
+      "tokens_used": 2053,
+      "error": null
+    },
+    {
+      "id": "geom_0041",
+      "success": true,
+      "tokens_used": 2195,
+      "error": null
+    },
+    {
+      "id": "geom_0042",
+      "success": true,
+      "tokens_used": 2105,
+      "error": null
+    },
+    {
+      "id": "geom_0043",
+      "success": true,
+      "tokens_used": 2280,
+      "error": null
+    },
+    {
+      "id": "geom_0044",
+      "success": true,
+      "tokens_used": 2064,
+      "error": null
+    },
+    {
+      "id": "geom_0045",
+      "success": true,
+      "tokens_used": 2154,
+      "error": null
+    },
+    {
+      "id": "geom_0046",
+      "success": true,
+      "tokens_used": 2219,
+      "error": null
+    },
+    {
+      "id": "geom_0047",
+      "success": true,
+      "tokens_used": 2170,
+      "error": null
+    },
+    {
+      "id": "geom_0048",
+      "success": true,
+      "tokens_used": 2173,
+      "error": null
+    },
+    {
+      "id": "geom_0049",
+      "success": true,
+      "tokens_used": 2106,
+      "error": null
+    },
+    {
+      "id": "geom_0050",
+      "success": true,
+      "tokens_used": 2214,
+      "error": null
+    },
+    {
+      "id": "geom_0051",
+      "success": true,
+      "tokens_used": 2181,
+      "error": null
+    },
+    {
+      "id": "geom_0052",
+      "success": true,
+      "tokens_used": 2036,
+      "error": null
+    },
+    {
+      "id": "geom_0053",
+      "success": true,
+      "tokens_used": 2327,
+      "error": null
+    },
+    {
+      "id": "geom_0054",
+      "success": true,
+      "tokens_used": 2109,
+      "error": null
+    },
+    {
+      "id": "geom_0055",
+      "success": true,
+      "tokens_used": 2527,
+      "error": null
+    },
+    {
+      "id": "geom_0056",
+      "success": true,
+      "tokens_used": 2027,
+      "error": null
+    },
+    {
+      "id": "geom_0057",
+      "success": true,
+      "tokens_used": 2261,
+      "error": null
+    },
+    {
+      "id": "geom_0058",
+      "success": true,
+      "tokens_used": 2146,
+      "error": null
+    },
+    {
+      "id": "geom_0059",
+      "success": true,
+      "tokens_used": 2162,
+      "error": null
+    },
+    {
+      "id": "geom_0060",
+      "success": true,
+      "tokens_used": 2131,
+      "error": null
+    },
+    {
+      "id": "geom_0061",
+      "success": true,
+      "tokens_used": 2220,
+      "error": null
+    },
+    {
+      "id": "geom_0062",
+      "success": true,
+      "tokens_used": 2121,
+      "error": null
+    },
+    {
+      "id": "geom_0063",
+      "success": true,
+      "tokens_used": 2310,
+      "error": null
+    },
+    {
+      "id": "geom_0064",
+      "success": true,
+      "tokens_used": 2311,
+      "error": null
+    },
+    {
+      "id": "geom_0065",
+      "success": true,
+      "tokens_used": 2185,
+      "error": null
+    },
+    {
+      "id": "geom_0066",
+      "success": true,
+      "tokens_used": 2420,
+      "error": null
+    },
+    {
+      "id": "geom_0067",
+      "success": true,
+      "tokens_used": 2136,
+      "error": null
+    },
+    {
+      "id": "geom_0068",
+      "success": true,
+      "tokens_used": 2197,
+      "error": null
+    },
+    {
+      "id": "geom_0069",
+      "success": true,
+      "tokens_used": 2115,
+      "error": null
+    },
+    {
+      "id": "geom_0070",
+      "success": true,
+      "tokens_used": 2257,
+      "error": null
+    },
+    {
+      "id": "geom_0071",
+      "success": true,
+      "tokens_used": 2073,
+      "error": null
+    },
+    {
+      "id": "geom_0072",
+      "success": true,
+      "tokens_used": 2607,
+      "error": null
+    },
+    {
+      "id": "geom_0073",
+      "success": true,
+      "tokens_used": 2198,
+      "error": null
+    },
+    {
+      "id": "geom_0074",
+      "success": true,
+      "tokens_used": 2088,
+      "error": null
+    },
+    {
+      "id": "geom_0075",
+      "success": true,
+      "tokens_used": 2141,
+      "error": null
+    },
+    {
+      "id": "geom_0076",
+      "success": true,
+      "tokens_used": 2221,
+      "error": null
+    },
+    {
+      "id": "geom_0077",
+      "success": true,
+      "tokens_used": 2227,
+      "error": null
+    },
+    {
+      "id": "geom_0078",
+      "success": true,
+      "tokens_used": 2245,
+      "error": null
+    },
+    {
+      "id": "geom_0079",
+      "success": true,
+      "tokens_used": 2077,
+      "error": null
+    },
+    {
+      "id": "geom_0080",
+      "success": true,
+      "tokens_used": 2256,
+      "error": null
+    },
+    {
+      "id": "geom_0081",
+      "success": true,
+      "tokens_used": 2154,
+      "error": null
+    },
+    {
+      "id": "geom_0082",
+      "success": true,
+      "tokens_used": 2283,
+      "error": null
+    },
+    {
+      "id": "geom_0083",
+      "success": true,
+      "tokens_used": 2031,
+      "error": null
+    },
+    {
+      "id": "geom_0084",
+      "success": true,
+      "tokens_used": 2080,
+      "error": null
+    },
+    {
+      "id": "geom_0085",
+      "success": true,
+      "tokens_used": 2098,
+      "error": null
+    },
+    {
+      "id": "geom_0086",
+      "success": true,
+      "tokens_used": 2154,
+      "error": null
+    },
+    {
+      "id": "geom_0087",
+      "success": true,
+      "tokens_used": 2140,
+      "error": null
+    },
+    {
+      "id": "geom_0088",
+      "success": true,
+      "tokens_used": 2079,
+      "error": null
+    },
+    {
+      "id": "geom_0089",
+      "success": true,
+      "tokens_used": 2267,
+      "error": null
+    },
+    {
+      "id": "geom_0090",
+      "success": true,
+      "tokens_used": 2200,
+      "error": null
+    },
+    {
+      "id": "geom_0091",
+      "success": true,
+      "tokens_used": 2305,
+      "error": null
+    },
+    {
+      "id": "geom_0092",
+      "success": true,
+      "tokens_used": 2171,
+      "error": null
+    },
+    {
+      "id": "geom_0093",
+      "success": true,
+      "tokens_used": 2573,
+      "error": null
+    },
+    {
+      "id": "geom_0094",
+      "success": true,
+      "tokens_used": 2093,
+      "error": null
+    },
+    {
+      "id": "geom_0095",
+      "success": true,
+      "tokens_used": 2033,
+      "error": null
+    },
+    {
+      "id": "geom_0096",
+      "success": true,
+      "tokens_used": 2214,
+      "error": null
+    },
+    {
+      "id": "geom_0097",
+      "success": true,
+      "tokens_used": 2406,
+      "error": null
+    }
+  ]
+}

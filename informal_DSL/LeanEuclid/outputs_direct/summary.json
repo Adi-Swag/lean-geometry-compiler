@@ -1,0 +1,222 @@
+{
+  "method": "direct_prompting",
+  "range": {
+    "start_index": 0,
+    "num_examples": 25,
+    "actual_processed": 25
+  },
+  "total": 25,
+  "successful": 25,
+  "failed": 0,
+  "total_tokens": 50752,
+  "avg_tokens": 2030.08,
+  "categories": {
+    "Congruent": {
+      "total": 5,
+      "successful": 5,
+      "failed": 0,
+      "tokens": 10122
+    },
+    "Parallel": {
+      "total": 5,
+      "successful": 5,
+      "failed": 0,
+      "tokens": 10162
+    },
+    "Quadrilateral": {
+      "total": 5,
+      "successful": 5,
+      "failed": 0,
+      "tokens": 10197
+    },
+    "Similarity": {
+      "total": 5,
+      "successful": 5,
+      "failed": 0,
+      "tokens": 10183
+    },
+    "Triangle": {
+      "total": 5,
+      "successful": 5,
+      "failed": 0,
+      "tokens": 10088
+    }
+  },
+  "results": [
+    {
+      "category": "Congruent",
+      "id": "1",
+      "success": true,
+      "tokens_used": 2034,
+      "error": null
+    },
+    {
+      "category": "Congruent",
+      "id": "2",
+      "success": true,
+      "tokens_used": 2048,
+      "error": null
+    },
+    {
+      "category": "Congruent",
+      "id": "3",
+      "success": true,
+      "tokens_used": 2000,
+      "error": null
+    },
+    {
+      "category": "Congruent",
+      "id": "4",
+      "success": true,
+      "tokens_used": 2061,
+      "error": null
+    },
+    {
+      "category": "Congruent",
+      "id": "5",
+      "success": true,
+      "tokens_used": 1979,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "1",
+      "success": true,
+      "tokens_used": 2074,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "2",
+      "success": true,
+      "tokens_used": 1992,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "3",
+      "success": true,
+      "tokens_used": 2008,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "4",
+      "success": true,
+      "tokens_used": 2048,
+      "error": null
+    },
+    {
+      "category": "Parallel",
+      "id": "5",
+      "success": true,
+      "tokens_used": 2040,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "1",
+      "success": true,
+      "tokens_used": 2006,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "2",
+      "success": true,
+      "tokens_used": 2083,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "3",
+      "success": true,
+      "tokens_used": 2007,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "4",
+      "success": true,
+      "tokens_used": 2043,
+      "error": null
+    },
+    {
+      "category": "Quadrilateral",
+      "id": "5",
+      "success": true,
+      "tokens_used": 2058,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "1",
+      "success": true,
+      "tokens_used": 2027,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "2",
+      "success": true,
+      "tokens_used": 2031,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "3",
+      "success": true,
+      "tokens_used": 2034,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "4",
+      "success": true,
+      "tokens_used": 2021,
+      "error": null
+    },
+    {
+      "category": "Similarity",
+      "id": "5",
+      "success": true,
+      "tokens_used": 2070,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "1",
+      "success": true,
+      "tokens_used": 2021,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "2",
+      "success": true,
+      "tokens_used": 1998,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "3",
+      "success": true,
+      "tokens_used": 2013,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "4",
+      "success": true,
+      "tokens_used": 2019,
+      "error": null
+    },
+    {
+      "category": "Triangle",
+      "id": "5",
+      "success": true,
+      "tokens_used": 2037,
+      "error": null
+    }
+  ]
+}
