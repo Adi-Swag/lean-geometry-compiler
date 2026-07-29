@@ -1,25 +1,23 @@
-# Update batch_processor_sgr.py with range control
-# skip: 6,12,23,25,26,36,56,68,72,75,84
-# complex language: 11,38
-# greaterThanEqualTo and such types: 62,63,69,95 ; 62 done
-# Orthocenter: 24,32,40
-# thereExists: 72
-# Failed: 12,23,36,56,68,84 --total 6
-# GoalFail in: 24,26,32,40,61,69,72,75,95 -- total 9
 from pathlib import Path
 import json
+import sys
 from tqdm import tqdm
 
 from SGR.informal_to_sgr import SGRTranslator
 from SGR.sgr_schema import validate_sgr
 from SGR.sgr_to_dsl import sgr_to_dsl
 
+_scripts_dir = str(Path(__file__).parent.parent / "scripts")
+if _scripts_dir not in sys.path:
+    sys.path.insert(0, _scripts_dir)
+
 
 class BatchProcessorSGR:
     def __init__(
         self,
         dataset_path: str = "LeanEuclid",
-        output_root: str = "LeanEuclid/outputs"
+        output_root: str = "LeanEuclid/outputs",
+        generate_lean: bool = False,
     ):
         self.base_dir = Path(__file__).parent
         self.dataset_path = self.base_dir / dataset_path
@@ -27,10 +25,14 @@ class BatchProcessorSGR:
         self.output_root = self.base_dir / output_root
         self.dsl_out = self.output_root / "dsl"
         self.sgr_out = self.output_root / "sgr"
+        self.lean_out = self.output_root / "lean" if generate_lean else None
 
         self.dsl_out.mkdir(parents=True, exist_ok=True)
         self.sgr_out.mkdir(parents=True, exist_ok=True)
+        if self.lean_out:
+            self.lean_out.mkdir(parents=True, exist_ok=True)
 
+        self.generate_lean = generate_lean
         self.translator = SGRTranslator(model="gpt-4o")
 
     # ---------------------------
@@ -149,6 +151,7 @@ class BatchProcessorSGR:
         for category, ex_id in tqdm(example_ids):
             sgr_verified = False
             dsl_generated = False
+            lean_generated = False
             dsl_lines = []
             error = None
 
@@ -168,6 +171,22 @@ class BatchProcessorSGR:
                 dsl_lines = sgr_to_dsl(sgr)
                 dsl_text = "\n".join(dsl_lines)
                 dsl_generated = True
+
+                # 4. SGR → Lean (optional)
+                if self.generate_lean:
+                    try:
+                        import sgr_to_ast
+                        import generator
+                        sgr_dict = json.loads(json.dumps(sgr, default=lambda o: o.__dict__))
+                        ast = sgr_to_ast.sgr_dict_to_ast(sgr_dict)
+                        thm_name = f"Th{ex_id}"
+                        lean_code = generator.generate_lean_code(ast, theorem_name=thm_name)
+                        lean_category_dir = self.lean_out / category
+                        lean_category_dir.mkdir(parents=True, exist_ok=True)
+                        (lean_category_dir / f"{ex_id}.lean").write_text(lean_code)
+                        lean_generated = True
+                    except Exception as lean_err:
+                        error = f"Lean gen failed: {lean_err}"
 
                 # Save SGR (preserve category structure)
                 sgr_category_dir = self.sgr_out / category
@@ -189,6 +208,7 @@ class BatchProcessorSGR:
                 "id": ex_id,
                 "sgr_verified": sgr_verified,
                 "dsl_generated": dsl_generated,
+                "lean_generated": lean_generated if self.generate_lean else None,
                 "num_dsl_lines": len(dsl_lines) if dsl_generated else 0,
                 "error": error
             })
@@ -300,10 +320,15 @@ if __name__ == "__main__":
         default=None,
         help="Specific categories to process (e.g., --categories Congruent Parallel)"
     )
+    parser.add_argument(
+        "--lean",
+        action="store_true",
+        help="Also generate Lean theorem files from SGR"
+    )
     
     args = parser.parse_args()
     
-    processor = BatchProcessorSGR()
+    processor = BatchProcessorSGR(generate_lean=args.lean)
     
     if args.all:
         print("Processing ALL examples from ALL categories...")

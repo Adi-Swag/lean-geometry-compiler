@@ -6,9 +6,11 @@ open scoped EuclideanGeometry
 open Geo
 open EuclideanGeometry
 
-theorem Th4 (A B C D : Point)
-  (h1 : (AffineIndependent ℝ ![A, B, C]))
-  (h2 : (CollinearPoints D B C))
-  (h3 : (CollinearPoints A A D ∧ ∃ (p : Point), CollinearPoints p A D ∧ p ≠ A ∧ angle B A p = angle p A C))
-  : (((dist A B) / (dist A C)) = ((dist B D) / (dist D C))) := by
+theorem Th4 (F G H I : Point)
+  (h1 : (F ≠ I))
+  (h2 : (G ≠ H))
+  (h3 : (AffineIndependent ℝ ![F, G, H]))
+  (h4 : (@inner ℝ Vec _ (I -ᵥ F) (H -ᵥ G) = 0))
+  (h5 : (I = midpoint ℝ G H))
+  : (EqualAngles (Angle F H G) (Angle F G H)) := by
   sorry

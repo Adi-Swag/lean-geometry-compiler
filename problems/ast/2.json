@@ -5,14 +5,109 @@
   "args": [
     {
       "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
         "name": "Segment"
       },
       "args": [
         {
-          "name": "A"
+          "name": "R"
         },
         {
-          "name": "B"
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "S"
+        },
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "S"
+        },
+        {
+          "name": "T"
         }
       ]
     },
@@ -22,7 +117,14 @@
       },
       "args": [
         {
-          "name": "M"
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "U"
+            }
+          ]
         },
         {
           "name": {
@@ -30,10 +132,43 @@
           },
           "args": [
             {
-              "name": "A"
+              "name": "S"
             },
             {
-              "name": "B"
+              "name": "T"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "EqualDistances"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "R"
+            },
+            {
+              "name": "T"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "R"
+            },
+            {
+              "name": "S"
             }
           ]
         }
@@ -46,53 +181,38 @@
       "args": [
         {
           "name": {
-            "name": "Equals"
+            "name": "EqualAngles"
           },
           "args": [
             {
               "name": {
-                "name": "LengthOf"
+                "name": "Angle"
               },
               "args": [
                 {
-                  "name": {
-                    "name": "Segment"
-                  },
-                  "args": [
-                    {
-                      "name": "A"
-                    },
-                    {
-                      "name": "M"
-                    }
-                  ]
+                  "name": "R"
+                },
+                {
+                  "name": "S"
+                },
+                {
+                  "name": "T"
                 }
               ]
             },
             {
               "name": {
-                "name": "HalfOf"
+                "name": "Angle"
               },
               "args": [
                 {
-                  "name": {
-                    "name": "LengthOf"
-                  },
-                  "args": [
-                    {
-                      "name": {
-                        "name": "Segment"
-                      },
-                      "args": [
-                        {
-                          "name": "A"
-                        },
-                        {
-                          "name": "B"
-                        }
-                      ]
-                    }
-                  ]
+                  "name": "R"
+                },
+                {
+                  "name": "T"
+                },
+                {
+                  "name": "S"
                 }
               ]
             }

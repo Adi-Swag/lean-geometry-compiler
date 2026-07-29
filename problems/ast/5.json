@@ -5,85 +5,182 @@
   "args": [
     {
       "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "S"
+        },
+        {
+          "name": "W"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "S"
+        },
+        {
+          "name": "T"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "U"
+        }
+      ]
+    },
+    {
+      "name": {
         "name": "Triangle"
       },
       "args": [
         {
-          "name": "A"
+          "name": "S"
         },
         {
-          "name": "B"
+          "name": "T"
         },
         {
-          "name": "C"
+          "name": "W"
         }
       ]
     },
     {
       "name": {
-        "name": "Isosceles"
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "U"
+        },
+        {
+          "name": "V"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "EqualAngles"
       },
       "args": [
         {
           "name": {
-            "name": "Triangle"
+            "name": "Angle"
           },
           "args": [
             {
-              "name": "A"
+              "name": "T"
             },
             {
-              "name": "B"
+              "name": "S"
             },
             {
-              "name": "C"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": {
-        "name": "Equals"
-      },
-      "args": [
-        {
-          "name": {
-            "name": "LengthOf"
-          },
-          "args": [
-            {
-              "name": {
-                "name": "Segment"
-              },
-              "args": [
-                {
-                  "name": "A"
-                },
-                {
-                  "name": "B"
-                }
-              ]
+              "name": "W"
             }
           ]
         },
         {
           "name": {
-            "name": "LengthOf"
+            "name": "Angle"
           },
           "args": [
             {
-              "name": {
-                "name": "Segment"
-              },
-              "args": [
-                {
-                  "name": "A"
-                },
-                {
-                  "name": "C"
-                }
-              ]
+              "name": "U"
+            },
+            {
+              "name": "R"
+            },
+            {
+              "name": "V"
             }
           ]
         }
@@ -91,7 +188,7 @@
     },
     {
       "name": {
-        "name": "IsMedianOf"
+        "name": "DistanceRatio"
       },
       "args": [
         {
@@ -100,28 +197,28 @@
           },
           "args": [
             {
-              "name": "A"
+              "name": "S"
             },
             {
-              "name": "M"
+              "name": "W"
             }
           ]
         },
         {
           "name": {
-            "name": "Triangle"
+            "name": "Segment"
           },
           "args": [
             {
-              "name": "A"
+              "name": "R"
             },
             {
-              "name": "B"
-            },
-            {
-              "name": "C"
+              "name": "V"
             }
           ]
+        },
+        {
+          "name": "{'type': 'Div', 'args': [{'type': 'LengthOf', 'args': ['S', 'T']}, {'type': 'LengthOf', 'args': ['R', 'U']}]}"
         }
       ]
     },
@@ -132,35 +229,38 @@
       "args": [
         {
           "name": {
-            "name": "IsAltitudeOf"
+            "name": "EqualAngles"
           },
           "args": [
             {
               "name": {
-                "name": "Segment"
+                "name": "Angle"
               },
               "args": [
                 {
-                  "name": "A"
+                  "name": "S"
                 },
                 {
-                  "name": "M"
+                  "name": "W"
+                },
+                {
+                  "name": "T"
                 }
               ]
             },
             {
               "name": {
-                "name": "Triangle"
+                "name": "Angle"
               },
               "args": [
                 {
-                  "name": "A"
+                  "name": "R"
                 },
                 {
-                  "name": "B"
+                  "name": "V"
                 },
                 {
-                  "name": "C"
+                  "name": "U"
                 }
               ]
             }

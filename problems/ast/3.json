@@ -5,57 +5,41 @@
   "args": [
     {
       "name": {
-        "name": "PointLiesOnCircle"
+        "name": "Point"
       },
       "args": [
         {
-          "name": "R"
-        },
-        {
-          "name": {
-            "name": "Circle"
-          },
-          "args": [
-            {
-              "name": "O"
-            },
-            {
-              "name": "x1"
-            }
-          ]
+          "name": "P"
         }
       ]
     },
     {
       "name": {
-        "name": "IsRadiusOf"
+        "name": "Point"
       },
       "args": [
         {
-          "name": {
-            "name": "Segment"
-          },
-          "args": [
-            {
-              "name": "O"
-            },
-            {
-              "name": "R"
-            }
-          ]
-        },
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
         {
-          "name": {
-            "name": "Circle"
-          },
-          "args": [
-            {
-              "name": "O"
-            },
-            {
-              "name": "x1"
-            }
-          ]
+          "name": "R"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "S"
         }
       ]
     },
@@ -65,64 +49,201 @@
       },
       "args": [
         {
-          "name": "A"
+          "name": "R"
         },
         {
-          "name": "B"
+          "name": "Q"
         }
       ]
     },
     {
       "name": {
-        "name": "Tangent"
+        "name": "Line"
       },
       "args": [
         {
-          "name": {
-            "name": "Line"
-          },
-          "args": [
-            {
-              "name": "A"
-            },
-            {
-              "name": "B"
-            }
-          ]
+          "name": "P"
         },
         {
-          "name": {
-            "name": "Circle"
-          },
-          "args": [
-            {
-              "name": "O"
-            },
-            {
-              "name": "x1"
-            }
-          ]
+          "name": "S"
         }
       ]
     },
     {
       "name": {
-        "name": "PointLiesOnLine"
+        "name": "Segment"
       },
       "args": [
         {
           "name": "R"
         },
         {
+          "name": "P"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "P"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "Q"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "S"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Triangle"
+      },
+      "args": [
+        {
+          "name": "R"
+        },
+        {
+          "name": "P"
+        },
+        {
+          "name": "Q"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "AngleBisector"
+      },
+      "args": [
+        {
           "name": {
-            "name": "Line"
+            "name": "Point"
           },
           "args": [
             {
-              "name": "A"
+              "name": "S"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "Q"
             },
             {
-              "name": "B"
+              "name": "P"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "R"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "EqualDistances"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "Q"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "P"
+            },
+            {
+              "name": "R"
             }
           ]
         }
@@ -135,32 +256,32 @@
       "args": [
         {
           "name": {
-            "name": "Perpendicular"
+            "name": "EqualDistances"
           },
           "args": [
             {
               "name": {
-                "name": "Line"
+                "name": "Segment"
               },
               "args": [
                 {
-                  "name": "O"
+                  "name": "Q"
                 },
                 {
-                  "name": "R"
+                  "name": "S"
                 }
               ]
             },
             {
               "name": {
-                "name": "Line"
+                "name": "Segment"
               },
               "args": [
                 {
-                  "name": "A"
+                  "name": "R"
                 },
                 {
-                  "name": "B"
+                  "name": "S"
                 }
               ]
             }

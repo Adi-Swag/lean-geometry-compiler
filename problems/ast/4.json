@@ -5,46 +5,89 @@
   "args": [
     {
       "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "F"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "G"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "H"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Point"
+      },
+      "args": [
+        {
+          "name": "I"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "F"
+        },
+        {
+          "name": "I"
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "Segment"
+      },
+      "args": [
+        {
+          "name": "G"
+        },
+        {
+          "name": "H"
+        }
+      ]
+    },
+    {
+      "name": {
         "name": "Triangle"
       },
       "args": [
         {
-          "name": "A"
+          "name": "F"
         },
         {
-          "name": "B"
+          "name": "G"
         },
         {
-          "name": "C"
+          "name": "H"
         }
       ]
     },
     {
       "name": {
-        "name": "PointLiesOnLine"
-      },
-      "args": [
-        {
-          "name": "D"
-        },
-        {
-          "name": {
-            "name": "Line"
-          },
-          "args": [
-            {
-              "name": "B"
-            },
-            {
-              "name": "C"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": {
-        "name": "BisectsAngle"
+        "name": "Perpendicular"
       },
       "args": [
         {
@@ -53,26 +96,53 @@
           },
           "args": [
             {
-              "name": "A"
+              "name": "F"
             },
             {
-              "name": "D"
+              "name": "I"
             }
           ]
         },
         {
           "name": {
-            "name": "Angle"
+            "name": "Line"
           },
           "args": [
             {
-              "name": "B"
+              "name": "G"
             },
             {
-              "name": "A"
+              "name": "H"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": {
+        "name": "IsMidpointOf"
+      },
+      "args": [
+        {
+          "name": {
+            "name": "Point"
+          },
+          "args": [
+            {
+              "name": "I"
+            }
+          ]
+        },
+        {
+          "name": {
+            "name": "Segment"
+          },
+          "args": [
+            {
+              "name": "G"
             },
             {
-              "name": "C"
+              "name": "H"
             }
           ]
         }
@@ -85,100 +155,38 @@
       "args": [
         {
           "name": {
-            "name": "Equals"
+            "name": "EqualAngles"
           },
           "args": [
             {
               "name": {
-                "name": "RatioOf"
+                "name": "Angle"
               },
               "args": [
                 {
-                  "name": {
-                    "name": "LengthOf"
-                  },
-                  "args": [
-                    {
-                      "name": {
-                        "name": "Segment"
-                      },
-                      "args": [
-                        {
-                          "name": "A"
-                        },
-                        {
-                          "name": "B"
-                        }
-                      ]
-                    }
-                  ]
+                  "name": "F"
                 },
                 {
-                  "name": {
-                    "name": "LengthOf"
-                  },
-                  "args": [
-                    {
-                      "name": {
-                        "name": "Segment"
-                      },
-                      "args": [
-                        {
-                          "name": "A"
-                        },
-                        {
-                          "name": "C"
-                        }
-                      ]
-                    }
-                  ]
+                  "name": "H"
+                },
+                {
+                  "name": "G"
                 }
               ]
             },
             {
               "name": {
-                "name": "RatioOf"
+                "name": "Angle"
               },
               "args": [
                 {
-                  "name": {
-                    "name": "LengthOf"
-                  },
-                  "args": [
-                    {
-                      "name": {
-                        "name": "Segment"
-                      },
-                      "args": [
-                        {
-                          "name": "B"
-                        },
-                        {
-                          "name": "D"
-                        }
-                      ]
-                    }
-                  ]
+                  "name": "F"
                 },
                 {
-                  "name": {
-                    "name": "LengthOf"
-                  },
-                  "args": [
-                    {
-                      "name": {
-                        "name": "Segment"
-                      },
-                      "args": [
-                        {
-                          "name": "D"
-                        },
-                        {
-                          "name": "C"
-                        }
-                      ]
-                    }
-                  ]
+                  "name": "G"
+                },
+                {
+                  "name": "H"
                 }
               ]
             }
