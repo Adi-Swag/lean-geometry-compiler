@@ -1,0 +1,39 @@
+{
+  "problem_id": "geom_0015",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(DistanceRatio (Segment D C) (Segment B D) 2",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2227(CollinearPoints P A D,CollinearPoints P D B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(B,C)",
+          "\u2260(B,E)"
+        ],
+        "b_only": [
+          "=(dist D C,2 * dist B D)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,D,C)",
+          "\u2227(\u2203 (p : Point), CollinearPoints A D p,CollinearPoints B E p)"
+        ],
+        "jaccard": 0.0833
+      },
+      "goal": {
+        "a_parsed": "\u2227(\u2203 (val : \u211d), (DistanceRatio (Segment B P) (Segment P E) 1) = val,\u2203 (val : \u211d), (DistanceRatio (Segment A P) (Segment P D) 1) = val)",
+        "b_parsed": "\u2227(\u2203 (bp_pe_ratio ap_pd_ratio : \u211d), (dist B P / dist P E = bp_pe_ratio),(dist A P / dist P D = ap_pd_ratio))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

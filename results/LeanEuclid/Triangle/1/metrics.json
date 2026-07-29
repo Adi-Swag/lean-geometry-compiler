@@ -1,0 +1,83 @@
+{
+  "problem_id": "1",
+  "dataset": "LeanEuclid",
+  "category": "Triangle",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (W -\u1d65 V) (X -\u1d65 U) = 0",
+          "AffineIndependent(\u211d,![,U,,V,,W,])",
+          "\u2260(U,X)",
+          "\u2260(V,W)",
+          "\u2260(V,X)",
+          "\u2260(W,X)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (W -\u1d65 V) (X -\u1d65 U),0)",
+          "AffineIndependent(\u211d,![U,,V,,W])"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_parsed": "=(dist W X,dist V X)",
+        "b_parsed": "=(dist W X,dist V X)",
+        "match_exact": false,
+        "match_predicate": true
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(dist W X = dist V X)",
+        "b_normalized": "dist W X",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent U V W",
+          "perp WV XU"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "dist W X = dist V X",
+        "b_normalized": "dist W X",
+        "match_exact": false
+      }
+    }
+  }
+}

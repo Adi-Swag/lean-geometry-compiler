@@ -1,0 +1,47 @@
+{
+  "problem_id": "geom_0063",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((dist A B = dist B C) \u2228 (dist B C = dist C A) \u2228 (dist C A = dist A B)",
+          "(@inner \u211d Vec _ (E -\u1d65 P) (C -\u1d65 A) = 0",
+          "(DistanceRatio (Segment A P) (Segment P D) m",
+          "(DistanceRatio (Segment B D) (Segment A D) m",
+          "(DistanceRatio (Segment B P) (Segment P E) m",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(B,C)",
+          "\u2260(P,E)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (E -\u1d65 P) (C -\u1d65 A),0)",
+          "=(dist A B,dist A C)",
+          "=(dist A P / dist P D,m)",
+          "=(dist B D / dist A D,m)",
+          "=(dist B P / dist P E,m)",
+          "=(z,m^2 * (1 + \u03bb))",
+          "=(\u2203 (t : \u211d), P,A +\u1d65 t \u2022 (D -\u1d65 A))",
+          "AffineIndependent(\u211d,![A,,B,,C])"
+        ],
+        "jaccard": 0.05
+      },
+      "goal": {
+        "a_parsed": "(((((0.0 ^ 2.0) * (1.0 + (angle 0 0 0))) + ((((angle 0 0 0) ^ 3.0) - ((angle 0 0 0) ^ 2.0)) - 2.0)) ^ 2.0) = 1.0) \u2227 ((angle 0 0 0) \u2265 2.0) \u2227 ((angle 0 0 0) = 2.0) \u2227 ((dist A B = dist B C) \u2227 (dist B C = dist C A))",
+        "b_parsed": "\u2265(z^2 - (\u03bb^3 - \u03bb^2 - 2) * z + 1 = 0) \u2227 (\u03bb,2) \u2227 (\u03bb = 2 \u2194 dist A B = dist B C)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

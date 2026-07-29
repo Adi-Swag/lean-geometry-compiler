@@ -1,0 +1,91 @@
+{
+  "problem_id": "2",
+  "dataset": "LeanEuclid",
+  "category": "Quadrilateral",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (X -\u1d65 W) (W -\u1d65 V) = 0",
+          "(@inner \u211d Vec _ (Y -\u1d65 X) (Y -\u1d65 V) = 0",
+          "IsQuadrilateral(V,W,Y,X)",
+          "\u2260(W,X)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (W -\u1d65 X) (W -\u1d65 V),0)",
+          "=(@inner \u211d Vec _ (Y -\u1d65 X) (Y -\u1d65 V),0)"
+        ],
+        "jaccard": 0.4
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = (dist,0,0)",
+        "b_parsed": "=(dist X Y,dist V W)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [
+          "0"
+        ],
+        "b_only": [],
+        "jaccard": 0.8
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "((dist 0 0) = (dist 0 0))",
+        "b_normalized": "dist X Y",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "V \u2260 W",
+          "V \u2260 X",
+          "X \u2260 Y",
+          "perp WX WV",
+          "perp YX YV"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "dist X Y = dist V W",
+        "b_normalized": "dist X Y",
+        "match_exact": false
+      }
+    }
+  }
+}

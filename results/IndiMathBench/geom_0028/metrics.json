@@ -1,0 +1,60 @@
+{
+  "problem_id": "geom_0028",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "O1",
+            "Point"
+          ],
+          [
+            "O2",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.7778
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(A,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,B,,P,])",
+          "AffineIndependent(\u211d,![,A,,C,,P,])",
+          "AffineIndependent(\u211d,![,P,,Q,,R,])",
+          "IntersectAt(circumcircle_ABP,line_BH,Q)",
+          "IntersectAt(circumcircle_ACP,line_CH,R)",
+          "IsOrthocenterOf(H,(Triangle A B C)",
+          "Reflection(P,A,(Line B C)",
+          "\u2260(B,C)",
+          "\u2260(B,H)",
+          "\u2260(C,H)"
+        ],
+        "b_only": [
+          "=(dist Q O\u2081,r\u2081)",
+          "=(dist R O\u2082,r\u2082)",
+          ">(\u2203 (O\u2081 : Point) (r\u2081 : \u211d), r\u2081,0 \u2227 dist A O\u2081 = r\u2081 \u2227 dist B O\u2081 = r\u2081 \u2227 dist P O\u2081 = r\u2081)",
+          ">(\u2203 (O\u2082 : Point) (r\u2082 : \u211d), r\u2082,0 \u2227 dist A O\u2082 = r\u2082 \u2227 dist C O\u2082 = r\u2082 \u2227 dist P O\u2082 = r\u2082)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,Q,H)",
+          "CollinearPoints(C,R,H)",
+          "Orthocenter(H,(Triangle.mk A B C))",
+          "\u2203 (M : Point), CollinearPoints B M C \u2227 dist A M = dist M P \u2227 M = midpoint \u211d A P"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "IsIncenterOf(H,(Triangle P Q R))",
+        "b_parsed": "Incenter(H,(Triangle.mk P Q R))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

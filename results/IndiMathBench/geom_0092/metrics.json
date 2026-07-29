@@ -1,0 +1,53 @@
+{
+  "problem_id": "geom_0092",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "Excircle",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8571
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (D -\u1d65 C) (B -\u1d65 A) = 0",
+          "=((dist A C),(((dist A D) + (dist D K)",
+          "=(dist C O,r_O)",
+          ">(A,0)",
+          ">(h_r_D_pos : r_D,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,D,,K,])",
+          "dist(A,O,=,r_O,\u2227,dist,B,O,=,r_O,\u2227,O,=,midpoint,\u211d,A,B)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(A,K)",
+          "\u2260(C,D)",
+          "\u2260(D,K)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (D -\u1d65 C) (B -\u1d65 A),0)",
+          "=(dist A B,2 * r)",
+          "=(dist A C,(dist A D + dist D K + dist K A) / 2)",
+          "=(dist C O,r)",
+          ">(r,0)",
+          "CollinearPoints(C,K,D)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "TangentToCircle((Line Excircle A),(Circle D),K)",
+        "b_parsed": "\u2227(\u2203 (E : Point), PointLiesOnCircle E O r,Tangent (Excircle (Triangle A D K) A) (Circle O r))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

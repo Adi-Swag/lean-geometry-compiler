@@ -1,0 +1,90 @@
+{
+  "problem_id": "5",
+  "dataset": "LeanEuclid",
+  "category": "Similarity",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (U -\u1d65 R) (U -\u1d65 S) = 0",
+          "(@inner \u211d Vec _ (U -\u1d65 T) (S -\u1d65 R) = 0",
+          "AffineIndependent(\u211d,![,S,,T,,U,])",
+          "AffineIndependent(\u211d,![,U,,R,,S,])",
+          "AffineIndependent(\u211d,![,U,,T,,R,])",
+          "\u2260(R,S)",
+          "\u2260(R,T)",
+          "\u2260(S,T)",
+          "\u2260(U,R)",
+          "\u2260(U,S)",
+          "\u2260(U,T)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (U -\u1d65 R) (U -\u1d65 S),0)",
+          "=(@inner \u211d Vec _ (U -\u1d65 T) (S -\u1d65 R),0)",
+          "AffineIndependent(\u211d,![R,,U,,S])"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "angle(S,T,U,=,angle,U,T,R,\u2227,angle,T,U,S,=,angle,T,R,U,\u2227,angle,U,S,T,=,angle,R,U,T)",
+        "b_parsed": "angle(S,T,U,=,angle,U,T,R) \u2227 (angle,T,U,S,=,angle,T,R,U) \u2227 (angle,U,S,T,=,angle,R,U,T)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle S T U = angle U T R \u2227 angle T U S = angle T R U \u2227 angle U S T = angle R U T)",
+        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220 U:T:R = \u221f",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent R U S",
+          "perp UR US",
+          "perp UT SR"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(angle S T U = angle U T R) \u2227 (angle T U S = angle T R U) \u2227 (angle U S T = angle R U T)",
+        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220 U:T:R = \u221f",
+        "match_exact": false
+      }
+    }
+  }
+}

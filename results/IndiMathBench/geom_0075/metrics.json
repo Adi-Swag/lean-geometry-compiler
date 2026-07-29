@@ -1,0 +1,32 @@
+{
+  "problem_id": "geom_0075",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])"
+        ],
+        "b_only": [
+          "=(\u2203 (x y : \u211d), 0 < x \u2227 x < 1 \u2227 0 < y \u2227 y < 1 \u2227 x + y < 1 \u2227 P,x \u2022 A + y \u2022 B + (1 - x - y) \u2022 C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "\u2203! (rays : Finset (Ray P)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), (NumberOfGoodPoints A B C),val)",
+        "b_parsed": "=(\u2203 (n : \u2115), n,1)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

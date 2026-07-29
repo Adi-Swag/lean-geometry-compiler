@@ -1,0 +1,32 @@
+{
+  "problem_id": "geom_0026",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "IsPolygon(A1,A2,A3,...,An)"
+        ],
+        "b_only": [
+          "=(\u2200 i j, dist (A i) (A j),dist (A 0) (A 1))",
+          "Nat.Prime(n)",
+          "\u2265(n,4)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=((length ['good_subset']),4.0)",
+        "b_parsed": "\u2227(\u2203 (i1 i2 i3 i4 : Fin n), \n    (i1 < i2 \u2227 i2 < i3 \u2227 i3 < i4),(angle (A i1) (A i2) (A i3) = angle (A i2) (A i3) (A i4)))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

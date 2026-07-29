@@ -1,0 +1,99 @@
+{
+  "problem_id": "4",
+  "dataset": "LeanEuclid",
+  "category": "Congruent",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,Q,,R,,P,])",
+          "AffineIndependent(\u211d,![,S,,R,,P,])",
+          "AngleBisector(P,P,(Segment Q P),(Segment P S)",
+          "AngleBisector(P,R,(Segment Q R),(Segment R S)",
+          "\u2260(P,R)",
+          "\u2260(P,S)",
+          "\u2260(Q,P)",
+          "\u2260(Q,R)",
+          "\u2260(R,P)",
+          "\u2260(S,R)"
+        ],
+        "b_only": [
+          "=(angle Q P R,angle R P S)",
+          "=(angle Q R P,angle P R S)",
+          "AffineIndependent(\u211d,![P,,R,,Q])",
+          "AffineIndependent(\u211d,![P,,R,,S])"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "angle(P,R,S,=,angle,P,R,Q,\u2227,angle,R,S,P,=,angle,R,Q,P,\u2227,angle,S,P,R,=,angle,Q,P,R)",
+        "b_parsed": "TrianglesCongruent((Triangle.mk P R S),(Triangle.mk P R Q))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle P R S = angle P R Q \u2227 angle R S P = angle R Q P \u2227 angle S P R = angle Q P R)",
+        "b_normalized": "TrianglesCongruent P R S P R Q",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent P R Q",
+          "AffineIndependent P R S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "TrianglesCongruent P R S P R Q",
+        "b_normalized": "TrianglesCongruent P R S P R Q",
+        "match_exact": true
+      }
+    }
+  }
+}

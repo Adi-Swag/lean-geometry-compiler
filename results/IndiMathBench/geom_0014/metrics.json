@@ -1,0 +1,43 @@
+{
+  "problem_id": "geom_0014",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(E,B,(Segment B A),(Segment B C)",
+          "AngleBisector(F,C,(Segment C A),(Segment C B)",
+          "Reflection(M,A,(Line E F)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,E)",
+          "\u2260(C,F)",
+          "\u2260(E,F)"
+        ],
+        "b_only": [
+          "=(M,reflection A (Line E F))",
+          "=(angle B A C,Real.pi / 3)",
+          "=(\u2203 (E : Point), CollinearPoints B E C \u2227 angle A B E,angle E B C)",
+          "=(\u2203 (F : Point), CollinearPoints C F A \u2227 angle B C F,angle F C A)",
+          "AffineIndependent(\u211d,![A,,B,,C])"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "IntersectAt(BC,EF,M)",
+        "b_parsed": "CollinearPoints(M,B,C)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

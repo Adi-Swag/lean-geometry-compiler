@@ -1,0 +1,52 @@
+{
+  "problem_id": "geom_0086",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8333
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(angle A B C,120)",
+          "=(angle A B C,angle B C D)",
+          "=(angle B C D,120)",
+          "=(angle B C D,angle C D E)",
+          "=(angle C D E,120)",
+          "=(angle C D E,angle D E A)",
+          "=(angle D E A,120)",
+          "=(angle E A B,120)",
+          "=(angle E A B,angle A B C)",
+          "ConvexQuadrilateral((Quadrilateral A B C D)",
+          "IsPolygon(A,B,C,D,E)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,D)",
+          "\u2260(D,E)",
+          "\u2260(E,A)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C,,D,,E])",
+          "angle(E,A,B,=,2,*,Real.pi,/,3,\u2227,angle,A,B,C,=,2,*,Real.pi,/,3,\u2227,angle,B,C,D,=,2,*,Real.pi,/,3,\u2227,angle,C,D,E,=,2,*,Real.pi,/,3,\u2227,angle,D,E,A,=,2,*,Real.pi,/,3)",
+          "\u2203 (a b c d e : \u211d), {a, b, c, d, e} = {1, 2, 3, 4, 5} \u2227 dist A B = a \u2227 dist B C = b \u2227 dist C D = c \u2227 dist D E = d \u2227 dist E A = e"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), ((dist 0 0) + (dist 0 0)),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), val,dist A B + dist B C + dist C D)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

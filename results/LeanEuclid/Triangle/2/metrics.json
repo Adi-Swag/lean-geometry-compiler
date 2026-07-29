@@ -1,0 +1,82 @@
+{
+  "problem_id": "2",
+  "dataset": "LeanEuclid",
+  "category": "Triangle",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,R,,S,,T,])",
+          "\u2260(R,S)",
+          "\u2260(R,T)",
+          "\u2260(R,U)",
+          "\u2260(S,T)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![R,,S,,T])"
+        ],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_parsed": "=(angle R S T,angle R T S)",
+        "b_parsed": "=(angle R S T,angle R T S)",
+        "match_exact": false,
+        "match_predicate": true
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle R S T = angle R T S)",
+        "b_normalized": "angle R S U",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent R S T",
+          "U = midpoint \u211d S T",
+          "dist R T = dist R S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle R S T = angle R T S",
+        "b_normalized": "angle R S U",
+        "match_exact": false
+      }
+    }
+  }
+}

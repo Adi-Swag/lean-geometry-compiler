@@ -1,0 +1,58 @@
+{
+  "problem_id": "geom_0038",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (C -\u1d65 A) (O -\u1d65 B) = 0",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(D,A,(Segment A X),(Segment A B)",
+          "AngleBisector(E,B,(Segment B Y),(Segment B C)",
+          "VecParallel((E -\u1d65 D),(C -\u1d65 A)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(A,X)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(B,E)",
+          "\u2260(B,O)",
+          "\u2260(B,X)",
+          "\u2260(B,Y)",
+          "\u2260(C,E)",
+          "\u2260(C,Y)"
+        ],
+        "b_only": [
+          "=(\u2203 (m : \u211d), (E -\u1d65 D),m \u2022 (C -\u1d65 A))",
+          "=(\u2203! (p : Point), CollinearPoints p A B \u2227 dist p B,dist p C)",
+          "=(\u2203! (p : Point), CollinearPoints p B C \u2227 dist p A,dist p C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,D,B)",
+          "CollinearPoints(A,X,C)",
+          "CollinearPoints(A,Y,C)",
+          "CollinearPoints(B,E,C)",
+          "\u2227(dist A O = dist B O,dist B O = dist C O)",
+          "\u2227(\u2203! (p : Point), CollinearPoints p A X,CollinearPoints p B X)",
+          "\u2227(\u2203! (p : Point), CollinearPoints p B Y,CollinearPoints p C Y)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(@inner \u211d Vec _ (O -\u1d65 B) (C -\u1d65 A),0)",
+        "b_parsed": "=(@inner \u211d Vec _ (B -\u1d65 O) (C -\u1d65 A),0)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

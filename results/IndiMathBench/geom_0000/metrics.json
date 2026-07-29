@@ -1,0 +1,46 @@
+{
+  "problem_id": "geom_0000",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((dist P A = dist A B) \u2228 (dist A B = dist B P) \u2228 (dist B P = dist P A)",
+          "((dist Q B = dist B C) \u2228 (dist B C = dist C Q) \u2228 (dist C Q = dist Q B)",
+          "((dist R A = dist A C) \u2228 (dist A C = dist C R) \u2228 (dist C R = dist R A)",
+          "=(angle A P B,120)",
+          "=(angle A R C,120)",
+          "=(angle B Q C,120)",
+          "AffineIndependent(\u211d,![,P,,A,,B,])",
+          "AffineIndependent(\u211d,![,Q,,B,,C,])",
+          "AffineIndependent(\u211d,![,R,,A,,C,])",
+          "\u2260(A,B)",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "=(angle A P B,2 * Real.pi / 3)",
+          "=(angle A R C,2 * Real.pi / 3)",
+          "=(angle B Q C,2 * Real.pi / 3)",
+          "=(dist P A,dist P B)",
+          "=(dist Q B,dist Q C)",
+          "=(dist R A,dist R C)",
+          "Between(A,B,C)"
+        ],
+        "jaccard": 0.0526
+      },
+      "goal": {
+        "a_parsed": "dist(P,Q,=,dist,Q,R) \u2227 (dist,Q,R,=,dist,R,P)",
+        "b_parsed": "\u2227(dist P Q = dist Q R,dist Q R = dist R P)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

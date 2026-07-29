@@ -1,0 +1,51 @@
+{
+  "problem_id": "geom_0031",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.875
+      },
+      "hypotheses": {
+        "a_only": [
+          "(DistanceRatio (Segment A E) (Segment E C) 4",
+          "(DistanceRatio (Segment B D) (Segment D C) 3",
+          "=(D,midpoint \u211d E P)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(AP,BC,S)",
+          "\u2260(A,C)",
+          "\u2260(A,P)",
+          "\u2260(B,C)",
+          "\u2260(E,D)",
+          "\u2260(E,P)"
+        ],
+        "b_only": [
+          "=(dist A E,4 * dist E C)",
+          "=(dist B D,3 * dist D C)",
+          "=(dist E D,dist D P)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,E,C)",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(E,D,P)",
+          "\u2227(CollinearPoints A P S,CollinearPoints B S C)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), ((dist 0 0) / (dist 0 0)),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), dist B S / dist S D,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

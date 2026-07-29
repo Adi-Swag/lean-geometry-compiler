@@ -1,0 +1,56 @@
+{
+  "problem_id": "geom_0089",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(A,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "AffineIndependent(\u211d,![,O1,,A,,O2,])",
+          "IntersectAt(circumcircle_O1AO2,\u03931,C)",
+          "IntersectAt(circumcircle_O1AO2,\u03932,D)",
+          "IntersectAt(line_CB,\u03932,E)",
+          "IntersectAt(line_DB,\u03931,F)",
+          "IntersectAt(\u03931,\u03932,A)",
+          "IntersectAt(\u03931,\u03932,B)",
+          "IsObtuse((Triangle O1 A O2)",
+          "\u2260(A,O2)",
+          "\u2260(C,B)",
+          "\u2260(D,B)",
+          "\u2260(O1,A)"
+        ],
+        "b_only": [
+          "=(dist A O1,r1)",
+          "=(dist A O2,r2)",
+          "=(dist B O1,r1)",
+          "=(dist B O2,r2)",
+          "=(dist C O1,r1)",
+          "=(dist D O2,r2)",
+          ">(angle O1 A O2,Real.pi / 2)",
+          ">(r1,0)",
+          ">(r2,0)",
+          ">(\u2203 (r : \u211d), r,0 \u2227 dist C O1 = r \u2227 dist D O2 = r)",
+          "CollinearPoints(C,B,E)",
+          "CollinearPoints(D,B,F)",
+          "\u2260(A,B)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "Concyclic([C,,D,,E,,F])",
+        "b_parsed": ">(\u2203 (r : \u211d), r,0 \u2227 dist C E = r \u2227 dist D F = r \u2227 dist E F = r)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

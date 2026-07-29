@@ -1,0 +1,55 @@
+{
+  "problem_id": "geom_0019",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "H",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8571
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(dist H O,r_O)",
+          ">(B,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,P,,Q,])",
+          "IntersectAt(AB,\u0393,P)",
+          "IntersectAt(AC,\u0393,Q)",
+          "IsOrthocenterOf(H,(Triangle A P Q)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,P)",
+          "\u2260(A,Q)",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "=(dist B C,2 * r)",
+          "=(dist P O,r)",
+          "=(dist Q O,r)",
+          "=(\u2203 H : Point, Orthocenter A P Q H \u2227 dist H O,r)",
+          ">(r,0)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,P,B)",
+          "CollinearPoints(A,Q,C)",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,A,C,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)",
+          "\u2227(dist B O = r,dist C O = r)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), (angle B A C),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), angle B A C,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

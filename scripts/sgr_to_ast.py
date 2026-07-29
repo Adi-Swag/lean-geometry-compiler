@@ -584,7 +584,61 @@ def _expr_to_ast(e: Any) -> AstNode:
         center = e.get("circle_center", a[0] if isinstance(a, list) and a else "")
         return _pred("Circumference", _pred("Circle", _sym(center)))
 
-    raise ValueError(f"Unsupported expression type: {t}")
+    # Triangle centers: Orthocenter, Circumcenter, Incenter, etc.
+    if t in ("Orthocenter", "Circumcenter", "Incenter", "Centroid",
+             "Excenter", "NinePointCenter"):
+        args = e.get("args", [])
+        if args and isinstance(args[0], dict):
+            if args[0].get("type") == "Triangle":
+                tri = _args_to_field(args[0])
+                vertices = tri.get("vertices", [])
+                if len(vertices) >= 3:
+                    return _pred(t, _pred("Triangle", _sym(vertices[0]), _sym(vertices[1]), _sym(vertices[2])))
+            return _pred(t, _expr_to_ast(args[0]))
+        if args:
+            return _pred(t, *[_expr_to_ast(a) for a in args])
+        return _pred(t)
+
+    # Set operations
+    if t == "Set":
+        args = e.get("args", [])
+        if args:
+            return _pred("Set", *[_expr_to_ast(a) for a in args])
+        return _pred("Set")
+
+    # DistinctValues — set of distinct values
+    if t == "DistinctValues":
+        args = e.get("args", [])
+        if args:
+            return _pred("DistinctValues", *[_expr_to_ast(a) for a in args])
+        return _pred("DistinctValues")
+
+    # Exists — existential quantification
+    if t == "Exists":
+        args = e.get("args", [])
+        if args:
+            return _pred("Exists", *[_expr_to_ast(a) for a in args])
+        return _pred("Exists")
+
+    # ConvexQuadrilateral and other shape-like types with "vertices" field
+    if t in ("ConvexQuadrilateral", "Quadrilateral", "Polygon", "Triangle", "CyclicQuadrilateral"):
+        verts = e.get("vertices", e.get("args", []))
+        if isinstance(verts, list) and len(verts) >= 2:
+            return _pred(t, *[_sym(v) for v in verts])
+        return _pred(t)
+
+    # NumberOfGoodPoints — counting type
+    if t == "NumberOfGoodPoints":
+        args = e.get("args", [])
+        if isinstance(args, list):
+            return _pred("NumberOfGoodPoints", *[_expr_to_ast(a) for a in args])
+        return _pred("NumberOfGoodPoints")
+
+    # Fallback: try args, then vertices
+    args = e.get("args", e.get("vertices", []))
+    if isinstance(args, list) and args:
+        return _pred(t, *[_expr_to_ast(a) for a in args])
+    return _pred(t)
 
 
 def _term_to_ast(x) -> AstNode:
@@ -625,6 +679,7 @@ def goals_to_ast(data: dict) -> List[PredicateNode]:
         "Sin", "Cos", "Tan", "Sec", "Csc", "Cot",
         "Asin", "Acos", "Atan", "Arcsin", "Arccos", "Arctan",
         "TrigFunction", "InverseTrigFunction",
+        "NumberOfGoodPoints", "Distance", "AngleMeasure",
     }
 
     for g in data.get("goals", []):
@@ -634,6 +689,8 @@ def goals_to_ast(data: dict) -> List[PredicateNode]:
         content = g.get("content", {})
 
         if not isinstance(content, dict):
+            if isinstance(content, str) and kind == "Find":
+                out.append(_pred("Find", _sym(content)))
             continue
 
         goal_type = content.get("type", "")
@@ -669,14 +726,29 @@ def goals_to_ast(data: dict) -> List[PredicateNode]:
                     out.append(_pred("Find", node))
                 continue
 
+            # Exists: Prove(Exists(ConvexQuadrilateral(...), ...))
+            if goal_type == "Exists" and kind == "Prove":
+                args = content.get("args", [])
+                if args:
+                    exists_body = _pred("Exists", *[_expr_to_ast(a) for a in args])
+                    out.append(_pred("Prove", exists_body))
+                continue
+
             # General: convert content as a relation
-            fake_data = {"relations": [content]}
-            rels = relations_to_ast(fake_data)
-            if rels:
-                if kind == "Prove":
-                    out.append(_pred("Prove", rels[0]))
-                elif kind == "Find":
-                    out.append(_pred("Find", rels[0]))
+            try:
+                fake_data = {"relations": [content]}
+                rels = relations_to_ast(fake_data)
+                if rels:
+                    if kind == "Prove":
+                        out.append(_pred("Prove", rels[0]))
+                    elif kind == "Find":
+                        out.append(_pred("Find", rels[0]))
+                    continue
+            except Exception:
+                pass
+
+        except Exception:
+            pass
 
         except Exception:
             pass

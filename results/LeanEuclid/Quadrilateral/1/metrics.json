@@ -1,0 +1,84 @@
+{
+  "problem_id": "1",
+  "dataset": "LeanEuclid",
+  "category": "Quadrilateral",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8
+      },
+      "hypotheses": {
+        "a_only": [
+          "IsQuadrilateral(T,U,V,W)",
+          "\u2260(T,V)",
+          "\u2260(T,W)",
+          "\u2260(U,V)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![T,,U,,V,,W])"
+        ],
+        "jaccard": 0.2857
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = (dist,0,0)",
+        "b_parsed": "=(dist T W,dist U V)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [
+          "0"
+        ],
+        "b_only": [],
+        "jaccard": 0.8
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "((dist 0 0) = (dist 0 0))",
+        "b_normalized": "dist T W",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "dist T W = dist U V",
+        "b_normalized": "dist T W",
+        "match_exact": false
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "problem_id": "geom_0070",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "O",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.9
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(M,A,(Segment A B),(Segment A C)",
+          "IntersectAt(A1B1,AC,Q)",
+          "IntersectAt(A1C1,AB,P)",
+          "IntersectAt(AM,Gamma,A1)",
+          "IntersectAt(BM,Gamma,B1)",
+          "IntersectAt(CM,Gamma,C1)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,M)",
+          "\u2260(A1,B1)",
+          "\u2260(A1,C1)",
+          "\u2260(B,C)",
+          "\u2260(B,M)",
+          "\u2260(C,M)",
+          "\u2260(P,Q)"
+        ],
+        "b_only": [
+          "=(angle A M B,angle A M C)",
+          "=(dist A1 O,r)",
+          "=(dist B1 O,r)",
+          "=(dist C1 O,r)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,M,A1,\u2227,CollinearPoints,B,M,B1,\u2227,CollinearPoints,C,M,C1)",
+          "dist(A,O,=,r,\u2227,dist,B,O,=,r,\u2227,dist,C,O,=,r)",
+          "\u2227(\u2203! (p : Point), CollinearPoints p A B,CollinearPoints p A1 C1)",
+          "\u2227(\u2203! (q : Point), CollinearPoints q A C,CollinearPoints q A1 B1)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "VecParallel((Q -\u1d65 P),(C -\u1d65 B))",
+        "b_parsed": "ParallelLines(P,Q,B,C)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

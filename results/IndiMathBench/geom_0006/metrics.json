@@ -1,0 +1,28 @@
+{
+  "problem_id": "geom_0006",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "=((a * b * c) + (a * b * d) + (a * c * e) + (a * d * e) +\n                  (b * c * f) + (b * d * f) + (c * e * f) + (d * e * f),2004)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": null,
+        "b_parsed": "=(\u2203 (T : \u2115), T,a + b + c + d + e + f)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

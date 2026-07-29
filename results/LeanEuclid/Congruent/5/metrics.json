@@ -1,0 +1,83 @@
+{
+  "problem_id": "5",
+  "dataset": "LeanEuclid",
+  "category": "Congruent",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,T,,S,,U,])",
+          "AffineIndependent(\u211d,![,V,,U,,S,])",
+          "VecParallel((T -\u1d65 S),(V -\u1d65 U)",
+          "\u2260(S,T)",
+          "\u2260(S,V)",
+          "\u2260(T,U)",
+          "\u2260(U,S)",
+          "\u2260(U,V)"
+        ],
+        "b_only": [
+          "Parallel((Line.mk S T),(Line.mk U V))"
+        ],
+        "jaccard": 0.1
+      },
+      "goal": {
+        "a_parsed": "=(dist S V,dist T U)",
+        "b_parsed": "=(dist S V,dist T U)",
+        "match_exact": false,
+        "match_predicate": true
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(dist S V = dist T U)",
+        "b_normalized": "dist S V",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "dist S T = dist U V"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "dist S V = dist T U",
+        "b_normalized": "dist S V",
+        "match_exact": false
+      }
+    }
+  }
+}

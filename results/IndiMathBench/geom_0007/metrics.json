@@ -1,0 +1,47 @@
+{
+  "problem_id": "geom_0007",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "IsQuadrilateral(A,P,O,B)",
+          "IsQuadrilateral(A,P,O,S)",
+          "IsQuadrilateral(A,P,X,S)",
+          "IsQuadrilateral(B,Q,O,P)",
+          "IsQuadrilateral(C,R,O,Q)",
+          "IsQuadrilateral(D,S,O,R)",
+          "VecParallel((O -\u1d65 X),(D -\u1d65 B)",
+          "VecParallel((O -\u1d65 Y),(C -\u1d65 A)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(C,D)",
+          "\u2260(D,A)",
+          "\u2260(X,O)",
+          "\u2260(Y,O)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C,,D])",
+          "Parallel((Line.mk X O),(Line.mk B D))",
+          "Parallel((Line.mk Y O),(Line.mk A C))"
+        ],
+        "jaccard": 0.24
+      },
+      "goal": {
+        "a_parsed": "area((Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area,(Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'X', 'S']}))) \u2227 ((area,(Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area,(Polygon {'type': 'Quadrilateral', 'vertices': ['B', 'Q', 'O', 'P']}))) \u2227 ((area,(Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area,(Polygon {'type': 'Quadrilateral', 'vertices': ['C', 'R', 'O', 'Q']}))) \u2227 ((area,(Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area,(Polygon {'type': 'Quadrilateral', 'vertices': ['D', 'S', 'O', 'R']}))",
+        "b_parsed": "area((Quadrilateral.mk A P O S),=,area,(Quadrilateral.mk A P X S)) \u2227)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

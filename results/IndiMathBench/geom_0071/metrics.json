@@ -1,0 +1,47 @@
+{
+  "problem_id": "geom_0071",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(angle A F E,angle B D F)",
+          "=(angle B D F,angle C E D)",
+          "=(angle C E D,angle A F E)",
+          "=(dist A F,dist B D)",
+          "=(dist B D,dist C E)",
+          "=(dist C E,dist A F)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,B)",
+          "\u2260(A,F)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(C,A)",
+          "\u2260(C,E)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,F,B)",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(C,E,A)",
+          "\u2227(angle B D F = angle C E D,angle C E D = angle A F E)",
+          "\u2227(dist B D = dist C E,dist C E = dist A F)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(A,B,=,dist,B,C) \u2227 (dist,B,C,=,dist,C,A)",
+        "b_parsed": "\u2227(dist A B = dist B C,dist B C = dist C A)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

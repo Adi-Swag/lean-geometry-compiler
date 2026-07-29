@@ -1,0 +1,51 @@
+{
+  "problem_id": "geom_0082",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.9
+      },
+      "hypotheses": {
+        "a_only": [
+          "(CollinearPoints A B E \u2227 @inner \u211d Vec _ (E -\u1d65 P) (B -\u1d65 A) = 0",
+          "(CollinearPoints B C F \u2227 @inner \u211d Vec _ (F -\u1d65 P) (C -\u1d65 B) = 0",
+          "(CollinearPoints C D G \u2227 @inner \u211d Vec _ (G -\u1d65 P) (D -\u1d65 C) = 0",
+          "(CollinearPoints D A H \u2227 @inner \u211d Vec _ (H -\u1d65 P) (A -\u1d65 D) = 0",
+          "IsQuadrilateral(A,B,C,D)",
+          "\u2227(CollinearPoints P A C,CollinearPoints P C B)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(C,D)",
+          "\u2260(D,A)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (E -\u1d65 P) (B -\u1d65 A),0)",
+          "=(@inner \u211d Vec _ (F -\u1d65 P) (C -\u1d65 B),0)",
+          "=(@inner \u211d Vec _ (G -\u1d65 P) (D -\u1d65 C),0)",
+          "=(@inner \u211d Vec _ (H -\u1d65 P) (A -\u1d65 D),0)",
+          "AffineIndependent(\u211d,![A,,B,,C,,D])",
+          "\u2227(CollinearPoints A C P,CollinearPoints B D P)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "(((1.0 / (dist 0 0)) + (1.0 / (dist 0 0))) = ((1.0 / (dist 0 0)) + (1.0 / (dist 0 0))))",
+        "b_parsed": "=(\u2203 (r : \u211d), r > 0 \u2227 \u2200 (X : Point), (dist X A = r \u2228 dist X B = r \u2228 dist X C = r \u2228 dist X D = r) \u2194 (dist X P = r))\n    \u2194 (1 / dist P E + 1 / dist P G,1 / dist P F + 1 / dist P H)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

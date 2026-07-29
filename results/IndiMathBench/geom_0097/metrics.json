@@ -1,0 +1,53 @@
+{
+  "problem_id": "geom_0097",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8889
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(dist A1 O,r_O)",
+          "=(dist A2 O,r_O)",
+          "=(dist A3 O,r_O)",
+          ">(A1,0)",
+          ">(h_r_0_pos : r_0,0)",
+          ">(h_r_O_pos : r_O,0)",
+          ">(h_r_P1_pos : r_P1,0)",
+          "AffineIndependent(\u211d,![,A1,,A2,,A3,])",
+          "AffineIndependent(\u211d,![,P1,,P2,,P3,])",
+          "Rotation(P1,P,A1,{'type':,'MeasureOf',,'args':,['A1',,'A2',,'A3']})",
+          "Rotation(P2,P,A2,{'type':,'MeasureOf',,'args':,['A2',,'A3',,'A1']})",
+          "Rotation(P3,P,A3,{'type':,'MeasureOf',,'args':,['A3',,'A1',,'A2']})"
+        ],
+        "b_only": [
+          "=(P1,rotate_about A3 (angle A3 A1 A2) (rotate_about A2 (angle A2 A3 A1) (rotate_about A1 (angle A1 A2 A3) P)",
+          "=(P2,rotate_about A1 (angle A1 A2 A3) (rotate_about A3 (angle A3 A1 A2) (rotate_about A2 (angle A2 A3 A1) P)",
+          "=(P3,rotate_about A2 (angle A2 A3 A1) (rotate_about A1 (angle A1 A2 A3) (rotate_about A3 (angle A3 A1 A2) P)",
+          "=(dist A1 O,r)",
+          "=(dist A2 O,r)",
+          "=(dist A3 O,r)",
+          ">(r,0)",
+          "AffineIndependent(\u211d,![A1,,A2,,A3])"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "\u2264(r_P1,r_0)",
+        "b_parsed": "\u2264(\u2203 (R : \u211d), R,r \u2227 (dist P1 O = R) \u2227 (dist P2 O = R) \u2227 (dist P3 O = R))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

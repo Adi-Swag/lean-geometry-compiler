@@ -1,0 +1,106 @@
+{
+  "problem_id": "geom_0072",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "A1",
+            "Point"
+          ],
+          [
+            "A2",
+            "Point"
+          ],
+          [
+            "A3",
+            "Point"
+          ],
+          [
+            "A4",
+            "Point"
+          ],
+          [
+            "A5",
+            "Point"
+          ],
+          [
+            "A6",
+            "Point"
+          ],
+          [
+            "A7",
+            "Point"
+          ],
+          [
+            "A8",
+            "Point"
+          ],
+          [
+            "A9",
+            "Point"
+          ]
+        ],
+        "b_only": [
+          [
+            "A",
+            "Point"
+          ],
+          [
+            "B",
+            "Point"
+          ],
+          [
+            "C",
+            "Point"
+          ],
+          [
+            "D",
+            "Point"
+          ],
+          [
+            "E",
+            "Point"
+          ],
+          [
+            "F",
+            "Point"
+          ],
+          [
+            "G",
+            "Point"
+          ],
+          [
+            "H",
+            "Point"
+          ],
+          [
+            "I",
+            "Point"
+          ]
+        ],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "IsPolygon(A1,A2,A3,A4,A5,A6,A7,A8,A9)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C,,D,,E,,F,,G,,H,,I])",
+          "\u2192(\u2200 (P Q : Point), (P \u2260 Q),(dist P Q = dist A B))",
+          "\u2203 (P Q R S T : Point), \n    (P = A \u2228 P = B \u2228 P = C \u2228 P = D \u2228 P = E \u2228 P = F \u2228 P = G \u2228 P = H \u2228 P = I) \u2227\n    (Q = A \u2228 Q = B \u2228 Q = C \u2228 Q = D \u2228 Q = E \u2228 Q = F \u2228 Q = G \u2228 Q = H \u2228 Q = I) \u2227\n    (R = A \u2228 R = B \u2228 R = C \u2228 R = D \u2228 R = E \u2228 R = F \u2228 R = G \u2228 R = H \u2228 R = I) \u2227\n    (S = A \u2228 S = B \u2228 S = C \u2228 S = D \u2228 S = E \u2228 S = F \u2228 S = G \u2228 S = H \u2228 S = I) \u2227\n    (T = A \u2228 T = B \u2228 T = C \u2228 T = D \u2228 T = E \u2228 T = F \u2228 T = G \u2228 T = H \u2228 T = I) \u2227\n    (P \u2260 Q \u2227 P \u2260 R \u2227 P \u2260 S \u2227 P \u2260 T \u2227 Q \u2260 R \u2227 Q \u2260 S \u2227 Q \u2260 T \u2227 R \u2260 S \u2227 R \u2260 T \u2227 S \u2260 T)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "Exists((ConvexQuadrilateral B1 B2 B3 B4),(Parallel B1 B2))",
+        "b_parsed": "\u2203 (U V W X : Point), \n    (U = A \u2228 U = B \u2228 U = C \u2228 U = D \u2228 U = E \u2228 U = F \u2228 U = G \u2228 U = H \u2228 U = I) \u2227\n    (V = A \u2228 V = B \u2228 V = C \u2228 V = D \u2228 V = E \u2228 V = F \u2228 V = G \u2228 V = H \u2228 V = I) \u2227\n    (W = A \u2228 W = B \u2228 W = C \u2228 W = D \u2228 W = E \u2228 W = F \u2228 W = G \u2228 W = H \u2228 W = I) \u2227\n    (X = A \u2228 X = B \u2228 X = C \u2228 X = D \u2228 X = E \u2228 X = F \u2228 X = G \u2228 X = H \u2228 X = I) \u2227\n    (U \u2260 V \u2227 U \u2260 W \u2227 U \u2260 X \u2227 V \u2260 W \u2227 V \u2260 X \u2227 W \u2260 X) \u2227\n    (Parallel (Line U V) (Line W X) \u2228 Parallel (Line U W) (Line V X) \u2228 Parallel (Line U X) (Line V W))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

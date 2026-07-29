@@ -1,0 +1,48 @@
+{
+  "problem_id": "geom_0054",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "L",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8333
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(angle D A C,15)",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,D,,C,])",
+          "AffineIndependent(\u211d,![,A,,O,,D,])",
+          "IsCircumcenterOf(O,(Triangle A D C)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(B,C)",
+          "\u2260(D,C)"
+        ],
+        "b_only": [
+          "=(angle D A C,Real.pi / 12)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "\u2227(dist A O = dist D O,dist D O = dist C O)"
+        ],
+        "jaccard": 0.1176
+      },
+      "goal": {
+        "a_parsed": "\u2227(IsObtuse (Triangle L A D)) \u2227 ((dist A O = dist O D),(dist O D = dist D A))",
+        "b_parsed": ">(angle D A C,Real.pi / 2) \u2227 (dist A O = dist O D \u2227 dist O D = dist D A)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

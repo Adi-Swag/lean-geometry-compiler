@@ -1,0 +1,35 @@
+{
+  "problem_id": "geom_0009",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(angle A C D,30)",
+          "=(angle A D B,45)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "=(angle A C D,Real.pi / 6)",
+          "=(angle A D B,Real.pi / 4)",
+          "AffineIndependent(\u211d,![A,,B,,C])"
+        ],
+        "jaccard": 0.125
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), (angle B A D),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), angle B A D,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

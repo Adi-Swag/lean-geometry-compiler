@@ -1,0 +1,57 @@
+{
+  "problem_id": "geom_0083",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ],
+          [
+            "H",
+            "Point"
+          ]
+        ],
+        "b_only": [
+          [
+            "O",
+            "Point"
+          ]
+        ],
+        "jaccard": 0.5714
+      },
+      "hypotheses": {
+        "a_only": [
+          "((dist A B = dist B C) \u2228 (dist B C = dist C A) \u2228 (dist C A = dist A B)",
+          "=(dist H I,r_I)",
+          ">(B,0)",
+          ">(h_r_I_pos : r_I,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "IsOrthocenterOf(H,(Triangle A B C)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "=(dist A B,dist A C)",
+          "=(dist I O,r)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "Incenter(I,(Triangle.mk A B C))",
+          "Orthocenter(O,(Triangle.mk A B C))"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), ((dist 0 0) / (dist 0 0)),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), dist A B / dist B C,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

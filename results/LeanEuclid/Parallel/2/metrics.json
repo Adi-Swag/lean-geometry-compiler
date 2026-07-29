@@ -1,0 +1,79 @@
+{
+  "problem_id": "2",
+  "dataset": "LeanEuclid",
+  "category": "Parallel",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "IntersectAt(SU,RY,T)",
+          "IntersectAt(VX,RY,W)",
+          "\u2227((CollinearPoints Y W T),(CollinearPoints Y T R)",
+          "\u2260(R,Y)",
+          "\u2260(S,U)",
+          "\u2260(V,X)"
+        ],
+        "b_only": [
+          "CollinearPoints(Y,W,T,R)"
+        ],
+        "jaccard": 0.125
+      },
+      "goal": {
+        "a_parsed": "VecParallel((X -\u1d65 V),(U -\u1d65 S))",
+        "b_parsed": "ParallelLines((Line V X),(Line S U))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(VecParallel (X -\u1d65 V) (U -\u1d65 S))",
+        "b_normalized": "\u00ac VX.intersectsLine SU",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "ParallelLines (Line V X) (Line S U)",
+        "b_normalized": "\u00ac VX.intersectsLine SU",
+        "match_exact": false
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "problem_id": "geom_0046",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((angle A B C = Real.pi / 2) \u2228 (angle B C A = Real.pi / 2) \u2228 (angle C A B = Real.pi / 2)",
+          "(@inner \u211d Vec _ (D -\u1d65 B) (C -\u1d65 A) = 0",
+          "(@inner \u211d Vec _ (E -\u1d65 D) (B -\u1d65 A) = 0",
+          "(@inner \u211d Vec _ (F -\u1d65 D) (C -\u1d65 B) = 0",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,D,,A,,E,])",
+          "AffineIndependent(\u211d,![,D,,B,,F,])",
+          "AffineIndependent(\u211d,![,D,,E,,B,])",
+          "AffineIndependent(\u211d,![,D,,F,,C,])",
+          "IsIncenterOf(P,(Triangle D F C)",
+          "IsIncenterOf(Q,(Triangle D B F)",
+          "IsIncenterOf(R,(Triangle D E B)",
+          "IsIncenterOf(S,(Triangle D A E)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(D,E)",
+          "\u2260(D,F)",
+          "\u2260(R,Q)",
+          "\u2260(S,R)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (D -\u1d65 B) (C -\u1d65 A),0)",
+          "=(@inner \u211d Vec _ (E -\u1d65 D) (B -\u1d65 A),0)",
+          "=(@inner \u211d Vec _ (F -\u1d65 D) (C -\u1d65 B),0)",
+          "=(angle A B C,Real.pi / 2)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,D,C)",
+          "Incenter(P,D,F,C)",
+          "Incenter(Q,D,B,F)",
+          "Incenter(R,D,E,B)",
+          "Incenter(S,D,A,E)"
+        ],
+        "jaccard": 0.0312
+      },
+      "goal": {
+        "a_parsed": "Concyclic([P,,Q,,R,,D])",
+        "b_parsed": "PointLiesOnCircle(P,Q,R,D)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

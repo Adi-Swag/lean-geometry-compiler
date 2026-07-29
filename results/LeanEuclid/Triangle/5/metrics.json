@@ -1,0 +1,87 @@
+{
+  "problem_id": "5",
+  "dataset": "LeanEuclid",
+  "category": "Triangle",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(DistanceRatio (Segment S W) (Segment R V) {'type': 'Div', 'args': [{'type': 'LengthOf', 'args': ['S', 'T']}, {'type': 'LengthOf', 'args': ['R', 'U']}]}",
+          "=(angle T S W,angle U R V)",
+          "AffineIndependent(\u211d,![,R,,U,,V,])",
+          "AffineIndependent(\u211d,![,S,,T,,W,])",
+          "\u2260(R,U)",
+          "\u2260(R,V)",
+          "\u2260(S,T)",
+          "\u2260(S,W)"
+        ],
+        "b_only": [
+          "=(angle S W T,angle R V U)",
+          "AffineIndependent(\u211d,![R,,V,,U])",
+          "AffineIndependent(\u211d,![S,,W,,T])",
+          "dist(S,W,/,dist,R,V) = (dist,S,T,/,dist,R,U)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(angle S W T,angle R V U)",
+        "b_parsed": "=(angle S W T,angle R V U)",
+        "match_exact": false,
+        "match_predicate": true
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle S W T = angle R V U)",
+        "b_normalized": "angle S W T",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent R V U",
+          "AffineIndependent S W T"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle S W T = angle R V U",
+        "b_normalized": "angle S W T",
+        "match_exact": false
+      }
+    }
+  }
+}

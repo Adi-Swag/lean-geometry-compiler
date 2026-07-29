@@ -1,0 +1,49 @@
+{
+  "problem_id": "geom_0033",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8571
+      },
+      "hypotheses": {
+        "a_only": [
+          "(((dist A P) + (dist P C)",
+          "(@inner \u211d Vec _ (Q -\u1d65 C) (M -\u1d65 A) = 0",
+          ">((dist A B),(dist A C)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,P)",
+          "\u2260(B,C)",
+          "\u2260(B,Q)",
+          "\u2260(P,C)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (Q -\u1d65 C) (M -\u1d65 A),0)",
+          "=(dist A P + dist P C,dist A B)",
+          ">(dist A B,dist A C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,B,P)",
+          "CollinearPoints(A,B,Q)"
+        ],
+        "jaccard": 0.0588
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = (2.0,*,(dist 0 0))",
+        "b_parsed": "=(dist B Q,2 * dist A P)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

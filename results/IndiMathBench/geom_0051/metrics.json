@@ -1,0 +1,50 @@
+{
+  "problem_id": "geom_0051",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(A,LK,P)",
+          "IntersectAt(A,MK,Q)",
+          "VecParallel((P -\u1d65 A),(K -\u1d65 L)",
+          "VecParallel((Q -\u1d65 A),(K -\u1d65 M)",
+          "\u2260(A,B)",
+          "\u2260(A,P)",
+          "\u2260(A,Q)",
+          "\u2260(B,C)",
+          "\u2260(C,A)",
+          "\u2260(L,K)",
+          "\u2260(M,K)",
+          "\u2260(P,Q)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,M,B)",
+          "CollinearPoints(B,K,C)",
+          "CollinearPoints(C,L,A)",
+          "CollinearPoints(L,Q,K)",
+          "CollinearPoints(M,P,K)",
+          "Parallel((Line A P),(Line L K))",
+          "Parallel((Line A Q),(Line M K))",
+          "PointLiesOnCircle(K,(incenter A B C),(inradius A B C),\u2227)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "\u2260(CollinearPoints B P Q \u2227 \u2203 (p : Point), CollinearPoints p P Q \u2227 p,B \u2227 angle A B p = angle p B A)",
+        "b_parsed": "\u2227(Midpoint \u211d A P B,Midpoint \u211d A Q C)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

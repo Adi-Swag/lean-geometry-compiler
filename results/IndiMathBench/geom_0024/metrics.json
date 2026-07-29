@@ -1,0 +1,49 @@
+{
+  "problem_id": "geom_0024",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (D -\u1d65 A) (C -\u1d65 B) = 0",
+          "=(dist B O,r_O)",
+          "=(dist C O,r_O)",
+          "=(dist D O,r_O)",
+          ">(C,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,B,,D,])",
+          "IntersectAt(AC,\u0393,D)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(B,C)",
+          "\u2260(B,D)"
+        ],
+        "b_only": [
+          "<(dist A B,dist A C)",
+          "=(\u2203! (p : Point), CollinearPoints p A B \u2227 dist p O,r)",
+          ">(r,0)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,D,C)",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,A,C,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)",
+          "dist(B,O,=,r,\u2227,dist,C,O,=,r,\u2227,dist,D,O,=,r)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "Orthocenter(0.0,0.0,0.0,0.0) = (OnCircle,0.0,0.0)) \u2227 ((Orthocenter,0.0,0.0,0.0,0.0) = (Perpendicular,0.0,0.0)",
+        "b_parsed": "\u2194(PointLiesOnCircle (orthocenter \u211d ![A, B, D]) O r,CollinearPoints (orthocenter \u211d ![A, B, D]) (midpoint \u211d B C) O)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

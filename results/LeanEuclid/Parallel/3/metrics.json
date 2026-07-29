@@ -1,0 +1,81 @@
+{
+  "problem_id": "3",
+  "dataset": "LeanEuclid",
+  "category": "Parallel",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,P,,R,,S,])",
+          "VecParallel((T -\u1d65 Q),(S -\u1d65 R)",
+          "\u2260(P,R)",
+          "\u2260(P,S)",
+          "\u2260(Q,T)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![P,,R,,S])",
+          "Parallel((Line.mk Q T),(Line.mk R S))"
+        ],
+        "jaccard": 0.125
+      },
+      "goal": {
+        "a_parsed": "=(angle S R P,angle Q R S)",
+        "b_parsed": "=(angle S P R,angle Q R S)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle S R P = angle Q R S)",
+        "b_normalized": "angle P S R",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent P R S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle S P R = angle Q R S",
+        "b_normalized": "angle P S R",
+        "match_exact": false
+      }
+    }
+  }
+}

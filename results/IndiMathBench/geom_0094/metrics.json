@@ -1,0 +1,54 @@
+{
+  "problem_id": "geom_0094",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ],
+          [
+            "O",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.7143
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(angle A B D,30)",
+          "=(angle A C D,25)",
+          "=(angle B C A,75)",
+          ">(D,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,D,,A,,C,])",
+          "IntersectAt(line_CB,circumcircle_DAC,E)",
+          "IsQuadrilateral(A,B,C,D)",
+          "\u2260(B,D)",
+          "\u2260(C,B)",
+          "\u2260(C,D)",
+          "\u2260(C,E)"
+        ],
+        "b_only": [
+          "=(angle A B D,Real.pi / 6)",
+          "=(angle A C D,Real.pi / 7.2)",
+          "=(angle B C A,5 * Real.pi / 12)",
+          ">(\u2203 (r : \u211d), r,0 \u2227 dist A E = r \u2227 dist D E = r \u2227 dist C E = r)",
+          "AffineIndependent(\u211d,![A,,B,,C,,D])"
+        ],
+        "jaccard": 0.0556
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = (dist,0,0)",
+        "b_parsed": "=(dist C E,dist B D)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

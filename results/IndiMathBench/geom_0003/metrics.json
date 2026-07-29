@@ -1,0 +1,41 @@
+{
+  "problem_id": "geom_0003",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=((angle B A C),(2.0 * (angle A C B)",
+          "=((dist C D),(dist A B)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(D,A,(Segment A B),(Segment A C)",
+          "\u2260(A,B)",
+          "\u2260(A,D)",
+          "\u2260(B,C)",
+          "\u2260(C,D)"
+        ],
+        "b_only": [
+          "=(angle A B D,angle A C D)",
+          "=(angle B A C,2 * angle C A B)",
+          "=(dist C D,dist A B)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,D,C)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=((angle 0 0 0),72.0)",
+        "b_parsed": "=(angle B A C,72 * Real.pi / 180)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "problem_id": "geom_0047",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8333
+      },
+      "hypotheses": {
+        "a_only": [
+          "((angle A B C = Real.pi / 2) \u2228 (angle B C A = Real.pi / 2) \u2228 (angle C A B = Real.pi / 2)",
+          "(@inner \u211d Vec _ (I -\u1d65 A) (D -\u1d65 I) = 0",
+          "(@inner \u211d Vec _ (I -\u1d65 C) (D -\u1d65 A) = 0",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(AI,CB,D)",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "\u2260(A,D)",
+          "\u2260(A,I)",
+          "\u2260(B,C)",
+          "\u2260(C,A)",
+          "\u2260(C,B)",
+          "\u2260(C,I)",
+          "\u2260(I,D)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (I -\u1d65 A) (D -\u1d65 I),0)",
+          "=(angle A B C,Real.pi / 2)",
+          "=(dist C A,b)",
+          "=(dist C B,a)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(C,D,B)",
+          "Incenter(I,(Triangle.mk A B C))"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "(@inner \u211d Vec _ (I -\u1d65 C) (D -\u1d65 A) = 0) \u2227 ((dist 0 0) = (Real.sqrt ((dist 0 0) * ((dist 0 0) - (dist 0 0)))))",
+        "b_parsed": "(@inner \u211d Vec _ (C -\u1d65 I) (D -\u1d65 A) = 0) \u2227 (dist I D = Real.sqrt (b * (b - a)))",
+        "match_exact": false,
+        "match_predicate": true
+      }
+    }
+  }
+}

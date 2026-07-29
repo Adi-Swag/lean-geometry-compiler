@@ -1,0 +1,50 @@
+{
+  "problem_id": "geom_0049",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8571
+      },
+      "hypotheses": {
+        "a_only": [
+          "((angle A B C = Real.pi / 2) \u2228 (angle B C A = Real.pi / 2) \u2228 (angle C A B = Real.pi / 2)",
+          "(@inner \u211d Vec _ (I -\u1d65 A) (E -\u1d65 I) = 0",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(AC,line_perpendicular_to_AI_at_I,E)",
+          "IntersectAt(AI,BC,F)",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "\u2260(A,C)",
+          "\u2260(A,I)",
+          "\u2260(B,C)",
+          "\u2260(I,E)",
+          "\u2260(I,F)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (E -\u1d65 I) (A -\u1d65 I),0)",
+          "=(angle A B C,Real.pi / 2)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,E,C)",
+          "Incenter(I,A,B,C)",
+          "\u2227(CollinearPoints A I F,CollinearPoints B C F)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = (dist,0,0)",
+        "b_parsed": "=(dist I E,dist I F)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

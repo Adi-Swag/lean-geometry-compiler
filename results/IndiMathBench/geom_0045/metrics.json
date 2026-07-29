@@ -1,0 +1,73 @@
+{
+  "problem_id": "geom_0045",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "A",
+            "Point"
+          ],
+          [
+            "B",
+            "Point"
+          ],
+          [
+            "C",
+            "Point"
+          ],
+          [
+            "D",
+            "Point"
+          ],
+          [
+            "O1",
+            "Point"
+          ],
+          [
+            "O2",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=((dist C A),(dist C D)",
+          ">(A,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "IntersectAt(Gamma,Sigma,A)",
+          "IntersectAt(Gamma,Sigma,B)",
+          "IntersectAt(line1,Gamma,C)",
+          "IntersectAt(line2,Sigma,D)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(C,A)",
+          "\u2260(C,D)"
+        ],
+        "b_only": [
+          "=(dist A O\u2081,r\u2081)",
+          "=(dist A O\u2082,r\u2082)",
+          "=(dist B O\u2081,r\u2081)",
+          "=(dist B O\u2082,r\u2082)",
+          "=(dist C A,dist C D)",
+          "=(dist C O\u2081,r\u2081)",
+          "=(dist D O\u2082,r\u2082)",
+          "CollinearPoints(B,C,D)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(dist O2 O1,r_O1)",
+        "b_parsed": "=(dist O\u2082 O\u2081,r\u2081)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

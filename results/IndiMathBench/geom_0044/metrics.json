@@ -1,0 +1,44 @@
+{
+  "problem_id": "geom_0044",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(h_r_A_pos : r_A,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,C,,B',,I,])",
+          "AngleBisector(D,A,(Segment A B),(Segment A C)",
+          "IsCircumcenterOf(O,(Triangle C B' I)",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "Reflection(B',B,(Line A D)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "IsCircumcenter(O,C,B',I)",
+          "IsIncenter(I,A,B,C)",
+          "ReflectPoint(B,l,B')",
+          "\u2203 (l : Line), IsAngleBisector l A B C"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(dist O A,r_A)",
+        "b_parsed": "CollinearPoints(O,A,I)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

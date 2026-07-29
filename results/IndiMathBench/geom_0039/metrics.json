@@ -1,0 +1,104 @@
+{
+  "problem_id": "geom_0039",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "A",
+            "Point"
+          ],
+          [
+            "B",
+            "Point"
+          ],
+          [
+            "C",
+            "Point"
+          ],
+          [
+            "D",
+            "Point"
+          ],
+          [
+            "E",
+            "Point"
+          ],
+          [
+            "F",
+            "Point"
+          ],
+          [
+            "I1",
+            "Point"
+          ],
+          [
+            "I1D",
+            "Point"
+          ],
+          [
+            "I2",
+            "Point"
+          ],
+          [
+            "I2E",
+            "Point"
+          ],
+          [
+            "I3",
+            "Point"
+          ],
+          [
+            "I3F",
+            "Point"
+          ],
+          [
+            "P",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,F,,E,])",
+          "AffineIndependent(\u211d,![,B,,D,,F,])",
+          "AffineIndependent(\u211d,![,C,,E,,D,])",
+          "IsIncenterOf(I1,(Triangle A F E)",
+          "IsIncenterOf(I2,(Triangle B D F)",
+          "IsIncenterOf(I3,(Triangle C E D)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,A)",
+          "\u2260(I1,D)",
+          "\u2260(I2,E)",
+          "\u2260(I3,F)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,F,B)",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(C,E,A)",
+          "Incenter(I\u2081,A,F,E)",
+          "Incenter(I\u2082,B,D,F)",
+          "Incenter(I\u2083,C,E,D)",
+          "PointLiesOnCircle(D,(incenter A B C),(inradius A B C))",
+          "PointLiesOnCircle(E,(incenter A B C),(inradius A B C))",
+          "PointLiesOnCircle(F,(incenter A B C),(inradius A B C))"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "\u2227(CollinearPoints P I1D I2E,CollinearPoints P I2E I3F)",
+        "b_parsed": "ConcurrentLines((Line I\u2081 D),(Line I\u2082 E),(Line I\u2083 F))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

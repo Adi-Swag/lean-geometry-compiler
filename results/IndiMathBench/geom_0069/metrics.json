@@ -1,0 +1,43 @@
+{
+  "problem_id": "geom_0069",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IsAcute((Triangle A B C)",
+          "IsOrthocenterOf(H,(Triangle A B C)",
+          "\u2260(A,H)",
+          "\u2260(B,H)",
+          "\u2260(C,H)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "Orthocenter(H,A,B,C)",
+          "angle(A,B,C,<,Real.pi,/,2) \u2227 (angle,B,C,A,<,Real.pi,/,2) \u2227 (angle,C,A,B,<,Real.pi,/,2)",
+          "\u2203 (D : Point), CollinearPoints A D B \u2227 @inner \u211d Vec _ (D -\u1d65 A) (C -\u1d65 A) = 0 \u2227 dist A D = h_max"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "(((dist 0 0) + (dist 0 0)) \u2264 (2.0 * h_max))",
+        "b_parsed": "\u2264(dist A H + dist B H + dist C H,2 * h_max)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

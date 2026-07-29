@@ -1,0 +1,55 @@
+{
+  "problem_id": "geom_0016",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.875
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (X -\u1d65 A) (F -\u1d65 C) = 0",
+          "(@inner \u211d Vec _ (Y -\u1d65 A) (E -\u1d65 B) = 0",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(E,B,(Segment B A),(Segment B C)",
+          "AngleBisector(F,C,(Segment C A),(Segment C B)",
+          "\u2260(A,X)",
+          "\u2260(A,Y)",
+          "\u2260(B,E)",
+          "\u2260(C,F)",
+          "\u2260(X,Y)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (X -\u1d65 A) (F -\u1d65 C),0)",
+          "=(@inner \u211d Vec _ (Y -\u1d65 A) (E -\u1d65 B),0)",
+          "=(angle A B E,angle C B E)",
+          "=(angle A C F,angle B C F)",
+          "=(dist A B,c)",
+          "=(dist B C,a)",
+          "=(dist C A,b)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,E,C)",
+          "CollinearPoints(A,F,B)",
+          "CollinearPoints(B,Y,E)",
+          "CollinearPoints(C,X,F)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = ((((dist 0 0) + (dist 0 0)) - (dist 0 0)),/,2.0)",
+        "b_parsed": "=(dist X Y,(b + c - a) / 2)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "problem_id": "geom_0093",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "A",
+            "Point"
+          ],
+          [
+            "B",
+            "Point"
+          ],
+          [
+            "C",
+            "Point"
+          ],
+          [
+            "D",
+            "Point"
+          ],
+          [
+            "O1",
+            "Point"
+          ],
+          [
+            "O2",
+            "Point"
+          ],
+          [
+            "P",
+            "Point"
+          ],
+          [
+            "Q",
+            "Point"
+          ],
+          [
+            "X",
+            "Point"
+          ],
+          [
+            "Y",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(TangentToCircle (Line B C) (Circle O1) B",
+          "(TangentToCircle (Line B D) (Circle O2) B",
+          ">(A,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "AffineIndependent(\u211d,![,A,,C,,D,])",
+          "AffineIndependent(\u211d,![,X,,A,,Y,])",
+          "AngleBisector(X,A,(Segment D A),(Segment A B)",
+          "AngleBisector(Y,A,(Segment C A),(Segment A B)",
+          "IntersectAt(\u03931,\u03932,A)",
+          "IntersectAt(\u03931,\u03932,B)",
+          "IsCircumcenterOf(P,(Triangle A C D)",
+          "IsCircumcenterOf(Q,(Triangle X A Y)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(O1,O2)",
+          "\u2260(P,Q)"
+        ],
+        "b_only": [
+          "=(P,circumcenter A C D)",
+          "=(Q,circumcenter X A Y)",
+          "=(\u2203! (x : Point), CollinearPoints x A X \u2227 dist x O\u2081,r\u2081)",
+          "=(\u2203! (y : Point), CollinearPoints y A Y \u2227 dist y O\u2082,r\u2082)",
+          "\u2260(A,B)",
+          "\u2260(r\u2081,r\u2082)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(@inner \u211d Vec _ (Q -\u1d65 P) (O2 -\u1d65 O1),0)",
+        "b_parsed": "(@inner \u211d Vec _ (P -\u1d65 Q) (O\u2082 -\u1d65 O\u2081) = 0) \u2227 (dist P Q = dist O\u2081 O\u2082 / 2)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

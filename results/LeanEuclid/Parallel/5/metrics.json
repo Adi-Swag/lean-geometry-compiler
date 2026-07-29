@@ -1,0 +1,85 @@
+{
+  "problem_id": "5",
+  "dataset": "LeanEuclid",
+  "category": "Parallel",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((CollinearPoints Y G W) \u2227 (CollinearPoints Y W T) \u2227 (CollinearPoints Y T R)",
+          "IntersectAt(FH,RY,G)",
+          "IntersectAt(SU,RY,T)",
+          "IntersectAt(VX,RY,W)",
+          "VecParallel((H -\u1d65 F),(X -\u1d65 V)",
+          "VecParallel((U -\u1d65 S),(H -\u1d65 F)",
+          "\u2260(F,H)",
+          "\u2260(R,Y)",
+          "\u2260(S,U)",
+          "\u2260(V,X)"
+        ],
+        "b_only": [
+          "CollinearPoints(R,Y,G,\u2227,CollinearPoints,Y,G,W,\u2227,CollinearPoints,G,W,T)",
+          "ParallelLines(F,H,V,X)",
+          "ParallelLines(S,U,F,H)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(((angle 0 0 0) + (angle 0 0 0)),180.0)",
+        "b_parsed": "=(angle R T U + angle X W Y,Real.pi)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(((angle 0 0 0) + (angle 0 0 0)) = 180.0)",
+        "b_normalized": "angle R T U",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "angle R T U + angle X W Y = Real.pi",
+        "b_normalized": "angle R T U",
+        "match_exact": false
+      }
+    }
+  }
+}

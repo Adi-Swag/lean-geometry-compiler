@@ -1,0 +1,86 @@
+{
+  "problem_id": "3",
+  "dataset": "LeanEuclid",
+  "category": "Quadrilateral",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "IsQuadrilateral(U,V,T,S)",
+          "\u2227(CollinearPoints W V T,CollinearPoints W T U)",
+          "\u2260(S,T)",
+          "\u2260(S,V)",
+          "\u2260(S,W)",
+          "\u2260(T,U)",
+          "\u2260(U,S)",
+          "\u2260(U,V)",
+          "\u2260(U,W)",
+          "\u2260(V,T)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![U,,V,,T,,S])"
+        ],
+        "jaccard": 0.1538
+      },
+      "goal": {
+        "a_parsed": "=(dist U W,dist S W)",
+        "b_parsed": "=(dist U W,dist S W)",
+        "match_exact": false,
+        "match_predicate": true
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(dist U W = dist S W)",
+        "b_normalized": "dist U W",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "dist S T = dist T U",
+          "dist S V = dist U V"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "dist U W = dist S W",
+        "b_normalized": "dist U W",
+        "match_exact": false
+      }
+    }
+  }
+}

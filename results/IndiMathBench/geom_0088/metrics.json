@@ -1,0 +1,37 @@
+{
+  "problem_id": "geom_0088",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "Concyclic([D,,C,,E,,G])",
+          "IsCentroidOf(G,(Triangle A B C)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,A)"
+        ],
+        "b_only": [
+          "=(G,centroid \u211d ![A, B, C])",
+          ">(\u2203 (r : \u211d), r,0 \u2227 dist D G = r \u2227 dist C G = r \u2227 dist E G = r)",
+          "AffineIndependent(\u211d,![A,,B,,C])"
+        ],
+        "jaccard": 0.1818
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), (perimeter (Polygon {'type': 'Triangle', 'vertices': ['A', 'B', 'C']})),val)",
+        "b_parsed": "=(\u2203 (p : \u211d), p,dist A B + dist B C + dist C A)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

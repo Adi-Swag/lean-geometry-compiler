@@ -1,0 +1,59 @@
+{
+  "problem_id": "geom_0096",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((dist A C = dist C B) \u2228 (dist C B = dist B A) \u2228 (dist B A = dist A C)",
+          "=(angle E C B,90)",
+          "=(dist E O1,r_O1)",
+          ">(A,0)",
+          ">(E,0)",
+          ">(h_r_E_pos : r_E,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,E,,C,,F,])",
+          "AffineIndependent(\u211d,![,E,,G,,B,])",
+          "VecParallel((G -\u1d65 E),(B -\u1d65 C)",
+          "\u2227(CollinearPoints F E G,CollinearPoints F G C)",
+          "\u2227(CollinearPoints G E F,CollinearPoints G F A)",
+          "\u2260(C,A)",
+          "\u2260(C,B)",
+          "\u2260(C,E)",
+          "\u2260(C,F)",
+          "\u2260(E,B)",
+          "\u2260(E,F)",
+          "\u2260(E,G)",
+          "\u2260(G,B)"
+        ],
+        "b_only": [
+          "=(angle E C B,Real.pi / 2)",
+          "=(dist C A,dist C B)",
+          "=(dist E O1,r1)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,B,G)",
+          "CollinearPoints(C,A,F)",
+          "dist(A,O1,=,r1,\u2227,dist,B,O1,=,r1,\u2227,dist,C,O1,=,r1)",
+          "dist(E,O2,=,r2,\u2227,dist,G,O2,=,r2,\u2227,dist,B,O2,=,r2)",
+          "\u2227(\u2203 (l : Line), CollinearPoints E F G,Parallel l (Line.mk C B))"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(dist O2 E,r_E)",
+        "b_parsed": "=(dist O2 O1,r1)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

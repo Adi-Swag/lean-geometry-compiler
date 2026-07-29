@@ -1,0 +1,83 @@
+{
+  "problem_id": "1",
+  "dataset": "LeanEuclid",
+  "category": "Congruent",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,U,,V,,X,])",
+          "AffineIndependent(\u211d,![,V,,W,,Y,])",
+          "CollinearPoints(U,V,W)",
+          "\u2260(U,W)",
+          "\u2260(U,X)",
+          "\u2260(V,X)",
+          "\u2260(V,Y)",
+          "\u2260(W,Y)"
+        ],
+        "b_only": [],
+        "jaccard": 0.2727
+      },
+      "goal": {
+        "a_parsed": "angle(V,W,Y,=,angle,U,V,X,\u2227,angle,W,Y,V,=,angle,V,X,U,\u2227,angle,Y,V,W,=,angle,X,U,V)",
+        "b_parsed": "TrianglesCongruent((Triangle.mk V W Y),(Triangle.mk U V X))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle V W Y = angle U V X \u2227 angle W Y V = angle V X U \u2227 angle Y V W = angle X U V)",
+        "b_normalized": "TrianglesCongruent V W Y U V X",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "V = midpoint \u211d U W",
+          "dist V Y = dist U X",
+          "dist W Y = dist V X"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "TrianglesCongruent V W Y U V X",
+        "b_normalized": "TrianglesCongruent V W Y U V X",
+        "match_exact": true
+      }
+    }
+  }
+}

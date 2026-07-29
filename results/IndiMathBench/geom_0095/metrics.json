@@ -1,0 +1,28 @@
+{
+  "problem_id": "geom_0095",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "=(points.card,n)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "DistinctValues((Floor (Log2 (dist Pi Pj)))) < (2.0,*,0.0)",
+        "b_parsed": "\u2260(\u2203 (k : \u2115), k < 2 * n \u2227 \u2200 (p1 p2 : Point), p1 \u2208 points \u2192 p2 \u2208 points \u2192 p1,p2 \u2192 \n    \u2203 (val : \u2124), val = Int.floor (Real.log2 (dist p1 p2)))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

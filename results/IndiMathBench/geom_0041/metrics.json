@@ -1,0 +1,75 @@
+{
+  "problem_id": "geom_0041",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ],
+          [
+            "Gamma",
+            "Point"
+          ],
+          [
+            "O1",
+            "Point"
+          ],
+          [
+            "O2",
+            "Point"
+          ]
+        ],
+        "b_only": [
+          [
+            "O",
+            "Point"
+          ],
+          [
+            "P",
+            "Point"
+          ]
+        ],
+        "jaccard": 0.4545
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(dist O2 Gamma,r_Gamma)",
+          ">(A,0)",
+          ">(h_r_Gamma_pos : r_Gamma,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "IntersectAt(Gamma,Sigma,A)",
+          "IntersectAt(Gamma,Sigma,B)",
+          "VecParallel((E -\u1d65 D),(C -\u1d65 A)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,E)",
+          "\u2260(B,D)",
+          "\u2260(C,B)",
+          "\u2260(D,E)"
+        ],
+        "b_only": [
+          "=(dist A O,r\u2081)",
+          "=(dist B O,r\u2081)",
+          "=(dist C O,r\u2081)",
+          "=(dist D P,r\u2082)",
+          "=(dist E P,r\u2082)",
+          "=(dist P O,r\u2081)",
+          "=(\u2203 (k : \u211d), (E -\u1d65 D),k \u2022 (C -\u1d65 A))"
+        ],
+        "jaccard": 0.0455
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = (dist,0,0)",
+        "b_parsed": "=(dist A E,dist A B)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

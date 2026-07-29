@@ -1,0 +1,46 @@
+{
+  "problem_id": "geom_0020",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((angle A B C = Real.pi / 2) \u2228 (angle B C A = Real.pi / 2) \u2228 (angle C A B = Real.pi / 2)",
+          "((dist A B = dist B C) \u2228 (dist B C = dist C A) \u2228 (dist C A = dist A B)",
+          "(DistanceRatio (Segment B D) (Segment D E) 3",
+          "(DistanceRatio (Segment B D) (Segment E C) 3",
+          "(DistanceRatio (Segment D E) (Segment E C) 5",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(D,E)",
+          "\u2260(E,C)"
+        ],
+        "b_only": [
+          "=(angle B A C,Real.pi / 2)",
+          "=(dist A B,dist A C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(B,E,C)",
+          "\u2203 (k : \u211d), dist B D = 3 * k \u2227 dist D E = 5 * k \u2227 dist E C = 4 * k"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(angle D A E,45)",
+        "b_parsed": "=(angle D A E,Real.pi / 4)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

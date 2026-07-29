@@ -1,0 +1,49 @@
+{
+  "problem_id": "geom_0017",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8889
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(BF,AD,P)",
+          "IntersectAt(BF,AE,Q)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(A,E)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(B,F)",
+          "\u2260(D,E)",
+          "\u2260(E,C)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(B,E,C)",
+          "\u2227(CollinearPoints B F P,CollinearPoints A D P)",
+          "\u2227(CollinearPoints B F Q,CollinearPoints A E Q)"
+        ],
+        "jaccard": 0.1579
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), ((dist 0 0) / (dist 0 0)),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), dist B P / dist P Q,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

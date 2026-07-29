@@ -1,0 +1,46 @@
+{
+  "problem_id": "geom_0062",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(angle A B C,120)",
+          "=(angle A B D,30)",
+          "CyclicQuadrilateral((Quadrilateral A B C D)",
+          "IsQuadrilateral(A,B,C,D)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,D)"
+        ],
+        "b_only": [
+          "=(angle A B C,2 * Real.pi / 3)",
+          "=(angle A B D,Real.pi / 6)",
+          "=(dist A B,a)",
+          "=(dist B C,b)",
+          "=(dist C D,c)",
+          "AffineIndependent(\u211d,![A,,B,,C,,D])"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) \u2265 ((dist 0 0),+,(dist 0 0))) \u2227 ((Abs,((Real.sqrt ((dist 0 0) + (dist 0 0))) - (Real.sqrt ((dist 0 0) + (dist 0 0))))) = (Real.sqrt,((dist 0 0) - ((dist 0 0) + (dist 0 0))))",
+        "b_parsed": "\u2265(c,a + b) \u2227 (|Real.sqrt (c + a) - Real.sqrt (c + b)| = Real.sqrt (c - a - b))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

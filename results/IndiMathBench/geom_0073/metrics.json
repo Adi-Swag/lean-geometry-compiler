@@ -1,0 +1,60 @@
+{
+  "problem_id": "geom_0073",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "P",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.9
+      },
+      "hypotheses": {
+        "a_only": [
+          "(((dist A C) * (dist B D)",
+          "=(E,midpoint \u211d A B)",
+          "=(F,midpoint \u211d B C)",
+          "=(G,midpoint \u211d C D)",
+          "=(H,midpoint \u211d D A)",
+          "=(dist A O,r_O)",
+          "=(dist B O,r_O)",
+          "=(dist C O,r_O)",
+          "=(dist D O,r_O)",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "IsQuadrilateral(A,B,C,D)",
+          "\u2260(A,C)",
+          "\u2260(B,D)",
+          "\u2260(E,G)",
+          "\u2260(F,H)"
+        ],
+        "b_only": [
+          "=(dist A O,r)",
+          "=(dist B O,r)",
+          "=(dist C O,r)",
+          "=(dist D O,r)",
+          "=(dist E O,r \u2227 CollinearPoints A E B)",
+          "=(dist F O,r \u2227 CollinearPoints B F C)",
+          "=(dist G O,r \u2227 CollinearPoints C G D)",
+          "=(dist H O,r \u2227 CollinearPoints D H A)",
+          ">(r,0)",
+          "AffineIndependent(\u211d,![A,,B,,C,,D])",
+          "dist(A,C) * (dist,B,D) = (dist,E,G) * (dist,F,H)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "\u2227(CollinearPoints P A C,CollinearPoints P C B)",
+        "b_parsed": "\u2203 (P : Point), CollinearPoints A C P \u2227 CollinearPoints B D P \u2227 CollinearPoints E G P \u2227 CollinearPoints F H P",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

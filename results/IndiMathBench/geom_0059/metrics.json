@@ -1,0 +1,44 @@
+{
+  "problem_id": "geom_0059",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(((dist L K) / (dist L M)",
+          "(CollinearPoints Q B D \u2227 \u2203 (p : Point), CollinearPoints p B D \u2227 p \u2260 Q \u2227 angle K Q p = angle p Q M",
+          "=(dist Q A,dist Q B)",
+          "=(dist Q B,dist Q C)",
+          "=(dist Q C,dist Q D)",
+          "IsQuadrilateral(A,B,C,D)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(C,D)",
+          "\u2260(D,A)",
+          "\u2260(K,M)"
+        ],
+        "b_only": [
+          "=(Q,midpoint \u211d K M)",
+          "=(dist L K / dist L M,dist C D / dist C B)",
+          "AffineIndependent(\u211d,![A,,B,,C,,D])",
+          "dist(Q,A,=,dist,Q,B,\u2227,dist,Q,B,=,dist,Q,C,\u2227,dist,Q,C,=,dist,Q,D)"
+        ],
+        "jaccard": 0.2
+      },
+      "goal": {
+        "a_parsed": "dist(A,B,=,dist,B,C) \u2227 (dist,B,C,=,dist,C,A)",
+        "b_parsed": "dist(A,B,=,dist,B,C,\u2227,dist,B,C,=,dist,C,D,\u2227,dist,C,D,=,dist,D,A,\u2227,angle,A,B,C,=,Real.pi,/,2)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

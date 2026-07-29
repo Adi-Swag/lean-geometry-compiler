@@ -1,0 +1,64 @@
+{
+  "problem_id": "geom_0065",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "P1",
+            "Point"
+          ],
+          [
+            "P2",
+            "Point"
+          ],
+          [
+            "P3",
+            "Point"
+          ]
+        ],
+        "b_only": [
+          [
+            "A",
+            "Point"
+          ],
+          [
+            "B",
+            "Point"
+          ],
+          [
+            "C",
+            "Point"
+          ]
+        ],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((angle P1 P2 P3 = Real.pi / 2) \u2228 (angle P2 P3 P1 = Real.pi / 2) \u2228 (angle P3 P1 P2 = Real.pi / 2)",
+          "AffineIndependent(\u211d,![,P1,,P2,,P3,])",
+          "\u2260(P1,P2)",
+          "\u2260(P2,P3)",
+          "\u2260(P3,P1)"
+        ],
+        "b_only": [
+          "=(f \u27e80, 0\u27e9,0)",
+          "=(f \u27e80, 1\u27e9,1)",
+          "=(\u2200 (P : Point), \u2203 (x y : \u2124), P,\u27e8x, y\u27e9)",
+          "\u2192(\u2200 (P Q : Point), f P \u2260 f Q,P \u2260 Q)",
+          "\u2203 (f : Point \u2192 \u2115), f A = 0 \u2227 f B = 1 \u2227 f C = 2"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "angle(P1,P2,P3,=,Real.pi,/,2) \u2228 (angle,P2,P3,P1,=,Real.pi,/,2) \u2228 (angle,P3,P1,P2,=,Real.pi,/,2)",
+        "b_parsed": "\u2227(\u2203 (P Q R : Point), (f P \u2260 f Q \u2227 f Q \u2260 f R \u2227 f R \u2260 f P),((angle P Q R = Real.pi / 2) \u2228 (angle Q R P = Real.pi / 2) \u2228 (angle R P Q = Real.pi / 2)))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

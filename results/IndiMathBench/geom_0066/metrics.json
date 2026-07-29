@@ -1,0 +1,67 @@
+{
+  "problem_id": "geom_0066",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "OA",
+            "Point"
+          ],
+          [
+            "OB",
+            "Point"
+          ],
+          [
+            "OC",
+            "Point"
+          ],
+          [
+            "OG",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.5556
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(A,0)",
+          ">(B,0)",
+          ">(C,0)",
+          ">(OA,0)",
+          ">(h_r_OA_pos : r_OA,0)",
+          ">(h_r_OB_pos : r_OB,0)",
+          ">(h_r_OC_pos : r_OC,0)",
+          ">(h_r_OG_pos : r_OG,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(OI,OG,OG)",
+          "IsCircumcenterOf(O,(Triangle A B C)",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(O,I)"
+        ],
+        "b_only": [
+          "=(I,Incenter A B C)",
+          "=(O,Circumcenter A B C)",
+          ">(rA,0)",
+          ">(rB,0)",
+          ">(rC,0)",
+          "AffineIndependent(\u211d,![A,,B,,C])"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "IntersectAt(O,I,OG)",
+        "b_parsed": "=(\u2203 (P : Point), CollinearPoints O I P \u2227 P,CenterOfCircle r\u0393)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

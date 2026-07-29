@@ -1,0 +1,236 @@
+% Cross-Library Predicate Mapping: SystemE ↔ GeometryProver
+% Include with: \input{docs/cross_library_mapping.tex}
+% Requires booktabs and longtable packages.
+
+\documentclass[border=2pt]{standalone}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\begin{document}
+
+\begin{longtable}{@{}p{2.2cm} p{4.5cm} p{4.5cm} p{3cm}@{}}
+\toprule
+\textbf{Category} & \textbf{SystemE} & \textbf{GeometryProver} & \textbf{Canonical} \\
+\midrule
+\endfirsthead
+\toprule
+\textbf{Category} & \textbf{SystemE} & \textbf{GeometryProver} & \textbf{Canonical} \\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+
+Distance
+  & $|(A-B)|$
+  & $\texttt{dist}\;A\;B$
+  & $\texttt{dist}\;A\;B$
+  \\
+
+Distance
+  & ---
+  & $\texttt{EqualDistances}\;(\texttt{Segment}\;A\;B)\;(\texttt{Segment}\;C\;D)$
+  & $\texttt{dist}\;A\;B = \texttt{dist}\;C\;D$
+  \\
+
+Angle
+  & $\angle A:B:C$
+  & $\texttt{angle}\;A\;B\;C$
+  & $\texttt{angle}\;A\;B\;C$
+  \\
+
+Angle
+  & ---
+  & $\texttt{EqualAngles}\;(\texttt{Angle}\;A\;B\;C)\;(\texttt{Angle}\;D\;E\;F)$
+  & $\texttt{angle}\;A\;B\;C = \texttt{angle}\;D\;E\;F$
+  \\
+
+Triangle Congruence
+  & $(\triangle A:B:C).\texttt{congruent}\;(\triangle D:E:F)$
+  & $\texttt{TrianglesCongruent}\;(\texttt{Triangle.mk}\;A\;B\;C)\;(\texttt{Triangle.mk}\;D\;E\;F)$
+  & $\texttt{TrianglesCongruent}\;A\;B\;C\;D\;E\;F$
+  \\
+
+Triangle Similarity
+  & ---
+  & $\texttt{SimilarTriangles}\;(\texttt{Triangle}\;A\;B\;C)\;(\texttt{Triangle}\;D\;E\;F)$
+  & ---
+  \\
+
+Collinearity
+  & $\texttt{collinear}\;A\;B\;C$
+  & $\texttt{CollinearPoints}\;A\;B\;C \mid \texttt{AffineIndependent}\;\mathbb{R}\;![A,B,C]$
+  & $\texttt{Collinear}\;A\;B\;C$
+  \\
+
+Betweenness
+  & $\texttt{between}\;A\;B\;C$
+  & $\texttt{Between}\;A\;B\;C$
+  & $\texttt{Between}\;A\;B\;C$
+  \\
+
+Parallelism
+  & ---
+  & $\texttt{Parallel}\;(\texttt{Line}\;A\;B)\;(\texttt{Line}\;C\;D) \mid \texttt{VecParallel}\;(B - A)\;(D - C)$
+  & ---
+  \\
+
+Perpendicularity
+  & ---
+  & $\texttt{Perpendicular}\;(\texttt{Line}\;A\;B)\;(\texttt{Line}\;C\;D) \mid \langle (B-A),\;(D-C) \rangle = 0$
+  & $\texttt{perp}\;AB\;CD$
+  \\
+
+Same Side
+  & $X.\texttt{sameSide}\;Y\;UW$
+  & ---
+  & $\texttt{sameSide}\;X\;Y\;UW$
+  \\
+
+Midpoint
+  & ---
+  & $\texttt{IsMidpointOf}\;(\texttt{Point}\;M)\;(\texttt{Segment}\;A\;B) \mid M = \texttt{midpoint}_{\mathbb{R}}\;U\;W$
+  & $M = \texttt{midpoint}_{\mathbb{R}}\;U\;W$
+  \\
+
+Triangle Formation
+  & $\texttt{formTriangle}\;A\;B\;C\;AB\;BC\;CA$
+  & ---
+  & ---
+  \\
+
+Median
+  & ---
+  & $\texttt{IsMedian}\;(\texttt{Point}\;A)\;(\texttt{Point}\;M)\;(\texttt{Segment}\;B\;C)$
+  & $M = \texttt{midpoint}_{\mathbb{R}}\;B\;C$
+  \\
+
+Altitude
+  & ---
+  & $\texttt{IsAltitude}\;(\texttt{Point}\;H)\;(\texttt{Point}\;A)\;(\texttt{Segment}\;B\;C)$
+  & $\texttt{CollinearPoints}\;B\;C\;H \wedge \langle (H-A),\;(C-B) \rangle = 0$
+  \\
+
+Angle Bisector
+  & ---
+  & $\texttt{AngleBisector}\;(\texttt{Point}\;P)\;(\texttt{Point}\;V)\;(\texttt{Segment}\;S_1)\;(\texttt{Segment}\;S_2)$
+  & ---
+  \\
+
+Right Triangle
+  & ---
+  & $\texttt{IsRight}\;(\texttt{Triangle}\;A\;B\;C)$
+  & $\texttt{angle}\;A\;B\;C = \pi/2$
+  \\
+
+Isosceles Triangle
+  & ---
+  & $\texttt{Isosceles}\;(\texttt{Triangle}\;A\;B\;C)$
+  & $\texttt{dist}\;A\;B = \texttt{dist}\;A\;C \vee \dots$
+  \\
+
+Equilateral Triangle
+  & ---
+  & $\texttt{Equilateral}\;(\texttt{Triangle}\;A\;B\;C)$
+  & $\texttt{dist}\;A\;B = \texttt{dist}\;B\;C \wedge \texttt{dist}\;B\;C = \texttt{dist}\;C\;A$
+  \\
+
+Quadrilateral
+  & ---
+  & $\texttt{IsParallelogram}\mid\texttt{IsRectangle}\mid\texttt{IsSquare}\mid\texttt{IsRhombus}\mid\texttt{IsTrapezoid}\mid\texttt{IsKite}$
+  & ---
+  \\
+
+Concyclic
+  & ---
+  & $\texttt{Concyclic}\;(A, B, C, D)$
+  & ---
+  \\
+
+Convex Quadrilateral
+  & ---
+  & $\texttt{ConvexQuadrilateral}\;(A, B, C, D)$
+  & ---
+  \\
+
+Point on Line
+  & ---
+  & $\texttt{PointLiesOnLine}\;(\texttt{Point}\;P)\;(\texttt{Line}\;A\;B)$
+  & $\texttt{Collinear}\;A\;B\;P$
+  \\
+
+Point on Circle
+  & ---
+  & $\texttt{PointLiesOnCircle}\;(\texttt{Point}\;P)\;(\texttt{Circle}\;O)$
+  & $\texttt{dist}\;P\;O = r$
+  \\
+
+Tangent
+  & ---
+  & $\texttt{Tangent}\;(\texttt{Line}\;L)\;(\texttt{Circle}\;O)$
+  & ---
+  \\
+
+Secant
+  & ---
+  & $\texttt{Secant}\;(\texttt{Line}\;L)\;(\texttt{Circle}\;O)\;(\texttt{Point}\;A)\;(\texttt{Point}\;B)$
+  & ---
+  \\
+
+Chord
+  & ---
+  & $\texttt{IsChordOf}\;(\texttt{Segment}\;A\;B)\;(\texttt{Circle}\;O)$
+  & ---
+  \\
+
+Radius / Diameter
+  & ---
+  & $\texttt{IsRadiusOf}\mid\texttt{IsDiameterOf}\mid\texttt{RadiusOf}\mid\texttt{DiameterOf}$
+  & ---
+  \\
+
+Circumcircle / Incircle
+  & ---
+  & $\texttt{IsCircumcircleOf}\mid\texttt{IsIncircleOf}$
+  & ---
+  \\
+
+Triangle Centers
+  & ---
+  & $\texttt{IsOrthocenterOf}\mid\texttt{IsIncenterOf}\mid\texttt{IsCircumcenterOf}\mid\texttt{IsCentroidOf}$
+  & ---
+  \\
+
+Reflection / Rotation
+  & ---
+  & $\texttt{Reflection}\mid\texttt{Rotation}$
+  & ---
+  \\
+
+Inequality
+  & $A \neq B$
+  & $A \neq B$
+  & $A \neq B$
+  \\
+
+Arithmetic
+  & ---
+  & $\texttt{Add}\mid\texttt{Sub}\mid\texttt{Mul}\mid\texttt{Div}\mid\texttt{Pow}$
+  & ---
+  \\
+
+Trigonometry
+  & ---
+  & $\texttt{SinOf}\mid\texttt{CosOf}\mid\texttt{TanOf}$
+  & ---
+  \\
+
+Exists
+  & ---
+  & $\texttt{Exists}\;(\texttt{ConvexQuadrilateral}\;\dots)\;(\dots)$
+  & ---
+  \\
+
+\end{longtable}
+
+\end{document}

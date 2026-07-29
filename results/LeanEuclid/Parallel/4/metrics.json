@@ -1,0 +1,84 @@
+{
+  "problem_id": "4",
+  "dataset": "LeanEuclid",
+  "category": "Parallel",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,S,,V,,W,])",
+          "AffineIndependent(\u211d,![,T,,U,,W,])",
+          "VecParallel((V -\u1d65 S),(U -\u1d65 T)",
+          "\u2260(S,V)",
+          "\u2260(T,U)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (V -\u1d65 S) (U -\u1d65 T),0)",
+          "AffineIndependent(\u211d,![S,,V,,W])",
+          "AffineIndependent(\u211d,![T,,U,,W])"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_parsed": "=(angle T U W,angle V S W)",
+        "b_parsed": "=(angle T U W,angle S V W)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle T U W = angle V S W)",
+        "b_normalized": "angle T U W",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent S V W",
+          "AffineIndependent T U W",
+          "perp VS UT"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle T U W = angle S V W",
+        "b_normalized": "angle T U W",
+        "match_exact": false
+      }
+    }
+  }
+}

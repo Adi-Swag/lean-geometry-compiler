@@ -1,0 +1,46 @@
+{
+  "problem_id": "geom_0037",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(Excircle D (Triangle A B C) A",
+          "(Excircle E (Triangle A B D) A",
+          "(Excircle F (Triangle A C D) A",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,B,,D,])",
+          "AffineIndependent(\u211d,![,A,,C,,D,])",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "\u2260(A,B)",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,E,B)",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(B,F,C)",
+          "Incenter(I,A,B,C)",
+          "PointLiesOnCircle(D,I,(radius (incircle A B C))",
+          "PointLiesOnCircle(E,(Incenter A B D),(radius (incircle A B D))",
+          "PointLiesOnCircle(F,(Incenter A C D),(radius (incircle A C D))",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,C,A,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "Concyclic([B,,E,,I,,F])",
+        "b_parsed": "\u2203 (O : Point), PointLiesOnCircle B O (radius (circumcircle B E I F)) \u2227\n                   PointLiesOnCircle E O (radius (circumcircle B E I F)) \u2227\n                   PointLiesOnCircle I O (radius (circumcircle B E I F)) \u2227\n                   PointLiesOnCircle F O (radius (circumcircle B E I F))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

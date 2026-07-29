@@ -1,0 +1,44 @@
+{
+  "problem_id": "geom_0005",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((((dist B M) ^ 2.0",
+          "((dist A B = dist B C) \u2228 (dist B C = dist C A) \u2228 (dist C A = dist A B)",
+          "=(angle C A B,90)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,M)",
+          "\u2260(C,N)",
+          "\u2260(M,N)"
+        ],
+        "b_only": [
+          "=((dist B M) ^ 2 + (dist C N) ^ 2,(dist M N) ^ 2)",
+          "=(angle C A B,Real.pi / 2)",
+          "=(dist A B,dist A C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,M,C)",
+          "CollinearPoints(B,N,C)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(angle M A N,45)",
+        "b_parsed": "=(angle M A N,Real.pi / 4)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

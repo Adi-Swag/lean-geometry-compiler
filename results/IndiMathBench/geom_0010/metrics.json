@@ -1,0 +1,52 @@
+{
+  "problem_id": "geom_0010",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "incircle",
+            "Point"
+          ]
+        ],
+        "b_only": [
+          [
+            "O",
+            "Point"
+          ]
+        ],
+        "jaccard": 0.6667
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (B -\u1d65 A) (D -\u1d65 A) = 0",
+          "(DistanceRatio (Segment A B) (Segment C D) 3",
+          ">(h_r_incircle_pos : r_incircle,0)",
+          "CyclicQuadrilateral((Quadrilateral A B C D)",
+          "IsQuadrilateral(A,B,C,D)",
+          "VecParallel((B -\u1d65 A),(D -\u1d65 C)",
+          "\u2260(A,B)",
+          "\u2260(A,D)",
+          "\u2260(C,D)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (B -\u1d65 A) (D -\u1d65 A),0)",
+          "=(area (Quadrilateral.mk A B C D),4)",
+          "=(dist A B,3 * dist C D)",
+          "Parallel((Line A B),(Line C D))",
+          "\u2192(\u2200 (P : Point), (PointLiesOnCircle P O r),(CollinearPoints P A B \u2228 CollinearPoints P B C \u2228 CollinearPoints P C D \u2228 CollinearPoints P D A))"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), r_incircle,val)",
+        "b_parsed": "=(\u2203 (val : \u211d), r,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

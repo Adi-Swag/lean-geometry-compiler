@@ -1,0 +1,80 @@
+{
+  "problem_id": "3",
+  "dataset": "LeanEuclid",
+  "category": "Congruent",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,S,,V,,W,])",
+          "AffineIndependent(\u211d,![,T,,W,,U,])",
+          "VecParallel((U -\u1d65 T),(V -\u1d65 S)",
+          "\u2260(S,V)",
+          "\u2260(T,U)"
+        ],
+        "b_only": [
+          "Parallel((Line.mk T U),(Line.mk S V))"
+        ],
+        "jaccard": 0.1429
+      },
+      "goal": {
+        "a_parsed": "angle(S,V,W,=,angle,U,T,W,\u2227,angle,V,W,S,=,angle,T,W,U,\u2227,angle,W,S,V,=,angle,W,U,T)",
+        "b_parsed": "TrianglesCongruent((Triangle.mk S V W),(Triangle.mk U T W))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle S V W = angle U T W \u2227 angle V W S = angle T W U \u2227 angle W S V = angle W U T)",
+        "b_normalized": "=\nby\n  euclid_intros\n  have :  \u2220S:W:V = \u2220T:W:U",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "dist T U = dist S V"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "TrianglesCongruent S V W U T W",
+        "b_normalized": "=\nby\n  euclid_intros\n  have :  \u2220S:W:V = \u2220T:W:U",
+        "match_exact": false
+      }
+    }
+  }
+}

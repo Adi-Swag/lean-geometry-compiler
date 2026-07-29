@@ -1,0 +1,40 @@
+{
+  "problem_id": "geom_0013",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=((dist A B),(dist A C)",
+          "=((dist B C),((dist A B) + (dist A I)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,I)",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "=(dist A B,dist A C)",
+          "=(dist B C,dist A B + dist A I)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "Incenter(I,A,B,C)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), (angle B A C),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), angle B A C,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

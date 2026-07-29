@@ -1,0 +1,48 @@
+{
+  "problem_id": "geom_0027",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "IntersectAt(CD,\u039b,P)",
+          "IntersectAt(\u0393,\u039b,A)",
+          "IntersectAt(\u0393,\u039b,B)",
+          "\u2260(A,B)",
+          "\u2260(A,P)",
+          "\u2260(B,P)",
+          "\u2260(C,D)",
+          "\u2260(P,C)",
+          "\u2260(P,D)"
+        ],
+        "b_only": [
+          "=(O,midpoint \u211d C D)",
+          "=(dist A O,r\u2081)",
+          "=(dist A O,r\u2082)",
+          "=(dist B O,r\u2081)",
+          "=(dist B O,r\u2082)",
+          "=(dist C O,r\u2081)",
+          "=(dist D O,r\u2081)",
+          "=(dist P O,r\u2082)",
+          "\u2260(P,O)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(angle A P C,angle B P D)",
+        "b_parsed": "=(angle A P C,angle B P D)",
+        "match_exact": false,
+        "match_predicate": true
+      }
+    }
+  }
+}

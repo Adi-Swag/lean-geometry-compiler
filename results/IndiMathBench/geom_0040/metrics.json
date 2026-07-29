@@ -1,0 +1,45 @@
+{
+  "problem_id": "geom_0040",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B',,C',])",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(I,A,(Segment A B),(Segment A C)",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "IsIncenterOf(I,(Triangle A B' C')",
+          "Reflection(B',B,(Line A I)",
+          "Reflection(C',C,(Line A I)",
+          "\u2260(A,B')",
+          "\u2260(A,B)",
+          "\u2260(A,C')",
+          "\u2260(A,C)",
+          "\u2260(B',C')",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "Incenter(I,(Triangle.mk A B C))",
+          "ReflectsOverLine(B,B',(angle_bisector A B C))",
+          "ReflectsOverLine(C,C',(angle_bisector A C B))"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "Incenter(0.0,0.0,0.0,0.0) = (Incenter,0.0,0.0,B',C')",
+        "b_parsed": "Incenter(I,(Triangle.mk A B' C'))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

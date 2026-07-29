@@ -1,0 +1,89 @@
+{
+  "problem_id": "3",
+  "dataset": "LeanEuclid",
+  "category": "Similarity",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(DistanceRatio (Segment F I) (Segment F J) F",
+          "AffineIndependent(\u211d,![,I,,H,,F,])",
+          "AffineIndependent(\u211d,![,J,,G,,F,])",
+          "IntersectAt(FG,IH,H)",
+          "IntersectAt(JF,IH,I)",
+          "\u2260(F,G)",
+          "\u2260(F,H)",
+          "\u2260(F,I)",
+          "\u2260(I,H)",
+          "\u2260(J,F)"
+        ],
+        "b_only": [
+          "=(dist F I / dist F J,dist F H / dist F G)",
+          "AffineIndependent(\u211d,![F,,G,,J])",
+          "AffineIndependent(\u211d,![F,,H,,I])",
+          "CollinearPoints(I,H,J)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "angle(F,H,I,=,angle,F,G,J,\u2227,angle,H,I,F,=,angle,G,J,F,\u2227,angle,I,F,H,=,angle,J,F,G)",
+        "b_parsed": "TrianglesCongruent((Triangle.mk F H I),(Triangle.mk F G J))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle F H I = angle F G J \u2227 angle H I F = angle G J F \u2227 angle I F H = angle J F G)",
+        "b_normalized": "(\u25b3 F:H:I).similar (\u25b3 F:G:J)",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent F G J",
+          "AffineIndependent F H I"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "TrianglesCongruent F H I F G J",
+        "b_normalized": "(\u25b3 F:H:I).similar (\u25b3 F:G:J)",
+        "match_exact": false
+      }
+    }
+  }
+}

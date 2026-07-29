@@ -1,0 +1,51 @@
+{
+  "problem_id": "geom_0030",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((dist A B = dist B C) \u2228 (dist B C = dist C A) \u2228 (dist C A = dist A B)",
+          "=((dist A D),(dist C E)",
+          "=(dist D O,r_O)",
+          "=(dist E O,r_O)",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(B,E)",
+          "\u2260(C,E)"
+        ],
+        "b_only": [
+          "=(dist A B,dist A C)",
+          "=(dist A D,dist C E)",
+          "=(dist A O,r)",
+          "=(dist B O,r)",
+          "=(dist C O,r)",
+          "=(dist D O,r)",
+          "=(dist E O,r)",
+          ">(r,0)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "\u00acCollinearPoints A D B",
+          "\u00acCollinearPoints A E C"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "VecParallel((E -\u1d65 B),(D -\u1d65 A))",
+        "b_parsed": "Parallel((B -\u1d65 E),(A -\u1d65 D))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "problem_id": "geom_0053",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A1,,B1,,C1,])",
+          "Reflection(A1,P,(Line B C)",
+          "Reflection(B1,P,(Line C A)",
+          "Reflection(C1,P,(Line A B)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,A)"
+        ],
+        "b_only": [
+          "=(dist A1 (midpoint \u211d B C),dist P (midpoint \u211d B C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "angle(A,B,C,\u2260,Real.pi,/,2,\u2227,angle,B,C,A,\u2260,Real.pi,/,2,\u2227,angle,C,A,B,\u2260,Real.pi,/,2)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "IsIncenterOf(P,(Triangle A B C)) \u2227 (Excircle,P,(Triangle A B C),A1) \u2227 (IsCircumcenterOf,P,(Triangle A1 B1 C1)) \u2227 (IsCircumcenterOf,P,(Triangle A B C)) \u2227 (IsOrthocenterOf,P,(Triangle A1 B1 C1)) \u2227 (IsOrthocenterOf,P,(Triangle A B C)) \u2227 (IsIncenterOf,P,(Triangle A1 B1 C1)) \u2227 (Excircle,P,(Triangle A1 B1 C1),A1)",
+        "b_parsed": "Incenter(P,A,B,C,\u2228,Excenter,P,A,B,C) \u2192 Circumcenter P A1 B1 C1) \u2227)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

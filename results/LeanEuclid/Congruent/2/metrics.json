@@ -1,0 +1,93 @@
+{
+  "problem_id": "2",
+  "dataset": "LeanEuclid",
+  "category": "Congruent",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "U",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8333
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,T,,W,,R,])",
+          "AffineIndependent(\u211d,![,V,,S,,R,])",
+          "\u2260(R,T)",
+          "\u2260(R,V)",
+          "\u2260(S,V)",
+          "\u2260(T,W)",
+          "\u2260(V,R)",
+          "\u2260(V,S)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![R,,T,,W])",
+          "AffineIndependent(\u211d,![R,,V,,S])"
+        ],
+        "jaccard": 0.1667
+      },
+      "goal": {
+        "a_parsed": "angle(R,T,W,=,angle,R,V,S,\u2227,angle,T,W,R,=,angle,V,S,R,\u2227,angle,W,R,T,=,angle,S,R,V)",
+        "b_parsed": "TrianglesCongruent((Triangle.mk R T W),(Triangle.mk R V S))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle R T W = angle R V S \u2227 angle T W R = angle V S R \u2227 angle W R T = angle S R V)",
+        "b_normalized": "TrianglesCongruent R T W R V S",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [
+          "U"
+        ],
+        "jaccard": 0.8333
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent R T W",
+          "AffineIndependent R V S",
+          "dist S V = dist T W"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "TrianglesCongruent R T W R V S",
+        "b_normalized": "TrianglesCongruent R T W R V S",
+        "match_exact": true
+      }
+    }
+  }
+}

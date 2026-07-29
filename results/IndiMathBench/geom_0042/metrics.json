@@ -1,0 +1,38 @@
+{
+  "problem_id": "geom_0042",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(A,0)",
+          ">(O',0)",
+          ">(h_r_O'_pos : r_O',0)",
+          ">(h_r_O_pos : r_O,0)",
+          ">(h_r_\u0393_pos : r_\u0393,0)",
+          "VecParallel((B -\u1d65 A),(M -\u1d65 O)",
+          "\u2260(A,B)",
+          "\u2260(A,O')",
+          "\u2260(O,M)"
+        ],
+        "b_only": [
+          "=(\u2203 (k : \u211d), B -\u1d65 A,k \u2022 (M -\u1d65 O))"
+        ],
+        "jaccard": 0.0909
+      },
+      "goal": {
+        "a_parsed": "=(dist Midpoint \u0393,r_\u0393)",
+        "b_parsed": "=(dist (midpoint \u211d A B) O,r\u2081)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

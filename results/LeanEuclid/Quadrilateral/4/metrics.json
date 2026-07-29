@@ -1,0 +1,84 @@
+{
+  "problem_id": "4",
+  "dataset": "LeanEuclid",
+  "category": "Quadrilateral",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "IsQuadrilateral(S,T,R,U)",
+          "VecParallel((U -\u1d65 R),(T -\u1d65 S)",
+          "VecParallel((U -\u1d65 T),(S -\u1d65 R)",
+          "\u2260(R,S)",
+          "\u2260(S,T)",
+          "\u2260(T,R)",
+          "\u2260(U,S)"
+        ],
+        "b_only": [
+          "ParallelLines((Line R U),(Line S T))",
+          "ParallelLines((Line T U),(Line R S))",
+          "\u2227(CollinearPoints R V T,CollinearPoints S V U)"
+        ],
+        "jaccard": 0.0909
+      },
+      "goal": {
+        "a_parsed": "=(@inner \u211d Vec _ (S -\u1d65 R) (T -\u1d65 S),0)",
+        "b_parsed": "=(@inner \u211d Vec _ (S -\u1d65 R) (T -\u1d65 S),0)",
+        "match_exact": true,
+        "match_predicate": true
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(@inner \u211d Vec _ (S -\u1d65 R) (T -\u1d65 S) = 0)",
+        "b_normalized": "angle R S T",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "dist R T = dist S U"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(@inner \u211d Vec _ (S -\u1d65 R) (T -\u1d65 S) = 0)",
+        "b_normalized": "angle R S T",
+        "match_exact": false
+      }
+    }
+  }
+}

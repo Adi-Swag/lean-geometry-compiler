@@ -1,0 +1,49 @@
+{
+  "problem_id": "geom_0034",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(dist A R,r_R)",
+          "=(dist B R,r_R)",
+          "=(dist X R,r_R)",
+          ">(A,0)",
+          ">(h_r_R_pos : r_R,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,R,,B,])",
+          "\u2260(A,B)",
+          "\u2260(A,R)",
+          "\u2260(A,X)",
+          "\u2260(B,C)",
+          "\u2260(C,A)",
+          "\u2260(R,B)",
+          "\u2260(R,X)",
+          "\u2260(X,C)"
+        ],
+        "b_only": [
+          "=(dist X R,r)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,X,C)",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,C,A,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)",
+          "dist(A,R,=,r,\u2227,dist,B,R,=,r,\u2227,dist,C,R,=,r)",
+          "\u2227(angle A B C > angle B C A,angle A B C > angle C A B)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(@inner \u211d Vec _ (X -\u1d65 R) (C -\u1d65 B),0)",
+        "b_parsed": "=(@inner \u211d Vec _ (X -\u1d65 R) (C -\u1d65 B),0)",
+        "match_exact": true,
+        "match_predicate": true
+      }
+    }
+  }
+}

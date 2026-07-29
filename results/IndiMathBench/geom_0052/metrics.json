@@ -1,0 +1,38 @@
+{
+  "problem_id": "geom_0052",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((((Real.sqrt 3.0) + 1.0",
+          "(((angle R S P) - (angle S P Q)",
+          "IsQuadrilateral(P,Q,R,S)",
+          "\u2260(P,Q)",
+          "\u2260(Q,R)",
+          "\u2260(R,S)",
+          "\u2260(S,P)"
+        ],
+        "b_only": [
+          "=((\u221a3 + 1) * dist Q R,dist S P)",
+          "=(angle R S P - angle S P Q,Real.pi / 6)",
+          "AffineIndependent(\u211d,![P,,Q,,R,,S])"
+        ],
+        "jaccard": 0.0909
+      },
+      "goal": {
+        "a_parsed": "=(((angle 0 0 0) - (angle 0 0 0)),90.0)",
+        "b_parsed": "=(angle P Q R - angle Q R S,Real.pi / 2)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "problem_id": "geom_0080",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,B,,D,])",
+          "AffineIndependent(\u211d,![,A,,C,,D,])",
+          "AffineIndependent(\u211d,![,O1,,O2,,D,])",
+          "IsCircumcenterOf(O,(Triangle A B C)",
+          "IsCircumcenterOf(O1,(Triangle A B D)",
+          "IsCircumcenterOf(O2,(Triangle A C D)",
+          "IsOrthocenterOf(H,(Triangle O1 O2 D)",
+          "\u2260(B,C)",
+          "\u2260(O,H)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,D,C)",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,C,A,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)",
+          "\u2203 (H : Point), (@inner \u211d Vec _ (O1 -\u1d65 H) (O2 -\u1d65 H) = 0",
+          "\u2227(dist O A = dist O B,dist O A = dist O C)",
+          "\u2227(dist O1 A = dist O1 B,dist O1 A = dist O1 D)",
+          "\u2227(dist O2 A = dist O2 C,dist O2 A = dist O2 D)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "VecParallel((H -\u1d65 O),(C -\u1d65 B))",
+        "b_parsed": "=(@inner \u211d Vec _ (O -\u1d65 H) (C -\u1d65 B),0)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

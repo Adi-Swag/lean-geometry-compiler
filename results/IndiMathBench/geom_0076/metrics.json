@@ -1,0 +1,55 @@
+{
+  "problem_id": "geom_0076",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "L",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8571
+      },
+      "hypotheses": {
+        "a_only": [
+          "(CollinearPoints A B F \u2227 @inner \u211d Vec _ (F -\u1d65 C) (B -\u1d65 A) = 0",
+          "=(D,midpoint \u211d B C)",
+          "=(angle D E F,angle L A C)",
+          "=(angle E F D,angle L B A)",
+          "=(angle F D E,angle L C B)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(E,B,(Segment C A),(Segment B C)",
+          "\u2260(A,B)",
+          "\u2260(A,D)",
+          "\u2260(B,C)",
+          "\u2260(B,E)",
+          "\u2260(C,A)",
+          "\u2260(C,F)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (F -\u1d65 C) (B -\u1d65 A),0)",
+          "=(angle A B E,angle E B C)",
+          "=(dist A D,dist B C / 2)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,F,B)",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(C,E,A)",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,C,A,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)",
+          "angle(F,D,E,=,angle,C,A,B,\u2227,angle,D,E,F,=,angle,A,B,C,\u2227,angle,E,F,D,=,angle,B,C,A)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(A,B,=,dist,B,C) \u2227 (dist,B,C,=,dist,C,A)",
+        "b_parsed": "\u2227(dist A B = dist B C,dist B C = dist C A)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

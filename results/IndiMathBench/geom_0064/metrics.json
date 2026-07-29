@@ -1,0 +1,46 @@
+{
+  "problem_id": "geom_0064",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(dist A A1,r_A1)",
+          ">(h_r_A1_pos : r_A1,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A1,,B1,,C1,])",
+          "IsIncenterOf(I1,(Triangle A1 B1 C1)",
+          "Reflection(A1,I,(Line B C)",
+          "Reflection(B1,I,(Line C A)",
+          "Reflection(C1,I,(Line A B)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,A)"
+        ],
+        "b_only": [
+          "=(A1,2 \u2022 (orthogonal_projection (line_through B C) I)",
+          "=(B1,2 \u2022 (orthogonal_projection (line_through C A) I)",
+          "=(C1,2 \u2022 (orthogonal_projection (line_through A B) I)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "IsIncenter(I,A,B,C)",
+          "IsIncenter(I1,A1,B1,C1)",
+          "PointLiesOnCircle(A,(circumcenter A1 B1 C1),(circumradius A1 B1 C1))"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "Concyclic([B1,,C1,,I,,I1])",
+        "b_parsed": "PointLiesOnCircle(B1,(circumcenter B1 C1 I I1),(circumradius B1 C1 I I1),\u2227)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

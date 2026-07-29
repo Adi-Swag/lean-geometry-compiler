@@ -1,0 +1,39 @@
+{
+  "problem_id": "geom_0067",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=((dist B P),(2.0 * (dist P M)",
+          "=(angle B P C,90)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,P)",
+          "\u2260(P,M)"
+        ],
+        "b_only": [
+          "=(angle B P C,Real.pi / 2)",
+          "=(dist B P,2 * dist P M)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "\u00acCollinearPoints A B C \u2227 \u00acCollinearPoints A B P \u2227 \u00acCollinearPoints A C P \u2227 \u00acCollinearPoints B C P"
+        ],
+        "jaccard": 0.2143
+      },
+      "goal": {
+        "a_parsed": "CollinearPoints(A,P,N)",
+        "b_parsed": "CollinearPoints(A,P,N)",
+        "match_exact": false,
+        "match_predicate": true
+      }
+    }
+  }
+}

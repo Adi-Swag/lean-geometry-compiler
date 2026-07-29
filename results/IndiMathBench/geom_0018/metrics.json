@@ -1,0 +1,47 @@
+{
+  "problem_id": "geom_0018",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.8571
+      },
+      "hypotheses": {
+        "a_only": [
+          "(DistanceRatio (Segment B E) (Segment E C) 2",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(BF,AE,Q)",
+          "\u2260(A,C)",
+          "\u2260(A,E)",
+          "\u2260(B,C)",
+          "\u2260(B,E)",
+          "\u2260(B,F)",
+          "\u2260(E,C)",
+          "\u2260(Q,F)"
+        ],
+        "b_only": [
+          "=(dist B E,2 * dist E C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,E,C)",
+          "\u2227(\u2203! (q : Point), CollinearPoints B F q,CollinearPoints A E q)"
+        ],
+        "jaccard": 0.0667
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), ((dist 0 0) / (dist 0 0)),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), dist B Q / dist Q F,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

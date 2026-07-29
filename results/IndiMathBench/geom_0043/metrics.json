@@ -1,0 +1,59 @@
+{
+  "problem_id": "geom_0043",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(dist A' O,r_O)",
+          "=(dist B' O,r_O)",
+          "=(dist C' O,r_O)",
+          "=(dist I P,dist I R)",
+          "=(dist Q P,dist Q R)",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(A',A,(Segment A B),(Segment A C)",
+          "AngleBisector(B',B,(Segment B A),(Segment B C)",
+          "AngleBisector(C',C,(Segment C A),(Segment C B)",
+          "IntersectAt(B'C',AA',P)",
+          "IntersectAt(B'C',AC,Q)",
+          "IntersectAt(BB',AC,R)",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "IsQuadrilateral(P,I,R,Q)",
+          "\u2260(A,A')",
+          "\u2260(A,C)",
+          "\u2260(B',C')",
+          "\u2260(B,B')",
+          "\u2260(I,P)",
+          "\u2260(I,R)",
+          "\u2260(Q,P)",
+          "\u2260(Q,R)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,A',I)",
+          "CollinearPoints(B,B',I)",
+          "CollinearPoints(C,C',I)",
+          "Incenter(I,A,B,C)",
+          "dist(A,I,=,r,\u2227,dist,B,I,=,r,\u2227,dist,C,I,=,r)",
+          "\u2227(dist I P = dist I R,dist Q P = dist Q R)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(A,B,=,dist,B,C) \u2227 (dist,B,C,=,dist,C,A)",
+        "b_parsed": "\u2227(dist A B = dist B C,dist B C = dist C A)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

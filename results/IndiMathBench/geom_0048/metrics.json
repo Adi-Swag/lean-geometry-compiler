@@ -1,0 +1,63 @@
+{
+  "problem_id": "geom_0048",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "O1",
+            "Point"
+          ],
+          [
+            "O2",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.75
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(A,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,G,,B,])",
+          "AffineIndependent(\u211d,![,A,,G,,C,])",
+          "AffineIndependent(\u211d,![,A,,X,,Y,])",
+          "IntersectAt(circumcircle_AGB,BC,X)",
+          "IntersectAt(circumcircle_AGC,BC,Y)",
+          "IsCentroidOf(G,(Triangle A B C)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,X)",
+          "\u2260(A,Y)",
+          "\u2260(B,C)",
+          "\u2260(X,Y)"
+        ],
+        "b_only": [
+          "=(dist X G,r1)",
+          "=(dist Y G,r2)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "Centroid(A,B,C,G)",
+          "CollinearPoints(B,X,C)",
+          "CollinearPoints(B,Y,C)",
+          "\u2227(X \u2260 B,X \u2260 C)",
+          "\u2227(Y \u2260 B,Y \u2260 C)",
+          "\u2227(dist A G = r1,dist B G = r1)",
+          "\u2227(dist A G = r2,dist C G = r2)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "IsCentroidOf(G,(Triangle A X Y))",
+        "b_parsed": "Centroid(A,X,Y,G)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

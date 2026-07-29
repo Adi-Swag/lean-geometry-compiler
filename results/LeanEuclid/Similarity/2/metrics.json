@@ -1,0 +1,85 @@
+{
+  "problem_id": "2",
+  "dataset": "LeanEuclid",
+  "category": "Similarity",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,F,,G,,J,])",
+          "AffineIndependent(\u211d,![,H,,I,,J,])",
+          "\u2260(F,G)",
+          "\u2260(F,J)",
+          "\u2260(G,J)",
+          "\u2260(H,I)",
+          "\u2260(H,J)",
+          "\u2260(I,J)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![F,,G,,J])",
+          "AffineIndependent(\u211d,![H,,I,,J])"
+        ],
+        "jaccard": 0.0909
+      },
+      "goal": {
+        "a_parsed": "angle(F,G,J,=,angle,H,I,J,\u2227,angle,G,J,F,=,angle,I,J,H,\u2227,angle,J,F,G,=,angle,J,H,I)",
+        "b_parsed": "angle(F,G,J,=,angle,H,I,J,\u2227,angle,G,J,F,=,angle,I,J,H,\u2227,angle,J,F,G,=,angle,J,H,I)",
+        "match_exact": true,
+        "match_predicate": true
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle F G J = angle H I J \u2227 angle G J F = angle I J H \u2227 angle J F G = angle J H I)",
+        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220H:J:I = \u2220F:J:G",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent F G J",
+          "AffineIndependent H I J"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(angle F G J = angle H I J \u2227 angle G J F = angle I J H \u2227 angle J F G = angle J H I)",
+        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220H:J:I = \u2220F:J:G",
+        "match_exact": false
+      }
+    }
+  }
+}

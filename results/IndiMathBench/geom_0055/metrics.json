@@ -1,0 +1,59 @@
+{
+  "problem_id": "geom_0055",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=((dist A E),(dist B D)",
+          "=((dist B F),(dist C E)",
+          "=((dist C A),(dist D F)",
+          "IsPolygon(A,B,C,D,E,F)",
+          "VecParallel((B -\u1d65 A),(E -\u1d65 D)",
+          "VecParallel((C -\u1d65 B),(F -\u1d65 E)",
+          "VecParallel((D -\u1d65 C),(A -\u1d65 F)",
+          "\u2260(A,B)",
+          "\u2260(A,E)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(B,F)",
+          "\u2260(C,A)",
+          "\u2260(C,D)",
+          "\u2260(C,E)",
+          "\u2260(D,E)",
+          "\u2260(D,F)",
+          "\u2260(E,F)",
+          "\u2260(F,A)"
+        ],
+        "b_only": [
+          "=(dist A E,dist B D)",
+          "=(dist B F,dist C E)",
+          "=(dist C A,dist D F)",
+          "Parallel((Line A B),(Line D E))",
+          "Parallel((Line A B),(Line D E),\u2228,Parallel,(Line B C),(Line E F),\u2228,Parallel,(Line C D),(Line F A))",
+          "Parallel((Line B C),(Line E F))",
+          "Parallel((Line B C),(Line E F),\u2228,Parallel,(Line C D),(Line F A),\u2228,Parallel,(Line A B),(Line D E))",
+          "Parallel((Line C D),(Line F A))",
+          "Parallel((Line C D),(Line F A),\u2228,Parallel,(Line A B),(Line D E),\u2228,Parallel,(Line B C),(Line E F))",
+          "dist(A,E,=,dist,B,D,\u2228,dist,B,F,=,dist,C,E,\u2228,dist,C,A,=,dist,D,F)",
+          "dist(B,F,=,dist,C,E,\u2228,dist,C,A,=,dist,D,F,\u2228,dist,A,E,=,dist,B,D)",
+          "dist(C,A,=,dist,D,F,\u2228,dist,A,E,=,dist,B,D,\u2228,dist,B,F,=,dist,C,E)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "Concyclic([A,,B,,C,,D,,E,,F])",
+        "b_parsed": ">(\u2203 (O : Point) (r : \u211d), r,0 \u2227 (dist A O = r) \u2227 (dist B O = r) \u2227 (dist C O = r) \u2227 (dist D O = r) \u2227 (dist E O = r) \u2227 (dist F O = r))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

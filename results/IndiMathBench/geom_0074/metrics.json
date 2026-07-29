@@ -1,0 +1,42 @@
+{
+  "problem_id": "geom_0074",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=((dist A B),((Real.sqrt 2.0) + (Real.sqrt 2.0)",
+          "=(angle A O B,135)",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "CyclicQuadrilateral((Quadrilateral A B C D)",
+          "IsQuadrilateral(A,B,C,D)",
+          "\u2260(A,B)"
+        ],
+        "b_only": [
+          "=(angle A O B,3 * Real.pi / 4)",
+          "=(dist A B,Real.sqrt 2 + Real.sqrt 2)",
+          "=(dist A O,r)",
+          "=(dist B O,r)",
+          "=(dist C O,r)",
+          "=(dist D O,r)",
+          ">(r,0)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'B', 'C', 'D']})),val)",
+        "b_parsed": "=(\u2203 (max_area : \u211d), area (Quadrilateral.mk A B C D),max_area)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

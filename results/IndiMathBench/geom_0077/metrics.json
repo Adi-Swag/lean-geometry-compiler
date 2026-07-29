@@ -1,0 +1,73 @@
+{
+  "problem_id": "geom_0077",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "K",
+            "Point"
+          ],
+          [
+            "O1",
+            "Point"
+          ],
+          [
+            "O2",
+            "Point"
+          ],
+          [
+            "P",
+            "Point"
+          ],
+          [
+            "Q",
+            "Point"
+          ],
+          [
+            "R",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(TangentToCircle (Line O1 P) (Circle O2) P",
+          "(TangentToCircle (Line O2 Q) (Circle O2) Q",
+          "=((dist K P),(dist K Q)",
+          ">(R,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "AffineIndependent(\u211d,![,P,,Q,,R,])",
+          "IntersectAt(l1,l2,K)",
+          "\u2260(K,P)",
+          "\u2260(K,Q)",
+          "\u2260(O1,P)",
+          "\u2260(O2,Q)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (P -\u1d65 O\u2081) (K -\u1d65 P),0)",
+          "=(@inner \u211d Vec _ (Q -\u1d65 O\u2082) (K -\u1d65 Q),0)",
+          "=(dist K P,dist K Q)",
+          "=(dist O\u2081 O\u2082,r\u2081 + r\u2082)",
+          "=(dist P O\u2082,r\u2082)",
+          "=(dist Q O\u2082,r\u2082)",
+          "=(dist R O\u2081,r\u2081)",
+          "=(dist R O\u2082,r\u2082)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(P,Q,=,dist,Q,R) \u2227 (dist,Q,R,=,dist,R,P)",
+        "b_parsed": "\u2227(dist P Q = dist Q R,dist Q R = dist R P)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

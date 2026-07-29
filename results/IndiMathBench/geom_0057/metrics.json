@@ -1,0 +1,48 @@
+{
+  "problem_id": "geom_0057",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (K -\u1d65 D) (C -\u1d65 B) = 0",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(AP,EF,D)",
+          "IntersectAt(BP,AC,E)",
+          "IntersectAt(CP,AB,F)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,P)",
+          "\u2260(B,C)",
+          "\u2260(B,P)",
+          "\u2260(C,P)",
+          "\u2260(D,K)",
+          "\u2260(E,F)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (K -\u1d65 D) (C -\u1d65 B),0 \u2227 CollinearPoints D K B \u2227 CollinearPoints D K C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,C,A,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)",
+          "\u2203 (x y z : \u211d), x > 0 \u2227 y > 0 \u2227 z > 0 \u2227 x + y + z = 1 \u2227 P = x \u2022 A + y \u2022 B + z \u2022 C",
+          "\u2227(CollinearPoints A P D,CollinearPoints E F D)",
+          "\u2227(CollinearPoints B P E,CollinearPoints A C E)",
+          "\u2227(CollinearPoints C P F,CollinearPoints A B F)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "AngleBisector(D,K,(Segment E K),(Segment K F))",
+        "b_parsed": "=(angle E K D,angle D K F)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

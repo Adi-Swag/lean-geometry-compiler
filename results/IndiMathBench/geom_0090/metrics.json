@@ -1,0 +1,47 @@
+{
+  "problem_id": "geom_0090",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((angle B A C) > 90.0",
+          "(@inner \u211d Vec _ (E -\u1d65 B) (D -\u1d65 A) = 0",
+          "(TangentToCircle (Line A B) (Circle O) A",
+          "=(dist A O,r_O)",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,C,,D,])",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(B,C)",
+          "\u2260(B,E)",
+          "\u2260(C,D)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (E -\u1d65 B) (D -\u1d65 A),0)",
+          "=(\u2203 (t : \u211d), E,A + t \u2022 (D -\u1d65 A))",
+          "=(\u2203! (p : Point), PointLiesOnCircle p O r \u2227 dist p A,dist p C)",
+          ">(angle B A C,Real.pi / 2)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,D,C)"
+        ],
+        "jaccard": 0.0952
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), (angle B C A),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), angle B C A,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "problem_id": "geom_0078",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "((Real.sqrt ((((dist D C) + (dist C O) + (dist O D)",
+          "((Real.sqrt ((((dist E A) + (dist A H) + (dist H E)",
+          "(@inner \u211d Vec _ (D -\u1d65 O) (C -\u1d65 B) = 0",
+          "(@inner \u211d Vec _ (E -\u1d65 H) (A -\u1d65 C) = 0",
+          "AffineIndependent(\u211d,![,G,,F,,B,])",
+          "AffineIndependent(\u211d,![,H,,E,,A,])",
+          "AffineIndependent(\u211d,![,O,,D,,C,])",
+          "IsCentroidOf(G,(Triangle A B C)",
+          "IsCircumcenterOf(O,(Triangle A B C)",
+          "IsOrthocenterOf(H,(Triangle A B C)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,A)",
+          "\u2260(G,F)",
+          "\u2260(H,E)",
+          "\u2260(O,D)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (D -\u1d65 O) (C -\u1d65 B),0)",
+          "=(@inner \u211d Vec _ (E -\u1d65 H) (A -\u1d65 C),0)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "Centroid(G,A,B,C)",
+          "Circumcenter(O,A,B,C)",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(C,E,A)",
+          "Orthocenter(H,A,B,C)",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,C,A,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)",
+          "\u2227(area (Triangle.mk O D C) = area (Triangle.mk H E A),area (Triangle.mk H E A) = area (Triangle.mk G F B))"
+        ],
+        "jaccard": 0.037
+      },
+      "goal": {
+        "a_parsed": "=(\u2203 (val : \u211d), (angle A C B),val)",
+        "b_parsed": "=(\u2203 (val : \u211d), angle C A B,val)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

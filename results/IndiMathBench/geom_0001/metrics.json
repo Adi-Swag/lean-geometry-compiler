@@ -1,0 +1,48 @@
+{
+  "problem_id": "geom_0001",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (E -\u1d65 B) (D -\u1d65 A) = 0",
+          "=(dist D O,r_O)",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AngleBisector(D,A,(Segment A B),(Segment A C)",
+          "\u2227(CollinearPoints E D A,CollinearPoints E A C)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(A,O)",
+          "\u2260(B,D)",
+          "\u2260(B,E)",
+          "\u2260(D,O)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (E -\u1d65 B) (D -\u1d65 A),0)",
+          "=(dist D O,r)",
+          ">(dist A C,dist A B)",
+          ">(r,0)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,E,C)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "VecParallel((O -\u1d65 A),(D -\u1d65 B))",
+        "b_parsed": "=(@inner \u211d Vec _ (O -\u1d65 A) (D -\u1d65 B),0)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

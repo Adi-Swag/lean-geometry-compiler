@@ -1,0 +1,87 @@
+{
+  "problem_id": "4",
+  "dataset": "LeanEuclid",
+  "category": "Similarity",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(angle U Y W,angle X Y V)",
+          "AffineIndependent(\u211d,![,W,,Y,,U,])",
+          "AffineIndependent(\u211d,![,X,,Y,,V,])",
+          "\u2260(W,U)",
+          "\u2260(W,Y)",
+          "\u2260(X,V)",
+          "\u2260(X,Y)",
+          "\u2260(Y,U)",
+          "\u2260(Y,V)"
+        ],
+        "b_only": [
+          "=(angle W U Y,angle V X Y)",
+          "AffineIndependent(\u211d,![U,,W,,Y])",
+          "AffineIndependent(\u211d,![X,,V,,Y])"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "angle(U,W,Y,=,angle,X,V,Y,\u2227,angle,W,Y,U,=,angle,V,Y,X,\u2227,angle,Y,U,W,=,angle,Y,X,V)",
+        "b_parsed": "\u2227(angle U W Y = angle X V Y,angle W Y U = angle V Y X)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle U W Y = angle X V Y \u2227 angle W Y U = angle V Y X \u2227 angle Y U W = angle Y X V)",
+        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220V:Y:X = \u2220U:Y:W",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent U W Y",
+          "AffineIndependent X V Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(angle U W Y = angle X V Y \u2227 angle W Y U = angle V Y X)",
+        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220V:Y:X = \u2220U:Y:W",
+        "match_exact": false
+      }
+    }
+  }
+}

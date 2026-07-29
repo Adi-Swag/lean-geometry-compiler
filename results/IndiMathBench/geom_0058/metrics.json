@@ -1,0 +1,41 @@
+{
+  "problem_id": "geom_0058",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A1,,B1,,C1,])",
+          "\u2260(A,B)",
+          "\u2260(A1,B1)",
+          "\u2260(B,C)",
+          "\u2260(B1,C1)",
+          "\u2260(C,A)",
+          "\u2260(C1,A1)"
+        ],
+        "b_only": [
+          "=(dist A1 B1,dist A B + dist B C / 2)",
+          "=(dist B1 C1,dist B C + dist C A / 2)",
+          "=(dist C1 A1,dist C A + dist A B / 2)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "AffineIndependent(\u211d,![A1,,B1,,C1])"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "area((Polygon {'type': 'Triangle', 'vertices': ['A1', 'B1', 'C1']})) \u2265 ((9.0 / 4.0),*,(area (Polygon {'type': 'Triangle', 'vertices': ['A', 'B', 'C']})))",
+        "b_parsed": "\u2265(area (Triangle.mk A1 B1 C1),(9 / 4) * area (Triangle.mk A B C))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

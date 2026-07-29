@@ -1,0 +1,73 @@
+{
+  "problem_id": "geom_0035",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [
+          [
+            "A",
+            "Point"
+          ],
+          [
+            "B",
+            "Point"
+          ],
+          [
+            "C",
+            "Point"
+          ],
+          [
+            "D",
+            "Point"
+          ],
+          [
+            "O",
+            "Point"
+          ],
+          [
+            "X",
+            "Point"
+          ]
+        ],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=((dist A B),(dist A X)",
+          "=(dist D \u0393,r_\u0393)",
+          ">(A,0)",
+          ">(h_r_O_pos : r_O,0)",
+          ">(h_r_\u0393_pos : r_\u0393,0)",
+          "AffineIndependent(\u211d,![,A,,B,,X,])",
+          "AffineIndependent(\u211d,![,B,,D,,X,])",
+          "IsCircumcenterOf(O,(Triangle B D X)",
+          "\u2227(CollinearPoints D \u0393 A,CollinearPoints D A X)",
+          "\u2260(A,X)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(D,X)"
+        ],
+        "b_only": [
+          "=(dist A B,dist A X)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,D,X)",
+          "CollinearPoints(B,X,C)",
+          "Orthocenter(O,B,D,X)",
+          "PointLiesOnCircle(O,A,B,X)",
+          "\u2203! (p : Point), PointLiesOnCircle p A B X \u2227 p \u2260 A \u2227 p \u2260 X"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(dist O \u0393,r_\u0393)",
+        "b_parsed": "PointLiesOnCircle(O,A,B,X)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

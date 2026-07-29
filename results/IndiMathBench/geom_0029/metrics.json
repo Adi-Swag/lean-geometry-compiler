@@ -1,0 +1,113 @@
+{
+  "problem_id": "geom_0029",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "A1",
+            "Point"
+          ],
+          [
+            "A10",
+            "Point"
+          ],
+          [
+            "A11",
+            "Point"
+          ],
+          [
+            "A12",
+            "Point"
+          ],
+          [
+            "A13",
+            "Point"
+          ],
+          [
+            "A14",
+            "Point"
+          ],
+          [
+            "A15",
+            "Point"
+          ],
+          [
+            "A16",
+            "Point"
+          ],
+          [
+            "A17",
+            "Point"
+          ],
+          [
+            "A18",
+            "Point"
+          ],
+          [
+            "A19",
+            "Point"
+          ],
+          [
+            "A2",
+            "Point"
+          ],
+          [
+            "A20",
+            "Point"
+          ],
+          [
+            "A3",
+            "Point"
+          ],
+          [
+            "A4",
+            "Point"
+          ],
+          [
+            "A5",
+            "Point"
+          ],
+          [
+            "A6",
+            "Point"
+          ],
+          [
+            "A7",
+            "Point"
+          ],
+          [
+            "A8",
+            "Point"
+          ],
+          [
+            "A9",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.1304
+      },
+      "hypotheses": {
+        "a_only": [
+          "IsPolygon(A1,A2,A3,A4,A5,A6,A7,A8,A9,A10,A11,A12,A13,A14,A15,A16,A17,A18,A19,A20)"
+        ],
+        "b_only": [
+          "=(n,20)",
+          "RegularPolygon(n)",
+          "\u2227(\u2203 (red blue green : \u2115), red = 3,red + blue + green = n)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(A,B,=,dist,B,C) \u2228 (dist,B,C,=,dist,C,A) \u2228 (dist,C,A,=,dist,A,B)",
+        "b_parsed": "\u2203 (A B C : Point), (angle A B C = angle B C A) \u2228 (angle B A C = angle A C B)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

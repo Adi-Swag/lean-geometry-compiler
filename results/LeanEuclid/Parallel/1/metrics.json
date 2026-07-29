@@ -1,0 +1,86 @@
+{
+  "problem_id": "1",
+  "dataset": "LeanEuclid",
+  "category": "Parallel",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "IntersectAt(TV,SZ,U)",
+          "IntersectAt(WY,SZ,X)",
+          "\u2260(S,Z)",
+          "\u2260(T,V)",
+          "\u2260(W,Y)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![S,,X,,Z])",
+          "AffineIndependent(\u211d,![T,,U,,V])",
+          "AffineIndependent(\u211d,![W,,X,,Y])",
+          "\u2227(CollinearPoints T U V,CollinearPoints S U Z)",
+          "\u2227(CollinearPoints W X Y,CollinearPoints S X Z)"
+        ],
+        "jaccard": 0.0909
+      },
+      "goal": {
+        "a_parsed": "VecParallel((Y -\u1d65 W),(V -\u1d65 T))",
+        "b_parsed": "ParallelLines(W,Y,T,V)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    },
+    "our_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(VecParallel (Y -\u1d65 W) (V -\u1d65 T))",
+        "b_normalized": "\u00ac WY.intersectsLine TV",
+        "match_exact": false
+      }
+    },
+    "direct_vs_systeme": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent S X Z",
+          "AffineIndependent T U V",
+          "AffineIndependent W X Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "ParallelLines W Y T V",
+        "b_normalized": "\u00ac WY.intersectsLine TV",
+        "match_exact": false
+      }
+    }
+  }
+}

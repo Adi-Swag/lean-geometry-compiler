@@ -1,0 +1,56 @@
+{
+  "problem_id": "geom_0079",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ],
+          [
+            "G1",
+            "Point"
+          ],
+          [
+            "G2",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.5714
+      },
+      "hypotheses": {
+        "a_only": [
+          "(((dist A B) + (dist B D)",
+          "AffineIndependent(\u211d,![,A,,B,,D,])",
+          "AffineIndependent(\u211d,![,A,,C,,D,])",
+          "Concyclic([B,,C,,G1,,G2])",
+          "IsCentroidOf(G1,(Triangle A B D)",
+          "IsCentroidOf(G2,(Triangle A C D)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(C,D)"
+        ],
+        "b_only": [
+          "=(dist A B + dist B D,dist A C + dist C D)",
+          ">(\u2203 (O : Point) (r : \u211d), r,0 \u2227 dist B O = r \u2227 dist C O = r \u2227 dist (centroid \u211d ![A, B, D]) O = r \u2227 dist (centroid \u211d ![A, C, D]) O = r)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,D,C)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = (dist,0,0)",
+        "b_parsed": "=(dist A B,dist A C)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

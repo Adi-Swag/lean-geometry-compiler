@@ -1,0 +1,66 @@
+{
+  "problem_id": "geom_0050",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ],
+          [
+            "O1",
+            "Point"
+          ],
+          [
+            "O2",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.7
+      },
+      "hypotheses": {
+        "a_only": [
+          "((angle A B C = Real.pi / 2) \u2228 (angle B C A = Real.pi / 2) \u2228 (angle C A B = Real.pi / 2)",
+          "=(angle A B C,90)",
+          ">(A,0)",
+          ">(h_r_O1_pos : r_O1,0)",
+          ">(h_r_O2_pos : r_O2,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,A,,B,,D,])",
+          "AffineIndependent(\u211d,![,A,,C,,D,])",
+          "AngleBisector(D,A,(Segment A B),(Segment A C)",
+          "IntersectAt(circumcircle_ABD,AC,F)",
+          "IntersectAt(circumcircle_ACD,AB,E)",
+          "Reflection(K,E,(Line B C)",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(A,D)",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "=(K,reflection \u211d B C E)",
+          "=(angle A B C,Real.pi / 2)",
+          "=(angle B A D,angle D A C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,E,B)",
+          "CollinearPoints(A,F,C)",
+          "CollinearPoints(B,D,C)",
+          "PointLiesOnCircle(E,(circumcenter \u211d A C D),(radius (circumcircle \u211d A C D))",
+          "PointLiesOnCircle(F,(circumcenter \u211d A B D),(radius (circumcircle \u211d A B D))"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "dist(0,0) = (dist,0,0)",
+        "b_parsed": "=(dist F K,dist B C)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "problem_id": "geom_0060",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ],
+          [
+            "O",
+            "Point"
+          ],
+          [
+            "ra",
+            "Point"
+          ],
+          [
+            "rb",
+            "Point"
+          ],
+          [
+            "rc",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.375
+      },
+      "hypotheses": {
+        "a_only": [
+          "((2.0 * r_O) \u2264 r_ra",
+          "(Excircle ra (Triangle B C A) A",
+          "(Excircle rb (Triangle C A B) B",
+          "(Excircle rc (Triangle A B C) C",
+          ">(A,0)",
+          ">(h_r_0_pos : r_0,0)",
+          ">(h_r_O_pos : r_O,0)",
+          ">(h_r_ra_pos : r_ra,0)",
+          ">(h_r_rb_pos : r_rb,0)",
+          ">(h_r_rc_pos : r_rc,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IsCircumcenterOf(O,(Triangle A B C)",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,A)"
+        ],
+        "b_only": [
+          "=(R,circumradius (Triangle.mk A B C))",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "a(=,dist,B,C,\u2227,b,=,dist,C,A,\u2227,c,=,dist,A,B)",
+          "ra(=,exradius,(Triangle.mk A B C),A,\u2227,rb,=,exradius,(Triangle.mk A B C),B,\u2227,rc,=,exradius,(Triangle.mk A B C),C)",
+          "\u2264(2 * R,ra)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "((dist 0 0) > (dist 0 0)) \u2227 ((dist 0 0) > (dist 0 0)) \u2227 ((2.0 * r_0) > r_rb) \u2227 ((2.0 * r_0) > r_rc)",
+        "b_parsed": "a(>,b,\u2227,a,>,c) \u2227 (2,*,R,>,rb,\u2227,2,*,R,>,rc)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

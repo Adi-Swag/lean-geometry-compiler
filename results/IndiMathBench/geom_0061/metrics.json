@@ -1,0 +1,61 @@
+{
+  "problem_id": "geom_0061",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [
+          [
+            "0",
+            "Point"
+          ],
+          [
+            "I",
+            "Point"
+          ],
+          [
+            "Incircle",
+            "Point"
+          ]
+        ],
+        "b_only": [],
+        "jaccard": 0.6667
+      },
+      "hypotheses": {
+        "a_only": [
+          "<((dist A K),(dist A L)",
+          "=((dist A K),(dist K L)",
+          "=((dist K L),(dist L M)",
+          ">(K,0)",
+          ">(h_r_I_pos : r_I,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IsIncenterOf(I,(Triangle A B C)",
+          "\u2227(CollinearPoints K A M,CollinearPoints K M Incircle)",
+          "\u2227(CollinearPoints L A M,CollinearPoints L M Incircle)",
+          "\u2260(A,K)",
+          "\u2260(A,M)",
+          "\u2260(B,C)",
+          "\u2260(K,L)",
+          "\u2260(L,M)"
+        ],
+        "b_only": [
+          "<(dist A K,dist A L)",
+          ">(\u2203 (I : Point) (r : \u211d), r,0 \u2227 dist A I = r \u2227 dist B I = r \u2227 dist C I = r)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,K,M)",
+          "CollinearPoints(A,L,M)",
+          "\u2227(dist A K = dist K L,dist K L = dist L M)"
+        ],
+        "jaccard": 0.0476
+      },
+      "goal": {
+        "a_parsed": "Set(((dist 0 0) / (dist 0 0)),((dist 0 0) / (dist 0 0)),((dist 0 0) / (dist 0 0))) = (Set,5.0,10.0,13.0)",
+        "b_parsed": "\u2203 (x y z : \u211d), (x / y = 5 / 10 \u2227 y / z = 10 / 13 \u2227 z / x = 13 / 5) \u2227 \n    (dist A B = x \u2228 dist A B = y \u2228 dist A B = z) \u2227 \n    (dist B C = x \u2228 dist B C = y \u2228 dist B C = z) \u2227 \n    (dist C A = x \u2228 dist C A = y \u2228 dist C A = z)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

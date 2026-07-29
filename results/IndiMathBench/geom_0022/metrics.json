@@ -1,0 +1,44 @@
+{
+  "problem_id": "geom_0022",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(DistanceRatio (Segment B D) (Segment D E) 1",
+          "(DistanceRatio (Segment B D) (Segment E C) SqrtOf",
+          "(DistanceRatio (Segment D E) (Segment E C) 2",
+          "=(angle B A C,90)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,B)",
+          "\u2260(A,C)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(D,E)",
+          "\u2260(E,C)"
+        ],
+        "b_only": [
+          "=(angle B A C,Real.pi / 2)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(B,E,C)",
+          "\u2227(dist B D / dist D E = 1 / 2,dist D E / dist E C = 2 / Real.sqrt 3)"
+        ],
+        "jaccard": 0.0588
+      },
+      "goal": {
+        "a_parsed": "=(angle D A E,45)",
+        "b_parsed": "=(angle D A E,Real.pi / 4)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

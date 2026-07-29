@@ -1,0 +1,54 @@
+{
+  "problem_id": "geom_0002",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (M -\u1d65 K) (E -\u1d65 B) = 0",
+          "(@inner \u211d Vec _ (N -\u1d65 L) (F -\u1d65 C) = 0",
+          "(CollinearPoints A B F \u2227 @inner \u211d Vec _ (F -\u1d65 C) (B -\u1d65 A) = 0",
+          "(CollinearPoints A C E \u2227 @inner \u211d Vec _ (E -\u1d65 B) (C -\u1d65 A) = 0",
+          "=(dist K O,r_O)",
+          "=(dist L O,r_O)",
+          ">(h_r_O_pos : r_O,0)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "IntersectAt(BE,CF,O)",
+          "\u2260(B,E)",
+          "\u2260(C,F)",
+          "\u2260(E,N)",
+          "\u2260(F,M)",
+          "\u2260(K,L)",
+          "\u2260(K,M)",
+          "\u2260(L,N)"
+        ],
+        "b_only": [
+          "=(@inner \u211d Vec _ (E -\u1d65 B) (C -\u1d65 A),0)",
+          "=(@inner \u211d Vec _ (F -\u1d65 C) (B -\u1d65 A),0)",
+          "=(@inner \u211d Vec _ (M -\u1d65 K) (E -\u1d65 B),0)",
+          "=(@inner \u211d Vec _ (N -\u1d65 L) (F -\u1d65 C),0)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,E,C)",
+          "CollinearPoints(A,F,B)",
+          "CollinearPoints(A,K,B)",
+          "CollinearPoints(A,L,C)",
+          "\u2227(\u2203! (p : Point), CollinearPoints p B E,CollinearPoints p C F)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "VecParallel((M -\u1d65 F),(N -\u1d65 E))",
+        "b_parsed": "Parallel((F -\u1d65 M),(E -\u1d65 N))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

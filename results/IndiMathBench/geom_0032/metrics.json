@@ -1,0 +1,48 @@
+{
+  "problem_id": "geom_0032",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(@inner \u211d Vec _ (Y -\u1d65 X) (C -\u1d65 A) = 0",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,B,,X,,Y,])",
+          "IsCircumcenterOf(O,(Triangle A B C)",
+          "IsIncenterOf(O,(Triangle B X Y)",
+          "\u2227(CollinearPoints X B C,CollinearPoints X C A)",
+          "\u2227(CollinearPoints Y B A,CollinearPoints Y A A)",
+          "\u2260(A,C)",
+          "\u2260(B,A)",
+          "\u2260(B,C)"
+        ],
+        "b_only": [
+          "=(O,Circumcenter A B C)",
+          "=(\u2203 (M : Point), CollinearPoints B M C \u2227 dist B M,dist M C \u2227 CollinearPoints M X C)",
+          "=(\u2203 (N : Point), CollinearPoints B N A \u2227 dist B N,dist N A \u2227 CollinearPoints N Y C)",
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,X,C)",
+          "CollinearPoints(A,Y,C)",
+          "angle(A,B,C,<,Real.pi,/,2,\u2227,angle,B,C,A,<,Real.pi,/,2,\u2227,angle,C,A,B,<,Real.pi,/,2)",
+          "\u2203 (M : Point), CollinearPoints B M C \u2227 dist B M = dist M C \u2227 @inner \u211d Vec _ (M -\u1d65 B) (C -\u1d65 B) = 0",
+          "\u2203 (N : Point), CollinearPoints B N A \u2227 dist B N = dist N A \u2227 @inner \u211d Vec _ (N -\u1d65 B) (A -\u1d65 B) = 0",
+          "\u2227(angle A B C > angle B C A,angle A B C > angle C A B)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "Circumcenter(0.0,0.0,0.0,0.0) = (Incenter,0.0,0.0,0.0,0.0)",
+        "b_parsed": "=(O,Incenter B X Y)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

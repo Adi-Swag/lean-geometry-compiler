@@ -1,0 +1,49 @@
+{
+  "problem_id": "geom_0085",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          ">(h_r_A'BE_pos : r_A'BE,0)",
+          ">(h_r_GCA'_pos : r_GCA',0)",
+          ">(h_r_GD'F_pos : r_GD'F,0)",
+          "AffineIndependent(\u211d,![,A',,B,,E,])",
+          "AffineIndependent(\u211d,![,G,,C,,A',])",
+          "AffineIndependent(\u211d,![,G,,D',,F,])",
+          "IntersectAt(A'D',CD,G)",
+          "IsQuadrilateral(A,B,C,D)",
+          "\u2260(A',D')",
+          "\u2260(A,B)",
+          "\u2260(B,C)",
+          "\u2260(C,D)",
+          "\u2260(C,G)",
+          "\u2260(D,A)",
+          "\u2260(E,F)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C,,D])",
+          "CollinearPoints(A',D',G)",
+          "CollinearPoints(B,C,A')",
+          "CollinearPoints(C,D,D')",
+          "CollinearPoints(E,F,A')",
+          "\u2260(A',C)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(r_GCA',(r_GD'F + r_A'BE))",
+        "b_parsed": "=(inradius (Triangle G C A'),inradius (Triangle G D' F) + inradius (Triangle A' B E))",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

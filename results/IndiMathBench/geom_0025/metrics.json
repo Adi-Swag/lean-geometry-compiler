@@ -1,0 +1,59 @@
+{
+  "problem_id": "geom_0025",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [
+          [
+            "A",
+            "Point"
+          ],
+          [
+            "B",
+            "Point"
+          ],
+          [
+            "C",
+            "Point"
+          ]
+        ],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "=(angle Am B C,angle An B C)",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "AffineIndependent(\u211d,![,Ai+1,,Bi+1,,Ci+1,])",
+          "AffineIndependent(\u211d,![,Ai,,Bi,,Ci,])",
+          "IsOrthocenterOf(H,(Triangle Ai Bi Ci)",
+          "Reflection(Ai+1,H,(Line Bi Ci)",
+          "Reflection(Bi+1,H,(Line Ci Ai)",
+          "Reflection(Ci+1,H,(Line Ai Bi)",
+          "\u2260(A,B)",
+          "\u2260(Ai,Bi)",
+          "\u2260(B,C)",
+          "\u2260(Bi,Ci)",
+          "\u2260(C,A)",
+          "\u2260(Ci,Ai)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "\u00ac(angle A B C = Real.pi / 2 \u2228 angle B C A = Real.pi / 2 \u2228 angle C A B = Real.pi / 2)",
+          "\u2203 (Am Bm Cm An Bn Cn : Point), \n    (AffineIndependent \u211d ![Am, Bm, Cm]) \u2227 \n    (AffineIndependent \u211d ![An, Bn, Cn]) \u2227 \n    (angle Am Bm Cm = angle An Bn Cn)",
+          "\u2260(m,n)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "=(angle A B C,60)",
+        "b_parsed": "=(angle A B C,Real.pi / 3)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}

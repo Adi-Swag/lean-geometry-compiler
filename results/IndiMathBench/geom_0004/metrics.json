@@ -1,0 +1,48 @@
+{
+  "problem_id": "geom_0004",
+  "dataset": "IndiMathBench",
+  "category": "",
+  "comparisons": {
+    "our_vs_direct": {
+      "type": "same_library",
+      "binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "(DistanceRatio (Segment A E) (Segment A F) A",
+          "(DistanceRatio (Segment B F) (Segment B D) B",
+          "(DistanceRatio (Segment C D) (Segment C E) C",
+          "AffineIndependent(\u211d,![,A,,B,,C,])",
+          "\u2260(A,B)",
+          "\u2260(A,E)",
+          "\u2260(A,F)",
+          "\u2260(B,C)",
+          "\u2260(B,D)",
+          "\u2260(B,F)",
+          "\u2260(C,A)",
+          "\u2260(C,D)",
+          "\u2260(C,E)"
+        ],
+        "b_only": [
+          "AffineIndependent(\u211d,![A,,B,,C])",
+          "CollinearPoints(A,F,B)",
+          "CollinearPoints(B,D,C)",
+          "CollinearPoints(C,E,A)",
+          "dist(A,E) / (dist,A,F) = (dist,A,B) / (dist,A,C)",
+          "dist(B,F) / (dist,B,D) = (dist,B,C) / (dist,B,A)",
+          "dist(C,D) / (dist,C,E) = (dist,C,A) / (dist,C,B)"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_parsed": "CollinearPoints(B,C,D,\u2227,@inner,\u211d,Vec,_,(D -\u1d65 A),(C -\u1d65 B),=,0) \u2227 (CollinearPoints,A,C,E,\u2227,@inner,\u211d,Vec,_,(E -\u1d65 B),(C -\u1d65 A),=,0) \u2227 (CollinearPoints,A,B,F,\u2227,@inner,\u211d,Vec,_,(F -\u1d65 C),(B -\u1d65 A),=,0)",
+        "b_parsed": "(@inner \u211d Vec _ (D -\u1d65 A) (C -\u1d65 B) = 0) \u2227 (@inner \u211d Vec _ (E -\u1d65 B) (A -\u1d65 C) = 0) \u2227 (@inner \u211d Vec _ (F -\u1d65 C) (B -\u1d65 A) = 0)",
+        "match_exact": false,
+        "match_predicate": false
+      }
+    }
+  }
+}
