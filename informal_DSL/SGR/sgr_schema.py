@@ -123,6 +123,53 @@ class SqrtSGR(ExprSGR):
 class NumberSGR(ExprSGR):
     value: float
 
+
+# ---------- Trig functions ----------
+@dataclass
+class TrigFunctionSGR(ExprSGR):
+    type: Literal["TrigFunction"]
+    function: str
+    arg: Any
+
+@dataclass
+class InverseTrigFunctionSGR(ExprSGR):
+    type: Literal["InverseTrigFunction"]
+    function: str
+    arg: Any
+
+# ---------- Set/logical expressions ----------
+@dataclass
+class SetSGR(ExprSGR):
+    type: Literal["Set"]
+    args: List[Any]
+
+@dataclass
+class DistinctValuesSGR(ExprSGR):
+    type: Literal["DistinctValues"]
+    args: List[Any]
+
+@dataclass
+class ExistsSGR(ExprSGR):
+    type: Literal["Exists"]
+    args: List[Any]
+
+@dataclass
+class NumberOfGoodPointsSGR(ExprSGR):
+    type: Literal["NumberOfGoodPoints"]
+    args: List[Any]
+
+# ---------- Distance/Circumference aliases ----------
+@dataclass
+class DistanceSGR(ExprSGR):
+    type: Literal["Distance"]
+    segment: List[str]
+
+@dataclass
+class CircumferenceSGR(ExprSGR):
+    type: Literal["Circumference"]
+    circle_center: str
+
+
 @dataclass
 class EqualsSGR:
     type: Literal["Equals"]

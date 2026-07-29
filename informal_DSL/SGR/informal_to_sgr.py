@@ -158,11 +158,7 @@ FORBIDDEN EXPRESSION TYPES
 
 DO NOT USE these - they are NOT valid expressions:
 - Variable
-- DistinctValues
-- OnCircle (this is a RELATION, not an expression)
-- Incenter (this is a RELATION, not an expression)
-- Orthocenter (this is a RELATION, not an expression)
-- Any relation name as an expression
+- Any relation name as an expression (e.g. Parallel, Collinear, EqualDistances, Incenter, etc.)
 
 If you need to reference a property, use the appropriate measurement:
 - For distances: LengthOf(segment)
@@ -258,7 +254,17 @@ EqualDistances(pointA1, pointB1, pointA2, pointB2)
 Collinear(A, B, C, ...)
 CyclicQuadrilateral(A, B, C, D)
 ConvexQuadrilateral(A, B, C, D)
-DistanceRatio(pointA1, pointB1, pointA2, pointB2, ratio)
+Trapezoid(A, B, C, D)
+Parallelogram(A, B, C, D)
+Rectangle(A, B, C, D)
+Rhombus(A, B, C, D)
+Square(A, B, C, D)
+Kite(A, B, C, D)
+Regular(A, B, C, ...)
+Arc(circleCenter, endpointA, endpointB)
+CongruentSegments(seg1A, seg1B, seg2A, seg2B)
+CongruentAngles(ang1A, ang1Vertex, ang1B, ang2A, ang2Vertex, ang2B)
+DistanceRatio(pointA1, pointB1, pointA2, pointB2, ratioValue)
 Diameter(pointA, pointB, circleCenter)
 SupplementaryAngles(angleA1, angleVertex1, angleB1, angleA2, angleVertex2, angleB2)
 ComplementaryAngles(angleA1, angleVertex1, angleB1, angleA2, angleVertex2, angleB2)
@@ -277,8 +283,10 @@ The following are numeric expressions and may be nested arbitrarily:
 AreaOf(shape)
 PerimeterOf(shape)
 LengthOf(segment) - MUST have EXACTLY 2 points
+Distance(pointA, pointB) - same as LengthOf
 RadiusOf(circle_center)
 DiameterOf(circle_center)
+Circumference(circle_center)
 MeasureOf(angle) - MUST have EXACTLY 3 points
 
 Add(expr1, expr2)
@@ -287,6 +295,13 @@ Mul(expr1, expr2)
 Div(expr1, expr2)
 Pow(expr, exponent)
 SqrtOf(expr)
+Abs(expr)
+Ratio(expr1, expr2) - same as Div
+
+Trigonometric functions:
+Sin(angleExpr), Cos(angleExpr), Tan(angleExpr)
+Sec(angleExpr), Csc(angleExpr), Cot(angleExpr)
+Asin(valueExpr), Acos(valueExpr), Atan(valueExpr)
 
 Numeric constants (e.g. 2, 3.5, π)
 
@@ -418,6 +433,87 @@ Remember:
 # JSON → SGR (STRUCTURAL, NO INFERENCE)
 # ============================================================
 
+# Mapping from relation type to its named fields (matching sgr_to_ast.py)
+TYPE_FIELD_NAMES = {
+    "Collinear": ("points",),
+    "Between": ("A", "B", "C"),
+    "Parallel": ("line1", "line2"),
+    "Perpendicular": ("line1", "line2"),
+    "Intersection": ("point", "objects"),
+    "PointOnLine": ("point", "line"),
+    "OnCircle": ("point", "circle_center"),
+    "Midpoint": ("point", "segment"),
+    "Orthocenter": ("point", "triangle"),
+    "Incenter": ("point", "triangle"),
+    "Circumcenter": ("point", "triangle"),
+    "Centroid": ("point", "triangle"),
+    "Reflection": ("point", "original", "line"),
+    "Rotation": ("point", "original", "center", "angle"),
+    "BisectsAngle": ("line", "angle"),
+    "Altitude": ("foot", "vertex", "opposite_side"),
+    "Median": ("vertex", "midpoint", "opposite_side"),
+    "Isosceles": ("triangle",),
+    "Equilateral": ("triangle",),
+    "RightTriangle": ("triangle",),
+    "AcuteTriangle": ("triangle",),
+    "ObtuseTriangle": ("triangle",),
+    "Trapezoid": ("quadrilateral",),
+    "Parallelogram": ("quadrilateral",),
+    "Rectangle": ("quadrilateral",),
+    "Rhombus": ("quadrilateral",),
+    "Square": ("quadrilateral",),
+    "Kite": ("quadrilateral",),
+    "CyclicQuadrilateral": ("quadrilateral",),
+    "ConvexQuadrilateral": ("quadrilateral",),
+    "Regular": ("polygon",),
+    "Concyclic": ("points",),
+    "Cospherical": ("points",),
+    "TangentToCircle": ("line", "circle_center", "point_of_tangency"),
+    "Arc": ("circle_center", "endpoints"),
+    "EqualAngles": ("angle1", "angle2"),
+    "AngleMeasure": ("angle", "measure"),
+    "CongruentAngles": ("angle1", "angle2"),
+    "EqualDistances": ("segment1", "segment2"),
+    "CongruentSegments": ("segments",),
+    "DistanceRatio": ("segment1", "segment2", "ratio"),
+    "SimilarTriangles": ("triangle1", "triangle2"),
+    "Equals": ("left", "right"),
+    "GreaterThan": ("left", "right"),
+    "LessThan": ("left", "right"),
+    "GreaterThanEqualTo": ("left", "right"),
+    "LessThanEqualTo": ("left", "right"),
+    "Diameter": ("segment", "circle_center"),
+    "AngleBisector": ("point", "vertex", "side1", "side2"),
+    "SupplementaryAngles": ("angle1", "angle2"),
+    "ComplementaryAngles": ("angle1", "angle2"),
+    "Excircle": ("point", "triangle", "opposite_vertex"),
+    "MeasureOf": ("angle", "measure"),
+}
+
+
+def _normalize_relation(r: dict) -> dict:
+    """Convert a relation dict to always have 'args' populated from named fields if missing."""
+    if "args" in r and isinstance(r["args"], list):
+        return r
+    t = r.get("type", "")
+    fields = TYPE_FIELD_NAMES.get(t)
+    if fields is None:
+        return r
+    # Build args list from named fields
+    args = []
+    for f in fields:
+        val = r.get(f)
+        if val is None:
+            continue
+        if isinstance(val, list):
+            args.extend(val)
+        else:
+            args.append(val)
+    result = dict(r)
+    result["args"] = args
+    return result
+
+
 def parse_json_to_sgr(data: Dict[str, Any]) -> SGR:
     # -----------------------------
     # Core objects
@@ -470,6 +566,7 @@ def parse_json_to_sgr(data: Dict[str, Any]) -> SGR:
             raise ValueError(f"[Relation #{i}] Relation must be an object: {r}")
 
         assert_canonical_relation(r, i)
+        r = _normalize_relation(r)
 
         t = r["type"]
         a = r.get("args", [])
@@ -724,50 +821,64 @@ def parse_json_to_sgr(data: Dict[str, Any]) -> SGR:
             )
         
         elif t == "Equals":
-            #print(f"Parsing Equals relation with args: {a}")
-            sgr.relations.append(
-                EqualsSGR(
-                    type=t,
-                    left=parse_expr(a[0]),
-                    right=parse_expr(a[1])
+            try:
+                sgr.relations.append(
+                    EqualsSGR(
+                        type=t,
+                        left=parse_expr(a[0]),
+                        right=parse_expr(a[1])
+                    )
                 )
-            )
+            except Exception as e:
+                pass  # skip malformed Equals
 
         elif t == "GreaterThan":
-            sgr.relations.append(
-                GreaterThanSGR(
-                    type=t,
-                    left=parse_expr(a[0]),
-                    right=parse_expr(a[1])
+            try:
+                sgr.relations.append(
+                    GreaterThanSGR(
+                        type=t,
+                        left=parse_expr(a[0]),
+                        right=parse_expr(a[1])
+                    )
                 )
-            )
+            except Exception as e:
+                pass
 
         elif t == "LessThan":
-            sgr.relations.append(
-                LessThanSGR(
-                    type=t,
-                    left=parse_expr(a[0]),
-                    right=parse_expr(a[1])
+            try:
+                sgr.relations.append(
+                    LessThanSGR(
+                        type=t,
+                        left=parse_expr(a[0]),
+                        right=parse_expr(a[1])
+                    )
                 )
-            )
+            except Exception as e:
+                pass
 
         elif t == "GreaterThanEqualTo":
-            sgr.relations.append(
-                GreaterThanEqualToSGR(
-                    type=t,
-                    left=parse_expr(a[0]),
-                    right=parse_expr(a[1])
+            try:
+                sgr.relations.append(
+                    GreaterThanEqualToSGR(
+                        type=t,
+                        left=parse_expr(a[0]),
+                        right=parse_expr(a[1])
+                    )
                 )
-            )   
+            except Exception as e:
+                pass
 
         elif t == "LessThanEqualTo":
-            sgr.relations.append(
-                LessThanEqualToSGR(
-                    type=t,
-                    left=parse_expr(a[0]),
-                    right=parse_expr(a[1])
+            try:
+                sgr.relations.append(
+                    LessThanEqualToSGR(
+                        type=t,
+                        left=parse_expr(a[0]),
+                        right=parse_expr(a[1])
+                    )
                 )
-            )
+            except Exception as e:
+                pass
 
         elif t == "MeasureOf":
             # This handles MeasureOf when used as a GOAL content (relation)
@@ -850,27 +961,20 @@ def parse_expr(e: Any) -> ExprSGR:
     if not isinstance(e, dict):
         raise ValueError(f"Malformed expression: {e}")
 
+    # Handle value-only format (e.g. {"value": 2})
+    if "value" in e and "type" not in e:
+        return NumberSGR(float(e["value"]))
+
     t = e.get("type")
     if not t:
         raise ValueError(f"Expression missing 'type' field: {e}")
     
     a = e.get("args", [])
 
-    # REJECT invalid expression types
-    invalid_expr_types = {
-        'Variable', 'DistinctValues', 'OnCircle', 'Incenter', 'Orthocenter',
-        'Circumcenter', 'Centroid', 'Parallel', 'Perpendicular', 'Collinear',
-        'Tangent', 'Intersection', 'Midpoint', 'Between', 'PointLiesOnLine',
-        'PointLiesOnCircle', 'Reflection', 'Rotation', 'BisectsAngle',
-        'Altitude', 'Median', 'AngleBisector', 'SimilarTriangles',
-        'EqualAngles', 'EqualDistances', 'Congruent', 'Isosceles',
-        'Equilateral', 'RightTriangle', 'Regular'
-    }
-    
-    if t in invalid_expr_types:
+    # Only block Variable (unresolvable name)
+    if t == "Variable":
         raise ValueError(
-            f"[Expression Error] '{t}' is a RELATION, not an expression.\n"
-            f"Relations cannot be used in arithmetic or measurements.\n"
+            f"[Expression Error] 'Variable' type is not allowed.\n"
             f"Use measurement expressions like:\n"
             f"  - LengthOf(segment) for distances\n"
             f"  - MeasureOf(angle) for angle measures\n"
@@ -893,11 +997,14 @@ def parse_expr(e: Any) -> ExprSGR:
     # ============================================================
     
     if t == "LengthOf":
+        if len(a) < 2:
+            raise ValueError(f"LengthOf needs 2 points, got {len(a)}: {a}")
         return LengthOfSGR(type=t, segment=a)
     
     if t == "Distance":
-        # Distance between two points - same as LengthOf
-        return LengthOfSGR(type="LengthOf", segment=a)
+        if len(a) < 2:
+            raise ValueError(f"Distance needs 2 points, got {len(a)}")
+        return DistanceSGR(type=t, segment=a[:2])
 
     # ============================================================
     # CIRCLE MEASUREMENTS
@@ -916,12 +1023,9 @@ def parse_expr(e: Any) -> ExprSGR:
             raise ValueError(f"DiameterOf needs 1 arg (circle center), got {len(a)}")
     
     if t == "Circumference":
-    # Circumference of circle - same as PerimeterOf
         if len(a) >= 1:
-            # For circle, just pass the center as shape identifier
-            return PerimeterOfSGR(type="PerimeterOf", shape=a[0])
-        else:
-            raise ValueError(f"Circumference needs circle center")
+            return CircumferenceSGR(type=t, circle_center=a[0])
+        raise ValueError(f"Circumference needs circle center")
 
     # ============================================================
     # ANGLE MEASUREMENTS
@@ -1033,22 +1137,46 @@ def parse_expr(e: Any) -> ExprSGR:
     # TRIGONOMETRIC FUNCTIONS
     # ============================================================
     
-    if t in ("Sin", "Cos", "Tan"):
+    if t in ("Sin", "Cos", "Tan", "Sec", "Csc", "Cot"):
         if len(a) < 1:
             raise ValueError(f"{t} needs 1 argument (angle), got {len(a)}")
-        # Argument should be an angle expression (MeasureOf) or a number
-        return parse_expr({"type": "TrigFunction", "function": t, "arg": a[0]})
+        return TrigFunctionSGR(type="TrigFunction", function=t, arg=a[0] if a else "")
     
     if t in ("Asin", "Acos", "Atan", "Arcsin", "Arccos", "Arctan"):
         if len(a) < 1:
             raise ValueError(f"{t} needs 1 argument, got {len(a)}")
-        # These return angle measures
-        return parse_expr({"type": "InverseTrigFunction", "function": t, "arg": a[0]})
-    
-    if t in ("Sec", "Csc", "Cot"):
-        if len(a) < 1:
-            raise ValueError(f"{t} needs 1 argument (angle), got {len(a)}")
-        return parse_expr({"type": "TrigFunction", "function": t, "arg": a[0]})
+        return InverseTrigFunctionSGR(type="InverseTrigFunction", function=t, arg=a[0] if a else "")
+
+    if t == "TrigFunction":
+        func = e.get("function", "Sin")
+        arg = e.get("arg", a[0] if a else "")
+        return TrigFunctionSGR(type=t, function=func, arg=arg)
+
+    if t == "InverseTrigFunction":
+        func = e.get("function", "Asin")
+        arg = e.get("arg", a[0] if a else "")
+        return InverseTrigFunctionSGR(type=t, function=func, arg=arg)
+
+    # ============================================================
+    # STRUCTURED/LOGICAL EXPRESSION TYPES (match _expr_to_ast)
+    # ============================================================
+
+    if t == "Set":
+        return SetSGR(type=t, args=a)
+    if t == "DistinctValues":
+        return DistinctValuesSGR(type=t, args=a)
+    if t == "Exists":
+        return ExistsSGR(type=t, args=a)
+    if t == "NumberOfGoodPoints":
+        return NumberOfGoodPointsSGR(type=t, args=a)
+
+    # ============================================================
+    # FALLBACK: try args as expression children (match _expr_to_ast)
+    # ============================================================
+    if isinstance(a, list) and a:
+        children = [parse_expr(child) for child in a]
+        # Return as generic structured node using the dict
+        raise ValueError(f"Unknown expression type: {t}")
 
     raise ValueError(f"Unknown expression type: {t}")
 
@@ -1148,15 +1276,18 @@ def assert_canonical_relation(r: dict, idx: int):
             f"[Relation #{idx}] Missing 'type' field.\nFound: {r}"
         )
 
-    if "args" not in r:
+    t = r["type"]
+    has_args = "args" in r and isinstance(r["args"], list)
+    has_named = any(f in r for f in TYPE_FIELD_NAMES.get(t, ()))
+
+    if not has_args and not has_named:
         raise ValueError(
-            f"[Relation #{idx}] Relation '{r['type']}' is NOT in canonical form.\n"
-            f"Expected: {{'type': '{r['type']}', 'args': [...]}}\n"
-            f"Found keys: {list(r.keys())}\n"
-            f"Legacy relations are no longer allowed."
+            f"[Relation #{idx}] Relation '{t}' has neither 'args' nor expected named fields.\n"
+            f"Expected fields: {TYPE_FIELD_NAMES.get(t, ())}\n"
+            f"Found keys: {list(r.keys())}"
         )
 
-    if not isinstance(r["args"], list):
+    if "args" in r and not isinstance(r["args"], list):
         raise ValueError(
             f"[Relation #{idx}] 'args' must be a list.\nFound: {r['args']}"
         )

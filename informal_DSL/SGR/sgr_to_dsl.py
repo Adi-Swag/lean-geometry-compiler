@@ -781,7 +781,52 @@ def expr_to_dsl(e: ExprSGR) -> str:
         return f"SqrtOf({expr_to_dsl(e.value)})"
 
     # ============================================================
-    # TRIGONOMETRIC FUNCTIONS (handle as dict since not in schema)
+    # DISTANCE / CIRCUMFERENCE ALIASES
+    # ============================================================
+
+    if isinstance(e, DistanceSGR):
+        if len(e.segment) >= 2:
+            a, b = e.segment[0], e.segment[1]
+            return f"Distance(Segment({a},{b}))"
+        raise ValueError(f"Distance segment has {len(e.segment)} points, need 2")
+
+    if isinstance(e, CircumferenceSGR):
+        return f"Circumference(Circle({e.circle_center}))"
+
+    # ============================================================
+    # TRIGONOMETRIC FUNCTIONS
+    # ============================================================
+
+    if isinstance(e, TrigFunctionSGR):
+        arg_dsl = str(e.arg)
+        return f"{e.function}({arg_dsl})"
+
+    if isinstance(e, InverseTrigFunctionSGR):
+        arg_dsl = str(e.arg)
+        return f"{e.function}({arg_dsl})"
+
+    # ============================================================
+    # SET / LOGICAL EXPRESSIONS
+    # ============================================================
+
+    if isinstance(e, SetSGR):
+        items = ",".join(str(a) for a in e.args)
+        return f"Set({items})"
+
+    if isinstance(e, DistinctValuesSGR):
+        items = ",".join(str(a) for a in e.args)
+        return f"DistinctValues({items})"
+
+    if isinstance(e, ExistsSGR):
+        items = ",".join(str(a) for a in e.args)
+        return f"Exists({items})"
+
+    if isinstance(e, NumberOfGoodPointsSGR):
+        items = ",".join(str(a) for a in e.args)
+        return f"NumberOfGoodPoints({items})"
+
+    # ============================================================
+    # TRIGONOMETRIC FUNCTIONS (handle as dict fallback)
     # ============================================================
     
     if isinstance(e, dict):

@@ -139,28 +139,79 @@ Each entry has:
 | `_perimeter_of` | PerimeterOf | Sum of side lengths |
 | `_circle_radius` | RadiusOf, DiameterOf, CircumferenceOf, Circumference | Radius from circle |
 
+## Informal→SGR Pipeline
+
+The first stage converts natural language geometry problems into structured SGR JSON via LLM prompting (GPT-4o).
+
+### Architecture
+
+```
+informal_to_sgr.py  (SGRTranslator class)
+  │
+  ├── _system_prompt() ─── Schema-grounded prompt (~300 lines)
+  │     • Lists all 50+ allowed relations with arg docs
+  │     • Lists all expression types (measurements, arithmetic, trig)
+  │     • Validation rules (2-point segments, 3-point angles, etc.)
+  │     • Forbidden patterns (variable names, relations as expressions)
+  │     • Common mistakes with before/after examples
+  │
+  ├── translate(context, problem) ─── Main entry point
+  │     1. LLM call → raw JSON
+  │     2. _clean_output() → strip markdown fences, fix syntax
+  │     3. validate_llm_output() → check for forbidden types
+  │     4. normalize_goals() → convert string goals to structured form
+  │     5. parse_json_to_sgr() → validate + instantiate dataclasses
+  │     6. repair_sgr() → drop malformed relations, log warnings
+  │     → SGR dataclass ready for downstream
+  │
+  └── sgr_schema.py ─── All dataclass types
+        • 6 object types: Point, Line, Segment, Triangle, Quadrilateral, Polygon, Circle
+        • 50+ relation types: Collinear, Parallel, Orthocenter, Equals, ...
+        • 20+ expression types: LengthOf, MeasureOf, Add, Mul, Sin, ...
+        • 4 goal types: Prove, Find (with expression or relation content)
+```
+
+### Two-Format Design
+
+| Stage | Relation Format | Goal Format |
+|-------|----------------|-------------|
+| LLM output | `{"type": "Parallel", "args": ["A","B","C","D"]}` (positional) | `{"type": "EqualDistances", "args": ["W","X","V","X"]}` |
+| `parse_json_to_sgr` | Converts `args` → typed dataclass fields | Stores raw `args` dict in `GoalSGR.content` |
+| Stored on disk (JSON) | `{"type": "Parallel", "line1": ["A","B"], "line2": ["C","D"]}` (named fields from `__dict__`) | `{"type": "EqualDistances", "args": [...]}` (still positional) |
+| `sgr_to_ast.py` reads | Handles both formats via `_args_to_field()` | Handles both positional and named fields |
+
+The LLM is prompted to emit the canonical `args` format. `parse_json_to_sgr` converts to typed dataclasses, which serialize as named fields. The downstream `sgr_to_ast.py` accepts both — so either fresh LLM output or re-loaded SGR files work identically.
+
+### Validation and Repair
+
+The pipeline applies three layers of validation:
+
+1. **`validate_llm_output()`** — scans the raw JSON for forbidden patterns (`Variable` types, variable names used as expressions)
+2. **`parse_json_to_sgr()`** — type-checks every relation's fields; accepts either `args` or named fields; skips `Equals`/comparison relations with malformed sub-expressions
+3. **`repair_sgr()`** — post-parse cleanup: drops malformed `AngleBisector`, `Equals` with bad `LengthOf`, `Orthocenter` with insufficient triangle args
+
+### Expression System
+
+Numeric expressions use a recursive tree format:
+
+```json
+{"type": "Add", "args": [
+  {"type": "LengthOf", "args": ["A", "B"]},
+  {"type": "Mul", "args": [
+    {"type": "Number", "value": 2},
+    {"type": "RadiusOf", "args": ["O"]}
+  ]}
+]}
+```
+
+Supported expression categories:
+- **Measurements**: `AreaOf`, `PerimeterOf`, `LengthOf`, `RadiusOf`, `DiameterOf`, `Circumference`, `MeasureOf`
+- **Arithmetic**: `Add`, `Sub`, `Mul`, `Div`, `Pow`, `SqrtOf`, `Abs`, `Neg`, `Min`, `Max`
+- **Trigonometric**: `Sin`, `Cos`, `Tan`, `Sec`, `Csc`, `Cot`, `Asin`, `Acos`, `Atan`
+- **Logical/Set**: `Set`, `DistinctValues`, `Exists`, `NumberOfGoodPoints`
+- **Aliases**: `Distance` (= `LengthOf`), `AngleMeasure` (= `MeasureOf`), `Ratio` (= `Div`)
+
 ## Sample Output
-
-```
-import GeometryProver.Geometry.Structures
-import GeometryProver.Geometry.Relations
-import GeometryProver.Geometry.Measurements
-
-open scoped EuclideanGeometry
-open Geo
-open EuclideanGeometry
-
-theorem Th1 (U V W X : Point)
-  (h1 : (V ≠ W))
-  (h2 : (U ≠ X))
-  (h3 : (W ≠ X))
-  (h4 : (V ≠ X))
-  (h5 : (AffineIndependent ℝ ![U, V, W]))
-  (h6 : (EqualAngles (Angle W U X) (Angle V U X)))
-  (h7 : (@inner ℝ Vec _ (W -ᵥ V) (X -ᵥ U) = 0))
-  : (dist W X = dist V X) := by
-  sorry
-```
 
 ## Evaluation
 
