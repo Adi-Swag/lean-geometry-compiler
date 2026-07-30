@@ -37,6 +37,81 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "IsQuadrilateral A B C D",
+          "angle A O B = 135"
+        ],
+        "b_only": [
+          "angle A O B = 3*\u03c0/4"
+        ],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'B', 'C', 'D']})) = val",
+        "b_normalized": "\u2200 (C D : P),\n      C \u2208 circle \u2192\n      D \u2208 circle \u2192\n      InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O)\n        + InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O)\n        + InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O)\n        + InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O)\n        = 2 * Real.pi \u2192\n      ((Real.sin (InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O))) / 2)\n        \u2264 (5 + 3 * Real.sqrt 3) / (4 * Real.sqrt 2) \u2227 \u2203 C D : P, C \u2208 circle \u2227 D \u2208 circle \u2227 InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O)\n      + InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O)\n      + InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O)\n      + InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O)\n      = 2 * Real.pi \u2227 ((Real.sin (InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O))) / 2)\n      = (5 + 3 * Real.sqrt 3) / (4 * Real.sqrt 2)",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'B', 'C', 'D']})) = val"
+        ],
+        "b_alternatives": [
+          "\u2200 (C D : P),\n      C \u2208 circle \u2192\n      D \u2208 circle \u2192\n      InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O)\n        + InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O)\n        + InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O)\n        + InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O)\n        = 2 * Real.pi \u2192\n      ((Real.sin (InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O))) / 2)\n        \u2264 (5 + 3 * Real.sqrt 3) / (4 * Real.sqrt 2) \u2227 \u2203 C D : P, C \u2208 circle \u2227 D \u2208 circle \u2227 InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O)\n      + InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O)\n      + InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O)\n      + InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O)\n      = 2 * Real.pi \u2227 ((Real.sin (InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O))) / 2)\n      = (5 + 3 * Real.sqrt 3) / (4 * Real.sqrt 2)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.5
+      },
+      "goal": {
+        "a_normalized": "\u2203 (max_area : \u211d), area (Quadrilateral.mk A B C D) = max_area",
+        "b_normalized": "\u2200 (C D : P),\n      C \u2208 circle \u2192\n      D \u2208 circle \u2192\n      InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O)\n        + InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O)\n        + InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O)\n        + InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O)\n        = 2 * Real.pi \u2192\n      ((Real.sin (InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O))) / 2)\n        \u2264 (5 + 3 * Real.sqrt 3) / (4 * Real.sqrt 2) \u2227 \u2203 C D : P, C \u2208 circle \u2227 D \u2208 circle \u2227 InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O)\n      + InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O)\n      + InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O)\n      + InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O)\n      = 2 * Real.pi \u2227 ((Real.sin (InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O))) / 2)\n      = (5 + 3 * Real.sqrt 3) / (4 * Real.sqrt 2)",
+        "a_alternatives": [
+          "\u2203 (max_area : \u211d), area (Quadrilateral.mk A B C D) = max_area"
+        ],
+        "b_alternatives": [
+          "\u2200 (C D : P),\n      C \u2208 circle \u2192\n      D \u2208 circle \u2192\n      InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O)\n        + InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O)\n        + InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O)\n        + InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O)\n        = 2 * Real.pi \u2192\n      ((Real.sin (InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O))\n        + Real.sin (InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O))) / 2)\n        \u2264 (5 + 3 * Real.sqrt 3) / (4 * Real.sqrt 2) \u2227 \u2203 C D : P, C \u2208 circle \u2227 D \u2208 circle \u2227 InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O)\n      + InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O)\n      + InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O)\n      + InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O)\n      = 2 * Real.pi \u2227 ((Real.sin (InnerProductGeometry.angle (A -\u1d65 O) (B -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (B -\u1d65 O) (C -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (C -\u1d65 O) (D -\u1d65 O))\n      + Real.sin (InnerProductGeometry.angle (D -\u1d65 O) (A -\u1d65 O))) / 2)\n      = (5 + 3 * Real.sqrt 3) / (4 * Real.sqrt 2)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

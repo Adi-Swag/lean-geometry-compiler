@@ -34,7 +34,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -46,17 +46,38 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent H J G",
+          "AffineIndependent I F J",
+          "F \u2260 J",
+          "G \u2260 J",
+          "H \u2260 J",
+          "I \u2260 J"
+        ],
+        "b_only": [
+          "Between H J F",
+          "Between I J G",
+          "dist G J",
+          "formTriangle F I J FI FH FH",
+          "formTriangle G H J GH FH GI"
+        ],
+        "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle G H J = angle I F J \u2227 angle H J G = angle F J I \u2227 angle J G H = angle J I F)",
-        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220F:J:I = \u2220G:J:H",
-        "match_exact": false
+        "a_normalized": "angle G H J = angle I F J \u2227 angle H J G = angle F J I \u2227 angle J G H = angle J I F",
+        "b_normalized": "SimilarTriangles G H J I F J",
+        "a_alternatives": [
+          "angle G H J = angle I F J \u2227 angle H J G = angle F J I \u2227 angle J G H = angle J I F",
+          "TrianglesCongruent G H J I F J",
+          "SimilarTriangles G H J I F J"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles G H J I F J"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -72,12 +93,24 @@
           "AffineIndependent G H J",
           "AffineIndependent I F J"
         ],
-        "b_only": [],
+        "b_only": [
+          "Between H J F",
+          "Between I J G",
+          "dist G J",
+          "formTriangle F I J FI FH FH",
+          "formTriangle G H J GH FH GI"
+        ],
         "jaccard": 0.0
       },
       "goal": {
         "a_normalized": "TrianglesCongruent G H J I F J",
-        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220F:J:I = \u2220G:J:H",
+        "b_normalized": "SimilarTriangles G H J I F J",
+        "a_alternatives": [
+          "TrianglesCongruent G H J I F J"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles G H J I F J"
+        ],
         "match_exact": false
       }
     }

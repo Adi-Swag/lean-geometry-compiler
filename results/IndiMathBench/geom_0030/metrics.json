@@ -46,6 +46,89 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "A \u2260 D",
+          "AffineIndependent A B C",
+          "B \u2260 E",
+          "C \u2260 E"
+        ],
+        "b_only": [
+          "dist A B = dist A C",
+          "dist A D = dist C E"
+        ],
+        "jaccard": 0.125
+      },
+      "goal": {
+        "a_normalized": "VecParallel BE AD",
+        "b_normalized": "perp DA BE",
+        "a_alternatives": [
+          "VecParallel BE AD"
+        ],
+        "b_alternatives": [
+          "perp DA BE"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C"
+        ],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.5
+      },
+      "goal": {
+        "a_normalized": "Parallel (B -\u1d65 E) (A -\u1d65 D)",
+        "b_normalized": "perp DA BE",
+        "a_alternatives": [
+          "Parallel (B -\u1d65 E) (A -\u1d65 D)"
+        ],
+        "b_alternatives": [
+          "perp DA BE"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

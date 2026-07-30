@@ -36,7 +36,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -48,17 +48,41 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent W Y U",
+          "AffineIndependent X Y V",
+          "W \u2260 U",
+          "W \u2260 Y",
+          "X \u2260 V",
+          "X \u2260 Y",
+          "Y \u2260 U",
+          "Y \u2260 V",
+          "angle U Y W = angle X Y V"
+        ],
+        "b_only": [
+          "Between W Y V",
+          "Between X Y U",
+          "angle Y X V = angle W U Y",
+          "formTriangle W Y U VW UX UW",
+          "formTriangle X Y V UX VW VX"
+        ],
+        "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle U W Y = angle X V Y \u2227 angle W Y U = angle V Y X \u2227 angle Y U W = angle Y X V)",
-        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220V:Y:X = \u2220U:Y:W",
-        "match_exact": false
+        "a_normalized": "angle U W Y = angle X V Y \u2227 angle W Y U = angle V Y X \u2227 angle Y U W = angle Y X V",
+        "b_normalized": "SimilarTriangles U W Y X V Y",
+        "a_alternatives": [
+          "angle U W Y = angle X V Y \u2227 angle W Y U = angle V Y X \u2227 angle Y U W = angle Y X V",
+          "TrianglesCongruent U W Y X V Y",
+          "SimilarTriangles U W Y X V Y"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles U W Y X V Y"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -72,14 +96,27 @@
       "hypotheses": {
         "a_only": [
           "AffineIndependent U W Y",
-          "AffineIndependent X V Y"
+          "AffineIndependent X V Y",
+          "angle W U Y = angle V X Y"
         ],
-        "b_only": [],
+        "b_only": [
+          "Between W Y V",
+          "Between X Y U",
+          "angle Y X V = angle W U Y",
+          "formTriangle W Y U VW UX UW",
+          "formTriangle X Y V UX VW VX"
+        ],
         "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle U W Y = angle X V Y \u2227 angle W Y U = angle V Y X)",
-        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220V:Y:X = \u2220U:Y:W",
+        "a_normalized": "angle U W Y = angle X V Y \u2227 angle W Y U = angle V Y X",
+        "b_normalized": "SimilarTriangles U W Y X V Y",
+        "a_alternatives": [
+          "angle U W Y = angle X V Y \u2227 angle W Y U = angle V Y X"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles U W Y X V Y"
+        ],
         "match_exact": false
       }
     }

@@ -46,6 +46,106 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "P",
+          "S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "A \u2260 P",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "E \u2260 D",
+          "E \u2260 P",
+          "IntersectAt AP BC S"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear B C S",
+          "D = A",
+          "E = A"
+        ],
+        "jaccard": 0.0833
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), ((dist 0 0) / (dist 0 0)) = val",
+        "b_normalized": "dist B S / dist S D = (7 / 2 : \u211d)",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), ((dist 0 0) / (dist 0 0)) = val"
+        ],
+        "b_alternatives": [
+          "dist B S / dist S D = (7 / 2 : \u211d)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "P",
+          "S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A E C",
+          "Collinear A P S",
+          "Collinear B D C",
+          "Collinear B S C",
+          "Collinear E D P",
+          "dist D E = dist D P"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear B C S",
+          "D = A",
+          "D = midpoint \u211d E P",
+          "E = A"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), dist B S / dist S D = val",
+        "b_normalized": "dist B S / dist S D = (7 / 2 : \u211d)",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), dist B S / dist S D = val"
+        ],
+        "b_alternatives": [
+          "dist B S / dist S D = (7 / 2 : \u211d)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

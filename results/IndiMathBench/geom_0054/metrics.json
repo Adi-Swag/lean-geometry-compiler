@@ -43,6 +43,98 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "L",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "A \u2260 D",
+          "AffineIndependent A B C",
+          "AffineIndependent A D C",
+          "AffineIndependent A O D",
+          "B \u2260 C",
+          "D \u2260 C",
+          "angle D A B = angle B C A",
+          "angle D A C = 15"
+        ],
+        "b_only": [
+          "angle D A B = \u2220 B C A",
+          "angle D A C = \u03c0 / 12"
+        ],
+        "jaccard": 0.1538
+      },
+      "goal": {
+        "a_normalized": "IsObtuse (Triangle L A D) \u2227 (dist A O = dist O D) \u2227 (dist O D = dist D A)",
+        "b_normalized": "(dist O A = dist O D \u2227 dist O D = dist A D))",
+        "a_alternatives": [
+          "IsObtuse (Triangle L A D) \u2227 (dist A O = dist O D) \u2227 (dist O D = dist D A)"
+        ],
+        "b_alternatives": [
+          "(dist O A = dist O D \u2227 dist O D = dist A D))"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "angle D A B = angle B C A",
+          "angle D A C = Real.pi / 12",
+          "dist A O = dist D O",
+          "dist D O = dist C O"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "angle D A B = \u2220 B C A",
+          "angle D A C = \u03c0 / 12"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_normalized": "angle D A C > Real.pi / 2 \u2227 dist A O = dist D O \u2227 dist D O = dist A D",
+        "b_normalized": "(dist O A = dist O D \u2227 dist O D = dist A D))",
+        "a_alternatives": [
+          "angle D A C > Real.pi / 2 \u2227 dist A O = dist D O \u2227 dist D O = dist A D"
+        ],
+        "b_alternatives": [
+          "(dist O A = dist O D \u2227 dist O D = dist A D))"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

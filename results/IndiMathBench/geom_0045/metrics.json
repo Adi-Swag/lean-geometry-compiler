@@ -68,6 +68,80 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O1",
+          "O2"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "B \u2260 C",
+          "B \u2260 D",
+          "C \u2260 A",
+          "C \u2260 D"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear B C D",
+          "dist A C = dist C D"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "dist O2 O1 = r_O1",
+        "b_normalized": "Sigma.center \u2208 Gamma",
+        "a_alternatives": [
+          "dist O2 O1 = r_O1"
+        ],
+        "b_alternatives": [
+          "Sigma.center \u2208 Gamma"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.6667
+      },
+      "goal": {
+        "a_normalized": "dist O\u2082 O\u2081 = r\u2081",
+        "b_normalized": "Sigma.center \u2208 Gamma",
+        "a_alternatives": [
+          "dist O\u2082 O\u2081 = r\u2081"
+        ],
+        "b_alternatives": [
+          "Sigma.center \u2208 Gamma"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

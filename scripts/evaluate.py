@@ -25,7 +25,7 @@ from compare import compare_file
 from lean_parser import parse_lean_file
 
 ROOT = Path(__file__).resolve().parent.parent
-SGR_DIR = ROOT / "informal_DSL"
+SGR_DIR = ROOT / "datasets"
 RESULTS_DIR = ROOT / "results"
 
 # ---- Dataset discovery ----
@@ -52,19 +52,45 @@ def _discover_leaneuclid() -> list[dict]:
     return problems
 
 
+def _build_gt_map() -> dict[int, str]:
+    """Build geom_index -> ground_truth_path map from indimathbench.json geometry entries."""
+    gt_map = {}
+    json_path = SGR_DIR / "IndiMathBench" / "indimathbench.json"
+    if not json_path.exists():
+        return gt_map
+    with open(json_path) as f:
+        data = json.load(f)
+    geo_idx = 0
+    for entry in data:
+        if entry.get("problem_category") != "Geometry":
+            continue
+        pid = entry["problem_id"]
+        candidate = SGR_DIR / "IndiMathBench" / "ground_truth" / f"{pid}.lean"
+        if candidate.exists():
+            gt_map[geo_idx] = str(candidate)
+        geo_idx += 1
+    return gt_map
+
+
 def _discover_indimathbench() -> list[dict]:
     problems = []
     sgr_dir = SGR_DIR / "IndiMathBench" / "outputs" / "sgr"
     if not sgr_dir.exists():
         return problems
+
+    gt_map = _build_gt_map()
+
     for f in sorted(sgr_dir.glob("*.json")):
-        stem = f.stem
+        stem = f.stem  # e.g., "geom_0000"
+        idx_str = stem.split("_")[1] if "_" in stem else stem
+        int_idx = int(idx_str)
         problems.append({
             "dataset": "IndiMathBench",
             "category": "",
             "id": stem,
             "sgr_path": str(f),
             "direct_path": str(SGR_DIR / "IndiMathBench" / "outputs_direct" / "lean" / f"{stem}.lean"),
+            "ground_truth_path": gt_map.get(int_idx),
             "systeme_path": None,
         })
     return problems
@@ -134,26 +160,26 @@ def evaluate_problem(problem: dict) -> dict:
         except Exception as e:
             results["comparisons"]["our_vs_direct"] = {"error": str(e)}
 
-    # Cross-library: our pipeline vs SystemE ground truth (if available)
-    systeme_path = problem["systeme_path"]
-    if systeme_path and os.path.exists(systeme_path):
-        dest = os.path.join(out_dir, "systeme_ground_truth.lean")
-        with open(systeme_path) as f:
+    # Cross-library: our pipeline vs ground truth (SystemE or Mathlib)
+    gt_path = problem.get("ground_truth_path") or problem.get("systeme_path")
+    if gt_path and os.path.exists(gt_path):
+        dest = os.path.join(out_dir, "ground_truth.lean")
+        with open(gt_path) as f:
             with open(dest, "w") as f2:
                 f2.write(f.read())
         try:
             comp = compare_file(our_path, dest)
-            results["comparisons"]["our_vs_systeme"] = _clean_comparison(comp)
+            results["comparisons"]["our_vs_ground_truth"] = _clean_comparison(comp)
         except Exception as e:
-            results["comparisons"]["our_vs_systeme"] = {"error": str(e)}
+            results["comparisons"]["our_vs_ground_truth"] = {"error": str(e)}
 
-    # Cross-library: direct output vs SystemE ground truth
-    if systeme_path and os.path.exists(systeme_path) and os.path.exists(direct_path):
+    # Cross-library: direct output vs ground truth
+    if gt_path and os.path.exists(gt_path) and os.path.exists(direct_path):
         try:
-            comp = compare_file(direct_path, systeme_path)
-            results["comparisons"]["direct_vs_systeme"] = _clean_comparison(comp)
+            comp = compare_file(direct_path, gt_path)
+            results["comparisons"]["direct_vs_ground_truth"] = _clean_comparison(comp)
         except Exception as e:
-            results["comparisons"]["direct_vs_systeme"] = {"error": str(e)}
+            results["comparisons"]["direct_vs_ground_truth"] = {"error": str(e)}
 
     # Write results
     metrics_path = os.path.join(out_dir, "metrics.json")
@@ -191,12 +217,16 @@ def main():
                 "systeme_path": str(SGR_DIR / "LeanEuclid" / args.category / "formalizations" / f"{args.problem}.lean"),
             }]
         else:
+            gt_map = _build_gt_map()
+            idx_str = args.problem.split("_")[1] if "_" in args.problem else args.problem
+            gt_path = gt_map.get(int(idx_str))
             problems = [{
                 "dataset": "IndiMathBench",
                 "category": "",
                 "id": args.problem,
                 "sgr_path": str(SGR_DIR / "IndiMathBench" / "outputs" / "sgr" / f"{args.problem}.json"),
                 "direct_path": str(SGR_DIR / "IndiMathBench" / "outputs_direct" / "lean" / f"{args.problem}.lean"),
+                "ground_truth_path": gt_path,
                 "systeme_path": None,
             }]
     else:

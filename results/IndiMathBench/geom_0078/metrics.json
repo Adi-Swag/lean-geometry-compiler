@@ -49,6 +49,102 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "AffineIndependent G F B",
+          "AffineIndependent H E A",
+          "AffineIndependent O D C",
+          "B \u2260 C",
+          "C \u2260 A",
+          "G \u2260 F",
+          "H \u2260 E",
+          "O \u2260 D"
+        ],
+        "b_only": [
+          "AffineIndependent A B C",
+          "perp AH CB",
+          "perp HE AC",
+          "perp OD CB"
+        ],
+        "jaccard": 0.0714
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), (angle A C B) = val",
+        "b_normalized": "\u211d :=\n  let a := dist B C\n  let b := dist A C\n  let c := dist A B\n  let s := (a + b + c) / 2\n  sqrt (s * (s - a) * (s - b) * (s - c))\n\ntheorem inmo_2013_5\n  (A B C : P)\n  (h_non_collinear : \u00acCollinear \u211d {A, B, C})\n  (h_acute : \u2220 A B C < \u03c0 / 2 \u2227 \u2220 C A B < \u03c0 / 2 \u2227 \u2220 B C A < \u03c0 / 2)\n  (O H G : P)\n  (h_O : \u2200 X \u2208 ({A, B, C} : Set P), dist O X = dist O A)\n  (h_orthocenter : inner \u211d (H -\u1d65 A) (C -\u1d65 B) = 0\n   \u2227 inner \u211d (H -\u1d65 B) (A -\u1d65 C) = 0\n   \u2227 inner \u211d (H -\u1d65 C) (B -\u1d65 A) = 0)\n  (h_centroid : (A -\u1d65 G) + (B -\u1d65 G) + (C -\u1d65 G) = 0)\n  (D : P) (h_D_on_BC : \u2203 t : \u211d, 0 \u2264 t \u2227 t \u2264 1 \u2227 D = t \u2022 (B -\u1d65 C) +\u1d65 C)\n  (h_OD_perp_BC : inner \u211d (D -\u1d65 O) (C -\u1d65 B) = 0)\n  (E : P) (h_E_on_CA : \u2203 s : \u211d, 0 \u2264 s \u2227 s \u2264 1 \u2227 E = s \u2022 (C -\u1d65 A) +\u1d65 A)\n  (h_HE_perp_CA : inner \u211d (E -\u1d65 H) (A -\u1d65 C) = 0)\n  (F : P) (h_F : F = midpoint \u211d A B)\n  (h_areas_equal : area O D C = area H E A \u2227 area O D C = area G F B) :\n  \u2220 A C B = \u03c0 / 3 \u2228 \u2220 A C B = \u03c0 / 4",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), (angle A C B) = val"
+        ],
+        "b_alternatives": [
+          "\u211d :=\n  let a := dist B C\n  let b := dist A C\n  let c := dist A B\n  let s := (a + b + c) / 2\n  sqrt (s * (s - a) * (s - b) * (s - c))\n\ntheorem inmo_2013_5\n  (A B C : P)\n  (h_non_collinear : \u00acCollinear \u211d {A, B, C})\n  (h_acute : \u2220 A B C < \u03c0 / 2 \u2227 \u2220 C A B < \u03c0 / 2 \u2227 \u2220 B C A < \u03c0 / 2)\n  (O H G : P)\n  (h_O : \u2200 X \u2208 ({A, B, C} : Set P), dist O X = dist O A)\n  (h_orthocenter : inner \u211d (H -\u1d65 A) (C -\u1d65 B) = 0\n   \u2227 inner \u211d (H -\u1d65 B) (A -\u1d65 C) = 0\n   \u2227 inner \u211d (H -\u1d65 C) (B -\u1d65 A) = 0)\n  (h_centroid : (A -\u1d65 G) + (B -\u1d65 G) + (C -\u1d65 G) = 0)\n  (D : P) (h_D_on_BC : \u2203 t : \u211d, 0 \u2264 t \u2227 t \u2264 1 \u2227 D = t \u2022 (B -\u1d65 C) +\u1d65 C)\n  (h_OD_perp_BC : inner \u211d (D -\u1d65 O) (C -\u1d65 B) = 0)\n  (E : P) (h_E_on_CA : \u2203 s : \u211d, 0 \u2264 s \u2227 s \u2264 1 \u2227 E = s \u2022 (C -\u1d65 A) +\u1d65 A)\n  (h_HE_perp_CA : inner \u211d (E -\u1d65 H) (A -\u1d65 C) = 0)\n  (F : P) (h_F : F = midpoint \u211d A B)\n  (h_areas_equal : area O D C = area H E A \u2227 area O D C = area G F B) :\n  \u2220 A C B = \u03c0 / 3 \u2228 \u2220 A C B = \u03c0 / 4"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear B D C",
+          "Collinear C E A"
+        ],
+        "b_only": [
+          "perp AH CB"
+        ],
+        "jaccard": 0.5714
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), angle C A B = val",
+        "b_normalized": "\u211d :=\n  let a := dist B C\n  let b := dist A C\n  let c := dist A B\n  let s := (a + b + c) / 2\n  sqrt (s * (s - a) * (s - b) * (s - c))\n\ntheorem inmo_2013_5\n  (A B C : P)\n  (h_non_collinear : \u00acCollinear \u211d {A, B, C})\n  (h_acute : \u2220 A B C < \u03c0 / 2 \u2227 \u2220 C A B < \u03c0 / 2 \u2227 \u2220 B C A < \u03c0 / 2)\n  (O H G : P)\n  (h_O : \u2200 X \u2208 ({A, B, C} : Set P), dist O X = dist O A)\n  (h_orthocenter : inner \u211d (H -\u1d65 A) (C -\u1d65 B) = 0\n   \u2227 inner \u211d (H -\u1d65 B) (A -\u1d65 C) = 0\n   \u2227 inner \u211d (H -\u1d65 C) (B -\u1d65 A) = 0)\n  (h_centroid : (A -\u1d65 G) + (B -\u1d65 G) + (C -\u1d65 G) = 0)\n  (D : P) (h_D_on_BC : \u2203 t : \u211d, 0 \u2264 t \u2227 t \u2264 1 \u2227 D = t \u2022 (B -\u1d65 C) +\u1d65 C)\n  (h_OD_perp_BC : inner \u211d (D -\u1d65 O) (C -\u1d65 B) = 0)\n  (E : P) (h_E_on_CA : \u2203 s : \u211d, 0 \u2264 s \u2227 s \u2264 1 \u2227 E = s \u2022 (C -\u1d65 A) +\u1d65 A)\n  (h_HE_perp_CA : inner \u211d (E -\u1d65 H) (A -\u1d65 C) = 0)\n  (F : P) (h_F : F = midpoint \u211d A B)\n  (h_areas_equal : area O D C = area H E A \u2227 area O D C = area G F B) :\n  \u2220 A C B = \u03c0 / 3 \u2228 \u2220 A C B = \u03c0 / 4",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), angle C A B = val"
+        ],
+        "b_alternatives": [
+          "\u211d :=\n  let a := dist B C\n  let b := dist A C\n  let c := dist A B\n  let s := (a + b + c) / 2\n  sqrt (s * (s - a) * (s - b) * (s - c))\n\ntheorem inmo_2013_5\n  (A B C : P)\n  (h_non_collinear : \u00acCollinear \u211d {A, B, C})\n  (h_acute : \u2220 A B C < \u03c0 / 2 \u2227 \u2220 C A B < \u03c0 / 2 \u2227 \u2220 B C A < \u03c0 / 2)\n  (O H G : P)\n  (h_O : \u2200 X \u2208 ({A, B, C} : Set P), dist O X = dist O A)\n  (h_orthocenter : inner \u211d (H -\u1d65 A) (C -\u1d65 B) = 0\n   \u2227 inner \u211d (H -\u1d65 B) (A -\u1d65 C) = 0\n   \u2227 inner \u211d (H -\u1d65 C) (B -\u1d65 A) = 0)\n  (h_centroid : (A -\u1d65 G) + (B -\u1d65 G) + (C -\u1d65 G) = 0)\n  (D : P) (h_D_on_BC : \u2203 t : \u211d, 0 \u2264 t \u2227 t \u2264 1 \u2227 D = t \u2022 (B -\u1d65 C) +\u1d65 C)\n  (h_OD_perp_BC : inner \u211d (D -\u1d65 O) (C -\u1d65 B) = 0)\n  (E : P) (h_E_on_CA : \u2203 s : \u211d, 0 \u2264 s \u2227 s \u2264 1 \u2227 E = s \u2022 (C -\u1d65 A) +\u1d65 A)\n  (h_HE_perp_CA : inner \u211d (E -\u1d65 H) (A -\u1d65 C) = 0)\n  (F : P) (h_F : F = midpoint \u211d A B)\n  (h_areas_equal : area O D C = area H E A \u2227 area O D C = area G F B) :\n  \u2220 A C B = \u03c0 / 3 \u2228 \u2220 A C B = \u03c0 / 4"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

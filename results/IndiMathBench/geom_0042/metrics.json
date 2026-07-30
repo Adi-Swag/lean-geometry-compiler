@@ -33,6 +33,67 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 O",
+          "O \u2260 M"
+        ],
+        "b_only": [],
+        "jaccard": 0.5
+      },
+      "goal": {
+        "a_normalized": "dist Midpoint \u0393 = r_\u0393",
+        "b_normalized": "midpoint \u211d A B \u2208 Gamma",
+        "a_alternatives": [
+          "dist Midpoint \u0393 = r_\u0393"
+        ],
+        "b_alternatives": [
+          "midpoint \u211d A B \u2208 Gamma"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.5
+      },
+      "goal": {
+        "a_normalized": "dist (midpoint \u211d A B) O = r\u2081",
+        "b_normalized": "midpoint \u211d A B \u2208 Gamma",
+        "a_alternatives": [
+          "dist (midpoint \u211d A B) O = r\u2081"
+        ],
+        "b_alternatives": [
+          "midpoint \u211d A B \u2208 Gamma"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

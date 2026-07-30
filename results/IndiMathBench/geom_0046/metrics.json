@@ -54,6 +54,117 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "AffineIndependent A B C",
+          "AffineIndependent D A E",
+          "AffineIndependent D B F",
+          "AffineIndependent D E B",
+          "AffineIndependent D F C",
+          "B \u2260 C",
+          "B \u2260 D",
+          "Collinear S R Q",
+          "D \u2260 E",
+          "D \u2260 F",
+          "R \u2260 Q",
+          "S \u2260 R"
+        ],
+        "b_only": [
+          "Collinear A B E",
+          "Collinear A C D",
+          "Collinear B C F",
+          "perp DB CA",
+          "perp DE BA",
+          "perp DF CB",
+          "rightAngle A B C"
+        ],
+        "jaccard": 0.0476
+      },
+      "goal": {
+        "a_normalized": "Concyclic [P, Q, R, D]",
+        "b_normalized": "Concyclic {P\u2080, Q\u2080, R\u2080, D}",
+        "a_alternatives": [
+          "Concyclic [P, Q, R, D]"
+        ],
+        "b_alternatives": [
+          "Concyclic {P\u2080, Q\u2080, R\u2080, D}"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "P",
+          "Q",
+          "R",
+          "S"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A D C",
+          "Collinear S R Q",
+          "perp BD CA"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear A B E",
+          "Collinear A C D",
+          "Collinear B C F",
+          "perp DB CA"
+        ],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "PointLiesOnCircle P Q R D",
+        "b_normalized": "Concyclic {P\u2080, Q\u2080, R\u2080, D}",
+        "a_alternatives": [
+          "PointLiesOnCircle P Q R D"
+        ],
+        "b_alternatives": [
+          "Concyclic {P\u2080, Q\u2080, R\u2080, D}"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

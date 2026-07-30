@@ -33,29 +33,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(dist S V = dist T U)",
-        "b_normalized": "dist S V",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -68,15 +46,67 @@
       },
       "hypotheses": {
         "a_only": [
-          "dist S T = dist U V"
+          "AffineIndependent T S U",
+          "AffineIndependent V U S",
+          "S \u2260 T",
+          "S \u2260 V",
+          "T \u2260 U",
+          "U \u2260 S",
+          "U \u2260 V"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "VecParallel UV ST",
+          "formTriangle S T U ST TU SU",
+          "formTriangle S U V SU UV SV",
+          "opposingSides T V SU"
+        ],
+        "jaccard": 0.0833
       },
       "goal": {
         "a_normalized": "dist S V = dist T U",
-        "b_normalized": "dist S V",
-        "match_exact": false
+        "b_normalized": "dist S V = dist T U",
+        "a_alternatives": [
+          "dist S V = dist T U"
+        ],
+        "b_alternatives": [
+          "dist S V = dist T U"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "VecParallel ST UV"
+        ],
+        "b_only": [
+          "VecParallel UV ST",
+          "formTriangle S T U ST TU SU",
+          "formTriangle S U V SU UV SV",
+          "opposingSides T V SU"
+        ],
+        "jaccard": 0.1667
+      },
+      "goal": {
+        "a_normalized": "dist S V = dist T U",
+        "b_normalized": "dist S V = dist T U",
+        "a_alternatives": [
+          "dist S V = dist T U"
+        ],
+        "b_alternatives": [
+          "dist S V = dist T U"
+        ],
+        "match_exact": true
       }
     }
   }

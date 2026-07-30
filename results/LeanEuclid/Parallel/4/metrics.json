@@ -32,29 +32,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(angle T U W = angle V S W)",
-        "b_normalized": "angle T U W",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -69,14 +47,75 @@
         "a_only": [
           "AffineIndependent S V W",
           "AffineIndependent T U W",
-          "perp VS UT"
+          "S \u2260 V",
+          "T \u2260 U",
+          "angle S V W = angle U T W"
         ],
+        "b_only": [
+          "Between S W U",
+          "Between T W V",
+          "IntersectAt SU TV W",
+          "VecParallel SV TU",
+          "angle U T W = angle W S V",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine S V SV",
+          "distinctPointsOnLine T U TU",
+          "distinctPointsOnLine T V TV"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle T U W = angle V S W",
+        "b_normalized": "angle T U W = angle W V S",
+        "a_alternatives": [
+          "angle T U W = angle V S W"
+        ],
+        "b_alternatives": [
+          "angle T U W = angle W V S"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
         "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent S V W",
+          "AffineIndependent T U W",
+          "angle S V W = angle U T W",
+          "perp SV UT"
+        ],
+        "b_only": [
+          "Between S W U",
+          "Between T W V",
+          "IntersectAt SU TV W",
+          "VecParallel SV TU",
+          "angle U T W = angle W S V",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine S V SV",
+          "distinctPointsOnLine T U TU",
+          "distinctPointsOnLine T V TV"
+        ],
         "jaccard": 0.0
       },
       "goal": {
         "a_normalized": "angle T U W = angle S V W",
-        "b_normalized": "angle T U W",
+        "b_normalized": "angle T U W = angle W V S",
+        "a_alternatives": [
+          "angle T U W = angle S V W"
+        ],
+        "b_alternatives": [
+          "angle T U W = angle W V S"
+        ],
         "match_exact": false
       }
     }

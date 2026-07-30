@@ -38,6 +38,85 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "H"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 H",
+          "AffineIndependent A B C",
+          "B \u2260 H",
+          "C \u2260 H"
+        ],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "((dist 0 0) + (dist 0 0)) \u2264 (2.0 * h_max)",
+        "b_normalized": "dist A H + dist B H + dist C H \u2264 2 * h_max",
+        "a_alternatives": [
+          "((dist 0 0) + (dist 0 0)) \u2264 (2.0 * h_max)"
+        ],
+        "b_alternatives": [
+          "dist A H + dist B H + dist C H \u2264 2 * h_max"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "H"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "rightAngle D A C"
+        ],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "dist A H + dist B H + dist C H \u2264 2 * h_max",
+        "b_normalized": "dist A H + dist B H + dist C H \u2264 2 * h_max",
+        "a_alternatives": [
+          "dist A H + dist B H + dist C H \u2264 2 * h_max"
+        ],
+        "b_alternatives": [
+          "dist A H + dist B H + dist C H \u2264 2 * h_max"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

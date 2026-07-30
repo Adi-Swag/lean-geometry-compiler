@@ -37,7 +37,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -49,17 +49,45 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "F \u2260 H",
+          "R \u2260 Y",
+          "S \u2260 U",
+          "V \u2260 X"
+        ],
+        "b_only": [
+          "Between F G H",
+          "Between R T W",
+          "Between S T U",
+          "Between T W G",
+          "Between V W X",
+          "Between W G Y",
+          "VecParallel FH VX",
+          "VecParallel SU FH",
+          "distinctPointsOnLine F H FH",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine V X VX",
+          "distinctPointsOnLine Y R RY",
+          "sameSide F V RY",
+          "sameSide H X RY",
+          "sameSide V S RY",
+          "sameSide X U RY"
+        ],
+        "jaccard": 0.1304
       },
       "goal": {
-        "a_normalized": "(((angle 0 0 0) + (angle 0 0 0)) = 180.0)",
-        "b_normalized": "angle R T U",
+        "a_normalized": "((angle 0 0 0) + (angle 0 0 0)) = 180.0",
+        "b_normalized": "angle R T U + angle X W Y = Real.pi",
+        "a_alternatives": [
+          "((angle 0 0 0) + (angle 0 0 0)) = 180.0"
+        ],
+        "b_alternatives": [
+          "angle R T U + angle X W Y = Real.pi"
+        ],
         "match_exact": false
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -71,14 +99,42 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "Collinear G W T",
+          "Collinear R Y G",
+          "Collinear Y G W"
+        ],
+        "b_only": [
+          "Between F G H",
+          "Between R T W",
+          "Between S T U",
+          "Between T W G",
+          "Between V W X",
+          "Between W G Y",
+          "IntersectAt FH RY G",
+          "IntersectAt SU RY T",
+          "IntersectAt VX RY W",
+          "distinctPointsOnLine F H FH",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine V X VX",
+          "distinctPointsOnLine Y R RY",
+          "sameSide F V RY",
+          "sameSide H X RY",
+          "sameSide V S RY",
+          "sameSide X U RY"
+        ],
+        "jaccard": 0.0909
       },
       "goal": {
         "a_normalized": "angle R T U + angle X W Y = Real.pi",
-        "b_normalized": "angle R T U",
-        "match_exact": false
+        "b_normalized": "angle R T U + angle X W Y = Real.pi",
+        "a_alternatives": [
+          "angle R T U + angle X W Y = Real.pi"
+        ],
+        "b_alternatives": [
+          "angle R T U + angle X W Y = Real.pi"
+        ],
+        "match_exact": true
       }
     }
   }

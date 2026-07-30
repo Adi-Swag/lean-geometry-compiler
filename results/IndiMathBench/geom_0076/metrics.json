@@ -50,6 +50,112 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "L"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 D",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "B \u2260 E",
+          "C \u2260 A",
+          "C \u2260 F",
+          "angle D E F = angle L A C",
+          "angle E F D = angle L B A",
+          "angle F D E = angle L C B"
+        ],
+        "b_only": [
+          "Collinear A E C",
+          "Collinear A F B",
+          "angle A B E = \u2220 A B C",
+          "angle D E F = \u2220 B A C",
+          "angle E F D = \u2220 A B C",
+          "angle F D E = \u2220 A C B",
+          "perp CF BA"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_normalized": "dist A B = dist B C \u2227 dist B C = dist A C",
+        "b_normalized": "dist A B = dist B C \u2227 dist B C = dist A C",
+        "a_alternatives": [
+          "dist A B = dist B C \u2227 dist B C = dist A C"
+        ],
+        "b_alternatives": [
+          "dist A B = dist B C \u2227 dist B C = dist A C"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear B D C",
+          "Collinear C E A",
+          "angle A B E = angle E B C",
+          "angle D E F = angle A B C",
+          "angle E F D = angle B C A",
+          "angle F D E = angle C A B",
+          "dist A D = dist B C"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear A E C",
+          "D = midpoint \u211d B C",
+          "angle A B E = \u2220 A B C",
+          "angle D E F = \u2220 B A C",
+          "angle E F D = \u2220 A B C",
+          "angle F D E = \u2220 A C B"
+        ],
+        "jaccard": 0.1176
+      },
+      "goal": {
+        "a_normalized": "dist A B = dist B C \u2227 dist B C = dist A C",
+        "b_normalized": "dist A B = dist B C \u2227 dist B C = dist A C",
+        "a_alternatives": [
+          "dist A B = dist B C \u2227 dist B C = dist A C"
+        ],
+        "b_alternatives": [
+          "dist A B = dist B C \u2227 dist B C = dist A C"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

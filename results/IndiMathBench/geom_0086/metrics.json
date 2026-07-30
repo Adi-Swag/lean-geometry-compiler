@@ -47,6 +47,97 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "B \u2260 C",
+          "C \u2260 D",
+          "D \u2260 E",
+          "E \u2260 A",
+          "angle A B C = 120",
+          "angle A B C = angle B C D",
+          "angle B C D = 120",
+          "angle B C D = angle C D E",
+          "angle C D E = 120",
+          "angle C D E = angle D E A",
+          "angle D E A = 120",
+          "angle E A B = 120",
+          "angle E A B = angle A B C"
+        ],
+        "b_only": [
+          "angle A B C = 2*\u03c0/3",
+          "angle B C D = 2*\u03c0/3",
+          "angle C D E = 2*\u03c0/3",
+          "angle D E A = 2*\u03c0/3",
+          "angle E A B = 2*\u03c0/3"
+        ],
+        "jaccard": 0.0526
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), ((dist 0 0) + (dist 0 0)) = val",
+        "b_normalized": "dist A B + dist B C + dist C D \u2208 ({6, 7, 9} : Set \u211d)",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), ((dist 0 0) + (dist 0 0)) = val"
+        ],
+        "b_alternatives": [
+          "dist A B + dist B C + dist C D \u2208 ({6, 7, 9} : Set \u211d)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.8333
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), val = dist A B + dist B C + dist C D",
+        "b_normalized": "dist A B + dist B C + dist C D \u2208 ({6, 7, 9} : Set \u211d)",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), val = dist A B + dist B C + dist C D"
+        ],
+        "b_alternatives": [
+          "dist A B + dist B C + dist C D \u2208 ({6, 7, 9} : Set \u211d)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

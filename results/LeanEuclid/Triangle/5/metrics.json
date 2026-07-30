@@ -36,7 +36,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -48,17 +48,36 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent R U V",
+          "AffineIndependent S T W",
+          "R \u2260 U",
+          "R \u2260 V",
+          "S \u2260 T",
+          "S \u2260 W",
+          "angle T S W = angle U R V"
+        ],
+        "b_only": [
+          "angle T S W = angle V R U",
+          "dist S W",
+          "formTriangle R U V RU UV RV",
+          "formTriangle S T W ST TW SW"
+        ],
+        "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle S W T = angle R V U)",
-        "b_normalized": "angle S W T",
-        "match_exact": false
+        "a_normalized": "angle S W T = angle R V U",
+        "b_normalized": "angle S W T = angle R V U",
+        "a_alternatives": [
+          "angle S W T = angle R V U"
+        ],
+        "b_alternatives": [
+          "angle S W T = angle R V U"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -72,15 +91,27 @@
       "hypotheses": {
         "a_only": [
           "AffineIndependent R V U",
-          "AffineIndependent S W T"
+          "AffineIndependent S W T",
+          "angle S W T = angle R V U"
         ],
-        "b_only": [],
+        "b_only": [
+          "angle T S W = angle V R U",
+          "dist S W",
+          "formTriangle R U V RU UV RV",
+          "formTriangle S T W ST TW SW"
+        ],
         "jaccard": 0.0
       },
       "goal": {
         "a_normalized": "angle S W T = angle R V U",
-        "b_normalized": "angle S W T",
-        "match_exact": false
+        "b_normalized": "angle S W T = angle R V U",
+        "a_alternatives": [
+          "angle S W T = angle R V U"
+        ],
+        "b_alternatives": [
+          "angle S W T = angle R V U"
+        ],
+        "match_exact": true
       }
     }
   }

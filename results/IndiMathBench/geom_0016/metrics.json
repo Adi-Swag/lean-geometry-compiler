@@ -50,6 +50,100 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 X",
+          "A \u2260 Y",
+          "B \u2260 E",
+          "C \u2260 F",
+          "X \u2260 Y"
+        ],
+        "b_only": [
+          "angle A B E = angle (E -\u1d65 B) (C -\u1d65 B",
+          "angle B C F = angle (F -\u1d65 C) (A -\u1d65 C"
+        ],
+        "jaccard": 0.125
+      },
+      "goal": {
+        "a_normalized": "(dist 0 0) = ((((dist 0 0) + (dist 0 0)) - (dist 0 0)) / 2.0)",
+        "b_normalized": "dist X Y = (b + c - a) / 2",
+        "a_alternatives": [
+          "(dist 0 0) = ((((dist 0 0) + (dist 0 0)) - (dist 0 0)) / 2.0)"
+        ],
+        "b_alternatives": [
+          "dist X Y = (b + c - a) / 2"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear A E C",
+          "Collinear A F B",
+          "Collinear B Y E",
+          "Collinear C X F",
+          "angle A B E = angle C B E",
+          "angle A C F = angle B C F",
+          "perp AX FC",
+          "perp AY EB"
+        ],
+        "b_only": [
+          "angle A B E = angle (E -\u1d65 B) (C -\u1d65 B",
+          "angle B C F = angle (F -\u1d65 C) (A -\u1d65 C"
+        ],
+        "jaccard": 0.0909
+      },
+      "goal": {
+        "a_normalized": "dist X Y = (b + c - a) / 2",
+        "b_normalized": "dist X Y = (b + c - a) / 2",
+        "a_alternatives": [
+          "dist X Y = (b + c - a) / 2"
+        ],
+        "b_alternatives": [
+          "dist X Y = (b + c - a) / 2"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

@@ -34,29 +34,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(@inner \u211d Vec _ (S -\u1d65 R) (T -\u1d65 S) = 0)",
-        "b_normalized": "angle R S T",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -69,15 +47,68 @@
       },
       "hypotheses": {
         "a_only": [
-          "dist R T = dist S U"
+          "R \u2260 S",
+          "S \u2260 T",
+          "T \u2260 R",
+          "U \u2260 S"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "IntersectAt RT SU V",
+          "VecParallel RU ST",
+          "VecParallel TU RS",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine T R RT"
+        ],
+        "jaccard": 0.1818
       },
       "goal": {
-        "a_normalized": "(@inner \u211d Vec _ (S -\u1d65 R) (T -\u1d65 S) = 0)",
-        "b_normalized": "angle R S T",
-        "match_exact": false
+        "a_normalized": "rightAngle R S T",
+        "b_normalized": "rightAngle R S T",
+        "a_alternatives": [
+          "rightAngle R S T"
+        ],
+        "b_alternatives": [
+          "rightAngle R S T"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear R V T",
+          "Collinear S V U"
+        ],
+        "b_only": [
+          "IntersectAt RT SU V",
+          "IsQuadrilateral S T R U",
+          "VecParallel RU ST",
+          "VecParallel TU RS",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine T R RT"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_normalized": "rightAngle R S T",
+        "b_normalized": "rightAngle R S T",
+        "a_alternatives": [
+          "rightAngle R S T"
+        ],
+        "b_alternatives": [
+          "rightAngle R S T"
+        ],
+        "match_exact": true
       }
     }
   }

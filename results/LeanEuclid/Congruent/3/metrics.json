@@ -30,29 +30,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(angle S V W = angle U T W \u2227 angle V W S = angle T W U \u2227 angle W S V = angle W U T)",
-        "b_normalized": "=\nby\n  euclid_intros\n  have :  \u2220S:W:V = \u2220T:W:U",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -65,15 +43,65 @@
       },
       "hypotheses": {
         "a_only": [
-          "dist T U = dist S V"
+          "AffineIndependent S V W",
+          "AffineIndependent T W U",
+          "S \u2260 V",
+          "T \u2260 U"
         ],
+        "b_only": [
+          "Between T W V",
+          "Between U W S",
+          "VecParallel TU SV",
+          "formTriangle S V W SV TV SU",
+          "formTriangle U T W TU TV SU"
+        ],
+        "jaccard": 0.1
+      },
+      "goal": {
+        "a_normalized": "angle S V W = angle U T W \u2227 angle V W S = angle T W U \u2227 angle W S V = angle W U T",
+        "b_normalized": "TrianglesCongruent S V W U T W",
+        "a_alternatives": [
+          "angle S V W = angle U T W \u2227 angle V W S = angle T W U \u2227 angle W S V = angle W U T",
+          "TrianglesCongruent S V W U T W",
+          "SimilarTriangles S V W U T W"
+        ],
+        "b_alternatives": [
+          "TrianglesCongruent S V W U T W"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
         "b_only": [],
-        "jaccard": 0.0
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "Between T W V",
+          "Between U W S",
+          "formTriangle S V W SV TV SU",
+          "formTriangle U T W TU TV SU"
+        ],
+        "jaccard": 0.3333
       },
       "goal": {
         "a_normalized": "TrianglesCongruent S V W U T W",
-        "b_normalized": "=\nby\n  euclid_intros\n  have :  \u2220S:W:V = \u2220T:W:U",
-        "match_exact": false
+        "b_normalized": "TrianglesCongruent S V W U T W",
+        "a_alternatives": [
+          "TrianglesCongruent S V W U T W"
+        ],
+        "b_alternatives": [
+          "TrianglesCongruent S V W U T W"
+        ],
+        "match_exact": true
       }
     }
   }

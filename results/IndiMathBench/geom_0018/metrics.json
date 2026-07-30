@@ -42,6 +42,88 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "A \u2260 E",
+          "B \u2260 C",
+          "B \u2260 E",
+          "B \u2260 F",
+          "E \u2260 C",
+          "IntersectAt BF AE Q",
+          "Q \u2260 F"
+        ],
+        "b_only": [],
+        "jaccard": 0.2
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), ((dist 0 0) / (dist 0 0)) = val",
+        "b_normalized": "dist B Q / dist Q F = 4",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), ((dist 0 0) / (dist 0 0)) = val"
+        ],
+        "b_alternatives": [
+          "dist B Q / dist Q F = 4"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear B E C"
+        ],
+        "b_only": [],
+        "jaccard": 0.6667
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), dist B Q / dist Q F = val",
+        "b_normalized": "dist B Q / dist Q F = 4",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), dist B Q / dist Q F = val"
+        ],
+        "b_alternatives": [
+          "dist B Q / dist Q F = 4"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

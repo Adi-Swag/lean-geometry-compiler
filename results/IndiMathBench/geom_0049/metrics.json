@@ -45,6 +45,102 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "I"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "A \u2260 I",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "I \u2260 E",
+          "I \u2260 F",
+          "IntersectAt AI BC F"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear A C E",
+          "Collinear A I F",
+          "Collinear B C F",
+          "I = A",
+          "rightAngle B A C",
+          "rightAngle E I A"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(dist 0 0) = (dist 0 0)",
+        "b_normalized": "dist E I = dist F I",
+        "a_alternatives": [
+          "(dist 0 0) = (dist 0 0)"
+        ],
+        "b_alternatives": [
+          "dist E I = dist F I"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "I"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A E C",
+          "rightAngle A B C"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear A C E",
+          "I = A",
+          "rightAngle B A C"
+        ],
+        "jaccard": 0.3
+      },
+      "goal": {
+        "a_normalized": "dist E I = dist F I",
+        "b_normalized": "dist E I = dist F I",
+        "a_alternatives": [
+          "dist E I = dist F I"
+        ],
+        "b_alternatives": [
+          "dist E I = dist F I"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

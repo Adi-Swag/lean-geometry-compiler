@@ -55,6 +55,100 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "A1",
+          "B",
+          "B1",
+          "C",
+          "C1",
+          "M",
+          "O",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 M",
+          "B \u2260 C",
+          "B \u2260 M",
+          "C \u2260 M",
+          "P \u2260 Q"
+        ],
+        "b_only": [
+          "angle B A M = \u2220 C A M"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_normalized": "VecParallel PQ BC",
+        "b_normalized": "\u2203 (t : \u211d), P_point -\u1d65 Q = t \u2022 (B -\u1d65 C)",
+        "a_alternatives": [
+          "VecParallel PQ BC"
+        ],
+        "b_alternatives": [
+          "\u2203 (t : \u211d), P_point -\u1d65 Q = t \u2022 (B -\u1d65 C)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "A1",
+          "B",
+          "B1",
+          "C",
+          "C1",
+          "M",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear A M A",
+          "Collinear B M B",
+          "Collinear C M C",
+          "angle A M B = angle A M C"
+        ],
+        "b_only": [
+          "angle B A M = \u2220 C A M"
+        ],
+        "jaccard": 0.1667
+      },
+      "goal": {
+        "a_normalized": "VecParallel PQ BC",
+        "b_normalized": "\u2203 (t : \u211d), P_point -\u1d65 Q = t \u2022 (B -\u1d65 C)",
+        "a_alternatives": [
+          "VecParallel PQ BC"
+        ],
+        "b_alternatives": [
+          "\u2203 (t : \u211d), P_point -\u1d65 Q = t \u2022 (B -\u1d65 C)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

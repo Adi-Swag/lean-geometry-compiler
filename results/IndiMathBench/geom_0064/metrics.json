@@ -41,6 +41,84 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "A1",
+          "B",
+          "B1",
+          "C",
+          "C1",
+          "I",
+          "I1"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "B \u2260 C",
+          "C \u2260 A"
+        ],
+        "b_only": [],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "Concyclic [B1, C1, I, I1]",
+        "b_normalized": "Cospherical ({B1, C1, I, I1} : Set P)",
+        "a_alternatives": [
+          "Concyclic [B1, C1, I, I1]"
+        ],
+        "b_alternatives": [
+          "Cospherical ({B1, C1, I, I1} : Set P)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "A1",
+          "B",
+          "B1",
+          "C",
+          "C1",
+          "I",
+          "I1"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "PointLiesOnCircle B1 (circumcenter B1 C1 I I1) (circumradius B1 C1 I I1) \u2227 PointLiesOnCircle C1 (circumcenter B1 C1 I I1) (circumradius B1 C1 I I1) \u2227 PointLiesOnCircle I (circumcenter B1 C1 I I1) (circumradius B1 C1 I I1) \u2227 PointLiesOnCircle I1 (circumcenter B1 C1 I I1) (circumradius B1 C1 I I1)",
+        "b_normalized": "Cospherical ({B1, C1, I, I1} : Set P)",
+        "a_alternatives": [
+          "PointLiesOnCircle B1 (circumcenter B1 C1 I I1) (circumradius B1 C1 I I1) \u2227 PointLiesOnCircle C1 (circumcenter B1 C1 I I1) (circumradius B1 C1 I I1) \u2227 PointLiesOnCircle I (circumcenter B1 C1 I I1) (circumradius B1 C1 I I1) \u2227 PointLiesOnCircle I1 (circumcenter B1 C1 I I1) (circumradius B1 C1 I I1)"
+        ],
+        "b_alternatives": [
+          "Cospherical ({B1, C1, I, I1} : Set P)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

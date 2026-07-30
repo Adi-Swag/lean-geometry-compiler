@@ -55,6 +55,108 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "O",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "E = midpoint \u211d A B",
+          "E \u2260 G",
+          "F = midpoint \u211d B C",
+          "F \u2260 H",
+          "G = midpoint \u211d C D",
+          "H = midpoint \u211d D A",
+          "IsQuadrilateral A B C D"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "B \u2260 C",
+          "C \u2260 D",
+          "D \u2260 A"
+        ],
+        "jaccard": 0.1538
+      },
+      "goal": {
+        "a_normalized": "Collinear P A C",
+        "b_normalized": "\u2203 X : P,\n      Collinear \u211d ({A, C, X} : Set P) \u2227 Collinear B D X \u2227 Collinear E G X \u2227 Collinear F H X",
+        "a_alternatives": [
+          "Collinear P A C"
+        ],
+        "b_alternatives": [
+          "\u2203 X : P,\n      Collinear \u211d ({A, C, X} : Set P) \u2227 Collinear B D X \u2227 Collinear E G X \u2227 Collinear F H X"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear A E B",
+          "Collinear B F C",
+          "Collinear C G D",
+          "Collinear D H A"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "B \u2260 C",
+          "B \u2260 D",
+          "C \u2260 D",
+          "D \u2260 A"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (P : Point), CollinearPoints A C P \u2227 Collinear B D P \u2227 Collinear E G P \u2227 Collinear F H P",
+        "b_normalized": "\u2203 X : P,\n      Collinear \u211d ({A, C, X} : Set P) \u2227 Collinear B D X \u2227 Collinear E G X \u2227 Collinear F H X",
+        "a_alternatives": [
+          "\u2203 (P : Point), CollinearPoints A C P \u2227 Collinear B D P \u2227 Collinear E G P \u2227 Collinear F H P"
+        ],
+        "b_alternatives": [
+          "\u2203 X : P,\n      Collinear \u211d ({A, C, X} : Set P) \u2227 Collinear B D X \u2227 Collinear E G X \u2227 Collinear F H X"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

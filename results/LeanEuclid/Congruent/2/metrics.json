@@ -39,7 +39,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -51,17 +51,42 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent T W R",
+          "AffineIndependent V S R",
+          "R \u2260 T",
+          "R \u2260 V",
+          "S \u2260 V",
+          "T \u2260 W",
+          "V \u2260 R",
+          "V \u2260 S",
+          "angle V R S = angle T R W"
+        ],
+        "b_only": [
+          "Between R S T",
+          "Between R W V",
+          "IntersectAt TW SV U",
+          "angle R T W = angle R V S",
+          "formTriangle V S R SV RT RV",
+          "formTriangle W R T RV RT TW"
+        ],
+        "jaccard": 0.0625
       },
       "goal": {
-        "a_normalized": "(angle R T W = angle R V S \u2227 angle T W R = angle V S R \u2227 angle W R T = angle S R V)",
+        "a_normalized": "angle R T W = angle R V S \u2227 angle T W R = angle V S R \u2227 angle W R T = angle S R V",
         "b_normalized": "TrianglesCongruent R T W R V S",
-        "match_exact": false
+        "a_alternatives": [
+          "angle R T W = angle R V S \u2227 angle T W R = angle V S R \u2227 angle W R T = angle S R V",
+          "TrianglesCongruent R T W R V S",
+          "SimilarTriangles R T W R V S"
+        ],
+        "b_alternatives": [
+          "TrianglesCongruent R T W R V S"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -78,14 +103,27 @@
         "a_only": [
           "AffineIndependent R T W",
           "AffineIndependent R V S",
-          "dist S V = dist T W"
+          "angle V R S = angle T R W"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "Between R S T",
+          "Between R W V",
+          "IntersectAt TW SV U",
+          "angle R T W = angle R V S",
+          "formTriangle V S R SV RT RV",
+          "formTriangle W R T RV RT TW"
+        ],
+        "jaccard": 0.1
       },
       "goal": {
         "a_normalized": "TrianglesCongruent R T W R V S",
         "b_normalized": "TrianglesCongruent R T W R V S",
+        "a_alternatives": [
+          "TrianglesCongruent R T W R V S"
+        ],
+        "b_alternatives": [
+          "TrianglesCongruent R T W R V S"
+        ],
         "match_exact": true
       }
     }

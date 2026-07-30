@@ -55,6 +55,108 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "H",
+          "O1",
+          "O2",
+          "P",
+          "Q",
+          "R"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "B \u2260 C",
+          "B \u2260 H",
+          "C \u2260 H"
+        ],
+        "b_only": [
+          "Collinear B H Q",
+          "Collinear C H R",
+          "Cospherical A B P Q",
+          "Cospherical A C P R",
+          "Q \u2260 B",
+          "R \u2260 C",
+          "perp HA BC"
+        ],
+        "jaccard": 0.2857
+      },
+      "goal": {
+        "a_normalized": "IsIncenterOf H P Q R",
+        "b_normalized": "H = (\u27e8![P, Q, R], hPQR\u27e9 : Affine.Simplex \u211d E 2).incenter",
+        "a_alternatives": [
+          "IsIncenterOf H P Q R"
+        ],
+        "b_alternatives": [
+          "H = (\u27e8![P, Q, R], hPQR\u27e9 : Affine.Simplex \u211d E 2).incenter"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "H",
+          "P",
+          "Q",
+          "R"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear B Q H",
+          "Collinear C R H",
+          "M = midpoint \u211d A P",
+          "dist A M = dist M P"
+        ],
+        "b_only": [
+          "AffineIndependent A B P",
+          "AffineIndependent A C P",
+          "AffineIndependent P Q R",
+          "Collinear B H Q",
+          "Collinear C H R",
+          "Cospherical A B P Q",
+          "Cospherical A C P R",
+          "Q \u2260 B",
+          "R \u2260 C",
+          "perp HA BC"
+        ],
+        "jaccard": 0.0667
+      },
+      "goal": {
+        "a_normalized": "Incenter H (Triangle.mk P Q R)",
+        "b_normalized": "H = (\u27e8![P, Q, R], hPQR\u27e9 : Affine.Simplex \u211d E 2).incenter",
+        "a_alternatives": [
+          "Incenter H (Triangle.mk P Q R)"
+        ],
+        "b_alternatives": [
+          "H = (\u27e8![P, Q, R], hPQR\u27e9 : Affine.Simplex \u211d E 2).incenter"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

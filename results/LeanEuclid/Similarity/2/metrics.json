@@ -34,7 +34,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -46,17 +46,39 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent F G J",
+          "AffineIndependent H I J",
+          "F \u2260 G",
+          "F \u2260 J",
+          "G \u2260 J",
+          "H \u2260 I",
+          "H \u2260 J",
+          "I \u2260 J"
+        ],
+        "b_only": [
+          "Between H J G",
+          "Between I J F",
+          "formTriangle F G J FG GH FI",
+          "formTriangle H J I GH FI HI"
+        ],
+        "jaccard": 0.0769
       },
       "goal": {
-        "a_normalized": "(angle F G J = angle H I J \u2227 angle G J F = angle I J H \u2227 angle J F G = angle J H I)",
-        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220H:J:I = \u2220F:J:G",
-        "match_exact": false
+        "a_normalized": "angle F G J = angle H I J \u2227 angle G J F = angle I J H \u2227 angle J F G = angle J H I",
+        "b_normalized": "SimilarTriangles F G J H I J",
+        "a_alternatives": [
+          "angle F G J = angle H I J \u2227 angle G J F = angle I J H \u2227 angle J F G = angle J H I",
+          "TrianglesCongruent F G J H I J",
+          "SimilarTriangles F G J H I J"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles F G J H I J"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -72,13 +94,26 @@
           "AffineIndependent F G J",
           "AffineIndependent H I J"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "Between H J G",
+          "Between I J F",
+          "formTriangle F G J FG GH FI",
+          "formTriangle H J I GH FI HI"
+        ],
+        "jaccard": 0.1429
       },
       "goal": {
-        "a_normalized": "(angle F G J = angle H I J \u2227 angle G J F = angle I J H \u2227 angle J F G = angle J H I)",
-        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220H:J:I = \u2220F:J:G",
-        "match_exact": false
+        "a_normalized": "angle F G J = angle H I J \u2227 angle G J F = angle I J H \u2227 angle J F G = angle J H I",
+        "b_normalized": "SimilarTriangles F G J H I J",
+        "a_alternatives": [
+          "angle F G J = angle H I J \u2227 angle G J F = angle I J H \u2227 angle J F G = angle J H I",
+          "TrianglesCongruent F G J H I J",
+          "SimilarTriangles F G J H I J"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles F G J H I J"
+        ],
+        "match_exact": true
       }
     }
   }

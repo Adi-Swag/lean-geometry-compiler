@@ -42,6 +42,86 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 D",
+          "B \u2260 C",
+          "P \u2260 E"
+        ],
+        "b_only": [
+          "dist A B = dist A C"
+        ],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "((((0.0 ^ 2.0) * (1.0 + (angle 0 0 0))) + ((((angle 0 0 0) ^ 3.0) - ((angle 0 0 0) ^ 2.0)) - 2.0)) ^ 2.0) = 1.0 \u2227 (angle 0 0 0) \u2265 2.0 \u2227 (angle 0 0 0) = 2.0 \u2227 (dist A B = dist B C) \u2227 (dist B C = dist C A)",
+        "b_normalized": "z^2 - (lambda^3 - lambda^2 - 2) * z + 1 = 0 \u2227 lambda \u2265 2 \u2227 lambda = 2 \u2194 dist A B = dist B C",
+        "a_alternatives": [
+          "((((0.0 ^ 2.0) * (1.0 + (angle 0 0 0))) + ((((angle 0 0 0) ^ 3.0) - ((angle 0 0 0) ^ 2.0)) - 2.0)) ^ 2.0) = 1.0 \u2227 (angle 0 0 0) \u2265 2.0 \u2227 (angle 0 0 0) = 2.0 \u2227 (dist A B = dist B C) \u2227 (dist B C = dist C A)"
+        ],
+        "b_alternatives": [
+          "z^2 - (lambda^3 - lambda^2 - 2) * z + 1 = 0 \u2227 lambda \u2265 2 \u2227 lambda = 2 \u2194 dist A B = dist B C"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "perp PE CA"
+        ],
+        "b_only": [],
+        "jaccard": 0.75
+      },
+      "goal": {
+        "a_normalized": "z^2 - (\u03bb^3 - \u03bb^2 - 2) * z + 1 = 0 \u2227 \u03bb \u2265 2 \u2227 \u03bb = 2 \u2194 dist A B = dist B C",
+        "b_normalized": "z^2 - (lambda^3 - lambda^2 - 2) * z + 1 = 0 \u2227 lambda \u2265 2 \u2227 lambda = 2 \u2194 dist A B = dist B C",
+        "a_alternatives": [
+          "z^2 - (\u03bb^3 - \u03bb^2 - 2) * z + 1 = 0 \u2227 \u03bb \u2265 2 \u2227 \u03bb = 2 \u2194 dist A B = dist B C"
+        ],
+        "b_alternatives": [
+          "z^2 - (lambda^3 - lambda^2 - 2) * z + 1 = 0 \u2227 lambda \u2265 2 \u2227 lambda = 2 \u2194 dist A B = dist B C"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

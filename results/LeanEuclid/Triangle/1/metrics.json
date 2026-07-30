@@ -32,29 +32,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(dist W X = dist V X)",
-        "b_normalized": "dist W X",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -68,15 +46,71 @@
       "hypotheses": {
         "a_only": [
           "AffineIndependent U V W",
-          "perp WV XU"
+          "U \u2260 X",
+          "V \u2260 W",
+          "V \u2260 X",
+          "W \u2260 X"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "Between V X W",
+          "distinctPointsOnLine U X UX",
+          "formTriangle U V W UV VW UW",
+          "intersectsLine UX VW",
+          "pointOnLine X VW",
+          "rightAngle U X V",
+          "rightAngle U X W"
+        ],
+        "jaccard": 0.0769
       },
       "goal": {
         "a_normalized": "dist W X = dist V X",
-        "b_normalized": "dist W X",
-        "match_exact": false
+        "b_normalized": "dist W X = dist V X",
+        "a_alternatives": [
+          "dist W X = dist V X"
+        ],
+        "b_alternatives": [
+          "dist W X = dist V X"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent U V W",
+          "perp VW XU"
+        ],
+        "b_only": [
+          "Between V X W",
+          "distinctPointsOnLine U X UX",
+          "formTriangle U V W UV VW UW",
+          "intersectsLine UX VW",
+          "pointOnLine X VW",
+          "rightAngle U X V",
+          "rightAngle U X W"
+        ],
+        "jaccard": 0.1
+      },
+      "goal": {
+        "a_normalized": "dist W X = dist V X",
+        "b_normalized": "dist W X = dist V X",
+        "a_alternatives": [
+          "dist W X = dist V X"
+        ],
+        "b_alternatives": [
+          "dist W X = dist V X"
+        ],
+        "match_exact": true
       }
     }
   }

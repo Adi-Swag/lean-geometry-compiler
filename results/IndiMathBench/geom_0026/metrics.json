@@ -27,6 +27,66 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "S \u2260 F"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(length ['good_subset']) = 4.0",
+        "b_normalized": "S.card = 4",
+        "a_alternatives": [
+          "(length ['good_subset']) = 4.0"
+        ],
+        "b_alternatives": [
+          "S.card = 4"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "S \u2260 F"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (i1 i2 i3 i4 : Fin n), \n    (i1 < i2 \u2227 i2 < i3 \u2227 i3 < i4) \u2227 angle (A i1) (A i2) (A i3) = angle (A i2) (A i3) (A i4)",
+        "b_normalized": "S.card = 4",
+        "a_alternatives": [
+          "\u2203 (i1 i2 i3 i4 : Fin n), \n    (i1 < i2 \u2227 i2 < i3 \u2227 i3 < i4) \u2227 angle (A i1) (A i2) (A i3) = angle (A i2) (A i3) (A i4)"
+        ],
+        "b_alternatives": [
+          "S.card = 4"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

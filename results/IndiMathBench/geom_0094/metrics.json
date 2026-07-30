@@ -49,6 +49,100 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent D A C",
+          "B \u2260 D",
+          "C \u2260 B",
+          "C \u2260 D",
+          "C \u2260 E",
+          "IsQuadrilateral A B C D",
+          "angle A B D = 30",
+          "angle A C D = 25",
+          "angle B C A = 75"
+        ],
+        "b_only": [
+          "Collinear C B E",
+          "E \u2260 C",
+          "angle A B D = \u03c0/6",
+          "angle A C D = 5 * \u03c0 / 36",
+          "angle B C A = 5 * \u03c0 / 12"
+        ],
+        "jaccard": 0.0667
+      },
+      "goal": {
+        "a_normalized": "(dist 0 0) = (dist 0 0)",
+        "b_normalized": "dist C E = dist B D",
+        "a_alternatives": [
+          "(dist 0 0) = (dist 0 0)"
+        ],
+        "b_alternatives": [
+          "dist C E = dist B D"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "angle A C D = Real.pi / 7.2",
+          "angle B C A = 5 * Real.pi / 12"
+        ],
+        "b_only": [
+          "Collinear C B E",
+          "E \u2260 C",
+          "angle A C D = 5 * \u03c0 / 36",
+          "angle B C A = 5 * \u03c0 / 12"
+        ],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "dist C E = dist B D",
+        "b_normalized": "dist C E = dist B D",
+        "a_alternatives": [
+          "dist C E = dist B D"
+        ],
+        "b_alternatives": [
+          "dist C E = dist B D"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

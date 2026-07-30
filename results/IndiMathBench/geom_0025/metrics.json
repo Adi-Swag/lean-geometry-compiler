@@ -54,6 +54,73 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "C \u2260 A"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle A B C = 60",
+        "b_normalized": "= triangle_seq n\n    inner \u211d (An -\u1d65 H) (Bn -\u1d65 Cn) = 0 \u2227 inner \u211d (Bn -\u1d65 H) (Cn -\u1d65 An) = 0 \u2227 inner \u211d (Cn -\u1d65 H) (An -\u1d65 Bn) = 0 \u2227 triangle_seq (n+1) =\n      ((\u211d \u2219 (Cn -\u1d65 Bn)).reflection (H -\u1d65 An) +\u1d65 An,\n       (\u211d \u2219 (Cn -\u1d65 An)).reflection (H -\u1d65 Bn) +\u1d65 Bn,\n       (\u211d \u2219 (Bn -\u1d65 An)).reflection (H -\u1d65 Cn) +\u1d65 Cn ))\n  (m n : \u2115)\n  (h_distinct : m \u2260 n)\n  (h_angle_eq : let (Am, Bm, Cm) := triangle_seq m\n                let (An, Bn, Cn) := triangle_seq n\n                InnerProductGeometry.angle (Bm -\u1d65 Am) (Cm -\u1d65 Am) =\n                InnerProductGeometry.angle (Bn -\u1d65 An) (Cn -\u1d65 An)) :\n  InnerProductGeometry.angle (B -\u1d65 A) (C -\u1d65 A) = \u03c0 / 3",
+        "a_alternatives": [
+          "angle A B C = 60"
+        ],
+        "b_alternatives": [
+          "= triangle_seq n\n    inner \u211d (An -\u1d65 H) (Bn -\u1d65 Cn) = 0 \u2227 inner \u211d (Bn -\u1d65 H) (Cn -\u1d65 An) = 0 \u2227 inner \u211d (Cn -\u1d65 H) (An -\u1d65 Bn) = 0 \u2227 triangle_seq (n+1) =\n      ((\u211d \u2219 (Cn -\u1d65 Bn)).reflection (H -\u1d65 An) +\u1d65 An,\n       (\u211d \u2219 (Cn -\u1d65 An)).reflection (H -\u1d65 Bn) +\u1d65 Bn,\n       (\u211d \u2219 (Bn -\u1d65 An)).reflection (H -\u1d65 Cn) +\u1d65 Cn ))\n  (m n : \u2115)\n  (h_distinct : m \u2260 n)\n  (h_angle_eq : let (Am, Bm, Cm) := triangle_seq m\n                let (An, Bn, Cn) := triangle_seq n\n                InnerProductGeometry.angle (Bm -\u1d65 Am) (Cm -\u1d65 Am) =\n                InnerProductGeometry.angle (Bn -\u1d65 An) (Cn -\u1d65 An)) :\n  InnerProductGeometry.angle (B -\u1d65 A) (C -\u1d65 A) = \u03c0 / 3"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle A B C = \u03c0/3",
+        "b_normalized": "= triangle_seq n\n    inner \u211d (An -\u1d65 H) (Bn -\u1d65 Cn) = 0 \u2227 inner \u211d (Bn -\u1d65 H) (Cn -\u1d65 An) = 0 \u2227 inner \u211d (Cn -\u1d65 H) (An -\u1d65 Bn) = 0 \u2227 triangle_seq (n+1) =\n      ((\u211d \u2219 (Cn -\u1d65 Bn)).reflection (H -\u1d65 An) +\u1d65 An,\n       (\u211d \u2219 (Cn -\u1d65 An)).reflection (H -\u1d65 Bn) +\u1d65 Bn,\n       (\u211d \u2219 (Bn -\u1d65 An)).reflection (H -\u1d65 Cn) +\u1d65 Cn ))\n  (m n : \u2115)\n  (h_distinct : m \u2260 n)\n  (h_angle_eq : let (Am, Bm, Cm) := triangle_seq m\n                let (An, Bn, Cn) := triangle_seq n\n                InnerProductGeometry.angle (Bm -\u1d65 Am) (Cm -\u1d65 Am) =\n                InnerProductGeometry.angle (Bn -\u1d65 An) (Cn -\u1d65 An)) :\n  InnerProductGeometry.angle (B -\u1d65 A) (C -\u1d65 A) = \u03c0 / 3",
+        "a_alternatives": [
+          "angle A B C = \u03c0/3"
+        ],
+        "b_alternatives": [
+          "= triangle_seq n\n    inner \u211d (An -\u1d65 H) (Bn -\u1d65 Cn) = 0 \u2227 inner \u211d (Bn -\u1d65 H) (Cn -\u1d65 An) = 0 \u2227 inner \u211d (Cn -\u1d65 H) (An -\u1d65 Bn) = 0 \u2227 triangle_seq (n+1) =\n      ((\u211d \u2219 (Cn -\u1d65 Bn)).reflection (H -\u1d65 An) +\u1d65 An,\n       (\u211d \u2219 (Cn -\u1d65 An)).reflection (H -\u1d65 Bn) +\u1d65 Bn,\n       (\u211d \u2219 (Bn -\u1d65 An)).reflection (H -\u1d65 Cn) +\u1d65 Cn ))\n  (m n : \u2115)\n  (h_distinct : m \u2260 n)\n  (h_angle_eq : let (Am, Bm, Cm) := triangle_seq m\n                let (An, Bn, Cn) := triangle_seq n\n                InnerProductGeometry.angle (Bm -\u1d65 Am) (Cm -\u1d65 Am) =\n                InnerProductGeometry.angle (Bn -\u1d65 An) (Cn -\u1d65 An)) :\n  InnerProductGeometry.angle (B -\u1d65 A) (C -\u1d65 A) = \u03c0 / 3"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

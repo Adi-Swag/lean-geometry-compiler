@@ -44,6 +44,94 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "M",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 P",
+          "B \u2260 C",
+          "B \u2260 Q",
+          "P \u2260 C"
+        ],
+        "b_only": [
+          "dist A B > dist A C",
+          "perp QC AM"
+        ],
+        "jaccard": 0.2
+      },
+      "goal": {
+        "a_normalized": "(dist 0 0) = (2.0 * (dist 0 0))",
+        "b_normalized": "dist B Q = 2 * dist A P'",
+        "a_alternatives": [
+          "(dist 0 0) = (2.0 * (dist 0 0))"
+        ],
+        "b_alternatives": [
+          "dist B Q = 2 * dist A P'"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "M",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear A B P",
+          "Collinear A B Q",
+          "perp CQ MA"
+        ],
+        "b_only": [
+          "dist A B > dist A C",
+          "perp QC AM"
+        ],
+        "jaccard": 0.2857
+      },
+      "goal": {
+        "a_normalized": "dist B Q = 2 * dist A P",
+        "b_normalized": "dist B Q = 2 * dist A P'",
+        "a_alternatives": [
+          "dist B Q = 2 * dist A P"
+        ],
+        "b_alternatives": [
+          "dist B Q = 2 * dist A P'"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

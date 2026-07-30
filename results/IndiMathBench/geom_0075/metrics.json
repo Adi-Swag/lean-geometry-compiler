@@ -27,6 +27,72 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), (NumberOfGoodPoints A B C) = val",
+        "b_normalized": "\u211d :=\n  let a := dist B C\n  let b := dist A C\n  let c := dist A B\n  let s := (a + b + c) / 2\n  sqrt (s * (s - a) * (s - b) * (s - c))\n\ntheorem inmo_2012_4 (A B C : E) (h_triangle : \u00ac Collinear \u211d {A, B, C}) :\n  \u2203 (good_points : Finset E),\n    (\u2200 P \u2208 good_points, (\u2203 (a b c : \u211d),\n      a > 0 \u2227 b > 0 \u2227 c > 0 \u2227 a + b + c = 1 \u2227\n      P = a \u2022 A + b \u2022 B + c \u2022 C) \u2227\n    (\u2203 (f : Fin 27 \u2192 E),\n      (\u2200 i : Fin 27, (f i) \u2208 affineSpan \u211d ({A, B} : Set E)\n       \u2228 (f i) \u2208 affineSpan \u211d ({B, C} : Set E)\n       \u2228 (f i) \u2208 affineSpan \u211d ({C, A} : Set E)) \u2227\n    (\u2203 (common_area : \u211d), common_area > 0 \u2227\n    \u2200 i : Fin 27, triangle_area P (f i) (f (i + 1)) = common_area))) \u2227 good_points.card = 325",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), (NumberOfGoodPoints A B C) = val"
+        ],
+        "b_alternatives": [
+          "\u211d :=\n  let a := dist B C\n  let b := dist A C\n  let c := dist A B\n  let s := (a + b + c) / 2\n  sqrt (s * (s - a) * (s - b) * (s - c))\n\ntheorem inmo_2012_4 (A B C : E) (h_triangle : \u00ac Collinear \u211d {A, B, C}) :\n  \u2203 (good_points : Finset E),\n    (\u2200 P \u2208 good_points, (\u2203 (a b c : \u211d),\n      a > 0 \u2227 b > 0 \u2227 c > 0 \u2227 a + b + c = 1 \u2227\n      P = a \u2022 A + b \u2022 B + c \u2022 C) \u2227\n    (\u2203 (f : Fin 27 \u2192 E),\n      (\u2200 i : Fin 27, (f i) \u2208 affineSpan \u211d ({A, B} : Set E)\n       \u2228 (f i) \u2208 affineSpan \u211d ({B, C} : Set E)\n       \u2228 (f i) \u2208 affineSpan \u211d ({C, A} : Set E)) \u2227\n    (\u2203 (common_area : \u211d), common_area > 0 \u2227\n    \u2200 i : Fin 27, triangle_area P (f i) (f (i + 1)) = common_area))) \u2227 good_points.card = 325"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (n : \u2115), n = 1",
+        "b_normalized": "\u211d :=\n  let a := dist B C\n  let b := dist A C\n  let c := dist A B\n  let s := (a + b + c) / 2\n  sqrt (s * (s - a) * (s - b) * (s - c))\n\ntheorem inmo_2012_4 (A B C : E) (h_triangle : \u00ac Collinear \u211d {A, B, C}) :\n  \u2203 (good_points : Finset E),\n    (\u2200 P \u2208 good_points, (\u2203 (a b c : \u211d),\n      a > 0 \u2227 b > 0 \u2227 c > 0 \u2227 a + b + c = 1 \u2227\n      P = a \u2022 A + b \u2022 B + c \u2022 C) \u2227\n    (\u2203 (f : Fin 27 \u2192 E),\n      (\u2200 i : Fin 27, (f i) \u2208 affineSpan \u211d ({A, B} : Set E)\n       \u2228 (f i) \u2208 affineSpan \u211d ({B, C} : Set E)\n       \u2228 (f i) \u2208 affineSpan \u211d ({C, A} : Set E)) \u2227\n    (\u2203 (common_area : \u211d), common_area > 0 \u2227\n    \u2200 i : Fin 27, triangle_area P (f i) (f (i + 1)) = common_area))) \u2227 good_points.card = 325",
+        "a_alternatives": [
+          "\u2203 (n : \u2115), n = 1"
+        ],
+        "b_alternatives": [
+          "\u211d :=\n  let a := dist B C\n  let b := dist A C\n  let c := dist A B\n  let s := (a + b + c) / 2\n  sqrt (s * (s - a) * (s - b) * (s - c))\n\ntheorem inmo_2012_4 (A B C : E) (h_triangle : \u00ac Collinear \u211d {A, B, C}) :\n  \u2203 (good_points : Finset E),\n    (\u2200 P \u2208 good_points, (\u2203 (a b c : \u211d),\n      a > 0 \u2227 b > 0 \u2227 c > 0 \u2227 a + b + c = 1 \u2227\n      P = a \u2022 A + b \u2022 B + c \u2022 C) \u2227\n    (\u2203 (f : Fin 27 \u2192 E),\n      (\u2200 i : Fin 27, (f i) \u2208 affineSpan \u211d ({A, B} : Set E)\n       \u2228 (f i) \u2208 affineSpan \u211d ({B, C} : Set E)\n       \u2228 (f i) \u2208 affineSpan \u211d ({C, A} : Set E)) \u2227\n    (\u2203 (common_area : \u211d), common_area > 0 \u2227\n    \u2200 i : Fin 27, triangle_area P (f i) (f (i + 1)) = common_area))) \u2227 good_points.card = 325"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

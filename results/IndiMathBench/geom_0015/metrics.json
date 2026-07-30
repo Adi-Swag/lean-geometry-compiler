@@ -34,6 +34,91 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "A \u2260 D",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "B \u2260 E",
+          "Collinear P A D",
+          "Collinear P D B"
+        ],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), (DistanceRatio (Segment B P) (Segment P E) 1) = val \u2227 \u2203 (val : \u211d), (DistanceRatio (Segment A P) (Segment P D) 1) = val",
+        "b_normalized": "dist B P / dist P E = 1 \u2227 dist A P / dist P D = 3",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), (DistanceRatio (Segment B P) (Segment P E) 1) = val \u2227 \u2203 (val : \u211d), (DistanceRatio (Segment A P) (Segment P D) 1) = val"
+        ],
+        "b_alternatives": [
+          "dist B P / dist P E = 1 \u2227 dist A P / dist P D = 3"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear B D C"
+        ],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "\u2203 (bp_pe_ratio ap_pd_ratio : \u211d), (dist B P / dist P E = bp_pe_ratio) \u2227 dist A P / dist P D = ap_pd_ratio",
+        "b_normalized": "dist B P / dist P E = 1 \u2227 dist A P / dist P D = 3",
+        "a_alternatives": [
+          "\u2203 (bp_pe_ratio ap_pd_ratio : \u211d), (dist B P / dist P E = bp_pe_ratio) \u2227 dist A P / dist P D = ap_pd_ratio"
+        ],
+        "b_alternatives": [
+          "dist B P / dist P E = 1 \u2227 dist A P / dist P D = 3"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

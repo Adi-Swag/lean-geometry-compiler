@@ -43,6 +43,94 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 E",
+          "A \u2260 F",
+          "B \u2260 C",
+          "B \u2260 D",
+          "B \u2260 F",
+          "C \u2260 A",
+          "C \u2260 D",
+          "C \u2260 E"
+        ],
+        "b_only": [
+          "Between B D C"
+        ],
+        "jaccard": 0.0909
+      },
+      "goal": {
+        "a_normalized": "Collinear B C D \u2227 Collinear A C E \u2227 Collinear A B F",
+        "b_normalized": "InnerProductGeometry.angle (D -\u1d65 A) (C -\u1d65 B) = \u03c0 / 2 \u2227 InnerProductGeometry.angle (E -\u1d65 B) (A -\u1d65 C) = \u03c0 / 2 \u2227 InnerProductGeometry.angle (F -\u1d65 C) (B -\u1d65 A) = \u03c0 / 2",
+        "a_alternatives": [
+          "Collinear B C D \u2227 Collinear A C E \u2227 Collinear A B F"
+        ],
+        "b_alternatives": [
+          "InnerProductGeometry.angle (D -\u1d65 A) (C -\u1d65 B) = \u03c0 / 2 \u2227 InnerProductGeometry.angle (E -\u1d65 B) (A -\u1d65 C) = \u03c0 / 2 \u2227 InnerProductGeometry.angle (F -\u1d65 C) (B -\u1d65 A) = \u03c0 / 2"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear A F B",
+          "Collinear B D C",
+          "Collinear C E A"
+        ],
+        "b_only": [
+          "Between B D C"
+        ],
+        "jaccard": 0.2
+      },
+      "goal": {
+        "a_normalized": "perp AD CB \u2227 perp BE AC \u2227 perp CF BA",
+        "b_normalized": "InnerProductGeometry.angle (D -\u1d65 A) (C -\u1d65 B) = \u03c0 / 2 \u2227 InnerProductGeometry.angle (E -\u1d65 B) (A -\u1d65 C) = \u03c0 / 2 \u2227 InnerProductGeometry.angle (F -\u1d65 C) (B -\u1d65 A) = \u03c0 / 2",
+        "a_alternatives": [
+          "perp AD CB \u2227 perp BE AC \u2227 perp CF BA"
+        ],
+        "b_alternatives": [
+          "InnerProductGeometry.angle (D -\u1d65 A) (C -\u1d65 B) = \u03c0 / 2 \u2227 InnerProductGeometry.angle (E -\u1d65 B) (A -\u1d65 C) = \u03c0 / 2 \u2227 InnerProductGeometry.angle (F -\u1d65 C) (B -\u1d65 A) = \u03c0 / 2"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

@@ -43,6 +43,116 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "K",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 P",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "B \u2260 P",
+          "C \u2260 P",
+          "D \u2260 K",
+          "E \u2260 F",
+          "IntersectAt AP EF D",
+          "IntersectAt BP AC E",
+          "IntersectAt CP AB F"
+        ],
+        "b_only": [
+          "Collinear D E F",
+          "Collinear E A C",
+          "Collinear F A B",
+          "Collinear K B C",
+          "perp KD CB"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "AngleBisector D K (Segment E K) (Segment K F)",
+        "b_normalized": "angle E K D = InnerProductGeometry.angle (D -\u1d65 K) (F -\u1d65 K",
+        "a_alternatives": [
+          "AngleBisector D K (Segment E K) (Segment K F)"
+        ],
+        "b_alternatives": [
+          "angle E K D = InnerProductGeometry.angle (D -\u1d65 K) (F -\u1d65 K"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "K",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A B F",
+          "Collinear A C E",
+          "Collinear A P D",
+          "Collinear B P E",
+          "Collinear C P F",
+          "Collinear D K B",
+          "Collinear D K C",
+          "Collinear E F D",
+          "perp DK CB"
+        ],
+        "b_only": [
+          "Collinear D E F",
+          "Collinear E A C",
+          "Collinear F A B",
+          "Collinear K B C",
+          "perp KD CB"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle E K D = angle D K F",
+        "b_normalized": "angle E K D = InnerProductGeometry.angle (D -\u1d65 K) (F -\u1d65 K",
+        "a_alternatives": [
+          "angle E K D = angle D K F"
+        ],
+        "b_alternatives": [
+          "angle E K D = InnerProductGeometry.angle (D -\u1d65 K) (F -\u1d65 K"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

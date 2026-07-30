@@ -74,31 +74,104 @@ def _extract_hypotheses(text: str) -> List[dict]:
     """Extract hypothesis statements.
     
     Matches: (hN : statement) or (h_name : statement)
-    Excludes: theorem line binders and the goal.
+    Also handles SystemE ∀-style: ∀ binders, hyp1 ∧ hyp2 ∧ ... → goal
     """
     hyps: List[dict] = []
 
-    # Find the body of the theorem (between first hypothesis and := by)
-    # Strategy: find all (h... : ...) patterns that have balanced parens
+    # Try GP-style first: (h... : ...)
     pat = r'\(h([A-Za-z0-9_]+)\s*:\s*((?:\([^)]*\)|[^)])*)\)'
     for m in re.finditer(pat, text):
         name = f"h{m.group(1)}"
         stmt = m.group(2).strip()
         hyps.append({"name": name, "statement": stmt})
 
+    # If no GP-style hypotheses found, try SystemE ∀-style
+    if not hyps:
+        hyps = _extract_hypotheses_systeme(text)
+
     return hyps
+
+
+def _extract_hypotheses_systeme(text: str) -> List[dict]:
+    """Extract hypotheses from SystemE ∀-style theorems.
+    
+    Format: theorem name : ∀ (binders), hyp1 ∧ hyp2 ∧ ... → goal :=
+    """
+    hyps: List[dict] = []
+
+    # Find the ∀ body: match all binder groups, then body between comma after binders and →
+    m = re.search(r'∀\s*(?:\([^)]+\)\s*)+\s*,\s*(.*?)\s*→', text, re.DOTALL)
+    if not m:
+        return hyps
+
+    body = m.group(1).strip()
+
+    # Split by ∧ at top level (not inside parens)
+    parts = _split_on_top_level_and(body)
+    
+    for i, part in enumerate(parts):
+        part = part.strip()
+        if not part:
+            continue
+        # Remove leading/trailing parens if balanced
+        while part.startswith("(") and part.endswith(")"):
+            inner = part[1:-1].strip()
+            if _parens_balanced(inner):
+                part = inner
+            else:
+                break
+        hyps.append({"name": f"h{i+1}", "statement": part})
+
+    return hyps
+
+
+def _parens_balanced(s: str) -> bool:
+    """Check if parentheses in s are balanced."""
+    depth = 0
+    for c in s:
+        if c == "(":
+            depth += 1
+        elif c == ")":
+            depth -= 1
+            if depth < 0:
+                return False
+    return depth == 0
+
+
+def _split_on_top_level_and(text: str) -> List[str]:
+    """Split text on ∧ operators at top level (not inside parens)."""
+    parts = []
+    depth = 0
+    current = ""
+    i = 0
+    while i < len(text):
+        c = text[i]
+        if c == "(":
+            depth += 1
+            current += c
+        elif c == ")":
+            depth -= 1
+            current += c
+        elif c == "∧" and depth == 0:
+            parts.append(current)
+            current = ""
+        else:
+            current += c
+        i += 1
+    if current:
+        parts.append(current)
+    return parts
 
 
 def _extract_goal(text: str) -> Optional[str]:
     """Extract the goal statement."""
-    # GeometryProver style: theorem ... : goal := by
-    # The goal is between the LAST : before := by and := by
-    m = re.search(r'\)\s*:\s*(.*?)\s*:=\s*by', text, re.DOTALL)
+    # SystemE style: → goal :=
+    m = re.search(r'→\s*(.*?)\s*:=', text)
     if m:
         return m.group(1).strip()
 
-    # SystemE style: ... → goal :=
-    m = re.search(r'→\s*(.*?)\s*:=', text, re.DOTALL)
+    # GeometryProver style: theorem ... : goal := by
+    m = re.search(r'\)\s*:\s*(.*?)\s*:=\s*by', text, re.DOTALL)
     if m:
         return m.group(1).strip()
 

@@ -31,7 +31,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -43,17 +43,42 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent P R S",
+          "P \u2260 R",
+          "P \u2260 S",
+          "Q \u2260 T"
+        ],
+        "b_only": [
+          "Between P Q R",
+          "Between P T S",
+          "VecParallel QT RS",
+          "distinctPointsOnLine P R PR",
+          "distinctPointsOnLine P S PS",
+          "distinctPointsOnLine Q T QT",
+          "distinctPointsOnLine R S RS",
+          "intersectsLine QT PR",
+          "intersectsLine QT PS",
+          "intersectsLine RS PR",
+          "intersectsLine RS PS",
+          "pointOnLine Q PR",
+          "pointOnLine T PS"
+        ],
+        "jaccard": 0.0556
       },
       "goal": {
-        "a_normalized": "(angle S R P = angle Q R S)",
-        "b_normalized": "angle P S R",
+        "a_normalized": "angle S R P = angle Q R S",
+        "b_normalized": "angle P S R = angle Q R S",
+        "a_alternatives": [
+          "angle S R P = angle Q R S"
+        ],
+        "b_alternatives": [
+          "angle P S R = angle Q R S"
+        ],
         "match_exact": false
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -68,12 +93,31 @@
         "a_only": [
           "AffineIndependent P R S"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "Between P Q R",
+          "Between P T S",
+          "distinctPointsOnLine P R PR",
+          "distinctPointsOnLine P S PS",
+          "distinctPointsOnLine Q T QT",
+          "distinctPointsOnLine R S RS",
+          "intersectsLine QT PR",
+          "intersectsLine QT PS",
+          "intersectsLine RS PR",
+          "intersectsLine RS PS",
+          "pointOnLine Q PR",
+          "pointOnLine T PS"
+        ],
+        "jaccard": 0.1333
       },
       "goal": {
         "a_normalized": "angle S P R = angle Q R S",
-        "b_normalized": "angle P S R",
+        "b_normalized": "angle P S R = angle Q R S",
+        "a_alternatives": [
+          "angle S P R = angle Q R S"
+        ],
+        "b_alternatives": [
+          "angle P S R = angle Q R S"
+        ],
         "match_exact": false
       }
     }

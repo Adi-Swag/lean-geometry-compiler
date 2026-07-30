@@ -48,6 +48,95 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "Excircle",
+          "K",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 D",
+          "A \u2260 K",
+          "AffineIndependent A D K",
+          "C \u2260 D",
+          "O = midpoint \u211d A B"
+        ],
+        "b_only": [
+          "C \u2260 A",
+          "Collinear A B D"
+        ],
+        "jaccard": 0.1
+      },
+      "goal": {
+        "a_normalized": "TangentToCircle (Line Excircle A) (Circle D) K",
+        "b_normalized": "T' = T",
+        "a_alternatives": [
+          "TangentToCircle (Line Excircle A) (Circle D) K"
+        ],
+        "b_alternatives": [
+          "T' = T"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "K",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear C K D",
+          "perp CD BA"
+        ],
+        "b_only": [
+          "C \u2260 A",
+          "Collinear A B D",
+          "D \u2260 K"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (E : Point), PointLiesOnCircle E O r \u2227 Tangent (Excircle (Triangle A D K) A) (Circle O r)",
+        "b_normalized": "T' = T",
+        "a_alternatives": [
+          "\u2203 (E : Point), PointLiesOnCircle E O r \u2227 Tangent (Excircle (Triangle A D K) A) (Circle O r)"
+        ],
+        "b_alternatives": [
+          "T' = T"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

@@ -310,6 +310,128 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A1",
+          "A10",
+          "A11",
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8",
+          "A9",
+          "B1",
+          "B10",
+          "B11",
+          "B2",
+          "B3",
+          "B4",
+          "B5",
+          "B6",
+          "B7",
+          "B8",
+          "B9",
+          "C1",
+          "C10",
+          "C11",
+          "C2",
+          "C3",
+          "C4",
+          "C5",
+          "C6",
+          "C7",
+          "C8",
+          "C9",
+          "D1",
+          "D10",
+          "D11",
+          "D2",
+          "D3",
+          "D4",
+          "D5",
+          "D6",
+          "D7",
+          "D8",
+          "D9",
+          "E1",
+          "E10",
+          "E11",
+          "E2",
+          "E3",
+          "E4",
+          "E5",
+          "E6",
+          "E7",
+          "E8",
+          "E9",
+          "P1",
+          "P2",
+          "P3",
+          "P4"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "Concyclic [P1, P2, P3, P4]",
+        "b_normalized": "P) : Prop",
+        "a_alternatives": [
+          "Concyclic [P1, P2, P3, P4]"
+        ],
+        "b_alternatives": [
+          "P) : Prop"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A1",
+          "B1",
+          "C1",
+          "D1",
+          "E1"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (P Q R S : Point), (color P = color Q \u2227 color Q = color R \u2227 color R = color S) \u2227 PointLiesOnCircle P Q R S",
+        "b_normalized": "P) : Prop",
+        "a_alternatives": [
+          "\u2203 (P Q R S : Point), (color P = color Q \u2227 color Q = color R \u2227 color R = color S) \u2227 PointLiesOnCircle P Q R S"
+        ],
+        "b_alternatives": [
+          "P) : Prop"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

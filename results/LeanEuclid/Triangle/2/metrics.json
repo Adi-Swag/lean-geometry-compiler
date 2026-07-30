@@ -30,29 +30,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(angle R S T = angle R T S)",
-        "b_normalized": "angle R S U",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -66,15 +44,69 @@
       "hypotheses": {
         "a_only": [
           "AffineIndependent R S T",
-          "U = midpoint \u211d S T",
-          "dist R T = dist R S"
+          "R \u2260 S",
+          "R \u2260 T",
+          "R \u2260 U",
+          "S \u2260 T",
+          "U = midpoint \u211d S T"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "Between S U T",
+          "dist S U = dist T U",
+          "distinctPointsOnLine R U RU",
+          "formTriangle R S T RS ST TR",
+          "intersectsLine ST RU",
+          "pointOnLine U ST"
+        ],
+        "jaccard": 0.0769
       },
       "goal": {
         "a_normalized": "angle R S T = angle R T S",
-        "b_normalized": "angle R S U",
+        "b_normalized": "angle R S U = angle R T U",
+        "a_alternatives": [
+          "angle R S T = angle R T S"
+        ],
+        "b_alternatives": [
+          "angle R S U = angle R T U"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent R S T",
+          "U = midpoint \u211d S T"
+        ],
+        "b_only": [
+          "Between S U T",
+          "dist S U = dist T U",
+          "distinctPointsOnLine R U RU",
+          "formTriangle R S T RS ST TR",
+          "intersectsLine ST RU",
+          "pointOnLine U ST"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_normalized": "angle R S T = angle R T S",
+        "b_normalized": "angle R S U = angle R T U",
+        "a_alternatives": [
+          "angle R S T = angle R T S"
+        ],
+        "b_alternatives": [
+          "angle R S U = angle R T U"
+        ],
         "match_exact": false
       }
     }

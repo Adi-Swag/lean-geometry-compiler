@@ -42,6 +42,94 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 D",
+          "AffineIndependent A C D",
+          "B \u2260 C",
+          "B \u2260 E",
+          "C \u2260 D"
+        ],
+        "b_only": [
+          "AffineIndependent A B C",
+          "Collinear A D E",
+          "angle B A D = \u2220 A C B"
+        ],
+        "jaccard": 0.1667
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), (angle B C A) = val",
+        "b_normalized": "angle A C B = \u03c0/4",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), (angle B C A) = val"
+        ],
+        "b_alternatives": [
+          "angle A C B = \u03c0/4"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear B D C",
+          "perp BE DA"
+        ],
+        "b_only": [
+          "Collinear A D E",
+          "angle B A D = \u2220 A C B"
+        ],
+        "jaccard": 0.4286
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), angle B C A = val",
+        "b_normalized": "angle A C B = \u03c0/4",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), angle B C A = val"
+        ],
+        "b_alternatives": [
+          "angle A C B = \u03c0/4"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

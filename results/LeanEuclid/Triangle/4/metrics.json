@@ -30,7 +30,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -42,17 +42,37 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent F G H",
+          "F \u2260 I",
+          "G \u2260 H",
+          "I = midpoint \u211d G H"
+        ],
+        "b_only": [
+          "Between H I G",
+          "dist G I = dist H I",
+          "distinctPointsOnLine F I FI",
+          "formTriangle F H G HF GH FG",
+          "intersectsLine FI GH",
+          "pointOnLine I GH",
+          "rightAngle F I G",
+          "rightAngle F I H"
+        ],
+        "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle F H G = angle F G H)",
-        "b_normalized": "angle F H I",
+        "a_normalized": "angle F H G = angle F G H",
+        "b_normalized": "angle F H I = angle F G I",
+        "a_alternatives": [
+          "angle F H G = angle F G H"
+        ],
+        "b_alternatives": [
+          "angle F H I = angle F G I"
+        ],
         "match_exact": false
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -67,14 +87,29 @@
         "a_only": [
           "AffineIndependent F G H",
           "I = midpoint \u211d G H",
-          "perp IF HG"
+          "perp FI HG"
         ],
-        "b_only": [],
+        "b_only": [
+          "Between H I G",
+          "dist G I = dist H I",
+          "distinctPointsOnLine F I FI",
+          "formTriangle F H G HF GH FG",
+          "intersectsLine FI GH",
+          "pointOnLine I GH",
+          "rightAngle F I G",
+          "rightAngle F I H"
+        ],
         "jaccard": 0.0
       },
       "goal": {
         "a_normalized": "angle F G H = angle F H G",
-        "b_normalized": "angle F H I",
+        "b_normalized": "angle F H I = angle F G I",
+        "a_alternatives": [
+          "angle F G H = angle F H G"
+        ],
+        "b_alternatives": [
+          "angle F H I = angle F G I"
+        ],
         "match_exact": false
       }
     }

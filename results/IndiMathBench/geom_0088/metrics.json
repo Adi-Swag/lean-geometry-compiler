@@ -32,6 +32,87 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "C \u2260 A",
+          "D = midpoint \u211d B C",
+          "E = midpoint \u211d C A"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), (perimeter (Polygon {'type': 'Triangle', 'vertices': ['A', 'B', 'C']})) = val",
+        "b_normalized": "(x + y + z \u2265 37))",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), (perimeter (Polygon {'type': 'Triangle', 'vertices': ['A', 'B', 'C']})) = val"
+        ],
+        "b_alternatives": [
+          "(x + y + z \u2265 37))"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "G"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "D = midpoint \u211d B C",
+          "E = midpoint \u211d C A"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (p : \u211d), p = dist A B + dist B C + dist C A",
+        "b_normalized": "(x + y + z \u2265 37))",
+        "a_alternatives": [
+          "\u2203 (p : \u211d), p = dist A B + dist B C + dist C A"
+        ],
+        "b_alternatives": [
+          "(x + y + z \u2265 37))"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

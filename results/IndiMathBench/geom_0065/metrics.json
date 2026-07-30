@@ -59,6 +59,66 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "(angle P1 P2 P3 = Real.pi / 2) \u2228 (angle P2 P3 P1 = Real.pi / 2) \u2228 (angle P3 P1 P2 = Real.pi / 2)",
+        "b_normalized": null,
+        "a_alternatives": [
+          "(angle P1 P2 P3 = Real.pi / 2) \u2228 (angle P2 P3 P1 = Real.pi / 2) \u2228 (angle P3 P1 P2 = Real.pi / 2)"
+        ],
+        "b_alternatives": [],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (P Q R : Point), (f P \u2260 f Q \u2227 f Q \u2260 f R \u2227 f R \u2260 f P) \u2227 (angle P Q R = Real.pi / 2) \u2228 (angle Q R P = Real.pi / 2) \u2228 (angle R P Q = Real.pi / 2)",
+        "b_normalized": null,
+        "a_alternatives": [
+          "\u2203 (P Q R : Point), (f P \u2260 f Q \u2227 f Q \u2260 f R \u2227 f R \u2260 f P) \u2227 (angle P Q R = Real.pi / 2) \u2228 (angle Q R P = Real.pi / 2) \u2228 (angle R P Q = Real.pi / 2)"
+        ],
+        "b_alternatives": [],
+        "match_exact": false
+      }
     }
   }
 }

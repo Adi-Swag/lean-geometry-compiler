@@ -35,7 +35,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -49,17 +49,32 @@
         "jaccard": 0.8
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "V \u2260 W",
+          "V \u2260 X",
+          "W \u2260 X",
+          "X \u2260 Y"
+        ],
+        "b_only": [
+          "distinctPointsOnLine V X VX",
+          "rightAngle V W X",
+          "rightAngle V Y X"
+        ],
+        "jaccard": 0.2222
       },
       "goal": {
-        "a_normalized": "((dist 0 0) = (dist 0 0))",
-        "b_normalized": "dist X Y",
+        "a_normalized": "(dist 0 0) = (dist 0 0)",
+        "b_normalized": "dist X Y = dist V W",
+        "a_alternatives": [
+          "(dist 0 0) = (dist 0 0)"
+        ],
+        "b_alternatives": [
+          "dist X Y = dist V W"
+        ],
         "match_exact": false
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -75,16 +90,27 @@
           "V \u2260 W",
           "V \u2260 X",
           "X \u2260 Y",
-          "perp WX WV",
-          "perp YX YV"
+          "perp XW WV",
+          "perp XY YV"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "IsQuadrilateral V W Y X",
+          "distinctPointsOnLine V X VX",
+          "rightAngle V W X",
+          "rightAngle V Y X"
+        ],
+        "jaccard": 0.1
       },
       "goal": {
         "a_normalized": "dist X Y = dist V W",
-        "b_normalized": "dist X Y",
-        "match_exact": false
+        "b_normalized": "dist X Y = dist V W",
+        "a_alternatives": [
+          "dist X Y = dist V W"
+        ],
+        "b_alternatives": [
+          "dist X Y = dist V W"
+        ],
+        "match_exact": true
       }
     }
   }

@@ -87,6 +87,86 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O1",
+          "O2",
+          "P",
+          "Q",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A C D",
+          "AffineIndependent X A Y",
+          "B \u2260 C",
+          "B \u2260 D",
+          "P \u2260 Q"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "angle C A Y = \u2220 B A Y \u2227 Y \u2208 \u0393\u2082 \u2227 Y \u2260 A",
+          "angle D A X = \u2220 B A X \u2227 X \u2208 \u0393\u2081 \u2227 X \u2260 A"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "@inner \u211d Vec _ (Q -\u1d65 P) (O2 -\u1d65 O1) = 0",
+        "b_normalized": "let isCircumcenterOf (Q X Y Z : Pt) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 P \u2260 Q \u2227 dist O\u2081 P = dist O\u2082 P \u2227 dist O\u2081 Q = dist O\u2082 Q \u2227 inner \u211d (O\u2082 -\u1d65 O\u2081) (Q -\u1d65 P) = 0",
+        "a_alternatives": [
+          "@inner \u211d Vec _ (Q -\u1d65 P) (O2 -\u1d65 O1) = 0"
+        ],
+        "b_alternatives": [
+          "let isCircumcenterOf (Q X Y Z : Pt) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 P \u2260 Q \u2227 dist O\u2081 P = dist O\u2082 P \u2227 dist O\u2081 Q = dist O\u2082 Q \u2227 inner \u211d (O\u2082 -\u1d65 O\u2081) (Q -\u1d65 P) = 0"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "angle C A Y = \u2220 B A Y \u2227 Y \u2208 \u0393\u2082 \u2227 Y \u2260 A",
+          "angle D A X = \u2220 B A X \u2227 X \u2208 \u0393\u2081 \u2227 X \u2260 A"
+        ],
+        "jaccard": 0.3333
+      },
+      "goal": {
+        "a_normalized": "@inner \u211d Vec _ (P -\u1d65 Q) (O\u2082 -\u1d65 O\u2081) = 0 \u2227 dist P Q = dist O\u2081 O\u2082 / 2",
+        "b_normalized": "let isCircumcenterOf (Q X Y Z : Pt) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 P \u2260 Q \u2227 dist O\u2081 P = dist O\u2082 P \u2227 dist O\u2081 Q = dist O\u2082 Q \u2227 inner \u211d (O\u2082 -\u1d65 O\u2081) (Q -\u1d65 P) = 0",
+        "a_alternatives": [
+          "@inner \u211d Vec _ (P -\u1d65 Q) (O\u2082 -\u1d65 O\u2081) = 0 \u2227 dist P Q = dist O\u2081 O\u2082 / 2"
+        ],
+        "b_alternatives": [
+          "let isCircumcenterOf (Q X Y Z : Pt) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 P \u2260 Q \u2227 dist O\u2081 P = dist O\u2082 P \u2227 dist O\u2081 Q = dist O\u2082 Q \u2227 inner \u211d (O\u2082 -\u1d65 O\u2081) (Q -\u1d65 P) = 0"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

@@ -48,6 +48,81 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A1",
+          "A2",
+          "A3",
+          "O",
+          "P",
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "r_P1 \u2264 r_0",
+        "b_normalized": "\u2102 :=\n  c + (z - c) * Complex.exp (\u03b8 * Complex.I)\n\ntheorem inmo_2024_5\n    {A1 A2 A3 P O : \u2102} {R \u03b81 \u03b82 \u03b83 : \u211d} {P1 P2 P3 : \u2102}\n    (hA1 : \u2016A1 - O\u2016 = R)\n    (hA2 : \u2016A2 - O\u2016 = R)\n    (hA3 : \u2016A3 - O\u2016 = R)\n    (h\u03b81 : \u03b81 = \u2220 A2 A1 A3)\n    (h\u03b82 : \u03b82 = \u2220 A3 A2 A1)\n    (h\u03b83 : \u03b83 = \u2220 A1 A3 A2)\n    (hP1 : P1 = rot A3 \u03b83 (rot A1 \u03b81 (rot A2 \u03b82 P)))\n    (hP2 : P2 = rot A1 \u03b81 (rot A2 \u03b82 (rot A3 \u03b83 P)))\n    (hP3 : P3 = rot A2 \u03b82 (rot A3 \u03b83 (rot A1 \u03b81 P))) :\n    \u2203 Q : \u2102, \u2203 r : \u211d, 0 \u2264 r \u2227 \u2016P1 - Q\u2016 = r \u2227 \u2016P2 - Q\u2016 = r \u2227 \u2016P3 - Q\u2016 = r \u2227 r \u2264 R",
+        "a_alternatives": [
+          "r_P1 \u2264 r_0"
+        ],
+        "b_alternatives": [
+          "\u2102 :=\n  c + (z - c) * Complex.exp (\u03b8 * Complex.I)\n\ntheorem inmo_2024_5\n    {A1 A2 A3 P O : \u2102} {R \u03b81 \u03b82 \u03b83 : \u211d} {P1 P2 P3 : \u2102}\n    (hA1 : \u2016A1 - O\u2016 = R)\n    (hA2 : \u2016A2 - O\u2016 = R)\n    (hA3 : \u2016A3 - O\u2016 = R)\n    (h\u03b81 : \u03b81 = \u2220 A2 A1 A3)\n    (h\u03b82 : \u03b82 = \u2220 A3 A2 A1)\n    (h\u03b83 : \u03b83 = \u2220 A1 A3 A2)\n    (hP1 : P1 = rot A3 \u03b83 (rot A1 \u03b81 (rot A2 \u03b82 P)))\n    (hP2 : P2 = rot A1 \u03b81 (rot A2 \u03b82 (rot A3 \u03b83 P)))\n    (hP3 : P3 = rot A2 \u03b82 (rot A3 \u03b83 (rot A1 \u03b81 P))) :\n    \u2203 Q : \u2102, \u2203 r : \u211d, 0 \u2264 r \u2227 \u2016P1 - Q\u2016 = r \u2227 \u2016P2 - Q\u2016 = r \u2227 \u2016P3 - Q\u2016 = r \u2227 r \u2264 R"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A1",
+          "A2",
+          "A3",
+          "O",
+          "P",
+          "P1",
+          "P2",
+          "P3"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (R : \u211d), R \u2264 r \u2227 dist P1 O = R \u2227 dist P2 O = R \u2227 dist P3 O = R",
+        "b_normalized": "\u2102 :=\n  c + (z - c) * Complex.exp (\u03b8 * Complex.I)\n\ntheorem inmo_2024_5\n    {A1 A2 A3 P O : \u2102} {R \u03b81 \u03b82 \u03b83 : \u211d} {P1 P2 P3 : \u2102}\n    (hA1 : \u2016A1 - O\u2016 = R)\n    (hA2 : \u2016A2 - O\u2016 = R)\n    (hA3 : \u2016A3 - O\u2016 = R)\n    (h\u03b81 : \u03b81 = \u2220 A2 A1 A3)\n    (h\u03b82 : \u03b82 = \u2220 A3 A2 A1)\n    (h\u03b83 : \u03b83 = \u2220 A1 A3 A2)\n    (hP1 : P1 = rot A3 \u03b83 (rot A1 \u03b81 (rot A2 \u03b82 P)))\n    (hP2 : P2 = rot A1 \u03b81 (rot A2 \u03b82 (rot A3 \u03b83 P)))\n    (hP3 : P3 = rot A2 \u03b82 (rot A3 \u03b83 (rot A1 \u03b81 P))) :\n    \u2203 Q : \u2102, \u2203 r : \u211d, 0 \u2264 r \u2227 \u2016P1 - Q\u2016 = r \u2227 \u2016P2 - Q\u2016 = r \u2227 \u2016P3 - Q\u2016 = r \u2227 r \u2264 R",
+        "a_alternatives": [
+          "\u2203 (R : \u211d), R \u2264 r \u2227 dist P1 O = R \u2227 dist P2 O = R \u2227 dist P3 O = R"
+        ],
+        "b_alternatives": [
+          "\u2102 :=\n  c + (z - c) * Complex.exp (\u03b8 * Complex.I)\n\ntheorem inmo_2024_5\n    {A1 A2 A3 P O : \u2102} {R \u03b81 \u03b82 \u03b83 : \u211d} {P1 P2 P3 : \u2102}\n    (hA1 : \u2016A1 - O\u2016 = R)\n    (hA2 : \u2016A2 - O\u2016 = R)\n    (hA3 : \u2016A3 - O\u2016 = R)\n    (h\u03b81 : \u03b81 = \u2220 A2 A1 A3)\n    (h\u03b82 : \u03b82 = \u2220 A3 A2 A1)\n    (h\u03b83 : \u03b83 = \u2220 A1 A3 A2)\n    (hP1 : P1 = rot A3 \u03b83 (rot A1 \u03b81 (rot A2 \u03b82 P)))\n    (hP2 : P2 = rot A1 \u03b81 (rot A2 \u03b82 (rot A3 \u03b83 P)))\n    (hP3 : P3 = rot A2 \u03b82 (rot A3 \u03b83 (rot A1 \u03b81 P))) :\n    \u2203 Q : \u2102, \u2203 r : \u211d, 0 \u2264 r \u2227 \u2016P1 - Q\u2016 = r \u2227 \u2016P2 - Q\u2016 = r \u2227 \u2016P3 - Q\u2016 = r \u2227 r \u2264 R"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

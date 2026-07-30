@@ -37,29 +37,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(dist V Y = dist W X)",
-        "b_normalized": "dist V Y",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -72,15 +50,73 @@
       },
       "hypotheses": {
         "a_only": [
-          "dist V X = dist W Y"
+          "V \u2260 X",
+          "V \u2260 Y",
+          "V \u2260 Z",
+          "W \u2260 X",
+          "W \u2260 Y",
+          "X \u2260 Y"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "VecParallel VZ WY",
+          "VecParallel XY VW",
+          "VecParallel XZ VW",
+          "distinctPointsOnLine V X VX",
+          "distinctPointsOnLine V Z VZ",
+          "distinctPointsOnLine W Y WY",
+          "distinctPointsOnLine Y Z XZ",
+          "opposingSides X Z VY"
+        ],
+        "jaccard": 0.125
       },
       "goal": {
         "a_normalized": "dist V Y = dist W X",
-        "b_normalized": "dist V Y",
-        "match_exact": false
+        "b_normalized": "dist V Y = dist W X",
+        "a_alternatives": [
+          "dist V Y = dist W X"
+        ],
+        "b_alternatives": [
+          "dist V Y = dist W X"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "VecParallel YZ VW"
+        ],
+        "b_only": [
+          "IsQuadrilateral W V X Y",
+          "VecParallel XZ VW",
+          "distinctPointsOnLine V X VX",
+          "distinctPointsOnLine V Z VZ",
+          "distinctPointsOnLine W Y WY",
+          "distinctPointsOnLine Y Z XZ",
+          "opposingSides X Z VY"
+        ],
+        "jaccard": 0.2727
+      },
+      "goal": {
+        "a_normalized": "dist V Y = dist W X",
+        "b_normalized": "dist V Y = dist W X",
+        "a_alternatives": [
+          "dist V Y = dist W X"
+        ],
+        "b_alternatives": [
+          "dist V Y = dist W X"
+        ],
+        "match_exact": true
       }
     }
   }

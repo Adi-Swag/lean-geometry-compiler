@@ -56,6 +56,106 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "I",
+          "Incircle",
+          "K",
+          "L",
+          "M"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 K",
+          "A \u2260 M",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "Collinear K A M",
+          "Collinear K M I",
+          "Collinear L A M",
+          "Collinear L M I",
+          "K \u2260 L",
+          "L \u2260 M"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear A M K",
+          "Collinear A M L",
+          "dist A K < dist A L",
+          "dist A K = dist K L",
+          "dist K L = dist L M"
+        ],
+        "jaccard": 0.0588
+      },
+      "goal": {
+        "a_normalized": "(Set ((dist 0 0) / (dist 0 0)) ((dist 0 0) / (dist 0 0)) ((dist 0 0) / (dist 0 0))) = (Set 5.0 10.0 13.0)",
+        "b_normalized": "\u211d) (\u03c3 i)) * t",
+        "a_alternatives": [
+          "(Set ((dist 0 0) / (dist 0 0)) ((dist 0 0) / (dist 0 0)) ((dist 0 0) / (dist 0 0))) = (Set 5.0 10.0 13.0)"
+        ],
+        "b_alternatives": [
+          "\u211d) (\u03c3 i)) * t"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "K",
+          "L",
+          "M"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A K M",
+          "Collinear A L M"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Collinear A M K",
+          "Collinear A M L",
+          "dist A K < dist A L"
+        ],
+        "jaccard": 0.3
+      },
+      "goal": {
+        "a_normalized": "\u2203 (x y z : \u211d), (x / y = 5 / 10 \u2227 y / z = 10 / 13 \u2227 z / x = 13 / 5) \u2227 dist A B = x \u2228 dist A B = y \u2228 dist A B = z \u2227 dist B C = x \u2228 dist B C = y \u2228 dist B C = z \u2227 dist C A = x \u2228 dist C A = y \u2228 dist C A = z",
+        "b_normalized": "\u211d) (\u03c3 i)) * t",
+        "a_alternatives": [
+          "\u2203 (x y z : \u211d), (x / y = 5 / 10 \u2227 y / z = 10 / 13 \u2227 z / x = 13 / 5) \u2227 dist A B = x \u2228 dist A B = y \u2228 dist A B = z \u2227 dist B C = x \u2228 dist B C = y \u2228 dist B C = z \u2227 dist C A = x \u2228 dist C A = y \u2228 dist C A = z"
+        ],
+        "b_alternatives": [
+          "\u211d) (\u03c3 i)) * t"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

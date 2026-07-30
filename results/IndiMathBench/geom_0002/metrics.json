@@ -49,6 +49,108 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "B \u2260 E",
+          "C \u2260 F",
+          "E \u2260 N",
+          "F \u2260 M",
+          "IntersectAt BE CF O",
+          "K \u2260 L",
+          "K \u2260 M",
+          "L \u2260 N"
+        ],
+        "b_only": [
+          "Between A E C",
+          "Collinear K O L",
+          "perp BE CA",
+          "perp CF BA",
+          "perp KM EB",
+          "perp LN FC"
+        ],
+        "jaccard": 0.0667
+      },
+      "goal": {
+        "a_normalized": "VecParallel FM EN",
+        "b_normalized": "\u2203 k : \u211d, k \u2260 0 \u2227 M -\u1d65 F = k \u2022 (N -\u1d65 E)",
+        "a_alternatives": [
+          "VecParallel FM EN"
+        ],
+        "b_alternatives": [
+          "\u2203 k : \u211d, k \u2260 0 \u2227 M -\u1d65 F = k \u2022 (N -\u1d65 E)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "E",
+          "F",
+          "K",
+          "L",
+          "M",
+          "N",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear A E C",
+          "Collinear A F B",
+          "Collinear A K B",
+          "Collinear A L C"
+        ],
+        "b_only": [
+          "Between A E C",
+          "Collinear K O L"
+        ],
+        "jaccard": 0.4545
+      },
+      "goal": {
+        "a_normalized": "Parallel (F -\u1d65 M) (E -\u1d65 N)",
+        "b_normalized": "\u2203 k : \u211d, k \u2260 0 \u2227 M -\u1d65 F = k \u2022 (N -\u1d65 E)",
+        "a_alternatives": [
+          "Parallel (F -\u1d65 M) (E -\u1d65 N)"
+        ],
+        "b_alternatives": [
+          "\u2203 k : \u211d, k \u2260 0 \u2227 M -\u1d65 F = k \u2022 (N -\u1d65 E)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

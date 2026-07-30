@@ -44,6 +44,96 @@
         "match_exact": true,
         "match_predicate": true
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "R",
+          "X"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 R",
+          "A \u2260 X",
+          "AffineIndependent A B C",
+          "AffineIndependent A R B",
+          "B \u2260 C",
+          "C \u2260 A",
+          "R \u2260 B",
+          "R \u2260 X",
+          "X \u2260 C"
+        ],
+        "b_only": [
+          "Between A X C",
+          "Concyclic A R B X",
+          "dist A R = dist B R \u2227 dist B R = dist C R"
+        ],
+        "jaccard": 0.0769
+      },
+      "goal": {
+        "a_normalized": "perp RX CB",
+        "b_normalized": "perp RX CB",
+        "a_alternatives": [
+          "perp RX CB"
+        ],
+        "b_alternatives": [
+          "perp RX CB"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "R",
+          "X"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A X C"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Between A X C",
+          "Concyclic A R B X",
+          "dist A R = dist B R \u2227 dist B R = dist C R"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "perp RX CB",
+        "b_normalized": "perp RX CB",
+        "a_alternatives": [
+          "perp RX CB"
+        ],
+        "b_alternatives": [
+          "perp RX CB"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

@@ -42,6 +42,106 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "B \u2260 C",
+          "B \u2260 D",
+          "C \u2260 D",
+          "D \u2260 A",
+          "IsQuadrilateral A P O B",
+          "IsQuadrilateral A P O S",
+          "IsQuadrilateral A P X S",
+          "IsQuadrilateral B Q O P",
+          "IsQuadrilateral C R O Q",
+          "IsQuadrilateral D S O R",
+          "P = midpoint \u211d A B",
+          "X \u2260 O",
+          "Y \u2260 O"
+        ],
+        "b_only": [],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "(area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'X', 'S']})) \u2227 (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area (Polygon {'type': 'Quadrilateral', 'vertices': ['B', 'Q', 'O', 'P']})) \u2227 (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area (Polygon {'type': 'Quadrilateral', 'vertices': ['C', 'R', 'O', 'Q']})) \u2227 (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area (Polygon {'type': 'Quadrilateral', 'vertices': ['D', 'S', 'O', 'R']}))",
+        "b_normalized": "\u211d :=\n(dist p q * dist p r * |(Real.sin (angle q p r))| ) / 2\n\ndef area (a b c d : P) : \u211d := triangle_area a b c + triangle_area a c d\n\ntheorem rmo_2004_5\n  (A B C D : P)\n  (X : P) (hX : X = midpoint \u211d A C)\n  (Y : P) (hY : Y = midpoint \u211d B D)\n  (O : P)\n  (hO1 : \u2203 t : \u211d, O = (t \u2022 (D -\u1d65 B)) +\u1d65 X)\n  (hO2 : \u2203 s : \u211d, O = (s \u2022 (C -\u1d65 A)) +\u1d65 Y)\n  (P_mid : P) (hP : P_mid = midpoint \u211d A B)\n  (Q : P) (hQ : Q = midpoint \u211d B C)\n  (R : P) (hR : R = midpoint \u211d C D)\n  (S : P) (hS : S = midpoint \u211d D A)\n  (h_area_nonneg : \u2200 (P\u2081 P\u2082 P\u2083 P\u2084 : P), 0 \u2264 area P\u2081 P\u2082 P\u2083 P\u2084) :\n  area A P_mid O S = area A P_mid X S \u2227 area A P_mid O S = area B Q O P_mid \u2227 area B Q O P_mid = area C R O Q \u2227 area C R O Q = area D S O R",
+        "a_alternatives": [
+          "(area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'X', 'S']})) \u2227 (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area (Polygon {'type': 'Quadrilateral', 'vertices': ['B', 'Q', 'O', 'P']})) \u2227 (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area (Polygon {'type': 'Quadrilateral', 'vertices': ['C', 'R', 'O', 'Q']})) \u2227 (area (Polygon {'type': 'Quadrilateral', 'vertices': ['A', 'P', 'O', 'S']})) = (area (Polygon {'type': 'Quadrilateral', 'vertices': ['D', 'S', 'O', 'R']}))"
+        ],
+        "b_alternatives": [
+          "\u211d :=\n(dist p q * dist p r * |(Real.sin (angle q p r))| ) / 2\n\ndef area (a b c d : P) : \u211d := triangle_area a b c + triangle_area a c d\n\ntheorem rmo_2004_5\n  (A B C D : P)\n  (X : P) (hX : X = midpoint \u211d A C)\n  (Y : P) (hY : Y = midpoint \u211d B D)\n  (O : P)\n  (hO1 : \u2203 t : \u211d, O = (t \u2022 (D -\u1d65 B)) +\u1d65 X)\n  (hO2 : \u2203 s : \u211d, O = (s \u2022 (C -\u1d65 A)) +\u1d65 Y)\n  (P_mid : P) (hP : P_mid = midpoint \u211d A B)\n  (Q : P) (hQ : Q = midpoint \u211d B C)\n  (R : P) (hR : R = midpoint \u211d C D)\n  (S : P) (hS : S = midpoint \u211d D A)\n  (h_area_nonneg : \u2200 (P\u2081 P\u2082 P\u2083 P\u2084 : P), 0 \u2264 area P\u2081 P\u2082 P\u2083 P\u2084) :\n  area A P_mid O S = area A P_mid X S \u2227 area A P_mid O S = area B Q O P_mid \u2227 area B Q O P_mid = area C R O Q \u2227 area C R O Q = area D S O R"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O",
+          "P",
+          "Q",
+          "R",
+          "S",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "P = midpoint \u211d A B",
+          "VecParallel OX BD",
+          "VecParallel OY AC"
+        ],
+        "b_only": [],
+        "jaccard": 0.625
+      },
+      "goal": {
+        "a_normalized": "area (Quadrilateral.mk A P O S) = area (Quadrilateral.mk A P X S) \u2227 area (Quadrilateral.mk A P O S) = area (Quadrilateral.mk B Q O P) \u2227 area (Quadrilateral.mk B Q O P) = area (Quadrilateral.mk C R O Q) \u2227 area (Quadrilateral.mk C R O Q) = area (Quadrilateral.mk D S O R)",
+        "b_normalized": "\u211d :=\n(dist p q * dist p r * |(Real.sin (angle q p r))| ) / 2\n\ndef area (a b c d : P) : \u211d := triangle_area a b c + triangle_area a c d\n\ntheorem rmo_2004_5\n  (A B C D : P)\n  (X : P) (hX : X = midpoint \u211d A C)\n  (Y : P) (hY : Y = midpoint \u211d B D)\n  (O : P)\n  (hO1 : \u2203 t : \u211d, O = (t \u2022 (D -\u1d65 B)) +\u1d65 X)\n  (hO2 : \u2203 s : \u211d, O = (s \u2022 (C -\u1d65 A)) +\u1d65 Y)\n  (P_mid : P) (hP : P_mid = midpoint \u211d A B)\n  (Q : P) (hQ : Q = midpoint \u211d B C)\n  (R : P) (hR : R = midpoint \u211d C D)\n  (S : P) (hS : S = midpoint \u211d D A)\n  (h_area_nonneg : \u2200 (P\u2081 P\u2082 P\u2083 P\u2084 : P), 0 \u2264 area P\u2081 P\u2082 P\u2083 P\u2084) :\n  area A P_mid O S = area A P_mid X S \u2227 area A P_mid O S = area B Q O P_mid \u2227 area B Q O P_mid = area C R O Q \u2227 area C R O Q = area D S O R",
+        "a_alternatives": [
+          "area (Quadrilateral.mk A P O S) = area (Quadrilateral.mk A P X S) \u2227 area (Quadrilateral.mk A P O S) = area (Quadrilateral.mk B Q O P) \u2227 area (Quadrilateral.mk B Q O P) = area (Quadrilateral.mk C R O Q) \u2227 area (Quadrilateral.mk C R O Q) = area (Quadrilateral.mk D S O R)"
+        ],
+        "b_alternatives": [
+          "\u211d :=\n(dist p q * dist p r * |(Real.sin (angle q p r))| ) / 2\n\ndef area (a b c d : P) : \u211d := triangle_area a b c + triangle_area a c d\n\ntheorem rmo_2004_5\n  (A B C D : P)\n  (X : P) (hX : X = midpoint \u211d A C)\n  (Y : P) (hY : Y = midpoint \u211d B D)\n  (O : P)\n  (hO1 : \u2203 t : \u211d, O = (t \u2022 (D -\u1d65 B)) +\u1d65 X)\n  (hO2 : \u2203 s : \u211d, O = (s \u2022 (C -\u1d65 A)) +\u1d65 Y)\n  (P_mid : P) (hP : P_mid = midpoint \u211d A B)\n  (Q : P) (hQ : Q = midpoint \u211d B C)\n  (R : P) (hR : R = midpoint \u211d C D)\n  (S : P) (hS : S = midpoint \u211d D A)\n  (h_area_nonneg : \u2200 (P\u2081 P\u2082 P\u2083 P\u2084 : P), 0 \u2264 area P\u2081 P\u2082 P\u2083 P\u2084) :\n  area A P_mid O S = area A P_mid X S \u2227 area A P_mid O S = area B Q O P_mid \u2227 area B Q O P_mid = area C R O Q \u2227 area C R O Q = area D S O R"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

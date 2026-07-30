@@ -35,6 +35,83 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "I"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 I",
+          "AffineIndependent A B C",
+          "B \u2260 C"
+        ],
+        "b_only": [
+          "dist A B = dist A C",
+          "dist B C = dist A B"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), (angle B A C) = val",
+        "b_normalized": "rightAngle B A C",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), (angle B A C) = val"
+        ],
+        "b_alternatives": [
+          "rightAngle B A C"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "I"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C"
+        ],
+        "b_only": [],
+        "jaccard": 0.6667
+      },
+      "goal": {
+        "a_normalized": "\u2203 (val : \u211d), angle B A C = val",
+        "b_normalized": "rightAngle B A C",
+        "a_alternatives": [
+          "\u2203 (val : \u211d), angle B A C = val"
+        ],
+        "b_alternatives": [
+          "rightAngle B A C"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

@@ -43,6 +43,106 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "O",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "AffineIndependent A B C",
+          "AffineIndependent B X Y",
+          "B \u2260 A",
+          "B \u2260 C",
+          "Collinear X B C",
+          "Collinear X C A",
+          "Collinear Y A A",
+          "Collinear Y B A"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "D = midpoint \u211d B C",
+          "E = midpoint \u211d B A",
+          "angle B X I = \u2220 Y X I \u2227 \u2220 B Y I = \u2220 X Y I \u2227 \u2220 X B I = \u2220 Y B I"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(Circumcenter 0.0 0.0 0.0 0.0) = (Incenter 0.0 0.0 0.0 0.0)",
+        "b_normalized": "s.circumcenter = I",
+        "a_alternatives": [
+          "(Circumcenter 0.0 0.0 0.0 0.0) = (Incenter 0.0 0.0 0.0 0.0)"
+        ],
+        "b_alternatives": [
+          "s.circumcenter = I"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "O",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A X C",
+          "Collinear A Y C",
+          "Collinear M X C",
+          "Collinear N Y C",
+          "dist B M = dist C M",
+          "dist B N = dist A N",
+          "rightAngle M B C",
+          "rightAngle N B A"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "D = midpoint \u211d B C",
+          "E = midpoint \u211d B A",
+          "angle B X I = \u2220 Y X I \u2227 \u2220 B Y I = \u2220 X Y I \u2227 \u2220 X B I = \u2220 Y B I"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "O = Incenter B X Y",
+        "b_normalized": "s.circumcenter = I",
+        "a_alternatives": [
+          "O = Incenter B X Y"
+        ],
+        "b_alternatives": [
+          "s.circumcenter = I"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

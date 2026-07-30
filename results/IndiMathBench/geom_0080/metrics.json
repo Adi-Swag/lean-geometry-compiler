@@ -40,6 +40,95 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "H",
+          "O",
+          "O1",
+          "O2"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "AffineIndependent A B D",
+          "AffineIndependent A C D",
+          "B \u2260 C",
+          "O \u2260 H"
+        ],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "VecParallel HO BC",
+        "b_normalized": "let isCircumcenterOf (Q X Y Z : P) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 perp QY ZX \u2227 perp QZ XY \u2227 \u2203 k : \u211d, H -\u1d65 O = k \u2022 (C -\u1d65 B)",
+        "a_alternatives": [
+          "VecParallel HO BC"
+        ],
+        "b_alternatives": [
+          "let isCircumcenterOf (Q X Y Z : P) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 perp QY ZX \u2227 perp QZ XY \u2227 \u2203 k : \u211d, H -\u1d65 O = k \u2022 (C -\u1d65 B)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "H",
+          "O",
+          "O1",
+          "O2"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear B D C",
+          "dist A O = dist B O",
+          "dist A O = dist C O"
+        ],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "perp HO CB",
+        "b_normalized": "let isCircumcenterOf (Q X Y Z : P) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 perp QY ZX \u2227 perp QZ XY \u2227 \u2203 k : \u211d, H -\u1d65 O = k \u2022 (C -\u1d65 B)",
+        "a_alternatives": [
+          "perp HO CB"
+        ],
+        "b_alternatives": [
+          "let isCircumcenterOf (Q X Y Z : P) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 perp QY ZX \u2227 perp QZ XY \u2227 \u2203 k : \u211d, H -\u1d65 O = k \u2022 (C -\u1d65 B)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

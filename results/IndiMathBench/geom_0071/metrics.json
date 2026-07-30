@@ -42,6 +42,111 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 F",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "B \u2260 D",
+          "C \u2260 A",
+          "C \u2260 E",
+          "angle A F E = angle B D F",
+          "angle B D F = angle C E D",
+          "angle C E D = angle A F E",
+          "dist A F = dist B D",
+          "dist B D = dist C E",
+          "dist C E = dist A F"
+        ],
+        "b_only": [
+          "Between A F B",
+          "Between B D C",
+          "Between C E A",
+          "angle B D F = InnerProductGeometry.angle (C -\u1d65 E) (D -\u1d65 E) \u2227",
+          "dist B D = dist C E \u2227 dist C E = dist A F"
+        ],
+        "jaccard": 0.0556
+      },
+      "goal": {
+        "a_normalized": "dist A B = dist B C \u2227 dist B C = dist A C",
+        "b_normalized": "dist A B = dist B C \u2227 dist B C = dist A C",
+        "a_alternatives": [
+          "dist A B = dist B C \u2227 dist B C = dist A C"
+        ],
+        "b_alternatives": [
+          "dist A B = dist B C \u2227 dist B C = dist A C"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A F B",
+          "Collinear B D C",
+          "Collinear C E A",
+          "angle B D F = angle C E D",
+          "angle C E D = angle A F E",
+          "dist B D = dist C E",
+          "dist C E = dist A F"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "Between A F B",
+          "Between B D C",
+          "Between C E A",
+          "angle B D F = InnerProductGeometry.angle (C -\u1d65 E) (D -\u1d65 E) \u2227",
+          "dist B D = dist C E \u2227 dist C E = dist A F"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "dist A B = dist B C \u2227 dist B C = dist A C",
+        "b_normalized": "dist A B = dist B C \u2227 dist B C = dist A C",
+        "a_alternatives": [
+          "dist A B = dist B C \u2227 dist B C = dist A C"
+        ],
+        "b_alternatives": [
+          "dist A B = dist B C \u2227 dist B C = dist A C"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

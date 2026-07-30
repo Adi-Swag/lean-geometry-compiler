@@ -50,6 +50,99 @@
         "match_exact": false,
         "match_predicate": true
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "D",
+          "I",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "A \u2260 D",
+          "A \u2260 I",
+          "AffineIndependent A B C",
+          "AffineIndependent A B D",
+          "AffineIndependent A C D",
+          "B \u2260 C",
+          "P \u2260 Q",
+          "angle B A C = 90"
+        ],
+        "b_only": [
+          "dist A B < dist A C",
+          "rightAngle B A C"
+        ],
+        "jaccard": 0.0833
+      },
+      "goal": {
+        "a_normalized": "perp AI QP \u2227 (dist 0 0) = (dist 0 0)",
+        "b_normalized": "\u27eaI -\u1d65 A, Q -\u1d65 P\u27eb_\u211d = 0 \u2227 dist A I = dist P Q",
+        "a_alternatives": [
+          "perp AI QP \u2227 (dist 0 0) = (dist 0 0)"
+        ],
+        "b_alternatives": [
+          "\u27eaI -\u1d65 A, Q -\u1d65 P\u27eb_\u211d = 0 \u2227 dist A I = dist P Q"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "I",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear B D C",
+          "perp AD CB"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "dist A B < dist A C"
+        ],
+        "jaccard": 0.1667
+      },
+      "goal": {
+        "a_normalized": "perp AI QP \u2227 dist A I = dist P Q",
+        "b_normalized": "\u27eaI -\u1d65 A, Q -\u1d65 P\u27eb_\u211d = 0 \u2227 dist A I = dist P Q",
+        "a_alternatives": [
+          "perp AI QP \u2227 dist A I = dist P Q"
+        ],
+        "b_alternatives": [
+          "\u27eaI -\u1d65 A, Q -\u1d65 P\u27eb_\u211d = 0 \u2227 dist A I = dist P Q"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

@@ -37,6 +37,87 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "H",
+          "K"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "A \u2260 D",
+          "B \u2260 H",
+          "D \u2260 K"
+        ],
+        "b_only": [
+          "dist D K = dist H K"
+        ],
+        "jaccard": 0.1667
+      },
+      "goal": {
+        "a_normalized": "Collinear C D K",
+        "b_normalized": "Collinear \u211d {D, K, midpoint \u211d A C}",
+        "a_alternatives": [
+          "Collinear C D K"
+        ],
+        "b_alternatives": [
+          "Collinear \u211d {D, K, midpoint \u211d A C}"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "H",
+          "K"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "perp AD CB"
+        ],
+        "b_only": [
+          "dist D K = dist H K"
+        ],
+        "jaccard": 0.3333
+      },
+      "goal": {
+        "a_normalized": "midpoint \u211d D K = midpoint \u211d A C",
+        "b_normalized": "Collinear \u211d {D, K, midpoint \u211d A C}",
+        "a_alternatives": [
+          "midpoint \u211d D K = midpoint \u211d A C"
+        ],
+        "b_alternatives": [
+          "Collinear \u211d {D, K, midpoint \u211d A C}"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

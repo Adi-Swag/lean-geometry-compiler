@@ -34,7 +34,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -46,17 +46,37 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "S \u2260 Z",
+          "T \u2260 V",
+          "W \u2260 Y"
+        ],
+        "b_only": [
+          "Between S U X",
+          "Between T U V",
+          "Between U X Z",
+          "Between W X Y",
+          "distinctPointsOnLine S Z SZ",
+          "distinctPointsOnLine T V TV",
+          "distinctPointsOnLine W Y WY",
+          "sameSide T W SZ",
+          "sameSide V Y SZ"
+        ],
+        "jaccard": 0.2
       },
       "goal": {
-        "a_normalized": "(VecParallel (Y -\u1d65 W) (V -\u1d65 T))",
-        "b_normalized": "\u00ac WY.intersectsLine TV",
-        "match_exact": false
+        "a_normalized": "VecParallel WY TV",
+        "b_normalized": "VecParallel WY TV",
+        "a_alternatives": [
+          "VecParallel WY TV"
+        ],
+        "b_alternatives": [
+          "VecParallel WY TV"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -71,15 +91,37 @@
         "a_only": [
           "AffineIndependent S X Z",
           "AffineIndependent T U V",
-          "AffineIndependent W X Y"
+          "AffineIndependent W X Y",
+          "Collinear S U Z",
+          "Collinear S X Z",
+          "Collinear T U V",
+          "Collinear W X Y"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "Between S U X",
+          "Between T U V",
+          "Between U X Z",
+          "Between W X Y",
+          "IntersectAt TV SZ U",
+          "IntersectAt WY SZ X",
+          "distinctPointsOnLine S Z SZ",
+          "distinctPointsOnLine T V TV",
+          "distinctPointsOnLine W Y WY",
+          "sameSide T W SZ",
+          "sameSide V Y SZ"
+        ],
+        "jaccard": 0.0526
       },
       "goal": {
-        "a_normalized": "ParallelLines W Y T V",
-        "b_normalized": "\u00ac WY.intersectsLine TV",
-        "match_exact": false
+        "a_normalized": "VecParallel WY TV",
+        "b_normalized": "VecParallel WY TV",
+        "a_alternatives": [
+          "VecParallel WY TV"
+        ],
+        "b_alternatives": [
+          "VecParallel WY TV"
+        ],
+        "match_exact": true
       }
     }
   }

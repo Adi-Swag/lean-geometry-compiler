@@ -43,6 +43,90 @@
         "match_exact": false,
         "match_predicate": true
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 P",
+          "B \u2260 P",
+          "C \u2260 D",
+          "P \u2260 C",
+          "P \u2260 D"
+        ],
+        "b_only": [
+          "Collinear C D P",
+          "P \u2260 O"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle A P C = angle B P D",
+        "b_normalized": "angle A P C = InnerProductGeometry.angle (B -\u1d65 P) (D -\u1d65 P",
+        "a_alternatives": [
+          "angle A P C = angle B P D"
+        ],
+        "b_alternatives": [
+          "angle A P C = InnerProductGeometry.angle (B -\u1d65 P) (D -\u1d65 P"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "O",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "O = midpoint \u211d C D"
+        ],
+        "b_only": [
+          "Collinear C D P"
+        ],
+        "jaccard": 0.3333
+      },
+      "goal": {
+        "a_normalized": "angle A P C = angle B P D",
+        "b_normalized": "angle A P C = InnerProductGeometry.angle (B -\u1d65 P) (D -\u1d65 P",
+        "a_alternatives": [
+          "angle A P C = angle B P D"
+        ],
+        "b_alternatives": [
+          "angle A P C = InnerProductGeometry.angle (B -\u1d65 P) (D -\u1d65 P"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

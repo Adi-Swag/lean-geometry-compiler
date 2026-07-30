@@ -35,29 +35,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(dist U W = dist S W)",
-        "b_normalized": "dist U W",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -70,16 +48,67 @@
       },
       "hypotheses": {
         "a_only": [
-          "dist S T = dist T U",
-          "dist S V = dist U V"
+          "Collinear W T U",
+          "Collinear W V T",
+          "S \u2260 T",
+          "S \u2260 V",
+          "S \u2260 W",
+          "T \u2260 U",
+          "U \u2260 S",
+          "U \u2260 V",
+          "U \u2260 W",
+          "V \u2260 T"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "IntersectAt TV SU W",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine V T TV"
+        ],
+        "jaccard": 0.1875
       },
       "goal": {
         "a_normalized": "dist U W = dist S W",
-        "b_normalized": "dist U W",
-        "match_exact": false
+        "b_normalized": "dist U W = dist S W",
+        "a_alternatives": [
+          "dist U W = dist S W"
+        ],
+        "b_alternatives": [
+          "dist U W = dist S W"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "IntersectAt TV SU W",
+          "IsQuadrilateral U V T S",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine V T TV"
+        ],
+        "jaccard": 0.3333
+      },
+      "goal": {
+        "a_normalized": "dist U W = dist S W",
+        "b_normalized": "dist U W = dist S W",
+        "a_alternatives": [
+          "dist U W = dist S W"
+        ],
+        "b_alternatives": [
+          "dist U W = dist S W"
+        ],
+        "match_exact": true
       }
     }
   }

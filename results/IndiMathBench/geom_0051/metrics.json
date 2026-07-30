@@ -45,6 +45,99 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "K",
+          "L",
+          "M",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 P",
+          "A \u2260 Q",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "C \u2260 A",
+          "IntersectAt A LK P",
+          "IntersectAt A MK Q",
+          "L \u2260 K",
+          "M \u2260 K",
+          "P \u2260 Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "Collinear B P Q",
+        "b_normalized": "(midpoint \u211d A B) \u2208 affineSpan \u211d ({P, Q} : Set E) \u2227 (midpoint \u211d A C) \u2208 affineSpan \u211d ({P, Q} : Set E)",
+        "a_alternatives": [
+          "Collinear B P Q"
+        ],
+        "b_alternatives": [
+          "(midpoint \u211d A B) \u2208 affineSpan \u211d ({P, Q} : Set E) \u2227 (midpoint \u211d A C) \u2208 affineSpan \u211d ({P, Q} : Set E)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "K",
+          "L",
+          "M",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A M B",
+          "Collinear B K C",
+          "Collinear C L A",
+          "Collinear L Q K",
+          "Collinear M P K"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "Midpoint \u211d A P B \u2227 Midpoint \u211d A Q C",
+        "b_normalized": "(midpoint \u211d A B) \u2208 affineSpan \u211d ({P, Q} : Set E) \u2227 (midpoint \u211d A C) \u2208 affineSpan \u211d ({P, Q} : Set E)",
+        "a_alternatives": [
+          "Midpoint \u211d A P B \u2227 Midpoint \u211d A Q C"
+        ],
+        "b_alternatives": [
+          "(midpoint \u211d A B) \u2208 affineSpan \u211d ({P, Q} : Set E) \u2227 (midpoint \u211d A C) \u2208 affineSpan \u211d ({P, Q} : Set E)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

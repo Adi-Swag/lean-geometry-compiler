@@ -30,9 +30,89 @@
       },
       "goal": {
         "a_parsed": "IsIncenterOf(P,(Triangle A B C)) \u2227 (Excircle,P,(Triangle A B C),A1) \u2227 (IsCircumcenterOf,P,(Triangle A1 B1 C1)) \u2227 (IsCircumcenterOf,P,(Triangle A B C)) \u2227 (IsOrthocenterOf,P,(Triangle A1 B1 C1)) \u2227 (IsOrthocenterOf,P,(Triangle A B C)) \u2227 (IsIncenterOf,P,(Triangle A1 B1 C1)) \u2227 (Excircle,P,(Triangle A1 B1 C1),A1)",
-        "b_parsed": "Incenter(P,A,B,C,\u2228,Excenter,P,A,B,C) \u2192 Circumcenter P A1 B1 C1) \u2227)",
+        "b_parsed": "Incenter(P,A1,B1,C1,\u2228,Excenter,P,A1,B1,C1))",
         "match_exact": false,
         "match_predicate": false
+      }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "A1",
+          "B",
+          "B1",
+          "C",
+          "C1",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "C \u2260 A"
+        ],
+        "b_only": [],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "IsIncenterOf P A B C \u2227 Excircle P (Triangle A B C) A1 \u2227 IsCircumcenterOf P (Triangle A1 B1 C1) \u2227 IsCircumcenterOf P A B C \u2227 IsOrthocenterOf P (Triangle A1 B1 C1) \u2227 IsOrthocenterOf P A B C \u2227 IsIncenterOf P (Triangle A1 B1 C1) \u2227 Excircle P (Triangle A1 B1 C1) A1",
+        "b_normalized": "(isInOrEx_A1B1C1 P_point))",
+        "a_alternatives": [
+          "IsIncenterOf P A B C \u2227 Excircle P (Triangle A B C) A1 \u2227 IsCircumcenterOf P (Triangle A1 B1 C1) \u2227 IsCircumcenterOf P A B C \u2227 IsOrthocenterOf P (Triangle A1 B1 C1) \u2227 IsOrthocenterOf P A B C \u2227 IsIncenterOf P (Triangle A1 B1 C1) \u2227 Excircle P (Triangle A1 B1 C1) A1"
+        ],
+        "b_alternatives": [
+          "(isInOrEx_A1B1C1 P_point))"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "A1",
+          "B",
+          "B1",
+          "C",
+          "C1",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C"
+        ],
+        "b_only": [
+          "A \u2260 B"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(Incenter P A1 B1 C1 \u2228 Excenter P A1 B1 C1))",
+        "b_normalized": "(isInOrEx_A1B1C1 P_point))",
+        "a_alternatives": [
+          "(Incenter P A1 B1 C1 \u2228 Excenter P A1 B1 C1))"
+        ],
+        "b_alternatives": [
+          "(isInOrEx_A1B1C1 P_point))"
+        ],
+        "match_exact": false
       }
     }
   }

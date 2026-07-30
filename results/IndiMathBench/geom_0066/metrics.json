@@ -62,6 +62,88 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "I",
+          "O",
+          "OA",
+          "OB",
+          "OC",
+          "OG"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "B \u2260 C",
+          "IntersectAt OI OG O",
+          "O \u2260 I"
+        ],
+        "b_only": [
+          "dist A O = dist B O \u2227 dist B O = dist C O"
+        ],
+        "jaccard": 0.1429
+      },
+      "goal": {
+        "a_normalized": "IntersectAt O I O",
+        "b_normalized": "Collinear \u211d {O, I, \u0393.center}",
+        "a_alternatives": [
+          "IntersectAt O I O"
+        ],
+        "b_alternatives": [
+          "Collinear \u211d {O, I, \u0393.center}"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "I",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [
+          "dist A O = dist B O \u2227 dist B O = dist C O"
+        ],
+        "jaccard": 0.5
+      },
+      "goal": {
+        "a_normalized": "\u2203 (P : Point), CollinearPoints O I P \u2227 P = CenterOfCircle r\u0393",
+        "b_normalized": "Collinear \u211d {O, I, \u0393.center}",
+        "a_alternatives": [
+          "\u2203 (P : Point), CollinearPoints O I P \u2227 P = CenterOfCircle r\u0393"
+        ],
+        "b_alternatives": [
+          "Collinear \u211d {O, I, \u0393.center}"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

@@ -31,7 +31,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -43,17 +43,37 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "R \u2260 Y",
+          "S \u2260 U",
+          "V \u2260 X"
+        ],
+        "b_only": [
+          "Between S T U",
+          "Between V W X",
+          "Between W T R",
+          "Between Y W T",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine V X VX",
+          "distinctPointsOnLine Y R RY",
+          "sameSide V S RY",
+          "sameSide X U RY"
+        ],
+        "jaccard": 0.2
       },
       "goal": {
-        "a_normalized": "(VecParallel (X -\u1d65 V) (U -\u1d65 S))",
-        "b_normalized": "\u00ac VX.intersectsLine SU",
-        "match_exact": false
+        "a_normalized": "VecParallel VX SU",
+        "b_normalized": "VecParallel VX SU",
+        "a_alternatives": [
+          "VecParallel VX SU"
+        ],
+        "b_alternatives": [
+          "VecParallel VX SU"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -65,13 +85,33 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "Collinear Y W T"
+        ],
+        "b_only": [
+          "Between S T U",
+          "Between V W X",
+          "Between W T R",
+          "Between Y W T",
+          "IntersectAt SU RY T",
+          "IntersectAt VX RY W",
+          "distinctPointsOnLine S U SU",
+          "distinctPointsOnLine V X VX",
+          "distinctPointsOnLine Y R RY",
+          "sameSide V S RY",
+          "sameSide X U RY"
+        ],
+        "jaccard": 0.0769
       },
       "goal": {
         "a_normalized": "ParallelLines (Line V X) (Line S U)",
-        "b_normalized": "\u00ac VX.intersectsLine SU",
+        "b_normalized": "VecParallel VX SU",
+        "a_alternatives": [
+          "ParallelLines (Line V X) (Line S U)"
+        ],
+        "b_alternatives": [
+          "VecParallel VX SU"
+        ],
         "match_exact": false
       }
     }

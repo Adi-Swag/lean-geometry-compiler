@@ -64,6 +64,79 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "O",
+          "ra",
+          "rb",
+          "rc"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "B \u2260 C",
+          "C \u2260 A"
+        ],
+        "b_only": [],
+        "jaccard": 0.25
+      },
+      "goal": {
+        "a_normalized": "(dist 0 0) > (dist 0 0) \u2227 (dist 0 0) > (dist 0 0) \u2227 (2.0 * r_0) > r_rb \u2227 (2.0 * r_0) > r_rc",
+        "b_normalized": "a > b \u2227 a > c \u2227 2 * R > rb \u2227 2 * R > rc",
+        "a_alternatives": [
+          "(dist 0 0) > (dist 0 0) \u2227 (dist 0 0) > (dist 0 0) \u2227 (2.0 * r_0) > r_rb \u2227 (2.0 * r_0) > r_rc"
+        ],
+        "b_alternatives": [
+          "a > b \u2227 a > c \u2227 2 * R > rb \u2227 2 * R > rc"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "a > b \u2227 a > c \u2227 2 * R > rb \u2227 2 * R > rc",
+        "b_normalized": "a > b \u2227 a > c \u2227 2 * R > rb \u2227 2 * R > rc",
+        "a_alternatives": [
+          "a > b \u2227 a > c \u2227 2 * R > rb \u2227 2 * R > rc"
+        ],
+        "b_alternatives": [
+          "a > b \u2227 a > c \u2227 2 * R > rb \u2227 2 * R > rc"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

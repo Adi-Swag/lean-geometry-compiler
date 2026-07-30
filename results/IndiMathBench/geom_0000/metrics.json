@@ -41,6 +41,82 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "AffineIndependent P A B",
+          "AffineIndependent Q B C",
+          "AffineIndependent R A C",
+          "B \u2260 C",
+          "angle A P B = 120",
+          "angle A R C = 120",
+          "angle B Q C = 120"
+        ],
+        "b_only": [
+          "Between A B C",
+          "angle A P B = 2*\u03c0/3",
+          "angle A R C = 2*\u03c0/3",
+          "angle B Q C = 2*\u03c0/3",
+          "dist A P = dist B P",
+          "dist A R = dist C R",
+          "dist B Q = dist C Q"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "dist P Q = dist Q R \u2227 dist Q R = dist P R",
+        "b_normalized": "dist P Q = dist Q R \u2227 dist Q R = dist P R",
+        "a_alternatives": [
+          "dist P Q = dist Q R \u2227 dist Q R = dist P R"
+        ],
+        "b_alternatives": [
+          "dist P Q = dist Q R \u2227 dist Q R = dist P R"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C"
+        ],
+        "b_only": [],
+        "jaccard": 0.875
+      },
+      "goal": {
+        "a_normalized": "dist P Q = dist Q R \u2227 dist Q R = dist P R",
+        "b_normalized": "dist P Q = dist Q R \u2227 dist Q R = dist P R",
+        "a_alternatives": [
+          "dist P Q = dist Q R \u2227 dist Q R = dist P R"
+        ],
+        "b_alternatives": [
+          "dist P Q = dist Q R \u2227 dist Q R = dist P R"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

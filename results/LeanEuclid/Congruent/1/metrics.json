@@ -31,29 +31,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(angle V W Y = angle U V X \u2227 angle W Y V = angle V X U \u2227 angle Y V W = angle X U V)",
-        "b_normalized": "TrianglesCongruent V W Y U V X",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -66,16 +44,74 @@
       },
       "hypotheses": {
         "a_only": [
+          "AffineIndependent U V X",
+          "AffineIndependent V W Y",
+          "Collinear U V W",
+          "U \u2260 W",
+          "U \u2260 X",
           "V = midpoint \u211d U W",
-          "dist V Y = dist U X",
-          "dist W Y = dist V X"
+          "V \u2260 X",
+          "V \u2260 Y",
+          "W \u2260 Y"
         ],
+        "b_only": [
+          "Between U V W",
+          "angle V Y W = angle U X V",
+          "dist U V = dist V W",
+          "formTriangle U V X UW VX UX",
+          "formTriangle V W Y UW WY VY",
+          "sameSide X Y UW"
+        ],
+        "jaccard": 0.1176
+      },
+      "goal": {
+        "a_normalized": "angle V W Y = angle U V X \u2227 angle W Y V = angle V X U \u2227 angle Y V W = angle X U V",
+        "b_normalized": "TrianglesCongruent V W Y U V X",
+        "a_alternatives": [
+          "angle V W Y = angle U V X \u2227 angle W Y V = angle V X U \u2227 angle Y V W = angle X U V",
+          "TrianglesCongruent V W Y U V X",
+          "SimilarTriangles V W Y U V X"
+        ],
+        "b_alternatives": [
+          "TrianglesCongruent V W Y U V X"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
         "b_only": [],
-        "jaccard": 0.0
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "V = midpoint \u211d U W"
+        ],
+        "b_only": [
+          "Between U V W",
+          "angle V Y W = angle U X V",
+          "dist U V = dist V W",
+          "formTriangle U V X UW VX UX",
+          "formTriangle V W Y UW WY VY",
+          "sameSide X Y UW"
+        ],
+        "jaccard": 0.2222
       },
       "goal": {
         "a_normalized": "TrianglesCongruent V W Y U V X",
         "b_normalized": "TrianglesCongruent V W Y U V X",
+        "a_alternatives": [
+          "TrianglesCongruent V W Y U V X"
+        ],
+        "b_alternatives": [
+          "TrianglesCongruent V W Y U V X"
+        ],
         "match_exact": true
       }
     }

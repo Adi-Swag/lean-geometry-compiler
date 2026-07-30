@@ -43,6 +43,103 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 D",
+          "A \u2260 O",
+          "B \u2260 D",
+          "B \u2260 E",
+          "Collinear E A C",
+          "Collinear E D A",
+          "D \u2260 O"
+        ],
+        "b_only": [
+          "Collinear A C E",
+          "Collinear D O E",
+          "angle B A D = \u2220 (D -\u1d65 A) (C -\u1d65 A",
+          "dist A C > dist A B",
+          "dist A O = dist B O \u2227 dist B O = dist C O",
+          "dist D O = dist A O"
+        ],
+        "jaccard": 0.0625
+      },
+      "goal": {
+        "a_normalized": "VecParallel AO BD",
+        "b_normalized": "\u2203 k : \u211d, O -\u1d65 A = k \u2022 (D -\u1d65 B)",
+        "a_alternatives": [
+          "VecParallel AO BD"
+        ],
+        "b_alternatives": [
+          "\u2203 k : \u211d, O -\u1d65 A = k \u2022 (D -\u1d65 B)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "O"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear A E C",
+          "perp BE DA"
+        ],
+        "b_only": [
+          "Collinear A C E",
+          "Collinear D O E",
+          "angle B A D = \u2220 (D -\u1d65 A) (C -\u1d65 A",
+          "dist A C > dist A B",
+          "dist A O = dist B O \u2227 dist B O = dist C O",
+          "dist D O = dist A O"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_normalized": "perp AO DB",
+        "b_normalized": "\u2203 k : \u211d, O -\u1d65 A = k \u2022 (D -\u1d65 B)",
+        "a_alternatives": [
+          "perp AO DB"
+        ],
+        "b_alternatives": [
+          "\u2203 k : \u211d, O -\u1d65 A = k \u2022 (D -\u1d65 B)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

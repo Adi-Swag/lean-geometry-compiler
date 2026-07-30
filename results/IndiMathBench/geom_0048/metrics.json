@@ -58,6 +58,99 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "G",
+          "O1",
+          "O2",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "A \u2260 X",
+          "A \u2260 Y",
+          "AffineIndependent A G B",
+          "AffineIndependent A G C",
+          "AffineIndependent A X Y",
+          "B \u2260 C",
+          "X \u2260 Y"
+        ],
+        "b_only": [
+          "G = F",
+          "X \u2260 B",
+          "X \u2260 C",
+          "Y \u2260 B",
+          "Y \u2260 C"
+        ],
+        "jaccard": 0.0667
+      },
+      "goal": {
+        "a_normalized": "IsCentroidOf G A X Y",
+        "b_normalized": "G = F",
+        "a_alternatives": [
+          "IsCentroidOf G A X Y"
+        ],
+        "b_alternatives": [
+          "G = F"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "G",
+          "X",
+          "Y"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear B X C",
+          "Collinear B Y C"
+        ],
+        "b_only": [
+          "G = F"
+        ],
+        "jaccard": 0.625
+      },
+      "goal": {
+        "a_normalized": "Centroid A X Y G",
+        "b_normalized": "G = F",
+        "a_alternatives": [
+          "Centroid A X Y G"
+        ],
+        "b_alternatives": [
+          "G = F"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

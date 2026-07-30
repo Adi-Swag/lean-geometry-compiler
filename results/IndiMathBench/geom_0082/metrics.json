@@ -46,6 +46,104 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "0",
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "B \u2260 C",
+          "B \u2260 D",
+          "C \u2260 D",
+          "Collinear P A C",
+          "Collinear P C B",
+          "D \u2260 A",
+          "IsQuadrilateral A B C D"
+        ],
+        "b_only": [
+          "AffineIndependent A B C"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "((1.0 / (dist 0 0)) + (1.0 / (dist 0 0))) = ((1.0 / (dist 0 0)) + (1.0 / (dist 0 0)))",
+        "b_normalized": "(\u2203 (I : P) (r : \u211d), r > 0 \u2227\n    \u2200 (side : P \u00d7 P), side \u2208 [(A, B), (B, C), (C, D), (D, A)] \u2192\n    \u2203 (X : P), X \u2208 affineSegment \u211d side.1 side.2 \u2227\n    dist I X = r \u2227 inner \u211d (X -\u1d65 I) (side.2 -\u1d65 side.1) = 0) \u2194\n  (1 / PE + 1 / PG = 1 / PF + 1 / PH)",
+        "a_alternatives": [
+          "((1.0 / (dist 0 0)) + (1.0 / (dist 0 0))) = ((1.0 / (dist 0 0)) + (1.0 / (dist 0 0)))"
+        ],
+        "b_alternatives": [
+          "(\u2203 (I : P) (r : \u211d), r > 0 \u2227\n    \u2200 (side : P \u00d7 P), side \u2208 [(A, B), (B, C), (C, D), (D, A)] \u2192\n    \u2203 (X : P), X \u2208 affineSegment \u211d side.1 side.2 \u2227\n    dist I X = r \u2227 inner \u211d (X -\u1d65 I) (side.2 -\u1d65 side.1) = 0) \u2194\n  (1 / PE + 1 / PG = 1 / PF + 1 / PH)"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "P"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear A C P",
+          "Collinear B D P",
+          "perp PE BA",
+          "perp PF CB",
+          "perp PG DC",
+          "perp PH AD"
+        ],
+        "b_only": [
+          "AffineIndependent A B C"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(\u2203 (r : \u211d), r > 0 \u2227 \u2200 (X : Point), (dist X A = r \u2228 dist X B = r \u2228 dist X C = r \u2228 dist X D = r) \u2194 (dist X P = r))\n    \u2194 (1 / dist P E + 1 / dist P G = 1 / dist P F + 1 / dist P H)",
+        "b_normalized": "(\u2203 (I : P) (r : \u211d), r > 0 \u2227\n    \u2200 (side : P \u00d7 P), side \u2208 [(A, B), (B, C), (C, D), (D, A)] \u2192\n    \u2203 (X : P), X \u2208 affineSegment \u211d side.1 side.2 \u2227\n    dist I X = r \u2227 inner \u211d (X -\u1d65 I) (side.2 -\u1d65 side.1) = 0) \u2194\n  (1 / PE + 1 / PG = 1 / PF + 1 / PH)",
+        "a_alternatives": [
+          "(\u2203 (r : \u211d), r > 0 \u2227 \u2200 (X : Point), (dist X A = r \u2228 dist X B = r \u2228 dist X C = r \u2228 dist X D = r) \u2194 (dist X P = r))\n    \u2194 (1 / dist P E + 1 / dist P G = 1 / dist P F + 1 / dist P H)"
+        ],
+        "b_alternatives": [
+          "(\u2203 (I : P) (r : \u211d), r > 0 \u2227\n    \u2200 (side : P \u00d7 P), side \u2208 [(A, B), (B, C), (C, D), (D, A)] \u2192\n    \u2203 (X : P), X \u2208 affineSegment \u211d side.1 side.2 \u2227\n    dist I X = r \u2227 inner \u211d (X -\u1d65 I) (side.2 -\u1d65 side.1) = 0) \u2194\n  (1 / PE + 1 / PG = 1 / PF + 1 / PH)"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

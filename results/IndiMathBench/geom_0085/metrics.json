@@ -44,6 +44,74 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "B \u2260 C",
+          "C \u2260 D",
+          "C \u2260 G",
+          "D \u2260 A",
+          "E \u2260 F",
+          "IsQuadrilateral A B C D"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "r_GCA' = (r_GD'F + r_A'BE)",
+        "b_normalized": "inradius_GCA' = inradius_GD'F + inradius_A'BE",
+        "a_alternatives": [
+          "r_GCA' = (r_GD'F + r_A'BE)"
+        ],
+        "b_alternatives": [
+          "inradius_GCA' = inradius_GD'F + inradius_A'BE"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "Collinear B C A",
+          "Collinear C D D",
+          "Collinear E F A"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "inradius (Triangle G C A') = inradius (Triangle G D' F) + inradius (Triangle A' B E)",
+        "b_normalized": "inradius_GCA' = inradius_GD'F + inradius_A'BE",
+        "a_alternatives": [
+          "inradius (Triangle G C A') = inradius (Triangle G D' F) + inradius (Triangle A' B E)"
+        ],
+        "b_alternatives": [
+          "inradius_GCA' = inradius_GD'F + inradius_A'BE"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

@@ -34,7 +34,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -48,17 +48,31 @@
         "jaccard": 0.8
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "IsQuadrilateral T U V W",
+          "T \u2260 V",
+          "T \u2260 W",
+          "U \u2260 V"
+        ],
+        "b_only": [
+          "IsQuadrilateral T U W V",
+          "distinctPointsOnLine T V TV"
+        ],
+        "jaccard": 0.25
       },
       "goal": {
-        "a_normalized": "((dist 0 0) = (dist 0 0))",
-        "b_normalized": "dist T W",
+        "a_normalized": "(dist 0 0) = (dist 0 0)",
+        "b_normalized": "dist T W = dist U V",
+        "a_alternatives": [
+          "(dist 0 0) = (dist 0 0)"
+        ],
+        "b_alternatives": [
+          "dist T W = dist U V"
+        ],
         "match_exact": false
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -71,13 +85,22 @@
       },
       "hypotheses": {
         "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "b_only": [
+          "IsQuadrilateral T U W V",
+          "distinctPointsOnLine T V TV"
+        ],
+        "jaccard": 0.5
       },
       "goal": {
         "a_normalized": "dist T W = dist U V",
-        "b_normalized": "dist T W",
-        "match_exact": false
+        "b_normalized": "dist T W = dist U V",
+        "a_alternatives": [
+          "dist T W = dist U V"
+        ],
+        "b_alternatives": [
+          "dist T W = dist U V"
+        ],
+        "match_exact": true
       }
     }
   }

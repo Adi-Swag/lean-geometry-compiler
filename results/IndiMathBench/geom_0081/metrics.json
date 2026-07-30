@@ -47,6 +47,100 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "I",
+          "O",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 C",
+          "AffineIndependent A B C",
+          "AffineIndependent A B D",
+          "AffineIndependent B C D",
+          "AffineIndependent P I Q",
+          "B \u2260 C",
+          "B \u2260 D"
+        ],
+        "b_only": [
+          "I = A",
+          "Q = C",
+          "rightAngle A B C"
+        ],
+        "jaccard": 0.0909
+      },
+      "goal": {
+        "a_normalized": "dist O A = r_A \u2227 dist O C = r_C",
+        "b_normalized": "let isCircumcenterOf (Q X Y Z : P) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 Collinear A C E",
+        "a_alternatives": [
+          "dist O A = r_A \u2227 dist O C = r_C"
+        ],
+        "b_alternatives": [
+          "let isCircumcenterOf (Q X Y Z : P) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 Collinear A C E"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "I",
+          "O",
+          "P",
+          "Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear A D C",
+          "perp BD CA"
+        ],
+        "b_only": [
+          "A \u2260 B",
+          "I = A",
+          "Q = C"
+        ],
+        "jaccard": 0.1429
+      },
+      "goal": {
+        "a_normalized": "Collinear O A C",
+        "b_normalized": "let isCircumcenterOf (Q X Y Z : P) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 Collinear A C E",
+        "a_alternatives": [
+          "Collinear O A C"
+        ],
+        "b_alternatives": [
+          "let isCircumcenterOf (Q X Y Z : P) : Prop :=\n    dist Q X = dist Q Y \u2227 dist Q Y = dist Q Z \u2227 Collinear A C E"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

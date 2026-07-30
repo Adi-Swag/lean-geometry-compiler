@@ -101,6 +101,80 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A1",
+          "A2",
+          "A3",
+          "A4",
+          "A5",
+          "A6",
+          "A7",
+          "A8",
+          "A9"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "goal": {
+        "a_normalized": "Exists (ConvexQuadrilateral B1 B2 B3 B4) (Parallel B1 B2)",
+        "b_normalized": null,
+        "a_alternatives": [
+          "Exists (ConvexQuadrilateral B1 B2 B3 B4) (Parallel B1 B2)"
+        ],
+        "b_alternatives": [],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+          "G",
+          "H",
+          "I"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "P \u2260 Q"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "\u2203 (U V W X : Point), \n    (U = A \u2228 U = B \u2228 U = C \u2228 U = D \u2228 U = E \u2228 U = F \u2228 U = G \u2228 U = H \u2228 U = I) \u2227 V = A \u2228 V = B \u2228 V = C \u2228 V = D \u2228 V = E \u2228 V = F \u2228 V = G \u2228 V = H \u2228 V = I \u2227 W = A \u2228 W = B \u2228 W = C \u2228 W = D \u2228 W = E \u2228 W = F \u2228 W = G \u2228 W = H \u2228 W = I \u2227 X = A \u2228 X = B \u2228 X = C \u2228 X = D \u2228 X = E \u2228 X = F \u2228 X = G \u2228 X = H \u2228 X = I \u2227 U \u2260 V \u2227 Parallel (Line U V) (Line W X) \u2228 Parallel (Line U W) (Line V X) \u2228 Parallel (Line U X) (Line V W)",
+        "b_normalized": null,
+        "a_alternatives": [
+          "\u2203 (U V W X : Point), \n    (U = A \u2228 U = B \u2228 U = C \u2228 U = D \u2228 U = E \u2228 U = F \u2228 U = G \u2228 U = H \u2228 U = I) \u2227 V = A \u2228 V = B \u2228 V = C \u2228 V = D \u2228 V = E \u2228 V = F \u2228 V = G \u2228 V = H \u2228 V = I \u2227 W = A \u2228 W = B \u2228 W = C \u2228 W = D \u2228 W = E \u2228 W = F \u2228 W = G \u2228 W = H \u2228 W = I \u2227 X = A \u2228 X = B \u2228 X = C \u2228 X = D \u2228 X = E \u2228 X = F \u2228 X = G \u2228 X = H \u2228 X = I \u2227 U \u2260 V \u2227 Parallel (Line U V) (Line W X) \u2228 Parallel (Line U W) (Line V X) \u2228 Parallel (Line U X) (Line V W)"
+        ],
+        "b_alternatives": [],
+        "match_exact": false
+      }
     }
   }
 }

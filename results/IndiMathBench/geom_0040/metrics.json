@@ -40,6 +40,69 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "AffineIndependent A B C",
+          "B \u2260 C"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "(Incenter 0.0 0.0 0.0 0.0) = (Incenter 0.0 0.0 B' C')",
+        "b_normalized": "\u2200 X : P,\n    (\u2220 (B' -\u1d65 A) (X -\u1d65 A) = \u2220 (C' -\u1d65 A) (X -\u1d65 A) \u2227\n     \u2220 (A -\u1d65 B') (X -\u1d65 B') = \u2220 (C' -\u1d65 B') (X -\u1d65 B') \u2227\n     \u2220 (A -\u1d65 C') (X -\u1d65 C') = \u2220 (B' -\u1d65 C') (X -\u1d65 C')) \u2194 X = I",
+        "a_alternatives": [
+          "(Incenter 0.0 0.0 0.0 0.0) = (Incenter 0.0 0.0 B' C')"
+        ],
+        "b_alternatives": [
+          "\u2200 X : P,\n    (\u2220 (B' -\u1d65 A) (X -\u1d65 A) = \u2220 (C' -\u1d65 A) (X -\u1d65 A) \u2227\n     \u2220 (A -\u1d65 B') (X -\u1d65 B') = \u2220 (C' -\u1d65 B') (X -\u1d65 B') \u2227\n     \u2220 (A -\u1d65 C') (X -\u1d65 C') = \u2220 (B' -\u1d65 C') (X -\u1d65 C')) \u2194 X = I"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "Incenter I (Triangle.mk A B' C')",
+        "b_normalized": "\u2200 X : P,\n    (\u2220 (B' -\u1d65 A) (X -\u1d65 A) = \u2220 (C' -\u1d65 A) (X -\u1d65 A) \u2227\n     \u2220 (A -\u1d65 B') (X -\u1d65 B') = \u2220 (C' -\u1d65 B') (X -\u1d65 B') \u2227\n     \u2220 (A -\u1d65 C') (X -\u1d65 C') = \u2220 (B' -\u1d65 C') (X -\u1d65 C')) \u2194 X = I",
+        "a_alternatives": [
+          "Incenter I (Triangle.mk A B' C')"
+        ],
+        "b_alternatives": [
+          "\u2200 X : P,\n    (\u2220 (B' -\u1d65 A) (X -\u1d65 A) = \u2220 (C' -\u1d65 A) (X -\u1d65 A) \u2227\n     \u2220 (A -\u1d65 B') (X -\u1d65 B') = \u2220 (C' -\u1d65 B') (X -\u1d65 B') \u2227\n     \u2220 (A -\u1d65 C') (X -\u1d65 C') = \u2220 (B' -\u1d65 C') (X -\u1d65 C')) \u2194 X = I"
+        ],
+        "match_exact": false
+      }
     }
   }
 }

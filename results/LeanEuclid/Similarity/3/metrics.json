@@ -38,7 +38,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -50,17 +50,41 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent I H F",
+          "AffineIndependent J G F",
+          "F \u2260 G",
+          "F \u2260 H",
+          "F \u2260 I",
+          "I \u2260 H",
+          "IntersectAt FG IH H",
+          "IntersectAt JF IH I",
+          "J \u2260 F"
+        ],
+        "b_only": [
+          "Between G H F",
+          "Between J I F",
+          "dist F I",
+          "formTriangle I H F HI GF FJ",
+          "formTriangle J G F GJ FG FJ"
+        ],
+        "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle F H I = angle F G J \u2227 angle H I F = angle G J F \u2227 angle I F H = angle J F G)",
-        "b_normalized": "(\u25b3 F:H:I).similar (\u25b3 F:G:J)",
-        "match_exact": false
+        "a_normalized": "angle F H I = angle F G J \u2227 angle H I F = angle G J F \u2227 angle I F H = angle J F G",
+        "b_normalized": "SimilarTriangles F H I F G J",
+        "a_alternatives": [
+          "angle F H I = angle F G J \u2227 angle H I F = angle G J F \u2227 angle I F H = angle J F G",
+          "TrianglesCongruent F H I F G J",
+          "SimilarTriangles F H I F G J"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles F H I F G J"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -74,14 +98,28 @@
       "hypotheses": {
         "a_only": [
           "AffineIndependent F G J",
-          "AffineIndependent F H I"
+          "AffineIndependent F H I",
+          "Collinear I H J",
+          "dist F I / dist F J = dist F H / dist F G"
         ],
-        "b_only": [],
+        "b_only": [
+          "Between G H F",
+          "Between J I F",
+          "dist F I",
+          "formTriangle I H F HI GF FJ",
+          "formTriangle J G F GJ FG FJ"
+        ],
         "jaccard": 0.0
       },
       "goal": {
         "a_normalized": "TrianglesCongruent F H I F G J",
-        "b_normalized": "(\u25b3 F:H:I).similar (\u25b3 F:G:J)",
+        "b_normalized": "SimilarTriangles F H I F G J",
+        "a_alternatives": [
+          "TrianglesCongruent F H I F G J"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles F H I F G J"
+        ],
         "match_exact": false
       }
     }

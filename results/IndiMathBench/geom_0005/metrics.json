@@ -39,6 +39,93 @@
         "match_exact": false,
         "match_predicate": false
       }
+    },
+    "our_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "M",
+          "N"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "A \u2260 B",
+          "A \u2260 C",
+          "AffineIndependent A B C",
+          "B \u2260 C",
+          "B \u2260 M",
+          "C \u2260 N",
+          "M \u2260 N",
+          "angle C A B = 90"
+        ],
+        "b_only": [
+          "dist A B = dist A C",
+          "rightAngle B A C"
+        ],
+        "jaccard": 0.0
+      },
+      "goal": {
+        "a_normalized": "angle M A N = 45",
+        "b_normalized": "angle M A N = \u03c0/4",
+        "a_alternatives": [
+          "angle M A N = 45"
+        ],
+        "b_alternatives": [
+          "angle M A N = \u03c0/4"
+        ],
+        "match_exact": false
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "mathlib"
+      },
+      "point_binders": {
+        "a_only": [
+          "A",
+          "B",
+          "C",
+          "M",
+          "N"
+        ],
+        "b_only": [],
+        "jaccard": 0.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent A B C",
+          "Collinear B M C",
+          "Collinear B N C",
+          "rightAngle C A B"
+        ],
+        "b_only": [
+          "rightAngle B A C"
+        ],
+        "jaccard": 0.1667
+      },
+      "goal": {
+        "a_normalized": "angle M A N = \u03c0/4",
+        "b_normalized": "angle M A N = \u03c0/4",
+        "a_alternatives": [
+          "angle M A N = \u03c0/4"
+        ],
+        "b_alternatives": [
+          "angle M A N = \u03c0/4"
+        ],
+        "match_exact": true
+      }
     }
   }
 }

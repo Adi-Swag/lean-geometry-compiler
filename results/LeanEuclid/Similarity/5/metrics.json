@@ -38,7 +38,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -50,17 +50,42 @@
         "jaccard": 1.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent S T U",
+          "AffineIndependent U R S",
+          "AffineIndependent U T R",
+          "R \u2260 S",
+          "R \u2260 T",
+          "S \u2260 T",
+          "U \u2260 R",
+          "U \u2260 S",
+          "U \u2260 T"
+        ],
+        "b_only": [
+          "Between R T S",
+          "formTriangle U R S RU RS SU",
+          "formTriangle U T S TU RS SU",
+          "rightAngle R U S",
+          "rightAngle U T R",
+          "rightAngle U T S"
+        ],
+        "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle S T U = angle U T R \u2227 angle T U S = angle T R U \u2227 angle U S T = angle R U T)",
-        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220 U:T:R = \u221f",
-        "match_exact": false
+        "a_normalized": "angle S T U = angle U T R \u2227 angle T U S = angle T R U \u2227 angle U S T = angle R U T",
+        "b_normalized": "SimilarTriangles S T U U T R",
+        "a_alternatives": [
+          "angle S T U = angle U T R \u2227 angle T U S = angle T R U \u2227 angle U S T = angle R U T",
+          "TrianglesCongruent S T U U T R",
+          "SimilarTriangles S T U U T R"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles S T U U T R"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -74,15 +99,28 @@
       "hypotheses": {
         "a_only": [
           "AffineIndependent R U S",
-          "perp UR US",
-          "perp UT SR"
+          "perp RU US",
+          "perp TU SR"
         ],
-        "b_only": [],
+        "b_only": [
+          "Between R T S",
+          "formTriangle U R S RU RS SU",
+          "formTriangle U T S TU RS SU",
+          "rightAngle R U S",
+          "rightAngle U T R",
+          "rightAngle U T S"
+        ],
         "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle S T U = angle U T R) \u2227 (angle T U S = angle T R U) \u2227 (angle U S T = angle R U T)",
-        "b_normalized": "=\nby\n  euclid_intros\n  have : \u2220 U:T:R = \u221f",
+        "a_normalized": "angle S T U = angle U T R \u2227 angle T U S = angle T R U \u2227 angle U S T = angle R U T",
+        "b_normalized": "SimilarTriangles S T U U T R",
+        "a_alternatives": [
+          "angle S T U = angle U T R \u2227 angle T U S = angle T R U \u2227 angle U S T = angle R U T"
+        ],
+        "b_alternatives": [
+          "SimilarTriangles S T U U T R"
+        ],
         "match_exact": false
       }
     }

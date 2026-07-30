@@ -34,29 +34,7 @@
         "match_predicate": true
       }
     },
-    "our_vs_systeme": {
-      "type": "cross_library",
-      "libraries": {
-        "a": "geometryprover",
-        "b": "systeme"
-      },
-      "point_binders": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
-      },
-      "goal": {
-        "a_normalized": "(dist Q S = dist R S)",
-        "b_normalized": "dist Q S",
-        "match_exact": false
-      }
-    },
-    "direct_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -70,15 +48,71 @@
       "hypotheses": {
         "a_only": [
           "AffineIndependent R P Q",
-          "dist P Q = dist P R"
+          "P \u2260 Q",
+          "P \u2260 S",
+          "Q \u2260 S",
+          "R \u2260 P",
+          "R \u2260 Q",
+          "R \u2260 S"
         ],
-        "b_only": [],
-        "jaccard": 0.0
+        "b_only": [
+          "Between R S Q",
+          "angle R P S = angle S P Q",
+          "distinctPointsOnLine P S PS",
+          "formTriangle R Q P QR PQ PR",
+          "intersectsLine PS QR",
+          "pointOnLine S QR"
+        ],
+        "jaccard": 0.0714
       },
       "goal": {
         "a_normalized": "dist Q S = dist R S",
-        "b_normalized": "dist Q S",
-        "match_exact": false
+        "b_normalized": "dist Q S = dist R S",
+        "a_alternatives": [
+          "dist Q S = dist R S"
+        ],
+        "b_alternatives": [
+          "dist Q S = dist R S"
+        ],
+        "match_exact": true
+      }
+    },
+    "direct_vs_ground_truth": {
+      "type": "cross_library",
+      "libraries": {
+        "a": "geometryprover",
+        "b": "systeme"
+      },
+      "point_binders": {
+        "a_only": [],
+        "b_only": [],
+        "jaccard": 1.0
+      },
+      "hypotheses": {
+        "a_only": [
+          "AffineIndependent R P Q",
+          "angle Q P S = angle S P R"
+        ],
+        "b_only": [
+          "Between R S Q",
+          "angle R P S = angle S P Q",
+          "distinctPointsOnLine P S PS",
+          "formTriangle R Q P QR PQ PR",
+          "intersectsLine PS QR",
+          "pointOnLine S QR"
+        ],
+        "jaccard": 0.1111
+      },
+      "goal": {
+        "a_normalized": "dist Q S = dist R S",
+        "b_normalized": "dist Q S = dist R S",
+        "a_alternatives": [
+          "dist Q S = dist R S"
+        ],
+        "b_alternatives": [
+          "dist Q S = dist R S"
+        ],
+        "match_exact": true
       }
     }
   }

@@ -38,7 +38,7 @@
         "match_predicate": false
       }
     },
-    "our_vs_systeme": {
+    "our_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -55,17 +55,40 @@
         "jaccard": 0.0
       },
       "hypotheses": {
-        "a_only": [],
-        "b_only": [],
-        "jaccard": 1.0
+        "a_only": [
+          "AffineIndependent Q R P",
+          "AffineIndependent S R P",
+          "P \u2260 R",
+          "P \u2260 S",
+          "Q \u2260 P",
+          "Q \u2260 R",
+          "R \u2260 P",
+          "S \u2260 R"
+        ],
+        "b_only": [
+          "angle P R S = angle P R Q",
+          "angle S P R = angle Q P R",
+          "formTriangle P Q R PQ QR PR",
+          "formTriangle R P S PR PS RS",
+          "opposingSides S Q PR"
+        ],
+        "jaccard": 0.0
       },
       "goal": {
-        "a_normalized": "(angle P R S = angle P R Q \u2227 angle R S P = angle R Q P \u2227 angle S P R = angle Q P R)",
+        "a_normalized": "angle P R S = angle P R Q \u2227 angle R S P = angle R Q P \u2227 angle S P R = angle Q P R",
         "b_normalized": "TrianglesCongruent P R S P R Q",
-        "match_exact": false
+        "a_alternatives": [
+          "angle P R S = angle P R Q \u2227 angle R S P = angle R Q P \u2227 angle S P R = angle Q P R",
+          "TrianglesCongruent P R S P R Q",
+          "SimilarTriangles P R S P R Q"
+        ],
+        "b_alternatives": [
+          "TrianglesCongruent P R S P R Q"
+        ],
+        "match_exact": true
       }
     },
-    "direct_vs_systeme": {
+    "direct_vs_ground_truth": {
       "type": "cross_library",
       "libraries": {
         "a": "geometryprover",
@@ -84,14 +107,28 @@
       "hypotheses": {
         "a_only": [
           "AffineIndependent P R Q",
-          "AffineIndependent P R S"
+          "AffineIndependent P R S",
+          "angle Q P R = angle R P S",
+          "angle Q R P = angle P R S"
         ],
-        "b_only": [],
+        "b_only": [
+          "angle P R S = angle P R Q",
+          "angle S P R = angle Q P R",
+          "formTriangle P Q R PQ QR PR",
+          "formTriangle R P S PR PS RS",
+          "opposingSides S Q PR"
+        ],
         "jaccard": 0.0
       },
       "goal": {
         "a_normalized": "TrianglesCongruent P R S P R Q",
         "b_normalized": "TrianglesCongruent P R S P R Q",
+        "a_alternatives": [
+          "TrianglesCongruent P R S P R Q"
+        ],
+        "b_alternatives": [
+          "TrianglesCongruent P R S P R Q"
+        ],
         "match_exact": true
       }
     }
